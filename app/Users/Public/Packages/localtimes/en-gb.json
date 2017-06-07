@@ -1,0 +1,35 @@
+{
+    "before": {
+        "year ago": " year ago",
+        "years ago": " years ago",
+        "month ago": " month ago",
+        "months ago": " months ago",
+        "week ago": " week ago",
+        "weeks ago": " weeks ago",
+        "day ago": " day ago",
+        "days ago": " days ago",
+        "hour ago": " hour ago",
+        "hours ago": " hours ago",
+        "in an hour": " in an hour",
+        "in half an hour": " in half an hour",
+        "in 5 minutes": " in 5 minutes",
+        "just now": " just now"
+    },
+    "now": " at present",
+    "after": {
+        "year later": " year later",
+        "years later": " years later",
+        "month later": " month later",
+        "months later": " months later",
+        "week later": " week later",
+        "weeks later": " weeks later",
+        "day later": " day later",
+        "days later": " days later",
+        "hour later": " hour later",
+        "hours later": " hours later",
+        "within an hour": " within an hour",
+        "within half an hour": " within half an hour",
+        "within 5 minutes": " within 5 minutes",
+        "immediately": " immediately"
+    }
+}

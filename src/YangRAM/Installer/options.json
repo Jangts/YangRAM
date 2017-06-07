@@ -1,0 +1,7 @@
+{
+    "name"                  :	"YangRAM Installer",
+    "abbr"                  :	"In",
+    "description"           :	"YangRAM Installer, YangRAM Install, YangRAM Update, YangRAM Update, App Installer, App Install, App Update, App Update, Application Install, Application Update, Application App Update, System Update, System Upgrade",
+    "keywords"              :	["YangRAM Installer", "YangRAM Install", "YangRAM Update", "YangRAM Update", "App Installer", "App Install", "App Update", "App Update", "Application Install", "Application Update", "Application App Update", "System Update", "System Upgrade"],
+    "namespace"             :	"Installer"
+}

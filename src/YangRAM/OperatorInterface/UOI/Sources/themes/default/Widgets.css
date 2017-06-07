@@ -1,0 +1,657 @@
+/*** Process Bus ***/
+
+yangram widgets processbus[state=on] {
+    right: 0;
+}
+
+yangram widgets processbus {
+    overflow-y: auto;
+}
+
+yangram widgets processbus::-webkit-scrollbar {
+    display: none;
+    width: 2px;
+    height: 2px;
+    margin: 0px;
+    background-color: transparent;
+}
+
+yangram widgets processbus:hover::-webkit-scrollbar {
+    display: block;
+}
+
+yangram widgets processbus::-webkit-scrollbar-button,
+yangram widgets processbus::-webkit-scrollbar-track,
+yangram widgets processbus::-webkit-scrollbar-track-piece,
+yangram widgets processbus::-webkit-scrollbar-corner,
+yangram widgets processbus::-webkit-resizer {
+    display: none;
+}
+
+yangram widgets processbus::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: rgba(128, 128, 128, .3);
+    border-radius: 1px;
+}
+
+yangram widgets processbus content {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    transition: top ease .1s;
+}
+
+
+/* ---------- */
+
+yangram widgets processbus content table {
+    width: 600px;
+    height: auto;
+    margin: 20px;
+    line-height: 24px;
+    border: 0;
+}
+
+yangram widgets processbus content table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    overflow: hidden;
+    color: #FFF;
+    cursor: default;
+}
+
+yangram widgets processbus content table tr th {
+    height: 24px;
+    padding: 0px;
+    font-weight: normal;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+yangram widgets processbus content table tr td {
+    height: 24px;
+    padding: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/* ---------- */
+
+yangram widgets processbus content table tr[menu] {
+    background-color: #333;
+}
+
+yangram widgets processbus content table tr[menu] th {
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+
+/* ---------- */
+
+yangram widgets processbus content table tr[group] {
+    background-color: transparent;
+    height: 30px;
+}
+
+yangram widgets processbus content table tr[group] th {
+    display: block;
+    height: 24px;
+    margin-top: 11px;
+    text-align: left;
+    padding: 0px 10px;
+}
+
+
+/* ---------- */
+
+yangram widgets processbus content table tr[row] {
+    font-size: 13px;
+    margin-bottom: 1px;
+    color: #CCC;
+}
+
+yangram widgets processbus content table tr[row=odd] {
+    background-color: #181818;
+}
+
+yangram widgets processbus content table tr[row=even] {
+    background-color: #222222;
+}
+
+yangram widgets processbus content table tr[row] th {
+    text-align: left;
+    padding: 0px 10px;
+}
+
+yangram widgets processbus content table tr[row] td {
+    text-align: center;
+    border-left: #000 1px solid;
+}
+
+yangram widgets processbus content table tr[row] td click {
+    cursor: pointer;
+}
+
+yangram widgets processbus content table tr[state=off] * {
+    opacity: .2;
+    transition: opacity ease .4s;
+}
+
+
+/*** Explorer ***/
+
+yangram widgets explorer vision.explorer-header {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color: #808080;
+    cursor: move;
+    color: #FFF;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+yangram widgets explorer vision.explorer-header .explorer-name {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 30px;
+    margin: 5px 10px;
+    line-height: 30px;
+}
+
+yangram widgets explorer vision.explorer-header .explorer-swch {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    top: 0px;
+    right: 0px;
+}
+
+yangram widgets explorer vision.explorer-header .explorer-swch {
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 26px;
+    text-align: center;
+    color: #EEE;
+}
+
+yangram widgets explorer vision.explorer-control {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    cursor: default;
+}
+
+yangram widgets explorer vision.explorer-control click {
+    display: inline-block;
+    width: 130px;
+    min-width: 60px;
+    height: 30px;
+    margin: 0px 1px 0px 0px;
+    padding: 0px 5px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #808080;
+    color: #FFF;
+    cursor: pointer;
+}
+
+yangram widgets explorer vision.explorer-control click:first-child {
+    border-radius: 3px 0px 0px 3px;
+}
+
+yangram widgets explorer vision.explorer-control click:last-child {
+    border-radius: 0px 3px 3px 0px;
+}
+
+yangram widgets explorer vision.explorer-control click:hover {
+    background-color: #666;
+    color: #FFF;
+}
+
+yangram widgets explorer nav.explorer-nav {
+    display: block;
+    position: relative;
+    width: 620px;
+    height: 29px;
+    background-color: #808080;
+    color: #FFF;
+    margin: 9px 9px 0px;
+    border: #808080 1px solid;
+    border-bottom: none;
+}
+
+yangram widgets explorer nav.explorer-nav el {
+    float: left;
+    position: relative;
+    width: 21px;
+    height: 21px;
+    background-color: #666;
+    color: #FFF;
+    margin: 4px 2px;
+    line-height: 21px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 21px;
+    cursor: pointer;
+}
+
+yangram widgets explorer nav.explorer-nav click {
+    float: left;
+    position: relative;
+    width: 150px;
+    height: 25px;
+    background-color: #666;
+    color: #FFF;
+    margin: 4px 5px 0px;
+    line-height: 25px;
+    border-radius: 2px 2px 0px 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+yangram widgets explorer nav.explorer-nav click.selected {
+    background-color: #FFF;
+    color: #666;
+}
+
+yangram widgets explorer vision.explorer-content {
+    display: block;
+    position: relative;
+    width: 621px;
+    height: auto;
+    margin: 0px 9px 9px;
+    border: #999 1px solid;
+    border-top: none;
+}
+
+yangram widgets explorer vision.explorer-content:hover scrollbar {
+    opacity: .2;
+}
+
+yangram widgets explorer vision.explorer-content scrollbar scrolldragger {
+    background-color: #000;
+}
+
+yangram widgets explorer vision.explorer-content content {
+    display: block;
+    padding: 10px;
+    position: relative;
+    transition: top ease .1s;
+}
+
+yangram widgets explorer vision.explorer-content content>el {
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    margin: 0px;
+    text-align: center;
+    color: #999;
+}
+
+
+/* ---------- */
+
+yangram widgets explorer vision.explorer-content content list item {
+    float: left;
+    width: 180px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #808080;
+    color: #FFF;
+    margin: 5px 10px;
+    cursor: pointer;
+}
+
+yangram widgets explorer vision.explorer-content content list item:hover {
+    background-color: #666;
+}
+
+
+/* ---------- */
+
+yangram widgets explorer vision.explorer-content content .item {
+    display: block;
+    cursor: pointer;
+    height: 30px;
+    margin: 0px;
+    overflow: hidden;
+    border-bottom: #DDD solid 1px;
+    color: #333;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+yangram widgets explorer vision.explorer-content content .item .name {
+    width: auto;
+    height: 20px;
+    margin: 5px 160px 5px 60px;
+    text-align: left;
+    overflow: hidden;
+}
+
+yangram widgets explorer vision.explorer-content content .item .sele {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    margin: 7px;
+    top: 0px;
+    left: 0px;
+    border: #CCC 1px solid;
+    z-index: 100;
+    overflow: visible;
+    background-color: #FFF;
+}
+
+yangram widgets explorer vision.explorer-content content .item.folder .sele {
+    border: #EEE 1px solid;
+    background-color: #EEE;
+}
+
+yangram widgets explorer vision.explorer-content content .item.selected:not(.folder) .sele:before {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: "IconsForUOI";
+    color: #0C3;
+    text-align: center;
+    line-height: 20px;
+    font-size: 18px;
+    content: "\e031";
+    top: -5px;
+    left: -1px;
+}
+
+yangram widgets explorer vision.explorer-content content .item .icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    top: 0px;
+    left: 30px;
+}
+
+yangram widgets explorer vision.explorer-content content .item .time {
+    position: absolute;
+    width: 159px;
+    height: 20px;
+    margin: 5px 0px;
+    top: 0px;
+    right: 0px;
+    text-align: center;
+    border-left: #E6E6E6 1px solid;
+}
+
+yangram widgets explorer vision.explorer-content content .item .size {
+    display: none;
+}
+
+yangram widgets explorer vision.explorer-content content .item .dime {
+    display: none;
+}
+
+yangram widgets explorer vision.explorer-content content .item .dura {
+    display: none;
+}
+
+yangram widgets explorer vision.explorer-content content .item .none {
+    display: none;
+}
+
+yangram widgets explorer vision.explorer-content content .item:hover {
+    background-color: #EEE;
+}
+
+yangram widgets explorer vision.explorer-content content .item.selected:not(.folder) {
+    background-color: #EEE;
+}
+
+
+/* ---------- */
+
+yangram widgets explorer vision.explorer-content content .item .icon {
+    background-position: -300px 0px;
+    background-image: url(icons/item_icons_smaller.png);
+    background-repeat: no-repeat;
+}
+
+yangram widgets explorer vision.explorer-content content .item.folder .icon {
+    background-image: url(icons/folder_icons_smaller.png);
+    background-position: 0px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.img .icon {
+    background-image: url(icons/item_icons_smaller.png) !important;
+    background-position: 0px 0px;
+}
+
+
+/* ---------- */
+
+yangram widgets explorer vision.explorer-content content .item.rar .icon {
+    background-position: -240px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.zip .icon {
+    background-position: -240px 0px;
+}
+
+
+/* ---------- */
+
+yangram widgets explorer vision.explorer-content content .item.xls .icon {
+    background-position: -90px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.xlsx .icon {
+    background-position: -90px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.doc .icon {
+    background-position: -60px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.docx .icon {
+    background-position: -60px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.ppt .icon {
+    background-position: -150px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.pptx .icon {
+    background-position: -150px 0px;
+}
+
+
+/* ---------- */
+
+yangram widgets explorer vision.explorer-content content .item.pdf .icon {
+    background-position: -30px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.txt .icon {
+    background-position: -120px 0px;
+}
+
+
+/* ---------- */
+
+yangram widgets explorer vision.explorer-content content .item.wav .icon {
+    background-position: -180px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.set .icon {
+    background-position: -270px 0px;
+}
+
+yangram widgets explorer vision.explorer-content content .item.vod .icon {
+    background-position: -210px 0px;
+}
+
+
+/*** Dialog ***/
+
+yangram widgets dialogs vision.dialog-main-box {
+    display: block;
+    position: fixed;
+    width: 540px;
+    height: 360px;
+    top: 0px;
+    left: 40%;
+}
+
+yangram widgets dialogs vision.dialog-main-box {
+    background-color: #FFF;
+    border: rgba(0, 0, 0, .3) 2px solid;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-header {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-bottom: #CCC 1px solid;
+    cursor: move;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-header {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-name {
+    display: block;
+    position: relative;
+    width: auto;
+    height: 30px;
+    margin: 5px 10px;
+    line-height: 30px;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-swch {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    top: 0px;
+    right: 0px;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-swch {
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 26px;
+    text-align: center;
+    color: #999;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-control {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 59px;
+    bottom: 0px;
+    left: 0px;
+    cursor: default;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-control click {
+    float: right;
+    width: auto;
+    min-width: 60px;
+    height: 28px;
+    margin: 10px 10px 9px 0px;
+    padding: 0px 10px;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-control click {
+    border: #CCC solid 1px;
+    line-height: 28px;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+}
+
+yangram widgets dialogs vision.dialog-main-box vision.dialog-control click:hover {
+    background-color: #09F;
+    border: #0CC solid 1px;
+    color: #FFF;
+}
+
+yangram widgets dialogs vision.dialog-main-box application {
+    display: block;
+    position: relative;
+    width: 520px;
+    height: 240px;
+    margin: 9px;
+    border: #CCC 1px solid;
+}
+
+yangram widgets dialogs vision.dialog-main-box application:hover scrollbar {
+    opacity: .2;
+}
+
+yangram widgets dialogs vision.dialog-main-box application scrollbar scrolldragger {
+    background-color: #000;
+}
+
+yangram widgets dialogs vision.dialog-main-box application content {
+    display: block;
+    position: relative;
+    transition: top ease .1s;
+}
+
+
+/*** Loading Animiation ***********************/
+
+yangram widgets cubes vision {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 30px;
+    opacity: 0.8;
+}
+
+yangram widgets cubes vision[type=two-dime] {
+    margin-top: -75px;
+    margin-left: -75px;
+}
+
+yangram widgets cubes vision[type=two-dime] {
+    width: 90px;
+    height: 90px;
+}
+
+yangram widgets cubes vision[type=three-dime] {
+    width: 90px;
+    height: 90px;
+    margin: -75px;
+    opacity: 1;
+}

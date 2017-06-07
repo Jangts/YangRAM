@@ -1,0 +1,315 @@
+@charset "utf-8";
+
+/*** APPS COMMON ***/
+
+scrollbar dragger {
+    cursor: default;
+    transition: none;
+    background-color: #000;
+}
+
+view {
+    background-color: #EEE !important;
+}
+
+
+/*** APPS TOP ***/
+
+top-vision>vision {
+    width: 100%;
+    height: 50px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+top-vision vision ico {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url(<__ADIR__>Sources/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+top-vision vision tools.page-ctrl {
+    display: block;
+    margin-left: 50px;
+}
+
+top-vision vision tools.page-ctrl list {
+    width: auto;
+    height: 30px;
+    padding: 10px;
+    display: block;
+    float: right;
+}
+
+top-vision vision tools.page-ctrl list.odd {
+    display: block;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+
+/* ------------------------- */
+
+top-vision vision tools list item.page-ctrl-item {
+    float: left;
+    width: 40px;
+    height: 30px;
+    background-image: url(<__ADIR__>Sources/icons.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+top-vision vision tools list item.unavailable {
+    cursor: default;
+}
+
+top-vision vision tools list item.page-ctrl-item {
+    transition: background-position ease .5s;
+    -webkit-transition: background-position ease .5s;
+}
+
+top-vision vision tools list .page-list {
+    background-position: 0px 0px;
+}
+
+top-vision vision tools list .page-new {
+    background-position: -40px 0px;
+}
+
+top-vision vision tools list .page-save {
+    background-position: -80px 0px;
+}
+
+top-vision vision tools list .page-del {
+    background-position: -120px 0px;
+}
+
+top-vision vision tools list .page-fix {
+    background-position: -160px 0px;
+}
+
+top-vision vision tools list .page-setting {
+    background-position: -200px 0px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .page-list:hover {
+    background-position: 0px -30px;
+}
+
+top-vision vision tools list .page-new:hover {
+    background-position: -40px -30px;
+}
+
+top-vision vision tools list .page-save:hover {
+    background-position: -80px -30px;
+}
+
+top-vision vision tools list .page-del:hover {
+    background-position: -120px -30px;
+}
+
+top-vision vision tools list .page-fix:hover {
+    background-position: -160px -30px;
+}
+
+top-vision vision tools list .page-setting:hover {
+    background-position: -200px -30px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .unavailable.page-list {
+    background-position: 0px -60px;
+}
+
+top-vision vision tools list .unavailable.page-new {
+    background-position: -40px -60px;
+}
+
+top-vision vision tools list .unavailable.page-save {
+    background-position: -80px -60px;
+}
+
+top-vision vision tools list .unavailable.page-del {
+    background-position: -120px -60px;
+}
+
+top-vision vision tools list .unavailable.page-fix {
+    background-position: -160px -60px;
+}
+
+top-vision vision tools list .unavailable.page-setting {
+    background-position: -200px -60px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .unavailable.page-list:hover {
+    background-position: 0px -60px;
+}
+
+top-vision vision tools list .unavailable.page-new:hover {
+    background-position: -40px -60px;
+}
+
+top-vision vision tools list .unavailable.page-save:hover {
+    background-position: -80px -60px;
+}
+
+top-vision vision tools list .unavailable.page-del:hover {
+    background-position: -120px -60px;
+}
+
+top-vision vision tools list .unavailable.page-fix:hover {
+    background-position: -160px -60px;
+}
+
+top-vision vision tools list .unavailable.page-setting:hover {
+    background-position: -200px -60px;
+}
+
+
+/*** APPS SIDE ***/
+
+main list[type=sheet] .stts {
+    left: 0px;
+}
+
+main list[type=sheet] .stts .pubed {
+    color: #090;
+}
+
+main list[type=sheet] .stts .unpub {
+    color: #969;
+}
+
+main list[type=sheet] .name {
+    position: relative;
+    text-align: left;
+    margin: 0px 340px 0px 80px;
+    padding: 0px 10px;
+}
+
+main list[type=sheet] .hits {
+    right: 280px;
+}
+
+main list[type=sheet] .time {
+    right: 140px;
+}
+
+main list[type=sheet] .modi {
+    right: 70px;
+}
+
+main list[type=sheet] .dele {
+    right: 0px;
+}
+
+
+/* ------------------------- */
+
+
+/*** APPS FORM ***/
+
+popup-form {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 1000;
+    ;
+}
+
+popup-form form-vision {
+    background-color: rgba(255, 255, 255, .9);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .3);
+    margin: 25px auto;
+    padding: 20px 0px 0px;
+}
+
+
+/* ------------------------- */
+
+popup-form inputs input.page-template {
+    width: 400px;
+}
+
+popup-form inputs input.page-template-short {
+    width: 280px;
+}
+
+popup-form .pick-button {
+    background: #6D196D;
+}
+
+
+/*--------------*/
+
+popup-form .form-seo input {
+    width: 835px;
+    height: 20px;
+    line-height: 20px;
+    margin: 9px 0px 11px 25px;
+    color: #555;
+    font-size: 13px;
+    resize: none;
+}
+
+
+/* ------------------------- */
+
+popup-form .ctrl-buttons {
+    width: 900px;
+    height: 50px;
+    background-color: #FFF;
+    border-top: #6D196D 1px solid;
+    position: absolute;
+    right: 0px;
+    bottom: 25px;
+    left: 0px;
+    margin: 0px auto;
+}
+
+popup-form .ctrl-buttons .item-ctrl-btn {
+    float: left;
+    width: 450px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 24px;
+    color: #6D196D;
+    cursor: pointer;
+}
+
+popup-form .ctrl-buttons .item-ctrl-btn:last-child {
+    background-color: #FFF6FF;
+}
+
+popup-form .ctrl-buttons .item-ctrl-btn:hover {
+    background-color: #6D196D;
+    color: #FFF;
+}
+
+popup-form .ctrl-buttons .item-ctrl-btn click {
+    display: block;
+}
+
+
+/* ------------------------- */

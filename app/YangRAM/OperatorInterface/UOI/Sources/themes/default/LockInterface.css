@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+/*** Init ***/
+
+yangram widgets locker masker {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -100;
+}
+
+yangram widgets locker masker {
+    background-image: url(LockPaper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+
+yangram widgets locker avatar {
+    display: block;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: 50%;
+    top: 50%;
+    margin-left: -80px;
+    margin-top: -80px;
+    border-radius: 50%;
+    opacity: .3;
+}
+
+yangram widgets locker avatar {
+    cursor: pointer;
+    z-index: 10;
+    background-color: #222;
+    background-image: url(icon.svg);
+    background-size: cover;
+    background-position: center;
+    overflow: visible;
+}
+
+yangram widgets locker avatar status-vision {
+    display: block;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 0px;
+    left: 0px;
+}
+
+yangram widgets locker avatar status-vision {
+    text-align: center;
+    line-height: 160px;
+    color: #0CF;
+    font-size: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .7);
+    font-family: 'DigitalSystem';
+}
+
+yangram widgets locker avatar percent-vision[status=loading] {
+    display: none;
+}
+
+yangram widgets locker avatar circle-vision {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 154px;
+    height: 154px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 50%;
+    border: #0CF solid 3px;
+    transition: all ease .2s;
+    z-index: 10;
+}
+
+
+/**********************************************/
+
+yangram widgets locker form {
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    overflow: hidden;
+}
+
+yangram widgets locker form vision {
+    position: absolute;
+    display: block;
+    width: 168px;
+    height: 28px;
+    margin: 15px 5px;
+    padding: 5px;
+}
+
+yangram widgets locker form vision {
+    overflow: hidden;
+    border: rgba(0, 204, 255, .1) solid 1px;
+    border-radius: 5px;
+    transition: all ease .4s;
+    text-align: center;
+}
+
+yangram widgets locker form vision[name=username] {
+    top: 0px;
+    left: 60px;
+    color: #FFF;
+    line-height: 28px;
+}
+
+yangram widgets locker form vision[name=pincode] {
+    top: 40px;
+    left: 60px;
+}
+
+yangram widgets locker form vision input {
+    width: 168px;
+    height: 28px;
+    background: none;
+    line-height: normal;
+    color: #0CF;
+}
+
+yangram widgets locker form vision input {
+    transition: all ease .4s;
+    text-align: center;
+    outline: none;
+    font: normal 13px "Microsoft YaHei", "Hiragino Sans";
+}
+
+yangram widgets locker form vision input::-webkit-input-placeholder {
+    color: #FFF;
+}
+
+yangram widgets locker form vision input.connecting::-webkit-input-placeholder {
+    color: #0CF;
+}
+
+
+/*********************************************************************************
+/*** Init:Hover ***/
+
+yangram widgets locker avatar:hover {
+    opacity: 1;
+}
+
+yangram widgets locker avatar:hover circle {
+    margin-left: -7px;
+    margin-top: -7px;
+    border: #0CF solid 10px;
+    opacity: .7;
+    box-shadow: 0 0 5px #000;
+}
+
+
+/*********************************************************************************
+/*** Actived ***/
+
+yangram widgets locker masker[status=actived] {
+    opacity: .02;
+}
+
+yangram widgets locker avatar[status=actived] {
+    margin-top: -210px;
+    transition: all ease .4s;
+    opacity: 1;
+}
+
+yangram widgets locker form[status=actived] {
+    width: 300px;
+    height: 210px;
+    margin-left: -150px;
+    margin-top: -30px;
+    transition: all ease .4s;
+}
+
+yangram widgets locker form[status=actived] vision[name=username] {
+    top: 0px;
+}
+
+yangram widgets locker form[status=actived] vision[name=pincode] {
+    top: 70px;
+}
+
+yangram widgets locker form[status=actived] vision[name=pincode] pinshow {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    left: 5px;
+    background-color: rgba(0, 0, 0, .3);
+    line-height: 30px;
+    color: #FFC;
+    text-align: center;
+}
+
+
+/*********************************************************************************
+/*** Actived:Hover ***/
+
+yangram widgets locker form vision[name=pincode]:hover {
+    background: rgba(255, 255, 255, .8);
+}
+
+yangram widgets locker form vision[name=pincode]:hover input {
+    color: #333;
+}
+
+
+/*** Checked ***/
+
+yangram widgets locker avatar[status=checked] {
+    margin-top: -80px;
+    transition: margin-top ease .4s;
+}
+
+yangram widgets locker form[status=checked] {
+    width: 300px;
+    height: 210px;
+    margin-left: -150px;
+    margin-top: -60px;
+    opacity: 0;
+    transition: all ease .6s;
+}
+
+yangram widgets locker form[status=checked] vision[name=username] {
+    top: 0px;
+}
+
+yangram widgets locker form[status=checked] vision[name=pincode] {
+    top: 40px;
+}
+
+
+/**********************************************************************************/
+
+
+/*** Loading ***/
+
+yangram widgets logger avatar circle-vision[status=loading] {
+    cursor: default;
+    animation: loading_circle 1s infinite;
+}
+
+
+/**********************************************************************************/
+
+
+/*** Animation ***/
+
+@keyframes loading_circle {
+    0% {
+        width: 154px;
+        height: 154px;
+        margin-left: 0px;
+        margin-top: 0px;
+        border: #0CF solid 3px;
+        opacity: 1;
+        box-shadow: 0 0 5px #000;
+    }
+    25% {
+        width: 134px;
+        height: 134px;
+        margin-left: -17px;
+        margin-top: -17px;
+        border: #0FC solid 30px;
+        opacity: .5;
+        box-shadow: 0 0 15px #000;
+    }
+    100% {
+        width: 154px;
+        height: 154px;
+        margin-left: 0px;
+        margin-top: 0px;
+        border: #0CF solid 3px;
+        opacity: 1;
+        box-shadow: 0 0 5px #000;
+    }
+}

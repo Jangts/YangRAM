@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+/*
+ * OIML List
+ */
+
+
+/* Shape */
+
+list[type=sheet] {
+    margin: 20px;
+    cursor: default;
+    font-size: 12px;
+}
+
+
+/* itit *****************************************/
+
+list[type=sheet] itit {
+    height: 45px;
+    margin-bottom: 5px;
+}
+
+list[type=sheet] itit cell {
+    display: block;
+    box-sizing: border-box;
+    height: 45px;
+    line-height: 45px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+
+/* item *****************************************/
+
+list[type=sheet] item {
+    height: 40px;
+}
+
+
+/**/
+
+list[type=sheet] item cell {
+    display: block;
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 5px;
+}
+
+list[type=sheet] item:hover cell {
+    cursor: pointer;
+}
+
+list[type=sheet] item cell click {
+    display: block;
+}
+
+
+/**/
+
+list[type=sheet] cell {
+    position: absolute;
+    top: 0px;
+}
+
+list[type=sheet] cell.w60 {
+    width: 60px;
+    text-align: center;
+}
+
+list[type=sheet] cell.w70 {
+    width: 70px;
+    text-align: center;
+}
+
+list[type=sheet] cell.w80 {
+    width: 80px;
+    text-align: center;
+}
+
+list[type=sheet] cell.time {
+    width: 140px;
+    text-align: center;
+}
+
+
+/* item.Tips ************************************/
+
+main list[type=sheet] .tips {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: rgba(204, 204, 204, .3);
+    color: #666
+}
+
+
+/* Colors */
+
+
+/* common *************************************/
+
+list[type=sheet] itit {
+    background: #666;
+}
+
+list[type=sheet] itit cell {
+    color: #FFF;
+}
+
+list[type=sheet] item.odd {
+    background: rgba(204, 204, 204, .3);
+}
+
+list[type=sheet] item.even {
+    background: rgba(153, 153, 153, .3);
+}
+
+list[type=sheet] item cell {
+    color: #333;
+}
+
+list[type=sheet] item:hover {
+    background: rgba(153, 153, 153, .4);
+    color: #F6F6F6;
+}
+
+list[type=sheet] cell.odd {
+    background: rgba(153, 153, 153, .3);
+}
+
+list[type=sheet] cell.even {
+    background: rgba(204, 204, 204, .3);
+}
+
+list[type=sheet] item cell .on {
+    color: #090;
+}
+
+list[type=sheet] item cell .off {
+    color: #666;
+}
+
+list[type=sheet] item.tips {
+    background: rgba(204, 204, 204, .3);
+}
+
+
+/* lightpurple *********************************/
+
+list[type=sheet].lightpurple itit {
+    background: #C6C;
+}
+
+list[type=sheet].lightpurple item cell .off {
+    color: #969;
+}
+
+
+/* lightdatered ********************************/
+
+list[type=sheet].lightdatered itit {
+    background: #C66;
+}
+
+list[type=sheet].lightdatered item cell .off {
+    color: #966;
+}
+
+
+/* lightmagenta ********************************/
+
+list[type=sheet].lightmagenta itit {
+    background: #F38;
+}
+
+list[type=sheet].lightmagenta item cell .off {
+    color: #936;
+}
+
+
+/*********************************************************************************
+/* lightmagenta ********************************/
+
+list[type=sheet].lightazure itit {
+    background: #0CF;
+}
+
+list[type=sheet].lightazure item cell .off {
+    color: #369;
+}
+
+
+/* Shape */
+
+list[type=pages] {
+    width: auto;
+    margin: 20px;
+    height: 20px;
+    cursor: default;
+    font-size: 12px;
+    text-align: right;
+}
+
+list[type=pages] item {
+    display: inline-block;
+    width: auto;
+    min-width: 10px;
+    height: 20px;
+    padding: 0px 5px;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 2px;
+}
+
+list[type=pages] item click {
+    display: block;
+    cursor: pointer;
+}
+
+
+/* Colors */
+
+
+/* lightpurple *********************************/
+
+list[type=pages].lightpurple item {
+    background-color: #CACACA;
+    color: #666;
+}
+
+list[type=pages].lightpurple item.selected {
+    background-color: #CC88CC;
+    color: #FFF;
+}
+
+
+/* lightdatered ********************************/
+
+list[type=pages].lightdatered item {
+    background-color: #CACACA;
+    color: #666;
+}
+
+list[type=pages].lightdatered item.selected {
+    background-color: #CC8888;
+    color: #FFF;
+}
+
+
+/* lightmagenta ********************************/
+
+list[type=pages].lightmagenta item {
+    background-color: #CACACA;
+    color: #666;
+}
+
+list[type=pages].lightmagenta item.selected {
+    background-color: #FF3388;
+    color: #FFF;
+}
+
+
+/*********************************************************************************
+/* lightazure ********************************/
+
+list[type=pages].lightazure item {
+    background-color: #CACACA;
+    color: #666;
+}
+
+list[type=pages].lightazure item.selected {
+    background-color: #00CCFF;
+    color: #FFF;
+}

@@ -1,0 +1,35 @@
+{
+    "before": {
+        "year ago": "年前",
+        "years ago": "年前",
+        "month ago": "个月前",
+        "months ago": "个月前",
+        "week ago": "周前",
+        "weeks ago": "周前",
+        "day ago": "天前",
+        "days ago": "天前",
+        "hour ago": "小时前",
+        "hours ago": "小时前",
+        "in an hour": "1小时内",
+        "in half an hour": "半小时内",
+        "in 5 minutes": "5分钟内",
+        "just now": "刚才"
+    },
+    "now": "现在",
+    "after": {
+        "year later": "年后",
+        "years later": "年后",
+        "month later": "个月后",
+        "months later": "个月后",
+        "week later": "周后",
+        "weeks later": "周后",
+        "day later": "天后",
+        "days later": "天后",
+        "hour later": "小时后",
+        "hours later": "小时后",
+        "within an hour": "1小时之内",
+        "within half an hour": "半小时之内",
+        "within 5 minutes": "5分钟之内",
+        "immediately": "马上"
+    }
+}

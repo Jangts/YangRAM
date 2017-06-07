@@ -1,0 +1,173 @@
+[{
+    "name": "Default",
+    "menu": "bookmark-group",
+    "links": [{
+        "appid": "EXPLORER",
+        "type": "shortcut",
+        "src": "",
+        "name": "YangRAM Explorer",
+        "description": "Launch YangRAM Explorer",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "TRASHCAN",
+        "type": "shortcut",
+        "src": "",
+        "name": "Trash Can",
+        "description": "Launch Trash Can",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "SETTINGS",
+        "type": "shortcut",
+        "src": "",
+        "name": "Setting",
+        "description": "Launch Settings",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "SETTINGS",
+        "type": "shortcut",
+        "src": "update",
+        "name": "Updates",
+        "description": "Launch Settings",
+        "href": "updates",
+        "menu": "bookmark"
+    }, {
+        "appid": "EXPLORER",
+        "type": "resource",
+        "src": "folder",
+        "name": "My Materials",
+        "description": "Click To Open Folder Operators",
+        "href": "src\/all\/5\/",
+        "menu": "bookmark"
+    }, {
+        "appid": "SETTINGS",
+        "type": "profile",
+        "src": "",
+        "name": "MySelf",
+        "description": "My Account",
+        "href": "set-account",
+        "menu": "bookmark"
+    }]
+}, {
+    "name": "Non Functional Apps",
+    "menu": "bookmark-group",
+    "links": [{
+        "appid": "1022",
+        "type": "shortcut",
+        "src": "",
+        "name": "Listen",
+        "description": "Listen musics and radios",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1023",
+        "type": "image",
+        "src": "",
+        "name": "Watch",
+        "description": "Watch videos",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1024",
+        "type": "shortcut",
+        "src": "",
+        "name": "Read",
+        "description": "Read books",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1025",
+        "type": "info",
+        "src": "",
+        "name": "Play",
+        "description": "Play games",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1026",
+        "type": "msgs",
+        "src": "",
+        "name": "News",
+        "description": "Read news",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1027",
+        "type": "image",
+        "src": "",
+        "name": "Weather",
+        "description": "See weather",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1028",
+        "type": "embed",
+        "src": "",
+        "name": "Stock",
+        "description": "View the stock",
+        "href": "default",
+        "menu": "bookmark"
+    }]
+}, {
+    "name": "Dataroom",
+    "menu": "bookmark-group",
+    "links": [{
+        "appid": "1001",
+        "type": "shortcut",
+        "src": "",
+        "name": "Developer",
+        "description": "Developer",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1002",
+        "type": "shortcut",
+        "src": "",
+        "name": "Publisher",
+        "description": "Publisher",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1003",
+        "type": "shortcut",
+        "src": "",
+        "name": "Collector",
+        "description": "Collector",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1004",
+        "type": "shortcut",
+        "src": "",
+        "name": "Book Keeper",
+        "description": "Book Keeper",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1005",
+        "type": "shortcut",
+        "src": "",
+        "name": "Sticker",
+        "description": "Sticker",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1006",
+        "type": "shortcut",
+        "src": "",
+        "name": "Designer",
+        "description": "Designer",
+        "href": "default",
+        "menu": "bookmark"
+    }, {
+        "appid": "1007",
+        "type": "shortcut",
+        "src": "",
+        "name": "Tasker",
+        "description": "Taskers",
+        "href": "default",
+        "menu": "bookmark"
+    }]
+}]

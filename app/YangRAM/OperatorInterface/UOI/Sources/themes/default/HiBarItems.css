@@ -1,0 +1,270 @@
+@charset "utf-8";
+
+/*** Start ***/
+
+hibar start {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+
+hibar start {
+    background: #111;
+    box-shadow: #000 0 0 2px;
+    float: left;
+    cursor: default;
+    border-radius: 0 0 10px 0;
+}
+
+hibar start:hover,
+hibar start[started=true] {
+    background: #222;
+    box-shadow: #000 0 0 5px;
+}
+
+hibar start logo {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(start.png) top no-repeat;
+}
+
+hibar start logo:hover {
+    background: url(start.png) bottom no-repeat;
+}
+
+hibar start[type=setting] logo {
+    width: 50px;
+    height: 50px;
+    background: url(settings.png) top no-repeat;
+}
+
+hibar start[type=setting] logo:hover {
+    background: url(settings.png) bottom no-repeat;
+}
+
+
+/*** Account ***/
+
+hibar account {
+    display: block;
+    height: 40px;
+    float: right;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+hibar account * {
+    display: block;
+}
+
+
+/*--------*/
+
+hibar account {
+    width: 120px;
+    font-size: 12px;
+    letter-spacing: .8px;
+    background: rgba(51, 51, 51, .3);
+    overflow: visible;
+}
+
+hibar account:hover {
+    background: rgba(51, 51, 51, .8);
+}
+
+hibar account admin {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+hibar account admin avatar {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+    border-radius: 10%;
+}
+
+hibar account admin avatar {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    float: left;
+}
+
+hibar account admin myname {
+    width: 72px;
+    height: 24px;
+    margin: 8px;
+    margin-left: 0;
+    color: #FFF;
+    line-height: 24px;
+    text-align: left;
+    float: left;
+}
+
+
+/*--------*/
+
+hibar account myangram {
+    position: fixed;
+    width: 280px;
+    height: 0px;
+    top: 70px;
+    right: 120px;
+    transition: all ease .4s;
+    z-index: 550;
+    overflow: hidden;
+}
+
+hibar account:hover myangram {
+    height: 120px;
+    top: 40px;
+}
+
+hibar account myangram welcome {
+    width: 280px;
+    height: 38px;
+    text-align: center;
+    background: rgba(51, 51, 51, .8);
+    margin-top: 1px;
+    line-height: 38px;
+    color: #fff;
+}
+
+hibar account myangram vision {
+    width: 250px;
+    height: 50px;
+    margin-top: 1px;
+    padding: 15px;
+    background: rgba(51, 51, 51, .8);
+}
+
+hibar account myangram vision list {
+    position: relative;
+    width: 50px;
+    height: 130px;
+    margin: 0;
+    top: 0px;
+    padding: 0;
+    background-image: url(account.png);
+    background-repeat: no-repeat;
+    float: left;
+    transition: all .4s ease-in-out;
+}
+
+hibar account myangram vision list:hover {
+    top: -70px;
+}
+
+
+/*** Msger ***/
+
+hibar msger {
+    float: right;
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 45px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+hibar msger[type=reading] {
+    background: rgba(0, 0, 0, .8);
+}
+
+
+/*** AppMgr ***/
+
+hibar appstore {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background: rgba(51, 51, 51, .8);
+    color: #FFF;
+    font-size: 16px;
+    line-height: 45px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+hibar appstore:hover {
+    background: #333;
+}
+
+
+/*** Tasker ***/
+
+hibar wsmswitcher {
+    float: right;
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 45px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+hibar wsmswitcher:hover {
+    background: #333;
+}
+
+hibar wsmswitcher[type=wsmswitcher] {
+    background: rgba(0, 0, 0, .8);
+}
+
+
+/*** Timer ***/
+
+hibar timer {
+    float: right;
+    width: 120px;
+    height: 40px;
+    background: rgba(51, 51, 51, .3);
+    color: #FFF;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+hibar timer:hover {
+    background: #333;
+}
+
+hibar timer[type=kalendar] {
+    background: rgba(0, 0, 0, .8);
+}
+
+
+/*** searcher ***/
+
+hibar searcher {
+    float: right;
+    width: 40px;
+    height: 40px;
+    color: #FFF;
+    font-size: 16px;
+    line-height: 45px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+hibar searcher:hover {
+    background: #333;
+}
+
+hibar searcher[type=searcher] {
+    background: rgba(0, 0, 0, .8);
+}
+
+hibar searcher[type=searcher] icon:before {
+    content: '\e079';
+}

@@ -1,0 +1,334 @@
+@charset "utf-8";
+
+/*** Init ***/
+
+yangram widgets logger avatar {
+    display: block;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    left: 50%;
+    top: 50%;
+    margin-left: -80px;
+    margin-top: -80px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    background-color: #222;
+    background-image: url(icon.svg);
+    background-size: cover;
+    background-position: center;
+    overflow: visible;
+}
+
+yangram widgets logger avatar percent-vision {
+    display: none;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    line-height: 160px;
+    color: #0CF;
+    font-size: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .7);
+    font-family: 'LiquidCrystal';
+}
+
+yangram widgets logger avatar percent-vision el {
+    font-size: 72px;
+    font-family: 'DigitalSystem';
+    overflow: visible;
+}
+
+yangram widgets logger avatar circle-vision {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 154px;
+    height: 154px;
+    margin-left: 0px;
+    margin-top: 0px;
+    border-radius: 50%;
+    border: #0CF solid 3px;
+    transition: all ease .1s;
+    z-index: 10;
+}
+
+yangram widgets logger avatar status-vision {
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    top: 180px;
+    left: -120px;
+    text-align: center;
+    line-height: 30px;
+    color: #0CF;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+
+/**********************************************/
+
+yangram widgets logger form {
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    margin-left: -40px;
+    margin-top: -40px;
+    overflow: hidden;
+}
+
+yangram widgets logger form vision {
+    position: absolute;
+    display: block;
+    width: 168px;
+    height: 28px;
+    margin: 15px 5px;
+    padding: 5px;
+    overflow: hidden;
+    border: rgba(0, 204, 255, .1) solid 1px;
+    border-radius: 5px;
+    transition: all ease .4s;
+}
+
+yangram widgets logger form vision[name=username] {
+    top: 0px;
+    left: 60px;
+}
+
+yangram widgets logger form vision[name=password] {
+    top: 40px;
+    left: 60px;
+}
+
+yangram widgets logger form vision[name=pincode] {
+    top: 80px;
+    left: 60px;
+}
+
+yangram widgets logger form vision input {
+    width: 168px;
+    height: 28px;
+    background: #181818;
+    line-height: normal;
+    color: #FFF;
+}
+
+yangram widgets logger form vision input {
+    transition: all ease .4s;
+    text-align: center;
+    outline: none;
+    font: normal 13px "Microsoft YaHei", "Hiragino Sans";
+}
+
+yangram widgets logger form vision input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #181818 inset !important;
+    -webkit-box-shadow: 0 0 0 1000px #181818 inset !important;
+    -webkit-text-fill-color: #FFF !important;
+}
+
+yangram widgets logger form vision input::-webkit-input-placeholder {
+    color: #CCC;
+}
+
+yangram widgets logger form vision input.connecting::-webkit-input-placeholder {
+    color: #0CF;
+}
+
+
+/*********************************************************************************
+/*** Init:Hover ***/
+
+yangram widgets logger avatar:hover circle {
+    margin-left: -7px;
+    margin-top: -7px;
+    border: #0CF solid 10px;
+    opacity: .7;
+    box-shadow: 0 0 5px #000;
+}
+
+
+/*********************************************************************************
+/**Loaded ***/
+
+yangram widgets logger avatar[status=loaded] {
+    margin-top: -80px;
+    transition: none;
+}
+
+yangram widgets logger form[status=loaded] {
+    display: none;
+}
+
+
+/*********************************************************************************
+/*** Actived ***/
+
+yangram widgets logger avatar[status=actived] {
+    margin-top: -240px;
+    transition: margin-top ease .4s;
+}
+
+yangram widgets logger form[status=actived] {
+    width: 300px;
+    height: 210px;
+    margin-left: -150px;
+    margin-top: -60px;
+    transition: all ease .4s;
+}
+
+yangram widgets logger form[status=actived] vision[name=username] {
+    top: 0px;
+    left: 0px;
+}
+
+yangram widgets logger form[status=actived] vision[name=password] {
+    top: 70px;
+    left: 110px;
+}
+
+yangram widgets logger form[status=actived] vision[name=pincode] {
+    top: 140px;
+}
+
+yangram widgets logger form[status=actived] vision[name=pincode] pinshow {
+    display: none;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    left: 5px;
+    background-color: rgba(255, 255, 255, .3);
+    line-height: 30px;
+    color: #0CF;
+    text-align: center;
+}
+
+
+/*********************************************************************************
+/*** Actived:Hover ***/
+
+yangram widgets logger form[status=actived] vision:hover {
+    background: rgba(255, 255, 255, .8);
+}
+
+yangram widgets logger form[status=actived] vision:hover input {
+    color: #0CF;
+}
+
+yangram widgets logger form[status=actived] vision input:focus {
+    color: #0CF;
+}
+
+
+/*** Checked ***/
+
+yangram widgets logger avatar[status=checked] {
+    margin-top: -80px;
+    transition: margin-top ease .4s;
+}
+
+yangram widgets logger form[status=checked] {
+    width: 300px;
+    height: 210px;
+    margin-left: -150px;
+    margin-top: -60px;
+    opacity: 0;
+    transition: all ease .6s;
+}
+
+yangram widgets logger form[status=checked] vision[name=username] {
+    top: 0px;
+    left: 60px;
+}
+
+yangram widgets logger form[status=checked] vision[name=password] {
+    top: 40px;
+    left: 60px;
+}
+
+
+/**********************************************************************************/
+
+
+/*** Loading ***/
+
+yangram widgets logger avatar circle-vision[status=loading] {
+    cursor: default;
+    animation: loading_circle 1s infinite;
+}
+
+yangram widgets logger avatar percent-vision[status=loading] {
+    display: block;
+    animation: loading_progress 1s infinite;
+}
+
+yangram widgets logger avatar percent-vision[status=loading] el {
+    display: inline-block;
+}
+
+yangram widgets logger avatar status-vision[status=loading] {
+    display: block;
+    animation: loading_progress 1s infinite;
+}
+
+
+/**********************************************************************************/
+
+
+/*** Animation ***/
+
+@keyframes loading_circle {
+    0% {
+        width: 154px;
+        height: 154px;
+        margin-left: 0px;
+        margin-top: 0px;
+        border: #0CF solid 3px;
+        opacity: 1;
+        box-shadow: 0 0 5px #000;
+    }
+    25% {
+        width: 134px;
+        height: 134px;
+        margin-left: -17px;
+        margin-top: -17px;
+        border: #0FC solid 30px;
+        opacity: .5;
+        box-shadow: 0 0 15px #000;
+    }
+    100% {
+        width: 154px;
+        height: 154px;
+        margin-left: 0px;
+        margin-top: 0px;
+        border: #0CF solid 3px;
+        opacity: 1;
+        box-shadow: 0 0 5px #000;
+    }
+}
+
+@keyframes loading_progress {
+    0% {
+        color: #0CF;
+        opacity: .8;
+    }
+    25% {
+        color: #0FC;
+        opacity: 1;
+    }
+    100% {
+        color: #0CF;
+        opacity: .8;
+    }
+}

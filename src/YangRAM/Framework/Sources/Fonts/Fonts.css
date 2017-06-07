@@ -1,0 +1,67 @@
+/* Icons For UOI
+ * -------------------------- */
+
+@font-face {
+    font-family: "IconsForUOI";
+    src: url("IconsForUoi/IconsForUoi.woff") format("woff"), url("IconsForUoi/IconsForUoi.otf") format("truetype"), url("IconsForUoi/IconsForUoi.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Liquid Crystal
+ * -------------------------- */
+
+@font-face {
+    font-family: 'LiquidCrystal';
+    src: url('LiquidCrystal/LiquidCrystal-Normal.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Digital System
+ * -------------------------- */
+
+@font-face {
+    font-family: 'DigitalSystem';
+    src: url('DigitalSystem/DigitalSystem.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* The Vandor Spot
+ * -------------------------- */
+
+@font-face {
+    font-family: 'TheVandorSpot';
+    src: url('TheVandorSpot/TheVandorSpot.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Avant Garde
+ * -------------------------- */
+
+@font-face {
+    font-family: 'AvantGarde';
+    src: url('AvantGarde/AvantGarde.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvantGardeOblique';
+    src: url('AvantGarde/AvantGardeOblique.ttf');
+    font-weight: normal;
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: 'AvantGardeLight';
+    src: url('AvantGarde/AvantGardeEextraLight.otf');
+    font-weight: lighter;
+    font-style: normal;
+}

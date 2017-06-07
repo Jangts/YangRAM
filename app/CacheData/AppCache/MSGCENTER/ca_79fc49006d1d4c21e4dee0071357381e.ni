@@ -1,0 +1,1 @@
+{"APPID":"MSGCENTER","ID":"MSGCENTER","Name":"YangRAM Message System","Code":"Ms","Author":"YangRAM","DIR":"\/YangRAM\/Services\/MessageSystem\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

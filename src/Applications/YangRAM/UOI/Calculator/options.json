@@ -1,0 +1,7 @@
+{
+    "name": "Calculator",
+    "abbr": "St",
+    "description": "Calculator",
+    "keywords": ["Calculator"],
+    "namespace": "Calculator"
+}

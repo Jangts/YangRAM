@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> {{@includes/head.niml}}
+    <link href="{{$__AF_SRCDIR}}Interblocks/see/Slider/style.css" type="text/css" rel="stylesheet">
+    <link href="{{$__SRCDIR}}stylesheets/index.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    {{@includes/header.niml}}
+    <!-- main slider carousel -->
+    <section class="ic w1180 h580">
+        <div class="ic ma-x20 grid-12">
+            <div class="nm-8">
+                <div class="ic pa-l10">
+                    <div class="ic h30 lh-30"></div>
+                    <div class="ic x-w800 h510 slider" id="myslide">
+                        <div class="ic ov-hide stage x-w800 hfull">
+                            <div class="troupe">
+                                <section class="actor"><img src="{{$__SRCDIR}}images/1.jpg"></section>
+                                <section class="actor"><img src="{{$__SRCDIR}}images/2.jpg"></section>
+                                <section class="actor"><img src="{{$__SRCDIR}}images/1.jpg"></section>
+                                <section class="actor"><img src="{{$__SRCDIR}}images/2.jpg"></section>
+                            </div>
+                            <div class="panel bottom-remote al-right bars-rd orange">
+                                <span class="slider-anchor" data-actor-index="0"></span>
+                                <span class="slider-anchor" data-actor-index="1"></span>
+                                <span class="slider-anchor" data-actor-index="2"></span>
+                                <span class="slider-anchor" data-actor-index="3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nm-4">
+                <div class="ic pa-10 ma-t20 ma-l20">
+                    <div class="first-block">
+                        <div class="ic h600 today">
+                            <div class="title">今日热点</div>
+                            <div class="news" id="today_news">
+                                <div class="x-fcut"><a href="/life/mylove/2017/0113/49911701067747.shtml" onclick="_hmt.push(['_trackEvent','首页_推荐','click']);" target="_blank">小心！男人这10招让姑娘们防线失守</a></div>
+                                <div class="x-fcut"><a href="/luxury/ju/2017/0113/pic49913501175540.shtml" onclick="_hmt.push(['_trackEvent','首页_推荐','click']);" target="_blank">日日前男友宠女票 定情物是60万蒂芙尼项链</a></div>
+                                <div class="x-fcut"><a href="/club/photographer/2017/0113/pic49905601174726.shtml" onclick="_hmt.push(['_trackEvent','首页_推荐','click']);" target="_blank">麦当娜吊脚袜撩汉 阿曼达穿丝袜拍床照</a></div>
+                                <div class="x-fcut"><a href="/club/notes/2017/0113/49915301067777.shtml" onclick="_hmt.push(['_trackEvent','首页_推荐','click']);" target="_blank">维多利亚女皇政绩伟大？我只羡慕她的爱情</a></div>
+                                <div class="x-fcut"><a href="/star/starwear/2017/0113/49919701067837.shtml" onclick="_hmt.push(['_trackEvent','首页_推荐','click']);" target="_blank">又被王子文的吸粉利器极短发帅到了</a></div>
+                                <div class="x-fcut"><a href="/luxury/Article/2017/0112/4989790214649.shtml" onclick="_hmt.push(['_trackEvent','首页_推荐','click']);" target="_blank">男人该怎么穿搭应景又开运的新年红</a></div>
+                            </div>
+                            <div class="news_ad x-fcut"><a target="_blank" href="/" class="">FENDI 2017年早春系列</a></div>
+                            <div class="change">
+                                <a id="today_btn" class="button_btn" href="javascript:;" target="_self" onclick="_hmt.push(['_trackEvent','首页_推荐','click']);"><em></em><i>换一组看看</i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ic w1180">
+        <div class="ic ma-x20 grid-12">
+            <div class="nm-8">
+                <div class="ic grid-12">
+                    <div class="nm-5">
+                        <div class="default-second-left-item ic w310 h260 ma-l10 ma-b20"><img class="ic w310 h260" src="{{$__SRCDIR}}images/left1.jpg"><em class="x-fcut">蜜丝佛陀 转变之间</em></div>
+                        <div class="default-second-left-item ic w310 h260 ma-l10 ma-b20"><img class="ic w310 h260" src="{{$__SRCDIR}}images/left2.jpg"><em class="x-fcut">蜜丝佛陀 转变之间</em></div>
+                        <div class="ic w310 h260 ma-l10"><img class="ic w310 h260" src="{{$__SRCDIR}}images/left3.jpg"></div>
+                    </div>
+                    <div class="nm-7">
+                        <div class="ic pl-right w460 h540 ma-b20 ft-fff">
+                            <figure><img class="ic w460 h540" src="{{$__SRCDIR}}images/news.jpg"></figure>
+                            <div class="info ic absolute pl-left ma-t50 ma-l30">
+                                <a href="/fashion/popinfo/2017/0301/50211601071507.shtml" class="anomalousDiv" onclick="_hmt.push(['_trackEvent','首屏_要闻区','click']);">
+                                    <!--whatnew图标-->
+                                    <div class="title"><img src="{{$__SRCDIR}}images/whatsnew.png" alt=""></div>
+                                    <h2 class="default-news-title">时装周不聊衣服还有啥？get这些亮点话题才叫涨B格！</h2>
+                                </a>
+                                <ul class="ic ft-16 ft-e6">
+                                    <li class="default-news-list-item"><a href="/luxury/toptalk/2017/0301/pic50205801196205.shtml" class="white" onclick="_hmt.push(['_trackEvent','首屏_要闻区','click']);">风衣反穿腰封外戴 时装周不正经</a></li>
+                                    <li class="default-news-list-item"><a href="/star/life/2017/0228/pic50201301195566.shtml" class="white" onclick="_hmt.push(['_trackEvent','首屏_要闻区','click']);">辣妈李小璐变叛逆少还撩人</a></li>
+                                    <li class="default-news-list-item"><a href="/fashion/roadshow/2017/0228/pic50199501195547.shtml" class="white" onclick="_hmt.push(['_trackEvent','首屏_要闻区','click']);">早春正是买包好时节！</a></li>
+                                    <li class="default-news-list-item"><a href="/life/foods/2017/0301/pic50209801196602.shtml" class="white" onclick="_hmt.push(['_trackEvent','首屏_要闻区','click']);">小贝为七公主准备的早餐是...</a></li>
+                                    <li class="default-news-list-item"><a href="http://www.yokamen.cn/luxury/style/2017/0301/5020340215082.shtml" class="white" onclick="_hmt.push(['_trackEvent','首屏_要闻区','click']);">时尚编辑私藏的5组早春搭配</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ic pl-right w460 grid-12">
+                            <div class="nm-6">
+                                <div class="default-second-left-item ic h260"><img class="ic x-w220 h260" src="{{$__SRCDIR}}images/left4.jpg" style=""><em class="ic x-w220 x-fcut">蜜丝佛陀 转变之间</em></div>
+                            </div>
+                            <div class="nm-6">
+                                <div class="default-second-left-item ic h260"><img class="ic x-w220 h260 ma-l10" src="{{$__SRCDIR}}images/left5.jpg" style=""><em class="ic x-w220 ma-l10 x-fcut">蜜丝佛陀 转变之间</em></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nm-4">
+                <div class="ic w360 ma-r10 ma-l30 bg-f6">
+                    <div class="ic x-h380 pa-v20">
+                        <figure class="common-right-image"><img src="{{$__SRCDIR}}images/right1.jpg"></figure>
+                        <ul class="common-right-list">
+                            <li><a target="_blank" href="http://dolphin.yoka.com/c?z=yoka&amp;la=0&amp;si=7&amp;cg=7&amp;c=194&amp;ci=3&amp;or=11&amp;l=99&amp;bg=99&amp;b=112&amp;u=/brand/news/2017/0221/50137901070684.shtml" class="">斐泉亮相格莱美典礼</a></li>
+                            <li><a target="_blank" href="http://dolphin.yoka.com/c?z=yoka&amp;la=0&amp;si=7&amp;cg=7&amp;c=195&amp;ci=3&amp;or=11&amp;l=98&amp;bg=98&amp;b=113&amp;u=/brand/news/2017/0224/50172401071132.shtml" class="">粉蓝时尚演绎自然美</a></li>
+                            <li><a target="_blank" href="http://dolphin.yoka.com/c?z=yoka&amp;la=0&amp;si=7&amp;cg=7&amp;c=196&amp;ci=10&amp;or=203&amp;l=1949&amp;bg=1949&amp;b=1910&amp;u=http://clickc.admaster.com.cn/c/a82452,b1569986,c266,i0,m101,8a1,8b2,h"
+                                    class="">Fresh水润花瓣肌</a></li>
+                            <li><a target="_blank" href="http://dolphin.yoka.com/c?z=yoka&amp;la=0&amp;si=7&amp;cg=7&amp;c=197&amp;ci=3&amp;or=11&amp;l=96&amp;bg=96&amp;b=115&amp;u=/brand/news/2017/0222/50147501070800.shtml" class="">让TA来还你静静吧！</a></li>
+                            <li><a target="_blank" href="http://dolphin.yoka.com/c?z=yoka&amp;la=0&amp;si=7&amp;cg=7&amp;c=198&amp;ci=99&amp;or=190&amp;l=1805&amp;bg=1805&amp;b=1775&amp;u=https://www.underarmour.cn/Activity/HappyWomensDay2017?utm_channel=display&amp;utm_source=yoka&amp;utm_campaign=womensday&amp;utm_adgroup=hp&amp;utm_content=rightword"
+                                    class="">安德玛X 野兽派礼遇</a></li>
+                            <li><a target="_blank" href="http://dolphin.yoka.com/c?z=yoka&amp;la=0&amp;si=7&amp;cg=7&amp;c=199&amp;ci=3&amp;or=11&amp;l=94&amp;bg=94&amp;b=117&amp;u=/brand/news/2017/0224/50172901071134.shtml" class="">邀你感受绿色时尚！</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="mytab" class="ic w360 x-h380 ma-10 ma-t20 ma-l30 bg-f6 tabs" data-trigger-method="mouseover">
+                    <div class="tab-tags ic ov-visi">
+                        <span class="tab-anchor tab-tag actived ic ft-16 ov-visi" data-tab-index="0">热门试用<i></i></span><span class="tab-anchor tab-tag ic ft-16 ov-visi" data-tab-index="1">新品评测<i></i></span>
+                    </div>
+                    <div class="tab-views">
+                        <div class="tab-section tab-view actived">
+                            <div class="default-tab-item">
+                                <a href="http://try.yoka.com/3832/" target="_blank">
+                                    <div class="pic"><img src="http://thumb1.yokacdn.com/p?w=200&amp;h=200&amp;wt=0&amp;f=http://sp1.yokacdn.com/photos/try/3832/270377.jpg" alt=""></div>
+                                    <div class="total f18"><span>TAG</span><span>TAG</span></div>
+                                    <div class="title ft-16 x-fcut">法国娇兰帝皇蜂姿丰盈修复眼霜</div>
+                                    <div class="desc">15ml / 10份</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tab-section tab-view">
+                            <div class="default-tab-item">
+                                <a href="http://hzp.yoka.com/pingce/facepc/2017/0301/502031035653.shtml" target="_blank">
+                                    <div class="pic"><img src="http://thumb1.yokacdn.com/p?w=200&amp;h=200&amp;wt=0&amp;f=http://p7.yokacdn.com/pic/YOKA_HZP/2017-03-02/U10044P42TS1488424971_79999.jpg" alt="改善N种肌肤难题 Whoo后秘贴家族高机能面霜"></div>
+                                    <div class="total f18"><span>TAG</span><span>TAG</span></div>
+                                    <div class="title ft-16 x-fcut">改善N种肌肤难题 Whoo后秘贴家族高机能面霜</div>
+                                    <div class="desc"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ic w1180">
+        <div class="ic ma-v30 al-center">
+            <div class="ic lh-72 ft-36 ft-lighter"><a class="ic ma-r20" href="http://fan.yoka.com/">导购</a><a href="http://at.yoka.com/">美物</a></div>
+        </div>
+    </section>
+    <section class="fourth-screen ic w1180 h600">
+        <div class="ic pl-left x-w420">
+            <div class="fourth-videos-item ic x-w420 h600">
+                <a href="/star/hotshot/2017/0228/50195301071332.shtml" onclick="_hmt.push(['_trackEvent','导购美物_瀑布流','click']);">
+                    <img _src="http://p2.yokacdn.com/pic/YOKA/2017-02-28/U15P1TS1488261087_24294.jpg" alt="章子怡新宠" src="http://p2.yokacdn.com/pic/YOKA/2017-02-28/U15P1TS1488261087_24294.jpg">
+                    <dl>
+                        <dt>章子怡新宠</dt>
+                        <dd>TOD’S 全新Sella地球包</dd>
+                    </dl>
+                </a>
+            </div>
+        </div>
+        <div class="ic pl-right w760">
+            <ul class="ic h-left">
+                <li class="ic w360 ma-l20 ma-b20">
+                    <div class="fourth-videos-item ic w360 h290">
+                        <a href="http://www.yokamen.cn/auto/cheku/2017/0227/pic5018030441956.shtml" onclick="_hmt.push(['_trackEvent','导购美物_瀑布流','click']);">
+                            <img _src="http://p4.yokacdn.com/pic/YOKA/2017-03-02/U10059P1TS1488417359_70256.jpg" alt="颜值实力齐在线" src="http://p4.yokacdn.com/pic/YOKA/2017-03-02/U10059P1TS1488417359_70256.jpg">
+                            <dl>
+                                <dt>颜值实力齐在线</dt>
+                                <dd>第五代路虎发现</dd>
+                            </dl>
+                        </a>
+                    </div>
+                </li>
+                <li class="ic w360 ma-l20 ma-b20">
+                    <div class="fourth-videos-item ic w360 h290">
+                        <a href="/video/star/vplay/9836.shtml" onclick="_hmt.push(['_trackEvent','导购美物_瀑布流','click']);">
+                            <img _src="http://p5.yokacdn.com/pic/include/10/2015index/201503/U389P1T10D48F9441DT20160822093402.jpg" alt="泰勒-斯威夫特背带裙时尚减龄" src="http://p5.yokacdn.com/pic/include/10/2015index/201503/U389P1T10D48F9441DT20160822093402.jpg">
+                            <dl>
+                                <dt>泰勒-斯威夫特背带裙时尚减龄</dt>
+                                <dd>刺绣鞋+斜跨包俏皮扮嫩</dd>
+                            </dl>
+                            <span class="video"></span>
+                        </a>
+                    </div>
+                </li>
+                <li class="ic ma-l20 ma-b20 x-w170">
+                    <div class="fourth-videos-item ic w170 h290">
+                        <a href="/luxury/ju/2017/0228/50194201071319.shtml" onclick="_hmt.push(['_trackEvent','导购美物_瀑布流','click']);">
+                            <img _src="http://p3.yokacdn.com/pic/YOKA/2017-03-01/U464P1TS1488332190_78349.jpg" alt="Limelight戒指" src="http://p3.yokacdn.com/pic/YOKA/2017-03-01/U464P1TS1488332190_78349.jpg">
+                            <dl>
+                                <dt>Limelight戒指</dt>
+                                <dd>伯爵</dd>
+                            </dl>
+                        </a>
+                    </div>
+                </li>
+                <li class="ic ma-l20 ma-b20 x-w170">
+                    <div class="fourth-videos-item ic x-w170 h290">
+                        <a href="http://www.yokamen.cn/luxury/watch/2017/0220/5013470214978.shtml" onclick="_hmt.push(['_trackEvent','导购美物_瀑布流','click']);">
+                            <img _src="http://p10.yokacdn.com/pic/YOKA/2017-02-22/U485P1TS1487734934_97064.jpg" alt="欧米茄" src="http://p10.yokacdn.com/pic/YOKA/2017-02-22/U485P1TS1487734934_97064.jpg">
+                            <dl>
+                                <dt>欧米茄</dt>
+                                <dd>全新碟飞50周年纪念腕表</dd>
+                            </dl>
+                        </a>
+                    </div>
+                </li>
+                <li class="ic w360 ma-l20 ma-b20">
+                    <div class="fourth-videos-item ic w360 h290">
+                        <a href="/video/star/vplay/9873.shtml" onclick="_hmt.push(['_trackEvent','导购美物_瀑布流','click']);">
+                            <img _src="http://p5.yokacdn.com/pic/include/10/2015index/201503/U389P1T10D49F9442DT20161008092422.jpg" alt="巴黎2017春夏时装周" src="http://p5.yokacdn.com/pic/include/10/2015index/201503/U389P1T10D49F9442DT20161008092422.jpg">
+                            <dl>
+                                <dt>巴黎2017春夏时装周</dt>
+                                <dd>Chanel未来科技感十足</dd>
+                            </dl>
+                            <span class="video"></span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    {{@includes/footer.niml}}
+    <script>
+        iBlock([
+            "$_/dom/Elements/",
+            "$_/see/Slider/fade.opts",
+            "$_/see/Slider/seamless.opts",
+            "$_/see/Tabs/"
+        ], function(pandora, global) {
+            var _ = pandora,
+                declare = pandora.declareClass,
+                cache = pandora.lockerArea,
+                document = global.document,
+                console = global.console;
+
+            var slider = new _.see.Slider('myslide', 'fade', {
+                speed: 6000,
+                duration: 1200,
+                kbCtrlAble: true
+            });
+
+            var tab = new _.see.Tabs('mytab', {
+                trigger: 'mouseover',
+                keyClass: 'actived'
+            }).play();
+        }, true);
+    </script>
+</body>
+
+</html>

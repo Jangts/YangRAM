@@ -1,0 +1,1 @@
+{"APPID":"1234","ID":"1234","Name":"Microivan FastGPS","Code":"Fp","Author":"MicroIvan","DIR":"\/Applications\/MicroIvan\/FastGPS\/","DBTPrefix":"ni_app_a1234_","CONN":"0"}

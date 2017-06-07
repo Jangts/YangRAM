@@ -1,0 +1,32 @@
+<view title="{{$PAGETITLE}}" lang="{{$LANGUAGE}}">
+    <top-vision bgcolor="light">
+        <vision class="logotype"></vision>
+        <vision class="searcher">
+            <input value="" onfocus="this.style.backgroundColor='#FFF'" onblur="this.style.backgroundColor='#E6E6E6',this.value=''" placeholder="{{$PLACEHOLDER}}" />
+        </vision>
+        <vision class="click-item check-capacity">
+            <click href="3::capacity/">Capacity</click>
+        </vision>
+    </top-vision>
+    <vision bgcolor="white">
+        <left y-scrollbar="true" bgcolor="silvery">
+            <list>
+                <for $item of $SIDEBAR>
+                    <php>
+                        $attrs = ''; foreach($item['attrs'] as $attr=>$val){ $attrs.= ' '.$attr.'="'.$val.'"'; }
+                    </php>
+                    <item{{$attrs}}>{{$item[`text`]}}</item>
+                </for>
+            </list>
+        </left>
+        <main posi="right" bgcolor="white">
+            <vision class="main-topbar">
+                {{$TOPVISION}}
+            </vision>
+            <vision y-scrollbar="true" class="main-content" x-type="tile" src="{{$CONTENTSRC}}">
+                {{$CONTENT}}
+            </vision>
+        </main>
+    </vision>
+    <bottom-vision bgcolor="dark" hidden=""></bottom-vision>
+</view>

@@ -1,0 +1,1 @@
+{"APPID":"WORKERS","ID":"WORKERS","Name":"YangRAM Asynchrony Task Worker System","Code":"Tw","Author":"YangRAM","DIR":"\/YangRAM\/Services\/TaskSystem\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

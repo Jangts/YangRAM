@@ -1,0 +1,6 @@
+<left bgcolor="light">
+    {{$PAGE_SIDE}}
+</left>
+<main posi="right" x-query-string="{{$REQUEST.QS}}" style="min-height: 650px;">
+    {{$PAGE_LIST}} {{$PAGE_PAGE}}
+</main>

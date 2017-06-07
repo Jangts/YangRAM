@@ -1,0 +1,19 @@
+{
+    "name": "File System",
+    "namespace": "Files",
+    "manifest": {
+        "ContentProvider": {
+            "classname": "Transfer",
+            "filename": "Transfer"
+        },
+        "ResourceSetter": {
+            "classname": "Transfer",
+            "filename": "Transfer"
+        }
+    },
+    "icons": {
+        "logo": {
+            "80": "icon.png"
+        }
+    }
+}

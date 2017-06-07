@@ -1,0 +1,36 @@
+{
+    "name": "Settings",
+    "suitspace": null,
+    "namespace": "Settings",
+    "metadata": {
+        "version": "",
+        "keywords": ["Settings", "System Settings", "Settings", "System Setting", "Setting"],
+        "description": "Settings",
+        "homepage": null,
+        "issues": null
+    },
+    "author": {
+        "author_id": 0,
+        "author_name": "",
+        "homepage": null,
+        "developers": []
+    },
+    "manifest": {
+        "ContentProvider": {
+            "classname": "ResHolders\\ContentProvider",
+            "filename": "ResHolders/ContentProvider"
+        },
+        "ResourceSetter": {
+            "classname": "ResHolders\\ResourceSetter",
+            "filename": "ResHolders\/ResourceSetter"
+        }
+    },
+    "icons": {
+        "ect.": {
+            "normal": "icons\/normal.png",
+            "update": "icons\/update.png"
+        }
+    },
+    "requires": {},
+    "dependents": {}
+}

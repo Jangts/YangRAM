@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    {{@includes/head.niml}}
+    <link href="{{$__AF_SRCDIR}}Interblocks/see/Slider/style.css" type="text/css" rel="stylesheet">
+    <link href="{{$__SRCDIR}}stylesheets/list.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="ic bg-light">
+    {{@includes/header.niml}}
+    <!-- main slider carousel -->
+    <section class="videos-slider ic c1920 h420">
+        <div class="ic container h420">
+            <div class="ic slider seamless wfull hfull" data-use-slider-type="seamless" data-switch-action-type="click" id="myslide">
+                <div class="ic ov-hide stage wfull hfull">
+                    <div class="troupe" style="width: 800%; height: 100%; top: 0px; left: -500%;">
+                        <section class="actor" data-actor-index="4" style="width: 12.5%; height: 100%;"><img src="{{$__SRCDIR}}images/index-slider-4.jpg"></section>
+                        <section class="actor" data-actor-index="0" style="width: 12.5%; height: 100%;"><img src="{{$__SRCDIR}}images/index-slider-0.jpg"></section>
+                        <section class="actor" data-actor-index="1" style="width: 12.5%; height: 100%;"><img src="{{$__SRCDIR}}images/index-slider-1.jpg"></section>
+                        <section class="actor" data-actor-index="2" style="width: 12.5%; height: 100%;"><img src="{{$__SRCDIR}}images/index-slider-2.jpg"></section>
+                        <section class="actor" data-actor-index="3" style="width: 12.5%; height: 100%;"><img src="{{$__SRCDIR}}images/index-slider-3.jpg"></section>
+                        <section class="actor" data-actor-index="4" style="width: 12.5%; height: 100%;"><img src="{{$__SRCDIR}}images/index-slider-4.jpg"></section>
+                        <section class="actor" data-actor-index="0" style="width: 12.5%; height: 100%;"><img src="{{$__SRCDIR}}images/index-slider-0.jpg"></section>
+                    </div>
+                </div>
+                <div class="cutter auto-hide big-lt goto-prev"></div>
+                <div class="cutter auto-hide big-gt goto-next"></div>
+                <div class="panel bottom-remote al-center lines">
+                    <span class="slider-anchor" data-actor-index="0"></span>
+                    <span class="slider-anchor" data-actor-index="1"></span>
+                    <span class="slider-anchor" data-actor-index="2"></span>
+                    <span class="slider-anchor" data-actor-index="3"></span>
+                    <span class="slider-anchor active" data-actor-index="4"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ic section">
+        <div class="ic blank-30"></div>
+        <div class="ic w1200 bg-light ma-t20 grid-12">
+            <for $item of $___LIST>
+                <div class="nm-3 common-list-item videos">
+                    <div class="ic x-w280 ma-v15 bg-fff">
+                        <div class="img">
+                            <a href="{{$REQUEST.DIR}}s/videos/article/{{***$item.ID***}}/" target="_blank"><img src="{{$item.THUMB}}" alt="{{$item.TITLE}}"></a>
+                        </div>
+                        <div class="tit"><a href="{{$REQUEST.DIR}}s/videos/article/{{***$item.ID***}}/" target="_blank">{{$item.TITLE}}</a></div>
+                    </div>
+                </div>
+            </for>
+        </div>
+        <div class="load-more" id="loadMore">加载更多</div>
+        <div class="ic blank-50"></div>
+    </section>
+    {{@includes/footer.niml}}
+    <script>
+        iBlock([
+            '$_/dom/Elements/',
+            '$_/see/Slider/seamless.opts'
+        ], function(pandora, global, undefined) {
+            var _ = pandora,
+                declare = pandora.declareClass,
+                cache = pandora.lockerArea,
+                document = global.document,
+                console = global.console;
+
+            var slider = new _.see.Slider('myslide', 'seamless', {
+                speed: 6000,
+                duration: 1200,
+                kbCtrlAble: true
+            });
+        }, true);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{$__Title}}</title>
+    <meta content="{{$__Desc}}" name="description" />
+    <meta content="{{$__KeyWords}}" name="keywords" />
+
+</head>
+
+<body>
+    <ul class=" " id="news-list">
+        <for $item of $___LIST>
+            <li class="ic ma-b20">
+                <p>
+                    <a class="title ic grid-21 " href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
+                        <str value="$item.TITLE" length="23" />
+                    </a>
+                </p>
+                <p><span><time value="$item.PUBTIME " format="Y-m-d" /></span></p>
+                <p>{{$item.dev_abstract}}.....</p>
+                <p><a class="title ic grid-21 " href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">See More&gt;&gt;</a>
+                    <p>
+            </li>
+        </for>
+    </ul>
+    <ul class="page-list page-list-side">
+        <def name="$pages" onload="Library.ect.Pager.getPageListDataByCount" args="9" />
+        <li class="pages-list-item "><a href="'?page={{$pages[`f`]}}'">First</a></li>
+        <if $pages[`f`] lt $___Cpage>
+            <li class="pages-list-item "><a href="'?page={{$pages[`p`]}}'">Prev</a></li>
+        </if>
+        {{$length =$pages[`length`]}}
+        <for $index in [0, $length)>
+            <if $pages[$index] eq $___Cpage>
+                <li class="pages-list-item curr "><a href="'?page={{$pages[$index]}}'">{{$pages[$index]}}</a></li>
+                <else />
+                <li class="pages-list-item "><a href="'?page={{$pages[$index]}}'">{{$pages[$index]}}</a></li>
+            </if>
+        </for>
+        <if $pages[`l`] gt $___Cpage>
+            <li class="pages-list-item "><a href="'?page={{$pages[`n`]}}'">Next</a></li>
+        </if>
+        <li class="pages-list-item "><a href="'?page={{$pages[`l`]}}'">Last</a></li>
+    </ul>
+    </div>
+</body>
+
+</html>

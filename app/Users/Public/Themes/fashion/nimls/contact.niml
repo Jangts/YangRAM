@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> {{@includes/head.niml}}
+    <style>
+        html {
+            width: 100%;
+            min-width: 1000px;
+        }
+        
+        .map {
+            width: 100%;
+            height: 240px;
+            margin: 20px auto;
+        }
+        
+        #owner-map {
+            width: 100%;
+            height: 240px;
+        }
+        
+        #owner-map #platform div {
+            overflow: visible;
+        }
+        
+        #owner-map #platform span {
+            overflow: visible;
+        }
+        
+        #owner-map img {
+            max-width: none;
+        }
+        
+        #owner-map .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+        
+        #owner-map .iw_poi_content {
+            font: 12px arial, sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+        
+        .right-main-content ul {
+            display: block;
+            padding: 50px 80px;
+            line-height: 50px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    {{@includes/header.niml}}
+    <!-- main slider carousel -->
+    <section class="ic section bg-light">
+        <div class="ic blank-30"></div>
+        <div class="ic w1200 bg-white grid-21" style=" box-shadow: 0px 0px 5px #CCC">
+            <div class="nm-5">
+                <div>
+                    <div class="nav-left">栏目导航</div>
+                    <ul class="nav-left-list">
+                        <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}p/contact/">联系地址</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nm-half">&nbsp;</div>
+            <div class="nm-15">
+                <div class="ic blank-30"></div>
+                <header class="ft-18 lh-21 ft-modena">
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}p/contact/">联系我们</a>/
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}p/contact/">联系地址</a>
+                </header>
+                <div class="ic blank-10"></div>
+                <article class="news-content">
+                    <div class="map">
+                        <div id="owner-map" data-icon-url="{{$__SRCDIR}}images/mapicon.png"></div>
+                    </div>
+                    <div class="right-main-content">
+                        <ul>
+                            <li>地址：湖北省武汉市阳逻经济开发区汉施路特1号武汉生物工程学院-校友之家</li>
+                            <li>电话：027-89649868</li>
+                            <li>网址：xyh.whsw.cn</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="ic blank-50"></div>
+    </section>
+    {{@includes/footer.niml}}
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&amp;v=1.1&amp;services=true"></script>
+    <script type="text/javascript" src="{{$__SRCDIR}}scripts/contact.js"></script>
+</body>
+
+</html>

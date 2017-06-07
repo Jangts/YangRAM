@@ -1,0 +1,8 @@
+{
+    "name": "Tangram Collector",
+    "abbr": "Co",
+    "description": "Tangram Collector",
+    "keywords": ["Tangram Collector", "Collections Manage", "Table Manage", "Sheets Manage", "Charts Manage", "Progress Chart", "Project Schedule", "Project Schedule", "Survey", "Statistics"],
+    "suitspace": "Studio",
+    "namespace": "Clr"
+}

@@ -1,0 +1,31 @@
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{$__Title}}</title>
+    <meta content="{{$__Desc}}" name="description" />
+    <meta content="{{$__KeyWords}}" name="keywords" />
+
+</head>
+
+<body>
+    <article>
+        <header>{{$___TITLE}}</header>
+        <p><span>Hits: {{$___KEY_COUNT}}<span></p>
+        <decode value="$___CONTENT" />
+     </article>
+     <div>
+     <p>Prev:
+        <if $___Earlier_InSameCategory>
+            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$___Earlier_InSameCategory.ID***}}/"><str value="$___Earlier_InSameCategory.TITLE" length="19" /></a>
+        <else /> None </if>
+    </p>
+    <p>Next:
+        <if $___Later_InSameCategory>
+            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$___Later_InSameCategory.ID***}}/"><str value="$___Later_InSameCategory.TITLE" length="19" /></a>
+        <else /> None </if>
+    </p>
+</body>
+</html>

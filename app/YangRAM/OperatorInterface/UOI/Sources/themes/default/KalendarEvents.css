@@ -1,0 +1,358 @@
+@charset "utf-8";
+
+/*** kalendar dates ***/
+
+kalendar dates {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background: rgba(0, 0, 0, .9);
+    top: -500px;
+    top: 40px;
+    right: 0;
+    overflow: hidden;
+}
+
+kalendar dates {
+    overflow: hidden;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    z-index: 100;
+}
+
+kalendar dates {
+    box-shadow: -2px 2px 6px rgba(0, 0, 0, .4);
+    border-left: solid rgba(255, 255, 255, .1) 1px;
+    border-bottom: solid rgba(255, 255, 255, .1) 1px;
+    opacity: .95;
+}
+
+
+/**********************************************/
+
+kalendar dates [name=month] {
+    width: 360px;
+    height: 80px;
+    background: #222;
+    margin: 20px 20px 0;
+}
+
+kalendar dates [name=month] el {
+    height: 80px;
+    text-align: center;
+    color: #999;
+    font-size: 24px;
+    line-height: 80px;
+    cursor: pointer;
+    transition: all ease .4s;
+}
+
+kalendar dates [name=month] [name=prev-month] {
+    width: 55px;
+    float: left;
+    font-family: Consola;
+    font-size: 32px;
+}
+
+kalendar dates [name=month] [name=curr-month] {
+    width: 250px;
+    float: left;
+}
+
+kalendar dates [name=month] [name=next-month] {
+    width: 55px;
+    float: right;
+    font-family: Consola;
+    font-size: 32px;
+}
+
+kalendar dates [name=month] el:hover {
+    background: #181818;
+}
+
+kalendar dates [name=week] {
+    width: 350px;
+    height: 28px;
+    margin: 1px 20px;
+    padding: 5px;
+    background: #222;
+}
+
+kalendar dates [name=week] list {
+    width: 46px;
+    height: 24px;
+    margin: 2px;
+    font-size: 15px;
+    color: #999;
+    line-height: 24px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+kalendar dates [name=week] list:hover {
+    background: #191919;
+}
+
+kalendar dates [name=week] list[today] {
+    background: #191919;
+}
+
+kalendar dates [name=days] {
+    width: 350px;
+    height: 300px;
+    background: #222;
+    margin: 0 20px;
+    padding: 5px;
+}
+
+kalendar dates [name=days] list {
+    width: 48px;
+    height: 48px;
+    margin: 1px;
+    font-size: 15px;
+    color: #999;
+    line-height: 48px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    background: #181818;
+}
+
+kalendar dates [name=days] list[events] {
+    background: #522;
+}
+
+kalendar dates [name=days] list[today] {
+    background: #663300;
+}
+
+kalendar dates [name=days] list[actived] {
+    margin: 0;
+    border: #ab3f45 1px solid;
+}
+
+kalendar dates [name=days] list:hover {
+    margin: 0;
+    border: #ab3f45 1px solid;
+}
+
+kalendar dates [name=days] list[disabled] {
+    color: #666;
+    background: #282828;
+}
+
+kalendar dates [name=days] list[disabled]:hover {
+    border: #282828 1px solid;
+}
+
+kalendar dates events[owner] {
+    display: none;
+}
+
+kalendar dates events * {
+    display: none;
+}
+
+kalendar dates [name=setting] {
+    width: 360px;
+    height: 29px;
+    margin-top: 1px;
+    margin: 1px 20px 20px;
+    background: #161616;
+    text-align: center;
+    line-height: 29px;
+    color: #666;
+    cursor: pointer;
+}
+
+
+/**********************************************/
+
+
+/*** kalendar Events ***/
+
+kalendar content {
+    display: block;
+    width: 800px;
+    height: auto;
+    top: -1000px;
+    left: 50%;
+    margin-top: 160px;
+    margin-bottom: 60px;
+    margin-left: -400px;
+    border-radius: 2px;
+}
+
+kalendar content {
+    background-color: #FFF;
+    border: solid rgba(0, 204, 255, .2) 1px;
+    z-index: 0;
+    opacity: 0;
+}
+
+kalendar content {
+    transform: scale( .8, .8);
+}
+
+kalendar content[selected] {
+    z-index: 200;
+}
+
+kalendar content * {
+    display: block;
+}
+
+kalendar[type=edit] content {
+    opacity: 1;
+}
+
+kalendar[type=edit] content {
+    transform: scale( 1, 1);
+}
+
+kalendar[type=edit] content {
+    transition: transform ease .4s, opacity ease .4s;
+}
+
+kalendar content:hover scrollbar {
+    opacity: .2;
+}
+
+
+/**********************************************/
+
+kalendar content switch {
+    width: 100%;
+    height: 30px;
+    margin: 50px 0px 10px;
+    text-align: center;
+}
+
+kalendar content switch item {
+    display: inline-block;
+    width: 22%;
+    height: 28px;
+    border: #0CF solid 1px;
+    text-align: center;
+    color: #0CF;
+    line-height: 28px;
+    border-left: none;
+    cursor: pointer;
+}
+
+kalendar content switch item[state] {
+    display: inline-block;
+}
+
+kalendar content switch item:first-child {
+    border-left: #0CF solid 1px;
+    border-radius: 2px 0px 0px 2px;
+}
+
+kalendar content switch item:last-child {
+    border-radius: 0px 2px 2px 0px;
+}
+
+kalendar content switch item[state=on] {
+    background-color: #0CF;
+    color: #FFF;
+}
+
+
+/**********************************************/
+
+kalendar content sections {
+    width: 88%;
+    border: #0CF solid 1px;
+    border-radius: 2px;
+    padding: 2px 2px 1px 1px;
+    margin: 10px auto 50px;
+}
+
+kalendar content sections vision {
+    display: none;
+    width: 100%;
+}
+
+kalendar content sections vision el {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    text-align: center;
+}
+
+kalendar content sections vision el.noevent {
+    height: 80px;
+    line-height: 80px;
+}
+
+kalendar content sections vision[state=off] {
+    display: none;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+kalendar content sections vision[state=on] {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+kalendar content sections vision event {
+    display: block;
+    width: 98%;
+    margin: 10px 1%;
+    border-bottom: solid #00CCFF 1px;
+    text-align: center;
+}
+
+kalendar content sections vision event:last-child {
+    border-bottom: none;
+}
+
+kalendar content sections vision event>* {
+    display: block;
+    width: 98%;
+    padding: 3px 1% 2px;
+    color: #09F;
+    text-align: left;
+    border-bottom: dashed #00CCFF 1px;
+    margin-bottom: 5px;
+}
+
+kalendar content sections vision event>begin {
+    float: left;
+    width: 47%;
+}
+
+kalendar content sections vision event>end {
+    float: right;
+    width: 47%;
+}
+
+kalendar content sections vision event>remark {
+    height: auto;
+    min-height: 50px;
+    border-bottom: none;
+}
+
+kalendar content sections vision event>*:before {
+    display: inline-block;
+    width: 100px;
+    color: #666;
+}
+
+kalendar content sections vision event>*[contentEditable=true] {
+    border-bottom: solid #CCC 1px;
+    outline: none;
+    background-color: #E9E9E9;
+}
+
+kalendar content sections vision event>*[contentEditable=true]:before {
+    position: absolute;
+    opacity: .1;
+}

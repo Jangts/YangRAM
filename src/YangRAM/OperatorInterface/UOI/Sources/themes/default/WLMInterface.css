@@ -1,0 +1,288 @@
+@charset "utf-8";
+
+/*** WORK MODE ***/
+
+workspace windows application {
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+
+/**********************************************/
+
+workspace windows application mask,
+workspace[viewstatus=beforelist] windows application::-webkit-scrollbar,
+workspace[viewstatus=listmode] windows application::-webkit-scrollbar,
+workspace[viewstatus=afterlist] windows application::-webkit-scrollbar,
+workspace[viewstatus=beforelist] windows application:hover::-webkit-scrollbar,
+workspace[viewstatus=listmode] windows application:hover::-webkit-scrollbar,
+workspace[viewstatus=afterlist] windows application:hover::-webkit-scrollbar,
+workspace[viewstatus=beforelist] windows application#APP-I4PLAZA wsbtns,
+workspace[viewstatus=listmode] windows application#APP-I4PLAZA wsbtns,
+workspace[viewstatus=afterlist] windows application#APP-I4PLAZA wsbtns,
+workspace windows application info * {
+    display: none !important;
+}
+
+
+/**********************************************/
+
+workspace windows application oiml {
+    transition: width ease .4s, min-width ease .4s, padding-left ease .4s;
+}
+
+workspace windows application oiml view {
+    transition: max-width ease .3s, margin ease .3s;
+}
+
+
+/**********************************************/
+
+
+/*** LIST MODE ***/
+
+workspace[viewstatus=beforelist] windows,
+workspace[viewstatus=listmode] windows,
+workspace[viewstatus=afterlist] windows,
+workspace[viewstatus=beforework] windows {
+    background: #222 url(texture.svg) repeat !important;
+}
+
+workspace[viewstatus=beforelist] windows application oiml,
+workspace[viewstatus=listmode] windows application oiml,
+workspace[viewstatus=afterlist] windows application oiml,
+workspace[viewstatus=beforework] windows application oiml {
+    transition: width ease 0s, min-width ease 0s, padding-left ease 0s;
+}
+
+workspace[viewstatus=beforelist] windows application oiml view,
+workspace[viewstatus=listmode] windows application oiml view,
+workspace[viewstatus=afterlist] windows application oiml view,
+workspace[viewstatus=beforework] windows application oiml view {
+    transition: max-width ease 0s, margin ease 0s;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=beforelist] windows application,
+workspace[viewstatus=listmode] windows application,
+workspace[viewstatus=afterlist] windows application {
+    max-width: 1100px !important;
+    top: 0 !important;
+    margin-left: -550px !important;
+    background: none !important;
+    cursor: pointer !important;
+    overflow: hidden !important;
+    transform: scale( .5, .5);
+}
+
+workspace[viewstatus=beforelist] windows application#APP-I4PLAZA,
+workspace[viewstatus=listmode] windows application#APP-I4PLAZA,
+workspace[viewstatus=afterlist] windows application#APP-I4PLAZA {
+    background: none !important;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=beforelist] windows application oiml,
+workspace[viewstatus=listmode] windows application oiml,
+workspace[viewstatus=afterlist] windows application oiml {
+    padding-left: 0 !important;
+    width: 1000px !important;
+    min-width: 1000px !important;
+}
+
+workspace[viewstatus=beforelist] windows application#APP-I4PLAZA oiml,
+workspace[viewstatus=listmode] windows application#APP-I4PLAZA oiml,
+workspace[viewstatus=afterlist] windows application oiml {
+    min-height: 100% !important;
+}
+
+workspace[viewstatus=beforelist] windows application#APP-I4PLAZA oiml widgets[data-posi],
+workspace[viewstatus=listmode] windows application#APP-I4PLAZA oiml widgets[data-posi],
+workspace[viewstatus=afterlist] windows application#APP-I4PLAZA oiml widgets[data-posi] {
+    display: block;
+    opacity: 0;
+}
+
+workspace[viewstatus=beforelist] windows application#APP-I4PLAZA wallpaper,
+workspace[viewstatus=listmode] windows application#APP-I4PLAZA wallpaper,
+workspace[viewstatus=afterlist] windows application#APP-I4PLAZA wallpaper {
+    width: 1000px;
+    min-width: 1000px;
+    min-height: 0;
+    margin: 0 30px;
+    border: 20px rgba(255, 255, 255, 0.00) solid;
+    border-radius: 20px;
+}
+
+workspace[viewstatus=beforelist] windows application oiml view,
+workspace[viewstatus=listmode] windows application oiml view,
+workspace[viewstatus=afterlist] windows application oiml view {
+    max-width: 1000px !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    margin-left: -500px !important;
+    margin-bottom: 0 !important;
+    overflow: hidden !important;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=beforelist] windows application,
+workspace[viewstatus=afterlist] windows application {
+    left: 50% !important;
+    opacity: 0;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=listmode] windows application#APP-I4PLAZA oiml,
+workspace[viewstatus=afterlist] windows application oiml {
+    min-height: 0;
+    margin: 0 50px;
+    border: none;
+    border-radius: 0;
+}
+
+workspace[viewstatus=afterlist] windows application oiml {
+    margin-top: 20px !important;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=beforelist] windows application#APP-I4PLAZA {
+    max-width: 1000px;
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity ease .4s, transform ease .4s !important;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=listmode] windows application {
+    opacity: .6;
+}
+
+workspace[viewstatus=listmode] windows application[runstatus=sleeping] {
+    opacity: .8;
+}
+
+workspace[viewstatus=listmode] windows application[runstatus=working] {
+    opacity: .9;
+}
+
+workspace[viewstatus=listmode] windows application[list-posi="0"],
+workspace[viewstatus=listmode] windows application:hover {
+    opacity: 1;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=listmode] windows application {
+    transition: left ease .4s, opacity ease .4s !important;
+}
+
+workspace[viewstatus=listmode] windows application:hover oiml {
+    border: 20px rgba(255, 255, 255, 0.06) solid;
+}
+
+workspace[viewstatus=listmode] windows application[list-posi="0"] oiml,
+workspace[viewstatus=listmode] windows application[list-posi="0"]:hover oiml {
+    border: 20px rgba(255, 255, 255, 0.10) solid;
+}
+
+workspace[viewstatus=listmode] windows application view {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2) !important;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=listmode] windows application mask {
+    display: block !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 999999;
+}
+
+workspace[viewstatus=listmode] windows application info {
+    display: block !important;
+    position: absolute;
+    width: 1000px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .9);
+    opacity: .6;
+}
+
+workspace[viewstatus=listmode] windows application info {
+    left: 50%;
+    bottom: -50px;
+    margin-left: -500px;
+    overflow: hidden;
+    z-index: 999999;
+    transition: opacity ease .4s, bottom ease .4s;
+}
+
+workspace[viewstatus=listmode] windows application:hover info {
+    opacity: 1;
+    bottom: -10px;
+}
+
+workspace[viewstatus=listmode] windows application info atitle {
+    display: block !important;
+    width: 980px;
+    height: 30px;
+    padding: 5px 10px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #FFF;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=listmode] windows application oiml {
+    min-height: 0;
+    margin: 0 30px;
+    border: 20px rgba(255, 255, 255, 0.00) solid;
+    border-radius: 20px;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=afterlist] windows application {
+    transition: left ease .25s, opacity ease .25s !important;
+}
+
+workspace[viewstatus=afterlist] windows application[list-posi="0"] {
+    opacity: 1;
+}
+
+
+/**********************************************/
+
+workspace[viewstatus=beforework] windows application {
+    transition: opacity ease .4s, transform ease .4s !important;
+}
+
+workspace[viewstatus=beforework] windows application#APP-I4PLAZA {
+    max-width: 100% !important;
+    height: 100% !important;
+    opacity: 1 !important;
+    transition: opacity ease .2s, transform ease .2s !important;
+}

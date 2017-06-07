@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/*** CONTROL PANEL CSS ***/
+
+
+/**********************************************/
+
+#APP-SETTINGS view[loading] {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    overflow: visible;
+}
+
+#APP-SETTINGS[size=center] view {
+    margin-top: 141px;
+    margin-bottom: 37px;
+    margin-left: -503px;
+    border: 3px solid rgba(255, 255, 255, .3);
+}
+
+#APP-SETTINGS view weclome {
+    margin: -2px 318px !important;
+    background-color: rgba(40, 40, 40, .75);
+    border: 2px solid rgba(255, 255, 255, .3);
+    border-radius: 3px;
+}
+
+#APP-SETTINGS view weclome appname {
+    margin-top: 90px;
+    color: #EEE;
+    text-shadow: 1px 1px 1px #000;
+}
+
+#APP-SETTINGS view weclome appvrsn {
+    color: #999;
+}
+
+#APP-SETTINGS view weclome spinner {
+    width: 100px;
+    height: 14px;
+    margin: 60px auto;
+    background-color: transparent;
+}
+
+#APP-SETTINGS view weclome spinner el {
+    display: block;
+    background-color: rgba(210, 226, 236, 1.00);
+}
+
+#APP-SETTINGS view weclome spinner>el {
+    background-color: #666666;
+}
+
+#APP-SETTINGS view poster {
+    display: none !important;
+}

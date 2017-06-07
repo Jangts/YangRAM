@@ -1,0 +1,8 @@
+{
+    "name": "YangRAM Weather",
+    "abbr": "Tq",
+    "description": "YangRAM Weather, YangRAM Non-Functional Application",
+    "keywords": ["YangRAM Weather", "Listen", "YangRAM Non-Functional Application", "Non-Functional Application", "YangRAM NFA", "NFA"],
+    "suitspace": "NFA",
+    "namespace": "Weather"
+}

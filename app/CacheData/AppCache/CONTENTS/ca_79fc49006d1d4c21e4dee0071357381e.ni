@@ -1,0 +1,1 @@
+{"APPID":"CONTENTS","ID":"CONTENTS","Name":"YangRAM Content System","Code":"Cs","Author":"YangRAM","DIR":"\/YangRAM\/Services\/ContentSystem\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

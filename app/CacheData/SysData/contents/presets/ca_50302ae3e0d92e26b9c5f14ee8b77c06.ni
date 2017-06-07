@@ -1,0 +1,1 @@
+{"id":"16","basic_type":"news","name":"\u515a\u56e2\u601d\u653f","alias":"party","code":"PARTY","note":"\u515a\u56e2\u601d\u653f","item_type":"\u515a\u52a1\u8d44\u8baf","item_unit":"","top_display_num":"2","theme":"jzx","template":"party\/news_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1002"}

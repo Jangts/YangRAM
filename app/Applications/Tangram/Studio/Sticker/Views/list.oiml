@@ -1,0 +1,30 @@
+<view title="{{$PAGETITLE}}" lang="{{$LANG}}">
+    <top-vision bgcolor="magenta">
+        <vision>
+            <ico class="stk-icon"></ico>
+            <tools class="stk-ctrl">
+                <list class="stk-ctrl-group odd">
+                    <item x-usefor="item-fix" class="stk-ctrl-item item-fix" title="Fixed To Tablet"></item>
+                </list>
+                <list class="stk-ctrl-group">
+                    <item x-usefor="label-new" class="stk-ctrl-item label-new {{$TOP[`home_list`]}}" title="Create A New Label"></item>
+                    <item x-usefor="label-save" class="stk-ctrl-item label-save {{$TOP[`new_mod`]}}" title="Save Label"></item>
+                    <item x-usefor="label-del" class="stk-ctrl-item label-del {{$TOP[`new_mod`]}}" title="Delete Label"></item>
+                </list>
+                <list class="stk-ctrl-group odd">
+                    <item x-usefor="label-list" class="stk-ctrl-item preset-list {{$TOP[`new_mod`]}}" title="Return To Item List"></item>
+                </list>
+            </tools>
+        </vision>
+    </top-vision>
+    <vision bgcolor="silvery">
+        <left bgcolor="light">
+            <scroll-vision scroll-y="true">
+                {{$SIDE}}
+            </scroll-vision>
+        </left>
+        <main posi="right">
+            {{$MAIN}}
+        </main>
+    </vision>
+</view>

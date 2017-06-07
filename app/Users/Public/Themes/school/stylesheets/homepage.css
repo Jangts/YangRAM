@@ -1,0 +1,328 @@
+@charset "utf-8";
+#myslide .stage {
+    width: 1240px;
+}
+
+.container .news {
+    width: 1260px;
+    margin: 60px auto 30px;
+}
+
+.container .news h3 {
+    height: 38px;
+    border-top: solid 1px #cccccc;
+    margin-bottom: 11px;
+    padding-left: 30px;
+    background-image: url(./../images/newsbg.png);
+    background-repeat: no-repeat;
+    line-height: 38px;
+    font-size: 18px;
+    color: #660000;
+}
+
+.container .news h3::before {
+    display: block;
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color: #660000;
+    content: "";
+}
+
+.container .news .newslist {
+    width: 820px;
+    margin: 10px;
+}
+
+.container .news .newslist h3 {
+    width: 780px;
+    background-position: -210px -60px;
+}
+
+.container .news-figures {
+    float: left;
+    width: 400px;
+    height: 325px;
+    border-bottom: dashed 1px #cccccc;
+}
+
+.container .news-figures .nf-item {
+    display: none;
+    width: 400px;
+    height: 325px;
+}
+
+.container .news-figures .nf-item.actived {
+    display: block;
+}
+
+.container .news-figures img {
+    width: 400px;
+    height: 225px;
+}
+
+.container .news-figures figcaption .news-title {
+    height: 36px;
+    margin-top: 4px;
+    line-height: 36px;
+    font-size: 18px;
+    color: #660000;
+}
+
+.container .news-figures figcaption .news-desc {
+    height: 54px;
+    line-height: 18px;
+    font-size: 12px;
+    text-align: justify;
+    color: #666666;
+}
+
+.container .news-metainfs {
+    float: right;
+    width: 390px;
+    height: 325px;
+    border-bottom: dashed 1px #cccccc;
+    margin: 0 10px;
+}
+
+.container .news-metainfs li {
+    width: 390px;
+    height: 35px;
+    border-top: dashed 1px #cccccc;
+    line-height: 35px;
+    font-size: 15px;
+    color: #555555;
+}
+
+.container .news-metainfs li.actived {
+    color: #660000;
+}
+
+.container .news-metainfs li::before {
+    margin-right: 7px;
+    content: "·";
+}
+
+.container .news .notices {
+    width: 400px;
+    margin: 10px;
+}
+
+.container .news .notices h3 {
+    width: 370px;
+    background-position: -210px -100px;
+}
+
+.container .news .notices .notice-cards {
+    width: 400px;
+    height: 309px;
+}
+
+.container .news .notices .notice-card {
+    float: left;
+    width: 170px;
+    height: 70px;
+    padding: 10px 20px 20px 10px;
+    background-image: url(./../images/newsbg.png);
+    background-position: 0 -10px;
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+
+.container .news .notices .notice-card:nth-child(even) {
+    padding: 10px 10px 20px 10px;
+    margin-left: 10px;
+}
+
+.container .news .notices .notice-card:hover {
+    background-position: 0 -110px;
+}
+
+.container .news .notices .notice-card .notice-time {
+    font-size: 16px;
+    color: #333333;
+}
+
+.container .news .notices .notice-card .notice-message {
+    font-size: 13px;
+    color: #666666;
+}
+
+.container .news .notices .notice-card:hover .notice-message {
+    color: #333333;
+}
+
+.container .news .notices .see-more {
+    line-height: 20px;
+    font-size: 13px;
+    text-align: center;
+    color: #999;
+}
+
+.container .news .notices .see-more:hover {
+    color: #666;
+}
+
+.container .banners {
+    width: 1240px;
+    height: 120px;
+    margin: 10px auto;
+}
+
+.container .articles {
+    width: 1290px;
+    margin: 30px auto 10px;
+}
+
+.container .articles .artilisttabs {
+    padding: 3px 0;
+    border-top: solid 2px #ccc;
+    border-bottom: solid 2px #ccc;
+}
+
+.artilisttabs .tabanchors {
+    display: block;
+    width: 380px;
+    height: 40px;
+    background-color: #cccccc;
+}
+
+.artilisttabs .tabanchors .tab-anchor {
+    float: left;
+    width: 100px;
+    height: 40px;
+    background-color: #999999;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.artilisttabs .tabanchors .tab-anchor.actived {
+    background-color: #660000;
+}
+
+.artilisttabs .tabanchors .see-more {
+    float: right;
+    width: 40px;
+    height: 40px;
+    background-image: url(./../images/see-more.png);
+    cursor: pointer;
+}
+
+.artilisttabs .tab-section {
+    display: none;
+    width: 380px;
+    height: 216px;
+    margin-top: 4px;
+    line-height: 36px;
+    /*list-style-type: disc;
+    list-style-position: inside;*/
+}
+
+.artilisttabs .tab-section.actived {
+    display: block;
+}
+
+.artilisttabs .tab-section li {
+    width: 360px;
+    height: 36px;
+    padding: 0 10px;
+    background-color: #f9f9f9;
+    color: #999;
+}
+
+.artilisttabs .tab-section li::before {
+    margin-right: 7px;
+    content: "·";
+}
+
+.artilisttabs .tab-section li a {
+    font-size: 15px;
+    color: #444;
+}
+
+.artilisttabs .tab-section li:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+.photos-title {
+    display: block;
+    width: 1240px;
+    height: 30px;
+    margin: 40px auto 0;
+}
+
+.photos-title h3 {
+    font-size: 21px;
+    line-height: 30px;
+}
+
+.photos-title .more-photos {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 13px;
+    line-height: 30px;
+    color: #999;
+}
+
+.container .photos .newfive {
+    width: 1240px;
+    margin: 10px auto 80px;
+}
+
+.container .photos .newfive li {
+    float: left;
+    width: 290px;
+    height: 170px;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+}
+
+.container .photos .newfive li:first-child {
+    width: 640px;
+    height: 350px;
+    margin: 10px 0 0 0;
+}
+
+.container .photos .newfive li figure,
+.container .photos .newfive li figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.container .photos .newfive li figure figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 96%;
+    height: 30px;
+    padding: 0 2%;
+    background-color: #222;
+    background-color: rgba(0, 0, 0, .6);
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    -webkit-transition: height ease .5s, line-height ease .5s;
+    -moz-transition: height ease .5s, line-height ease .5s;
+    transition: height ease .5s, line-height ease .5s;
+}
+
+.container .photos .newfive li figure:hover figcaption {
+    height: 100%;
+    line-height: 170px;
+}
+
+.container .photos .newfive li:first-child figure figcaption {
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.container .photos .newfive li:first-child figure:hover figcaption {
+    height: 100%;
+    line-height: 350px;
+}

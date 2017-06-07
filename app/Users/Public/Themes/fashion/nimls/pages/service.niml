@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> {{@includes/head.niml}}
+    <style>
+        html {
+            width: 100%;
+            min-width: 1000px;
+        }
+    </style>
+</head>
+
+<body>
+    {{@includes/header.niml}}
+    <!-- main slider carousel -->
+    <section class="ic section bg-light">
+        <div class="ic blank-30"></div>
+        <div class="ic w1200 bg-white grid-21" style=" box-shadow: 0px 0px 5px #CCC">
+            <div class="nm-5">
+                <div>
+                    <div class="nav-left">栏目导航</div>
+                    <ul class="nav-left-list">
+                        <li class="{{$___ALIAS='back2school'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}g/service/article/back2school/">集体返校指南</a></li>
+                        <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/questions/">常见问题</a></li>
+                        <li class="{{$___ALIAS='everyday'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}g/service/article/everyday/">日常服务</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nm-half">&nbsp;</div>
+            <div class="nm-15">
+                <div class="ic blank-30"></div>
+                <header class="ft-18 lh-21 ft-modena">
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}g/service/article/">校友服务</a>/
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}g/service/article/{{$___ALIAS}}/">{{$___TITLE}}</a>
+                </header>
+                <div class="ic blank-10"></div>
+                <article class="news-content">{{$___CONTENT}} </article>
+            </div>
+        </div>
+        <div class="ic blank-50"></div>
+    </section>
+    {{@includes/footer.niml}}
+    <script>
+    </script>
+</body>
+
+</html>

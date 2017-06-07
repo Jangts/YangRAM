@@ -1,0 +1,31 @@
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{$__Title}}</title>
+    <link rel="stylesheet" href="{{$__SRCDIR}}stylesheets/404.css">
+
+</head>
+
+<body>
+
+    <nav class="shelf">
+        <a class="book home-page" href="{{$REQUEST.REST_HANDLER_DIR}}">Default</a>
+        <a class="book about-us" href="{{$REQUEST.REST_HANDLER_DIR}}">About GPS</a>
+        <a class="book contact" href="{{$REQUEST.REST_HANDLER_DIR}}">YangRAM</a>
+        <a class="book faq" href="{{$REQUEST.REST_HANDLER_DIR}}">Microivan</a>
+
+        <span class="book not-found"></span>
+
+        <span class="door left"></span>
+        <span class="door right"></span>
+    </nav>
+    <h1>Error 404</h1>
+    <p>Sorry, GPS Cannot Found This Page...</p>
+
+
+</body>
+
+</html>

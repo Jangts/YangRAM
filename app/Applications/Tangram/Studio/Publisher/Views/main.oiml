@@ -1,0 +1,8 @@
+<left bgcolor="light">
+    <scroll-vision scroll-y="true">
+        {{$SET_SIDE}}
+    </scroll-vision>
+</left>
+<main posi="right" style="min-height: 500px;">
+    {{$SET_LIST}} {{$SET_PAGE}}
+</main>

@@ -1,0 +1,698 @@
+@charset "utf-8";
+icon[data]:before {
+    font-family: "IconsForUOI";
+    content: attr(data-icon);
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+icon[data=""][word]:before {
+    font-family: "TheVandorSpot";
+    content: attr(word);
+}
+
+icon[data=yangram]:before {
+    content: "\f000";
+}
+
+icon[data=dataroom-developer]:before {
+    content: "\f001";
+}
+
+icon[data=dataroom-publisher]:before {
+    content: "\f002";
+}
+
+icon[data=dataroom-elemsmgr]:before {
+    content: "\f003";
+}
+
+icon[data=dataroom-collector]:before {
+    content: "\f004";
+}
+
+icon[data=dataroom-rapporteur]:before {
+    content: "\f005";
+}
+
+icon[data=dataroom-designer]:before {
+    content: "\f006";
+}
+
+icon[data=dataroom-investigator]:before {
+    content: "\f007";
+}
+
+icon[data=user-female]:before {
+    content: "\e000";
+}
+
+icon[data=user-follow]:before {
+    content: "\e002";
+}
+
+icon[data=user-following]:before {
+    content: "\e003";
+}
+
+icon[data=user-unfollow]:before {
+    content: "\e004";
+}
+
+icon[data=trophy]:before {
+    content: "\e006";
+}
+
+icon[data=screen-smartphone]:before {
+    content: "\e010";
+}
+
+icon[data=screen-desktop]:before {
+    content: "\e011";
+}
+
+icon[data=plane]:before {
+    content: "\e012";
+}
+
+icon[data=notebook]:before {
+    content: "\e013";
+}
+
+icon[data=moustache]:before {
+    content: "\e014";
+}
+
+icon[data=mouse]:before {
+    content: "\e015";
+}
+
+icon[data=magnet]:before {
+    content: "\e016";
+}
+
+icon[data=energy]:before {
+    content: "\e020";
+}
+
+icon[data=emoicon-smile]:before {
+    content: "\e021";
+}
+
+icon[data=disc]:before {
+    content: "\e022";
+}
+
+icon[data=cursor-move]:before {
+    content: "\e023";
+}
+
+icon[data=crop]:before {
+    content: "\e024";
+}
+
+icon[data=credit-card]:before {
+    content: "\e025";
+}
+
+icon[data=chemistry]:before {
+    content: "\e026";
+}
+
+icon[data=user]:before {
+    content: "\e005";
+}
+
+icon[data=speedometer]:before {
+    content: "\e007";
+}
+
+icon[data=social-youtube]:before {
+    content: "\e008";
+}
+
+icon[data=social-twitter]:before {
+    content: "\e009";
+}
+
+icon[data=social-tumblr]:before {
+    content: "\e00a";
+}
+
+icon[data=social-facebook]:before {
+    content: "\e00b";
+}
+
+icon[data=social-dropbox]:before {
+    content: "\e00c";
+}
+
+icon[data=social-dribbble]:before {
+    content: "\e00d";
+}
+
+icon[data=shield]:before {
+    content: "\e00e";
+}
+
+icon[data=screen-launcher]:before {
+    content: "\e00f";
+}
+
+icon[data=magic-wand]:before {
+    content: "\e017";
+}
+
+icon[data=hourglass]:before {
+    content: "\e018";
+}
+
+icon[data=graduation]:before {
+    content: "\e019";
+}
+
+icon[data=ghost]:before {
+    content: "\e01a";
+}
+
+icon[data=game-controller]:before {
+    content: "\e01b";
+}
+
+icon[data=fire]:before {
+    content: "\e01c";
+}
+
+icon[data=eyeglasses]:before {
+    content: "\e01d";
+}
+
+icon[data=envelope-open]:before {
+    content: "\e01e";
+}
+
+icon[data=envelope-letter]:before {
+    content: "\e01f";
+}
+
+icon[data=bell]:before {
+    content: "\e027";
+}
+
+icon[data=badge]:before {
+    content: "\e028";
+}
+
+icon[data=anchor]:before {
+    content: "\e029";
+}
+
+icon[data=wallet]:before {
+    content: "\e02a";
+}
+
+icon[data=vector]:before {
+    content: "\e02b";
+}
+
+icon[data=speech]:before {
+    content: "\e02c";
+}
+
+icon[data=puzzle]:before {
+    content: "\e02d";
+}
+
+icon[data=printer]:before {
+    content: "\e02e";
+}
+
+icon[data=present]:before {
+    content: "\e02f";
+}
+
+icon[data=playlist]:before {
+    content: "\e030";
+}
+
+icon[data=pin]:before {
+    content: "\e031";
+}
+
+icon[data=picture]:before {
+    content: "\e032";
+}
+
+icon[data=map]:before {
+    content: "\e033";
+}
+
+icon[data=layers]:before {
+    content: "\e034";
+}
+
+icon[data=handbag]:before {
+    content: "\e035";
+}
+
+icon[data=globe-alt]:before {
+    content: "\e036";
+}
+
+icon[data=globe]:before {
+    content: "\e037";
+}
+
+icon[data=frame]:before {
+    content: "\e038";
+}
+
+icon[data=folder-alt]:before {
+    content: "\e039";
+}
+
+icon[data=film]:before {
+    content: "\e03a";
+}
+
+icon[data=feed]:before {
+    content: "\e03b";
+}
+
+icon[data=earphones-alt]:before {
+    content: "\e03c";
+}
+
+icon[data=earphones]:before {
+    content: "\e03d";
+}
+
+icon[data=drop]:before {
+    content: "\e03e";
+}
+
+icon[data=drawer]:before {
+    content: "\e03f";
+}
+
+icon[data=docs]:before {
+    content: "\e040";
+}
+
+icon[data=directions]:before {
+    content: "\e041";
+}
+
+icon[data=direction]:before {
+    content: "\e042";
+}
+
+icon[data=diamond]:before {
+    content: "\e043";
+}
+
+icon[data=cup]:before {
+    content: "\e044";
+}
+
+icon[data=compass]:before {
+    content: "\e045";
+}
+
+icon[data=call-out]:before {
+    content: "\e046";
+}
+
+icon[data=call-in]:before {
+    content: "\e047";
+}
+
+icon[data=call-end]:before {
+    content: "\e048";
+}
+
+icon[data=calculator]:before {
+    content: "\e049";
+}
+
+icon[data=bubbles]:before {
+    content: "\e04a";
+}
+
+icon[data=briefcase]:before {
+    content: "\e04b";
+}
+
+icon[data=book-open]:before {
+    content: "\e04c";
+}
+
+icon[data=basket-loaded]:before {
+    content: "\e04d";
+}
+
+icon[data=basket]:before {
+    content: "\e04e";
+}
+
+icon[data=bag]:before {
+    content: "\e04f";
+}
+
+icon[data=action-undo]:before {
+    content: "\e050";
+}
+
+icon[data=action-redo]:before {
+    content: "\e051";
+}
+
+icon[data=wrench]:before {
+    content: "\e052";
+}
+
+icon[data=umbrella]:before {
+    content: "\e053";
+}
+
+icon[data=trash]:before {
+    content: "\e054";
+}
+
+icon[data=tag]:before {
+    content: "\e055";
+}
+
+icon[data=support]:before {
+    content: "\e056";
+}
+
+icon[data=size-fullscreen]:before {
+    content: "\e057";
+}
+
+icon[data=size-actual]:before {
+    content: "\e058";
+}
+
+icon[data=shuffle]:before {
+    content: "\e059";
+}
+
+icon[data=share-alt]:before {
+    content: "\e05a";
+}
+
+icon[data=share]:before {
+    content: "\e05b";
+}
+
+icon[data=rocket]:before {
+    content: "\e05c";
+}
+
+icon[data=question]:before {
+    content: "\e05d";
+}
+
+icon[data=pie-chart]:before {
+    content: "\e05e";
+}
+
+icon[data=pencil]:before {
+    content: "\e05f";
+}
+
+icon[data=note]:before {
+    content: "\e060";
+}
+
+icon[data=music-tone-alt]:before {
+    content: "\e061";
+}
+
+icon[data=music-tone]:before {
+    content: "\e062";
+}
+
+icon[data=microphone]:before {
+    content: "\e063";
+}
+
+icon[data=loop]:before {
+    content: "\e064";
+}
+
+icon[data=logoff]:before {
+    content: "\e065";
+}
+
+icon[data=login]:before {
+    content: "\e066";
+}
+
+icon[data=list]:before {
+    content: "\e067";
+}
+
+icon[data=like]:before {
+    content: "\e068";
+}
+
+icon[data=home]:before {
+    content: "\e069";
+}
+
+icon[data=grid]:before {
+    content: "\e06a";
+}
+
+icon[data=graph]:before {
+    content: "\e06b";
+}
+
+icon[data=equalizer]:before {
+    content: "\e06c";
+}
+
+icon[data=dislike]:before {
+    content: "\e06d";
+}
+
+icon[data=cursor]:before {
+    content: "\e06e";
+}
+
+icon[data=control-start]:before {
+    content: "\e06f";
+}
+
+icon[data=control-rewind]:before {
+    content: "\e070";
+}
+
+icon[data=control-play]:before {
+    content: "\e071";
+}
+
+icon[data=control-pause]:before {
+    content: "\e072";
+}
+
+icon[data=control-forward]:before {
+    content: "\e073";
+}
+
+icon[data=control-end]:before {
+    content: "\e074";
+}
+
+icon[data=calendar]:before {
+    content: "\e075";
+}
+
+icon[data=bulb]:before {
+    content: "\e076";
+}
+
+icon[data=bar-chart]:before {
+    content: "\e077";
+}
+
+icon[data=arrow-up]:before {
+    content: "\e078";
+}
+
+icon[data=arrow-right]:before {
+    content: "\e079";
+}
+
+icon[data=arrow-left]:before {
+    content: "\e07a";
+}
+
+icon[data=arrow-down]:before {
+    content: "\e07b";
+}
+
+icon[data=ban]:before {
+    content: "\e07c";
+}
+
+icon[data=bubble]:before {
+    content: "\e07d";
+}
+
+icon[data=camcorder]:before {
+    content: "\e07e";
+}
+
+icon[data=camera]:before {
+    content: "\e07f";
+}
+
+icon[data=check]:before {
+    content: "\e080";
+}
+
+icon[data=clock]:before {
+    content: "\e081";
+}
+
+icon[data=close]:before {
+    content: "\e082";
+}
+
+icon[data=cloud-download]:before {
+    content: "\e083";
+}
+
+icon[data=cloud-upload]:before {
+    content: "\e084";
+}
+
+icon[data=doc]:before {
+    content: "\e085";
+}
+
+icon[data=envelope]:before {
+    content: "\e086";
+}
+
+icon[data=eye]:before {
+    content: "\e087";
+}
+
+icon[data=flag]:before {
+    content: "\e088";
+}
+
+icon[data=folder]:before {
+    content: "\e089";
+}
+
+icon[data=heart]:before {
+    content: "\e08a";
+}
+
+icon[data=info]:before {
+    content: "\e08b";
+}
+
+icon[data=key]:before {
+    content: "\e08c";
+}
+
+icon[data=link]:before {
+    content: "\e08d";
+}
+
+icon[data=lock]:before {
+    content: "\e08e";
+}
+
+icon[data=lock-open]:before {
+    content: "\e08f";
+}
+
+icon[data=magnifier]:before {
+    content: "\e090";
+}
+
+icon[data=magnifier-add]:before {
+    content: "\e091";
+}
+
+icon[data=magnifier-remove]:before {
+    content: "\e092";
+}
+
+icon[data=paper-clip]:before {
+    content: "\e093";
+}
+
+icon[data=paper-plane]:before {
+    content: "\e094";
+}
+
+icon[data=plus]:before {
+    content: "\e095";
+}
+
+icon[data=pointer]:before {
+    content: "\e096";
+}
+
+icon[data=power]:before {
+    content: "\e097";
+}
+
+icon[data=refresh]:before {
+    content: "\e098";
+}
+
+icon[data=reload]:before {
+    content: "\e099";
+}
+
+icon[data=settings]:before {
+    content: "\e09a";
+}
+
+icon[data=star]:before {
+    content: "\e09b";
+}
+
+icon[data=symbol-female]:before {
+    content: "\e09c";
+}
+
+icon[data=symbol-male]:before {
+    content: "\e09d";
+}
+
+icon[data=target]:before {
+    content: "\e09e";
+}
+
+icon[data=volume-1]:before {
+    content: "\e09f";
+}
+
+icon[data=volume-2]:before {
+    content: "\e0a0";
+}
+
+icon[data=volume-off]:before {
+    content: "\e0a1";
+}
+
+icon[data=users]:before {
+    content: "\e001";
+}
+
+
+/* CSS Document */

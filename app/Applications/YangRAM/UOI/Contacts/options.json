@@ -1,0 +1,7 @@
+{
+    "name": "Contacts",
+    "abbr": "Ct",
+    "description": "Contacts",
+    "keywords": ["Contacts"],
+    "namespace": "Contacts"
+}

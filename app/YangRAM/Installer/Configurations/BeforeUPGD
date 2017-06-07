@@ -1,0 +1,56 @@
+<?php
+define('BOOTTIME', isset($_SERVER['REQUEST_TIME_FLOAT']) ? $_SERVER['REQUEST_TIME_FLOAT'] : microtime(TRUE));
+define('DATETIME',  date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']));
+define('P',             '.php');
+define('R',             dirname(__FILE__));
+define('SRVR',			$_SERVER['SERVER_SOFTWARE']);
+define('HOST',      	isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME']);
+define('HTTP',      	$_SERVER['SERVER_PROTOCOL']);
+define('PORT',      	$_SERVER['SERVER_PORT']);
+
+rename(R.'YangRAM', R.'YangRAM.old');
+rename(R.'YangRAM.new', R.'YangRAM');
+$_SERVER['REQUEST_PID'] = '/i/n/upgrade/completely/';
+
+define('APP_DIR',    	'/Applications/');
+define('I4S_DIR',   	'/YangRAM/');
+define('UOI_DIR',   	'/YangRAM/OperatorInterface/');
+define('LANGS_DIR',   	'/YangRAM/Lang/');
+define('FELIB_DIR',  	'/YangRAM/Library/frontends/');
+define('FONTS_DIR',   	'/YangRAM/Library/frontends/Fonts/');
+
+define('USR_DIR',   	'/Users/');
+define('PUB_DIR',   	'/Users/Public/');
+define('VIEW_DIR',   	'/Users/Public/Themes/');
+define('HTML_DIR',   	'/Users/Public/Htmls/');
+define('LIBX_DIR',   	'/Users/Public/Packages/');
+
+define('ROOT',      	strtr(R, '\\', '/'));
+define('PATH_APP',    	ROOT.APP_DIR);
+define('PATH_I4S',    	ROOT.I4S_DIR);
+define('PATH_UOI',    	ROOT.UOI_DIR);
+
+define('PATH_SYS',    	ROOT.'/YangRAM/NIKernel/');
+define('PATH_LANGS',    	PATH_LANGS.'');
+define('PATH_LIB',		PATH_I4S.'Library/');
+
+define('PATH_USR', 		ROOT.USR_DIR);
+define('PATH_PUB', 		ROOT.PUB_DIR);
+define('PATH_CAC_SES', 	    PATH_PUB.'Sessions/');
+define('PATH_VIEW',     ROOT.VIEW_DIR);
+define('PATH_HTML',     ROOT.HTML_DIR);
+define('PATH_LIBX',     ROOT.LIBX_DIR);
+
+define('PATH_DAT', 		ROOT.'/Data/');
+define('PATH_CACA', 	PATH_DATA.'app/');
+define('PATH_DAT_CA', 	PATH_DATA.'cache/');
+define('PATH_CAC_LOG', 	PATH_DATA.'log/');
+define('PATH_ODAT', 	PATH_DATA.'open/');
+define('PATH_DAT_SY', 	PATH_DATA.'sys/');
+define('PATH_CAC_TEST', 	PATH_DATA.'test/');
+
+define('PATH_DAT_CNT', 	PATH_DAT_CA.'contents/');
+define('PATH_DAT_IMG', 	PATH_DAT_CA.'images/');
+define('PATH_DAT_MDL', 	PATH_DAT_CA.'models/');
+define('PATH_DAT_TPL', 	PATH_DAT_CA.'template/');
+define('PATH_DAT_VIW', 	PATH_DAT_CA.'views/');

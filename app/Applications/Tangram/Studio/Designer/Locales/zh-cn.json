@@ -1,0 +1,33 @@
+{
+    "CODE": "zh-cn",
+
+    "APPNAME": "模板管理者",
+
+    "TOPMENUS": {
+        "Default Page": "首页",
+        "List Of Preset": "返回预设列表",
+        "Preview": "预览"
+    },
+
+    "WORDS": {
+        "Remove Item?": "移除内容",
+        "Are you sure to remove this item?": "确定要移除该内容？",
+        "Reference Error": "错误的请求",
+        "I'm Sorry!": "抱歉！",
+        "Operation not supported!": "不支持此操作！",
+        "Save Success": "入库成功",
+        "A Content Has Been Saved!": "入库了一个内容",
+        "Published": "已发布",
+        "A Content Has Been Published!": "发布了一个内容！",
+        "Remove Success": "删除成功",
+        "A Content Has Been Removed!": "删除了一个内容！",
+        "Specifies No Existing Item": "指定的项目不存在",
+        "Confirm Close?": "确认关闭？",
+        "You are trying to close a tab, are you sure to do this?": "将关闭一个选项卡，确定要这么做吗？",
+        "Cut To": "转到",
+        "Exceed Maximum Size Allowed Upload": "超出最大允许大小",
+        "Unsupported File Format": "不受支持的文件格式",
+        "Are you sure to go to the list page before save your editing?": "确定不保存正在编辑的内容，直接转到列表页？",
+        "Are you sure to open a new item before save the editing item?": "确定不保存当前编辑的内容，直接打开其他内容？"
+    }
+}

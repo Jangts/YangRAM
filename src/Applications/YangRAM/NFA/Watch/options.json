@@ -1,0 +1,8 @@
+{
+    "name": "YangRAM Watch",
+    "abbr": "Gk",
+    "description": "YangRAM Watch, YangRAM Non-Functional Application",
+    "keywords": ["YangRAM Watch", "Listen", "YangRAM Non-Functional Application", "Non-Functional Application", "YangRAM NFA", "NFA"],
+    "suitspace": "NFA",
+    "namespace": "Watch"
+}

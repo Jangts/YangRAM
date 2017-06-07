@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <title>ColorPicker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://interblocks.nidn.yangram.ni/src/iBlock.js"></script>
+    <style>
+        * {
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #colors {
+            float: left;
+            width: 404px;
+            height: 404px;
+        }
+        
+        #colors section {
+            display: block;
+            width: 404px;
+        }
+        
+        #colors section.websafecolor {
+            height: 80px;
+        }
+        
+        #colors section.websafecolor:first-child {
+            height: 42px;
+        }
+        
+        #colors section.websafecolor:last-child {
+            height: 42px;
+        }
+        
+        #colors section.truecolor {
+            height: 4px;
+        }
+        
+        #colors section span {
+            float: left;
+            width: 4px;
+            height: 100%;
+            cursor: crosshair;
+        }
+        
+        #hue {
+            float: left;
+            width: 30px;
+            height: 361px;
+            margin: 22px;
+            cursor: default;
+        }
+        
+        #hue section {
+            display: block;
+            height: 30px;
+        }
+        
+        #hue section.websafecolor {
+            height: 12px;
+        }
+        
+        #hue section.websafecolor:first-child {
+            height: 6px;
+        }
+        
+        #hue section.websafecolor:last-child {
+            height: 7px;
+        }
+        
+        #hue section.truecolor {
+            height: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="colors"></div>
+    <div id="hue"></div>
+
+    <script>
+        iBlock(['$_/dom/Elements/', '$_/util/Color.Cls'], (_) => {
+            $ = _.dom.select;
+
+            var buildHues = () => {
+                var hues = '';
+                for (var h = 360; h >= 0; h -= 12) {
+                    hues += '<section style="background-color:hsl(' + h + ',100%,50%);" class="websafecolor hue' + h + '" data-hue="' + h + '"></section>';
+                }
+                $('#hue').html(hues);
+
+                $('#hue section.websafecolor').click(function() {
+                    var h = $(this).data('hue');
+                    //console.log(h);
+                    buildColors(h);
+                });
+                buildColors(0);
+            }
+
+            var buildTrueHues = () => {
+                var hues = '';
+                for (var h = 360; h >= 0; h--) {
+                    hues += '<section style="background-color:hsl(' + h + ',100%,50%);" class="truecolor hue' + h + '" data-hue="' + h + '"></section>';
+                }
+                $('#hue').html(hues);
+
+                $('#hue section.truecolor').click(function() {
+                    var h = $(this).data('hue');
+                    //console.log(h);
+                    buildTrueColors(h);
+                });
+                buildTrueColors(0);
+            }
+
+            var buildColors = (h) => {
+                var rows = [];
+                for (var b = 100; b >= 0; b -= 20) {
+                    var colors = '';
+                    for (var s = 0; s <= 100; s++) {
+                        var hsl = _.util.Color.hsb2HSL(h, s, b),
+                            rgb = _.util.Color.hsl2SafeRGB(h, hsl[1], hsl[2]);
+                        colors += '<span style="background-color:rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ');" data-rgb="rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')"></span>';
+                    }
+                    rows.push('<section class="websafecolor">' + colors + '</section>');
+                }
+                //console.log(h);
+                $('#hue .current').removeClass('current');
+                $('#hue .hue' + h).addClass('current');
+                $('#colors').html(rows.join(''));
+                $('#colors section.websafecolor span').click(function() {
+                    var rgb = $(this).data('rgb');
+                    hex = _.util.Color.rgbFormat(rgb, 'hex6');
+                    console.log(rgb, hex);
+                });
+            };
+            var buildTrueColors = (h) => {
+                var rows = [];
+                for (var b = 100; b >= 0; b--) {
+                    var colors = '';
+                    for (var s = 0; s <= 100; s++) {
+                        var hsl = _.util.Color.hsb2HSL(h, s, b);
+                        colors += '<span style="background-color:hsl(' + h + ',' + hsl[1] + '%,' + hsl[2] + '%);" data-h="' + h + '" data-s="' + hsl[1] + '" data-l="' + hsl[2] + '"></span>';
+                    }
+                    rows.push('<section class="truecolor">' + colors + '</section>');
+                }
+                //console.log(h);
+                $('#hue .current').removeClass('current');
+                $('#hue .hue' + h).addClass('current');
+                $('#colors').html(rows.join(''));
+                $('#colors section.truecolor span').click(function() {
+                    var h = parseFloat($(this).data('h')),
+                        s = parseFloat($(this).data('s')),
+                        l = parseFloat($(this).data('l')),
+                        rgb = _.util.Color.hsl2RGB(h, s, l);
+                    console.log(h, s, l, rgb);
+                    hex = _.util.Color.rgbFormat('rgb(' + rgb.join(',') + ')', 'hex6');
+                    console.log(hex);
+                });
+            };
+            buildHues();
+        }, true);
+    </script>
+</body>
+
+</html>

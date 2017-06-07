@@ -1,0 +1,487 @@
+@charset "utf-8";
+
+/*
+ * OIML Form
+ */
+
+
+/* Basic */
+
+form-vision {
+    display: block;
+    width: 900px;
+    height: auto;
+    border: #DDD 1px solid;
+    margin: 24px auto;
+    background-color: #FFF;
+}
+
+form-vision[type] {
+    display: none;
+}
+
+form-vision[type=origin] {
+    display: block;
+    width: 900px;
+    height: auto;
+    border: #DDD 1px solid;
+    margin: 24px auto;
+    background-color: #FFF;
+}
+
+form-vision inputs {
+    display: block;
+}
+
+form-vision[type] inputs {
+    display: none;
+}
+
+form-vision[type=origin] inputs {
+    display: block;
+}
+
+
+/*
+Shape
+*/
+
+form-vision inputs input {
+    outline: none;
+    background-color: transparent;
+}
+
+
+/**/
+
+form-vision inputs[type=primer] {
+    padding: 5px 0px 4px;
+    margin: 0px 20px;
+    border-bottom: #EEE dashed 1px;
+}
+
+form-vision inputs[type=primer] input {
+    width: 860px;
+    text-align: left;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+form-vision inputs[type=title] {
+    padding: 10px 20px;
+}
+
+form-vision inputs[type=title] input {
+    width: 860px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 35px;
+}
+
+form-vision inputs[type=subtitle] {
+    padding: 4px 0px 5px;
+    margin: 0px 20px;
+    border-top: #EEE dashed 1px;
+}
+
+form-vision inputs[type=subtitle] input {
+    width: 860px;
+    text-align: right;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+
+/**/
+
+form-vision inputs[type=hidden] {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+
+/**/
+
+form-vision inputs[type=text] {
+    width: 860px;
+    height: 30px;
+    margin: 0px 20px;
+    line-height: 30px;
+    border-top: 1px #E6E6E6 solid;
+}
+
+form-vision inputs[type=text] label {
+    display: block;
+    position: absolute;
+    width: 110px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #F6F6F6;
+    top: 3px;
+    left: 0px;
+}
+
+form-vision inputs[type=text] label {
+    color: #282828;
+    font-size: 12px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+form-vision inputs[type=text] input {
+    display: block;
+    width: 740px;
+    height: 30px;
+    margin-left: 120px;
+    color: #555;
+    font-size: 12px;
+}
+
+form-vision inputs[type=text] click[type=pick] {
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 22px;
+    top: 0px;
+    right: 0px;
+    margin: 4px 0 4px;
+    border-radius: 2px;
+    background: #333333;
+    color: #FFF;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: .7;
+}
+
+form-vision inputs[type=text] click[type=pick]:hover {
+    opacity: 1;
+}
+
+
+/**/
+
+form-vision inputs[type=multiple] {
+    width: 860px;
+    height: auto;
+    margin: 0px 20px;
+    border-top: 1px #E6E6E6 solid;
+}
+
+form-vision inputs[type=multiple] label {
+    float: left;
+    width: 110px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #F6F6F6;
+    top: 3px;
+    left: 0px;
+}
+
+form-vision inputs[type=multiple] label {
+    color: #282828;
+    font-size: 12px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+form-vision inputs[type=multiple] input {
+    float: left;
+    width: 110px;
+    height: 18px;
+    text-align: center;
+    line-height: 20px;
+    border-bottom: #CCC 1px solid;
+    margin: 7px 0px 4px;
+}
+
+form-vision inputs[type=multiple] input[long] {
+    width: 250px;
+}
+
+form-vision inputs[type=multiple] select {
+    width: 150px;
+    height: 22px;
+    margin: 4px 0px;
+    line-height: 18px;
+    border: 1px #CCCCCC solid;
+    outline: none;
+    float: left;
+}
+
+form-vision inputs[type=multiple] el {
+    float: left;
+    width: auto;
+    height: 20px;
+    color: #555;
+    font-size: 12px;
+}
+
+form-vision inputs[type=multiple] el,
+form-vision inputs[type=multiple] el[type],
+form-vision inputs[type=multiple] el[type=afterinput] {
+    margin: 7px 45px 3px 5px;
+}
+
+form-vision inputs[type=multiple] el[type=afterlabel] {
+    margin: 7px 5px 3px 0px;
+}
+
+form-vision inputs[type=multiple] el[type=beforeinput] {
+    margin: 7px 5px 3px 45px;
+}
+
+form-vision inputs[type=multiple] gap {
+    float: left;
+    width: auto;
+    height: 20px;
+    margin: 5px;
+    color: #555;
+    line-height: 21px;
+    font-size: 12px;
+    text-align: center;
+}
+
+form-vision inputs[type=multiple] font {
+    display: block;
+    width: auto;
+    height: 30px;
+    margin-left: 10px;
+    color: #999;
+    font-size: 12px;
+    line-height: 30px;
+    float: right;
+}
+
+form-vision inputs[type=multiple] click[type=pick] {
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 22px;
+    top: 0px;
+    right: 0px;
+    margin: 4px 0 4px 10px;
+    border-radius: 2px;
+    background: #333333;
+    color: #FFF;
+    line-height: 22px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+/**/
+
+form-vision inputs[type=textarea] {
+    width: 860px;
+    height: auto;
+    margin: 0px 20px;
+    line-height: 30px;
+    border-top: 1px #E6E6E6 solid;
+}
+
+form-vision inputs[type=textarea]>label {
+    display: block;
+    width: 110px;
+    height: 27px;
+    line-height: 24px;
+    background-color: #F6F6F6;
+    color: #282828;
+    top: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+
+form-vision inputs[type=textarea]>font {
+    display: block;
+    position: absolute;
+    width: 800px;
+    height: 30px;
+    color: #999;
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    text-align: right;
+}
+
+form-vision inputs[type=textarea]>textarea {
+    width: 860px;
+    box-sizing: border-box;
+    min-height: 58px;
+    line-height: 24px;
+    font-size: 12px;
+    resize: none;
+    border: #EEE 1px solid;
+    outline: none;
+    padding: 5px;
+}
+
+
+/**/
+
+form-vision inputs[type=longtext] {
+    width: 860px;
+    height: auto;
+    margin: 0px 20px;
+    line-height: 30px;
+    border-top: 1px #E6E6E6 solid;
+}
+
+form-vision inputs[type=longtext]>label {
+    display: block;
+    width: 110px;
+    height: 27px;
+    line-height: 24px;
+    background-color: #F6F6F6;
+    color: #282828;
+    top: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+
+form-vision inputs[type=longtext]>font {
+    display: block;
+    position: absolute;
+    width: 800px;
+    height: 30px;
+    color: #999;
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    text-align: right;
+}
+
+form-vision inputs[type=longtext]>textarea {
+    box-sizing: border-box;
+    width: 860px;
+    height: auto;
+    min-height: 130px;
+    line-height: 24px;
+    font-size: 12px;
+    resize: vertical;
+    border: #EEE 1px solid;
+    outline: none;
+    padding: 5px;
+}
+
+
+/**/
+
+form-vision inputs[type=editor] {
+    width: 860px;
+    height: auto;
+    margin: 0px 20px 10px;
+    line-height: 30px;
+    border-top: 1px #E6E6E6 solid;
+}
+
+form-vision inputs[type=editor]>label {
+    display: block;
+    width: 110px;
+    height: 27px;
+    line-height: 24px;
+    background-color: #F6F6F6;
+    color: #282828;
+    top: 3px;
+    font-size: 12px;
+    text-align: center;
+}
+
+form-vision inputs[type=editor]>font {
+    display: block;
+    position: absolute;
+    width: 800px;
+    height: 30px;
+    color: #999;
+    top: 0px;
+    right: 0px;
+    font-size: 12px;
+    text-align: right;
+}
+
+form-vision inputs[type=editor]>textarea {
+    width: 860px;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 390px;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+form-vision inputs[type=editor]>div[contenteditable][data-edit-for] {
+    width: 860px;
+    height: auto;
+    min-height: 180px;
+}
+
+form-vision inputs[type=editor]+inputs[type=editor] {
+    border-top: none;
+}
+
+
+/**/
+
+form-vision line {
+    display: block;
+    width: 860px;
+    height: 1px;
+    margin: 0px 20px;
+    background-color: #EEE;
+}
+
+
+/**/
+
+form-vision paragraph {
+    width: 750px;
+    height: auto;
+    margin: 0px 20px 0px 130px;
+    line-height: 30px;
+    color: #999;
+    font-size: 12px;
+    text-align: justify;
+}
+
+
+/**/
+
+form-vision inputs[type=tags] {
+    width: 860px;
+    height: 30px;
+    margin: 0px 20px;
+    line-height: 30px;
+    border-top: 1px #E6E6E6 solid;
+}
+
+form-vision inputs[type=tags] input {
+    width: 835px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    color: #555;
+    font-size: 12px;
+    resize: none;
+}
+
+form-vision inputs[type=tags].seo {
+    width: 900px;
+    border-top: #DDD 1px solid;
+    height: 38px;
+    margin: 20px 0 0;
+    background: url(SEOTagsIcon.jpg) no-repeat left;
+}
+
+form-vision inputs[type=tags].seo input {
+    width: 835px;
+    margin: 4px 20px 4px 45px;
+}
+
+
+/**/
+
+form-vision inputs[type=text].notopline {
+    border-top: none;
+}

@@ -1,0 +1,374 @@
+@charset "utf-8";
+
+/*** APPS COMMON ***/
+
+scrollbar dragger {
+    cursor: default;
+    transition: none;
+    background-color: #000;
+}
+
+view {
+    background-color: #EEE !important;
+}
+
+
+/*** APPS TOP ***/
+
+top-vision>vision {
+    width: 100%;
+    height: 50px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+top-vision vision ico {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+top-vision vision ico {
+    background-image: url(<__ADIR__>Sources/logo_wht.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+top-vision vision tools.dsr-ctrl {
+    display: block;
+    padding-left: 50px;
+    background-image: url(<__SDIR__>Common/Sources/common_top_background.png);
+    background-repeat: no-repeat;
+}
+
+top-vision vision tools.dsr-ctrl list {
+    width: auto;
+    height: 30px;
+    padding: 10px;
+    display: block;
+    float: right;
+}
+
+top-vision vision tools.dsr-ctrl list.odd {
+    display: block;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+
+/* ------------------------- */
+
+top-vision vision tools list item.dsr-ctrl-item {
+    float: left;
+    width: 40px;
+    height: 30px;
+    background-image: url(<__ADIR__>Sources/icons.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+top-vision vision tools list item.unavailable {
+    cursor: default;
+}
+
+top-vision vision tools list item.dsr-ctrl-item {
+    transition: background-position ease .5s;
+    -webkit-transition: background-position ease .5s;
+}
+
+top-vision vision tools list .template-list {
+    background-position: 0px 0px;
+}
+
+top-vision vision tools list .theme-list {
+    background-position: -440px 0px;
+}
+
+top-vision vision tools list .template-save {
+    background-position: -80px 0px;
+}
+
+top-vision vision tools list .template-del {
+    background-position: -120px 0px;
+}
+
+top-vision vision tools list .item-fix {
+    background-position: -320px 0px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .template-list:hover {
+    background-position: 0px -30px;
+}
+
+top-vision vision tools list .theme-list:hover {
+    background-position: -440px -30px;
+}
+
+top-vision vision tools list .template-save:hover {
+    background-position: -80px -30px;
+}
+
+top-vision vision tools list .template-del:hover {
+    background-position: -120px -30px;
+}
+
+top-vision vision tools list .item-fix:hover {
+    background-position: -320px -30px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .unavailable.template-list {
+    background-position: 0px -60px;
+}
+
+top-vision vision tools list .unavailable.theme-list {
+    background-position: -440px -60px;
+}
+
+top-vision vision tools list .unavailable.template-save {
+    background-position: -80px -60px;
+}
+
+top-vision vision tools list .unavailable.template-del {
+    background-position: -120px -60px;
+}
+
+top-vision vision tools list .unavailable.item-fix {
+    background-position: -320px -60px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .unavailable.template-list:hover {
+    background-position: 0px -60px;
+}
+
+top-vision vision tools list .unavailable.theme-list:hover {
+    background-position: -440px -60px;
+}
+
+top-vision vision tools list .unavailable.template-save:hover {
+    background-position: -80px -60px;
+}
+
+top-vision vision tools list .unavailable.template-del:hover {
+    background-position: -120px -60px;
+}
+
+top-vision vision tools list .unavailable.item-fix:hover {
+    background-position: -320px -60px;
+}
+
+
+/*********************************************************************************
+/*** APPS CONTENT ***/
+
+vision list[type=blocks].azure item click[x-alias-lenth="5"] .titl {
+    font-size: 24px;
+}
+
+vision list[type=blocks].azure item click[x-alias-lenth="6"] .titl {
+    font-size: 22.5px;
+}
+
+vision list[type=blocks].azure item click[x-alias-lenth="7"] .titl {
+    font-size: 21px;
+}
+
+vision list[type=blocks].azure item click[x-theme-type="2"] {
+    cursor: default;
+}
+
+vision list[type=blocks].azure item click[x-theme-type="2"] .titl {
+    height: 70px;
+    top: 25px;
+    border-width: 0px;
+    left: 15px;
+    background-image: url(<__ADIR__>Sources/cloud.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    line-height: 90px;
+    border-style: none;
+}
+
+
+/*** APPS SIDE ***/
+
+
+/*** APPS MAIN CONTENTS ***/
+
+vision main list[type=table] .fname {
+    position: relative;
+    text-align: left;
+    margin: 0px 280px 0px 00px;
+    padding: 0px 10px;
+}
+
+vision main list[type=table] .mtime {
+    width: 140px;
+    right: 140px;
+    text-align: center;
+}
+
+vision main list[type=table] .copy {
+    right: 70px;
+}
+
+vision main list[type=table] .rmove {
+    right: 0px;
+}
+
+
+/*--------------*/
+
+vision main list[type=table] .tips {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: rgba(204, 204, 204, .3);
+    color: #666
+}
+
+
+/* ------------------------- */
+
+vision .edit-btns {
+    position: fixed;
+    width: 1000px;
+    height: 50px;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -500px;
+    background-color: #1ba6ea;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .1);
+    z-index: 200;
+}
+
+vision .edit-btns {
+    transition: bottom ease .3s;
+    -webkit-transition: bottom ease .3s;
+}
+
+application[size=task] vision .edit-btns {
+    display: none;
+}
+
+vision .edit-btns click {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+vision .edit-btns .return-btn {
+    float: left;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+vision .edit-btns .totop-btn {
+    float: right;
+    width: 50px !important;
+}
+
+vision .edit-btns .totop-btn .arrow {
+    width: 0;
+    height: 0;
+    top: 2px;
+    border: 12px solid transparent;
+    border-bottom-color: rgba(255, 255, 255, .2);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+vision .edit-btns .totop-btn .stick {
+    width: 10px;
+    height: 14px;
+    top: 26px;
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, .2);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+vision .edit-btns .right-btn {
+    float: right;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+vision .edit-btns .right-btn.copy {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+vision .edit-btns .save-btn {
+    float: right;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+vision .edit-btns click:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+vision .edit-btns click.copy:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+
+/*** APPS FORM ***/
+
+vision form-vision {
+    width: 950px;
+    height: auto;
+    background-color: #FFF;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .1);
+    margin: 45px auto;
+    z-index: 100;
+}
+
+vision form-vision form {
+    width: 900px;
+    height: auto;
+    padding: 15px 0px;
+    border: #DDD 1px solid;
+    margin: 24px;
+}
+
+
+/* ------------------------- */
+
+vision form-vision form inputs[type=longtext]>textarea[name=code] {
+    background: #F6F6F6 url(<__SDIR__>Common/Sources/code_background.jpg) repeat;
+}
+
+vision form-vision form inputs[type=longtext]>textarea[name=code] {
+    outline-color: #df226e;
+    color: #3399FF;
+    min-height: 240px;
+    padding: 0 5px;
+    overflow: auto;
+    resize: vertical;
+}
+
+vision form-vision form inputs[type=longtext] pre[x-language] {
+    padding: 1em;
+    margin: 0;
+}
+
+
+/* ------------------------- */

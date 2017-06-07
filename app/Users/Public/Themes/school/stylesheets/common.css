@@ -1,0 +1,294 @@
+@charset "utf-8";
+.container-1240 {
+    width: 1240px;
+    margin: auto;
+}
+
+.main-header {
+    z-index: 9999;
+}
+
+.topbar {
+    width: 100%;
+    height: 100px;
+    background-image: url(./../images/topbar.jpg);
+    background-color: #660000;
+}
+
+.topbar .school-logo {
+    float: left;
+    width: 420px;
+    height: 60px;
+    padding: 20px 0;
+}
+
+.topbar .school-logo img {
+    width: 320px;
+    height: 60px;
+}
+
+.topbar .topsearch {
+    float: right;
+    width: 420px;
+    height: 40px;
+    padding: 30px 0;
+}
+
+.topbar .topsearch .topsearchi {
+    float: left;
+    width: 370px;
+    height: 30px;
+    padding: 5px;
+    background-color: #ffcccc;
+    background-color: rgba(255, 255, 255, .8);
+    font-size: 13px;
+}
+
+.topbar .topsearch .topsearchi:focus {
+    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.topbar .topsearch .topsearchb {
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-color: #993333;
+    background-image: url(./../images/search-icon.png);
+    cursor: pointer;
+}
+
+.menubar {
+    width: 1200px;
+    height: 60px;
+    margin: 30px auto;
+    overflow: visible;
+    z-index: 9999;
+}
+
+.menubar .college-logo {
+    float: left;
+    width: 260px;
+    height: 60px;
+}
+
+.menubar .college-logo img {
+    width: 250px;
+    height: 60px;
+}
+
+.menubar .mainnav {
+    float: right;
+    width: 880px;
+    height: 60px;
+    overflow: visible;
+}
+
+.menubar .mainnav ul {
+    overflow: visible;
+}
+
+.menubar .mainnav .navmenu {
+    width: 880px;
+    height: 30px;
+    margin: 15px 0;
+}
+
+.menubar .mainnav .submenu {
+    width: auto;
+    height: 29px;
+    top: 30px !important;
+    border-top: solid 1px #600;
+}
+
+.menubar .mainnav .navmenu li {
+    float: left;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    margin: 15px;
+    text-align: right;
+    color: #666666;
+}
+
+.menubar .mainnav .submenu>li {
+    width: auto;
+    margin: 0 10px;
+    min-width: 60px;
+}
+
+.menubar .mainnav li.actived,
+.menubar .mainnav li:hover {
+    color: #660000;
+}
+
+.menubar .mainnav .hasson:hover {
+    height: 29px;
+    border-bottom: solid 1px #600;
+}
+
+.main-footer {
+    width: 100%;
+    height: 370px;
+    background-color: #974a4a;
+    background-image: url(./../images/footer.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-footer .common-bottom-nav {
+    width: 1260px;
+    height: 180px;
+    margin: 70px auto;
+}
+
+.main-footer .common-bottom-nav li {
+    float: left;
+    width: 140px;
+    height: 130px;
+    margin: 10px;
+    padding: 15px 10px;
+    background-color: #9c5757;
+    background-color: rgba(204, 204, 204, .1);
+    color: #ffcccc;
+    font-size: .6rem;
+}
+
+.main-footer .common-bottom-nav li.infs {
+    width: 160px;
+    padding: 15px 0;
+    background-color: transparent;
+}
+
+.main-footer .common-bottom-nav li.share {
+    height: 120px;
+    padding: 20px 10px;
+    background-image: url(./../images/footer-icons.png);
+    background-position: 0 0;
+}
+
+.main-footer .common-bottom-nav li.download {
+    height: 56px;
+    padding-top: 89px;
+    background-image: url(./../images/footer-icons.png);
+    background-position: -220px 0;
+}
+
+.main-footer .common-bottom-nav li.email {
+    height: 56px;
+    padding-top: 89px;
+    background-image: url(./../images/footer-icons.png);
+    background-position: -380px 0;
+}
+
+.main-footer .common-bottom-nav li.poweredby {
+    height: 40px;
+    padding: 60px 10px;
+    background-color: transparent;
+    background-image: url(./../images/footer-icons.png);
+    background-position: -540px 0;
+}
+
+.main-footer .common-bottom-nav li h4 {
+    font-size: 16px;
+    line-height: 36px;
+}
+
+.main-footer .common-bottom-nav li p {
+    line-height: 24px;
+}
+
+#mybottomlinks {
+    width: 140px;
+    height: 130px;
+}
+
+.main-footer .common-bottom-nav li.share .share-items {
+    width: 120px;
+    height: 120px;
+    margin: 0 10px;
+}
+
+.main-footer .common-bottom-nav li.share .share-items dd {
+    width: 70px;
+    height: 40px;
+    background-image: url(./../images/footer-icons.png);
+    background-position-x: -160px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    line-height: 42px;
+}
+
+.main-footer .common-bottom-nav li.share .share-items dd:nth-child(1) {
+    background-position-y: -20px;
+}
+
+.main-footer .common-bottom-nav li.share .share-items dd:nth-child(2) {
+    background-position-y: -60px;
+}
+
+.main-footer .common-bottom-nav li.share .share-items dd:nth-child(3) {
+    background-position-y: -100px;
+}
+
+.main-footer .common-bottom-nav li.poweredby a {
+    opacity: 0.8;
+    transition: opacity ease 1;
+}
+
+.main-footer .common-bottom-nav li.poweredby a:hover {
+    opacity: 1;
+}
+
+.side-list-title {
+    height: 60px;
+    line-height: 60px;
+    background: #660000;
+    text-align: center;
+    font-size: 21px;
+    color: #FFF;
+    cursor: default;
+    margin: 10px 0 0 10px;
+}
+
+.side-list {
+    margin: 10px 0;
+    background: #ffeeee;
+    padding-bottom: 5px;
+    margin: 0 0 20px 10px;
+}
+
+.side-list li {
+    height: 45px;
+    margin-top: 5px;
+    background: #FFF;
+    line-height: 45px;
+    font-size: 18px;
+    color: #032967;
+    text-align: center;
+    cursor: pointer;
+}
+
+.side-list li:hover,
+.side-list li.actived {
+    background-color: transparent;
+}
+
+.main-container {
+    width: 850px !important;
+}
+
+.main-container>header {
+    width: 850px;
+    height: 58px;
+    border-bottom: solid 2px #660000;
+}
+
+.main-container>header .dir {
+    display: block;
+    height: 30px;
+    padding: 9px 0;
+    border-top: solid 10px #ffeeee;
+    font-size: 21px;
+    line-height: 30px;
+}

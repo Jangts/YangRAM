@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+/*** Applications ***/
+
+rankinglist systemapps {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 102px;
+    left: 0px;
+}
+
+rankinglist noramlapps {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+}
+
+
+/**********************************************/
+
+rankinglist systemapps[type=bottom] {
+    bottom: 0px;
+}
+
+rankinglist systemapps[type=top] {
+    top: 0px;
+}
+
+rankinglist noramlapps {
+    top: 102px;
+}
+
+
+/**********************************************/
+
+Launcher[viewstatus=wallmode] rankinglist systemapps[type=top] {
+    top: 10px;
+}
+
+Launcher[viewstatus=wallmode] rankinglist noramlapps {
+    top: 112px;
+}
+
+
+/**********************************************/
+
+rankinglist noramlapps content {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+rankinglist noramlapps content {
+    transition: top ease .1s;
+}
+
+
+/*** Application ***/
+
+rankinglist application {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+rankinglist systemapps[type=top] application {
+    border-bottom: rgba(128, 128, 128, .4) 1px solid;
+}
+
+rankinglist systemapps[type=bottom] application {
+    border-top: rgba(128, 128, 128, .4) 1px solid;
+}
+
+rankinglist application:hover {
+    background-color: rgba(204, 204, 204, 0.1);
+}
+
+rankinglist application[running] {
+    background-color: rgba(204, 204, 204, 0.1);
+}
+
+
+/**********************************************/
+
+rankinglist application icon {
+    float: left;
+    width: 48px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0px 3px;
+}
+
+rankinglist application icon {
+    font-size: 16px;
+    text-align: center;
+    color: #FFF;
+}
+
+rankinglist application:hover icon {
+    margin-left: 0px;
+    border-left: #C30 3px solid;
+}
+
+rankinglist application[state=on] icon {
+    margin-left: 0px;
+    border-left: #C30 3px solid;
+    color: #C30;
+}
+
+
+/**********************************************/
+
+rankinglist application appname {
+    position: absolute;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+rankinglist application appname {
+    transition: opacity ease .4s, left ease .4s;
+}
+
+rankinglist application appname {
+    display: block;
+    width: auto;
+    height: 30px;
+    left: 60px;
+    padding: 5px 10px;
+    border: #333 5px solid;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: .5px;
+}
+
+rankinglist application appname {
+    max-width: 1100px;
+}
+
+rankinglist application appname {
+    color: #111;
+    text-align: center;
+    opacity: 0;
+    background: rgba(255, 255, 255, .4);
+}
+
+rankinglist application appname[longtext] {
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+rankinglist application appname[longtext] {
+    min-width: 130px;
+    height: 36px;
+    padding: 2px 10px;
+    line-height: 18px;
+}
+
+
+/**********************************************/
+
+Launcher[state=on][viewstatus=dockmode] rankinglist {
+    overflow: visible;
+    box-shadow: 0 0px 2px #111;
+}
+
+Launcher[state=on][viewstatus=dockmode] rankinglist,
+Launcher[state=on][viewstatus=dockmode] rankinglist mask {
+    transition: width ease .14s;
+}
+
+Launcher[state=on][viewstatus=dockmode] rankinglist noramlapps scrollbar {
+    z-index: -9999;
+    display: none !important;
+}
+
+Launcher[state=on][viewstatus=dockmode] rankinglist noramlapps application {
+    display: none;
+}
+
+Launcher[state=on][viewstatus=dockmode] rankinglist application[visible] {
+    display: block;
+}
+
+Launcher[state=on][viewstatus=dockmode] rankinglist systemapps:hover,
+Launcher[state=on][viewstatus=dockmode] rankinglist noramlapps:hover,
+Launcher[state=on][viewstatus=dockmode] rankinglist noramlapps:hover content,
+Launcher[state=on][viewstatus=dockmode] rankinglist application:hover {
+    overflow: visible !important;
+}
+
+Launcher[state=on][viewstatus=dockmode] rankinglist application:hover appname {
+    left: 50px;
+    opacity: 1;
+}
+
+
+/**********************************************/
+
+Launcher[viewstatus=wallmode] rankinglist,
+Launcher[viewstatus=wallmode] rankinglist mask {
+    transition: width ease .4s;
+}
+
+Launcher[viewstatus=wallmode] rankinglist noramlapps:hover scrollbar {
+    opacity: .2;
+}
+
+Launcher[viewstatus=wallmode] rankinglist application {
+    width: 200px;
+    overflow: hidden;
+}
+
+Launcher[viewstatus=wallmode] rankinglist application appname {
+    max-width: 120px;
+    width: 120px;
+    height: 50px;
+    left: 70px;
+    background: rgba(255, 255, 255, 0);
+    margin-right: 10px;
+    line-height: 50px;
+    color: #999;
+    text-align: left;
+    font-size: 12px;
+    letter-spacing: 0;
+    opacity: 1;
+    border: none;
+    padding: 0;
+}
+
+Launcher[viewstatus=wallmode] rankinglist application:hover appname {
+    color: #FFF;
+}
+
+
+/*********************************************************************************
+/*** Application Tips ***/
+
+rankinglist noramlapps application[isnew="1"]:before {
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 6px;
+    top: 26px;
+    border-radius: 3px;
+    background-color: #FFF;
+    opacity: .6;
+    content: "";
+}
+
+
+/**********************************************/
+
+rankinglist noramlapps application[tips]:after {
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 36px;
+    top: 15px;
+    border-radius: 3px;
+    background-color: #C30;
+    content: "";
+}
+
+rankinglist noramlapps application[tips="0"]:after {
+    display: none;
+}
+
+rankinglist noramlapps application[tips="NaN"]:after {
+    display: none;
+}

@@ -1,0 +1,21 @@
+{
+    "name": "YangRAM Message Center",
+    "abbr": "Mc",
+    "version": "",
+    "release_time": "",
+    "description": "YangRAM Message Center",
+    "keywords": ["YangRAM Message Center", "Message Center", "Personal Message Assistant"],
+    "namespace": "MSG",
+    "interfaces": {
+        "getter": "",
+        "customer": "",
+        "oirouter": "",
+        "setter": ""
+    },
+    "requires": {},
+    "developers": "",
+    "homepage": null,
+    "issues": null,
+    "shared_ports": {},
+    "dependents": {}
+}

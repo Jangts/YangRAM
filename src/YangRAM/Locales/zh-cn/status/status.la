@@ -1,0 +1,74 @@
+<?php
+// +-----------------------------------------------------------------------+
+// | YangRAM [ Creat What You Need By Using Your Tangram Blocks ]          |
+// +-----------------------------------------------------------------------+
+// | Copyright (c) 2015-2016 http://www.yangram.com All rights reserved.   |
+// +-----------------------------------------------------------------------+
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )               |
+// +-----------------------------------------------------------------------+
+// | Author: Microivan <ivanyeung@yangram.com>                             |
+// +-----------------------------------------------------------------------+
+
+// +--------------------------+
+//     Yangram Status List 
+// +--------------------------+
+
+$status = array (
+	0 => array(
+		"template" => null,
+		"status" => "error",
+		"statusCode" => "YangRAM-ERROR-0000",
+		"statusValue" => "ERROR_STATUS_ID_NOT_DEFINED",
+		"title" => "Sorry, YangRAM has catch a wrong status id",
+		"content" => "<header>0000<span>未定义的回执编号</span></header><p>程序运行错误并抛出一个未经定义的回执编号<font color='#FFFFDD'> [".$id."] </font>，请联系相关程序员。</p>",
+	),
+	1 => array(
+		"template" => null,
+		"status" => "complete",
+		"statusCode" => "YangRAM-CMPLT-0001",
+		"statusValue" => "HELLO_LET'S_YANGRAM",
+		"title" => "HELLO YANGRAM!",
+		"content" => "Welcome to use YangRAM System!",
+	),
+	3 => array(
+		"template" => null, 
+		"status" => "error",
+		"statusCode" => "YangRAM-ERROR-0003",
+		"statusValue" => "ERROR_TEMPLE_NOT_FOUND",
+		"title" => "Sorry, Template Not Defined!",
+		"content" => "<header>0003<span>该页面尚未指定模板</span></header><p>您要访问的页面尚未绑定模板，系统无法向您呈现该页面的内容，请联系管理员。</p>",
+	),
+	110 => array(
+		"template" => null,
+		"status" => "error",
+		"statusCode" => "YangRAM-ERROR-0110",
+		"statusValue" => "ERROR_FALSE_LOAD_PATH",
+		"title" => "Cannot Load IOA(Independent Operating Applications) From This Path",
+		"content" => "<header>110<span>错误的启动路径</span></header><p>系统检测到您正试图从一个非指定的后台启动路径访问启动文件：</p><ol><li>如若阁下为此站维护人员，为了贵司（阁下）之YangRAM数据管理系统之安全有序，请勿进行如此操作，如有特殊需求，请与YangRAM售后部门联系。</li><li>如若阁下为非授权之第三方程序员（或其他接受过相关培训或指导之人员），烦请自觉遵守所在地之法律法规关于信息安全之描述，此次来访已被记录，必要之时将提交至调查部门。</li></ol>",
+	),
+	404 => array(
+		"template" => null, 
+		"status" => "error",
+		"statusCode" => "YangRAM-ERROR-0404",
+		"statusValue" => "ERROR_PAGE_NOT_FOUND",
+		"title" => "Sorry, Page Not Found!",
+		"content" => "<header>404<span>找不到文件或目录</span></header><p>您要查找的资源可能已被删除，已更改名称或者暂时不可用。</p>",
+	),
+	1404 => array(
+		"template" => null, 
+		"status" => "error",
+		"statusCode" => "YangRAM-ERROR-1404",
+		"statusValue" => "ERROR_CONFIG_FILE_MISSING",
+		"title" => "Sorry, Page Not Found!",
+		"content" => "<header>1404<span>找不到系统配置文件</span></header><p>需要重置您的YangRAM系统，请到YangRAM.net下载YangRAM安装包或联系YangRAM售后服务中心。</p>",
+	),
+	9404 => array(
+		"template" => null, 
+		"status" => "error",
+		"statusCode" => "YangRAM-ERROR-9404",
+		"statusValue" => "ERROR_TEMPLE_NOT_FOUND",
+		"title" => "Sorry, Template Source Not Defined!",
+		"content" => "<header>9404<span>未找到模板源文件</span></header><p>您要访问的页面所需的模板源文件未找到，系统无法向您呈现该页面的内容，请联系管理员。</p>",
+	),
+);
+?>

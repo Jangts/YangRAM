@@ -1,0 +1,1 @@
+{"APPID":"1028","ID":"1028","Name":"YangRAM Stock","Code":"Gp","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/NFA\/Stock\/","DBTPrefix":"ni_app_a1028_","CONN":"0"}

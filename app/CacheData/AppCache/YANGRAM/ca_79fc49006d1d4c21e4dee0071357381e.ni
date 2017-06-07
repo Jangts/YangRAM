@@ -1,0 +1,1 @@
+{"APPID":"SYSTEM","ID":"SYSTEM","Name":"YangRAM Interactive Information Intelligent Integration System","Code":"I4","Author":"YangRAM","DIR":"\/YangRAM\/","Agent":"Bowrser","DBTPrefix":"ni","CONN":0}

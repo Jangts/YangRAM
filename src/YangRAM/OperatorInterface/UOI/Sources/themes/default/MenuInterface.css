@@ -1,0 +1,274 @@
+@charset "utf-8";
+
+/*** Bars ***/
+
+hibar subbars {
+    display: none;
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    top: 0;
+    left: 60px;
+    overflow: hidden;
+}
+
+hibar subbars[state=on] {
+    display: block;
+}
+
+hibar subbars[actived=actived] {
+    overflow: visible;
+}
+
+
+/*--------*/
+
+hibar subbars application {
+    display: none;
+    position: absolute;
+    width: 790px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    overflow: visible;
+}
+
+hibar subbars[viewstatus=browsing] application {
+    left: 130px;
+}
+
+hibar subbars application[running] {
+    display: block;
+}
+
+hibar subbars application appname {
+    float: left;
+    width: auto;
+    line-height: 40px;
+    cursor: default;
+    color: #FFF;
+    font-size: 13px;
+    margin-right: 20px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+hibar subbars application menu {
+    float: left;
+    width: 80px !important;
+    height: 20px;
+    margin: 10px 0px;
+    line-height: 20px;
+}
+
+hibar subbars application menu {
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    color: #DDD;
+    font-size: 13px;
+    outline: none;
+    border-left: rgba(255, 255, 255, .1) dotted 1px;
+}
+
+hibar subbars application menu:before {
+    display: block;
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    content: attr(name);
+    overflow: hidden;
+}
+
+hibar subbars application menu {
+    color: #FFF;
+}
+
+hibar subbars application menu items {
+    display: block;
+    width: 80px;
+    height: 0px;
+    overflow: hidden;
+    top: 3px;
+    transition: top ease .3s;
+}
+
+hibar subbars application menu items item {
+    display: block;
+    position: relative;
+    width: 178px;
+    height: 20px;
+    margin-left: 1px;
+    margin-bottom: 1px;
+    padding: 5px 15px;
+}
+
+hibar subbars application menu items item {
+    line-height: 20px;
+    font-size: 12px;
+    background: #444;
+    text-align: left;
+    overflow: hidden;
+}
+
+hibar subbars application menu items item[state=off] {
+    color: #999;
+    cursor: default;
+}
+
+hibar subbars application menu items item:first-child {
+    margin-top: 2px;
+    border-radius: 2px 2px 0px 0px;
+}
+
+hibar subbars application menu items item:last-child {
+    border-radius: 0px 0px 2px 2px;
+}
+
+hibar subbars application menu items item:before {
+    font-family: 'IconsForUoi';
+    text-align: center;
+    margin-right: 10px;
+    content: '　';
+}
+
+
+/*--------*/
+
+hibar subbars application menu items item[href=SysSetting]:before {
+    content: '\e09a';
+}
+
+hibar subbars application menu items item[href=AppStore]:before {
+    content: '\e04f';
+}
+
+hibar subbars application menu items item[href=ProcessBus]:before {
+    content: '\e034';
+}
+
+hibar subbars application menu items item[href=SysUpdate]:before {
+    content: '\e098';
+}
+
+hibar subbars application menu items item[href=Cover]:before {
+    content: '\e057';
+}
+
+hibar subbars application menu items item[href=Center]:before {
+    content: '\e038';
+}
+
+hibar subbars application menu items item[href=Sleep]:before {
+    content: '\e058';
+}
+
+hibar subbars application menu items item[href=Close]:before {
+    content: '\e082';
+}
+
+hibar subbars application menu items item[href=TodoLister]:before {
+    content: '\e081';
+}
+
+hibar subbars application menu items item[href=GotoHelp]:before {
+    content: '\e05d';
+}
+
+hibar subbars application menu items item[href=Help]:before {
+    content: '\e05d';
+}
+
+
+/*--------*/
+
+hibar subbars[actived=actived] application menu:hover {
+    overflow: visible;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+hibar subbars[actived=actived] application menu:hover items {
+    width: 210px;
+    height: auto;
+    top: 0px;
+}
+
+hibar subbars[actived=actived] application menu items item:hover {
+    background-color: #555;
+    width: 180px;
+    margin-left: 0px;
+}
+
+
+/*** Contexts Menus ***/
+
+hibar menus {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 0;
+    overflow: visible;
+}
+
+hibar menus[state=on] {
+    display: block;
+}
+
+hibar menus menu {
+    position: absolute;
+    width: 158px;
+    height: auto;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, .2) 1px 3px 5px;
+    border: #333 solid 1px;
+}
+
+hibar menus menu {
+    opacity: 0;
+    transition: opacity linear .2s;
+    background: #181818;
+    z-index: 0;
+}
+
+hibar menus menu[state=on] {
+    display: block;
+    opacity: 1;
+    z-index: 100;
+}
+
+hibar menus menu group {
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0px 4px 4px;
+    padding-top: 4px;
+    border-top: #333 solid 1px;
+}
+
+hibar menus menu group:first-child {
+    border-top: none;
+}
+
+hibar menus menu group item {
+    display: block;
+    width: 130px;
+    height: 24px;
+    padding: 2px 10px;
+    line-height: 24px;
+    text-align: left;
+    font-size: 12px;
+    color: #FFF;
+    cursor: default;
+}
+
+hibar menus menu group item[state=off] {
+    color: #888;
+}
+
+hibar menus menu group item:hover {
+    background-color: #333;
+}
+
+hibar menus menu group item[state=off]:hover {
+    background-color: #222;
+}

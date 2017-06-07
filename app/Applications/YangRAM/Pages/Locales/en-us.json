@@ -1,0 +1,48 @@
+{
+    "CODE": "en-us",
+    "APPNAME": "Pages",
+    "MENUS": {
+        "Default Page": "Default Page",
+        "List Of Preset": "List Of Preset",
+        "Preview": "Preview",
+        "Dataroom Official Website": "Dataroom Official Website",
+        "Publisher Forum": "Publisher Forum",
+        "About YangRAM Dataroom": "About YangRAM Dataroom"
+    },
+    "TABS": {
+        "default": "Default Page",
+        "singlepage": "Independent Pages",
+        "generalpage": "Series",
+        "listpage": "List Pages",
+        "detailpage": "Detail Pages",
+        "userpage": "User Pages",
+        "searchpage": "Search Pages",
+        "redirectings": "Redirectings"
+    },
+    "WORDS": {
+        "Confirm To Close?": "Confirm To Close?",
+        "You are trying to close a tab, are you sure to do this?": "You are trying to close a tab, are you sure to do this?",
+        "Close": "Close",
+        "Cut To": "Cut To",
+        "Cancel": "Cancel",
+        "Exceed Maximum Size Allowed Upload": "Exceed Maximum Size Allowed Upload",
+        "Unsupported File Format": "Unsupported File Format",
+        "Remove Page?": "Remove Page?",
+        "Are you sure to remove this page?": "Are you sure to remove this page?",
+        "Disuse Page?": "Disuse Page?",
+        "Are you sure to disuse this page?": "Are you sure to disuse this page?",
+        "Sure": "Sure",
+        "I'm Sorry!": "I'm Sorry!",
+        "Operation not supported!": "Operation not supported!",
+        "A Page Has Been Saved!": "A Page Has Been Saved!",
+        "A Page Has Been Deleted!": "A Page Has Been Deleted!",
+        "A Page Has Been Used!": "A Page Has Been Used!",
+        "A Page Has Been Disused!": "A Page Has Been Disused!",
+        "Disuse Using Success": "Disuse Using Success",
+        "Start Using Success": "Start Using Success",
+        "Save Success": "Save Success",
+        "Delete Success": "Delete Success",
+        "No Insert Area": "No Insert Area",
+        "This App Not Support To Insert Preset Contents": "This App Not Support To Insert Preset Contents"
+    }
+}

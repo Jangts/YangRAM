@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/*
+ * Edit Panel
+ */
+
+edit-panel {
+    position: fixed;
+    width: 1000px;
+    height: 50px;
+    bottom: 0px;
+    left: 50%;
+    margin-left: -500px;
+    background-color: #282828;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .1);
+    z-index: 2048;
+}
+
+windows application>oiml[type=right-status] edit-panel {
+    margin-left: -475px;
+}
+
+edit-panel,
+workspace[viewmode=workmode] windows application>oiml[type] edit-panel {
+    opacity: 1;
+    transition: bottom ease .4s, opacity ease .4s, margin-left ease .4s;
+    -webkit-transition: bottom ease .4s, opacity ease .4s, margin-left ease .4s;
+}
+
+workspace[viewmode=beforelist] windows application>oiml[type] edit-panel,
+workspace[viewmode=listmode] windows application>oiml[type] edit-panel,
+workspace[viewmode=afterlist] windows application>oiml[type] edit-panel,
+workspace[viewmode=beforework] windows application>oiml[type] edit-panel {
+    margin-left: -500px !important;
+    bottom: -60px !important;
+    opacity: 0;
+}
+
+edit-panel click {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+edit-panel .left-panel-button {
+    float: left;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+edit-panel .right-totop-button {
+    float: right;
+    width: 50px !important;
+}
+
+edit-panel .right-totop-button .arrow {
+    width: 0;
+    height: 0;
+    top: 2px;
+    border: 12px solid transparent;
+    border-bottom-color: rgba(255, 255, 255, .2);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+edit-panel .right-totop-button .stick {
+    width: 10px;
+    height: 14px;
+    top: 26px;
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, .2);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+edit-panel .right-panel-button {
+    float: right;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+edit-panel .right-panel-button.even {
+    float: right;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+edit-panel click:hover,
+edit-panel click.even:hover {
+    background-color: rgba(0, 0, 0, .3);
+}

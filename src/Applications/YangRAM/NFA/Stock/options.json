@@ -1,0 +1,8 @@
+{
+    "name": "YangRAM Stock",
+    "abbr": "Gp",
+    "description": "YangRAM Stock, YangRAM Non-Functional Application",
+    "keywords": ["YangRAM Stock", "Listen", "YangRAM Non-Functional Application", "Non-Functional Application", "YangRAM NFA", "NFA"],
+    "suitspace": "NFA",
+    "namespace": "Stock"
+}

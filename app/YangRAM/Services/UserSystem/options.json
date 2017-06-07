@@ -1,0 +1,7 @@
+{
+    "name": "YangRAM User Center",
+    "abbr": "Uc",
+    "description": "YangRAM User Center",
+    "keywords": ["YangRAM User Center", "User Center", "Passport"],
+    "namespace": "Passport"
+}

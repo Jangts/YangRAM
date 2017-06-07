@@ -1,0 +1,1148 @@
+@charset "utf-8";
+
+/*** EDITOR TOOLBAR ***/
+
+.ic.editor-default {
+    border: 1px solid #CCC;
+}
+
+
+/*********************************************************************************
+/*** EDITOR TOOLBAR ***/
+
+.ic.editor-default .ic.editor-toolbar {
+    width: 100%;
+    background-color: #FDFDFE;
+    border-bottom: 1px solid #DDD;
+    overflow: visible;
+    z-index: 1024;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool {
+    float: left;
+    width: auto;
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #444;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-clear {
+    clear: both
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool:hover {
+    background-color: #09C;
+    color: #FFF;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.active {
+    background-color: #09C;
+    color: #FFF;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.invalid {
+    background-color: transparent;
+    color: #AAA;
+    cursor: default;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.invalid:hover {
+    background-color: transparent;
+    color: #AAA;
+}
+
+
+/*** EDITOR TOOLBAR CHARACTER ***********************/
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.separator {
+    min-width: 10px;
+    color: #E6E6E6;
+    cursor: default;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.separator:before {
+    content: '|';
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.separator:hover {
+    background-color: transparent;
+    color: #E6E6E6;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.linebreak {
+    width: 100%;
+    height: 1px;
+    background-color: #E6E6E6;
+    margin: 0px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.linebreak:hover {
+    background-color: #E6E6E6;
+}
+
+
+/*** EDITOR TOOLBAR ICONS ***************************/
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool .ic.editor-icon {
+    display: block;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-icon:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    content: '\f042';
+}
+
+
+/* ------------------------- */
+
+.ic.editor-default .ic.editor-toolbar .undo .ic.editor-icon:before {
+    content: '\f112';
+}
+
+.ic.editor-default .ic.editor-toolbar .redo .ic.editor-icon:before {
+    content: '\f064';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .selectall .ic.editor-icon:before {
+    content: '\f0c8';
+}
+
+.ic.editor-default .ic.editor-toolbar .copy .ic.editor-icon:before {
+    content: '\f0c5';
+}
+
+.ic.editor-default .ic.editor-toolbar .paste .ic.editor-icon:before {
+    content: '\f0ea';
+}
+
+.ic.editor-default .ic.editor-toolbar .cut .ic.editor-icon:before {
+    content: '\f0c4';
+}
+
+.ic.editor-default .ic.editor-toolbar .delete .ic.editor-icon:before {
+    content: '\f177';
+}
+
+.ic.editor-default .ic.editor-toolbar .cleardoc .ic.editor-icon:before {
+    content: '\f014';
+}
+
+.ic.editor-default .ic.editor-toolbar .print .ic.editor-icon:before {
+    content: '\f02f';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .bold .ic.editor-icon:before {
+    content: '\f032';
+}
+
+.ic.editor-default .ic.editor-toolbar .italic .ic.editor-icon:before {
+    content: '\f033';
+}
+
+.ic.editor-default .ic.editor-toolbar .underline .ic.editor-icon:before {
+    content: '\f0cd';
+}
+
+.ic.editor-default .ic.editor-toolbar .strikethrough .ic.editor-icon:before {
+    content: '\f0cc';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .fontname .ic.editor-icon:before {
+    content: '\f031';
+}
+
+.ic.editor-default .ic.editor-toolbar .fontsize .ic.editor-icon:before {
+    content: '\f035';
+}
+
+.ic.editor-default .ic.editor-toolbar .forecolor .ic.editor-icon:before {
+    content: '\f040';
+}
+
+.ic.editor-default .ic.editor-toolbar .backcolor .ic.editor-icon:before {
+    content: '\f14b';
+}
+
+.ic.editor-default .ic.editor-toolbar .lineheight .ic.editor-icon:before {
+    content: '\f034';
+}
+
+.ic.editor-default .ic.editor-toolbar .touppercase .ic.editor-icon:before {
+    line-height: 32px;
+    content: 'TT';
+}
+
+.ic.editor-default .ic.editor-toolbar .tolowercase .ic.editor-icon:before {
+    content: 'tt';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .justifyleft .ic.editor-icon:before {
+    content: '\f036';
+}
+
+.ic.editor-default .ic.editor-toolbar .justifycenter .ic.editor-icon:before {
+    content: '\f037';
+}
+
+.ic.editor-default .ic.editor-toolbar .justifyright .ic.editor-icon:before {
+    content: '\f038';
+}
+
+.ic.editor-default .ic.editor-toolbar .justifyfull .ic.editor-icon:before {
+    content: '\f039';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .outdent .ic.editor-icon:before {
+    content: '\f03b';
+}
+
+.ic.editor-default .ic.editor-toolbar .indent .ic.editor-icon:before {
+    content: '\f03c';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .insertunorderedlist .ic.editor-icon:before {
+    content: '\f0ca';
+}
+
+.ic.editor-default .ic.editor-toolbar .insertorderedlist .ic.editor-icon:before {
+    content: '\f0cb';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .fullscreen .ic.editor-icon:before {
+    content: '\f0b2';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .header .ic.editor-icon:before,
+.ic.editor-default .ic.editor-toolbar .h1 .ic.editor-icon:before,
+.ic.editor-default .ic.editor-toolbar .h2 .ic.editor-icon:before,
+.ic.editor-default .ic.editor-toolbar .h3 .ic.editor-icon:before,
+.ic.editor-default .ic.editor-toolbar .h4 .ic.editor-icon:before,
+.ic.editor-default .ic.editor-toolbar .h5 .ic.editor-icon:before,
+.ic.editor-default .ic.editor-toolbar .h6 .ic.editor-icon:before {
+    content: '\f1dc';
+}
+
+.ic.editor-default .ic.editor-toolbar .p .ic.editor-icon:before {
+    content: '\f1dd';
+}
+
+.ic.editor-default .ic.editor-toolbar .blockquote .ic.editor-icon:before {
+    content: '\f10d';
+}
+
+.ic.editor-default .ic.editor-toolbar .removeformat .ic.editor-icon:before {
+    content: '\f12d';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .subscript .ic.editor-icon:before {
+    content: '\f12c';
+}
+
+.ic.editor-default .ic.editor-toolbar .superscript .ic.editor-icon:before {
+    content: '\f12b';
+}
+
+.ic.editor-default .ic.editor-toolbar .inserttime .ic.editor-icon:before {
+    content: '\f017';
+}
+
+.ic.editor-default .ic.editor-toolbar .insertdate .ic.editor-icon:before {
+    content: '\f073';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .hr .ic.editor-icon:before {
+    content: '—';
+}
+
+.ic.editor-default .ic.editor-toolbar .pagebreak .ic.editor-icon:before {
+    content: '\f0db';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .insertanchor .ic.editor-icon:before {
+    content: '\f13d';
+}
+
+.ic.editor-default .ic.editor-toolbar .createlink .ic.editor-icon:before {
+    content: '\f0c1';
+}
+
+.ic.editor-default .ic.editor-toolbar .unlink .ic.editor-icon:before {
+    content: '\f127';
+}
+
+.ic.editor-default .ic.editor-toolbar .inserttable .ic.editor-icon:before {
+    content: '\f0ce';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .insertfile .ic.editor-icon:before {
+    content: '\f0c6';
+}
+
+.ic.editor-default .ic.editor-toolbar .insertemoticon .ic.editor-icon:before {
+    content: '\f118';
+}
+
+.ic.editor-default .ic.editor-toolbar .insertvideo .ic.editor-icon:before {
+    content: '\f03d';
+}
+
+.ic.editor-default .ic.editor-toolbar .insertimage .ic.editor-icon:before {
+    content: '\f03e';
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .source .ic.editor-icon:before {
+    content: '\f121';
+}
+
+.ic.editor-default .ic.editor-toolbar .insertfragments .ic.editor-icon:before {
+    content: '\f12e';
+}
+
+
+/*** EDITOR TOOLBAR PICKS ***************************/
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool .ic.editor-pick {
+    display: none;
+    position: absolute;
+    width: auto;
+    min-width: 120px;
+    height: auto;
+    top: 30px;
+    left: 0px;
+    padding: 5px;
+    background-color: #FDFDFE;
+    border: 1px solid #DDD;
+    color: #555;
+    overflow: auto;
+}
+
+
+/* ------------------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool[data-ib-cmds].active {
+    overflow: visible;
+    z-index: 100;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.active .ic.editor-pick {
+    display: block;
+}
+
+
+/* ------------------------- */
+
+.ic.editor-default .ic.editor-toolbar li.ic.editor-font {
+    width: auto;
+    text-align: left;
+    padding: 0px 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ic.editor-default .ic.editor-toolbar .fontname li.ic.editor-font {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.ic.editor-default .ic.editor-toolbar .fontsize li.ic.editor-font {
+    height: auto;
+}
+
+.ic.editor-default .ic.editor-toolbar li.ic.editor-font:hover {
+    background-color: #09C;
+    color: #FFF;
+}
+
+.ic.editor-default .ic.editor-toolbar li.ic.editor-font.selected {
+    background-color: #09C;
+    color: #FFF;
+}
+
+
+/* ------------------------- */
+
+.ic.editor-default .ic.editor-toolbar ul.ic.editor-pick {
+    white-space: nowrap;
+}
+
+.ic.editor-default .ic.editor-toolbar .forecolor ul.ic.editor-pick {
+    line-height: 0px;
+}
+
+.ic.editor-default .ic.editor-toolbar .backcolor ul.ic.editor-pick {
+    line-height: 0px;
+}
+
+.ic.editor-default .ic.editor-toolbar li.ic.editor-color {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 1px;
+}
+
+.ic.editor-default .ic.editor-toolbar li.ic.editor-color i {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 1px;
+}
+
+.ic.editor-default .ic.editor-toolbar li.ic.editor-color:hover {
+    margin: 0px;
+    border: #09C 1px solid;
+}
+
+.ic.editor-default .ic.editor-toolbar li.ic.editor-color.selected {
+    margin: 0px;
+    border: #09C 1px solid;
+}
+
+.ic.editor-default .ic.editor-toolbar hr.ic.editor-break {
+    clear: both;
+    height: 0px;
+    border: none;
+    margin: 0 !important;
+    display: block;
+}
+
+.ic.editor-default .ic.editor-toolbar hr.ic.editor-break+hr.ic.editor-break {
+    clear: both;
+    height: 8px;
+    border: none;
+    display: block;
+}
+
+
+/*** EDITOR TOOLBAR PICKS ***************************/
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool .ic.editor-dialog {
+    display: none;
+    position: absolute;
+    width: auto;
+    min-width: 340px;
+    height: auto;
+    top: 30px;
+    left: 0px;
+    margin-left: -165px;
+    padding: 10px;
+    background-color: #FDFDFE;
+    border: 1px solid #DDD;
+    color: #555;
+    overflow: hidden;
+    text-align: left;
+}
+
+
+/* ------------------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool[data-ib-dialog].active {
+    overflow: visible;
+    z-index: 100;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-tool.active .ic.editor-dialog {
+    display: block;
+}
+
+
+/* ------------------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog span.ic.editor-title {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    height: 20px;
+    text-align: left;
+    line-height: 20px;
+    border-left: #444 3px solid;
+    margin-bottom: 10px;
+    padding-left: 3px;
+    font-size: 14px;
+    color: #444;
+    font-weight: bold;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog button {
+    height: 30px;
+    text-align: center;
+    background-color: #09C;
+    color: #FFF;
+    transition: background-color 1s ease;
+    -webkit-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    -ms-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    cursor: pointer;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog button:hover {
+    background-color: #036;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-anchor {
+    width: 340px;
+    height: 30px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-anchor input {
+    float: left;
+    width: 295px;
+    height: 28px;
+    padding: 0px 5px;
+    border: #EEE 1px solid;
+    line-height: 28px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-anchor button {
+    float: right;
+    width: 30px;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-url {
+    width: 340px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-url label {
+    float: left;
+    width: 78px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #EEE;
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-url input {
+    float: right;
+    width: 250px;
+    height: 28px;
+    padding: 0px 5px;
+    font-size: 12px;
+    border: #EEE 1px solid;
+    line-height: 28px;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-check {
+    width: 340px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-check label {
+    float: left;
+    width: auto;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #999;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-check .ic.editor-checkbox {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin: 3px;
+    top: 0px;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-attr {
+    width: 340px;
+    height: 24px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-attr-left {
+    float: left;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-attr-right {
+    float: right;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-attr label {
+    float: left;
+    width: auto;
+    height: 24px;
+    line-height: 24px;
+    padding: 0px 5px;
+    background-color: #EEE;
+    text-align: center;
+    color: #444;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-attr span {
+    float: left;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    line-height: 24px;
+    background-color: #EEE;
+    text-align: center;
+    color: #444;
+}
+
+.ic.editor-default .ic.editor-dialog .ic.editor-table-rows,
+.ic.editor-default .ic.editor-dialog .ic.editor-table-columns,
+.ic.editor-default .ic.editor-dialog .ic.editor-table-width,
+.ic.editor-default .ic.editor-dialog .ic.editor-vidoe-width,
+.ic.editor-default .ic.editor-dialog .ic.editor-vidoe-height {
+    float: left;
+    width: 43px;
+    height: 22px;
+    padding: 0px 5px;
+    border: #EEE 1px solid;
+    line-height: 22px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-attr .ic.editor-table-unit {
+    float: left;
+    width: 53px;
+    height: 24px;
+    padding: 0px 5px;
+    font-size: 12px;
+    border: #EEE 1px solid;
+    line-height: 24px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-attr .ic.editor-vidoe-type {
+    float: left;
+    width: 83px;
+    height: 24px;
+    padding: 0px 5px;
+    font-size: 12px;
+    border: #EEE 1px solid;
+    line-height: 24px;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-btns {
+    width: 340px;
+    height: 30px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-btns button {
+    width: 340px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-btns input {
+    float: left;
+    width: 165px;
+    height: 30px;
+    text-align: center;
+    background-color: #09C;
+    color: #FFF;
+    transition: background-color 1s ease;
+    -webkit-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    -ms-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    cursor: pointer;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-btns input:hover {
+    background-color: #036;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog div.ic.editor-btns input:first-child {
+    margin-right: 10px;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show {
+    width: 330px;
+    height: 72px;
+    padding: 3px 4px;
+    border: #EEE 1px solid;
+    margin-bottom: 10px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show span {
+    display: block;
+    width: 330px;
+    height: 72px;
+    text-align: center;
+    line-height: 72px;
+    color: #999;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show ul {
+    display: block;
+    width: 330px;
+    height: 72px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show ul li {
+    float: left;
+    border: #EEE 1px solid;
+    padding: 1px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show ul li img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show ul.ic.editor-list-56 li {
+    width: 56px;
+    height: 56px;
+    margin: 6px 3px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show ul.ic.editor-list-56 li img {
+    max-width: 56px;
+    max-height: 56px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show ul.ic.editor-list-28 li {
+    width: 28px;
+    height: 28px;
+    margin: 2px;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog .ic.editor-show ul.ic.editor-list-28 li img {
+    max-width: 28px;
+    max-height: 28px;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog textarea.ic.editor-code {
+    width: 330px;
+    height: 40px;
+    padding: 4px;
+    line-height: 20px;
+    font-size: 12px;
+    border: #EEE 1px solid;
+    resize: none;
+    overflow: auto;
+}
+
+
+/* --------------- */
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog ul.ic.editor-emoticons {
+    width: 340px;
+    height: auto;
+    border-top: #CCC 1px solid;
+    border-left: #CCC 1px solid;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog ul.ic.editor-emoticons-default li {
+    float: left;
+    display: table-cell;
+    width: 33px;
+    height: 33px;
+    border-right: #CCC 1px solid;
+    border-bottom: #CCC 1px solid;
+}
+
+.ic.editor-default .ic.editor-toolbar .ic.editor-dialog ul.ic.editor-emoticons-default li img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+}
+
+
+/*********************************************************************************
+/*** EDITOR STAUSEBAR ***/
+
+.ic.editor-default .ic.editor-statusbar {
+    width: 100%;
+    height: 30px;
+    background-color: #FDFDFE;
+    border-top: 1px solid #DDD;
+    overflow: visible;
+    z-index: 1024;
+}
+
+.ic.editor-default .ic.editor-statusbar section {
+    display: inline-block;
+    width: auto !important;
+    height: 20px !important;
+    margin: 5px;
+    line-height: 20px;
+}
+
+.ic.editor-default .ic.editor-statusbar input {
+    display: inline-block;
+    max-width: 60px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: solid 1px #DDD;
+}
+
+.ic.editor-default .ic.editor-statusbar i {
+    display: inline-block;
+    height: 18px;
+    margin: 1px 6px 0px 1px;
+    padding: 0 5px;
+    line-height: 18px;
+    font-size: 12px;
+    background-color: #BBB;
+    border-bottom: solid 1px #999;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.ic.editor-default .ic.editor-statusbar i.active {
+    background-color: #09C;
+    border-bottom: solid 1px #09A;
+}
+
+.ic.editor-default .ic.editor-statusbar i:last-child {
+    margin-right: 0;
+}
+
+.ic.editor-default .ic.editor-statusbar .ic.editor-fontstatus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 30px;
+    background-color: #FDFDFE;
+    z-index: 0;
+}
+
+.ic.editor-default .ic.editor-statusbar .ic.editor-tablestatus,
+.ic.editor-default .ic.editor-statusbar .ic.editor-imagestatus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 30px;
+    background-color: #FDFDFE;
+    z-index: 50;
+    text-align: right;
+}
+
+.ic.editor-default .ic.editor-statusbar .ic.editor-rowslen,
+.ic.editor-default .ic.editor-statusbar .ic.editor-colslen,
+.ic.editor-default .ic.editor-statusbar .ic.editor-border-input {
+    max-width: 30px;
+}
+
+.ic.editor-default .ic.editor-statusbar .ic.editor-imagestatus {
+    z-index: 100;
+}
+
+
+/*********************************************************************************
+/*** EDITOR EDITAREA ***/
+
+.ic.editor-default .ic.editor-editerea {
+    background-color: #FFF;
+    overflow: auto;
+    resize: vertical;
+    z-index: 0;
+    line-height: normal;
+}
+
+.ic.editor-default .ic.editor-editerea * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow: auto;
+}
+
+.ic.editor-default .ic.editor-editerea i {
+    font-style: italic;
+}
+
+.ic.editor-default .ic.editor-editerea strong,
+.ic.editor-default .ic.editor-editerea b {
+    font-weight: bold;
+}
+
+.ic.editor-default .ic.editor-editerea s,
+.ic.editor-default .ic.editor-editerea strike,
+.ic.editor-default .ic.editor-editerea dels {
+    text-decoration: line-through;
+}
+
+.ic.editor-default .ic.editor-editerea u,
+.ic.editor-default .ic.editor-editerea ins {
+    text-decoration: underline;
+}
+
+.ic.editor-default .ic.editor-editerea div {
+    word-break: break-all;
+}
+
+.ic.editor-default .ic.editor-editerea a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #06F;
+}
+
+.ic.editor-default .ic.editor-editerea img {
+    max-width: 100%;
+}
+
+.ic.editor-default .ic.editor-editerea img:hover {
+    box-sizing: border-box;
+    border: dashed 1px #0CF;
+    cursor: default;
+}
+
+.ic.editor-default .ic.editor-editerea img[_selected=_selected],
+.ic.editor-default .ic.editor-editerea img[_selected=_selected]:hover {
+    box-sizing: border-box;
+    border: dashed 1px #039;
+    cursor: default;
+}
+
+.ic.editor-default .ic.editor-editerea blockquote {
+    color: #666666;
+    font-size: 1em;
+    padding-left: 1em;
+    border-left: 4px solid #dddddd;
+    line-height: 1.5em;
+}
+
+.ic.editor-default .ic.editor-editerea h2 {
+    font-size: 1.8em;
+    border-left: 10px solid #7fc042;
+    padding-left: 0.5em;
+    margin-bottom: 0.8em;
+    font-weight: 200;
+    color: black;
+}
+
+.ic.editor-default .ic.editor-editerea ul,
+.ic.editor-default .ic.editor-editerea ol {
+    margin: auto;
+    padding: 0px 0px 0px 40px;
+    overflow: visible;
+}
+
+.ic.editor-default .ic.editor-editerea li {
+    margin: auto;
+    padding: 0px;
+    overflow: visible;
+}
+
+.ic.editor-default .ic.editor-editerea hr {
+    border-style: inset;
+    border-width: 1px;
+}
+
+.ic.editor-default .ic.editor-editerea .ic.editor-pagebreak {
+    border: 1px dotted #AAA;
+    font-size: 0;
+    height: 2px;
+}
+
+.ic.editor-default .ic.editor-editerea table {
+    border-collapse: collapse;
+    empty-cells: show;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ic.editor-default .ic.editor-editerea td,
+.ic.editor-default .ic.editor-editerea th {
+    border: solid 1px #ccc;
+    padding: 5px;
+}
+
+.ic.editor-default .ic.editor-editerea .ic.editor-emoticon {
+    margin: 0px 2px;
+}
+
+
+/*********************************************************************************
+/*** EDITOR CODEAREA ***/
+
+.ic.editor-default .ic.editor-codearea {
+    resize: vertical;
+    z-index: 0;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+    color: #FFF;
+    line-height: 20px;
+    font-size: 13px;
+    background-color: #012456;
+    overflow-y: auto;
+}
+
+.ic.editor-default .ic.editor-codearea::selection {
+    background-color: #FEDBA9;
+    color: #000;
+}
+
+.ic.editor-default .ic.editor-codearea::-webkit-selection {
+    background-color: #FEDBA9;
+    color: #000;
+}
+
+.ic.editor-default .ic.editor-codearea::-moz-selection {
+    background-color: #FEDBA9;
+    color: #000;
+}
+
+
+/*********************************************************************************
+/*** EDITOR LOADMASK ***/
+
+.ic.editor-default .ic.editor-loadmask {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #FFF;
+    opacity: .8;
+    z-index: -9999;
+}
+
+.ic.editor-default .ic.editor-loadmask.on {
+    display: block;
+    z-index: 9999;
+}
+
+.ic.editor-spinner {
+    margin: auto;
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.ic.editor-spinner>div {
+    background-color: #67CF22;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    -webkit-animation: editor-stretchdelay 1.2s infinite ease-in-out;
+    animation: editor-stretchdelay 1.2s infinite ease-in-out;
+    margin: 0px 2px;
+}
+
+.ic.editor-spinner .ic.editor-rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.ic.editor-spinner .ic.editor-rect3 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+.ic.editor-spinner .ic.editor-rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.ic.editor-spinner .ic.editor-rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes editor-stretchdelay {
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1.0)
+    }
+}
+
+@keyframes editor-stretchdelay {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
+}

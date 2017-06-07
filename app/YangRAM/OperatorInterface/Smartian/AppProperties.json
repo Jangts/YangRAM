@@ -1,0 +1,22 @@
+{
+    "name": "YangRAM Smartian",
+    "namespace": "Smartian",
+    "metadata": {
+        "keywords": ["YangRAM Smartian", "Smartian", "Personal Assistant", "Assistant", "Intelligent Search Engine", "Intelligent", "Search Engine", "Search", "Chat Robot", "Chat", "Robot"],
+        "description": "YangRAM Smartian, Personal Assistant, Intelligent Search Engine, Chat Robot"
+    },
+    "manifest": {
+        "ContentProvider": {
+            "classname": "ResHolders\\ContentProvider",
+            "filename": "ResHolders\/ContentProvider"
+        },
+        "ResourceBrowser": {
+            "classname": "ResHolders\\ResourceBrowser",
+            "filename": "ResHolders\/ResourceBrowser"
+        },
+        "OISourceTransfer": {
+            "classname": "ResHolders\\OISourceTransfer",
+            "filename": "ResHolders\/OISourceTransfer"
+        }
+    }
+}

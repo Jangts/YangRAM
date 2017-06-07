@@ -1,0 +1,1 @@
+{"APPID":"1005","ID":"1005","Name":"Sticker","Code":"St","Author":"Tangram","DIR":"\/Applications\/Tangram\/Studio\/Sticker\/","DBTPrefix":"ni_app_a1005_","CONN":"0"}

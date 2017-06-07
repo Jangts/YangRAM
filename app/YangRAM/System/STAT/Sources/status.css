@@ -1,0 +1,234 @@
+@charset "utf-8";
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    min-width: 720px;
+    color: #FFF;
+    font-family: 'Microsoft Yahei', 'Microsoft Sans Serif', 'Hiragino Sans GB', 'sans-serif';
+    font-weight: lighter;
+}
+
+.main {
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    padding: 10%;
+    cursor: default;
+}
+
+.main>header.text-icon {
+    width: 180px;
+    height: 180px;
+    letter-spacing: .2em;
+    text-align: center;
+    color: #FFF;
+    line-height: 162px;
+    font-size: 144px;
+}
+
+.main>header.text-icon {
+    background: url(/icon.php?o) center no-repeat;
+}
+
+.main>header.text-icon {
+    width: 150px;
+    height: 150px;
+    padding: 15px;
+    letter-spacing: 0;
+    line-height: 132px;
+    font-size: 114px;
+}
+
+.main>article {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.main>article>header {
+    border-bottom: #FFF 1px solid;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    color: #FFF;
+}
+
+.main>article>header>strong {
+    font-family: Impact;
+    letter-spacing: .1em;
+    font-size: 36px;
+    line-height: 30px;
+    font-weight: lighter;
+}
+
+.main>article>header>span {
+    font-weight: lighter;
+    font-size: 21px;
+}
+
+.main>article>header>span:before {
+    content: "/";
+    margin: 0 3px 0 2px;
+}
+
+.main>article>p {
+    line-height: 24px;
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.main>article>ol {
+    list-style-position: inside;
+}
+
+.main>article>ol>li {
+    line-height: 18px;
+    text-align: justify;
+    margin-top: 5px;
+}
+
+.main>footer {
+    min-height: 30px;
+    max-height: 60px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.main>footer {
+    text-align: left;
+    font-size: 12px;
+    line-height: 30px;
+    border-bottom: #FFF 1px solid;
+}
+
+.main>footer>.alias {
+    float: right;
+    font-size: 16px;
+    text-align: right;
+}
+
+body.apc.like404>.main>header.text-icon {
+    background: url(/icon.php?c=0&o) center no-repeat;
+}
+
+body.apc.like404>.main>header.text-icon,
+body.apc.like404>.main>article>header {
+    color: #464;
+}
+
+body.grn.like200 {
+    background: #7FBA42;
+    background: rgba(127, 186, 66, 1);
+}
+
+body.ylw.like400 {
+    background: #FDBB11;
+    background: rgba(253, 187, 17, 1);
+}
+
+body.apc.like404 {
+    background: #E0E0E0;
+    background: rgba(102, 102, 102, .2);
+}
+
+body.ncr.like700 {
+    background: #EF5125;
+    background: rgba(239, 81, 37, 1);
+}
+
+body.red.like701 {
+    background: #BE1E2D;
+    background: rgba(190, 30, 45, 1);
+}
+
+body,
+body.azr.like707 {
+    background: #33A5DD;
+    background: rgba(51, 165, 221, 1);
+}
+
+body.mgt.like708 {
+    background: #D41C53;
+    background: rgba(212, 28, 83, 1);
+}
+
+body.drk.like797 {
+    background: #222222 url(texture.svg) repeat;
+}
+
+body.grn.like200>.main>article {
+    color: #DFD;
+}
+
+body.ylw.like400>.main>article {
+    color: #FFC;
+}
+
+body.apc.like404>.main>article {
+    color: #666;
+}
+
+body.ncr.like700>.main>article {
+    color: #FDC;
+}
+
+body.red.like701>.main>article {
+    color: #F99;
+}
+
+body>.main>article,
+body.azr.like707>.main>article {
+    color: #CEF;
+}
+
+body.mgt.like708>.main>article {
+    color: #F9C;
+}
+
+body.drk.like797>.main>article {
+    color: #CCC;
+}
+
+body.grn.like200>.main>footer {
+    border-top: #9F9 1px dashed;
+    color: #9F9;
+}
+
+body.ylw.like400>.main>footer {
+    border-top: #FF9 1px dashed;
+    color: #FF9;
+}
+
+body.apc.like404>.main>footer {
+    border-top: #898 1px dashed;
+    color: #898;
+}
+
+body.ncr.like700>.main>footer {
+    border-top: #F80 1px dashed;
+    color: #F80;
+}
+
+body.red.like701>.main>footer {
+    border-top: #F36 1px dashed;
+    color: #F36;
+}
+
+body>.main>footer,
+body.azr.like707>.main>footer {
+    border-top: #3DF 1px dashed;
+    color: #3DF;
+}
+
+body.mgt.like708>.main>footer {
+    border-top: #F39 1px dashed;
+    color: #F39;
+}
+
+body.drk.like797>.main>footer {
+    border-top: #777 1px dashed;
+    color: #777;
+}

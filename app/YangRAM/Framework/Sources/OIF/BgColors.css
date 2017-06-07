@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/*
+ * Backgound Colors
+ */
+
+[bgcolor=white] {
+    color: #333;
+    background-color: #FFF;
+    border-color: #CCC;
+}
+
+[bgcolor=silvery] {
+    color: #222;
+    background-color: #EEE;
+    border-color: #CCC;
+}
+
+[bgcolor=light] {
+    color: #444;
+    background-color: #DDD;
+    border-color: #CCC;
+}
+
+[bgcolor=lightgray] {
+    color: #111;
+    background-color: #CCC;
+    border-color: #aaa;
+}
+
+[bgcolor=gray] {
+    color: #000;
+    background-color: #888;
+    border-color: #666;
+}
+
+[bgcolor=darkgray] {
+    color: #EEE;
+    background-color: #484848;
+    border-color: #555;
+}
+
+[bgcolor=dark] {
+    color: #CCC;
+    background-color: #282828;
+    border-color: #181818;
+}
+
+[bgcolor=deep] {
+    color: #EEE;
+    background-color: #181818;
+    border-color: #181818;
+}
+
+[bgcolor=black] {
+    color: #EEE;
+    background-color: #000;
+    border-color: #111;
+}
+
+
+/**********************************************/
+
+[bgcolor=red] {
+    color: #FFF;
+    background-color: #e6162d;
+    border-color: #e6162d;
+}
+
+[bgcolor=yellow] {
+    color: #FFF;
+    background-color: #ffc700;
+    border-color: #ffc700;
+}
+
+[bgcolor=green] {
+    color: #FFF;
+    background-color: #0dad51;
+    border-color: #0dad51;
+}
+
+[bgcolor=cyan] {
+    color: #FFF;
+    background-color: #22c1cb;
+    border-color: #22c1cb;
+}
+
+[bgcolor=blue] {
+    color: #DEF;
+    background-color: #2e3f85;
+    border-color: #2e3f85;
+}
+
+[bgcolor=magenta] {
+    color: #FFF;
+    background-color: #df226e;
+    border-color: #df226e;
+}
+
+
+/**********************************************/
+
+[bgcolor=darkred] {
+    color: #FFF;
+    background-color: #a50000;
+    border-color: #a50000;
+}
+
+[bgcolor=datered] {
+    color: #FFF;
+    background-color: #b2212f;
+    border-color: #7b1b1b;
+}
+
+[bgcolor=redorange] {
+    color: #FFF;
+    background-color: #d64a24;
+    border-color: #d64a24;
+}
+
+[bgcolor=orange] {
+    color: #FFF;
+    background-color: #ff5c0e;
+    border-color: #ff5c0e;
+}
+
+[bgcolor=brown] {
+    color: #FFF;
+    background-color: #fc9432;
+    border-color: #fc9432;
+}
+
+[bgcolor=darkgreen] {
+    color: #FFF;
+    background-color: #306b39;
+    border-color: #306b39;
+}
+
+[bgcolor=azure] {
+    color: #FFF;
+    background-color: #27b6ea;
+    border-color: #27b6ea;
+}
+
+[bgcolor=purple] {
+    color: #FFF;
+    background-color: #9a39b2;
+    border-color: #9a39b2;
+}
+
+[bgcolor=darkpurple] {
+    color: #FFF;
+    background-color: #6D196D;
+    border-color: #6D196D;
+}
+
+[bgcolor=pink] {
+    color: #FFF;
+    background-color: #ff668c;
+    border-color: #ff668c;
+}

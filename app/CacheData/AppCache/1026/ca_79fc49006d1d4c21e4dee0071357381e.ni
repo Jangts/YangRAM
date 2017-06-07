@@ -1,0 +1,1 @@
+{"APPID":"1026","ID":"1026","Name":"YangRAM News","Code":"Xw","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/NFA\/News\/","DBTPrefix":"ni_app_a1026_","CONN":"0"}

@@ -1,0 +1,626 @@
+@charset "utf-8";
+
+/*** BASIC ***/
+
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    overflow: hidden;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: visible;
+}
+
+vision {
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+el {
+    display: inline;
+}
+
+data {
+    display: none;
+}
+
+yangram {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 1024px;
+    min-height: 544px;
+}
+
+yangram {
+    font: normal 14px "Microsoft YaHei", "Hiragino Sans";
+    letter-spacing: .5px;
+}
+
+yangram {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/*** Workspaces ***/
+
+yangram hiddens {
+    z-index: -1;
+}
+
+yangram workspace {
+    z-index: 0;
+    height: 100%;
+}
+
+yangram widgets {
+    z-index: 1;
+}
+
+yangram hibar {
+    z-index: 2;
+}
+
+yangram widgets[high-order] {
+    z-index: 3;
+}
+
+
+/*** SCROLLBAR ***/
+
+scrollbar {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    z-index: 1000;
+}
+
+scrollbar rail {
+    display: block;
+    position: absolute;
+    opacity: 0;
+}
+
+scrollbar scrolldragger {
+    display: block;
+    position: absolute;
+    border-radius: 1px;
+}
+
+scrollbar[type=vert] {
+    width: 4px;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+
+scrollbar[type=vert] rail {
+    width: 2px;
+    margin: 0 1px;
+}
+
+scrollbar[type=vert] scrolldragger {
+    width: 2px;
+    margin: 0 1px;
+}
+
+scrollbar[type=hori] {
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+}
+
+scrollbar[type=hori] rail {
+    height: 2px;
+    margin: 1px 0;
+}
+
+scrollbar[type=hori] scrolldragger {
+    height: 2px;
+    margin: 1px 0;
+}
+
+scrollbar scrolldragger {
+    cursor: default;
+    background-color: #FFF;
+    z-index: 100;
+    transition: top ease .1s;
+}
+
+
+/*** WORKSPACE ***/
+
+yangram workspace {
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+yangram workspace windows {
+    z-index: 100;
+}
+
+yangram workspace browser {
+    z-index: 50;
+}
+
+yangram workspace browser[state=on] {
+    z-index: 150;
+}
+
+yangram workspace Launcher {
+    z-index: 200;
+}
+
+
+/*** APP WINDOWS ***/
+
+yangram workspace windows {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px !important;
+    left: 0px;
+}
+
+yangram workspace windows {
+    background-color: transparent;
+    color: #000;
+    opacity: 1;
+    overflow: hidden;
+}
+
+yangram workspace windows:hover>scrollbar {
+    opacity: .2;
+}
+
+
+/*** BROWSER ***/
+
+yangram workspace browser {
+    display: block;
+    position: absolute;
+    top: 0 !important;
+    left: 50px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+yangram workspace browser[state=on] {
+    opacity: 1;
+}
+
+
+/*** LAUNCHER ***/
+
+yangram workspace Launcher {
+    display: block;
+    position: absolute;
+    color: #FFF;
+    width: 50px;
+    left: -50px;
+}
+
+yangram workspace Launcher {
+    transition: left ease .4s;
+}
+
+yangram workspace Launcher[state=on] {
+    left: 0px;
+    overflow: visible;
+}
+
+
+/*** LAUNCHER MEMOWALL ***/
+
+Launcher memowall {
+    display: none;
+    position: relative;
+    padding-left: 200px;
+    background: rgba(0, 0, 0, .85);
+    z-index: 100;
+}
+
+
+/*** Launcher AppsList ***/
+
+yangram workspace Launcher rankinglist {
+    display: block;
+    position: absolute;
+    width: 50px;
+    top: 0;
+    left: 0;
+    z-index: 200;
+}
+
+yangram workspace Launcher rankinglist {
+    background: rgba(0, 0, 0, .75);
+    text-align: center;
+    overflow: hidden;
+}
+
+yangram workspace Launcher rankinglist mask {
+    display: block;
+    height: 100%;
+    background: rgba(255, 255, 255, .1);
+}
+
+
+/*********************************************************************************
+/*********************************************************************************
+/*** Widgets ***/
+
+yangram widgets {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    overflow: visible;
+}
+
+yangram widgets smartian {
+    z-index: 100;
+}
+
+yangram widgets kalendar {
+    z-index: 200;
+}
+
+yangram widgets processbus {
+    z-index: 300;
+}
+
+yangram widgets explorer {
+    z-index: 400;
+}
+
+yangram widgets dialogs {
+    z-index: 500;
+}
+
+yangram widgets msgcenter {
+    z-index: 600;
+}
+
+yangram widgets timepicker {
+    z-index: 700;
+}
+
+yangram widgets cubes {
+    z-index: 800;
+}
+
+yangram widgets locker {
+    z-index: 900;
+}
+
+yangram widgets logger {
+    z-index: 1000;
+}
+
+
+/*** Smartian ***/
+
+yangram widgets smartian {
+    position: absolute;
+    top: 40px;
+    right: -500px;
+    overflow: hidden;
+    transition: all ease .4s;
+    color: #000;
+}
+
+yangram widgets smartian * {
+    display: block;
+}
+
+yangram widgets smartian[state=on] {
+    right: 0;
+    opacity: .95;
+}
+
+
+/*** kalendar ***/
+
+yangram widgets kalendar {
+    display: block;
+    position: absolute;
+    width: 401px;
+    top: -600px;
+    right: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding-top: 40px;
+}
+
+yangram widgets kalendar {
+    transition: top ease .4s, opacity ease .4s;
+}
+
+yangram widgets kalendar[state=on] {
+    top: 0px;
+    opacity: 1;
+}
+
+
+/*** Process Bus ***/
+
+yangram widgets processbus {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: -650px;
+    width: 640px;
+}
+
+yangram widgets processbus {
+    background: rgba(0, 0, 0, .75);
+    text-align: justify;
+    overflow-x: hidden !important;
+    box-shadow: 0 0px 2px #111;
+}
+
+yangram widgets processbus {
+    transition: right ease .4s;
+}
+
+yangram widgets processbus[state=on] {
+    right: 0;
+}
+
+
+/*** Msg Center ***/
+
+yangram widgets msgcenter {
+    display: block;
+    position: absolute;
+    margin-top: 40px;
+    right: -410px;
+    width: 400px;
+}
+
+yangram widgets msgcenter {
+    background: rgba(0, 0, 0, .75);
+    text-align: left;
+    overflow: visible !important;
+    box-shadow: 0 0px 2px #111;
+}
+
+yangram widgets msgcenter {
+    transition: right ease .4s;
+}
+
+yangram widgets msgcenter[state=on] {
+    right: 0;
+}
+
+
+/*** Explorer ***/
+
+yangram widgets explorer {
+    display: none;
+    position: fixed;
+    width: 640px;
+    height: 460px;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;
+}
+
+yangram widgets explorer {
+    overflow: hidden;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+    border-radius: 2px;
+}
+
+yangram widgets explorer[state=on] {
+    display: block;
+}
+
+
+/*** Dialog ***/
+
+yangram widgets dialogs {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+yangram widgets dialogs[state=on] {
+    display: block;
+}
+
+
+/*** Time Picker ***/
+
+yangram widgets timepicker {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0px;
+    background-color: transparent;
+    overflow: hidden;
+    opacity: 0;
+}
+
+yangram widgets timepicker[state=on] {
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+
+/*** Loading Animiation ***/
+
+yangram widgets cubes {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    cursor: wait;
+}
+
+yangram widgets cubes[state=on] {
+    display: block;
+}
+
+yangram widgets cubes mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+
+/*** YangRAM Locker ****************************/
+
+yangram widgets locker {
+    display: block;
+    position: fixed;
+    top: -100%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+yangram widgets locker {
+    opacity: 0;
+    background: #222 url(texture.svg) repeat;
+    overflow: hidden;
+}
+
+yangram widgets locker {
+    transition: top ease .4s, opacity ease .4s;
+}
+
+yangram widgets locker[state=on] {
+    top: 0px;
+    opacity: 1;
+}
+
+
+/*** YangRAM Logger ****************************/
+
+yangram widgets logger {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+yangram widgets logger {
+    opacity: 1;
+    background: #222 url(texture.svg) repeat;
+    overflow: hidden;
+}
+
+yangram widgets logger {
+    transition: top ease .4s, opacity ease .4s;
+}
+
+yangram widgets logger[state=off] {
+    top: -100%;
+    opacity: 0;
+}
+
+
+/*********************************************************************************
+/*********************************************************************************
+/*** HiBar ***/
+
+yangram hibar {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+}
+
+yangram hibar {
+    background: rgba(0, 0, 0, .75);
+    text-align: center;
+    overflow: visible;
+    box-shadow: 0 0px 2px #111;
+}
+
+yangram hibar style {
+    display: none;
+}
+
+hibar>mask {
+    z-index: 0;
+}
+
+yangram hibar subbars {
+    z-index: 100;
+}
+
+yangram hibar account {
+    z-index: 200;
+}
+
+yangram hibar msger {
+    z-index: 200;
+}
+
+yangram hibar appstore {
+    z-index: 200;
+}
+
+yangram hibar wsmswitcher {
+    z-index: 200;
+}
+
+yangram hibar timer {
+    z-index: 200;
+}
+
+yangram hibar searcher {
+    z-index: 200;
+}
+
+yangram hibar start {
+    z-index: 300;
+}
+
+yangram hibar menus {
+    z-index: 400;
+}
+
+
+/*** Mask ***/
+
+hibar>mask {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    overflow: visible;
+    background: rgba(255, 255, 255, .1);
+}

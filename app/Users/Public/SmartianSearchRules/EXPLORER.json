@@ -1,0 +1,134 @@
+{
+    "src_folders": {
+        "Item": "Folder",
+        "Table": "ni_src_folders",
+        "Index": "id",
+        "Title": "name",
+        "Desc": "",
+        "Params": "open, folder, {index}",
+        "Fields": "name",
+        "Auxiliary": "KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "src_img": {
+        "Item": "Picture",
+        "Table": "ni_src_img",
+        "Index": "ID",
+        "Title": "FILE_NAME",
+        "Desc": "",
+        "Params": "open, img, {index}",
+        "Fields": "FILE_NAME",
+        "Auxiliary": "KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "src_txt": {
+        "Item": "Text",
+        "Table": "ni_src_txt",
+        "Index": "ID",
+        "Title": "FILE_NAME",
+        "Desc": "",
+        "Params": "open, txt, {index}",
+        "Fields": "FILE_NAME",
+        "Auxiliary": "KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "src_wav": {
+        "Item": "Audio",
+        "Table": "ni_src_wav",
+        "Index": "ID",
+        "Title": "FILE_NAME",
+        "Desc": "",
+        "Params": "open, wav, {index}",
+        "Fields": "FILE_NAME",
+        "Auxiliary": "KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "src_vod": {
+        "Item": "Movie",
+        "Table": "ni_src_vod",
+        "Index": "FLD_ID",
+        "Title": "FILE_NAME",
+        "Desc": "",
+        "Params": "open, folder, {index}",
+        "Fields": "FILE_NAME",
+        "Auxiliary": "KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "src_doc": {
+        "Item": "Document",
+        "Table": "ni_src_doc",
+        "Index": "FLD_ID",
+        "Title": "FILE_NAME",
+        "Desc": "",
+        "Params": "open, folder, {index}",
+        "Fields": "FILE_NAME",
+        "Auxiliary": "KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_articles": {
+        "Item": "Articles",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "SET_ALIAS = 'articles' AND KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_news": {
+        "Item": "News",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "SET_ALIAS = 'news' AND KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_exports": {
+        "Item": "Exports",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "SET_ALIAS = 'exports' AND KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_suppliers": {
+        "Item": "Suppliers",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "SET_ALIAS = 'suppliers' AND KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_products": {
+        "Item": "Products",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "SET_ALIAS = 'products' AND KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_recruits": {
+        "Item": "Recruits",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "SET_ALIAS = 'recruits' AND KEY_IS_RECYCLED = 0",
+        "Order": ["KEY_MTIME", true]
+    }
+}

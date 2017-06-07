@@ -1,0 +1,7 @@
+{
+    "name": "Registry",
+    "abbr": "Rg",
+    "description": "Registry",
+    "keywords": ["Registry"],
+    "namespace": "Registry"
+}

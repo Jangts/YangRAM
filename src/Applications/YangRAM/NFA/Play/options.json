@@ -1,0 +1,8 @@
+{
+    "name": "YangRAM Play",
+    "abbr": "Yx",
+    "description": "YangRAM Play, YangRAM Non-Functional Application",
+    "keywords": ["YangRAM Play", "Listen", "YangRAM Non-Functional Application", "Non-Functional Application", "YangRAM NFA", "NFA"],
+    "suitspace": "NFA",
+    "namespace": "Play"
+}

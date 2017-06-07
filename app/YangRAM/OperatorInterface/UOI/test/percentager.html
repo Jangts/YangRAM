@@ -1,0 +1,236 @@
+<html>
+
+<head>
+    <title>Percentager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        * {
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url(images/timg.jpg);
+        }
+        
+        #wakeup_button {
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            top: 10px;
+            right: 10px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #0cf;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        #resultarea {
+            position: absolute;
+            width: 190px;
+            height: 30px;
+            top: 60px;
+            right: 10px;
+            padding: 4px;
+            border: solid 1px #0cf;
+            line-height: 28px;
+            text-align: center;
+            background-color: #fff;
+            color: #666;
+            cursor: pointer;
+        }
+        
+        #result_value {
+            width: 150px;
+            height: 30px;
+            margin-right: 10px;
+            outline: none;
+        }
+        
+        #pecenteager {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 301px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, .9);
+        }
+        
+        #pecenteager .pecentager-outer {
+            display: block;
+            position: absolute;
+            width: 81px;
+            height: 503px;
+            top: 50%;
+            left: 110px;
+            margin-top: -251px;
+            overflow: visible;
+            cursor: default;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-line {
+            display: block;
+            width: 81px;
+            height: 3px;
+            background-color: #0cf;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner {
+            display: block;
+            width: 81px;
+            height: 497px;
+            overflow: visible;
+            z-index: 100;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner .pecentager-scale {
+            display: block;
+            position: absolute;
+            width: 63px;
+            height: 1px;
+            left: 9px;
+            background-color: #0cf;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner .pecentager-scale.p25 {
+            top: 123px;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner .pecentager-scale.p50 {
+            top: 248px;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner .pecentager-scale.p75 {
+            top: 373px;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner .pecentager-rail {
+            display: block;
+            position: absolute;
+            width: 5px;
+            height: 497px;
+            top: 0;
+            left: 38px;
+            background-color: #0cf;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner .pecentager-button {
+            display: block;
+            position: absolute;
+            width: 51px;
+            height: 5px;
+            top: -4px;
+            left: 15px;
+            border-radius: 3px;
+            background-color: #09c;
+            overflow: visible;
+            cursor: pointer;
+        }
+        
+        #pecenteager .pecentager-outer .pecentager-inner .pecentager-button .pecentager-button-circle {
+            display: block;
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            top: -3px;
+            left: 20px;
+            border-radius: 6px;
+            background-color: #09c;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wakeup_button">绑定</div>
+    <div id="resultarea"><input type="text" id="result_value" value="32"><span>%</span></div>
+    <div id="pecenteager">
+        <div class="pecentager-outer">
+            <div class="pecentager-line"></div>
+            <div class="pecentager-inner">
+                <div class="pecentager-scale p25"></div>
+                <div class="pecentager-scale p50"></div>
+                <div class="pecentager-scale p75"></div>
+                <div class="pecentager-rail"></div>
+                <div id="pecentager_button" class="pecentager-button">
+                    <div class="pecentager-button-circle"></div>
+                </div>
+            </div>
+            <div class="pecentager-line"></div>
+        </div>
+    </div>
+    <script>
+        var wakeup_button = document.getElementById('wakeup_button'),
+            result_value = document.getElementById('result_value'),
+            pecenteager = document.getElementById('pecenteager'),
+            pecentager_button = document.getElementById('pecentager_button');
+
+        var wakeup = () => {
+                wakeup_button.innerHTML = "解绑";
+                wakeup_button.onclick = sleep;
+                result_value.onchange = changeInput;
+                pecentager_button.onmousedown = mouseDown;
+                changeInput();
+            },
+            sleep = () => {
+                result_value.onchange = null;
+                pecentager_button.onmousedown = null;
+                wakeup_button.innerHTML = "绑定";
+                wakeup_button.onclick = wakeup;
+            },
+            changeInput = () => {
+                //console.log('foo');
+                var value = parseInt(result_value.value);
+                value = value > 100 ? 100 : value;
+                value = value < 0 ? 0 : value;
+                currentTop = value * 5 - 4;
+
+                result_value.value = value;
+                pecentager_button.style.top = currentTop + 'px';
+            },
+            currentTop = -4,
+            isOnMouseDown = false,
+            yOnMouseDown = 0,
+            mouseDown = (e) => {
+                yOnMouseDown = e.clientY;
+                isOnMouseDown = true;
+                window.onmousemove = mouseMove;
+                window.onmouseup = mouseUp;
+                //console.log(e);
+            },
+            mouseMove = (e) => {
+                if (isOnMouseDown === true) {
+                    var inc = e.clientY - yOnMouseDown;
+                    yOnMouseDown = e.clientY;
+                    currentTop = currentTop + inc;
+                    if (currentTop < -4) {
+                        currentTop = -4;
+                    } else if (currentTop > 496) {
+                        currentTop = 496;
+                    }
+                    pecentager_button.style.top = currentTop + 'px';
+                }
+            },
+            mouseUp = (e) => {
+                if (isOnMouseDown === true) {
+                    value = parseInt((currentTop + 4) / 5);
+                    value = value > 100 ? 100 : value;
+                    value = value < 0 ? 0 : value;
+                    currentTop = value * 5 - 4;
+                    result_value.value = value;
+                    pecentager_button.style.top = currentTop + 'px';
+                }
+                isOnMouseDown = false;
+                window.onmousemove = null;
+                window.onmouseup = null;
+            };
+
+        wakeup_button.onclick = wakeup;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+{
+    "name": "YangRAM Uniform Operator Interface Web Version",
+    "suitspace": null,
+    "namespace": "UOI",
+    "metadata": {
+        "version": "",
+        "description": "YangRAM Uniform Operator Interface Web Version",
+        "keywords": ["YangRAM Uniform Operator Interface Web Version", "YangRAM Uniform Operator Interface", "Uniform Operator Interface Web Version", "Uniform Operator Interface", "UOI", "OI", "Web Version", "UOI"],
+        "homepage": null,
+        "issues": null
+    },
+    "author": {
+        "author_id": 0,
+        "author_name": "",
+        "homepage": null,
+        "developers": []
+    },
+    "manifest": {
+        "ContentProvider": {
+            "classname": "ResHolders\\ContentProvider",
+            "filename": "ResHolders/ContentProvider"
+        },
+        "ResourceBrowser": {
+            "classname": "ResHolders\\ResourceBrowser",
+            "filename": "ResHolders\/ResourceBrowser"
+        },
+        "ResourceSetter": {
+            "classname": "ResHolders\\ResourceSetter",
+            "filename": "ResHolders\/ResourceSetter"
+        }
+    },
+    "icons": {
+        "logo": {
+            "80": "icon.png"
+        }
+    },
+    "requires": {},
+    "dependents": {}
+}

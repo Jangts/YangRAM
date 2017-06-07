@@ -1,0 +1,391 @@
+@charset "utf-8";
+
+/*** I4PLAZA CSS ***/
+
+#APP-I4PLAZA {
+    transition: none;
+}
+
+#APP-I4PLAZA {
+    top: 0 !important;
+    opacity: 1 !important;
+    background-color: #000;
+    height: 100%;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA scrollbar scrolldragger {
+    cursor: default;
+    transition: none;
+    background-color: #000;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA>oiml {
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    z-index: 1 !important;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA oiml>* {
+    display: none;
+}
+
+
+/*** WALLPAPER ***/
+
+#APP-I4PLAZA>wallpaper {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0 !important;
+}
+
+#APP-I4PLAZA>wallpaper {
+    background-image: url(WallPaper.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+
+/*** WIDGETS ***/
+
+#APP-I4PLAZA oiml>widgets[data-posi] {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    width: 1000px;
+    height: auto;
+    max-width: 1000px;
+    top: 0px;
+}
+
+#APP-I4PLAZA oiml>widgets[data-posi] {
+    margin-top: 144px;
+    margin-bottom: 40px;
+    margin-left: -500px;
+}
+
+#APP-I4PLAZA oiml>widgets[data-posi] {
+    transition: all ease .4s;
+}
+
+#APP-I4PLAZA oiml>widgets[data-posi="-2"] {
+    left: -150%;
+}
+
+#APP-I4PLAZA oiml>widgets[data-posi="-1"] {
+    left: -50%;
+}
+
+#APP-I4PLAZA oiml>widgets[data-posi="0"] {
+    left: 50%;
+    position: relative;
+}
+
+#APP-I4PLAZA oiml>widgets[data-posi="1"] {
+    left: 150%;
+}
+
+#APP-I4PLAZA oiml>widgets[data-posi="2"] {
+    left: 250%;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA[running] oiml>widgets[data-posi] {
+    opacity: 1;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets {
+    float: left;
+    width: 580px;
+    height: auto;
+    margin: 10px;
+}
+
+#APP-I4PLAZA oiml widgets section.right-widgets {
+    float: right;
+    width: 380px;
+    height: auto;
+    margin: 10px;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA oiml widgets section.top-title {
+    display: block;
+    width: 1000px;
+    height: 60px;
+    line-height: 60px;
+    background-color: rgba(255, 255, 255, 0.40);
+    border-radius: 3px;
+    cursor: default;
+}
+
+#APP-I4PLAZA oiml widgets section.top-title wgt {
+    display: block;
+    width: 520px;
+    height: 60px;
+    line-height: 60px;
+    background-color: rgba(0, 0, 0, 0.60);
+    margin: auto;
+}
+
+#APP-I4PLAZA oiml widgets section.top-title wgt.banner {
+    width: 1000px;
+}
+
+#APP-I4PLAZA oiml widgets section.top-title wgt {
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: center;
+    color: #FFF;
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn {
+    display: block;
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    top: 0px;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn.player {
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn.reader {
+    left: 120px;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn.stock {
+    left: 760px;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn.weather {
+    left: 880px;
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn:hover {
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.50);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.20);
+    margin-bottom: 20px;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget {
+    transition: height ease .3s;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget {
+    color: #999;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: default;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget atip {
+    display: block;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.60);
+    overflow: hidden;
+    line-height: 150px;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget atip {
+    color: #CCC;
+    font-size: 14px;
+    text-align: center;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget>click.widget-link {
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 20px;
+    opacity: 0;
+    top: 0px;
+    right: -100px;
+    padding: 4px 10px;
+    overflow: hidden;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget>click.widget-link {
+    background-color: rgba(0, 128, 153, 0.50);
+    line-height: 20px;
+    color: #FFF;
+    font-size: 12px;
+    text-align: center;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget>click.widget-link {
+    transition: right ease .2s, opacity ease .2s;
+    cursor: alias;
+    z-index: 9999;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget:hover>click.widget-link {
+    opacity: 1;
+    right: 0px;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .widget-title {
+    width: 100%;
+    height: 28px;
+    background-color: rgba(0, 0, 0, 0.30);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .widget-title {
+    font-size: 14px;
+    color: #000;
+    line-height: 28px;
+    text-align: center;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-chart {}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe {
+    width: 100%;
+    font-size: 12px;
+    color: #CCC;
+    line-height: 30px;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe.odd {
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe.even {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe el.for-type {
+    margin: 0 10px;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe el.for-time {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #999;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA oiml widgets section.board {
+    display: none;
+    width: 1000px;
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 3px;
+}
+
+#APP-I4PLAZA oiml widgets section.board.commom-player {
+    height: 560px;
+}
+
+#APP-I4PLAZA oiml widgets section.board.commom-reader {
+    height: 560px;
+}
+
+#APP-I4PLAZA oiml widgets section.board.stock-chart {
+    height: 560px;
+}
+
+#APP-I4PLAZA oiml widgets section.board.weather-board {
+    height: 560px;
+}
+
+#APP-I4PLAZA oiml widgets section.board.active {
+    display: block;
+}
+
+
+/*** WSBTNS ***/
+
+#APP-I4PLAZA>wsbtns {
+    display: none;
+    position: fixed;
+    width: 20px;
+    height: 60px;
+    top: 50%;
+    left: 100%;
+    margin-top: -30px;
+    margin-left: -30px;
+    z-index: 2 !important;
+}
+
+#APP-I4PLAZA>wsbtns {
+    background-color: rgba(255, 255, 255, .10);
+    border-radius: 15px;
+    opacity: 0.50;
+    cursor: pointer;
+}
+
+#APP-I4PLAZA>wsbtns:hover {
+    opacity: 1;
+}
+
+#APP-I4PLAZA[running]>wsbtns {
+    display: block;
+}
+
+
+/* ------------------------- */
+
+#APP-I4PLAZA>wsbtns>vision.widget-switch-button {
+    float: left;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    margin: 3px;
+    background-color: rgba(255, 255, 255, .20);
+}
+
+#APP-I4PLAZA>wsbtns>vision.widget-switch-button:hover {
+    background-color: rgba(255, 255, 255, .40);
+}
+
+#APP-I4PLAZA>wsbtns>vision.widget-switch-button[current],
+#APP-I4PLAZA>wsbtns>vision.widget-switch-button[current]:hover {
+    background-color: rgba(255, 255, 255, .70);
+}

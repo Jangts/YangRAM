@@ -1,0 +1,8 @@
+{
+    "name": "YangRAM News",
+    "abbr": "Xw",
+    "description": "YangRAM News, YangRAM Non-Functional Application",
+    "keywords": ["YangRAM News", "Listen", "YangRAM Non-Functional Application", "Non-Functional Application", "YangRAM NFA", "NFA"],
+    "suitspace": "NFA",
+    "namespace": "News"
+}

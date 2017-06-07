@@ -1,0 +1,55 @@
+list.theme-list {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 8px 0px;
+}
+
+list.theme-list item {
+    display: block;
+    height: 30px;
+    margin: 2px 10px;
+    background-color: #CCC;
+    border-radius: 2px;
+    cursor: pointer;
+    line-height: 30px;
+    color: #FFF;
+    text-align: center;
+}
+
+list.theme-list item:hover {
+    background-color: #ABB;
+}
+
+list.template-list {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+list.template-list item {
+    display: block;
+    height: 24px;
+    margin: 0px 10px;
+    border-bottom: #CDF 1px solid;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 24px;
+    color: #999;
+}
+
+list.template-list item:last-child {
+    border-bottom: none;
+}
+
+list.template-list item.themes {
+    border-bottom: none;
+    margin: 0px 0px;
+    padding: 0px 10px;
+    background-color: #CDF;
+}
+
+list.template-list item.template:hover {
+    background-color: #EEE;
+    color: #666;
+}

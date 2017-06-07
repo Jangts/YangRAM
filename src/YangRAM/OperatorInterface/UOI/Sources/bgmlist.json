@@ -1,0 +1,58 @@
+{
+    "Alert": {
+        "ogg": "Sources/media/Alert.ogg",
+        "mp3": "Sources/media/Alert.mp3"
+    },
+    "Click": {
+        "ogg": "Sources/media/Click.ogg",
+        "mp3": "Sources/media/Click.mp3"
+    },
+    "Delete": {
+        "ogg": "Sources/media/Delete.ogg",
+        "mp3": "Sources/media/Delete.mp3"
+    },
+    "Error": {
+        "ogg": "Sources/media/Error.ogg",
+        "mp3": "Sources/media/Error.mp3"
+    },
+    "Hover": {
+        "ogg": "Sources/media/Hover.ogg",
+        "mp3": "Sources/media/Hover.mp3"
+    },
+    "Loaded": {
+        "ogg": "Sources/media/Loaded.ogg",
+        "mp3": "Sources/media/Loaded.mp3"
+    },
+    "Lock": {
+        "ogg": "Sources/media/Lock.ogg",
+        "mp3": "Sources/media/Lock.mp3"
+    },
+    "Logout": {
+        "ogg": "Sources/media/Logout.ogg",
+        "mp3": "Sources/media/Logout.mp3"
+    },
+    "Notify": {
+        "ogg": "Sources/media/Notify.Msg.ogg",
+        "mp3": "Sources/media/Notify.Msg.mp3"
+    },
+    "Open": {
+        "ogg": "Sources/media/Open.ogg",
+        "mp3": "Sources/media/Open.MP3"
+    },
+    "Recycle": {
+        "ogg": "Sources/media/Recycle.ogg",
+        "mp3": "Sources/media/Recycle.mp3"
+    },
+    "Ring": {
+        "ogg": "Sources/media/Ring.ogg",
+        "mp3": "Sources/media/Ring.mp3"
+    },
+    "Succeeded": {
+        "ogg": "Sources/media/Succeeded.ogg",
+        "mp3": "Sources/media/Succeeded.mp3"
+    },
+    "Unlock": {
+        "ogg": "Sources/media/Unlock.ogg",
+        "mp3": "Sources/media/Unlock.mp3"
+    }
+}

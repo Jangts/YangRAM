@@ -1,0 +1,281 @@
+/**
+ * NI配置模板
+ * 1. 此文件为配置文件的模板文件，请勿直接修改；
+ * 2. 在本文件中进行参数配置，并不会在NI框架中生效；
+ * 3. 此文件为一般JSON文件，并不受主流服务器保护，将配置项信息写在此文件，有可能导致你的系统信息暴露，请勿写入有安全隐患的信息；
+ * 4. 正确使用本文件的方式是复制此文件后，修改其中的各项，并以“configuration.ini”作为文件名，保存到此目录下；
+ * 5. 工作环境中的“configuration.ini”文件还需要删除注释，不然无法运行。
+ */
+{
+    /****
+     * 常量配置
+     */
+    "constants": {
+        /****
+         * 用户信息
+         ****/
+
+        /* 所有者，请填写在NIDN托管平台注册并认证通过的邮箱。 */
+        "_OWNER_": "siteuser@yangram.com",
+
+
+        /****
+         * 主机信息
+         ****/
+
+        /* 空间总量，用于做剩余容量提醒和检测，不影响系统运行，默认为1G = 1024*1024*1024 byte = 1073741824 byte。 */
+        "_SPACE_": 1073741824,
+
+        /* 最高并发连接数，请根据服务器实际情况填写，此参数会关系到系统性能，默认为100. */
+        "_MAXCC_": 100,
+
+        /****
+         * 时间与语言
+         ****/
+
+        /* 时间偏差值，如果服务的时间不准确，且无权限修改服务器，则使用此值与之相加，默认为0 */
+        "_TIME_CORRECTION_VALUE_": 0,
+
+        /* 系统默认语言 */
+        "_LANG_": "zh-cn",
+
+
+        /****
+         * 访问相关
+         ****/
+
+        /* 是否使用https，可填写 1（是）、 0（否），默认为 0。 */
+        "_USE_HTTPS_": 0,
+
+        /* 绑定域名，可省略www */
+        "_DOMAIN_": "yourdomain.com",
+
+        /* 域名安全，可填写 1（开启）、 0（关闭），默认为 0。 */
+        /* 开启此项后，其他域名将不能访问系统。 */
+        "_DOMAIN_SAFTY_": 0,
+
+        /* 图片安全，即图片防盗链，可填写 1（开启）、 0（关闭），默认为 0。 */
+        "_PIC_SECURITY_CHAIN_": 0,
+
+        /* 统一请求接口（取口、读口）所使用的虚拟目录，默认为“/o/”。*/
+        "_GETTER_": "\/o\/",
+
+        /* 统一提交接口（写口，推口）所使用的虚拟目录，默认为“/i/”。 */
+        "_SETTER_": "\/i\/",
+
+        /* 统一操作接口（管理接口、控口）网页版所使用的虚拟目录，默认为“/oi/”。 */
+        "_WEBUOI_": "\/oi\/",
+
+        /* 是否开通网页版操作接口，可填写1（开启）、 0（关闭），默认为 1。正确配置桌面版本后可关闭此项，因为桌面版更加安全可靠。 */
+        "_WEBUOI_ENABLE_": "1",
+
+        /* 统一操作接口（管理接口、控口）桌面版对接码，可由UOI后台随机生成。 */
+        "_DOI_TOKEN_": "58430B0DE5EEF",
+
+        /* 默认首页文件名，多个值请用“/”隔开，当请求为如下所列文件名时，页面会指向首页。 */
+        "_HOME_": "index.htm\/index.html\/index.php\/index.asp\/index.jsp\/boot.php",
+
+
+        /****
+         * 访客相关
+         ****/
+
+        /*** SERVER SESSIONS ***/
+
+        /* 使用关系数据库来储存sessions，可填写 1（使用）、 0（不使用，即使用文件来储存），默认为 0。 */
+        "_SESSION_NAME_": "NISESSID",
+
+        /* 使用关系数据库来储存sessions，可填写 1（使用）、 0（不使用，即使用文件来储存），默认为 0。 */
+        "_SESSION_ON_DB_": 0,
+
+        /* 允许session跨域，可填写 1（允许）、 0（不允许），默认为 0。 */
+        "_SESIION_CROSS_": 0,
+
+        /* 跨域主域名，若要开启session跨域，则需要填写此项。 */
+        "_SESIION_DOMAIN_": "",
+
+        /* 过期sessions清除概率，请根据网站访问量设置，默认为1/1000 */
+        "_SESIION_PROBAB_": 1,
+        "_SESIION_DIVISOR_": 1000,
+
+        /* session生命周期，默认为 2小时 = 60*60*2秒 = 7200秒。 */
+        "_SESIION_EXPIRY_": 7200,
+
+        /*** CILENTS COOKIES ***/
+
+        /* 一般cookie生命周期，默认为 7日 = 60*60*24*7 秒 = 604800 秒。 */
+        "_COOKIE_EXPIRY_": 604800,
+
+        /* 高级cookie生命周期，用于泛安全登录后设置的cookie。 */
+        "_COOKIE_REVISOR_EXPIRY_": 300,
+
+        /*** CILENTS CACHES ***/
+
+        /* 是否缓存标准缩略图片，可填写 1（是）、 0（否），默认为 0。 */
+        "_CACHE_PIC_THUMB_ENABLE_": 0,
+
+        /* 是否缓存图片的不同尺寸，可填写 1（是）、 0（否），默认为 0。 */
+        "_CACHE_PIC_SIZES_ENABLE_": 0,
+
+        /* 图片缓存的生命周期，默认为 7日 = 60*60*24*7 秒 = 604800 秒。 */
+        "_CACHE_PIC_CLIENT_EXPIRY_": 604800,
+
+
+        /****
+         * 后台活动进程
+         ****/
+
+        /* 允许执行后台任务，可填写 1（允许）、 0（禁止），默认为 1。 */
+        "_TASKER_ENABLE_": 1,
+
+        /* 最大后台进程数量，请根据服务器的并发能力进行适当安排，默认为 7/100。 */
+        "_MAX_WORKERS_COUNT_": 7,
+
+        /* 激活Worker的超时时间，请根据服务器访问本地的速度设置，最少为 1秒，默认亦为 1秒。 */
+        "_WORKER_BUILD_TIMEOUT_": 1,
+
+        /* Worker的休眠时间，即多久Worker会自动唤醒并检查新任务列表，请自行权衡时效需求和性能需求，默认为1分钟。 */
+        "_WORKER_SLEEP_TIME_": 60,
+
+        /* Worker连续休息时长限制，Worker 进程连续该时长不执行任务将自杀，默认为300秒。 */
+        "_WORKER_REST_TIMEOUT_": 300,
+
+        /* Worker总休眠次数限制，Worker 的正常生命周期，一个Worker进程再没有自杀，没有被解雇的情况下，自己打卡多少次后会结束进程。 */
+        "_MASTER_SLEEP_COUNT_": 21600,
+
+
+        /****
+         * 其他常量
+         ****/
+
+        /* 主数据表表名前缀，默认ni */
+        "_DBPRE_": "ni",
+
+        /* 开启调试模式，可填写 1（开启）、 0（关闭），默认为 0。 */
+        /* 只有调试模下，状态处理器才会显示错误细节 */
+        "_USE_DEBUG_MODE_": 0
+    },
+
+    /****
+     * 关系数据库链接列表
+     * 支持链接十多种数据库，同时链接多个数据库
+     * 以下列表为格式示范，并非一定要全部配置
+     * 各项释义即赋值规范，详见开发文档，或自行参考PHP PDO的各数据库链接接口
+     */
+    "rdbconnections": [{
+        "driver": "Access",
+        "file": "",
+        "username": "root",
+        "password": "",
+        "driverOptions": ""
+    }, {
+        "driver": "Cubrid",
+        "host": "localhost",
+        "dbname": "",
+        "hostport": "3306"
+    }, {
+        "driver": "DB2",
+        "host": "localhost",
+        "dbname": "",
+        "username": "root",
+        "password": "",
+        "hostport": "3306",
+        "protocol": "",
+        "driverOptions": ""
+    }, {
+        "driver": "Firebird",
+        "host": "localhost",
+        "dbname": "",
+        "hostport": "3306",
+        "charset": "utf8",
+        "role": ""
+    }, {
+        "driver": "Informix",
+        "host": "localhost",
+        "dbname": "",
+        "service": "",
+        "server": "",
+        "EnableScrollableCursors": ""
+    }, {
+        "driver": "MSSQLServer",
+        "host": "localhost",
+        "dbname": "",
+        "appname": "",
+        "secure": "",
+        "charset": "utf8"
+    }, {
+        "driver": "MySQL",
+        "host": "localhost",
+        "dbname": "",
+        "username": "root",
+        "password": "",
+        "hostport": "3306",
+        "socket": "",
+        "charset": "utf8"
+    }, {
+        "driver": "OracleL",
+        "host": "localhost",
+        "dbname": "",
+        "hostport": "3306",
+        "charset": "utf8"
+    }, {
+        "driver": "PostgreSQL",
+        "host": "localhost",
+        "dbname": "",
+        "hostport": "3306"
+    }, {
+        "driver": "SQLite",
+        "file": "",
+        "hostport": "3306",
+        "socket": "",
+        "charset": "utf8"
+    }, {
+        "driver": "SQLite2",
+        "file": "",
+        "hostport": "3306",
+        "socket": "",
+        "charset": "utf8",
+        "driverOptions": ""
+    }, {
+        "driver": "MSSQLServer",
+        "server": "",
+        "dbname": "",
+        "appname": "",
+        "ConnectionPooling": "",
+        "Encrypt": "",
+        "Failover_Partner": "",
+        "LoginTimeout": "",
+        "MultipleActiveResultSets": "",
+        "QuotedId": "",
+        "TraceFile": "",
+        "TraceOn": "",
+        "TransactionIsolations": "",
+        "TrustServerCertificate": "",
+        "WSID": ""
+    }, {
+        "driver": "Sybase",
+        "host": "localhost",
+        "dbname": "",
+        "appname": "",
+        "secure": "",
+        "charset": "utf8"
+    }],
+
+    /****
+     * Redis缓存服务器链接列表
+     */
+    "rdsconnections": [{
+        "host": "localhost",
+        "hostport": "6379",
+        "timeout": 0.0
+    }],
+
+    /****
+     * Memcache缓存服务器链接列表
+     */
+    "memonnections": [{
+        "host": "localhost",
+        "hostport": "11211",
+        "timeout": 0.0
+    }]
+}

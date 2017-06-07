@@ -1,0 +1,1 @@
+{"APPID":"EXPLORER","ID":"EXPLORER","Name":"YangRAM Explorer","Code":"Xp","Author":"YangRAM","DIR":"\/YangRAM\/OperatorInterface\/Explorer\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

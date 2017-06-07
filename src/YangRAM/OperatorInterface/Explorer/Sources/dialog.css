@@ -1,0 +1,81 @@
+list.folder-tree {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+list.folder-tree.hidden {
+    display: none;
+}
+
+list.folder-tree item {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+list.folder-tree item vision.folder-item {
+    display: block;
+    height: 28px;
+    border-top: #FFF 1px solid;
+    border-bottom: #FFF 1px solid;
+    cursor: pointer;
+}
+
+list.folder-tree item[selected]>vision.folder-item {
+    border-top: #CDF 1px solid;
+    border-bottom: #CDF 1px solid;
+}
+
+list.folder-tree item vision.folder-item em {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px 0px;
+}
+
+list.folder-tree item vision.folder-item el.folder-item-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px 0px;
+}
+
+list.folder-tree item vision.folder-item el.folder-item-icon {
+    background-image: url(<__ADIR__>Sources/icons/dialog_icons.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+}
+
+list.folder-tree item vision.folder-item el.folder-item-name {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    text-align: left;
+    font-size: 12px;
+    color: #333;
+}
+
+list.folder-tree item vision.folder-item:hover {
+    display: block;
+    height: 28px;
+    border-top: #DDD 1px solid;
+    border-bottom: #DDD 1px solid;
+}
+
+list.folder-tree item[selected]>vision.folder-item:hover {
+    border-top: #CDF 1px solid;
+    border-bottom: #CDF 1px solid;
+}
+
+list.folder-tree item.has-child>vision.folder-item>em {
+    background-image: url(<__ADIR__>Sources/icons/dialog_icons.png);
+    background-position: 0px -20px;
+    background-repeat: no-repeat;
+}
+
+list.folder-tree item.has-child.expand>vision.folder-item>em {
+    background-image: url(<__ADIR__>Sources/icons/dialog_icons.png);
+    background-position: 0px -40px;
+    background-repeat: no-repeat;
+}

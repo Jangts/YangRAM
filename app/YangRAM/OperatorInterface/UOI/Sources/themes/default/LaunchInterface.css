@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+/*** Launcher memowall ***/
+
+Launcher memowall content {
+    display: block;
+    margin: 0px auto 30px;
+    transition: top ease .1s;
+    text-align: justify;
+}
+
+Launcher memowall content group {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+Launcher memowall content group linkgroupname {
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    content: attr(name);
+    text-align: center;
+    line-height: 30px;
+    background: rgba(255, 255, 255, .05);
+    opacity: .15;
+    transition: opacity ease .5s;
+}
+
+Launcher memowall content group:hover linkgroupname {
+    opacity: 1;
+}
+
+Launcher memowall content item {
+    float: left;
+    min-width: 120px;
+    min-height: 120px;
+}
+
+
+/**********************************************/
+
+Launcher memowall:hover scrollbar {
+    opacity: .2;
+}
+
+
+/*********************************************************************************
+/*** Manager ***/
+
+Launcher momodifier vision {
+    display: none;
+    width: 468px;
+    height: 358px;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -250px;
+    padding: 20px 15px;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, .3) 0px 0px 5px;
+}
+
+Launcher momodifier vision {
+    background-color: #FFF;
+    border: solid rgba(0, 204, 255, .2) 1px;
+    transition: all ease .4s;
+}
+
+Launcher momodifier vision click {
+    height: 28px;
+    border: #0CF solid 1px;
+    line-height: 28px;
+    font-size: 18px;
+    border-radius: 2px;
+    text-align: center;
+    color: #09F;
+    padding: 0px;
+    cursor: pointer;
+}
+
+Launcher momodifier vision click:hover {
+    background-color: #0CF;
+    color: #FFF;
+}
+
+
+/**********************************************/
+
+Launcher momodifier vision el.choose {
+    float: left;
+    width: 170px;
+    line-height: 30px;
+    color: #09F;
+    font-size: 16px;
+}
+
+Launcher momodifier vision select {
+    float: left;
+    width: 90px;
+    height: 30px;
+    margin-left: 8px;
+    border: #0CF solid 1px;
+    line-height: 28px;
+    font-size: 12px;
+    border-radius: 2px;
+    color: #09F;
+    cursor: pointer;
+}
+
+Launcher momodifier vision click.complete {
+    float: left;
+    width: 90px;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+
+/**********************************************/
+
+Launcher momodifier vision form {
+    float: left;
+    width: 468px;
+    border-top: #0CF 8px double;
+    border-bottom: #0CF 8px double;
+    margin-top: 10px;
+}
+
+Launcher momodifier vision form el.icon {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 15px 10px;
+    background-color: #999;
+    border-radius: 50%;
+}
+
+Launcher momodifier vision form el.label {
+    float: left;
+    width: 80px;
+    height: 30px;
+    margin: 5px 10px;
+    line-height: 30px;
+    color: #666;
+    text-align: left;
+}
+
+Launcher momodifier vision form el.appname {
+    float: left;
+    width: 368px;
+    margin: 5px 0px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+Launcher momodifier vision form input {
+    float: left;
+    width: 358px;
+    margin: 5px 0px;
+    padding: 0px 8px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 18px;
+    border: #999 solid 1px;
+    border-radius: 2px;
+}
+
+Launcher momodifier vision form input[name=title] {
+    margin: 40px 0px;
+    font-size: 18px;
+}
+
+Launcher momodifier vision form select {
+    float: left;
+    width: 368px;
+    margin: 5px 0px;
+    padding: 0px 8px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+    border: #999 solid 1px;
+    color: #999;
+}
+
+Launcher momodifier vision form line {
+    display: block;
+    width: 100%;
+    height: 0px;
+    border-top: #999 solid 1px;
+}
+
+Launcher momodifier vision form click.change {
+    float: left;
+    width: 266px;
+    margin: 5px 100px 10px;
+    color: #999;
+    border: #999 solid 1px;
+}
+
+Launcher momodifier vision form click:hover {
+    background-color: #0CF;
+    border: #0CF solid 1px;
+    color: #FFF;
+}

@@ -1,0 +1,130 @@
+@charset "utf-8";
+
+/*** BROWSER MAIN ***/
+
+browser {
+    transition: width ease .4s, left ease .4s, transform ease .4s;
+}
+
+browser {
+    transform: scale( .5, .5);
+}
+
+browser[state=on] {
+    transform: scale(1, 1);
+}
+
+
+/*** BROWSER PAGES ***/
+
+browser>application {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 40px !important;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+browser>application[running] {
+    top: 0 !important;
+    display: block;
+}
+
+
+/**********************************************/
+
+browser>application {
+    overflow-y: hidden;
+}
+
+browser>application::-webkit-scrollbar {
+    display: block;
+    width: 2px;
+    height: 2px;
+    margin: 0px;
+    background-color: transparent;
+}
+
+browser>application::-webkit-scrollbar-button,
+browser>application::-webkit-scrollbar-track-piece,
+browser>application::-webkit-scrollbar-corner,
+browser>application::-webkit-resizer {
+    display: none;
+}
+
+browser>application::-webkit-scrollbar-track {
+    width: 2px;
+    background-color: rgba(128, 128, 128, .2);
+}
+
+browser>application::-webkit-scrollbar-thumb {
+    width: 2px;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 1px;
+}
+
+
+/*** BROWSER MENU ***/
+
+hibar subbars browsertools {
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 40px;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background: rgba(51, 51, 51, .3)
+}
+
+hibar subbars[viewstatus=browsing] browsertools {
+    padding: 0 5px;
+    width: 120px;
+}
+
+hibar subbars browsertools closebrowser,
+hibar subbars browsertools browseprev,
+hibar subbars browsertools refresh,
+hibar subbars browsertools browsenext {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin: 12px 6px 10px;
+    border-radius: 11px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    color: #dddddd;
+    font-size: 18px;
+    font-family: 'IconsForUoi';
+}
+
+hibar subbars browsertools closebrowser:hover {
+    color: rgb(255, 102, 51);
+}
+
+hibar subbars browsertools browseprev:hover,
+hibar subbars browsertools refresh:hover,
+hibar subbars browsertools browsenext:hover {
+    color: rgb(153, 204, 255);
+}
+
+hibar subbars browsertools closebrowser:before {
+    content: '\e082';
+}
+
+hibar subbars browsertools browseprev:before {
+    content: '\e07a';
+}
+
+hibar subbars browsertools refresh:before {
+    content: '\e098';
+}
+
+hibar subbars browsertools browsenext:before {
+    content: '\e079';
+}

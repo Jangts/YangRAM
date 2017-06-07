@@ -1,0 +1,8 @@
+{
+    "name": "YangRAM Listen",
+    "abbr": "Lt",
+    "description": "YangRAM Listen, YangRAM Non-Functional Application",
+    "keywords": ["YangRAM Listen", "Listen", "YangRAM Non-Functional Application", "Non-Functional Application", "YangRAM NFA", "NFA"],
+    "suitspace": "NFA",
+    "namespace": "Listen"
+}

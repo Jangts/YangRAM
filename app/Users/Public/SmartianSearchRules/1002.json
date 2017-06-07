@@ -1,0 +1,57 @@
+{
+    "spc_news": {
+        "Item": "News",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "spc, news, {index}",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "`SET_ALIAS` = 'news' AND `KEY_IS_RECYCLED` = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_products": {
+        "Item": "Products",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "spc, products, {index}",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "`SET_ALIAS` = 'products' AND `KEY_IS_RECYCLED` = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_suppliers": {
+        "Item": "Suppliers",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "spc, suppliers, {index}",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "`SET_ALIAS` = 'suppliers' AND `KEY_IS_RECYCLED` = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_Exports": {
+        "Item": "Exports",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "spc, Exports, {index}",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "`SET_ALIAS` = 'Exports' AND `KEY_IS_RECYCLED` = 0",
+        "Order": ["KEY_MTIME", true]
+    },
+    "spc_recruits": {
+        "Item": "Recruits",
+        "Table": "ni_cnt_in_special_use",
+        "Index": "ID",
+        "Title": "TITLE",
+        "Desc": "DESCRIPTION",
+        "Params": "spc, recruits, {index}",
+        "Fields": "TITLE, DESCRIPTION",
+        "Auxiliary": "`SET_ALIAS` = 'recruits' AND `KEY_IS_RECYCLED` = 0",
+        "Order": ["KEY_MTIME", true]
+    }
+}

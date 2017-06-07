@@ -1,0 +1,46 @@
+{
+	"constants": {
+		"_BOOT_": "/boot.php",
+		"_DBPRE_": "ni",
+		"_GETTER_": "/o/",
+		"_SETTER_": "/i/",
+
+		"_OWNER_": "siteuser@yangram.com",
+		"_DOMAIN_": "www.abc.com",
+		"_HOME_": "index.htm/index.html/index.php/index.asp/index.jsp/boot.php",
+
+		"_USE_HTTPS_": 0,
+		"_SPACE_": 1073741824,
+		"_MAXCC_": 100,
+		"_LANG_": "en-us",
+
+		"_SESSION_ON_DB_": 0,
+		"_SESIION_CROSS_": 0,
+		"_SESIION_DOMAIN_": "",
+		"_SESIION_PROBAB_": 1,
+		"_SESIION_DIVISOR_": 1000,
+		"_SESIION_EXPIRY_": 7200,
+		"_COOKIE_EXPIRY_": 604800,
+		"_COOKIE_REVISOR_EXPIRY_": 300,
+
+		"_PIC_SECURITY_CHAIN_": 0,
+		"_PIC_THUMB_WIDTH_": 800,
+		"_CACHE_PIC_THUMB_ENABLE_": 0,
+		"_CACHE_PIC_SIZES_ENABLE_": 0,
+		"_CACHE_PIC_CLIENT_EXPIRY_": 604800,
+
+		"_TASKER_ENABLE_": 1,
+		"_MAX_WORKERS_COUNT_": 7,
+		"_WORKER_BUILD_TIMEOUT_": 1,
+		"_WORKER_SLEEP_TIME_": 60,
+		"_WORKER_REST_TIMEOUT_": 300,
+		"_MASTER_SLEEP_COUNT_": 21600,
+
+		"_WEBUOI_ENABLE_": 1,
+		"_UOI_TOKEN_": "Yes TangRAM",
+		"_UOI_DIR_": "/oi/",
+		
+		"_USE_DEBUG_MODE_": 1
+	},
+	"connections": []
+}

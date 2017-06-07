@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<options>
+  <type></type>
+  <Timestamp></Timestamp>
+  <defaults>
+    <mykey>myvalue</mykey>
+  </defaults>
+  <records></records>
+</options>

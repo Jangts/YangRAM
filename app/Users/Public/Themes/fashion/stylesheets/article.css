@@ -1,0 +1,59 @@
+﻿.article-dir {
+    margin: 0 2px;
+}
+
+.article-dir::after {
+    margin-left: 5px;
+    content: ">";
+}
+
+.article-dir:last-child::after {
+    content: "";
+}
+
+.article-title {
+    width: 780px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    font-size: 31px;
+    color: #0c0c0c;
+    text-align: center;
+    font-weight: bold;
+}
+
+.article-info {
+    width: 780px;
+    height: 42px;
+    line-height: 42px;
+    color: #5c5c5c;
+    padding: 11px 0;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid #f0f0f0;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.article-quote {
+    width: 710px;
+    overflow: hidden;
+    padding: 30px 0 0 70px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #5d5d5d;
+    background: #f8f8f8 url(../images/double_quotes_l.png) no-repeat;
+}
+
+.article-quote blockquote {
+    width: 640px;
+    overflow: hidden;
+    padding: 0 70px 30px 0;
+    background: #f8f8f8 url(../images/double_quotes_r.png) no-repeat right bottom;
+}
+
+.article-content {
+    width: 780px;
+    overflow: hidden;
+    padding-top: 40px;
+}

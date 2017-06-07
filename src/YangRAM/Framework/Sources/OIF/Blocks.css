@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/*
+ * OIML Blocks
+ */
+
+
+/* Shape */
+
+list[type=blocks] {
+    max-width: 1080px;
+    padding: 50px;
+    margin: auto;
+}
+
+list[type=blocks] item {
+    position: relative;
+    width: 130px;
+    height: 150px;
+    padding: 30px 25px;
+    float: left;
+    cursor: pointer;
+    overflow: visible;
+}
+
+list[type=blocks] item click {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+
+list[type=blocks] item click .titl {
+    position: absolute;
+    width: 100px;
+    height: 36px;
+    border-style: solid none;
+    border-width: 2px 0px;
+}
+
+list[type=blocks] item click .titl {
+    top: 40px;
+    left: 15px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 24px;
+    line-height: 34px;
+}
+
+list[type=blocks] item click .icon {
+    width: 130px;
+    height: 100px;
+    margin: 10px 0px;
+    background-repeat: no-repeat;
+}
+
+list[type=blocks] item click .desc,
+list[type=blocks] item click .name {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    top: 120px;
+    bottom: 0px;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+list[type=blocks] item click .desc,
+list[type=blocks] item click .name {
+    padding: 0px 5px;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+list[type=blocks] item click .mask {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    opacity: 0;
+    top: 40px;
+    left: 15px;
+}
+
+list[type=blocks] item click .mask {
+    transition: all ease .4s;
+    z-index: 100;
+}
+
+list[type=blocks] item click:hover .mask {
+    opacity: .1;
+    width: 130px;
+    height: 120px;
+    top: 0px;
+    left: 0px;
+}
+
+
+/* Colors */
+
+
+/* common *************************************/
+
+list[type=blocks] item click {
+    background: #222222;
+}
+
+list[type=blocks] item click:hover {
+    box-shadow: 0px 0px 2px #111111;
+}
+
+list[type=blocks] item click .titl {
+    border-color: #FFF;
+    color: #FFF;
+}
+
+list[type=blocks] item click .desc,
+list[type=blocks] item click .name {
+    color: #FFF;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+list[type=blocks] item click .mask {
+    background: #FFF;
+}
+
+
+/* darkpurple *********************************/
+
+list[type=blocks].darkpurple item click {
+    background: #6D196D;
+}
+
+list[type=blocks].darkpurple item click:hover {
+    box-shadow: 0px 0px 2px #660066;
+}
+
+
+/* datered ************************************/
+
+list[type=blocks].datered item click {
+    background: #b2212f;
+}
+
+list[type=blocks].datered item click:hover {
+    box-shadow: 0px 0px 2px #660000;
+}
+
+
+/* magenta ************************************/
+
+list[type=blocks].magenta item click {
+    background: #df226e;
+}
+
+list[type=blocks].magenta item click:hover {
+    box-shadow: 0px 0px 2px #660022;
+}
+
+
+/* azure **************************************/
+
+list[type=blocks].azure item click {
+    background: #1ba6ea;
+}
+
+list[type=blocks].azure item click:hover {
+    box-shadow: 0px 0px 2px #002266;
+}

@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+  RewriteEngine On
+  RewriteRule ^Public/(.*)$ Users/Public/Data/$1 [QSA,PT]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)$ boot.php/$1 [QSA,PT,L]
+</IfModule>

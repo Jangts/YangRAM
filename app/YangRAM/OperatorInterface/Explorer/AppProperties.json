@@ -1,0 +1,39 @@
+{
+    "name": "YangRAM Explorer",
+    "suitspace": null,
+    "namespace": "Explorer",
+    "metadata": {
+        "version": "",
+        "keywords": ["YangRAM Explorer", "Contents Explorer", "Resources Explorer", "Mini Explorer"],
+        "description": "YangRAM Explorer",
+        "homepage": null,
+        "issues": null
+    },
+    "author": {
+        "author_id": 0,
+        "author_name": "",
+        "homepage": null,
+        "developers": []
+    },
+    "manifest": {
+        "ContentProvider": {
+            "classname": "ResHolders\\ContentProvider",
+            "filename": "ResHolders/ContentProvider"
+        },
+        "ResourceSetter": {
+            "classname": "ResHolders\\ResourceSetter",
+            "filename": "ResHolders\/ResourceSetter"
+        }
+    },
+    "icons": {
+        "logo": {
+            "80": "icon.png"
+        },
+        "ect.": {
+            "normal": "icon.png",
+            "folder": "folder.icon.png"
+        }
+    },
+    "requires": {},
+    "dependents": {}
+}

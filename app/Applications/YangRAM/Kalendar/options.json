@@ -1,0 +1,7 @@
+{
+    "name": "Calendar",
+    "abbr": "Ka",
+    "description": "Calendar",
+    "keywords": ["Calendar", "Kalendar"],
+    "namespace": "Kalendar"
+}

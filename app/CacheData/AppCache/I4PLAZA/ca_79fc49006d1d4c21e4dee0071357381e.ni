@@ -1,0 +1,1 @@
+{"APPID":"I4PLAZA","ID":"I4PLAZA","Name":"YangRAM I4s Plaza","Code":"St","Author":"YangRAM","DIR":"\/YangRAM\/OperatorInterface\/I4Plaza\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

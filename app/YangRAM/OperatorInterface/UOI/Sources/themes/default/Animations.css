@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+/*** DATA LOADING SPINNER  ***/
+
+.data-loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: visible;
+}
+
+.data-loading-spinner>.dls-container1>el,
+.data-loading-spinner>.dls-container2>el,
+.data-loading-spinner>.dls-container3>el {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.70);
+    border-radius: 100%;
+    position: absolute;
+    animation: cls-bouncedelay 1.2s infinite ease-in-out;
+    animation-fill-mode: both;
+}
+
+.data-loading-spinner>vision {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.data-loading-spinner>.dls-container2 {
+    transform: rotateZ(45deg);
+}
+
+.data-loading-spinner>.dls-container3 {
+    transform: rotateZ(90deg);
+}
+
+.data-loading-spinner .dls-circle1 {
+    top: 0;
+    left: 0;
+}
+
+.data-loading-spinner .dls-circle2 {
+    top: 0;
+    right: 0;
+}
+
+.data-loading-spinner .dls-circle3 {
+    right: 0;
+    bottom: 0;
+}
+
+.data-loading-spinner .dls-circle4 {
+    left: 0;
+    bottom: 0;
+}
+
+.data-loading-spinner>.dls-container2 .dls-circle1 {
+    animation-delay: -1.1s;
+}
+
+.data-loading-spinner>.dls-container3 .dls-circle1 {
+    animation-delay: -1.0s;
+}
+
+.data-loading-spinner>.dls-container1 .dls-circle2 {
+    animation-delay: -0.9s;
+}
+
+.data-loading-spinner>.dls-container2 .dls-circle2 {
+    animation-delay: -0.8s;
+}
+
+.data-loading-spinner>.dls-container3 .dls-circle2 {
+    animation-delay: -0.7s;
+}
+
+.data-loading-spinner>.dls-container1 .dls-circle3 {
+    animation-delay: -0.6s;
+}
+
+.data-loading-spinner>.dls-container2 .dls-circle3 {
+    animation-delay: -0.4s;
+}
+
+.data-loading-spinner>.dls-container3 .dls-circle3 {
+    animation-delay: -0.4s;
+}
+
+.data-loading-spinner>.dls-container1 .dls-circle4 {
+    animation-delay: -0.3s;
+}
+
+.data-loading-spinner>.dls-container2 .dls-circle4 {
+    animation-delay: -0.2s;
+}
+
+.data-loading-spinner>.dls-container3 .dls-circle4 {
+    animation-delay: -0.1s;
+}
+
+@keyframes cls-bouncedelay {
+    0%,
+    80%,
+    100% {
+        transform: scale(0.0);
+    }
+    40% {
+        transform: scale(1.0);
+    }
+}
+
+
+/*** APP LAUNCHING SPINNER  ***/
+
+.app-launching-spinner {
+    animation: als-rotateplane 1.2s infinite ease-in-out;
+}
+
+@keyframes als-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+
+/*** CP LAUNCHING SPINNER  ***/
+
+.cp-launching-spinner>* {
+    float: left;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    margin-right: 29px;
+    animation: cls-bouncedelay 1.4s infinite ease-in-out;
+    animation-fill-mode: both;
+}
+
+.cp-launching-spinner .cls-bounce1 {
+    animation-delay: -0.32s;
+}
+
+.cp-launching-spinner .cls-bounce2 {
+    animation-delay: -0.16s;
+}
+
+.cp-launching-spinner .cls-bounce3 {
+    margin-right: 0;
+}
+
+@keyframes cls-bouncedelay {
+    0%,
+    80%,
+    100% {
+        transform: scale(0.0);
+    }
+    40% {
+        transform: scale(1.0);
+    }
+}
+
+
+/*** DATA CONNECTING ANIMATION ***/
+
+.connecting-animation {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    opacity: .8;
+    z-index: -9999;
+}
+
+.connecting-animation.on {
+    display: block;
+    z-index: 9999;
+}
+
+.data-connecting-spinner {
+    margin: auto;
+    position: absolute;
+    width: 50px;
+    height: 36px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.data-connecting-spinner>el {
+    background-color: #67CF22;
+    height: 100%;
+    width: 4px;
+    display: inline-block;
+    animation: dcs-stretchdelay 1.2s infinite ease-in-out;
+    margin: 0px 3px;
+}
+
+.data-connecting-spinner .dcs-rect2 {
+    animation-delay: -1.1s;
+}
+
+.data-connecting-spinner .dcs-rect3 {
+    animation-delay: -1.0s;
+}
+
+.data-connecting-spinner .dcs-rect4 {
+    animation-delay: -0.9s;
+}
+
+.data-connecting-spinner .dcs-rect5 {
+    animation-delay: -0.8s;
+}
+
+@keyframes dcs-stretchdelay {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+    }
+}
+
+
+/*** DATA SUBMITTING SPINNER 2D  ***/
+
+.data-submitting-spinner[type=two-dime] .dss-cube {
+    width: 31.33%;
+    height: 31.33%;
+    margin: 1%;
+    background-color: #FFF;
+    float: left;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube {
+    animation: dss-cube-grid-scale-delay 1.3s infinite ease-in-out;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(4) {
+    animation-delay: 0.1s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(5) {
+    animation-delay: 0.2s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(7) {
+    animation-delay: 0.0s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(8) {
+    animation-delay: 0.1s;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube:nth-child(9) {
+    animation-delay: 0.2s;
+}
+
+@keyframes dss-cube-grid-scale-delay {
+    0%,
+    70%,
+    100% {
+        transform: scale3D(1, 1, 1);
+    }
+    35% {
+        transform: scale3D(0, 0, 1);
+    }
+}
+
+
+/*** DATA SUBMITTING SPINNER 3D  ***/
+
+.data-submitting-spinner[type=three-dime] {
+    transform: rotateX(45deg) rotateZ(45deg);
+    transform-style: preserve-3d;
+    overflow: visible;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube,
+.data-submitting-spinner[type=three-dime] .dss-cube:after,
+.data-submitting-spinner[type=three-dime] .dss-cube:before {
+    content: '';
+    float: left;
+    position: absolute;
+    overflow: visible;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube {
+    width: 33.33%;
+    height: 33.33%;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:after,
+.data-submitting-spinner[type=three-dime] .dss-cube:before {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Top */
+
+.data-submitting-spinner[type=three-dime] .dss-cube {
+    background-color: #fdfdfd;
+    position: relative;
+    transform: translateZ(33.33%);
+    transform-style: preserve-3d;
+    transition: .25s;
+    box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1);
+    animation: dss-cube-anim 1s infinite;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:after {
+    background-color: #d7d7d7;
+    transform: rotateX(-90deg) translateY(100%);
+    transform-origin: 100% 100%;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:before {
+    background-color: #c3c3c3;
+    transform: rotateY(90deg) translateX(100%);
+    transform-origin: 100% 0;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(6) {
+    animation-delay: 0.3s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(8) {
+    animation-delay: 0.4s;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:nth-child(9) {
+    animation-delay: 0.45s;
+}
+
+@keyframes dss-cube-anim {
+    50% {
+        transform: translateZ(1em);
+    }
+}

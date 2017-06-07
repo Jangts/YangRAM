@@ -1,0 +1,13 @@
+<popup-form>
+    <form-vision>
+        {{$FORM}}
+    </form-vision>
+    <vision class="ctrl-buttons">
+        <vision class="item-ctrl-btn">
+            <click href="trigger://{{AI_CURR}}::Cancel" args="" class="content-delete-btn">{{$LOCAL.labels[`abandon`]}}</click>
+        </vision>
+        <vision class="item-ctrl-btn">
+            <click href="trigger://{{AI_CURR}}::SaveItem" args="{{$PID}}" class="content-delete-btn">{{$LOCAL.labels[`save`]}}</click>
+        </vision>
+    </vision>
+</popup-form>

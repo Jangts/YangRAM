@@ -1,0 +1,69 @@
+<?php
+define('TIMEZONE',      'Etc/GMT-8');
+date_default_timezone_set(TIMEZONE);
+
+define('BOOTTIME',      isset($_SERVER['REQUEST_TIME_FLOAT']) ? $_SERVER['REQUEST_TIME_FLOAT'] : microtime(TRUE));
+define('DATETIME',      date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']));
+
+define('P',             dirname($_SERVER['SCRIPT_FILENAME']));
+define('R',             dirname(__FILE__));
+define('PID',    	    strtr(str_replace(P, '', R), '\\', '/'));
+define('ROOT',      	strtr(R, '\\', '/'));
+define('SRVR',			$_SERVER['SERVER_SOFTWARE']);
+define('HOST',      	isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : $_SERVER['SERVER_NAME']);
+define('HTTP',      	$_SERVER['SERVER_PROTOCOL']);
+define('PORT',      	$_SERVER['SERVER_PORT']);
+
+define('APP_DIR',    	'/Applications/');
+define('TPA_DIR',    	'/Applications(x)/');
+define('USR_DIR',   	'/Users/');
+define('I4S_DIR',   	'/YangRAM/');
+
+define('APP_PID',    	PID.APP_DIR);
+define('TPA_PID',    	PID.TPA_DIR);
+define('USR_PID',   	PID.USR_DIR);
+define('I4S_PID',   	PID.I4S_DIR);
+define('SYS_PID',    	PID.I4S_DIR.'System/');
+
+define('PATH_APP',    	ROOT.APP_DIR);
+define('PATH_TPA',    	ROOT.TPA_DIR);
+define('PATH_USR', 		ROOT.USR_DIR);
+define('PATH_I4S',    	ROOT.I4S_DIR);
+define('PATH_SYS',    	PATH_I4S.'System/');
+define('PATH_LIB',		PATH_I4S.'Library/');
+
+define('PUB_DIR',   	USR_DIR.'Public/');
+define('VIEW_DIR',   	USR_DIR.'Public/Themes/');
+define('LIBX_DIR',   	USR_DIR.'Public/Packages/');
+define('OPEN_DIR',   	USR_DIR.'Public/Shared/');
+define('NIAF_DIR',   	I4S_DIR.'Framework/');
+define('LANGS_DIR',   	I4S_DIR.'Locales/');
+
+define('PUB_PID',   	PID.PUB_DIR);
+define('VIEW_PID',   	PID.VIEW_DIR);
+define('LIBX_PID',   	PID.LIBX_DIR);
+define('OPEN_PID',   	PID.OPEN_DIR);
+define('NIAF_PID',   	PID.NIAF_DIR);
+define('LANGS_PID',   	PID.LANGS_DIR);
+
+define('PATH_PUB', 		ROOT.PUB_DIR);
+define('PATH_VIEW',     ROOT.VIEW_DIR);
+define('PATH_LIBX',     ROOT.LIBX_DIR);
+define('PATH_OPEN',     ROOT.OPEN_DIR);
+define('PATH_NIAF',    	ROOT.NIAF_DIR);
+define('PATH_LANGS',    ROOT.LANGS_DIR);
+
+define('PATH_CAC', 		ROOT.'/CacheData/');
+define('PATH_CACA', 	PATH_CAC.'AppCache/');
+define('PATH_CACS', 	PATH_CAC.'SysCache/');
+define('PATH_CAC_LOG', 	PATH_CACS.'logs/');
+define('PATH_CAC_SES', 	PATH_CACS.'sess/');
+define('PATH_CAC_TMP', 	PATH_CACS.'tmps/');
+define('PATH_CAC_TASK', PATH_CAC_TMP.'taskqueues/');
+define('PATH_CAC_TEST', PATH_CAC_TMP.'testforms/');
+define('PATH_DATA', 	PATH_CAC.'SysData/');
+define('PATH_DAT_COL', 	PATH_DATA.'columns/');
+define('PATH_DAT_CNT', 	PATH_DATA.'contents/');
+define('PATH_DAT_PMSN', PATH_DATA.'permissions/');
+define('PATH_DAT_RMAP', PATH_DATA.'routemaps/');
+define('PATH_DAT_TPL', 	PATH_DATA.'template/');

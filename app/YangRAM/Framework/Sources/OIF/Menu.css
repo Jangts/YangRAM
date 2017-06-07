@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/*
+ * OIML Menu
+ */
+
+
+/* Shape */
+
+list[type=menu] {
+    width: 170px;
+    height: auto;
+    margin: 0px 20px 20px;
+}
+
+
+/* itit *****************************************/
+
+list[type=menu] itit {
+    width: 155px;
+    height: 30px;
+    margin: 20px 0 10px;
+    border-left: none;
+    padding: 0px 5px 0px 10px;
+}
+
+list[type=menu] itit {
+    overflow: hidden;
+    line-height: 30px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+list[type=menu] itit {
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+list[type=menu] itit {
+    transition: border linear .15s, width linear .15s;
+}
+
+list[type=menu] itit:hover {
+    width: 160px;
+    border-left: none;
+}
+
+list[type=menu] itit:before {
+    font-family: "IconsForUOI";
+    content: "\e079";
+    padding-right: 10px;
+}
+
+list[type=menu] group[opened=opened] itit:before {
+    font-family: "IconsForUOI";
+    content: "\e07b";
+    padding-right: 10px;
+}
+
+
+/* item *****************************************/
+
+list[type=menu] item {
+    display: none;
+}
+
+list[type=menu] group[opened=opened] item {
+    display: block;
+    width: 155px;
+    height: 25px;
+    margin-bottom: 5px;
+    border-left-style: solid;
+    border-left-width: 5px;
+    padding: 0px 5px;
+}
+
+list[type=menu] item {
+    overflow: hidden;
+    line-height: 25px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+list[type=menu] item {
+    transition: border linear .15s, width linear .15s;
+}
+
+list[type=menu] item:hover {
+    width: 150px;
+    border-left-width: 10px;
+}
+
+list[type=menu] item[selected] {
+    width: 150px;
+    border-left-width: 10px;
+}
+
+list[type=menu] item click {
+    display: block;
+}
+
+
+/* item.Group ***********************************/
+
+list[type=menu] item.group {
+    width: 160px;
+    border-left: none;
+    text-align: center;
+    margin: 10px 0 5px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-size: 13px;
+    background-color: transparent;
+}
+
+list[type=menu] item.group:hover {
+    width: 160px;
+    border-left: none;
+}
+
+
+/* Colors */
+
+
+/* common *************************************/
+
+list[type=menu] itit {
+    background: #BBB;
+    color: #FFF;
+}
+
+list[type=menu] item {
+    border-left-color: #CCC;
+    background: #EEE;
+    color: #666;
+}
+
+list[type=menu] item[selected] {
+    color: #333;
+    border-left-color: #BBB;
+    background: #CCC;
+}
+
+
+/* gray **************************************/
+
+list[type=menu].gray itit {
+    background: #BBB;
+    color: #FFF;
+}
+
+list[type=menu].gray item {
+    border-left-color: #CCC;
+    background: #CCC;
+    color: #666;
+}
+
+list[type=menu].gray item[selected] {
+    border-left-color: #BBB;
+    background: #CCC;
+}
+
+
+/* dark **************************************/
+
+list[type=menu].dark itit {
+    background: #333;
+    color: #CCC;
+}
+
+list[type=menu].dark item {
+    border-left-color: #222;
+    background: #333;
+    color: #CCC;
+}
+
+list[type=menu].dark item[selected] {
+    border-left-color: #300;
+    background: #633;
+}

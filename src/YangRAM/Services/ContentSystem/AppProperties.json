@@ -1,0 +1,35 @@
+{
+    "name": "YangRAM Content Manage System",
+    "suitspace": null,
+    "namespace": "CMS",
+    "metadata": {
+        "version": "",
+        "keywords": ["YangRAM Content Manage System", "Content Manage System", "Active OpenData", "OpenData"],
+        "description": "YangRAM Content Manage System, YangRAM Active OpenData",
+        "homepage": null,
+        "issues": null
+    },
+    "author": {
+        "author_id": 0,
+        "author_name": "",
+        "homepage": null,
+        "developers": []
+    },
+    "manifest": {
+        "ContentProvider": {
+            "classname": "ResHolders\\ContentProvider",
+            "filename": "ResHolders/ContentProvider"
+        },
+        "ResourceSetter": {
+            "classname": "ResHolders\\ResourceSetter",
+            "filename": "ResHolders\/ResourceSetter"
+        }
+    },
+    "icons": {
+        "logo": {
+            "80": "icon.normal.png"
+        }
+    },
+    "requires": {},
+    "dependents": {}
+}

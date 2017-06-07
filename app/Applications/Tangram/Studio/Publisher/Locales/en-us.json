@@ -1,0 +1,31 @@
+{
+    "CODE": "en-us",
+    "APPNAME": "Tangram Publisher",
+    "TOPMENUS": {
+        "Default Page": "Default Page",
+        "List Of Preset": "List Of Preset",
+        "Preview": "Preview"
+    },
+    "WORDS": {
+        "Remove Item?": "Remove Item?",
+        "Are you sure to remove this item?": "Are you sure to remove this item?",
+        "Reference Error": "Reference Error",
+        "I\"m Sorry!": "I'm Sorry!",
+        "Operation not supported!": "Operation not supported!",
+        "Save Success": "Save Success",
+        "A Content Has Been Saved!": "A Content Has Been Saved!",
+        "Published": "Published",
+        "A Content Has Been Published!": "A Content Has Been Published!",
+        "Remove Success": "Remove Success",
+        "A Content Has Been Removed!": "A Content Has Been Removed!",
+        "Specifies No Existing Item": "Specifies No Existing Item",
+        "Confirm Close?": "Confirm Close?",
+        "You are trying to close a tab, are you sure to do this?": "You are trying to close a tab, are you sure to do this?",
+        "Cut To": "Cut To",
+        "Exceed Maximum Size Allowed Upload": "Exceed Maximum Size Allowed Upload",
+        "Unsupported File Format": "Unsupported File Format",
+        "Abandon Editing?": "Abandon Editing?",
+        "Are you sure to go to the list page before save your editing?": "Are you sure to go to the list page before save your editing?",
+        "Are you sure to open a new item before save the editing item?": "Are you sure to open a new item before save the editing item?"
+    }
+}

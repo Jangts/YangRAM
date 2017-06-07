@@ -1,0 +1,4997 @@
+
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http ://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date : 2015-09-04
+ */
+
+Yangram(function(_, declare, create, using, cache, global, undefined) {
+	_.check('Elements.Cls', ['Elements', 'Elements.create'], 'Widgets.Lib', false);
+	var document = global.document;
+	var location = global.location;
+
+	/* --------------------------------------------------------------------------------
+	/* Do Nothing Functions */
+
+	var Empty = function() {
+		//console.log('You Have Triggered A Empty Function!');
+		return this;
+	};
+
+	var AppMain = function() {
+		global.console.log('Hello Yangram!');
+	};
+
+	var DestApp = function() {
+		global.console.log('Bye-bye Yangram!');
+	};
+
+	/* --------------------------------------------------------------------------------
+	/* Public Variables & Methods of System */
+
+	var Name = 'Normal Mode';
+
+	var User = undefined;
+
+	var Theme = 'Default';
+
+	var Lang = 'zh-CN';
+
+	var Author = 'Taihe Adv';
+
+	var Version = '2.0.0.0';
+
+	var Url = global.location.href;
+
+	var Path = global.location.pathname;
+
+	var Request = global.location.search;
+
+	var PhysicalPath = '/Yangram/Interface/';
+
+	var SubmitPath = '/submit/';
+	
+	var RequestPath = '/output/';
+
+	var TimeStamp = new Date().getTime();
+	
+	var UploadMaxSize = 1024 * 1024 * 200;
+
+	var Load = function() {
+		switch (this.Name) {
+		case 'Normal Mode':
+			LoadScript(System.PhysicalPath + 'UOI/Scripts/Normal.Load.js');
+			break;
+		case 'Normal Mode':
+			LoadScript(System.PhysicalPath + 'UOI/Scripts/Normal.Load.js');
+			break;
+		case 'Normal Mode':
+			LoadScript(System.PhysicalPath + 'UOI/Scripts/Normal.Load.js');
+			break;
+		case 'Normal Mode':
+			LoadScript(System.PhysicalPath + 'UOI/Scripts/Normal.Load.js');
+			break;
+		case 'Normal Mode':
+			LoadScript(System.PhysicalPath + 'UOI/Scripts/Normal.Load.js');
+			break;
+		}
+		return this;
+	};
+
+	var LoadChange = function(goal) {
+		var speed = System.LoadedRate > 0 ? System.LoadStatus * 40 / System.LoadedRate : 4;
+		var timer = function() {
+			setTimeout(function() {
+				if (System.LoadedRate < 0) {
+					System.LoadedRate = 0;
+				}
+				if (System.LoadedRate < goal) {
+					var n = parseInt(Math.random() * speed);
+					System.LoadedRate += n;
+					if (System.LoadedRate >= 100) {
+						System.LoadedRate = goal;
+					}
+					System.LoadedRateListen();
+					timer();
+				}
+			},
+			100);
+		};
+		timer();
+		return this;
+	};
+
+	var LoadStatusChange = function(value) {
+		System.LoadStatus < 12 && System.LoadStatus++;
+		System.LoadStatusValue = value;
+		typeof System.onLoadStatusChange == 'function' && System.onLoadStatusChange();
+		return this;
+	};
+
+	var LoadedRateListen = function() {
+		if (this.LoadedRate === 0) {
+			this.onLoadStart && this.onLoadStart();
+		} else {
+			if (this.LoadedRate === 100) {
+				this.Loaded = true;
+				this.LoadStatusChange('Complete');
+				this.onLoad && this.onLoad();
+				var time = new Date().getTime() - TimeStamp;
+				setTimeout(function() {
+					System.MsgCenter.Popup({
+						Title : 'Welcome To Use.',
+						Content : 'This loading takes ' + time + ' milliseconds'
+					});
+				},
+				5000);
+			}
+			typeof this.onLoadedRateChange == 'function' && this.onLoadedRateChange();
+		}
+		return this;
+	};
+
+	var OnClose = function() {
+		if (System.Locker.Status) {
+			_.Data.AJAX({
+				url : System.SubmitPath + 'account/adminoff/',
+				data : "word=bye-bye",
+				method : 'POST',
+			});
+		};
+		var result = Activer();
+		if (result) {
+			return result;
+		}
+	};
+
+	var Activer = function(order) {
+		if (order === true) {
+			return _.Object.length(Actives);
+		};
+		if (order === false) {
+			Actives = {};
+			return this;
+		};
+		if (_.Object.length(Actives) > 0) {
+			for (var i in Actives) {
+				var result = AppsAndComs[i].Name;
+				break;
+			}
+			result += ', etc. are still in the editing.\r\n';
+			result += 'Are you sure to continue your operation?';
+			return result;
+		}
+		return false;
+	};
+
+	var XHR = function(settings) {
+		settings = settings || {};
+		var url = settings.url || System.Path;
+		var done = function(data) {
+			if (this.getResponseHeader('YTag') == 'yangram/relog-notice') {
+				System.Locker.Launch();
+			} else if (this.getResponseHeader('YTag') == 'yangram/no-operator-file') {
+				if(System.Running&&typeof settings.fail == 'function'){
+					 settings.fail.call(this, 'Operator File can not be found!');
+				}else{
+					console.log(data);
+				}
+			} else {
+				typeof settings.done == 'function' && settings.done.call(this, System.TrimHTML(data));
+			}
+		};
+		var fail = typeof settings.fail == 'function' ? settings.fail : function(data) {
+			console.log(data);
+		};
+		if (typeof settings.data == 'string') {
+			create('XHR', {
+				url : url,
+				method : 'POST'
+			}).done(done).fail(fail).setRequestHeader('Content-type', 'application/x-www-form-urlencoded').send(settings.data);
+		} else if (typeof settings.data == 'object' && settings.data instanceof FormData) {
+			create('XHR', {
+				url : url,
+				method : 'POST'
+			}).done(done).fail(fail).send(settings.data);
+		} else {
+			create('XHR', {
+				url : url
+			}).done(done).fail(fail).send();
+		}
+		return this;
+	};
+
+	var SysAttr = function(obj, attr, val) {
+		if (val === undefined) {
+			return _.Element.getAttr(obj, attr);
+		}
+		if (val === false) {
+			_.Element.removeAttr(obj, attr);
+		} else {
+			_.Element.setAttr(obj, attr, val);
+		}
+		return this;
+	};
+
+	var SysCSS = function(obj, styles) {
+		_.Element.setStyles(obj, styles);
+		return this;
+	};
+	
+	var SysClass = function(elem, className, isSwitch){
+		_.Element.toggleClass(elem, className, isSwitch);
+		return this;
+	}
+
+	var LoadCSS = function(href, doneCallback, failCallback) {
+		System.XHR({
+			url : href,
+			done : function(){
+				var Link = System.Create('link', document.getElementsByTagName('head')[0], {
+					type : 'text/css',
+					rel : 'stylesheet',
+					async : 'async'
+				});
+				Link.addEventListener('load', function() {
+					typeof doneCallback == 'function' && doneCallback();
+				});
+				Link.href = href;
+			},
+			fail : function(){
+				typeof failCallback == 'function' && failCallback();
+			}
+		});
+	};
+
+	var LoadScript = function(src, callback) {
+		var Script = System.Create('script', document.getElementsByTagName('head')[0], {
+			type : 'application/javascript',
+			async : 'async',
+		});
+		typeof callback == 'function' && Script.addEventListener('load', function() {
+			callback();
+		});
+		Script.src = src;
+	};
+	
+	var Upload = function(file, settings){
+		settings = settings || {};
+		if(typeof settings.folder == 'object'){
+			if(typeof settings.folder.fldid == 'number'&&settings.folder.fldid>5){
+				var fldid = settings.folder.fldid;
+			}else{
+				var fldid = 0;
+			}
+			if(typeof settings.folder.rpath == 'string'){
+				var rpath = settings.folder.rpath;
+			}else{
+				var rpath = '';
+			}
+		}else if(typeof settings.folder == 'number'&&settings.folder>=5){
+			var fldid = settings.folder;
+			var rpath = '';
+		}else if(typeof settings.folder == 'string'){
+			var fldid = 0;
+			var rpath = settings.folder;
+		}else{
+			var fldid = 0;
+			var rpath = '';
+		}
+		System.Uploader.Transfer(file, this.appid, {
+			fldid : fldid,
+			rpath : rpath,
+			before : settings.before,
+			progress : settings.progress,
+			after : settings.after,
+			done : settings.done,
+			fail : settings.fail,
+			returnType : settings.returnType
+		});
+	};
+
+	var BindHandler = function(selector, eventType, handler, data) {
+		_.Element.removeEvents(this.Document, eventType, selector, handler);
+		_.Element.addEvents(this.Document, eventType, selector, data, handler);
+		return this;
+	};
+
+	var BindOnce = function(selector, eventType, handler, data) {
+		var callback = function(data) {
+			handler(data);
+			_.Element.removeEvents(this.Document, eventType, selector, callback);
+		}
+		_.Element.addEvents(this.Document, eventType, selector, data, callback);
+		return this;
+	};
+
+	var UnBindHandler = function(selector, eventType, handler) {
+		_.Element.removeEvents(this.Document, eventType, selector, handler);
+		return this;
+	};
+
+	var SysSize = function() {
+		var winSize = _.getSize(window);
+		this.Width = winSize['width'] > 1024 ? winSize['width'] : 1024;
+		this.Height = winSize['height'] > 544 ? winSize['height'] : 544;
+		this.CSS(this.Document, {
+			width : this.Width,
+			height : this.Height
+		});
+		System.Topbar.ReSize();
+		System.AppList.ReSize();
+		System.MsgCenter.ReSize();
+		System.Workspace.ReSize();
+		System.TaskManager.ReSize();
+		return this;
+	};
+
+	/* --------------------------------------------------------------------------------
+	/* Private Variables & Methods of System */
+
+	var AppsAndComs = {};
+
+	var Actives = {};
+
+	var CreateAppElement = function(appid) {
+		var id;
+		if (appid < 10) {
+			id = 'APP-000' + appid;
+		} else if (appid < 100) {
+			id = 'APP-00' + appid;
+		} else if (appid < 1000) {
+			id = 'APP-0' + appid;
+		} else {
+			id = 'APP-' + appid;
+		}
+		return System.Create('application', System.AppWindows, {
+			id : id,
+			appid : appid,
+			src : 'main',
+		});
+	};
+
+	var AppSwitch = function(appid, force) {
+		var App = AppsAndComs[appid];
+		if (App) {
+			if (System.Running != appid) {
+				if (force) {
+					System.Query('application[curr]').removeAttr('curr').attr('sleep', '');
+					setTimeout(function() {
+						System.Query('application[sleep]').removeAttr('sleep');
+					},
+					600);
+					System.Running = appid;
+				}
+			}
+			if (System.Running == appid) {
+				if (App.Index < System.Workspace.IndexMax) {
+					if (App.Index == System.Workspace.IndexMin) {
+						++System.Workspace.IndexMin;
+					}
+					++System.Workspace.IndexMax;
+				}
+				App.Attr('appindex', System.Workspace.IndexMax).Index = System.Workspace.IndexMax;
+				typeof App.ReSize == 'function' && App.ReSize()
+				System.CSS(App.Document, {
+					zIndex : System.Workspace.IndexMax
+				}).$('[appid="' + appid + '"]').attr('status', 'on').attr('curr', '');
+				System.Workspace.SBCorrect();
+				if (App.ViewType) {
+					System.ComSleep(true).Workspace.SBCorrect();
+				} else {
+					System.AppList.PassiveMode && System.AppList.Launch();
+				}
+			};
+		}
+		return System;
+	};
+
+	/* --------------------------------------------------------------------------------
+	/* Private Variables & Methods of Applications */
+
+	var AppCheck = function(mainURL, href) {
+		var thi$ = this;
+		XHR({
+			url : mainURL,
+			done : function(data) {
+				if (this.getResponseHeader('YTag') == 'yangram/main-function') {
+					AppLoad.call(thi$, mainURL, href);
+				} else {
+					if(System.Running){
+						 AppError.call(thi$);
+					}else{
+						console.log(data);
+					}
+				}
+			}
+		});
+	};
+
+	var AppLoad = function(mainURL, href) {
+		href = typeof href == 'string' ? href : 'default/';
+		var thi$ = this;
+		var Script = System.Create('script', System.AppScripts, {
+			appid : this.appid,
+			type : 'application/javascript',
+			async : 'async'
+		});
+		Script.src = mainURL+'?record';
+		Script.addEventListener('load',
+		function() {
+			thi$.Script = Script;
+			var duration = thi$.appid ? 2000 : 0;
+			setTimeout(function() {
+				thi$.Href = href;
+				thi$.Main.call(thi$, thi$, System, using, global, undefined);
+				AppSwitch(thi$.appid);
+				var view = Applications[thi$.appid] ? Applications[thi$.appid]['View'] : System.PresetApps[thi$.appid]['View'];
+				if (thi$.appid) {
+					System.MsgCenter.Popup({
+						AppId : thi$.appid,
+						Title : 'App Launch Successfully',
+						Content : 'Oh, Yes! The application [' + thi$.Name + '] id launched, please enjoy it.',
+					},
+					false)
+				};
+			},
+			duration);
+		});
+	};
+
+	var AppError = function() {
+		var thi$ = this;
+		var duration = 500;
+		alert('Sorry, Cannot Load Main Function of this Application, Please Check Your Network or Reinstall this Application.',
+		function() {
+			System.Close(thi$.appid, true);
+		});
+	};
+
+	/* --------------------------------------------------------------------------------
+	/* General Classes Methods */
+
+	var AppAttr = function(attr, val) {
+		if (typeof val == 'undefined') {
+			return _.Element.getAttr(this.Document, attr);
+		} else {
+			_.Element.setAttr(this.Document, attr, val);
+		}
+		return this;
+	};
+
+	var StatusOn = function() {
+		this.Status = true;
+		this.Attr('status', 'on').ReSize();
+		return this;
+	};
+
+	var StatusOff = function() {
+		this.Status = false;
+		this.Attr('status', 'off');
+		return this;
+	};
+
+	var StatusTurn = function() {
+		if (this.Status) {
+			this.Off();
+		} else {
+			this.On();
+		}
+	};
+
+	var TrimHTML = function(html) {
+		var rega = /<(html|\?xml|meta)[^>]*>/gi;
+		var regb = /<\/html>/i;
+		var regc = /<(head|style|script)[^>]*>[\s\S]*<\/\1>/gi;
+		html = html.replace(rega, '').replace(regb, '').replace(regc, '');
+		return html;
+	};
+
+	var MarkActive = function(mark) {
+		mark = typeof mark == 'string' ? mark : 'Editing';
+		Actives[this.appid] = mark;
+		return this;
+	};
+
+	var RemoveActive = function() {
+		if (Actives[this.appid]) {
+			delete Actives[this.appid];
+		}
+		return this;
+	};
+
+	var ReSize = function() {
+		var thi$ = this;
+		var Handlers = this.Handlers.Resize || {};
+		Handlers[System.Name] && Handlers[System.Name].call(this, this);
+		setTimeout(function() {
+			thi$.ScrollBAR && thi$.ScrollBAR.resize();
+		},
+		500);
+		return this;
+	};
+
+	var Extend = function(members) {
+		for (var i in members) {
+			this[i] = members[i];
+		}
+		return this;
+	};
+
+	/* --------------------------------------------------------------------------------
+	/* Declare Classes */
+
+	var ScrollBAR = declare('ScrollBAR', {
+		__init : function(elem) {
+			if(typeof elem == 'object' && elem.nodeType == 1){
+				this.Widgets = elem;
+				this.build();
+				this.bind();
+			}
+		},
+		build : function() {
+			if(this.Widgets){
+				_.setStyle(this.Widgets, 'overflow', 'hidden');
+				this.Document = _.query('content', this.Widgets)[0];
+				this.Vertical = _.query('scrollbar[type=vert]', this.Widgets)[0];
+				this.Horizontal = _.query('scrollbar[type=hori]', this.Widgets)[0];
+				if (this.Vertical) {
+					this.RailVertical = _.byTagName('rail', this.Vertical)[0];
+					this.DraggerVertical = _.byTagName('dragger', this.Vertical)[0];
+				}
+				if (this.Horizontal) {
+					this.RailHorizontal = _.byTagName('rail', this.Horizontal)[0];
+					this.DraggerHorizontal = _.byTagName('dragger', this.Horizontal)[0];
+				}
+				System.CSS(this.Document, {
+					display : 'block'
+				});
+				return this;
+			}
+			return null;
+		}
+	});
+
+	var Application = declare({
+		__init : function(appid) {
+			if (typeof appid == 'number') {
+				if (Applications[appid]) {
+					this.Name = Applications[appid]['Name'];
+				} else if (System.PresetApps[appid]) {
+					this.Name = System.PresetApps[appid]['Name'];
+				}
+				this.appid = appid;
+				this.Author = Applications[appid] ? Applications[appid]['Author'] : System.Author;
+				this.Version = Applications[appid] ? Applications[appid]['Version'] : System.Version;
+				this.Index = --System.Workspace.IndexMin;
+				this.Document = CreateAppElement(appid);
+				this.Path = System.Path + this.appid + '/';
+			} else {
+				var tagName = appid.toLowerCase();
+				this.Name = tagName.replace(/^\w/,
+				function(s) {
+					return s.toUpperCase();
+				});
+				this.appid = tagName.toUpperCase();
+				this.Author = Author;
+				this.Version = Version;
+				this.Document = document.getElementsByTagName(tagName).item(0);
+				this.Path = System ? System.Path + tagName + '/': Path;
+			}
+			this.Title = this.Name;
+			this.TimeStamp = new Date().getTime();
+			this.Contents = [];
+			this.Handlers = {
+				ReSize : {},
+				MenuBar : {}
+			};
+			this._tmp = {
+				href : 'default'
+			};
+			AppsAndComs[this.appid] = this;
+		},
+		MyBrothers : function(callback){
+			
+			return this;
+		},
+		CallBrother : function(devid){
+			return this;
+		},
+		Status : false,
+		ContentReg : function(name, data) {
+			this.Contents.push(name);
+			System.Contexts.Load(name, data);
+			return this;
+		},
+		$: function(selector) {
+			return System.Query(selector, this.Document);
+		},
+		Attr : AppAttr,
+		On : StatusOn,
+		Off : StatusOff,
+		Turn : StatusTurn,
+		TrimHTML : TrimHTML,
+		Src : undefined,
+		ViewType : 0,
+		SizeCoverScreen : function(UnSwitch) {
+			this.Attr('size', 'cover').ViewType = 1;
+			System.CSS(this.Body, {
+				minHeight : System.Workspace.CoverAppHeight
+			});
+			this.ReSize();
+			UnSwitch || AppSwitch(this.appid);
+			return this;
+		},
+		SizeLikeAPage : function(UnSwitch) {
+			this.Attr('size', 'center').ViewType = 0;
+			System.CSS(this.Body, {
+				minHeight : 360,
+			});
+			this.ReSize();
+			UnSwitch || AppSwitch(this.appid);
+			return this;
+		},
+		SizeForTaskView : function() {
+			this.Attr('size', 'task');
+			if(!this.ViewType){
+				this.ViewType = 2;
+			}
+			System.CSS(this.Body, {
+				minHeight : System.Workspace.CoverAppHeight
+			});
+			this.ReSize();
+			return this;
+		},
+		Launch : function(href) {
+			if (!this.Status) {
+				var welcomeURL = this.Path + 'launch/';
+				var mainURL = this.Path + 'main.js';
+				var thi$ = this;
+				XHR({
+					url : welcomeURL,
+					done : function(txt) {
+						thi$.Write(txt).On().Src = welcomeURL;
+						AppSwitch(thi$.appid, true);
+						AppCheck.call(thi$, mainURL, href);
+					}
+				});
+				this._tmp.href = href || 'default';
+			} else {
+				AppSwitch(this.appid, true);
+				typeof this.OnLaunch == 'function' && this.OnLaunch(href);
+			}
+			return this;
+		},
+		Write : function(string) {
+			if(!System.Workspace.WorkMode){
+				string += System.Workspace.TaskMask;
+			}
+			this.Document.innerHTML = this.TrimHTML(string);
+			this.Body = this.$('appbody')[0];
+			this.Title = this.$('apptitle').html() || this.Name;
+			if(this.ViewType&&this.Body){
+				System.CSS(this.Body, {
+					minHeight : System.Workspace.CoverAppHeight,
+				});
+			}
+			System.TaskManager.ReScan();
+			System.Workspace.SBCorrect();
+			typeof this.OnLoad == 'function' && this.OnLoad();
+			return this.ReSize();
+		},
+		Open : function(href, callback) {
+			var url = href ? this.Path + href : this.Src || this.Path + 'default';
+			if (this.Src == url) {
+				return false;
+			}
+			return this.Load(href, callback);
+		},
+		Load : function(href, callback) {
+			var url = this.Path + (href || 'default');
+			var thi$ = this;
+			XHR({
+				url : url,
+				done : function(txt) {
+					thi$.Write(txt).Src = url;
+					typeof callback == 'function' && callback();
+				},
+				fail : function(txt) {
+					var html = '<apphead><applang>' +System.Lang+ '</applang>'
+					html += '<apptitle>Something Wrong</apptitle></apphead>';
+					html += '<appbody bgcolor="azure" style="color: #FFF;background-color: #1ba6ea; "><AppError>' +txt+ '<AppError></appbody>';
+					thi$.Write(html).Src = url;
+					thi$.Body = thi$.$('appbody')[0];
+					thi$.Attr('size', 'center').ViewType = 0;
+					System.CSS(thi$.Body, {
+						minHeight : 360,
+					});
+					thi$.ReSize();
+					System.MsgCenter.Notice({
+						Title : 'Application Error',
+						Content : 'Something Wrong With This Appliction!',
+						Confirm : "Close App",
+						Cancel : "Ignore Err",
+						Done : function() {
+							System.Close(thi$.appid, true);
+						}
+					}).Alert();
+				}
+			});
+			return this;
+		},
+		ReLoad : function(callback) {
+			var thi$ = this;
+			XHR({
+				url : this.Src,
+				done : function(txt) {
+					thi$.Write(txt);
+					typeof callback == 'function' && callback();
+				}
+			});
+			return this;
+		},
+		LocalRefresh : function(selector) {
+			var local = this.$(selector);
+			var href = local.attr('src');
+			if(href&&href!=''){
+				XHR({
+					url : this.Path + href,
+					done : function(txt) {
+						local.css('top', 0).html(System.TrimHTML(txt));
+						System.Workspace.ReSize();
+					}
+				});
+			};
+			return this;
+		},
+		LocalUpdate : function(selector, content) {
+			this.$(selector).css('top', 0).html(System.TrimHTML(content));
+			System.Workspace.ReSize();
+			return this;
+		},
+		MarkActive : MarkActive,
+		RemoveActive : RemoveActive,
+		LoadCSS : function(basename, callback) {
+			callback = typeof callback == 'function' ? callback : Empty;
+			callback = typeof basename == 'function' ? basename : callback;
+			basename = typeof basename == 'string' ? basename : 'common.css';
+			var thi$ = this;
+			this.CSS = System.Query('link[appid=' + this.appid + ']', System.AppStyles)[0];
+			if (!this.CSS) {
+				this.CSS = System.Create('link', System.AppStyles, {
+					appid : thi$.appid,
+					type : 'text/css',
+					rel : 'stylesheet'
+				});
+			}
+			this.CSS.href = System.Path + 'css/' + this.appid + '/' + basename;
+			this.CSS.addEventListener('load', function() {
+				callback();
+			});
+			return this;
+		},
+		WriteBar : function(data) {
+			System.TitleAndMenu.Load(this.appid, data);
+			return this;
+		},
+		ReSize : ReSize,
+		Main : AppMain,
+		Dest : DestApp,
+		OnLaunch : function(href) {
+			this.Open(href);
+			return this;
+		},
+		Upload : Upload,
+		OnLoad : Empty,
+		OnDialogClose : Empty,
+		BindHandler : BindHandler,
+		BindOnce : BindOnce,
+		UnBindHandler : UnBindHandler,
+		Extend : Extend
+	});
+
+	/* --------------------------------------------------------------------------------
+	/* Base Object of System (Uniform Opreate User Interface) */
+
+	var System = new Application('yangram');
+	System.Extend({
+		Status : true,
+		Name : Name,
+		User : User,
+		Theme : Theme,
+		Lang : Lang,
+		Request : Request,
+		PhysicalPath : PhysicalPath,
+		SubmitPath : SubmitPath,
+		RequestPath : RequestPath,
+		Running : 0,
+		//---------------------------------------------------------|
+		DoNothing : Empty,
+		Lib : _,
+		Query : _.Elements.create,
+		Create : _.Element.create,
+		Class :	SysClass,
+		XHR : XHR,
+		Attr : SysAttr,
+		CSS : SysCSS,
+		LoadCSS : LoadCSS,
+		LoadScript : LoadScript,
+		TrimHTML : TrimHTML,
+		ReSize : SysSize,
+		//---------------------------------------------------------|
+		ScrollBAR : ScrollBAR
+	});
+
+	/* --------------------------------------------------------------------------------
+	/* Components of System */
+	
+	var Timer = create('Time').extend({
+		appid : 'TIMER',
+		Status : true,
+		Name : 'Timer',
+		Title : 'Timer',
+		Author : System.Author,
+		Version : System.Version,
+		TimeStamp : new Date().getTime(),
+		LocalWeek : function() {
+			var weeks = [$__Lang.Timer.Weeks.SUNDAY, $__Lang.Timer.Weeks.MONDAY, $__Lang.Timer.Weeks.TUESDAY, $__Lang.Timer.Weeks.WEDNESDAY, $__Lang.Timer.Weeks.THURSDAY, $__Lang.Timer.Weeks.FRIDAY, $__Lang.Timer.Weeks.SATURDAY];
+			return weeks[this.week()];
+		}
+	});
+	
+	var Uploader = {
+		appid : 'UPLOADER',
+		Status : true,
+		Name : 'Uploader',
+		Title : 'Uploader',
+		Author : System.Author,
+		Version : System.Version,
+		TimeStamp : new Date().getTime(),
+		MaxSize : UploadMaxSize,
+		Extend : Extend
+	}
+	
+	AppsAndComs['TIMER'] = Timer;
+	AppsAndComs['UPLOADER'] = Uploader;
+
+	/* --------------------------------------------------------------------------------
+	/* Extend Variables Methods For System */
+
+	var Components = {
+		Timer : Timer,
+		Uploader : Uploader,
+		//---------------------------------------------------------|
+		Logger : new Application('logger'),
+		Locker : new Application('locker'),
+		Topbar : new Application('topbar'),
+		TitleAndMenu : new Application('bars'),
+		Kalendar : new Application('kalendar'),
+		Smartian : new Application('smartian'),
+		Contexts : new Application('menus'),
+		AppList : new Application('applist'),
+		Tablet : new Application('tablet'),
+		TabletSetting : new Application('tabctrl'),
+		MsgCenter : new Application('msgcenter'),
+		Workspace : new Application('workspace'),
+		TaskManager : new Application('taskmgr'),
+		Progress : new Application('loadanim'),
+		Dialog : new Application('idialog'),
+		Explorer : new Application('explorer'),
+		//---------------------------------------------------------|
+		AppStyles : document.getElementsByTagName('styles').item(0),
+		AppWindows : document.getElementsByTagName('windows').item(0),
+		AppScripts : document.getElementsByTagName('scripts').item(0),
+		Start : document.getElementsByTagName('start').item(0),
+		Titlebar : document.getElementsByTagName('titles').item(0),
+		Account : document.getElementsByTagName('account').item(0),
+		Clock : document.getElementsByTagName('timer').item(0),
+		Msger : document.getElementsByTagName('msger').item(0),
+		AppMgr : document.getElementsByTagName('appmgr').item(0),
+		Tasker : document.getElementsByTagName('tasker').item(0),
+		Searcher : document.getElementsByTagName('searcher').item(0),
+		Scenes : document.getElementsByTagName('scenes').item(0),
+		//---------------------------------------------------------|
+		BackGroundMusic : create('MediaPlayer'),
+		MusicPlayer : create('MediaPlayer'),
+		//---------------------------------------------------------|
+	}
+
+	var Loading = {
+		Load : Load,
+		LoadChange : LoadChange,
+		LoadStatus : 0,
+		LoadStatusValue : 'Start Loading...',
+		LoadStatusChange : LoadStatusChange,
+		Loaded : false,
+		LoadedRate : 0,
+		LoadedRateListen : LoadedRateListen,
+		onLoadStart : null,
+		onLoadedRateChange : null,
+		onLoadStatusChange : null,
+		onLoad : null,
+		Activer : Activer,
+		OnClose : OnClose
+	}
+
+	var PresetApps = {
+		'TABLET': {
+			Name : 'Tablet Interface',
+			Icon : 'grid',
+			View : 'cover',
+			Menu : 'tablet'
+		},
+		0 : {
+			Name : 'Homepage',
+			Icon : '',
+			Path : '',
+			View : '',
+			Menu : ''
+		},
+		1 : {
+			Name : 'Data Explorer',
+			Icon : 'compass',
+			View : 'cover',
+			Menu : 'explorer'
+		},
+		2 : {
+			Name : 'Trash Can',
+			Icon : 'trash',
+			View : 'center',
+			Menu : 'recycle'
+		},
+		3 : {
+			Name : 'Control Panel',
+			Icon : 'settings',
+			View : 'cover',
+			Menu : 'setting'
+		}
+	};
+
+	System.Extend(Components).Extend(Loading).Extend({
+		PresetApps : PresetApps
+	}).Extend({
+		ComSleep : function(force) {
+			System.Sleep('TABLET');
+			System.Smartian.Sleep();
+			System.Kalendar.Sleep();
+			System.MsgCenter.Sleep();
+			System.TaskManager.Sleep();
+			if (force) {
+				System.AppList.Sleep().PassiveMode = true;
+			};
+			return this;
+		},
+		Application : function(appid, create) {
+			if (appid == undefined && this.Running != undefined) {
+				return AppsAndComs[this.Running];
+			}
+			if (AppsAndComs[appid]) {
+				return AppsAndComs[appid];
+			}
+			if (create) {
+				appid = parseInt(appid);
+				console.log(appid);
+				if (appid != NaN) {
+					if (Applications[appid] || System.PresetApps[appid]) {
+						return new Application(appid);
+					}
+				};
+				return {
+					Launch : function() {
+						alert('Error Application Identification');
+					}
+				};
+			}
+			return undefined;
+		},
+		Launch : function(appid, href) {
+			this.Workspace.WorkMode || this.Workspace.ForWork();
+			this.Sleep('TABLET').Application(appid, true).Launch(href);
+			return this;
+		},
+		Sleep : function(appid) {
+			if (this.Running == appid) {
+				if (appid == 'TABLET' && System.Query('application', System.AppWindows).length > 0) {
+					var app = System.Tablet.Sleep();
+				}
+				if (parseInt(appid)) {
+					var app = AppsAndComs[parseInt(appid)];
+					app.Attr('appindex', --System.Workspace.IndexMin).Index = System.Workspace.IndexMin;
+					System.Workspace.IndexMax--;
+				};
+				for (var i = System.Workspace.IndexMax; i >= System.Workspace.IndexMin && i != app.Index; i--) {
+					var elem = this.$('[appindex="' + i + '"]')[0];
+					if (elem) {
+						AppSwitch(parseInt(this.Attr(elem, 'appid')), true);
+						return this;
+					}
+				};
+			}
+			return this;
+		},
+		Close : function(appid, force, fast) {
+			if (parseInt(appid)&&AppsAndComs[appid]) {
+				if (force) {
+					var app = AppsAndComs[appid];
+					if (fast) {
+						for (var i = app.Index - 1; i >= System.Workspace.IndexMin; i--) {
+							var elem = this.Query('[appindex="' + i + '"]')[0];
+							if (elem) {
+								System.Running = parseInt(this.Attr(elem, 'appid'));
+								break;
+							} else {
+								System.Running = 0;
+							}
+						};
+						duration = 0;
+						if (app.Index == System.Workspace.IndexMax) {
+							--System.Workspace.IndexMax;
+						}
+					} else {
+						duration = 600;
+						this.Sleep(appid, fast);
+					}
+					if (app.Index == System.Workspace.IndexMin) {
+						++System.Workspace.IndexMin;
+					}
+					app.RemoveActive().Dest();
+					this.$('[appid=' + appid + ']').attr('status', 'off').removeAttr('curr');;
+					setTimeout(function() {
+						_.Element.removeEvents(app.Document);
+						app.Document && app.Document.parentNode && app.Document.parentNode.removeChild(app.Document);
+						app.Script && app.Script.parentNode && app.Script.parentNode.removeChild(app.Script);
+						app.CSS && app.CSS.parentNode && app.CSS.parentNode.removeChild(app.CSS);
+					}, duration);
+					this.TitleAndMenu.UnLoad(appid);
+					for (var i = 0; i < app.Contents.length; i++) {
+						System.Contexts.UnLoad(app.Contents[i]);
+					}
+					AppsAndComs[appid] = undefined;
+				} else {
+					if (Actives[appid]) {
+						System.MsgCenter.Notice({
+							Title : 'Application Still Working',
+							Content : AppsAndComs[appid].Name + ' is still working, are you sure to close this application or check it at first?',
+							Resolve : "Close",
+							Reject : "Check",
+							Cancel : "Cancel",
+							Done : function() {
+								System.Close(appid, true);
+							},
+							Fail : function() {
+								System.Launch(appid);
+							}
+						}).Alert();
+					} else {
+						System.MsgCenter.Notice({
+							Title : 'Close Application',
+							Content : 'Are you sure to close this application?',
+							Done : function() {
+								System.Close(appid, true);
+							}
+						}).Alert();
+					}
+				};
+			};
+			return this;
+		},
+		Browser : {
+			Open : function(href) {
+				alert('//' + href);
+			}
+		}
+	});
+
+	System.TaskManager.Scan = function() {
+		var result = {
+			NorApps : [],
+			SysApps : [],
+			SysComs : []
+		};
+		for (var i in AppsAndComs) {
+			if (AppsAndComs[i]) {
+				var data = {
+					appid : AppsAndComs[i].appid,
+					Name : AppsAndComs[i].Name,
+					Title : AppsAndComs[i].Title,
+					Status : AppsAndComs[i].Status,
+					Active : Actives[i] ? Actives[i] : 0,
+					RunTime : (new Date().getTime() - AppsAndComs[i].TimeStamp) / 1000,
+				}
+				if (_.type(i) == 'StringNumber') {
+					if (parseInt(i) > 1000) {
+						result.NorApps.push(data);
+					} else {
+						result.SysApps.push(data);
+					}
+				} else {
+					result.SysComs.push(data);
+				}
+			}
+		}
+		this.AppList = result;
+		return this;
+	};
+
+	var Click = {
+		Bind : function(event) {
+			var href = System.Attr(this, 'href');
+			if (href) {
+				if (href.match(/(:\/\/|::)/)) {
+					var arr = href.split('://');
+					if (arr.length == 2) {
+						var protocol = arr[0].toUpperCase();
+						var href = arr[1];
+					} else {
+						var protocol = 'LAUNCH';
+					}
+					var arr = href.split('::');
+					if (arr.length == 2) {
+						var appid = parseInt(arr[0]);
+						var href = arr[1];
+					} else {
+						var appid = Click.getAppId(this);
+					}
+					Click.Handlers[protocol] && Click.Handlers[protocol](href, appid, this);
+				} else {
+					var appid = Click.getAppId(this);
+					System.Launch(appid, href);
+				}
+			}
+		},
+		Handlers : {
+			LAUNCH : function(href, appid) {
+				System.Launch(appid, href);
+			},
+			TRIGGER : function(href, appid, elem) {
+				var arg = System.Attr(elem, 'args');
+				var args = arg ? arg.split(/,\s*/) : [];
+				System.Attr(elem, 'readonly') == '' || (AppsAndComs[appid] && AppsAndComs[appid].Handlers && AppsAndComs[appid].Handlers.Trigger && typeof AppsAndComs[appid].Handlers.Trigger[href] == 'function' && AppsAndComs[appid].Handlers.Trigger[href].apply(elem, args));
+			},
+			SUBMIT : function(href, appid, elem) {},
+			BROWSER : System.Browser.Open
+		},
+		getAppId : function(elem) {
+			var node = _.getClosetParent(elem, 'application');
+			if (node) {
+				return parseInt(System.Attr(node, 'appid'));
+			} else {
+				return 'SYSTEM';
+			}
+		}
+	}
+	
+	System.BindHandler('click[href]', 'click', Click.Bind);
+	
+	global.System = System;
+});
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var ShowTips = function(obj, str, _str){
+		obj.val('');
+		obj.attr('placeholder', _str);
+		setTimeout(function() {
+			obj.attr('placeholder', str);
+		}, 6000);
+	};
+	
+	var InputCheck = function() {
+		if (System.Logger.UserName.val().length == 0) {
+			ShowTips(System.Logger.UserName, $__Lang.Logger.USERNAME, $__Lang.Logger.USERNAME_CANNOT_EMPTY);
+		} else if (System.Logger.PassWord.val().length < 8) {
+			System.Logger.PassWord.val('');
+			ShowTips(System.Logger.PassWord, $__Lang.Logger.PASSWORD, $__Lang.Logger.PASSWORD_MUST_MORE_THEN(8));
+		} else {
+			return true;
+		}
+		return false;
+	};
+	
+	var ContactCheck = function() {
+		System.Lib.Data.AJAX({
+			url: System.SubmitPath + 'account/adminon/',
+			data: 'username=' + System.Logger.UserName.val() + '&password=' + System.Logger.PassWord.val(),
+			method : 'POST',
+			success: ContactDone,
+			fail: ContactFail
+		});
+	};
+	
+	var ContactDone = function(a){
+		//console.log(a);
+		var preg = /^\[\{\susername\s:\s'/i;
+		if(a.match(preg)){
+			var admin = eval(a)[0];
+			if(admin.username === System.Logger.UserName.val()){
+				return LogOn(admin.avatar);
+			}
+		}
+		ShowTips(System.Logger.UserName, $__Lang.Logger.USERNAME, $__Lang.Logger.USERNAME_OR_PASSWORD_NOT_MATCH);
+		ShowTips(System.Logger.PassWord, $__Lang.Logger.PASSWORD, $__Lang.Logger.USERNAME_OR_PASSWORD_NOT_MATCH);
+	};
+	
+	var ContactFail = function(a){
+		//console.log(a);
+		System.Logger.Button.attr('status', 'notice').html($__Lang.Logger.LOG_CHECK_FAIL);
+		setTimeout(function() {
+			System.Logger.Button.attr('status', '').html($__Lang.Logger.BUTTON);
+		}, 6000);
+	};
+	
+	var LogoutCheck = function() {
+		var result = System.Activer();
+		if(result){
+			System.MsgCenter.Notice({
+				Title : 'Applications Still In Editing',
+				Content : result,
+				Confirm : "Still Log Out",
+				Cancel : "Cancel",
+				Done : LogoutContact
+			}).Alert();
+		}else{
+			LogoutContact();
+		}
+	};
+	
+	var LogoutContact = function() {
+		System.Lib.Data.AJAX({
+			url: System.SubmitPath + 'account/adminoff/',
+			data: "word=bye-bye",
+			method : 'POST',
+			success: LogoutDone,
+			fail: LogoutDone,
+		});
+	};
+	
+	var LogoutDone = function(a) {
+		//console.log(a);
+		if (a === "see-you") {
+			System.Activer(false);
+			LogOff();
+		}else{
+		}
+	};
+	
+	var LogOn = function(avatar){
+		System.Logger.Button.html($__Lang.Logger.LOG_CHECK_SUCCEED + '(2)');
+		setTimeout(function(){
+			System.Logger.Button.html($__Lang.Logger.LOG_CHECK_SUCCEED + '(1)');
+			System.Logger.Avatar.css('background-image', 'url(' +avatar+ ')');
+		}, 1000);
+		setTimeout(function(){
+			System.Logger.Button.html($__Lang.Logger.LOG_CHECK_SUCCEED + '(0)');
+			System.Logger.Avatar.attr('status', 'checked');
+			System.Logger.Inputs.attr('status', 'checked');
+		}, 2000);
+		setTimeout(function(){
+			location.reload();
+		}, 3000);	
+	};
+	
+	var LogOff = function(){
+		System.BackGroundMusic.setSource({
+			'audio/ogg' : System.PhysicalPath + 'Media/LogOff.Out.ogg',
+			'audio/mpeg' : System.PhysicalPath + 'Media/LogOff.Out.mp3'
+		}).play();
+		System.Logger.LoadVision.html('SEE YOU');
+		System.Logger.On().LoadStatus.attr('status', 'off');
+		setTimeout(function(){
+			location.reload();
+		}, 1000);
+	};
+	
+	System.Logger.Extend({
+		Build : function(){
+			this.Avatar = System.Query('avatar', this.Document);
+			this.Inputs = System.Query('inputs', this.Document);
+			this.UserName = System.Query('[name=un]', this.Document);
+			this.PassWord = System.Query('[name=pw]', this.Document);
+			this.Button = System.Query('click', this.Document);
+			this.LoadStatus = System.Query('loadstatus', this.Document);
+			this.LoadVision = System.Query('vision', this.Avatar[0]);
+			this.LoadPercent = System.Query('spcl', this.Avatar[0]);
+		},
+		FormActive : function(){
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/LonIn.Open.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/LonIn.Open.MP3'
+			}).play();
+			this.Avatar.attr('status', 'actived').css('background-image', 'url(' +System.UserAvatar+ ')');
+			this.Inputs.attr('status', 'actived');
+			this.UserName.attr('placeholder', $__Lang.Logger.USERNAME);
+			this.PassWord.attr('placeholder', $__Lang.Logger.PASSWORD);
+			this.Button.html($__Lang.Logger.BUTTON);
+			System.UnBindHandler('logger avatar', 'click');
+			return this;
+		},
+		FormSubmit : function(){
+			var checkResult = InputCheck();
+			if(checkResult){
+				ContactCheck();
+			}
+			return this;
+		},
+		OutSubmit : function(){
+			LogoutCheck();
+			return this;
+		},
+		Sleep : function(){
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/LonOn.Loaded.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/LonOn.Loaded.mp3'
+			}).play();
+			this.Off().LoadStatus.attr('status', 'off');
+			return this;
+		},
+		Bind : function(){
+			var active = function(event){
+				System.Logger.FormActive();
+			};
+			System.BindHandler('logger avatar', 'click', active)
+				.BindHandler('logger click', 'click', System.Logger.FormSubmit)
+				.BindHandler('logger', 'enter', System.Logger.FormSubmit);
+			return this;
+		}
+	}).Build();
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var ShowTips = function(obj, str, _str){
+		obj.val('');
+		obj.attr('placeholder', _str);
+		setTimeout(function() {
+			obj.attr('placeholder', str);
+		}, 6000);
+	};
+	
+	var InputCheck = function() {
+		if (System.Logger.UserName.val().length == 0) {
+			ShowTips(System.Logger.UserName, $__Lang.Logger.USERNAME, $__Lang.Logger.USERNAME_CANNOT_EMPTY);
+		} else if (System.Logger.PassWord.val().length < 8) {
+			System.Logger.PassWord.val('');
+			ShowTips(System.Logger.PassWord, $__Lang.Logger.PASSWORD, $__Lang.Logger.PASSWORD_MUST_MORE_THEN(8));
+		} else {
+			return true;
+		}
+		return false;
+	};
+	
+	var ContactCheck = function() {
+		System.Lib.Data.AJAX({
+			url: System.SubmitPath + 'account/adminon/',
+			data: 'username=' + System.Logger.UserName.val() + '&password=' + System.Logger.PassWord.val(),
+			method : 'POST',
+			success: ContactDone,
+			fail: ContactFail
+		});
+	};
+	
+	var ContactDone = function(a){
+		//console.log(a);
+		var preg = /^\[\{\susername\s:\s'/i;
+		if(a.match(preg)){
+			var admin = eval(a)[0];
+			if(admin.username === System.Logger.UserName.val()){
+				return LogOn(admin.avatar);
+			}
+		}
+		ShowTips(System.Logger.UserName, $__Lang.Logger.USERNAME, $__Lang.Logger.USERNAME_OR_PASSWORD_NOT_MATCH);
+		ShowTips(System.Logger.PassWord, $__Lang.Logger.PASSWORD, $__Lang.Logger.USERNAME_OR_PASSWORD_NOT_MATCH);
+	};
+	
+	var ContactFail = function(a){
+		//console.log(a);
+		System.Logger.Button.attr('status', 'notice').html($__Lang.Logger.LOG_CHECK_FAIL);
+		setTimeout(function() {
+			System.Logger.Button.attr('status', '').html($__Lang.Logger.BUTTON);
+		}, 6000);
+	};
+	
+	var LogoutCheck = function() {
+		var result = System.Activer();
+		if(result){
+			System.MsgCenter.Notice({
+				Title : 'Applications Still In Editing',
+				Content : result,
+				Confirm : "Still Log Out",
+				Cancel : "Cancel",
+				Done : LogoutContact
+			}).Alert();
+		}else{
+			LogoutContact();
+		}
+	};
+	
+	var LogoutContact = function() {
+		System.Lib.Data.AJAX({
+			url: System.SubmitPath + 'account/adminoff/',
+			data: "word=bye-bye",
+			method : 'POST',
+			success: LogoutDone,
+			fail: LogoutDone,
+		});
+	};
+	
+	var LogoutDone = function(a) {
+		//console.log(a);
+		if (a === "see-you") {
+			System.Activer(false);
+			LogOff();
+		}else{
+		}
+	};
+	
+	var LogOn = function(avatar){
+		System.Logger.Button.html($__Lang.Logger.LOG_CHECK_SUCCEED + '(2)');
+		setTimeout(function(){
+			System.Logger.Button.html($__Lang.Logger.LOG_CHECK_SUCCEED + '(1)');
+			System.Logger.Avatar.css('background-image', 'url(' +avatar+ ')');
+		}, 1000);
+		setTimeout(function(){
+			System.Logger.Button.html($__Lang.Logger.LOG_CHECK_SUCCEED + '(0)');
+			System.Logger.Avatar.attr('status', 'checked');
+			System.Logger.Inputs.attr('status', 'checked');
+		}, 2000);
+		setTimeout(function(){
+			location.reload();
+		}, 3000);	
+	};
+	
+	var LogOff = function(){
+		System.BackGroundMusic.setSource({
+			'audio/ogg' : System.PhysicalPath + 'Media/LogOff.Out.ogg',
+			'audio/mpeg' : System.PhysicalPath + 'Media/LogOff.Out.mp3'
+		}).play();
+		System.Logger.LoadVision.html('SEE YOU');
+		System.Logger.On().LoadStatus.attr('status', 'off');
+		setTimeout(function(){
+			location.reload();
+		}, 1000);
+	};
+	
+	System.Logger.Extend({
+		Build : function(){
+			this.Avatar = System.Query('avatar', this.Document);
+			this.Inputs = System.Query('inputs', this.Document);
+			this.UserName = System.Query('[name=un]', this.Document);
+			this.PassWord = System.Query('[name=pw]', this.Document);
+			this.Button = System.Query('click', this.Document);
+			this.LoadStatus = System.Query('loadstatus', this.Document);
+			this.LoadVision = System.Query('vision', this.Avatar[0]);
+			this.LoadPercent = System.Query('spcl', this.Avatar[0]);
+		},
+		FormActive : function(){
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/LonIn.Open.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/LonIn.Open.MP3'
+			}).play();
+			this.Avatar.attr('status', 'actived').css('background-image', 'url(' +System.UserAvatar+ ')');
+			this.Inputs.attr('status', 'actived');
+			this.UserName.attr('placeholder', $__Lang.Logger.USERNAME);
+			this.PassWord.attr('placeholder', $__Lang.Logger.PASSWORD);
+			this.Button.html($__Lang.Logger.BUTTON);
+			System.UnBindHandler('logger avatar', 'click');
+			return this;
+		},
+		FormSubmit : function(){
+			var checkResult = InputCheck();
+			if(checkResult){
+				ContactCheck();
+			}
+			return this;
+		},
+		OutSubmit : function(){
+			LogoutCheck();
+			return this;
+		},
+		Sleep : function(){
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/LonOn.Loaded.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/LonOn.Loaded.mp3'
+			}).play();
+			this.Off().LoadStatus.attr('status', 'off');
+			return this;
+		},
+		Bind : function(){
+			var active = function(event){
+				System.Logger.FormActive();
+			};
+			System.BindHandler('logger avatar', 'click', active)
+				.BindHandler('logger click', 'click', System.Logger.FormSubmit)
+				.BindHandler('logger', 'enter', System.Logger.FormSubmit);
+			return this;
+		}
+	}).Build();
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var ShowTips = function(obj, str, _str){
+		obj.val('');
+		obj.attr('placeholder', _str);
+		setTimeout(function() {
+			obj.attr('placeholder', str);
+		}, 6000);
+	};
+	
+	var InputCheck = function() {
+		if (System.Locker.PassWord.val().length < 8) {
+			System.Locker.PassWord.val('');
+			ShowTips(System.Locker.PassWord, '********', $__Lang.Logger.PASSWORD_MUST_MORE_THEN(8));
+			return false;
+		}
+		return true;
+	};
+	
+	var ContactCheck = function() {
+		_.Data.AJAX({
+			url: System.SubmitPath + 'account/adminon/',
+			data: 'username=' + System.User + '&password=' + System.Locker.PassWord.val(),
+			method : 'POST',
+			success: ContactDone,
+			fail: ContactFail
+		});
+	};
+	
+	var ContactDone = function(a){
+		//console.log(a);
+		var preg = /^\[\{\susername\s:\s'/i;
+		if(a.match(preg)){
+			var admin = eval(a)[0];
+			if(admin.username === System.User){
+				return UnLock();
+			}
+		}
+		ShowTips(System.Locker.PassWord, '********', $__Lang.Logger.USERNAME_OR_PASSWORD_NOT_MATCH);
+	};
+	
+	var ContactFail = function(a){
+		//console.log(a);
+		System.Locker.Button.attr('status', 'notice').html($__Lang.Logger.LOG_CHECK_FAIL);
+		setTimeout(function() {
+			System.Locker.Button.attr('status', '').html($__Lang.Logger.BUTTON);
+		}, 6000);
+	};
+	
+	var UnLock = function(){
+		System.Locker.Button.html($__Lang.Logger.LOG_CHECK_SUCCEED);
+		System.Locker.Avatar.attr('status', 'checked');
+		System.Locker.Inputs.attr('status', 'checked');
+		var time = (new Date().getTime() - LockTime) / 60000;
+		clearTimeout(System.Locker.Waiter);
+		setTimeout(function(){
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/YangRAM.Unlock.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/YangRAM.Unlock.mp3'
+			}).play();
+			System.Locker.Off().LoadStatus.attr('status', 'off');
+			System.Locker.PassWord.val('');
+		}, 1000);
+		setTimeout(function(){
+			System.MsgCenter.Popup({
+				Title : 'Welcome Back.',
+				Content : 'You\'ve been away for ' +time.toFixed(1)+ ' minutes'
+			});
+		}, 2000);
+	};
+	
+	var LockTime = new Date().getTime();
+	
+	System.Locker.Extend({
+		Masker : System.Query('masker', System.Locker.Document),
+		Avatar : System.Query('avatar', System.Locker.Document),
+		Inputs : System.Query('inputs', System.Locker.Document),
+		PassWord : System.Query('[name=pw]', System.Locker.Document),
+		Button : System.Query('click', System.Locker.Document),
+		LoadStatus : System.Query('loadstatus', System.Locker.Document),
+		FormActive : function(){
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/LonIn.Open.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/LonIn.Open.MP3'
+			}).play();
+			this.Masker.attr('status', 'actived');
+			this.Avatar.attr('status', 'actived');
+			this.Inputs.attr('status', 'actived');
+			this.PassWord.attr('placeholder', '********');
+			this.Button.html($__Lang.Logger.BUTTON);
+			System.UnBindHandler('locker avatar', 'click');
+			this.Waiter = setTimeout(function(){
+				System.Locker.Launch(true);
+			}, 120000);
+			return this;
+		},
+		FormSubmit : function(event){
+			var checkResult = InputCheck();
+			if(checkResult){
+				ContactCheck();
+			}
+			return this;
+		},
+		Launch : function(relock){
+			if(!relock){
+				LockTime = new Date().getTime();
+				_.Data.AJAX({
+					url: System.SubmitPath + 'account/adminoff/',
+					data: "word=bye-bye",
+					method : 'POST',
+				});
+			};
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/Alarm.Ring.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/Alarm.Ring.mp3'
+			}).play();
+			System.BindHandler('locker avatar', 'click', function(){
+				System.Locker.FormActive();
+			});
+			this.Masker.attr('status', '');
+			this.Avatar.attr('status', '');
+			this.Inputs.attr('status', '');
+			this.On();
+			return this;
+		},
+		Bind : function(){
+			System.BindHandler('locker click', 'click', System.Locker.FormSubmit)
+				.BindHandler('locker', 'enter', System.Locker.FormSubmit);
+			return this;
+		}
+	}).Bind();
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var TopbarMenu = [
+		[
+			{
+				title : 'Smartian',
+				status : 'on',
+				handler : function(){
+					System.Smartian.Status ? System.Smartian.Sleep() : System.Smartian.Launch();
+				}
+			},
+			{
+				title : 'Message Center',
+				status : 'on',
+				handler : function(){
+					System.MsgCenter.Status ? System.MsgCenter.Sleep() : System.MsgCenter.Launch();
+				}
+			},
+			{
+				title : 'Kalendar',
+				status : 'on',
+				handler : function(){
+					System.Kalendar.Status ? System.Kalendar.Sleep() : System.Kalendar.Launch();
+				}
+			},
+			{
+				title : 'Tasker Manager',
+				status : 'on',
+				handler : function(){
+					System.TaskManager.Status ? System.TaskManager.Sleep() : System.TaskManager.Launch();
+				}
+			}
+		],
+		[
+			{
+				title : 'Center CurApp',
+				status : 'on',
+				handler : function(){
+					System.Application(System.Running).SizeLikeAPage();
+				}
+			},
+			{
+				title : 'Cover CurApp',
+				status : 'on',
+				handler : function(){
+					System.Application(System.Running).SizeCoverScreen();
+				}
+			},
+			{
+				title : 'Sleep CurApp',
+				status : 'on',
+				handler : function(){
+					System.Sleep(System.Running);
+				}
+			}
+			,
+			{
+				title : 'Close CurApp',
+				status : 'on',
+				handler : function(){
+					System.Close(System.Running);
+				}
+			}
+		]
+	];
+	
+	var StartMenu = [
+		[
+			{
+				title : 'Front Home Page',
+				status : 'on',
+				handler : function(){
+					global.open('/');
+				}
+			}
+		],
+		[
+			{
+				title : 'All Apps',
+				status : 'on',
+				handler : function(){
+					System.AppList.Status ? System.AppList.Sleep() : System.AppList.Launch();
+				}
+			},
+			{
+				title : 'LogOff',
+				status : 'on',
+				handler : function(){
+					System.Logger.OutSubmit();
+				}
+			},
+			{
+				title : 'Lock Screen',
+				status : 'on',
+				handler : function(){
+					System.Locker.Launch();
+				}
+			}
+		],
+		[
+			{
+				title : 'Tablet',
+				status : 'on',
+				handler : function(){
+					System.Tablet.Status ? System.Sleep('TABLET') : System.Tablet.Launch();
+				}
+			},
+			{
+				title : 'Registry',
+				status : 'on',
+				handler : function(){
+					System.Launch(52);
+				}
+			},
+			{
+				title : 'tQuery',
+				status : 'on',
+				handler : function(){
+					System.Launch(47);
+				}
+			}
+			
+		]
+	];
+
+	System.Topbar.Extend({
+		Handlers : {
+			Account : {
+				'acc-chk' : function(event){
+					System.Launch(3, 'accout');
+				},
+				'msg-trn' : function(event){
+					System.Workspace.ForWork();
+					System.Launch(7, 'unread');
+				},
+				'acc-chk' : function(event){
+					System.Workspace.ForWork();
+					System.Launch(3, 'modinfo');
+				},
+				'scr-lok' : function(event){
+					System.Locker.Launch();
+				},
+				'log-off' : function(event){
+					System.Logger.OutSubmit();
+				}
+			},
+			Bind : {
+				'start' : {
+					'click' : function(event) {
+						System.Workspace.WorkMode && (System.AppList.Status ? System.AppList.Sleep() : System.AppList.Launch());
+					}
+				},
+				'myangram list' : {
+					'click' : function(event) {
+						System.Workspace.WorkMode && System.Topbar.Handlers.Account[System.Attr(this, 'name')] && System.Topbar.Handlers.Account[System.Attr(this, 'name')]();
+					}
+				},
+				'msger' : {
+					'click' : function(event) {
+						System.MsgCenter.Status ? System.MsgCenter.Sleep() : System.MsgCenter.Launch();
+					}
+				},
+				'appmgr' : {
+					'click' : function(event) {
+						System.Workspace.ForWork();
+						System.Launch(3, 'appmgr');
+					}
+				},
+				'tasker' : {
+					'click' : function(event) {
+						System.Workspace.WorkMode ? System.Workspace.BeTasker() : System.Workspace.ForWork();
+					}
+				},
+				'timer' : {
+					'click' : function(event) {
+						System.Workspace.WorkMode && (System.Kalendar.Status ? System.Kalendar.Sleep() : System.Kalendar.Launch());
+					}
+				},
+				'searcher' : {
+					'click' : function(event) {
+						System.Workspace.WorkMode && (System.Smartian.Status ? System.Smartian.Sleep() : System.Smartian.Launch());
+					}
+				}
+			},
+			Resize : {
+				'Normal Mode' : function(thi$){
+					System.CSS(this.Document, {width : System.Width});
+					System.Smartian.ReSize();
+					System.Kalendar.ReSize();
+				}
+			},
+		},
+		Build : function(){
+			var components = [System.Start, System.Account, System.Clock, System.Tasker, System.Searcher];
+			for(var i in components){
+				System.Attr(components[i], 'type', 'start').Attr(components[i], 'status', 'on');
+			}
+			System.Attr(System.Start, 'menu', 'start').Kalendar.Build();
+			System.Clock.innerHTML = System.Timer.clock();
+			System.Timer.loop(function(){
+				System.Clock.innerHTML = this.clock('MM/dd  hh:mm:ss');
+			});
+			return this.Attr('menu', 'topbar')
+				.ContentReg('topbar', TopbarMenu)
+				.ContentReg('start', StartMenu)
+				.On().ReSize();
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			//--------------------------------------------------------------------------------------------------|
+			System.BindHandler('start', 'click', Handlers['start']['click'])
+				.BindHandler('myangram list', 'click', Handlers['myangram list']['click'])
+				.BindHandler('msger', 'click', Handlers['msger']['click'])
+				.BindHandler('appmgr', 'click', Handlers['appmgr']['click'])
+				.BindHandler('tasker', 'click', Handlers['tasker']['click'])
+				.BindHandler('timer', 'click', Handlers['timer']['click'])
+				.BindHandler('searcher', 'click', Handlers['searcher']['click']);
+			//--------------------------------------------------------------------------------------------------|
+			System.TitleAndMenu.Bind();
+			//System.Contexts.Bind();
+			System.Kalendar.Bind();
+			System.Smartian.Bind();
+			return this;
+		}
+	});
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+Yangram(function(_, declare, create, using, cache, global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var WinScrollBAR = create('ScrollBAR').extend({
+		Build : function(){
+			if(System.AppWindows){
+				this.Widgets = System.AppWindows;
+				this.Vertical = System.Create('scrollbar', System.AppWindows, {type : 'vert'});
+				this.RailVertical = System.Create('rail', this.Vertical);
+				this.DraggerVertical = System.Create('dragger', this.Vertical);
+				this.bind();
+				this.SetDoc();
+			}
+		},
+		SetDoc : function(elem){
+			setTimeout(function(){
+				if(_.hasChildNode(WinScrollBAR.Widgets, elem)){
+					WinScrollBAR.Document = elem;
+				}else{
+					WinScrollBAR.Document = WinScrollBAR.Widgets;
+				}
+				WinScrollBAR.resize();
+			}, 500);
+		}
+	});
+	
+	var timeFormat = function(s){
+		if(s>=86400){
+			return (s/86400).toFixed(2) + '(d)';
+		}
+		if(s>=3600){
+			return (s/3600).toFixed(2) + '(h)';
+		}
+		if(s>=60){
+			return (s/60).toFixed(2) + '(m)';
+		}
+		return s.toFixed(2) + '(s)';
+	};
+	
+	System.TaskManager.Extend({
+		Name : 'Task Manager',
+		Build : function(){
+			if(this.Document){
+				System.Create('scrollbar', this.Document, {
+					type : 'vert',
+					html : '<rail></rail><dragger></dragger>',
+				});
+				this.List = System.Create('table', System.Create('content', this.Document));
+				this.ScrollBAR = new System.ScrollBAR(this.Document);
+				return this.Bind().ReSize();
+			}
+		},
+		Launch : function(){
+			this.Scan().List.innerHTML = '';
+			System.ComSleep().Create('tr', this.List, {
+				menu : '',
+				html : '<th width="45%">App Name</th><th width="18%">App Status</th><th width="15%">Run Time</th><th colspan="2" width="22%">Operation</th>'
+			});
+			for(var g in this.AppList){
+				if(this.AppList[g].length>0){
+					System.Create('tr', this.List, {
+						group : '',
+						html : '<th>' +g+ '</th><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>'
+					});
+					for(var i = 0; i < this.AppList[g].length; i++){
+						var app = this.AppList[g][i];
+						if(app.Status){
+							if(app.Active){
+								var status = 'Actived/' + app.Active;
+							}else{
+								var status = 'Running';
+							}
+						}else{
+							if(parseInt(app.appid)){
+								var status = 'UnKnow';
+							}else{
+								var status = 'Sleeping';
+							}
+						}
+						if(app.appid===System.Running){
+							status = 'CURRENT';
+						}
+						var html = '<th>' +(i+1)+ ')&nbsp;' +app.Name+ '(' +app.Title+ ')</th>';
+						html += '<td>' +status+ '</td>';
+						html += '<td>' +timeFormat(app.RunTime)+ '</td>';
+						if(parseInt(app.appid)){
+							html += '<td><click onclick="CutTo">CutTo</click></td>';
+							html += '<td><click onclick="Close">Close</click></td>';
+						}else{
+							if(app.appid){
+								html += '<td colspan="2">No Operation</td>';
+							}else{
+								html += '<td colspan="2"><click onclick="CutTo">Display Desktop</click></td>';
+							}
+						}
+						System.Create('tr', this.List, {
+							appid : app.appid,
+							row : i%2 ? 'odd' : 'even',
+							html : html
+						});
+					}
+				}
+			}
+			return this.On();
+		},
+		ReScan : function(){
+			if(this.Status){
+				this.Launch();
+			}
+		},
+		Sleep : System.TaskManager.Off,
+		ReSize : function(){
+			var thi$ = this;
+			System.CSS(this.Document, {
+				height : System.Height - 40
+			});
+			setTimeout(function(){
+				thi$.ScrollBAR && thi$.ScrollBAR.resize();
+			}, 500);
+			return this;
+		},
+		Bind : function(){
+			var Handler = {
+				click : function(event){
+					var row = this.parentNode.parentNode;
+					if(System.Attr(row, 'status') != 'off'){
+						var appid = parseInt(System.Attr(row, 'appid'));
+						var href = System.Attr(this, 'onclick');
+						var Handlers = {
+							CutTo : function(){
+								System.TaskManager.Sleep();
+								System.Launch(appid);
+							},
+							Close : function(){
+								System.Attr(row, 'status', 'off').Close(appid, true);
+							}
+						}
+						Handlers[href] && Handlers[href]();
+					}
+				},
+			}
+			System.BindHandler('taskmgr click', 'click', Handler.click);
+			return this;
+		}
+	});
+	
+	var AppListLaunchTimer = undefined;
+	
+	System.Workspace.Extend({
+		Type : 'work',
+		WorkMode : true,
+		TaskApps : [],
+		BodyTops : {},
+		BodySizes : {},
+		IndexMax : 0,
+		IndexMin : 1,
+		IndexCur : 0,
+		Handlers : {
+			Bind : {
+				click : function(event){
+					if(!System.Workspace.WorkMode){
+						var index = parseInt(System.Attr(this, 'appindex'));
+						var posi = parseInt(System.Attr(this, 'taskposi'));
+						if(posi){
+							System.Workspace.IndexCur = index;
+							System.Workspace.Rank();
+						}else{
+							var appid = parseInt(System.Attr(this, 'appid'));
+							System.Attr(System.Tasker, 'type', 'start').Workspace.ForWork(appid);
+						}
+					}
+				},
+				rclick : function(event){
+					if(!System.Workspace.WorkMode){
+						var index = parseInt(System.Attr(this, 'appindex'));
+						var posi = parseInt(System.Attr(this, 'taskposi'));
+						if(posi){
+							System.Workspace.IndexCur = index;
+							System.Workspace.Rank();
+						}else{
+							var appid = parseInt(System.Attr(this, 'appid'));
+							if(appid){
+								System.Close(appid, true, true);
+								if(index == System.Workspace.IndexMin){
+									System.Workspace.IndexCur ++;
+								}
+								System.Workspace.IndexMin ++;
+								setTimeout(function(){
+									System.Workspace.ReIndexApps();
+								}, 500);
+							}else{
+								System.Tasker.click();
+								System.Workspace.ForWork(appid);
+							}
+						}
+					}
+				},
+				mousewheel : function(event){
+					if(!System.Workspace.WorkMode){
+						if (event.wheelDelta == -120 && System.Workspace.IndexCur < System.Workspace.IndexMax) {
+							System.Workspace.IndexCur ++;
+							System.Workspace.Rank();
+						}
+						if (event.wheelDelta == 120 && System.Workspace.IndexCur > System.Workspace.IndexMin + 1) {
+							System.Workspace.IndexCur --;
+							System.Workspace.Rank();
+						}
+					}
+				}
+			},
+			Resize : {
+				'Normal Mode' : function(thi$){
+					this.Width = System.Width;
+					this.Height = System.Height;
+					this.CoverAppLeft = System.AppList.Width;
+					this.CoverAppWidth  = System.Width - System.AppList.Width;
+					this.CoverAppTop = 40;
+					this.CoverAppHeight = System.Height - 40;
+					System.CSS(this.Document, {
+						width : this.Width,
+						height: this.Height,
+					});
+					System.CSS(System.AppWindows, {
+						width : this.Width,
+						height: this.Height,
+					});
+					if(this.WorkMode){
+						System.Query('application appbody', this.Document).css('min-height', 360);
+						System.Query('application[size=cover] appbody', this.Document).css('min-height', this.CoverAppHeight);
+						System.Application() && System.Application().ReSize();
+					}else{
+						System.Query('application appbody', this.Document).css('min-height', this.CoverAppHeight);
+						for(var n = 0; n < this.TaskApps.length; n ++ ){
+							System.Application(this.TaskApps[n]).ReSize();
+						};
+					}
+					setTimeout(function(){
+						WinScrollBAR.resize();
+					}, 600);
+				}
+			},
+		},
+		TaskMask : '<taskmask style="display: block; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; background-color: transparent; z-index: 999999;"></taskmask>',
+		Build : function(){
+			WinScrollBAR.Build();
+			System.TaskManager.Build();
+			return this.Bind();
+		},
+		SBCorrect : function(){
+			var App = System.Application();
+			WinScrollBAR.SetDoc(System.Query('appbody, widgets', App.Document).get(0));
+		},
+		ForWork : function(appid){
+			appid = typeof appid == 'number' ? appid : System.Running;
+			this.Type = 'work';
+			this.WorkMode = true;
+			this.IndexCur = 0;
+			this.TaskApps = [];
+			System.Query('windows application').each(function(){
+				var aid = parseInt(System.Query(this).attr('appid'));
+				var el = this;
+				setTimeout(function(){
+					System.Query('appbody', el).css('top', System.Workspace.BodyTops[aid]);
+					System.Query(el).css('left', '0px');
+					if(System.Application(aid).ViewType==1){
+						System.Application(aid).SizeCoverScreen(true);
+					}else{
+						System.Application(aid).SizeLikeAPage(true);
+					}
+					System.Workspace.BodyTops[aid] = null;
+					System.Workspace.BodySizes[aid] = null;
+				}, 50);
+			});
+			if(appid){
+				System.Launch(appid);		
+			}else{
+				System.Running = 0;
+				System.Query('[curr]').removeAttr('curr');
+				WinScrollBAR.SetDoc(System.Query('[appid="0"]').attr('status', 'on').attr('curr', '').find('widgets').get(0));
+			};
+			setTimeout(function(){
+				System.TitleAndMenu.Attr('style', '');
+				System.Attr(System.Tasker, 'type', 'start').Workspace.Attr('type', 'work').ReSize();
+				System.Query('windows application taskmask').each(function(){
+					this.parentNode.removeChild(this);
+				});
+			}, 50);
+			if(AppListLaunchTimer){
+				clearTimeout(AppListLaunchTimer);
+				AppListLaunchTimer = undefined;
+			}
+			AppListLaunchTimer = setTimeout(function(){
+				if(System.Application().ViewType){
+					System.AppList.PassiveMode = false;
+				}		
+				System.AppList.PassiveMode && System.AppList.Launch();
+			}, 500);
+			return this;
+		},
+		BeTasker : function(){
+			System.ComSleep(true).Attr(System.Tasker, 'type', 'start').TitleAndMenu.Attr('style', 'display: none;');
+			WinScrollBAR.SetDoc(System.AppWindows);
+			this.WorkMode = false;
+			System.Query('windows application').append(System.Workspace.TaskMask).find('appbody').css('min-height', this.CoverAppHeight);
+			this.Attr('type', 'task').ReIndexApps().ReSize().Type = 'task';
+			return this;
+		},
+		ReIndexApps : function(){
+			var AppTops = {};
+			this.TaskApps = [];
+			this.IndexCur = System.Running == 0 ? 1 : this.IndexCur;
+			this.TaskApps.push(0);
+			for(var i = this.IndexMax; i >= this.IndexMin; i--){
+				var app = System.Query('windows application[appindex="' +i+ '"]');
+				if(app.length > 0){
+					var appid = parseInt(app.attr('appid'));
+					if(appid){
+						if(System.Application(appid)){
+							this.BodyTops[appid] = typeof this.BodyTops[appid] == 'number' ? this.BodyTops[appid] : parseInt(System.Application(appid).$('appbody').css('top'));
+							this.BodySizes[appid] = (typeof this.BodyTops[appid] == 'string' && this.BodyTops[appid].match(/(cover|center)/)) ? this.BodySizes[appid] : System.Application(appid).Attr('size');
+							this.TaskApps.push(appid);
+						}
+					}
+				};
+			}
+			return this.Rank();
+		},
+		Rank : function(){
+			var apps = this.TaskApps;
+			var NewIndex = 1;
+			var index = this.IndexCur;
+			this.IndexMax = NewIndex;
+			for(var n = 0; n < apps.length; n ++ ){
+				var appid = apps[n];
+				var app = System.Application(appid);
+				if(app){
+					var posi = NewIndex - index;
+					if(posi){
+						System.Query('appbody', app.Document).css('top', 0);
+					}else{
+						System.Query('appbody', app.Document).css('top', 0);
+					}
+					app.SizeForTaskView().Attr('appindex', NewIndex).Attr('taskposi', posi).Index = NewIndex;
+					System.CSS(app.Document, {
+						left : (posi-1) * 600 + System.Width/2,
+						zIndex : NewIndex
+					});
+					NewIndex--;
+				}
+			};
+			this.IndexMin = NewIndex;
+			return this;
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			System.BindHandler('workspace[type=task] windows application', 'click', Handlers.click)
+				.BindHandler('workspace[type=task] windows application', 'rclick', Handlers.rclick)
+				.BindHandler('workspace[type=task] windows', 'mousewheel', Handlers.mousewheel)
+				.BindHandler('workspace[type=task] windows', 'DOMMouseScroll', Handlers.mousewheel);
+			return this;
+		}
+	}).Build();
+});
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var Callback = function(href){
+		if(!this.MenuBarHandlers){
+			this.MenuBarHandlers = {};
+		};
+		if(typeof this.MenuBarHandlers[href] != 'function'){
+			this.MenuBarHandlers[href] = function(){
+				console.log(href);
+			}
+		}
+		this.MenuBarHandlers[href].call(this);
+	};
+	
+	System.TitleAndMenu.Extend({
+		Name : 'Title And Menu Bars',
+		Bars : {},
+		Load : function(appid, data){
+			if(typeof data != 'object'){
+				return false;
+			}
+			if(!data instanceof Array){
+				return false;
+			}
+			var html = '<appname>' + data.AppName + '</appname>';
+			for(var i in data.Menus){
+				html += '<menu name="' + i + '" status="on"><items>';
+				for(var n = 0; n < data.Menus[i].length; n ++){
+					html += '<item href="' + data.Menus[i][n].handler + '" status="' + data.Menus[i][n].status + '">' + data.Menus[i][n].title + '</item>';
+				}
+				html += '</items></menu>';
+			}
+			this.Bars[appid] = System.Query('application[appid=' + appid + ']', this.Document)[0] || System.Lib.Element.create('application', this.Document, { appid  : appid, status : 'off' });
+			this.Bars[appid].innerHTML = html;
+			return this;
+		},
+		UnLoad : function(appid){
+			if(this.Bars[appid]){
+				this.Document.removeChild(this.Bars[appid]);
+				delete this.Bars[appid];
+			}
+			return this;
+		},
+		Handlers : {
+			Resize : {
+				'Normal Mode' : function(thi$){
+					//
+				}
+			},
+			Bind : {
+				'bars appname' : {
+					'dblclick' : function(event){
+						System.Launch(0);
+					}
+				},
+				'bars menu' : {
+					'mousedown' : function(event) {
+						var elem = event.relatedTarget || event.srcElement || event.target || event.currentTarget;
+						if(elem.tagName=='MENU'){
+							System.TitleAndMenu.Turn();
+						}
+					}
+				},
+				'bars item' : {
+					'mousedown' : function(event) {
+						if(System.Attr(this, 'status')=='on'){
+							System.TitleAndMenu.Off();
+							Callback.call(System.Application(System.Running), System.Attr(this, 'href'));
+						}
+					}
+				}
+			}
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			System.BindHandler('bars appname', 'dblclick', Handlers['bars appname']['dblclick'])
+				.BindHandler('bars menu', 'mousedown', Handlers['bars menu']['mousedown'])
+				.BindHandler('bars item', 'mousedown', Handlers['bars item']['mousedown']);
+			return this;
+		}
+	});
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var getMenuName = function(elem){
+		var node = elem;
+		while(node && node != document){
+			var name = System.Attr(node, 'menu');
+			if(name && System.Contexts.Menus[name]){
+				return name;
+			}
+			node = node.parentNode;
+		}
+		return null;
+	};
+	
+	System.Contexts.Extend({
+		Name : 'Rightclick Context Menus',
+		Target : null,
+		Menus : {
+		},
+		Curr : undefined,
+		Handlers : {
+			Bind : {
+				'contextmenu' : function(event){
+					var elem = event.relatedTarget || event.srcElement || event.target || event.currentTarget;
+					System.Contexts.Show(getMenuName(elem), event.pageX, event.pageY);
+					System.Contexts.Target = elem;
+					return false;
+				},
+				'mousedown' : function(event){
+					if(System.Contexts.Status){
+						var elem = event.relatedTarget || event.srcElement || event.target || event.currentTarget;
+						if(_.hasChildNode(System.Contexts.Document, elem)){
+							if(elem.tagName == 'ITEM' && elem.getAttribute('status') == 'on'){
+								System.Contexts.Call(parseInt(elem.getAttribute('num')));
+								System.Contexts.Hide();
+							}
+							if(elem.parentNode.getAttribute('status') == 'off'||elem.getAttribute('status') == 'off'){
+								System.Contexts.Hide();
+							}
+						}else{
+							System.Contexts.Hide();
+						}
+					}
+				}
+			}
+		},
+		Show : function(name, x, y){
+			if(name){
+				x = x || 0;
+				y = y || 0;
+				this.On().Curr = name;
+				System.Attr(this.Menus[this.Curr], 'status', 'on');
+				var Size = _.getSize(this.Menus[this.Curr], 'box');
+				var width = Size.width;
+				var height = Size.height;
+				var top = y >= System.Height - height ? y - height : y;
+				var left = x >= System.Width - width ? System.Width - width : x;
+				System.CSS(this.Menus[this.Curr], {
+					top : top,
+					left : left
+				});
+			}
+			return this;
+		},
+		Hide : function(){
+			if(this.Menus[this.Curr]){
+				System.Attr(this.Menus[this.Curr], 'status', 'off');
+			}
+			this.Off();
+			this.Curr = undefined;
+		},
+		Call : function(num){
+			if(this.Menus[this.Curr]){
+				var callback = this.Handlers[this.Curr][num];
+				typeof callback == 'function' && callback();
+			}
+		},
+		Load : function(name, data){
+			if(typeof data != 'object'){
+				return false;
+			}
+			if(!data instanceof Array){
+				return false;
+			}
+			var handler = [];
+			var num = 0;
+			var html = '';
+			for(var gid = 0; gid < data.length; gid ++){
+				html += '<group>';
+				for(var n = 0; n < data[gid].length; n ++, num++){
+					html += '<item num="' + num + '" status="' + data[gid][n].status + '">' + data[gid][n].title + '</item>';
+					handler.push(data[gid][n].handler);
+				}
+				html += '</group>';
+			}
+			this.Menus[name] = this.$('menu[name=' + name + ']')[0] || System.Lib.Element.create('menu', this.Document, { name  : name, status : 'off' });
+			this.Menus[name].innerHTML = html;
+			this.Handlers[name] = handler;
+			return this;
+		},
+		UnLoad : function(name){
+			this.Menus[name] && this.Menus[name].parentNode && this.Menus[name].parentNode.removeChild(this.Menus[name]);
+			this.Handlers[name] = null;
+			delete this.Handlers[name];
+			return this;
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			document.oncontextmenu = Handlers['contextmenu'];
+			document.addEventListener('mousedown', Handlers['mousedown']);
+			return this;
+		}
+	});
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+Yangram(function(_, declare, create, using, cache, global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	System.Progress.Extend({
+		Name : 'Loading Animation',
+		Build : function() {
+			this.Vision = System.Create('vision', this.Document);
+			for (var i = 1; i < 10; i++) {
+				System.Create('spcl', this.Vision, {
+					name : 'cube' + i
+				});
+			}
+			return this;
+		},
+		Show : function(timeout, callback) {
+			if(typeof callback == 'function'){
+				timeout = timeout || 10000;
+				this.On();
+				return setTimeout(function() {
+					System.Progress.Hide();
+					callback();
+				}, timeout);
+			}
+			return null;
+		},
+		Hide : function(timer) {
+			var thi$ = this;
+			timer && clearTimeout(timer);
+			setTimeout(function() {
+				thi$.Off();
+			}, 500);
+			return this;
+		}
+	}).Build();
+	
+	var StyleFileBaseName = undefined;
+	
+	System.Dialog.Extend({
+		Name : 'Common Dialog',
+		Widget : undefined,
+		Main : undefined,
+		Build : function(setttings){
+			setttings = setttings || {};
+			StyleFileBaseName = setttings.css;
+			var appid = setttings.appid || this.appid;
+			var title = setttings.title || 'YangRAM Dialog';
+			var width = setttings.width || 540;
+			var height = setttings.height || 360;
+			width = width < System.Width ? width : System.Width;
+			height = height < System.Height ? height : System.Height;
+			var left = setttings.left || (System.Width - width) / 2 - 2;
+			var top = setttings.top || (System.Height - height) / 2 -2;
+			left = left >= 0 ? left : 0;
+			left = left <= System.Width - 30 ? left : System.Width - 30;
+			top = top >= 0 ? top : 0;
+			top = top <= System.Height - 30 ? top : System.Height - 30;
+			this.Document.innerHTML = '';
+			this.Curaid = appid;
+			this.Widget = System.Create('vision', this.Document, {
+				className : 'dialog-main-box',
+				styles : {
+					width : width,
+					height : height,
+					top : top,
+					left : left
+				},
+				html : '<vision class="dialog-header"><spcl class="dialog-name">' +title+ '</spcl><spcl class="dialog-swch">×</spcl></vision>'
+			});
+			if(setttings.control){
+				var mainHeight = height - 120;
+				var html = '';
+				for(var i = 0; i < setttings.control.length; i++ ){
+					html += '<click href="trigger://' +appid+ '::';
+					html += setttings.control[i].Href;
+					html += '" args="' +setttings.control[i].Args+ '">';
+					html += setttings.control[i].Name
+					html += '</click>';
+				}
+				this.Control = System.Create('vision', this.Widget, {
+					className : 'dialog-control',
+					html : html
+				});
+			}else{
+				var mainHeight = height - 61;
+			}
+			var app = System.Create('application', this.Widget, {
+				appid : appid,
+				styles : {
+					width : width -20,
+					height : mainHeight,
+				},
+				html : '<scrollbar type="vert"><rail></rail><dragger></dragger></scrollbar><scrollbar type="hori"><rail></rail><dragger></dragger></scrollbar>'
+			});
+			this.Main = System.Create('content', app);
+			this.Main.BindHandler = function(selector, eventType, handler, data) {
+				System.Lib.Element.addEvents(System.Dialog.Main, eventType, selector, data, handler);
+				return this;
+			}
+			this.Main.ScrollBAR = new System.ScrollBAR(app);
+			return this;
+		},
+		Show : function(txt, callback) {
+			this.Main || this.Build();
+			if(StyleFileBaseName){
+				var Link = System.Query('link', this.Document)[0];
+				if (!Link) {
+					Link = System.Create('link', this.Document, {
+						type : 'text/css',
+						rel : 'stylesheet'
+					});
+				}
+				Link.href = System.Path + 'css/' + this.appid + '/' + this.Curaid + '/' + StyleFileBaseName;
+				StyleFileBaseName = undefined;
+				Link.addEventListener('load', function() {
+					System.Dialog.Write(txt)
+					typeof callback == 'function' && callback.call(System.Dialog.Main);
+				});
+			}else{
+				this.Write(txt)
+				typeof callback == 'function' && callback.call(this.Main);
+			}
+			return this.On();
+		},
+		Write : function(txt){
+			this.Main.innerHTML = System.TrimHTML(txt);
+			setTimeout(function(){
+				System.Dialog.Main.ScrollBAR.resize()
+			}, 0);
+			return this;
+		},
+		Hide : function(){
+			typeof System.Application(this.Curaid).OnDialogClose == 'function' && System.Application(this.Curaid).OnDialogClose(this.Main);
+			System.Lib.Element.removeEvents(this.Main);
+			this.Document.innerHTML = '';
+			this.Widget = undefined,
+			this.Main = undefined,
+			this.ScrollBAR = undefined;
+			this.Off();
+			StyleFileBaseName = undefined;
+		},
+		Bind : function(){
+			var dragstatus = false;
+			var dragstartX = 0;
+			var dragstartY = 0;
+			var Events = create('Events', window)
+			.push('mousemove', null, null, function(event){
+				if(dragstatus){
+					if(event.x != dragstartX){
+						var left = parseInt(System.Lib.getStyle(System.Dialog.Widget, 'left')) + event.x - dragstartX;
+						left = left >= 0 ? left : 0;
+						left = left <= System.Width - 30 ? left : System.Width - 30;
+						System.Lib.setStyle(System.Dialog.Widget, 'left', left);
+						dragstartX = event.x;
+					}
+					if(event.y != dragstartY){
+						var top = parseInt(System.Lib.getStyle(System.Dialog.Widget, 'top')) + event.y - dragstartY;
+						top = top >= 0 ? top : 0;
+						top = top <= System.Height - 30 ? top : System.Height - 30;
+						System.Lib.setStyle(System.Dialog.Widget, 'top', top);
+						dragstartY = event.y;
+					}
+				}
+			})
+			.push('mouseup', null, null, function(event){
+				if(dragstatus){
+					dragstatus = false;
+					dragstartX = 0;
+					dragstartY = 0;
+				}
+			});
+			return this
+			.BindHandler('vision.dialog-header', 'mousedown', function(event){
+				dragstatus = true;
+				dragstartX = event.x;
+				dragstartY = event.y;
+			})
+			.BindHandler('vision.dialog-header .dialog-swch', 'click', function(){
+				System.Dialog.Hide();
+			});
+		}
+	}).Bind();
+	
+	var fielsType = {
+		'image'			:	['image/jpeg', 'image/pjpeg', 'image/gif', 'image/png'],
+		'audio'			:	['audio/midi', 'audio/x-midi', 'audio/x-pn-realaudio', 'audio/mpeg', 'audio/mpeg', 'audio/ogg', 'audio/3gpp', 'audio/ac3', 'audio/wav'],
+		'video'			:	['video/x-ms-wmv', 'video/mp4', 'video/mpeg', 'video/mpeg', 'video/3gpp'],
+		'text'			:	['text/html', 'text/css', 'text/xml', 'text/csv', 'text/plain'],
+		'pdf'			:	['application/pdf'],
+		'postscript'	:	['application/postscript'],
+		'document'		:	['application/msword', 'application/vnd.ms-excel', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.presentationml.presentation'],
+		'compressed'	:	['application/x-zip-compressed', 'application/x-rar-compressed', 'application/zip'],
+		'octet-stream'	:	['application/octet-stream'],
+	};
+	
+	var typeToRegExp = function(type){
+		if(fielsType[type]){
+			return arrayToRegExp(fielsType[type]);
+		}else{
+			var array = System.Lib.Array.merge(
+				fielsType['image'],
+				fielsType['audio'],
+				fielsType['video'],
+				fielsType['text'],
+				fielsType['pdf'],
+				fielsType['postscript'],
+				fielsType['document'],
+				fielsType['compressed'],
+				fielsType['octet-stream']
+			);
+			return arrayToRegExp(array);
+		}
+	}
+	
+	var arrayToRegExp = function(array){
+		var str = array.join('|');
+		str = str.replace(/(\/|\+|\.)/g, '\\$1');
+		return new RegExp("^(" +str+ ")");
+	}
+	
+	var Selector = {
+		MultiFilesInput : System.Create('input', System.Scenes, {
+			type : 'file',
+			id : 'YangRAM-Files-Selector',
+			value : '',
+			hidden : 'hidden',
+			multiple : 'multiple'
+		}),
+		SingleFileInput : System.Create('input', System.Scenes, {
+			type : 'file',
+			id : 'YangRAM-File-Selector',
+			value : '',
+			hidden : 'hidden',
+		}),
+		FileCheckFilter : true,
+		FileMimeRegExp : null,
+		FileMaxSize : null,
+		DoneCallback : null,
+		FailCallback : null,
+		FileNameRegExp : /.(torrent|rar|sql|psd|cdr)$/i,
+		FilesChecker : function(fiels){
+			if(this.FileCheckFilter){
+				var array = [];
+				for(var i = 0; i < fiels.length; i++ ){
+					if(this.CheckSIZE(fiels[i])){
+						if(this.CheckMIME(fiels[i])||this.CheckSUFFIX(fiels[i])){
+							array.push(fiels[i]);
+						}else{
+							console.log(fiels[i]);
+						}
+					}
+				}
+				if(fiels.length>fiels.array){
+					alert('Some Files Are Not Allowed!');
+				}
+				if(array.length>0){
+					return [true, array];
+				}else{
+					return [false, 'No File!'];
+				}
+			}else{
+				for(var i = 0; i < fiels.length; i++ ){
+					if(!this.CheckMIME(fiels[i])){
+						return [false, 'File Type Not Support!'];
+					}
+					if(!this.CheckSIZE(fiels[i])){
+						return [false, 'File Size Overflow!'];
+					}
+				}
+				return [true, fiels];
+			}
+		},
+		CheckMIME : function (file) {
+			return this.FileMimeRegExp.test(file.type);
+		},
+		CheckSUFFIX : function (file) {
+			return this.FileNameRegExp.test(file.name);
+		},
+		CheckSIZE : function(file){
+			var maxSize = this.FileMaxSize < System.Uploader.MaxSize ? this.FileMaxSize : System.Uploader.MaxSize;
+			return file.size < maxSize;
+		},
+		Bind : function(){
+			System.BindHandler('#YangRAM-File-Selector', 'change', FileInputChange)
+			.BindHandler('#YangRAM-Files-Selector', 'change', FileInputChange);
+		}
+	};
+	
+	var FileInputChange = function(event){
+		var result = Selector.FilesChecker(this.files);
+		if(result[0]){
+			Selector.DoneCallback(result[1]);
+		}else{
+			Selector.FailCallback(result[1]);
+		}
+		this.value = '';
+		Selector.FileCheckFilter = true;
+		Selector.FileMimeRegExp = null;
+		Selector.FileMaxSize = null;
+		Selector.DoneCallback = null;
+		Selector.FailCallback = null;
+	};
+	
+	Selector.Bind();
+	
+	var Transfer = function(file, appid, fldid, rpath, handlers, returnType){
+		var BeforeTransferring = handlers.BeforeTransferring;
+		var OnTransferring = handlers.OnTransferring;
+		var AfterTransferring = handlers.AfterTransferring;
+		var OnUploadComplete = handlers.OnUploadComplete;
+		var OnUploadFailed = handlers.OnUploadFailed;
+		
+		var SendStart = function(evt) {
+			var data = {
+				lengthComputable : evt.lengthComputable,
+				loaded : evt.loaded,
+				total : evt.total,
+				readyState : Uploader.readyState,
+				status : Uploader.status,
+				responseText : 'Transferring'
+			}
+			BeforeTransferring(data);
+		};
+		var SendProgress = function(evt) {
+			var data = {
+				lengthComputable : evt.lengthComputable,
+				loaded : evt.loaded,
+				total : evt.total,
+				readyState : Uploader.readyState,
+				status : Uploader.status,
+				responseText : 'Transferring'
+			}
+			OnTransferring(data);
+		};
+		var SendComplete = function(evt) {
+			var data = {
+				readyState : Uploader.readyState,
+				status : Uploader.status,
+				responseText : 'Transferred'
+			}
+			AfterTransferring(data);
+		};
+		var Failed = function(evt) {
+			var data = {
+				readyState : Uploader.readyState,
+				status : Uploader.status,
+				responseText : 'Transfailed'
+			}
+			OnUploadFailed(data);
+		};
+		var Timeout = function(evt) {
+			var data = {
+				readyState : Uploader.readyState,
+				status : Uploader.status,
+				responseText : 'Timeout'
+			}
+			OnUploadFailed(data);
+		};
+		var StateChange = function(){
+			if (this.readyState==1){
+				var data = {
+					lengthComputable : false,
+					loaded : 0,
+					total : 0,
+					readyState : this.readyState,
+					status : this.status,
+					responseText : 'Waiting'
+				}
+				BeforeTransferring(data);
+			} else if (this.readyState==2||this.readyState==3){
+				var data = {
+					readyState : this.readyState,
+					status : this.status,
+					responseText : 'Processing'
+				}
+				AfterTransferring(data);
+			} else if (this.readyState==4){
+				if(this.status == 200){
+					var data = {
+						readyState : this.readyState,
+						status : this.status,
+						responseText : this.responseText
+					}
+					OnUploadComplete(data);
+				} else {
+					var data = {
+						readyState : this.readyState,
+						status : this.status,
+						responseText : this.responseText
+					}
+					OnUploadFailed(data);
+				}
+			}
+		}
+		var Uploader = new XMLHttpRequest();
+		Uploader.upload.onloadstart = SendStart;
+		Uploader.upload.onprogress = SendProgress;
+		Uploader.upload.onloadend = SendComplete;
+		Uploader.upload.onerror = Failed;
+		Uploader.upload.ontimeout = Timeout;
+		Uploader.onreadystatechange = StateChange;
+		returnType = returnType ? '?getinfo=' + returnType : '';
+		var Url = System.SubmitPath + 'files' + returnType;
+		Uploader.open('POST', Url, true);
+		var Form = new FormData();
+		Form.append('myfile', file);
+		Form.append('appid', appid);
+		Form.append('fldid', fldid);
+		Form.append('rpath', rpath);
+		Form.append('enctype', 'multipart/form-data')
+		var type;
+		if(type = file.type.match(/^(audio|video)\//)){
+			var media = document.createElement(type[1]);
+			media.src = global.URL.createObjectURL(file);
+			media.onloadedmetadata = function(){
+				Form.append('duration', media.duration);
+				Uploader.send(Form);
+			}
+		}else{
+			Uploader.send(Form);
+		}
+	}
+	
+	System.Uploader.Extend({
+		Selector : function(settings){
+			settings = settings || {};
+			Selector.FileCheckFilter = settings.filter == false ? false : true;
+			if(typeof settings.mimes == 'object' && settings.mimes instanceof Array){
+				Selector.FileMimeRegExp = arrayToRegExp(settings.mimes);
+			}else if(typeof settings.mimes == 'string'){
+				Selector.FileMimeRegExp = new RegExp('^(' +settings.mimes.replace(/(\/|\+|\.)/g, '\\$1')+ ')');
+			}else{
+				Selector.FileMimeRegExp = typeToRegExp(settings.type);
+			}
+			Selector.FileMaxSize = settings.maxsize || this.MaxSize;
+			Selector.DoneCallback = typeof settings.done == 'function' ? settings.done : System.DoNothing;
+			Selector.FailCallback = typeof settings.fail == 'function' ? settings.fail : System.DoNothing;
+			Selector.Status = true;
+			if(settings.multiple){
+				Selector.MultiFilesInput.click();
+			}else{
+				Selector.SingleFileInput.click();
+			}
+		},
+		Transfer : function(file, appid, settings){
+			if(typeof file == 'object' && file instanceof  File){
+				var handlers = {
+					BeforeTransferring : settings.before,
+					OnTransferring : settings.progress,
+					AfterTransferring : settings.after,
+					OnUploadComplete : settings.done,
+					OnUploadFailed : settings.fail
+				}
+				Transfer(file, appid, settings.fldid, settings.rpath, handlers, settings.returnType);
+			}
+		}
+	});
+});
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+Yangram(function(_, declare, create, using, cache, global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	System.Explorer.Extend({
+		Name : 'Mini Explorer',
+		Widget : undefined,
+		Main : undefined,
+		Build : function(setttings){
+			setttings = setttings || {};
+			StyleFileBaseName = setttings.css;
+			var appid = setttings.appid || this.appid;
+			var title = setttings.title || 'YangRAM Dialog';
+			var width = setttings.width || 540;
+			var height = setttings.height || 360;
+			width = width < System.Width ? width : System.Width;
+			height = height < System.Height ? height : System.Height;
+			var left = setttings.left || (System.Width - width) / 2 - 2;
+			var top = setttings.top || (System.Height - height) / 2 -2;
+			left = left >= 0 ? left : 0;
+			left = left <= System.Width - 30 ? left : System.Width - 30;
+			top = top >= 0 ? top : 0;
+			top = top <= System.Height - 30 ? top : System.Height - 30;
+			this.Document.innerHTML = '';
+			this.Curaid = appid;
+			this.Widget = System.Create('vision', this.Document, {
+				className : 'dialog-main-box',
+				styles : {
+					width : width,
+					height : height,
+					top : top,
+					left : left
+				},
+				html : '<vision class="dialog-header"><spcl class="dialog-name">' +title+ '</spcl><spcl class="dialog-swch">×</spcl></vision>'
+			});
+			if(setttings.control){
+				var mainHeight = height - 120;
+				var html = '';
+				for(var i = 0; i < setttings.control.length; i++ ){
+					html += '<click href="trigger://' +appid+ '::';
+					html += setttings.control[i].Href;
+					html += '" args="' +setttings.control[i].Args+ '">';
+					html += setttings.control[i].Name
+					html += '</click>';
+				}
+				this.Control = System.Create('vision', this.Widget, {
+					className : 'dialog-control',
+					html : html
+				});
+			}else{
+				var mainHeight = height - 61;
+			}
+			var app = System.Create('application', this.Widget, {
+				appid : appid,
+				styles : {
+					width : width -20,
+					height : mainHeight,
+				},
+				html : '<scrollbar type="vert"><rail></rail><dragger></dragger></scrollbar><scrollbar type="hori"><rail></rail><dragger></dragger></scrollbar>'
+			});
+			this.Main = System.Create('content', app);
+			this.Main.BindHandler = function(selector, eventType, handler, data) {
+				System.Lib.Element.addEvents(System.Dialog.Main, eventType, selector, data, handler);
+				return this;
+			}
+			this.Main.ScrollBAR = new System.ScrollBAR(app);
+			return this;
+		},
+		Show : function(txt, callback) {
+			this.Main || this.Build();
+			if(StyleFileBaseName){
+				var Link = System.Query('link', this.Document)[0];
+				if (!Link) {
+					Link = System.Create('link', this.Document, {
+						type : 'text/css',
+						rel : 'stylesheet'
+					});
+				}
+				Link.href = System.Path + 'css/' + this.appid + '/' + this.Curaid + '/' + StyleFileBaseName;
+				StyleFileBaseName = undefined;
+				Link.addEventListener('load', function() {
+					System.Dialog.Write(txt)
+					typeof callback == 'function' && callback.call(System.Dialog.Main);
+				});
+			}else{
+				this.Write(txt)
+				typeof callback == 'function' && callback.call(this.Main);
+			}
+			return this.On();
+		},
+		Write : function(txt){
+			this.Main.innerHTML = System.TrimHTML(txt);
+			setTimeout(function(){
+				System.Dialog.Main.ScrollBAR.resize()
+			}, 0);
+			return this;
+		},
+		Hide : function(){
+			typeof System.Application(this.Curaid).OnDialogClose == 'function' && System.Application(this.Curaid).OnDialogClose(this.Main);
+			System.Lib.Element.removeEvents(this.Main);
+			this.Document.innerHTML = '';
+			this.Widget = undefined,
+			this.Main = undefined,
+			this.ScrollBAR = undefined;
+			this.Off();
+			StyleFileBaseName = undefined;
+		},
+		Bind : function(){
+			var dragstatus = false;
+			var dragstartX = 0;
+			var dragstartY = 0;
+			var Events = create('Events', window)
+			.push('mousemove', null, null, function(event){
+				if(dragstatus){
+					if(event.x != dragstartX){
+						var left = parseInt(System.Lib.getStyle(System.Dialog.Widget, 'left')) + event.x - dragstartX;
+						left = left >= 0 ? left : 0;
+						left = left <= System.Width - 30 ? left : System.Width - 30;
+						System.Lib.setStyle(System.Dialog.Widget, 'left', left);
+						dragstartX = event.x;
+					}
+					if(event.y != dragstartY){
+						var top = parseInt(System.Lib.getStyle(System.Dialog.Widget, 'top')) + event.y - dragstartY;
+						top = top >= 0 ? top : 0;
+						top = top <= System.Height - 30 ? top : System.Height - 30;
+						System.Lib.setStyle(System.Dialog.Widget, 'top', top);
+						dragstartY = event.y;
+					}
+				}
+			})
+			.push('mouseup', null, null, function(event){
+				if(dragstatus){
+					dragstatus = false;
+					dragstartX = 0;
+					dragstartY = 0;
+				}
+			});
+			return this
+			.BindHandler('vision.dialog-header', 'mousedown', function(event){
+				dragstatus = true;
+				dragstartX = event.x;
+				dragstartY = event.y;
+			})
+			.BindHandler('vision.dialog-header .dialog-swch', 'click', function(){
+				System.Dialog.Hide();
+			});
+		}
+	}).Bind();
+});
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var Handlers = {
+		Resize : {
+			'Normal Mode' : function(thi$){
+				var height = this.Editing ? System.Height-40 : 501;
+				System.CSS(this.Document, {
+					height : height
+				});
+			}
+		},
+		Bind : {
+			'kalendar dates list' : {
+				'click' : function(event) {
+					var editing = this;
+					listEventsClick = setTimeout(function() {
+						if(System.Kalendar.DdlClick){
+							System.Kalendar.DdlClick--;
+						}else{
+							if(editing == System.Kalendar.Editing){
+								System.Kalendar.SetType('date').SelectDates().SaveEvents(editing);
+								System.AppList.PassiveMode && System.AppList.Launch();
+								System.Kalendar.SetCurr();
+							}else{
+								System.Launch(0);
+								System.AppList.Sleep().PassiveMode = true;
+								System.Kalendar.SetType('edit').SelectEvents().SaveEvents(System.Kalendar.Editing).SetCurr(editing).EditEvents();
+							}
+						}
+					}, 500);
+				},
+				'dblclick' : function(event) {
+					System.Kalendar.DdlClick +=2;
+					System.Kalendar.SetCurr(this);
+					System.Tablet.Off();
+					System.AppList.SetType('Dock').Off().PassiveMode = true;
+					System.Events.On().Edit(this.innerHTML);
+				}
+			},
+			'kalendar dates spcl[name=prev-month]' : {
+				'click' : function(event){
+					System.Kalendar.Month --;
+					System.Kalendar.Load();
+				}
+			},
+			'kalendar dates spcl[name=next-month]' : {
+				'click' : function(event){
+					System.Kalendar.Month ++;
+					System.Kalendar.Load();
+				}
+			},
+			'kalendar dates spcl[name=curr-month]' : {
+				'dblclick' : function(event){
+					System.Kalendar.Month = System.Timer.month();
+					System.Kalendar.Load();
+				}
+			},
+			'kalendar dates' : {
+				'click' : function(event) {
+					System.Kalendar.SelectDates();
+				}
+			},
+			'kalendar content' : {
+				'click' : function(event) {
+					System.Kalendar.SelectEvents();
+				}
+			},
+			'kalendar content switch item' : {
+				'click' : function(event) {
+					System.Query('kalendar content sections>*, kalendar content switch item').attr('status', 'off');
+					System.Attr(this, 'status', 'on');
+					var owner = System.Query(this).attr('owner');
+					if(Kalendars.indexOf(owner)>=0){
+						var KalendarName = owner.replace(/^\w/, function(s){
+							return s.toUpperCase();
+						});
+						System.Attr(System.Kalendar[KalendarName], 'status', 'on');
+					}
+					System.Kalendar.ScrollBAR.resize();
+				}
+			},
+			Editable : function(event) {
+				System.Attr(this, 'contentEditable', 'true');
+			},
+			TimePicker : function(event) {
+				TimePicker.On(this);
+			},
+			NewPrivate : function(event) {
+				System.Kalendar.CreateEvent(System.Kalendar.Private);
+			},
+			NewPublic : function(event) {
+				System.Kalendar.CreateEvent(System.Kalendar.Public);
+			}
+		}
+	};
+	
+	var eVisionStyle = function(){
+		var css = '';
+		var styles = {
+			title : 'Title : ',
+			begin : 'Begin Time : ',
+			end : 'End Time : ',
+			invitee : 'Invitee : ',
+			notification : 'Notification : ',
+			url : 'URL : ',
+			remark : 'Remark : '
+		}
+		for(var i in styles){
+			css += '\n\rkalendar content sections event ' + i;
+			css += ':before { content: "' +styles[i]+ '";}';
+		}
+		return css;
+	};
+	
+	var eSwitchItems = {
+		private : ['Mine', 'on'],
+		public : ['Public', 'off'],
+		captain : ['Captain\'s', 'off'],
+		festival : ['Festival&nbsp;&amp;&nbsp;Holiday', 'off']
+	}
+	
+	var eSwitchItem = function(){
+		var html = '<switch>';
+		for(var i in eSwitchItems){
+			html += '<item status="' +eSwitchItems[i][1]+ '" owner="' +i+ '">' +eSwitchItems[i][0]+ '</item>';
+		}
+		html += '</switch>';
+		return html;
+	};
+	
+	var Kalendars = ['private', 'public', 'captain', 'festival'];
+	
+	var eSwitchVision = function(i, sections){
+		return System.Lib.Element.create('vision', sections, {
+			owner : i,
+			status : eSwitchItems[i][1]
+		});
+	};
+	
+	var TimePicker = {
+		Target : undefined,
+		Build : function(){
+			this.Document = System.Lib.Element.create('picker', System.Kalendar.Document, {
+				type : 'time',
+				innerHTML : ':'
+			});
+			this.Minutes = System.Lib.Element.create('select', this.Document, {
+				name : 'minute',
+				innerHTML : this.BuildOptions(24)
+			});
+			this.Seconds = System.Lib.Element.create('select', this.Document, {
+				name : 'second',
+				innerHTML : this.BuildOptions(60)
+			});
+			this.OK = System.Lib.Element.create('button', this.Document, {
+				innerHTML : 'OK or Cancel'
+			});
+			this.Bind();
+			return this;
+		},
+		BuildOptions : function(max){
+			var html = '';
+			for(i = 0; i < max; i++){
+				html += '<option value="';
+				if(i<10){
+					html += '0' + i + '">0' + i;
+				}else{
+					html += i + '">' + i;
+				}
+				html += '</option>';
+			}
+			return html;
+		},
+		Bind : function(){
+			var thi$ = this;
+			System.UnBindHandler(this.OK, 'click');
+			System.BindHandler(this.OK, 'click', function() {
+				if(thi$.Target){
+					var minute = thi$.Minutes.value;
+					var second = thi$.Seconds.value;
+					var time = minute + ':' + second;
+					thi$.Target.innerHTML = time;
+					thi$.Off();
+				}
+			});
+			return this;
+		},
+		On : function(target){
+			this.Target = target;
+			this.Init();
+			this.Status = true;
+			System.Attr(this.Document, 'status', 'on');
+			return this;
+		},
+		Init : function(target){
+			var array = this.Target.innerHTML.split(':');
+			var minute = parseInt(array[0]);
+			var second = parseInt(array[1]);
+			if(second < 0){
+				second = '00';
+			}else if(second < 10){
+				second = '0' + second;
+			} if(second < 60){
+				second = second;
+			} else {
+				second = '59';
+				minute ++;
+			}
+			if(minute < 0){
+				minute = '00';
+			}else if(minute < 10){
+				minute = '0' + minute;
+			} if(minute < 24){
+				minute = minute;
+			} else {
+				minute = '23';
+				second = '59';
+			}
+			this.Minutes.value = minute;
+			this.Seconds.value = second;
+			return this;
+		},
+		Off : function(){
+			this.Target = undefined;
+			this.Status = false;
+			System.Attr(this.Document, 'status', 'off');
+			return this;
+		}
+	};
+	
+	System.Kalendar.Extend({
+		Year : System.Timer.year(),
+		Month :  System.Timer.month(),
+		Editing : undefined,
+		DdlClick :0,
+		Handlers : Handlers,
+		Build : function(){
+			System.Create('style', this.Document, {
+				innerHTML : eVisionStyle()
+			});
+			System.Create('scrollbar', this.Document, {
+				type : 'vert',
+				innerHTML : '<rail></rail><dragger></dragger>'
+			});
+			this.Dates = System.Create('dates', this.Document);
+			this.Vision = System.Create('content', this.Document, {
+				innerHTML : eSwitchItem()
+			});
+			var sections = System.Lib.Element.create('sections', this.Vision);
+			for(var i in Kalendars){
+				var KalendarName = Kalendars[i].replace(/^\w/, function(s){
+					return s.toUpperCase();
+				});
+				this[KalendarName] = eSwitchVision(Kalendars[i], sections);
+			}
+			TimePicker.Build();
+			this.Off().ReSize().Bind();
+			this.ScrollBAR = new System.ScrollBAR(this.Document);
+		},
+		Launch : function(){
+			System.ComSleep().Attr(System.Clock, 'type', 'kalendar').Attr(this.Dates, 'status', 'on');
+			return this.On();
+		},
+		Load : function(callback){
+			var thi$ = this;
+			var date = this.Year + '/' + this.Month;
+			System.XHR({
+				url : System.Path + 'account/events/' +date+ '/?lang=' + System.Lang,
+				done : function(txt){
+					//console.log(txt);
+					thi$.Dates.innerHTML = System.TrimHTML(txt);
+					typeof callback == 'function' && callback();
+				}
+			});
+			return this;
+		},
+		Sleep : function(){
+			System.Attr(System.Clock, 'type', 'start');
+			System.AppList.PassiveMode && System.AppList.Launch();	
+			return this.SaveEvents(this.Editing).SetType('date').SelectDates().Off().SetCurr().ReSize();
+		},
+		SetType : function(type){
+			return this.Attr('type', type).ReSize();
+		},
+		SelectEvents : function(){
+			System.Attr(this.Vision, 'selected', '');
+			return this;
+		},
+		SelectDates : function(){
+			System.Lib.Element.removeAttr(this.Vision, 'selected');
+			return this;
+		},
+		SetCurr : function(editing){
+			this.Editing = editing;
+			System.Query('kalendar dates list[actived]').removeAttr('actived');
+			if(editing){
+				System.Attr(editing, 'actived', '');
+			};
+			return this;
+		},
+		EditEvents : function(){
+			var day = this.Editing.innerHTML;
+			var events = [];
+			System.Query('kalendar dates events').each(function(i, e){
+				var owner = System.Query(this).attr('owner');
+				var html = System.Query('date[day="'+day+'"]', this).html();
+				events[owner] = html;
+			});
+			this.ScrollBAR.toTop();
+			this.LoadEvents(events).ReSize();
+			return this;
+		},
+		LoadEvents: function(events){
+			var thi$ = this;
+			System.Query('kalendar content vision').each(function(i, e){
+				var owner = System.Query(this).attr('owner');
+				if(events[owner]){
+					System.Query(this).html(events[owner]);
+					if(owner=='private'||owner=='public'){
+						thi$.AddSpcl(this);
+					}
+				}else{
+					if(owner=='private'||owner=='public'){
+						System.Query(this).html('<spcl class="noevent newevent">No Events(Click To Create Events)</spcl>');
+					}else{
+						System.Query(this).html('<spcl class="noevent">No Events</spcl>');
+					}
+				}
+			});
+			return this;
+		},
+		CreateEvent : function(node){
+			this.RemoveSpcl(node);
+			var html = '<title contenteditable="true"> </title>';
+			html += '<begin>00:00</begin>';
+			html += '<end>23:59</end>';
+			html += '<url> </url>';
+			html += '<remark> </remark>';
+			System.Lib.Element.create('event', node, {
+				innerHTML : html
+			});
+			this.AddSpcl(node);
+			this.ScrollBAR.resize();
+			return this;
+		},
+		RemoveSpcl : function(node){
+			var spcl = System.Query('spcl', node)[0];
+			if(spcl){
+				node.removeChild(spcl);
+			};
+			return this;
+		},
+		AddSpcl : function(node){
+			System.Lib.Element.create('spcl', node, {
+				className : 'newevent',
+				innerHTML : 'Click To Add A New Event'
+			});
+			return this;
+		},
+		SaveEvents : function(){
+			TimePicker.Off();
+			if(this.Editing){
+				System.Query('kalendar content [contentEditable]').removeAttr('contentEditable');
+				this.Filter(this.Private);
+				this.Filter(this.Public);
+				this.SaveOwner('private');
+				this.SaveOwner('public');
+				this.ReSize();
+			}
+			return this;
+		},
+		SaveOwner : function(owner){
+			var day = this.Editing.innerHTML;
+			if(owner=='private'){
+				var events = System.Lib.String.trim(System.Query(this.Private).html()||'');
+			}else if(owner=='public'){
+				var events = System.Lib.String.trim(System.Query(this.Public).html()||'');
+			}
+			var selector = 'kalendar dates events[owner=' +owner+ ']';
+			if(System.Query(selector + ' date[day=' +day+ ']')[0]){
+				if(System.Query(selector + ' date[day=' +day+ ']').html()!=events||events==''){
+					if(events==''){
+						var node = System.Query(selector)[0]
+						var date = System.Query(selector + ' date[day=' +day+ ']')[0];
+						node.removeChild(date);
+						System.Lib.Element.removeAttr(this.Editing, 'events')
+					}else{
+						System.Query(selector + ' date[day=' +day+ ']').html(events);
+					}
+					this.SaveKalendar(owner);
+				}
+			}else{
+				if(events!=''){
+					System.Create('date', System.Query(selector)[0], {
+						day : day,
+						innerHTML : events
+					});
+					System.Attr(this.Editing, 'events', '');
+					this.SaveKalendar(owner);
+				}
+			};
+			return this;
+		},
+		Filter : function(node){
+			this.RemoveSpcl(node);
+			System.Query('event', node).each(function(){
+				var title = System.Query('title', this).html();
+				title = title.replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/<[^>]+>/g, '');
+				title = System.Lib.String.trim(title);
+				if(title==''){
+					node.removeChild(this);
+				}else{
+					System.Query('title', this).html(title);
+				}
+			});
+			return this;
+		},
+		SaveKalendar : function(owner){
+			var thi$ = this;
+			var date = this.Year + '/' + this.Month;
+			var data = new FormData();
+			data.append(owner, (System.Query('kalendar dates events[owner=' +owner+ ']').html()||'').replace(/>\*<\//, '> </').replace(/(&nbsp;)+/, ' '));
+			System.XHR({
+				url : System.Path + 'account/events/' +date+ '/?lang=' + System.Lang,
+				data : data
+			});
+			return this;
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			System.BindHandler('kalendar dates list', 'click', Handlers['kalendar dates list']['click'])
+				.BindHandler('kalendar dates list', 'dblclick', Handlers['kalendar dates list']['dblclick'])
+				.BindHandler('kalendar dates spcl[name=prev-month]', 'click', Handlers['kalendar dates spcl[name=prev-month]']['click'])
+				.BindHandler('kalendar dates spcl[name=next-month]', 'click', Handlers['kalendar dates spcl[name=next-month]']['click'])
+				.BindHandler('kalendar dates spcl[name=curr-month]', 'dblclick', Handlers['kalendar dates spcl[name=curr-month]']['dblclick'])
+			//--------------------------------------------------------------------------------------------------|
+				.BindHandler('kalendar dates', 'click', Handlers['kalendar dates']['click'])
+				.BindHandler('kalendar content', 'click', Handlers['kalendar content']['click'])
+				.BindHandler('kalendar content switch item', 'click', Handlers['kalendar content switch item']['click']);
+			//--------------------------------------------------------------------------------------------------|
+			System.Lib.Element.removeEvents(this.Private, 'click');
+			System.Lib.Element.removeEvents(this.Public, 'click');
+			System.Lib.Element.addEvents(this.Private, 'click', 'title, url, remark', null, Handlers.Editable);
+			System.Lib.Element.addEvents(this.Public, 'click', 'title, url, remark', null, Handlers.Editable);
+			System.Lib.Element.addEvents(this.Private, 'click', 'begin, end', null, Handlers.TimePicker);
+			System.Lib.Element.addEvents(this.Public, 'click', 'begin, end', null, Handlers.TimePicker);
+			System.Lib.Element.addEvents(this.Private, 'click', 'spcl.newevent', null, Handlers.NewPrivate);
+			System.Lib.Element.addEvents(this.Public, 'click', 'spcl.newevent', null, Handlers.NewPublic);
+			return this;
+		}
+	});
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+Yangram(function(_, declare, create, using, cache, global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var Smartian = {};
+	
+	System.Smartian.Extend({
+		Type : 'Nrml',
+		Keyword : '',
+		Placeholder : '',
+		SetType : function(type){
+			this.Attr('type', type).Type = type;
+			this.ReSize();
+			return this;
+		},
+		Handlers : {
+			Resize : {
+				'Normal Mode' : function(thi$){
+					if(this.Type == 'Nrml'){
+						System.Lib.Element.setStyle(this.Document, 'height', System.Height-120);
+					}
+					if(this.Type == 'Wide'){
+						System.Lib.Element.setStyle(this.Document, 'height', System.Height-40);
+					}
+					setTimeout(function(){
+						thi$.ScrollBAR && thi$.ScrollBAR.toBottom();
+					}, 200);
+				}
+			},
+			Bind : {
+				Submit : function() {
+					System.Smartian.Analysis();
+				},
+				'smartian li[href]' : {
+					'click' : function(event) {
+						console.log(System.Query(this).attr('href'));
+					}
+				}
+			}
+		},
+		Build : function(){
+			var resulter = System.Lib.Element.create('resulter', this.Document, {
+				html : '<content></content><scrollbar type="vert"><rail></rail><dragger></dragger></scrollbar>'
+			});
+			var inputer = System.Lib.Element.create('inputer', this.Document);
+			var txt = System.Lib.Element.create('input', inputer, {
+				type : 'text',
+				name : 'you-say',
+				value : this.Keyword,
+				placeholder : this.Placeholder
+			});
+			var btn = System.Lib.Element.create('input', inputer, {
+				type : 'button',
+				name : 'call-me',
+			});
+			this.Text = txt;
+			this.Button = btn;
+			this.Bind();
+			this.ScrollBAR = new System.ScrollBAR(resulter);
+			this.Results = System.Query('content', this.Document)[0];
+			return this;
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			System.BindHandler(this.Button, 'click', Handlers.Submit)
+				.BindHandler(this.Text, 'enter', Handlers.Submit)
+				.BindHandler('smartian li[href]', 'click', Handlers['smartian li[href]']['click']);
+			return this;
+		},
+		Analysis : function(){
+			this.Keyword = _.String.trim(this.Text.value);
+			if(this.Keyword!=''){
+				var receipt = this.Match();
+				if(receipt !== null&& receipt[1]){
+					System.Query('.welcome').attr('class', 'welcomed');
+					System.Lib.Element.create('list', this.Results, {
+						className : 'ask',
+						innerHTML : this.Keyword
+					});
+					switch(receipt[0]){
+						case 'Calc' :
+						case 'Time' :
+						case 'Dail' : 
+						System.Lib.Element.create('list', this.Results, {
+							className : 'answer',
+							innerHTML : receipt[1]
+						});
+						break;
+						case 'Self':
+						case 'Play':
+						System.Lib.Element.create('list', this.Results, {
+							className : 'tips',
+							innerHTML : receipt[1]
+						});
+						break;
+					}
+					this.ClearInput().ReSize();
+				}
+			}
+		},
+		Match: function(){
+			for(var exec in Smartian){
+				for (var type in Smartian[exec].RegExps){
+					var result = this.Keyword.match(Smartian[exec].RegExps[type]);
+					if(result){
+						console.log(exec, type, result);
+						if(typeof Smartian[exec].Handlers[type] == 'function'){
+							return [exec, Smartian[exec].Handlers[type].call(this, result)];
+						}else{
+							console.log(exec, type, result);
+						}
+					}
+				}
+			}
+			this.Searcher();
+			return null;
+		},
+		Clear : function(){
+			this.Results.innerHTML = '';
+			this.Text.value = '';
+			this.ReSize();
+			return this;
+		},
+		ClearInput : function(){
+			System.Attr(this.Text, 'placeholder', this.Keyword);
+			this.Text.value = '';
+			this.Keyword = '';
+			return this;
+		},
+		Load : function(callback){
+			var thi$ = this;
+			System.XHR({
+				url : System.Path + 'smartian/instruction-set/?lang=' + System.Lang,
+				done : function(txt){
+					eval(txt);
+					thi$.ReSize();
+					typeof callback == 'function' && callback();
+				}
+			});
+			return this;
+		},
+		Launch : function(){
+			var thi$ = this;
+			System.Attr(System.Searcher, 'type', 'start').XHR({
+				url : System.Path + 'smartian/welcome/?lang=' + System.Lang,
+				done : function(txt){
+					thi$.Results.innerHTML = txt;
+					System.ComSleep().Attr(System.Searcher, 'type', 'searcher');
+					thi$.On().SetType('Nrml').ReSize();
+				}
+			});
+			return this;
+		},
+		Sleep : function(){
+			System.Attr(System.Searcher, 'type', 'start');
+			this.Off().SetType('Nrml').ClearInput();
+			for(var i in Smartian.Dail.TimesCount){
+				Smartian.Dail.TimesCount[i] = 0;
+			}
+			return this;
+		},
+		Searcher : function(){
+			var thi$ = this;
+			System.XHR({
+				url : System.Path + 'smartian/search/' + System.Running+ '/?kw=' + encodeURIComponent(this.Keyword) + '&lang=' + System.Lang,
+				done : function(txt){
+					System.Query('.welcome').attr('class', 'welcomed');
+					thi$.Results.innerHTML += System.TrimHTML(txt);
+					thi$.ClearInput().ReSize();
+				}
+			});
+			return this;
+		},
+		/*
+		Widget : function(callback){
+			var thi$ = this;
+			System.XHR({
+				url : System.Path + '?type=smt&aim=search&kw=' +this.Keyword+ '&rule=0',
+				done : function(txt){
+					System.Query('.welcome').attr('class', 'welcomed');
+					System.Lib.Element.create('list', thi$.Results, {
+						className : 'widget',
+						innerHTML : System.TrimHTML(txt)
+					});
+					thi$.ClearInput();
+					thi$.ReSize();
+				}
+			});
+			return this;
+		}
+		*/
+	});
+});
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+Yangram(function(_, declare, create, using, cache, global, undefined){
+	_.check('Elements.Cls', ['Elements', 'Elements.create'], 'Widgets.Lib', false);
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var MainMenu = [
+		[
+			{
+				title : 'Launch',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Sleep',
+				status : 'on',
+				handler : function(){
+				}
+			},
+			{
+				title : 'Active',
+				status : 'on',
+				handler : function(){
+				}
+			},
+			{
+				title : 'Close',
+				status : 'on',
+				handler : function(){
+					
+				}
+			}
+		],
+		[
+			{
+				title : 'Uninstall',
+				status : 'on',
+				handler : function(){
+					
+				}
+			}
+		]
+	];
+	
+	var TabletMenu = [
+		[
+			{
+				title : 'On/Off',
+				status : 'on',
+				handler : function(){
+					System.Tablet.Status ? System.Sleep('TABLET') : System.Tablet.Launch();
+				}
+			},
+			{
+				title : 'New Group',
+				status : 'on',
+				handler : function(){
+					System.Tablet.NewGroup();
+				}
+			}
+		]
+	];
+	
+	var SettingMenu = [
+		[
+			{
+				title : 'General',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Router/Columns',
+				status : 'on',
+				handler : function(){
+				}
+			},
+			{
+				title : 'Driver/Rules',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Applications',
+				status : 'on',
+				handler : function(){
+				}
+			},
+			{
+				title : 'Users/Personal',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Update/Safety',
+				status : 'on',
+				handler : function(){
+				}
+			}
+		]
+	];
+	
+	var RecycleMenu = [
+		[
+			{
+				title : 'New Recycle Rlue',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Empty Recycling Items',
+				status : 'on',
+				handler : function(){
+				}
+			}
+		]
+	];
+	
+	var ExplorerMenu = [
+		[
+			{
+				title : 'All Preset Contents',
+				status : 'on',
+				handler : function(){
+					System.Launch(0, 'ctt');
+				}
+			}
+		],
+		[
+			{
+				title : 'Yang Cloud',
+				status : 'off',
+				handler : function(){
+					System.Launch(0, 'ctt');
+				}
+			}
+		],
+		[
+			{
+				title : 'All Documents',
+				status : 'on',
+				handler : function(){
+				}
+			},
+			{
+				title : 'Picture Lib',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Video Lib',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Music Lib',
+				status : 'on',
+				handler : function(){
+					
+				}
+			},
+			{
+				title : 'Other Documents',
+				status : 'on',
+				handler : function(){
+					
+				}
+			}
+		]
+	];
+	
+	var Handlers = {
+		Resize : {
+			'Normal Mode' : function(thi$){
+				Resize[System.Name] && Resize[System.Name].call(this, this);
+				System.Tablet.ReSize();
+			}
+		},
+		Bind : {
+			'applist application' : {
+				'click' : function(event) {
+					var appid = System.Attr(this, 'appid');
+					if(System.Running == appid){
+						System.Sleep(appid);
+					}else{
+						System.Launch(appid);
+					}
+				},
+				'rclick' : function(event) {
+				}
+			}
+		}
+	};
+	
+	var AppNameAbbr = function(name){
+		if(name.charCodeAt(0) > 128){
+			return name.substr(0, 1);
+		}
+		var abbr = '';
+		for(var i = 0; i < name.length; i ++){
+			if(name.charCodeAt(i)>=48 && name.charCodeAt(i)<=57){
+				abbr += name.substr(i, 1);
+			}else if(name.charCodeAt(i)>=65 && name.charCodeAt(i)<=90){
+				abbr += name.substr(i, 1);
+			}else if(name.charCodeAt(i)>=97 && name.charCodeAt(i)<=122){
+				abbr += name.substr(i, 1);
+			}
+			if(abbr.length >= 2){
+				break;
+			}
+		}
+		return abbr.replace(/^\w/, function(s){
+			return s.toUpperCase();
+		});
+	};
+	
+	var Create = {
+		Preset : function(appid){
+			var app = System.PresetApps[appid];
+			return System.Create('application', false, {
+				appid : appid,
+				menu : app.Menu,
+				tips : parseInt(30*Math.random()),
+				status : 'off',
+				innerHTML : '<icon data="' +app.Icon+ '"></icon><appname>' +app.Name+ '</appname>'
+			});
+		},
+		Normal : function(app){
+			if(app.EnAb&&app.EnAb.length > 0){
+				var abb = app.EnAb;
+			}else{
+				var abb = AppNameAbbr(app.Name);
+			}
+			return System.Create('application', false, {
+				appid : app.id,
+				menu : app.Menu,
+				isnew : app.IsNw,
+				tips : parseInt(5*Math.random()),
+				status : 'off',
+				innerHTML : '<icon data="' +app.Icon+ '" word="' +abb+ '"></icon><appname>' +app.Name+ '</appname>'
+			});
+		}
+	}
+	
+	var Resize = {
+		'Normal Mode' : function(thi$){
+			if(typeof Applications == 'object'){
+				var HeightMax = System.Height - 40;
+				var CountAllow = parseInt(HeightMax  / 50);
+				var CountAll = _.Object.length(Applications) > 8 ? _.Object.length(Applications) : 8;
+				var Count = Math.min(CountAllow - 5, CountAll);
+				var HeightExcept = HeightMax - Count * 50 - 204;
+				switch(this.Type){
+					case 'Dock':
+					this.Width = 90;
+					this.Height = Count * 50 + 204;
+					this.TopGap = HeightExcept / 2 + 40;
+					this.MainHeight = Count * 50;
+					break;
+					case 'List':
+					this.Width = 200;
+					this.Height = HeightMax;
+					this.TopGap = 40;
+					this.MainHeight = HeightMax - 214;
+					break;
+				}
+				System.CSS(this.Document, {
+					width : this.Width,
+					height: this.Height,
+					top : this.TopGap
+				});
+				System.CSS(this.Main, {
+					height: this.MainHeight,
+				});
+			}
+		}
+	}
+	
+	System.AppList.Extend({	
+		Type : 'Mini',
+		PassiveMode : false,
+		Top : System.Create('systemapps', false, {
+			type : 'top'
+		}),
+		Main : System.Create('noramlapps', false, {
+			innerHTML : '<content></content><scrollbar type="vert"><rail></rail><dragger></dragger></scrollbar>'
+		}),
+		Bottom : System.Create('systemapps', false, {
+			type : 'bottom'
+		}),
+		Tablet :  Create.Preset('TABLET'),
+		Explorer : Create.Preset(1),
+		Recycle : Create.Preset(2),
+		Settings : Create.Preset(3),
+		Build : function(){
+			this.Top.appendChild(this.Explorer);
+			this.Top.appendChild(this.Settings);
+			this.Bottom.appendChild(this.Tablet);
+			this.Bottom.appendChild(this.Recycle);
+			this.Document.appendChild(System.Create('mask'));
+			this.Document.appendChild(this.Top);
+			this.Document.appendChild(this.Main);
+			this.Document.appendChild(this.Bottom);
+			this.ScrollBAR = new System.ScrollBAR(this.Main);
+			this.ScrollBAR.toTop().disabled = true;
+			return this.On()
+				.ContentReg('dock', MainMenu)
+				.ContentReg('tablet', TabletMenu)
+				.ContentReg('explorer', ExplorerMenu)
+				.ContentReg('recycle', RecycleMenu)
+				.ContentReg('setting', SettingMenu)
+				.Bind();
+		},
+		SetType : function(type){
+			this.Type = type;
+			this.Attr('type', type);
+			if(type=='Dock'){
+				this.ScrollBAR.toTop().disabled = true;
+			}else{
+				setTimeout(function(){
+					System.AppList.ScrollBAR.disabled = false;
+					System.AppList.ScrollBAR.resize();
+				}, 510);
+			}
+			this.ReSize();
+			return this;
+		},
+		Load : function(callback){
+			var thi$ = this;
+			System.LoadScript(System.Path + 'applications/docklist/', function(){
+				var Lister = thi$.Main.getElementsByTagName('content').item(0);
+				for(var i in Applications){
+					Lister.appendChild(Create.Normal({
+						id : i,
+						Menu : 'dock',
+						Icon : Applications[i]['Icon'],
+						Name : Applications[i]['Name'],
+						EnAb : Applications[i]['EnAb'],
+						IsNw : Applications[i]['IsNew']
+					}));
+				}
+				thi$.SetType('Dock');
+				thi$.ReSize();
+				typeof callback == 'function' && callback();
+			});
+			return this;
+		},
+		Handlers : Handlers,
+		Timer : undefined,
+		Launch : function(){
+			this.On().PassiveMode = false;
+			if(parseInt(System.Running)&&System.Application().ViewType){
+				this.Timer = setTimeout(function(){
+					System.AppList.Sleep();
+				}, 10000);
+			}
+			return this;
+		},
+		Sleep : function(){
+			System.Tablet.Off();
+			if(this.Timer){
+				clearTimeout(this.Timer);
+				this.Timer = undefined;
+			}
+			this.SetType('Dock').Off().PassiveMode = false;
+			this.ScrollBAR.toTop().disabled = true;
+			return this;
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			System.BindHandler('applist application', 'click',  Handlers['applist application']['click'])
+				.BindHandler('applist application', 'rclick', Handlers['applist application']['rclick']);
+			return this;
+		}
+	});
+});
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+(function(global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+	
+	var linkColors = [
+		"DarkMagenta",
+		"DarkSlateBlue",
+		"DimGray",
+		"Indigo",
+		"OrangeRed",
+		"Tomato",
+		"Darkorange",
+		"Crimson"
+	];
+	
+	var TabletMenu = [
+		[
+			{
+				title : 'New Group',
+				status : 'on',
+				handler : function(){
+					System.Tablet.NewGroup();
+				}
+			},
+			{
+				title : 'Refresh',
+				status : 'on',
+				handler : function(){
+					System.Tablet.ReLoad();
+				}
+			}
+		],
+		[
+			{
+				title : 'Edit Group',
+				status : 'off',
+				handler : System.DoNothing
+			},
+			{
+				title : 'Delete Group',
+				status : 'off',
+				handler : System.DoNothing
+			}
+		],
+		[
+			{
+				title : 'Editor Link',
+				status : 'off',
+				handler : System.DoNothing
+			},
+			{
+				title : 'Delete Link',
+				status : 'off',
+				handler : System.DoNothing
+			}
+		]
+	];
+	
+	var GroupMenu = [
+		[
+			{
+				title : 'New Group',
+				status : 'off',
+				handler : System.DoNothing
+			},
+			{
+				title : 'Refresh',
+				status : 'off',
+				handler : System.DoNothing
+			}
+		],
+		[
+			{
+				title : 'Edit Group',
+				status : 'on',
+				handler : function(){
+					System.Tablet.EditGroup(System.Contexts.Target);
+				}
+			},
+			{
+				title : 'Delete Group',
+				status : 'on',
+				handler : function(){
+					System.Tablet.DeleGroup(System.Contexts.Target);
+				}
+			}
+		],
+		[
+			{
+				title : 'Editor Link',
+				status : 'off',
+				handler : System.DoNothing
+			},
+			{
+				title : 'Delete Link',
+				status : 'off',
+				handler : System.DoNothing
+			}
+		]
+	];
+	
+	var ItemMenu = [
+		[
+			{
+				title : 'New Group',
+				status : 'off',
+				handler : System.DoNothing
+			},
+			{
+				title : 'Refresh',
+				status : 'off',
+				handler : System.DoNothing
+			}
+		],
+		[
+			{
+				title : 'Edit Group',
+				status : 'off',
+				handler : System.DoNothing
+			},
+			{
+				title : 'Delete Group',
+				status : 'off',
+				handler : System.DoNothing
+			}
+		],
+		[
+			{
+				title : 'Editor Link',
+				status : 'on',
+				handler : function(){
+					System.Tablet.EditItem(System.Contexts.Target);
+				}
+			},
+			{
+				title : 'Delete Link',
+				status : 'on',
+				handler : function(){
+					System.Tablet.DeleItem(System.Contexts.Target);
+				}
+			}
+		]
+	];
+	
+	var Topbar = {
+		AppName : 'Tablet Interface',
+		Menus : {
+			'常用' : [
+				{
+					title : '系统设置',
+					status : 'on',
+					handler : 'SysSetting'
+				},
+				{
+					title : '应用商城',
+					status : 'on',
+					handler : 'AppStore'
+				},
+				{
+					title : '待办事项',
+					status : 'on',
+					handler : 'TodoLister'
+				},
+				{
+					title : '系统更新',
+					status : 'on',
+					handler : 'SysUpdate'
+				}
+			],
+			'帮助' : [
+				{
+					title : 'YangRAM官网',
+					status : 'on',
+					handler : 'GotoYangRAM'
+				},
+				{
+					title : '交流论坛',
+					status : 'on',
+					handler : 'GotoForum'
+				},
+				{
+					title : '开发者中心',
+					status : 'on',
+					handler : 'GotoDevCnt'
+				},
+				{
+					title : '关于 YangRAM',
+					status : 'on',
+					handler : 'GotoAbout'
+				}
+			],
+		}
+	};
+	
+	System.Tablet.Extend({
+		Name : 'Tablet Interface',
+		Data : [],
+		ScrollBAR : undefined,
+		Handlers : {
+			Resize : {
+				'Normal Mode' : function(thi$){
+					var topGap = 40;
+					if(this.Status){
+						var leftGap = 200;
+					}else{
+						var leftGap = 0;
+					}
+					System.CSS(this.Document, {
+						width : System.Width - leftGap,
+						height: System.Height - 40,
+						top : 40,
+						paddingLeft : leftGap
+					});
+				}
+			},
+			Bind : {
+				'tablet mylink' : {
+					'click' : function(event) {
+						var appid = System.Attr(this, 'appid');
+						var href = System.Attr(this, 'href');
+						System.Launch(appid, href);
+					}
+				}
+			}
+		},
+		Bind : function(){
+			var Handlers = this.Handlers.Bind || {};
+			System.BindHandler('tablet mylink', 'click', Handlers['tablet mylink']['click']);
+			return this;
+		},
+		Colorful : function(){
+			System.Query('tablet mylink').each(function(index, element) {
+				var i = Math.round(Math.random()*7);
+				System.Query(element).css('background-color', linkColors[i]);
+    		});
+			return this;
+		},
+		Load : function(callback){
+			var thi$ = this;
+			System.XHR({
+				url : System.Path + 'account/tablet/links/',
+				done : function(txt){
+					thi$.Document.innerHTML = System.TrimHTML(txt) + '<scrollbar type="vert"><rail></rail><dragger></dragger></scrollbar>';
+					thi$.Colorful();
+					thi$.Data = getData();
+					thi$.ScrollBAR = new System.ScrollBAR(thi$.Document);
+					thi$.ScrollBAR.resize();
+					thi$.Build();
+					typeof callback == 'function' && callback();
+				}
+			});
+			return this;
+		},
+		Build : function(){
+			this.Attr('appid', 'TABLET')
+				.Attr('menu', 'tablet-interface')
+				.ContentReg('tablet-interface', TabletMenu)
+				.ContentReg('tablet-group', GroupMenu)
+				.ContentReg('lnk-item', ItemMenu)
+				.WriteBar(Topbar);
+			//System.TabletSetting.Build();
+			return this;
+		},
+		Launch : function(){
+			System.Query('[curr]').removeAttr('curr');
+			System.Query('[appid=' +this.appid+ ']').attr('status', 'on').attr('curr', '');
+			System.Running = this.appid;
+			System.AppList.SetType('List').Launch();
+			if(System.AppList.Timer){
+				clearTimeout(System.AppList.Timer);
+				System.AppList.Timer = undefined;
+			}
+			System.Tablet.On();
+		},
+		Sleep : function(){
+			System.Query('[appid=TABLET]').attr('status', 'off');
+			System.AppList.SetType('Dock');
+			return this.Off();
+		}
+	});
+	
+	var getData = function(){
+		var data = [];
+		System.Query('tablet content group').each(function(){
+			var groupname = System.Attr(this, 'name');
+			var group = [];
+			System.Query('mylink', this).each(function(){
+				group.push({
+					appid : System.Attr(this, 'appid'),
+					title : System.Query('title', this).html(),
+					href : System.Attr(this, 'href'),
+					view : System.Attr(this, 'view'),
+					icon : System.Query('icon', this).css('background-image'),
+				});
+			});
+			data[groupname] = group;
+		});
+		return data;
+	};
+	
+	var BuildGroups = function(){
+		var html = '';
+		for(var g in System.Tablet.Data){
+			html += '<option value="' + g + '">' + g + '</option>';
+		}
+		return html;
+	};
+	
+	var BuildItems = function(g){
+		var html = '';
+		if(System.Tablet.Data[g]){
+			for(var i in System.Tablet.Data[g]){
+				html += '<option value="' + i + '">' + System.Tablet.Data[g][i]['title'] + '</option>';
+			}
+		}
+		return html;
+	};
+	
+	var BuildForm = function(g, i){
+		var html = '';
+		var sysAppNames = {
+			'1' : 'Trash Can',
+			'2' : 'Content Explorer',
+			'3' : 'Control Panel'
+		};
+		if(System.Tablet.Data[g]&&System.Tablet.Data[g][i]){
+			var appid = System.Tablet.Data[g][i]['appid'];
+			var appname = sysAppNames[appid] || dataApps[appid] && dataApps[appid]['Name'];
+			if(appname){
+				var icon = System.Tablet.Data[g][i]['icon'];
+				var title = System.Tablet.Data[g][i]['title'];
+				var href = System.Tablet.Data[g][i]['href'];
+				var view = {
+					Center : System.Tablet.Data[g][i]['view'] == 'Center' ? 'selected' : '',
+					Cover : System.Tablet.Data[g][i]['view'] == 'Cover' ? 'selected' : '',
+				};
+				html += '<spcl class="icon" style="background-image: ' + icon + ';"></spcl>';
+				html += '<input name="title" value="' + title + '" />';
+				html += '<line></line>';
+				html += '<spcl class="label">App</spcl>';
+				html += '<spcl class="appname">' + appname + '</spcl>';
+				html += '<spcl class="label">Target</spcl>';
+				html += '<input name="href" value="' + href + '" />';
+				html += '<spcl class="label">Group</spcl>';
+				html += '<input name="group" value="' + g + '" />';
+				html += '<spcl class="label">View Type </spcl>';
+				html += '<select name="view">';
+				for(var i in view){
+					html += '<option value="' + i + '" ' + view[i] + '>' + i + '</option>';
+				}
+				html += '</select>';
+				html += '<click class="change">Confirm</click>';
+			}
+		}
+		return html;
+	};
+	
+	System.TabletSetting.Extend({
+		Name : 'Tablet Settings',
+		Main : System.Lib.Element.create('vision', false, {
+			innerHTML : '<spcl class="choose">Choose a Link Item</spcl>'
+		}),
+		Build : function(){
+			this.Groups = System.Lib.Element.create('select', this.Main, {
+				name : 'groups',
+				innerHTML : BuildGroups()
+			});
+			this.Items = System.Lib.Element.create('select', this.Main, {
+				name : 'items',
+				innerHTML : BuildItems(this.Groups.value)
+			});
+			this.Button = System.Lib.Element.create('click', this.Main, {
+				className : 'complete',
+				innerHTML : 'Completed'
+			});
+			this.Editor = System.Lib.Element.create('form', this.Main, {
+				innerHTML : BuildForm(this.Groups.value, this.Items.value)
+			});
+			this.Document.appendChild(this.Main);
+			this.Bind();
+			return this;
+		},
+		Bind : function(){
+			var thi$ = this;
+			this.Groups.onchange = function(){
+				thi$.Items.innerHTML = BuildItems(this.value);
+				thi$.Editor.innerHTML = BuildForm(this.value, 0);
+			}
+			this.Items.onchange = function(){
+				thi$.Editor.innerHTML = BuildForm(thi$.Groups.value, this.value);
+			}
+			return this;
+		},
+	});
+})(window);
+
+/*!
+ * Tangram New Idea Source Code
+ * Kernel of Yangram OS
+ * http://www.yangram.net//
+ *
+ * Written and Designed By Ivan Yeung
+ * Copyright 2014 Microivan Lab of Interest
+ *
+ * Date: 2015-09-04
+ */
+ 
+Yangram(function(_, declare, create, using, cache, global, undefined){
+	var document = global.document;
+	var location = global.location;
+	var System = global.System;
+
+	var Alert  = {
+		Document : System.Lib.Element.create('alert', System.MsgCenter.Document, {status : 'off'}),
+		Status : false,
+		Vision : System.Lib.Element.create('msgbox'),
+		Title : System.Lib.Element.create('msgtit'),
+		Content : System.Lib.Element.create('msgcon'),
+		Buttons : System.Lib.Element.create('msgbtn'),
+		Messages : [],
+		Curr : 0,
+		Build : function(){
+			this.Document.appendChild(this.Vision);
+			this.Vision.appendChild(this.Title);
+			this.Vision.appendChild(this.Content);
+			this.Vision.appendChild(this.Buttons);
+			this.bind();
+		},
+		ReSize : function(){
+			var ContentHeightMax = System.Height - 100;
+			var ContentSize = _.getSize(this.Content);
+			var ContentHeight = ContentSize.height > ContentHeightMax ? ContentHeightMax : ContentSize.height;
+			var VisionHeight = ContentHeight + 100;
+			var VisionMarginTop = VisionHeight / -2;
+			System.CSS(this.Vision, {
+				height : VisionHeight,
+				marginTop : VisionMarginTop
+			}).CSS(this.Content, {
+				height : ContentHeight,
+			});
+			return this;
+		},
+		bind : function(){
+			var AlertHandler = function(event){
+				var type = System.Attr(this, 'type');
+				if(type&&type!=''){
+					var Msg = Alert.Messages[Alert.Curr-1] ? Alert.Messages[Alert.Curr-1].Message : {};
+					switch(type){
+						case 'confirm':
+						case 'resolve':
+						typeof Msg.Done == 'function' && Msg.Done.call(Msg);
+						break;
+						case 'reject':
+						typeof Msg.Fail == 'function' && Msg.Fail.call(Msg);
+						break;
+						case 'always':
+						typeof Msg.Always == 'function' && Msg.Always.call(Msg);
+						break;
+					}
+					Alert.Listener();
+				}
+			};
+			System.Lib.Element.removeEvents(Alert.Document, 'click');
+			System.Lib.Element.addEvents(Alert.Document, 'click', 'click', null, AlertHandler);
+		},
+		Push : function(Msg){
+			this.Messages.push(Msg);
+			this.Curr || this.Listener();
+			return this;
+		},
+		Listener : function(){
+			System.Attr(this.Document, 'status', 'off');
+			if(this.Messages[this.Curr]){
+				this.Show();
+			}else{
+				this.Messages = [];
+				this.Title.innerHTML = '';
+				this.Content.innerHTML = '';
+				this.Buttons.innerHTML = '';
+				this.Curr = 0;
+			}
+			return this;
+		},
+		Show : function(i){
+			this.Title.innerHTML = this.Messages[this.Curr].Title;
+			this.Content.innerHTML = this.Messages[this.Curr].Content;
+			this.Buttons.innerHTML = this.Messages[this.Curr].Buttons;
+			this.Curr ++;
+			System.Attr(this.Document, 'status', 'on');
+			System.BackGroundMusic.setSource({
+				'audio/ogg' : System.PhysicalPath + 'Media/Notice.Alert.ogg',
+				'audio/mpeg' : System.PhysicalPath + 'Media/Notice.Alert.mp3'
+			}).play();
+			return this.ReSize();
+		}
+	};
+
+	var PopupHide = function(elem){
+		if(elem && elem.nodeType == 1){
+			System.Attr(elem, 'status', 'sleep');
+			setTimeout(function() {
+				try{
+					elem && elem.parentNode && elem.parentNode.removeChild(elem);
+					elem = undefined;
+				}catch(err){
+					console.log(err);
+				};
+			}, 600);
+		}
+	};
+	
+	var Message = declare({
+		AppId: 'YANGRAM',
+		Title : "A Notice From YangRAM",
+		Content : "Hello, welcome to using this YANGRAM WEBSITE OPERATING SYSTEM.",
+		Confirm : "Sure",
+		Resolve : "Yes",
+		Reject : "No",
+		Cancel : "Cancel",
+		Href : null,
+		Done : null,
+		Fail : null,
+		Always : null,
+		Tone : false,
+		Duration : 20000,
+		__init : function(settings){
+			for (var i in settings) {
+				this[i] = settings[i]
+			}
+			return this;
+		},
+		Remain : function(list){
+			list = list || System.MsgCenter.AppNotice
+			var html = '<icon><img src="' +System.Path+this.AppId + '/icons/80/"></icon><vision><msgtit>' +this.Title+ '</msgtit><msgcon>' +this.Content+ '</msgcon><vision>';
+			var notice = System.Create('message',  list, {
+				aid : this.AppId,
+				href : this.href,
+				status : 'on',
+				html : html
+			});
+			return this;
+		},
+		Alert: function() {
+			if (this.Done && this.Fail) {
+				var Buttons = '<click type="resolve">' + this.Resolve + '</click><click type="reject">' + this.Reject + '</click><click type="pending">' + this.Cancel + '</click>';
+			} else if (this.Done) {
+				var Buttons = '<click type="confirm">' + this.Confirm + '</click><click type="cancel">' + this.Cancel + '</click>';
+			} else if (this.Always) {
+				var Buttons = '<click type="always">' + this.Confirm + '</click>';
+			} else {
+				var Buttons = '<click type="notice">' + this.Confirm + '</click>';
+			}
+			Alert.Push({
+				Message : this,
+				Title : this.Title,
+				Content : this.Content,
+				Buttons : Buttons
+			});
+			return this;
+		},
+		Popup: function(remain) {	
+			var html = '<icon><img src="' +System.Path+this.AppId + '/icons/80/"></icon><vision><msgtit>' +this.Title+ '</msgtit><msgcon>' +this.Content+ '</msgcon></vision>'
+			var popups = System.Query('popup[status=off], popup[status=on]', System.MsgCenter.Document);
+			var position;
+			if (popups.length > 0) {
+				position = (parseInt(System.Attr(popups.get(-1), 'posi')) + 1) % 6;
+			} else {
+				position = 0;
+			}
+			System.Query('popup[posi="' +position+ '"]').each(function(){
+				PopupHide(this);
+			});
+			var popup = System.Create('popup', System.MsgCenter.Document, {
+				aid : this.AppId,
+				href : this.href,
+				status : 'off',
+				posi : position,
+				html : html
+			});
+			setTimeout(function() {
+				System.Attr(popup, 'status', 'on');
+				if(this.Tone){
+					System.BackGroundMusic.setSource({
+						'audio/ogg' : System.PhysicalPath + 'Media/Notify.Msg.ogg',
+						'audio/mpeg' : System.PhysicalPath + 'Media/Notify.Msg.mp3'
+					}).play();
+				}
+			}, 500);
+			setTimeout(function() {
+				PopupHide(popup);
+			}, this.Duration);
+			if(remain){
+				this.Remain();
+			}
+			return this;
+		}
+	});
+	
+	System.MsgCenter.Extend({
+		Name : 'Message Center',
+		Launch : function(){
+			System.ComSleep().Attr(System.Msger, 'type', 'reading');
+			return this.On();
+		},
+		Sleep : function(){
+			System.Attr(System.Msger, 'type', 'start')
+			return this.Off()
+		},
+		Build : function(){
+			Alert.Build();
+			this.Off().Bind().ReSize().List = System.Create('content', this.Document);
+			this.MsgReader = System.Create('msgroup', this.List, {
+				name : 'Unread Messages'
+			});
+			this.EvnNotice = System.Create('msgroup', this.List, {
+				name : 'Events Today'
+			});
+			this.AppNotice = System.Create('msgroup', this.List, {
+				name : 'Apps Notice'
+			});
+			System.Create('scrollbar', this.Document, {
+				type : 'vert',
+				innerHTML : '<rail></rail><dragger></dragger>'
+			});
+			this.ScrollBAR = new System.ScrollBAR(this.Document);
+			return this;
+		},
+		Notice : function(settings){
+			return new Message(settings);
+		},
+		Alert : function(string, callback){
+			this.Notice({
+				Content : string,
+				Always : callback,
+			}).Alert();
+			return this;
+		},
+		Popup : function(settings, remain){
+			if(typeof settings == 'string'){
+				var msgSet = {
+					Content : settings
+				}
+			}
+			if(typeof settings == 'object'){
+				var msgSet = settings
+			}
+			this.Notice(msgSet).Popup(remain);
+			return this;
+		},
+		Remain : function(settings){
+			this.Notice(settings).Remain();
+			return this;
+		},
+		Load : function(callback){
+			return this.MsgReadAhead(callback).ScanEvents();
+		},
+		MsgReadAhead : function(callback){
+			var thi$ = this;
+			create('XHR', {
+				url : System.Path + 'message/notice/'
+			})
+			.done(function(txt){
+				System.Query('myangram vision list[name=msg-trn]', System.Account).css('top', '-70px');
+				typeof callback == 'function' && callback();
+			})
+			.fail(function(txt){
+				console.log(txt);
+			})
+			.send();
+			return this;
+		},
+		ScanEvents : function(){
+			var thi$ = this;
+			var today = System.Query('kalendar list[events][today]');
+			if(today.length > 0){
+				var day = today.html();
+				var Notice = undefined;
+				var Title;
+				var Content;
+				var Href;
+				System.Query('kalendar events [day="' +day+ '"]').each(function(){
+					Title = System.Query('title', this).html();
+					Content = '[';
+					Content += System.Query('begin', this).html();
+					Content += ' - ';
+					Content += System.Query('end', this).html();
+					Content += '] ';
+					Content += System.Query('remark', this).html();
+					Href = System.Query('url', this).html();
+					Notice = thi$.Notice({
+						AppId : 'KALENDAR',
+						Title : Title,
+						Content : Content,
+						Href : Href,
+						Tone : true,
+					}).Remain(thi$.EvnNotice);
+				});
+				Notice && setTimeout(function() {
+					Notice.Popup();
+				}, 30000);
+				this.ReSize();
+			}
+			return this;
+		},
+		ReSize : function(){
+			var thi$ = this;
+			switch(System.Name){
+				case 'Normal Mode':
+				System.CSS(this.Document, {
+					height : System.Height - 40
+				})
+				break;
+			}
+			Alert.ReSize();
+			setTimeout(function(){
+				thi$.ScrollBAR && thi$.ScrollBAR.resize();
+			}, 500);
+			return this;
+		},
+		Bind : function(){
+			var OnPopHide = function(event){
+				var appid = System.Attr(this, 'aid');
+				var href = System.Attr(this, 'href');
+				if(href!=''&&href!='null'&&href!='undefined'){
+					System.Launch(appid, href);
+				}
+				PopupHide(this);
+			};
+			var MsgRead = function(event){
+				var appid = System.Attr(this, 'aid');
+				var href = System.Attr(this, 'href');
+				if(href!=''&&href!='null'&&href!='undefined'){
+					System.Launch(appid, href);
+				}
+			};
+			System.Lib.Element.addEvents(System.MsgCenter.Document, 'click', 'popup', null, OnPopHide);
+			System.Lib.Element.addEvents(System.MsgCenter.List, 'click', 'message', null, MsgRead);
+			return this;
+		}
+	});
+
+	global.alert = function(string, callback){
+		System.MsgCenter.Alert(string, callback);
+	}
+});

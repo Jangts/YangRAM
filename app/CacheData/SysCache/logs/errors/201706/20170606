@@ -1,0 +1,577 @@
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:03:42
+	MSG		Application Calculator Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/UOI/Calculator/AppProperties.json]
+	URL		jzx.yangram.ni/so/?q=a
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:03:50
+	MSG		Application Calculator Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/UOI/Calculator/AppProperties.json]
+	URL		jzx.yangram.ni/so/?q=a
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:44:56
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:44:56
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:48:06
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:48:06
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:50:50
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:51:01
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 10:51:01
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:01:37
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:01:37
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:04:10
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:04:10
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:06:57
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:06:57
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:10:23
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:10:23
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:10:43
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:10:43
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:12:58
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:12:58
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:17:17
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:17:17
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:25:47
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:25:47
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:31:22
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:32:11
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:32:11
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:47:23
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:47:23
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:47:41
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:47:41
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:52:27
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:52:27
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:53:06
+	MSG		Application Designer Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/Tangram/Studio/Designer/AppProperties.json]
+	URL		jzx.yangram.ni/oi/1006/resources/ss/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:58:44
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:58:44
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:58:55
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 11:58:55
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 12:02:30
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 12:02:30
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 13:35:07
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 14:33:05
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 14:33:05
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 15:27:27
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 15:27:27
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 16:02:54
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		jzx.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-06 16:02:54
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [D:/WebSites/newjzx/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		jzx.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		D:\WebSites\newjzx\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on D:\WebSites\newjzx\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on D:\WebSites\newjzx\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on D:\WebSites\newjzx\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on D:\WebSites\newjzx\boot.php
+	USER			from 127.0.0.1
+

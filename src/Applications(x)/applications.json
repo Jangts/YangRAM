@@ -1,0 +1,10 @@
+{
+    "8888": {
+        "id": 8888,
+        "name": "My Application",
+        "abbr": "Ma",
+        "authorname": "Customer",
+        "installpath": "MyApp",
+        "db": 0
+    }
+}
