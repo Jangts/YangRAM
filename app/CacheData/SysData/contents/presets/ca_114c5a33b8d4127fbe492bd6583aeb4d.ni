@@ -1,0 +1,1 @@
+{"id":"12","basic_type":"resm","name":"\u6559\u5e08\u98ce\u91c7","alias":"teachers","code":"TCHR","note":"\u6559\u5e08\u98ce\u91c7","item_type":"\u6559\u5e08\u4fe1\u606f","item_unit":"","top_display_num":"2","theme":"jzx","template":"about\/resume_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1"}

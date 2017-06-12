@@ -3,8 +3,8 @@
 
 <head>
     {{@includes/head.niml}}
-    <link href="http://interblocks.nidn.yangram.ni/src/see/Slider/style.css" type="text/css" rel="stylesheet">
-    <link href="{{$__SRCDIR}}stylesheets/list.css" type="text/css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/ListView/style.css">
+    <link type="text/css" rel="stylesheet" href="{{$__SRCDIR}}stylesheets/list.css">
 </head>
 
 <body>
@@ -16,87 +16,70 @@
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
-                    <li class="{{$___CATEGORY_ID='6'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/6/">校友动态</a></li>
-                    <li class="{{$___CATEGORY_ID='7'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/7/">校友动态</a></li>
-                    <li class="{{$___CATEGORY_ID='2'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/publications/category/2/">《校友通讯》</a></li>
-                    <li class="{{$___CATEGORY_ID='3'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/publications/category/3/">《校友风采》</a></li>
+                    <li class="{{$___CATEGORY_ID='15'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/15/">学院要问</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/announcements/">通知公告</a></li>
+                    <li class="{{$___CATEGORY_ID='16'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/16/">校园时讯</a></li>
+                    <li class="{{$___CATEGORY_ID='20'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/20/">媒体建筑</a></li>
                 </ul>
             </div>
             <div class="nm-1">&nbsp;</div>
             <div class="nm-15 main-container">
                 <div class="ic blank-10"></div>
                 <header><span class="dir">
-                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/">校友动态</a>
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/">学院动态</a>
                     <i>/</i>
                     <a href=" {{$REQUEST.REST_HANDLER_DIR}}s/news/category/{{$___CATEGORY_ID}}/">
                         <switch name="$___CATEGORY_ID">
-                            <case value="6">校友动态</case>
-                            <case value="7">母校动态</case>
+                            <case value="15">学院要问</case>
+                            <case value="16">校园时讯</case>
+                            <case value="20">媒体建筑</case>
                         </switch>
                     </a></span>
                 </header>
                 <div class="ic blank-10"></div>
-                <ul id="mylist" class="ic list media-list">
+                <ul id="mylist" class="ic listview media-list" data-ic-auto="true">
                     <for $item of $___LIST>
-                        <li class="ic ma-b20">
-                            <a class="title ic grid-21 " href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$item.ID***}}" target=" _blank">
-                                <div class="ic nm-6">
-                                    <div class="figure-box">
-                                        <if $item.dev_figure>
-                                            <figure><img src="{{$item.dev_figure}}" /></figure>
-                                            <else />
-                                            <figure><img src="{{$__SRCDIR}}images/nopic.jpg" /></figure>
-                                        </if>
-                                    </div>
-                                </div>
-                                <div class="nm-15 ic grid-21">
-                                    <div class="nm-1">&nbsp;</div>
-                                    <div class="nm-20">
-                                        <div class="ic ft-666 ft-18 lh-36">
-                                            <if $item.dev_essence eq '1'>
-                                                <if $item.IS_TOP eq '1'>
-                                                    <str value="$item.TITLE" length="16" />
-                                                    <i class="top">置顶</i>
-                                                    <else />
-                                                    <str value="$item.TITLE" length="19" />
-                                                </if>
-                                                <i class="essence">精华</i>
-                                                <else />
-                                                <if $item.IS_TOP eq '1'>
-                                                    <str value="$item.TITLE" length="19" />
-                                                    <i class="top">置顶</i>
-                                                    <else />
-                                                    <str value="$item.TITLE" length="23" />
-                                                </if>
-                                            </if>
-                                            <span><time value="$item.PUBTIME " format="Y-m-d" /></span>
-                                        </div>
-                                        <div class="news-tips ic al-just ft-14 ft-999 lh-18 indent-20">{{$item.dev_abstract}}.....</div>
-                                        <div class="ic al-right ft-12 ft-999 lh-21 pa-v05 pa-none-bottom">更多&gt;&gt;</div>
-                                    </div>
-                                </div>
-                            </a>
+                        <li class="list-item content underline">
+                            <figure class="list-figure h117">
+                                <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$item.ID***}}" target=" _blank">
+                                    <if $item.dev_figure>
+                                        <img src="{{$item.dev_figure}}" />
+                                        <else />
+                                        <img src="{{$__SRCDIR}}images/nopic.jpg" />
+                                    </if>
+                                </a>
+                            </figure>
+                            <div class="list-body" style="width: 664px;">
+                                <h4 class="list-title">
+                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$item.ID***}}" target=" _blank">
+                                        <str value="$item.TITLE" length="23" />
+                                    </a><span class="pl-right"><time value="$item.PUBTIME " format="Y-m-d" /></span></h4>
+                                <p class="list-abstract" data-row="3">{{$item.dev_abstract}}...</p>
+                                <p class="list-meta pl-right bottom">
+                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$item.ID***}}" target=" _blank">更多&gt;&gt;</a>
+                                </p>
+                            </div>
                         </li>
                     </for>
                 </ul>
-                <ul class="page-list page-list-side">
+                <ul class="ic listview page-list spills red">
                     <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
-                    <li class="pages-list-item " onclick="window.location.href='?page={{$pages[`f`]}}'">首页</li>
+                    <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
                     <if $pages[`f`] lt $___Cpage>
-                        <li class="pages-list-item " onclick="window.location.href='?page={{$pages[`p`]}}'">上一页</li>
+                        <li class="list-item" onclick="window.location.href='?page={{$pages[`p`]}}'">&lt;</li>
                     </if>
                     {{$length =$pages[`length`]}}
                     <for $index in [0, $length)>
                         <if $pages[$index] eq $___Cpage>
-                            <li class="pages-list-item curr " onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
+                            <li class="list-item actived" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
                             <else />
-                            <li class="pages-list-item " onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
+                            <li class="list-item" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
                         </if>
                     </for>
                     <if $pages[`l`] gt $___Cpage>
-                        <li class="pages-list-item " onclick="window.location.href='?page={{$pages[`n`]}}'">下一页</li>
+                        <li class="list-item" onclick="window.location.href='?page={{$pages[`n`]}}'">&gt;</li>
                     </if>
-                    <li class="pages-list-item " onclick="window.location.href='?page={{$pages[`l`]}}'">末页</li>
+                    <li class="list-item" onclick="window.location.href='?page={{$pages[`l`]}}'">&gt;&gt;</li>
                 </ul>
             </div>
         </div>

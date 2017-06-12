@@ -9,38 +9,32 @@ echo '<link href="';
 echo $__SRCDIR;
 echo 'stylesheets/detail.css" type="text/css" rel="stylesheet"></head><body>';
 $this->including('includes/header.niml');
-echo '<section class="ic section bg-light"><div class="ic blank-50"></div><div class="ic w1200 bg-white grid-21" style=" box-shadow: 0px 0px 5px #CCC"><div class="nm-5"><div><div class="nav-left">栏目导航</div><ul class="nav-left-list"><li class="';
-if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '6' ){
-	echo 'actived';
-}
-echo '"><a href="';
+echo '<section class="ic section bg-light"><div class="ic blank-30"></div><div class="ic w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD"><div class="nm-15 main-container"><div class="ic blank-10"></div><header><span class="dir"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/news/category/6/">校友动态</a></li><li class="';
-if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '7' ){
-	echo 'actived';
-}
-echo '"><a href="';
+echo 's/news/">学院动态</a><i>/</i><a href=" ';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/news/category/7/">母校动态</a></li><li class="';
-if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '2' ){
-	echo 'actived';
+echo 's/news/category/';
+echo $___CATEGORY_ID;
+echo '/">';
+switch($___CATEGORY_ID){
+	case '15':
+	echo '学院要问';
+	break;
+	case '16':
+	echo '校园时讯';
+	break;
+	case '20':
+	echo '媒体建筑';
+	break;
 }
-echo '"><a href="';
-echo $REQUEST->REST_HANDLER_DIR;
-echo 's/publications/category/2/">《校友通讯》</a></li><li class="';
-if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '3' ){
-	echo 'actived';
-}
-echo '"><a href="';
-echo $REQUEST->REST_HANDLER_DIR;
-echo 's/publications/category/3/">《校友风采》</a></li></ul></div><div class="ic blank-10"></div></div><div class="nm-half">&nbsp;</div><div class="nm-15"><article class="news-content"><header>';
+echo '</a></span></header><article class="news-content"><header>';
 echo $___TITLE;
 echo '</header><div class="news-desc"><span>';
 echo $___PUBTIME;
 echo '</span><span>编辑：';
 echo $___AUTHOR;
 echo '</span><span>来源：';
-if( isset($___SOURCE) && $___SOURCE == true ){
+if( isset($___SOURCE) && $___SOURCE != false ){
 	echo $___SOURCE;
 }
 else{
@@ -51,7 +45,7 @@ echo $___KEY_COUNT;
 echo '<span></div>';
 echo htmlspecialchars_decode($___CONTENT);
 echo '</article><div class="ic h50 al-center title-50 ft-999 ft-12 grid-12"><div class="nm-6">上一篇：'.PHP_EOL.'';
-if( isset($___Earlier_InSameCategory) && $___Earlier_InSameCategory == true ){
+if( isset($___Earlier_InSameCategory) && $___Earlier_InSameCategory != false ){
 	echo '<a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
 	echo 's/news/article/';
@@ -64,7 +58,7 @@ else{
 	echo '没有了 ';
 }
 echo '</div><div class="nm-6">下一篇：'.PHP_EOL.'';
-if( isset($___Later_InSameCategory) && $___Later_InSameCategory == true ){
+if( isset($___Later_InSameCategory) && $___Later_InSameCategory != false ){
 	echo '<a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
 	echo 's/news/article/';
@@ -76,7 +70,27 @@ if( isset($___Later_InSameCategory) && $___Later_InSameCategory == true ){
 else{
 	echo '没有了 ';
 }
-echo '</div></div></div></div><div class="ic blank-50"></div></section>';
+echo '</div></div></div><div class="nm-1">&nbsp;</div><div class="nm-5"><div class="side-list-title">栏目导航</div><ul class="side-list"><li class="';
+if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '15' ){
+	echo 'actived';
+}
+echo '"><a href="';
+echo $REQUEST->REST_HANDLER_DIR;
+echo 's/news/category/15/">学院要问</a></li><li class=""><a href="';
+echo $REQUEST->REST_HANDLER_DIR;
+echo 's/announcements/">通知公告</a></li><li class="';
+if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '16' ){
+	echo 'actived';
+}
+echo '"><a href="';
+echo $REQUEST->REST_HANDLER_DIR;
+echo 's/news/category/16/">校园时讯</a></li><li class="';
+if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '20' ){
+	echo 'actived';
+}
+echo '"><a href="';
+echo $REQUEST->REST_HANDLER_DIR;
+echo 's/news/category/20/">媒体建筑</a></li></ul></div></div><div class="ic blank-50"></div></section>';
 $this->including('includes/footer.niml');
 echo '</body></html>';
 /*

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    {{@includes/head.niml}}
+    <link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/ListView/style.css">
+    <link type="text/css" rel="stylesheet" href="{{$__SRCDIR}}stylesheets/list.css">
+</head>
+
+<body>
+    {{@includes/header.niml}}
+    <!-- main slider carousel -->
+    <section class="ic section bg-light">
+        <div class="ic blank-30"></div>
+        <div class="ic w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD">
+            <div class="nm-5">
+                <div class="side-list-title">栏目导航</div>
+                <ul class="side-list">
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}g/about/article/index.html">学院简介</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/leadership/">现任领导</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/teachers/">教师风采</a></li>
+                    <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/photos/">建筑印象</a></li>
+                </ul>
+            </div>
+            <div class="nm-1">&nbsp;</div>
+            <div class="nm-15 main-container">
+                <div class="ic blank-10"></div>
+                <header><span class="dir">
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}g/about/article/index.html">学院概况</a>
+                    <i>/</i><a href="{{$REQUEST.REST_HANDLER_DIR}}s/photos/">建筑印象</a>
+                    </span>
+                </header>
+                <div class="ic blank-10"></div>
+                <ul id="mylist" class="ic listview media-list" data-ic-auto="true" data-list-cols="2">
+                    <for $item of $___LIST>
+                        <li class="list-item content card cover top-bottom photo">
+                            <figure class="list-image">
+                                <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
+                                    <if $item.dev_thumb>
+                                        <img src="{{$item.dev_thumb}}" />
+                                        <else />
+                                        <img src="{{$__SRCDIR}}images/nopic.jpg" />
+                                    </if>
+                                </a>
+                            </figure>
+                            <div class="list-body">
+                                <h4 class="list-title">
+                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
+                                        <str value="$item.TITLE" length="23" />
+                                    </a>
+                                </h4>
+                            </div>
+                        </li>
+                    </for>
+                </ul>
+                <ul class="ic listview page-list blocks rounded">
+                    <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
+                    <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
+                    <if $pages[`f`] lt $___Cpage>
+                        <li class="list-item" onclick="window.location.href='?page={{$pages[`p`]}}'">&lt;</li>
+                    </if>
+                    {{$length =$pages[`length`]}}
+                    <for $index in [0, $length)>
+                        <if $pages[$index] eq $___Cpage>
+                            <li class="list-item actived" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
+                            <else />
+                            <li class="list-item" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
+                        </if>
+                    </for>
+                    <if $pages[`l`] gt $___Cpage>
+                        <li class="list-item" onclick="window.location.href='?page={{$pages[`n`]}}'">&gt;</li>
+                    </if>
+                    <li class="list-item" onclick="window.location.href='?page={{$pages[`l`]}}'">&gt;&gt;</li>
+                </ul>
+            </div>
+        </div>
+        <div class="ic blank-50"></div>
+    </section>
+    {{@includes/footer.niml}}
+    <script>
+    </script>
+</body>
+
+</html>

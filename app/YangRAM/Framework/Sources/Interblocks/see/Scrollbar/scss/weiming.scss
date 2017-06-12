@@ -6,19 +6,19 @@
  **********      theme  weiming     **********
  *********************************************/
 
-.ic.scroll-bar.weiming .scroll-bar-vertical .scroll-bar {
+.ic.scrollbar.weiming .scroll-bar-vertical .scroll-bar {
     width: 16px;
     cursor: default;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-vertical .scroll-bar .scroll-rail {
+.ic.scrollbar.weiming .scroll-bar-vertical .scroll-bar .scroll-rail {
     width: 4px;
     margin: 0px 6px;
     background: #FFF;
     z-index: 100;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-vertical .scroll-bar .scroll-dragger {
+.ic.scrollbar.weiming .scroll-bar-vertical .scroll-bar .scroll-dragger {
     width: 6px;
     margin: 0px 5px;
     background: #DDD;
@@ -27,35 +27,35 @@
     cursor: pointer;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-vertical .scroll-bar .scroll-dragger:hover {
+.ic.scrollbar.weiming .scroll-bar-vertical .scroll-bar .scroll-dragger:hover {
     background: #CCC;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-vertical .scroll-button-prev {
+.ic.scrollbar.weiming .scroll-bar-vertical .scroll-button-prev {
     display: none;
     width: 0px;
     height: 0px
 }
 
-.ic.scroll-bar.weiming .scroll-bar-vertical .scroll-button-next {
+.ic.scrollbar.weiming .scroll-bar-vertical .scroll-button-next {
     display: none;
     width: 0px;
     height: 0px
 }
 
-.ic.scroll-bar.weiming .scroll-bar-horizontal .scroll-bar {
+.ic.scrollbar.weiming .scroll-bar-horizontal .scroll-bar {
     height: 16px;
     cursor: default;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-horizontal .scroll-bar .scroll-rail {
+.ic.scrollbar.weiming .scroll-bar-horizontal .scroll-bar .scroll-rail {
     height: 4px;
     margin: 6px 0px;
     background: #FFF;
     z-index: 100;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-horizontal .scroll-bar .scroll-dragger {
+.ic.scrollbar.weiming .scroll-bar-horizontal .scroll-bar .scroll-dragger {
     height: 6px;
     margin: 5px 0px;
     background: #DDD;
@@ -64,17 +64,17 @@
     cursor: pointer;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-horizontal .scroll-bar .scroll-dragger:hover {
+.ic.scrollbar.weiming .scroll-bar-horizontal .scroll-bar .scroll-dragger:hover {
     background: #CCC;
 }
 
-.ic.scroll-bar.weiming .scroll-bar-horizontal .scroll-button-prev {
+.ic.scrollbar.weiming .scroll-bar-horizontal .scroll-button-prev {
     display: none;
     width: 0px;
     height: 0px
 }
 
-.ic.scroll-bar.weiming .scroll-bar-horizontal .scroll-button-next {
+.ic.scrollbar.weiming .scroll-bar-horizontal .scroll-button-next {
     display: none;
     width: 0px;
     height: 0px

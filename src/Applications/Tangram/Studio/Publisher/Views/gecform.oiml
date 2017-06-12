@@ -1,0 +1,53 @@
+<form-vision type="origin" x-cid="{{$CID}}" x-sort="{{$SORT}}" x-page="{{$PAGE}}" x-status="{{$STTS}}" x-cls="{{$CLS}}" x-theme="" x-template="">
+    <form>
+        <vision class="content-info-section content-base">
+            <inputs type="title">
+                <input class="Title" name="TITLE" type="text" value="{{$VALUES[`TITLE`]}}" placeholder="在这里输入标题 ">
+            </inputs>
+            <inputs type="multiple">
+                <label>{{$LOCAL.edit[`BaseInfo`]}}</label>
+                <el type="afterlabel">{{$LOCAL.edit[`Group`]}}</el>
+                <input type="text" name="GROUPCODE" long value="{{$VALUES[`GROUPCODE`]}}" placeholder="">
+                <el type="beforeinput">{{$LOCAL.edit[`Alias`]}}</el>
+                <input type="text" name="ALIAS" long value="{{$VALUES[`ALIAS`]}}" placeholder="">
+            </inputs>
+            <inputs type="text">
+                <label>{{$LOCAL.edit[`ViewCount`]}}</label>
+                <input type="text" name="KEY_COUNT" class="page-template " value="{{$VALUES[`KEY_COUNT`]}}" placeholder="">
+            </inputs>
+            <inputs type="text" inpreview="outpreview">
+                <label>{{$LOCAL.edit[`Banner`]}}</label>
+                <input type="text" name="BANNER" value="{{$VALUES[`BANNER`]}}">
+                <image-vision name="BANNER"></image-vision>
+                <click type="pick" name="BANNER" filetype="image ">{{$LOCAL.edit[`Upload`]}}</vision>
+        </inputs>
+        <inputs type="textarea">
+            <label>{{$LOCAL.edit[`Description`]}}</label>
+            <textarea name="DESCRIPTION">{{$VALUES[`DESCRIPTION`]}}</textarea>
+        </inputs>
+        <inputs type="editor">
+            <label>{{$LOCAL.edit[`Content`]}}</label>
+            <textarea name="CONTENT" placeholder="">{{$VALUES[`CONTENT`]}}</textarea>
+        </inputs>
+        <inputs type="textarea">
+            <label>{{$LOCAL.edit[`STAND_I`]}}</label>
+            <textarea name="CUSTOM_I" placeholder="留空则自动截取文字内容部分">{{$VALUES[`CUSTOM_I`]}}</textarea>
+        </inputs>
+        <inputs type="textarea">
+            <label>{{$LOCAL.edit[`STAND_II`]}}</label>
+            <textarea name="CUSTOM_II" placeholder="留空则自动截取文字内容部分">{{$VALUES[`CUSTOM_II`]}}</textarea>
+        </inputs>
+        <inputs type="tags" class="seo">
+            <input name="KEYWORDS" type="text" placeholder="输入SEO关键词，多个关键词请用 ','隔开。 " value="{{$VALUES[`KEYWORDS`]}}">
+            </vision>
+            </vision>
+    </form>
+</form-vision>
+<edit-panel bgcolor="datered">
+    <click href="trigger://{{AI_CURR}}::ToList" args="{{$ARGS}}" class="left-panel-button">{{$LOCAL.panel[`return`]}}</click>
+    <click href="trigger://{{AI_CURR}}::ToTop " class="right-totop-button">
+        <vision class="arrow"></vision>
+        <vision class="stick"></vision>
+    </click>
+    <click href="trigger://{{AI_CURR}}::PubItem" args="{{$ARGS}}" class="right-panel-button even">{{$LOCAL.panel[`pub`]}}</click>
+</edit-panel>

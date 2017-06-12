@@ -2,12 +2,12 @@
 
 .ic.navmenu>.menu-item.hasson,
 .ic.navmenu .menu-item.hasson>.submenu>.menu-item.hasson {
-    /** Normal **/
+    // Normal
     >.submenu {
         display: none;
         position: absolute;
     }
-    /** Vertical **/
+    // Vertical
     >.submenu,
     >.submenu.under,
     >.submenu.under.al-left {
@@ -30,7 +30,7 @@
         left: auto;
         right: 0;
     }
-    /** Horizontal **/
+    // Horizontal
     >.submenu.rside,
     >.submenu.rside.al-top {
         top: 0;
@@ -50,7 +50,7 @@
         top: auto;
         bottom: 0;
     }
-    /** Corner **/
+    // Corner
     >.submenu.upon.rside {
         bottom: 100%;
         left: 100%;

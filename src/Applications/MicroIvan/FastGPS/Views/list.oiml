@@ -1,0 +1,7 @@
+<left bgcolor="light">
+  {{$PAGE_SIDE}}
+</left>
+<main posi="right" style="min-height: 650px;">
+  {{$PAGE_LIST}}
+  {{$PAGE_PAGE}}
+</main>

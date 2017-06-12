@@ -10,22 +10,21 @@
     {{@includes/header.niml}}
     <!-- main slider carousel -->
     <section class="ic section bg-light">
-        <div class="ic blank-50"></div>
-        <div class="ic w1200 bg-white grid-21" style=" box-shadow: 0px 0px 5px #CCC">
-            <div class="nm-5">
-                <div>
-                    <div class="nav-left">栏目导航</div>
-                    <ul class="nav-left-list">
-                        <li class="{{$___CATEGORY_ID='6'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/6/">校友动态</a></li>
-                        <li class="{{$___CATEGORY_ID='7'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/7/">母校动态</a></li>
-                        <li class="{{$___CATEGORY_ID='2'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/publications/category/2/">《校友通讯》</a></li>
-                        <li class="{{$___CATEGORY_ID='3'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/publications/category/3/">《校友风采》</a></li>
-                    </ul>
-                </div>
+        <div class="ic blank-30"></div>
+        <div class="ic w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD">
+            <div class="nm-15 main-container">
                 <div class="ic blank-10"></div>
-            </div>
-            <div class="nm-half">&nbsp;</div>
-            <div class="nm-15">
+                <header><span class="dir">
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/">学院动态</a>
+                    <i>/</i>
+                    <a href=" {{$REQUEST.REST_HANDLER_DIR}}s/news/category/{{$___CATEGORY_ID}}/">
+                        <switch name="$___CATEGORY_ID">
+                            <case value="15">学院要问</case>
+                            <case value="16">校园时讯</case>
+                            <case value="20">媒体建筑</case>
+                        </switch>
+                    </a></span>
+                </header>
                 <article class="news-content">
                     <header>{{$___TITLE}}</header>
                     <div class="news-desc">
@@ -52,6 +51,16 @@
                             <else /> 没有了 </if>
                     </div>
                 </div>
+            </div>
+            <div class="nm-1">&nbsp;</div>
+            <div class="nm-5">
+                <div class="side-list-title">栏目导航</div>
+                <ul class="side-list">
+                    <li class="{{$___CATEGORY_ID='15'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/15/">学院要问</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/announcements/">通知公告</a></li>
+                    <li class="{{$___CATEGORY_ID='16'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/16/">校园时讯</a></li>
+                    <li class="{{$___CATEGORY_ID='20'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/20/">媒体建筑</a></li>
+                </ul>
             </div>
         </div>
         <div class="ic blank-50"></div>

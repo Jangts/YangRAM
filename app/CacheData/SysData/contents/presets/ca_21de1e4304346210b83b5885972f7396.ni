@@ -1,1 +1,0 @@
-{"id":"21","basic_type":"news","name":"\u5c31\u4e1a\u4fe1\u606f","alias":"jiuyes","code":"JIUYE","note":"\u5c31\u4e1a\u4fe1\u606f","item_type":"\u5c31\u4e1a\u4fe1\u606f","item_unit":"","top_display_num":"2","theme":"jzx","template":"enrol\/news_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1"}

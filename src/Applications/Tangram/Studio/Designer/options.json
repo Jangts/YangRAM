@@ -1,0 +1,8 @@
+{
+    "name": "Tangram Designer",
+    "abbr": "Ds",
+    "description": "Tangram Designer, YangRAM Tempates Manager",
+    "keywords": ["Tangram Designer", "Tempates Manage"],
+    "suitspace": "Studio",
+    "namespace": "Dsr"
+}

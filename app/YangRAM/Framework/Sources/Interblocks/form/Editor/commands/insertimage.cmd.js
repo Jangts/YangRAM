@@ -79,12 +79,10 @@ iBlock([
             } else {
                 var url;
                 _.each(files, function(i, file) {
-                    url = _.painter.canvas.fileToBase64(file);
-                    that.execCommand('insertimage', url);
+                    _.painter.canvas.fileToBase64(file, function(url) {
+                        that.execCommand('insertimage', url);
+                    });
                 });
-
-                //console.log(files[0], files.item(0), url);
-                //alert('No Upload Configuration');
             }
             images.files = undefined;
         }

@@ -12,7 +12,7 @@
  * Date: 2017-04-06
  */
 
-iBlock(function(pandora, global, undefined) {
+iBlock('$_/util/bool.xtd', function(pandora, global, undefined) {
     var _ = pandora,
         declare = pandora.declareClass,
         cache = pandora.locker,
@@ -80,24 +80,17 @@ iBlock(function(pandora, global, undefined) {
             };
             img.src = url;
         },
-        fileToBase64: function(file) {
-            var Base64URL = "";
-            try {
-                try {
-                    Base64URL = file.getAsDataURL();
-                } catch (e) {
-                    Base64URL = global.URL.createObjectURL(file);
-                }
-            } catch (e) {
-                if (node.files && node.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        Base64URL = e.target.result;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            }
-            return Base64URL;
+        fileToBlob: function(file) {
+            return global.URL.createObjectURL(file);
+        },
+        fileToBase64: function(file, callback) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                Base64URL = reader.result;
+                _.util.bool.isFn(callback) && callback.call(reader, Base64URL);
+            };
+            reader.readAsDataURL(file);
+            return 0;
         }
     });
 });

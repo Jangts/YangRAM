@@ -2,10 +2,15 @@
 
 /*********************************************
  ********** iBlock See UI Framework **********
- **********   class  _.see.Silder   **********
+ **********  class  _.see.ListView  **********
  *********************************************/
 
-@import "common";
-@import "panel";
+$colors: ( "red": #d23, "orange": #f52, "yellow": #ed2, "green": #2c4, "cyan": #09b, "blue": #09f, "purple": #c2a, "black": #000, "white":#fff);
+@import "inner-items";
+@import "text-list";
+@import "colums";
+@import "mtext-list";
+@import "media-list";
+@import "page-list";
+@import "tags-list";
 @import "colors";
-@import "colx3";

@@ -1,0 +1,31 @@
+{
+    "CODE": "ja-jp",
+    "APPNAME": "唐云発行者",
+    "TOPMENUS": {
+        "Default Page": "首页",
+        "List Of Preset": "用途列表",
+        "Preview": "预览"
+    },
+    "WORDS": {
+        "Remove Item?": "移除项目？",
+        "Are you sure to remove this item?": "你确定要移除这个项目吗？",
+        "Reference Error": "引用错误",
+        "I\"m Sorry!": "抱歉！",
+        "Operation not supported!": "操作不支持！",
+        "Save Success": "保存成功",
+        "A Content Has Been Saved!": "成功保存了一个项目",
+        "Published": "发表成功",
+        "A Content Has Been Published!": "成功发表了一个项目！",
+        "Remove Success": "移除成功",
+        "A Content Has Been Removed!": "成功移除了一个项目！",
+        "Specifies No Existing Item": "指定了一个不存在的项目",
+        "Confirm Close?": "确定关闭？",
+        "You are trying to close a tab, are you sure to do this?": "你正在试图关闭一个选项卡，确定要这样做吗？",
+        "Cut To": "切到",
+        "Exceed Maximum Size Allowed Upload": "操作最大上传尺寸",
+        "Unsupported File Format": "不支持的文件格式",
+        "Abandon Editing?": "Abandon Editing?",
+        "Are you sure to go to the list page before save your editing?": "你确定要在保存编辑中的内容前转到列表页吗？",
+        "Are you sure to open a new item before save the editing item?": "你确定要在保存编辑中的内容前新建一个项目吗？"
+    }
+}

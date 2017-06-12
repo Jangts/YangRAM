@@ -31,7 +31,7 @@ iBlock([
             this.cur = this.cur >= 0 ? this.cur : this.sections.length - 1;
             this.cur = this.cur < this.sections.length ? this.cur : 0;
         },
-    }
+    };
 
     _('see');
 
@@ -138,5 +138,19 @@ iBlock([
             });
             return this;
         },
+    });
+
+    _.extend(_.see.Tabs, {
+        auto: function() {
+            $('.ic.tabs[data-ic-auto]').each(function() {
+                if (($(this).data('icAuto') != 'false') && ($(this).data('icRendered') != 'tabs')) {
+                    $(this).data('icRendered', 'tabs');
+                    new _.see.Tabs(this, {
+                        trigger: $(this).data('tabsTrigger') || 'mouseover',
+                        keyClass: $(this).data('tabskeyclass') || 'actived'
+                    });
+                }
+            });
+        }
     });
 });

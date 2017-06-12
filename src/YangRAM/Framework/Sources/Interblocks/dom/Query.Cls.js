@@ -90,6 +90,7 @@ iBlock([
                     return this[n + this.length];
                 }
             }
+            return null;
         },
         sub: function(part) {
             var Elements = [];
@@ -129,9 +130,7 @@ iBlock([
             this.prevObject = this;
             this.splice(0, this.length);
             for (var i in Elements) {
-                for (var j = 0; j < Elements[i].length; j++) {
-                    this.push(Elements[i][j])
-                }
+                this.push(Elements[i]);
             }
             return this;
         },

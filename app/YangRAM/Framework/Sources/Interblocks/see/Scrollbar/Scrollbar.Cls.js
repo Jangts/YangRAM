@@ -33,7 +33,7 @@ iBlock([
             });
             this.Element = _.util.bool.isStr(elem) ? _.dom.query.byId(elem) : elem;
             _.dom.addClass(this.Element, 'ic')
-                .addClass(this.Element, 'scroll-bar')
+                .addClass(this.Element, 'scrollbar')
                 .addClass(this.Element, settings.theme || 'light');
             this.build(settings.uesVertical, settings.uesHorizontal);
             this.resize();

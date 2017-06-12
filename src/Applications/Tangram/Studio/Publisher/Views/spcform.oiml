@@ -1,0 +1,15 @@
+<form-vision type="origin" x-cid="{{$CID}}" x-sort="{{$SORT}}" x-page="{{$PAGE}}" x-status="{{$STTS}}" x-cls="{{$CLS}}" x-theme="{{$PREVIEW_THEME}}" x-template="{{$PREVIEW_TEMPLATE}}">
+    <form>
+        <include src="spcform-custom-inputs"></include>
+        <include src="spcform-system-inputs"></include>
+    </form>
+</form-vision>
+<edit-panel bgcolor="datered">
+    <click href="trigger://{{AI_CURR}}::ToList" args="{{$ARGS}}" class="left-panel-button">{{$LOCAL.panel[`return`]}}</click>
+    <click href="trigger://{{AI_CURR}}::ToTop" class="right-totop-button">
+        <vision class="arrow"></vision>
+        <vision class="stick"></vision>
+    </click>
+    <click href="trigger://{{AI_CURR}}::PubItem" args="{{$ARGS}}" class="right-panel-button even">{{$LOCAL.panel[`pub`]}}</click>
+    <click href="trigger://{{AI_CURR}}::SaveItem" args="{{$ARGS}}" class="right-panel-button">{{$LOCAL.panel[`save`]}}</click>
+</edit-panel>

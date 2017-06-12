@@ -1,0 +1,7 @@
+{
+    "name": "Wallet",
+    "abbr": "Wa",
+    "description": "Wallet",
+    "keywords": ["Wallet"],
+    "namespace": "Wallet"
+}

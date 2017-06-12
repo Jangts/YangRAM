@@ -1,0 +1,26 @@
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{$__Title}}</title>
+    <meta content="{{$__Desc}}" name="description" />
+    <meta content="{{$__KeyWords}}" name="keywords" />
+
+</head>
+
+<body>
+    <article>
+        <p><span>{{$___GROUPCODE}}</span>&gt;<span>{{$___ALIAS}}</span></p>
+        <header>{{$___TITLE}}</header>
+        <p><span>Hits: {{$___KEY_COUNT}}<span></p>
+        <decode value="$___CONTENT" />
+        <h4>CUSTOM I</h4>
+        <decode value="$___CUSTOM_I" />
+        <h4>CUSTOM II</h4>
+        <decode value="$___CUSTOM_II" />
+
+     </article>
+</body>
+</html>

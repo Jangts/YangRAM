@@ -1,0 +1,8 @@
+{
+    "name": "Tangram Developer",
+    "abbr": "Dv",
+    "description": "Tangram Developer, YangRAM SPC Preset Use Types And CRC Sets Manager",
+    "keywords": ["Tangram Developer", "SPC Preset Use Types Manage", "SPC Use Types Manage", "CRC Sets Manage", "Presets Manage", "Sets Manage"],
+    "suitspace": "Studio",
+    "namespace": "Dev"
+}

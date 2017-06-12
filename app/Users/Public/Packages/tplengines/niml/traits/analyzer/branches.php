@@ -84,7 +84,7 @@ trait NIML_traits_analyzer_branches {
 					'type'  =>  'Expression',
 					'value'  =>  "in_array($var, $array)"
 				],
-				'symbol'	=>	'!=',
+				'symbol'	=>	'ne',
 				'right'		=>	[
 	                'type'  =>  'Bool',
 	                'value' =>  false
@@ -204,10 +204,10 @@ trait NIML_traits_analyzer_branches {
 			}elseif(count($array)===1){
 				$inner = [
 					'left'		=>	$this->get_type(trim($array[0])),
-					'symbol'	=>	'==',
+					'symbol'	=>	'ne',
 					'right'		=>	[
 	                	'type'  =>  'Bool',
-	                	'value' =>  true
+	                	'value' =>  false
 					]
 				];
 			}else{

@@ -99,10 +99,6 @@ class SPContents extends Controller {
 		
 	}
 
-	public function list($preset, $order_code = 2, $start = 0, $length = 0){
-		return $this->get_list_by_preset($preset, $order_code, $start, $length);
-	}
-
 	public function get_list_by_preset($preset, $order_code = 2, $start = 0, $length = 0){
 		if(is_numeric($preset)){
 			$presetinfo = Preset::id($preset);

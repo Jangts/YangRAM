@@ -1,0 +1,27 @@
+<view title="{{$PAGETITLE}}" lang="{{$LANG}}">
+    <top-vision bgcolor="dark">
+        <vision>
+            <ico class="page-icon"></ico>
+            <tools class="page-ctrl">
+                <list class="page-ctrl-group odd">
+                    <item x-usefor="page-fix" class="page-ctrl-item sys-tool content-tool page-fix unavailable" title="{{$LOCAL.titles[`fd`]}}"></item>
+                    <item x-usefor="page-setting" class="page-ctrl-item sys-tool page-setting unavailable" title="{{$LOCAL.titles[`st`]}}"></item>
+                </list>
+                <list class="page-ctrl-group">
+                    <item x-usefor="page-new" class="page-ctrl-item page-new unavailable" title="{{$LOCAL.titles[`cp`]}}"></item>
+                    <item x-usefor="page-save" class="page-ctrl-item page-edit page-save unavailable" title="{{$LOCAL.titles[`sp`]}}"></item>
+                    <item x-usefor="page-del" class="page-ctrl-item page-edit page-del unavailable" title="{{$LOCAL.titles[`rp`]}}"></item>
+                </list>
+                <list class="page-ctrl-group odd">
+                    <item x-usefor="page-list" class="page-ctrl-item page-list unavailable" title="{{$LOCAL.titles[`rl`]}}"></item>
+                </list>
+            </tools>
+        </vision>
+    </top-vision>
+    <tab-vision bgcolor="silvery">
+        <tab-options bgcolor="dark">
+            <list></list>
+        </tab-options>
+        <tab-sections></tab-sections>
+    </tab-vision>
+</view>

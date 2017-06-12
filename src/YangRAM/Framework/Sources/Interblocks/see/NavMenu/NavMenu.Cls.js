@@ -48,15 +48,14 @@ iBlock([
         }
     });
 
-    _.extend(_.see.Slider, {
+    _.extend(_.see.NavMenu, {
         auto: function() {
             $('.ic.navmenu[data-ic-auto]').each(function() {
-                if ($(this).data('icAuto') != 'false') {
+                if (($(this).data('icAuto') != 'false') && ($(this).data('icRendered') != 'navmenu')) {
+                    $(this).data('icRendered', 'navmenu');
                     new _.see.NavMenu(this);
                 }
             });
         }
     });
-
-    _.see.Slide.auto();
 });

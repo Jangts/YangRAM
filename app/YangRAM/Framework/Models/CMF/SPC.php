@@ -394,9 +394,7 @@ final class SPC extends BaseModel {
     }
 
     public function put($data){
-        return $this->build(array_map(function($val){
-            return htmlspecialchars($val, ENT_COMPAT, 'UTF-8');
-        }, $data));
+        return $this->build($data);
     }
 
 	public function cln(){

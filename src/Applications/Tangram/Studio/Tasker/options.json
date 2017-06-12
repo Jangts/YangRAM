@@ -1,0 +1,8 @@
+{
+    "name": "Tangram Process Bus",
+    "abbr": "Ts",
+    "description": "Tangram Process Bus",
+    "keywords": ["Tangram Process Bus", "Tangram AA Bus"],
+    "suitspace": "Studio",
+    "namespace": "Tsk"
+}

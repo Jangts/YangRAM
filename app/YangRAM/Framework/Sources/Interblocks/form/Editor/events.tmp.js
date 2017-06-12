@@ -167,7 +167,7 @@ iBlock([
                             }
                             var list = '<ul class="' + ul_class + '">';
                             _.each(files, function() {
-                                list += '<li><img src="' + _.painter.canvas.fileToBase64(this) + '" /></li>';
+                                list += '<li><img src="' + _.painter.canvas.fileToBlob(this) + '" /></li>';
                             });
                             list += '</ul>';
                             previewer.innerHTML = list;

@@ -27,5 +27,6 @@
             <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$___Later_InSameCategory.ID***}}/"><str value="$___Later_InSameCategory.TITLE" length="19" /></a>
         <else /> None </if>
     </p>
+    </div>
 </body>
 </html>

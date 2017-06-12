@@ -1,0 +1,395 @@
+@charset "utf-8";
+
+/*** APPS COMMON ***/
+
+scrollbar dragger {
+    cursor: default;
+    transition: none;
+    background-color: #000;
+}
+
+view {
+    background-color: #EEE !important;
+}
+
+
+/*** APPS TOP ***/
+
+top-vision>vision {
+    width: 100%;
+    height: 50px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+top-vision vision ico {
+    background-image: url(<__ADIR__>Sources/logo_wht.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+top-vision vision tools.pub-ctrl {
+    display: block;
+    padding-left: 50px;
+    background-image: url(<__SDIR__>Common/Sources/common_top_background.png);
+    background-repeat: no-repeat;
+}
+
+top-vision vision tools.pub-ctrl list {
+    width: auto;
+    height: 30px;
+    padding: 10px;
+    display: block;
+    float: right;
+}
+
+top-vision vision tools.pub-ctrl list.oitem {
+    display: block;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+
+/* ------------------------- */
+
+top-vision vision tools list item.pub-ctrl-item {
+    float: left;
+    width: 40px;
+    height: 30px;
+    background-image: url(<__ADIR__>Sources/icons.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+top-vision vision tools list item.unavailable {
+    cursor: default;
+}
+
+top-vision vision tools list item.pub-ctrl-item {
+    transition: background-position ease .4s;
+    -webkit-transition: background-position ease .4s;
+}
+
+top-vision vision tools list .preset-list {
+    background-position: 0px 0px;
+}
+
+top-vision vision tools list .content-new {
+    background-position: -40px 0px;
+}
+
+top-vision vision tools list .content-save {
+    background-position: -80px 0px;
+}
+
+top-vision vision tools list .content-del {
+    background-position: -120px 0px;
+}
+
+top-vision vision tools list .content-view {
+    background-position: -160px 0px;
+}
+
+top-vision vision tools list .content-base {
+    background-position: -200px 0px;
+}
+
+top-vision vision tools list .content-prop {
+    background-position: -240px 0px;
+}
+
+top-vision vision tools list .content-rele {
+    background-position: -280px 0px;
+}
+
+top-vision vision tools list .item-fix {
+    background-position: -320px 0px;
+}
+
+top-vision vision tools list .mini-explorer {
+    background-position: -360px 0px;
+}
+
+top-vision vision tools list .pub-setting {
+    background-position: -400px 0px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .preset-list:hover {
+    background-position: 0px -30px;
+}
+
+top-vision vision tools list .content-new:hover {
+    background-position: -40px -30px;
+}
+
+top-vision vision tools list .content-save:hover {
+    background-position: -80px -30px;
+}
+
+top-vision vision tools list .content-del:hover {
+    background-position: -120px -30px;
+}
+
+top-vision vision tools list .content-view:hover {
+    background-position: -160px -30px;
+}
+
+top-vision vision tools list .content-base:hover {
+    background-position: -200px -30px;
+}
+
+top-vision vision tools list .content-prop:hover {
+    background-position: -240px -30px;
+}
+
+top-vision vision tools list .content-rele:hover {
+    background-position: -280px -30px;
+}
+
+top-vision vision tools list .item-fix:hover {
+    background-position: -320px -30px;
+}
+
+top-vision vision tools list .mini-explorer:hover {
+    background-position: -360px -30px;
+}
+
+top-vision vision tools list .pub-setting:hover {
+    background-position: -400px -30px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .unavailable.preset-list {
+    background-position: 0px -60px;
+}
+
+top-vision vision tools list .unavailable.content-new {
+    background-position: -40px -60px;
+}
+
+top-vision vision tools list .unavailable.content-save {
+    background-position: -80px -60px;
+}
+
+top-vision vision tools list .unavailable.content-del {
+    background-position: -120px -60px;
+}
+
+top-vision vision tools list .unavailable.content-view {
+    background-position: -160px -60px;
+}
+
+top-vision vision tools list .unavailable.content-base {
+    background-position: -200px -60px;
+}
+
+top-vision vision tools list .unavailable.content-prop {
+    background-position: -240px -60px;
+}
+
+top-vision vision tools list .unavailable.content-rele {
+    background-position: -280px -60px;
+}
+
+top-vision vision tools list .unavailable.item-fix {
+    background-position: -320px -60px;
+}
+
+top-vision vision tools list .unavailable.mini-explorer {
+    background-position: -360px -60px;
+}
+
+top-vision vision tools list .unavailable.pub-setting {
+    background-position: -400px -60px;
+}
+
+
+/* --------------- */
+
+top-vision vision tools list .unavailable.preset-list:hover {
+    background-position: 0px -60px;
+}
+
+top-vision vision tools list .unavailable.content-new:hover {
+    background-position: -40px -60px;
+}
+
+top-vision vision tools list .unavailable.content-save:hover {
+    background-position: -80px -60px;
+}
+
+top-vision vision tools list .unavailable.content-del:hover {
+    background-position: -120px -60px;
+}
+
+top-vision vision tools list .unavailable.content-view:hover {
+    background-position: -160px -60px;
+}
+
+top-vision vision tools list .unavailable.content-base:hover {
+    background-position: -200px -60px;
+}
+
+top-vision vision tools list .unavailable.content-prop:hover {
+    background-position: -240px -60px;
+}
+
+top-vision vision tools list .unavailable.content-rele:hover {
+    background-position: -280px -60px;
+}
+
+top-vision vision tools list .unavailable.item-fix:hover {
+    background-position: -320px -60px;
+}
+
+top-vision vision tools list .unavailable.mini-explorer:hover {
+    background-position: -360px -60px;
+}
+
+top-vision vision tools list .unavailable.pub-setting:hover {
+    background-position: -400px -60px;
+}
+
+
+/*********************************************************************************
+/*** APPS CONTENT ***/
+
+
+/* ------------------------- */
+
+tab-vision tab-sections list[type=blocks] item:first-child click {
+    background: #444444;
+}
+
+tab-vision tab-sections list[type=blocks] item:first-child click .titl {
+    width: 94px;
+    height: 34px;
+    border-right: #FFF solid 3px;
+    border-left: #FFF solid 3px;
+    font-size: 18px;
+}
+
+
+/*** APPS SIDE ***/
+
+
+/*** APPS MAIN CONTENTS ***/
+
+main list[type=sheet] .group {
+    text-align: left;
+    width: 40px;
+    left: 0;
+    text-align: center;
+}
+
+main list[type=sheet] .title {
+    position: relative;
+    text-align: left;
+    margin: 0px 380px 0px 40px;
+    padding: 0px 10px;
+}
+
+main list[type=sheet] .alias {
+    width: 110px;
+    right: 270px;
+    text-align: center;
+}
+
+main list[type=sheet] .count {
+    right: 210px;
+}
+
+main list[type=sheet] .mtime {
+    width: 140px;
+    right: 70px;
+    text-align: center;
+}
+
+main list[type=sheet] .rmove {
+    right: 0px;
+}
+
+main list[type=sheet] .stts {
+    left: 0px;
+}
+
+main list[type=sheet] .stts .pubed {
+    color: #090;
+}
+
+main list[type=sheet] .stts .unpub {
+    color: #966;
+}
+
+main list[type=sheet] .name {
+    position: relative;
+    margin: 0px 340px 0px 80px;
+    text-align: left;
+    padding: 0px 10px;
+}
+
+main list[type=sheet] .hits {
+    right: 280px;
+}
+
+main list[type=sheet] .time {
+    right: 140px;
+}
+
+main list[type=sheet] .modi {
+    right: 70px;
+}
+
+main list[type=sheet] .dele {
+    right: 0px;
+}
+
+
+/* ------------------------- */
+
+
+/*** APPS FORM ***/
+
+vision form-vision {
+    width: 950px;
+    height: auto;
+    background-color: #FFF;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .1);
+    margin: 45px auto;
+    z-index: 100;
+}
+
+vision form-vision .content-info-section {
+    width: 900px;
+    height: auto;
+    border: #DDD 1px solid;
+    margin: 24px;
+}
+
+
+/* ------------------------- */
+
+vision form-vision .content-info-section inputs label.hits {
+    width: 100px;
+}
+
+vision form-vision .content-info-section inputs input[name=GROUPCODE] {
+    width: 120px;
+    margin-right: 80px;
+}
+
+vision form-vision .content-info-section inputs input[name=ALIAS] {
+    width: 120px;
+    margin-right: 80px;
+}
+
+vision form-vision .content-info-section inputs input[name=KEY_COUNT] {
+    width: 100px;
+}
+
+
+/* ------------------------- */

@@ -61,4 +61,16 @@ iBlock([
         onprogress: null
     });
 
+    _.extend(_.see.Tabs.SlideTabs, {
+        auto: function() {
+            $('.ic.stabs[data-ic-auto]').each(function() {
+                if ($(this).data('icAuto') != 'false') {
+                    new _.see.Tabs.SlideTabs(this, {
+                        trigger: $(this).data('tabsTrigger') || 'mouseover',
+                        keyClass: $(this).data('tabskeyclass') || 'actived'
+                    });
+                }
+            });
+        }
+    });
 });

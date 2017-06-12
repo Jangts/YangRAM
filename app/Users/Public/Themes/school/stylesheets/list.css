@@ -1,1 +1,30 @@
-﻿
+﻿.ic.listview.media-list.teachers .list-item.content.pane.top-bottom {
+    width: 240px;
+    height: 330px;
+    margin: 15px 20px;
+}
+
+.ic.listview.media-list.teachers .list-item.content.pane.top-bottom img {
+    width: 230px;
+    height: 280px;
+}
+
+.ic.listview.media-list.teachers .list-item.content.pane.top-bottom .list-title {
+    margin: 10px 0;
+}
+
+.ic.listview.media-list.teachers .list-item.content.pane.top-bottom .list-title a {
+    display: block;
+    width: 230px;
+    text-align: center;
+}
+
+.ic.listview.media-list .list-item.card.photo {
+    background-color: #999;
+    color: #fff;
+}
+
+.ic.listview.media-list .list-item.card.photo img {
+    width: 391px;
+    height: 293px;
+}

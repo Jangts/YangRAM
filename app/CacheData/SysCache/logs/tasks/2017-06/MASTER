@@ -219,3 +219,23 @@
 20170607 1424	master	Hired A Worker	Current Number Of Workers Is 1
 20170607 1427	master	Hired A Worker	Current Number Of Workers Is 1
 20170607 1428	master	Be Killed	Received A Request To Die
+20170611 0629	master	[New Master]
+20170611 0629	master	Check Task	On 2017-06-11, Sunday
+20170611 0629	master	Check Task	During 06:00:00 To 06:59:59 On 20170611
+20170611 0631	master	[New Master]
+20170611 0631	master	Check Task	On 2017-06-11, Sunday
+20170611 0631	master	Check Task	During 06:00:00 To 06:59:59 On 20170611
+20170611 0632	master	Hired A Worker	Current Number Of Workers Is 1
+20170611 0700	master	[New Master]
+20170611 0700	master	Check Task	On 2017-06-11, Sunday
+20170611 0700	master	Check Task	During 07:00:00 To 07:59:59 On 20170611
+20170611 0705	master	[New Master]
+20170611 0705	master	Check Task	On 2017-06-11, Sunday
+20170611 0705	master	Check Task	During 07:00:00 To 07:59:59 On 20170611
+20170611 0705	master	Hired A Worker	Current Number Of Workers Is 1
+20170611 0711	master	[New Master]
+20170611 0711	master	Check Task	On 2017-06-11, Sunday
+20170611 0711	master	Check Task	During 07:00:00 To 07:59:59 On 20170611
+20170611 1937	master	[New Master]
+20170611 1937	master	Check Task	On 2017-06-11, Sunday
+20170611 1937	master	Check Task	During 19:00:00 To 19:59:59 On 20170611

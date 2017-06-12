@@ -1,4 +1,8 @@
 @charset "utf-8";
+body {
+    min-width: 1240px;
+}
+
 .container-1240 {
     width: 1240px;
     margin: auto;
@@ -217,6 +221,7 @@
     background-repeat: no-repeat;
     padding-left: 50px;
     line-height: 42px;
+    cursor: pointer;
 }
 
 .main-footer .common-bottom-nav li.share .share-items dd:nth-child(1) {
@@ -291,4 +296,64 @@
     border-top: solid 10px #ffeeee;
     font-size: 21px;
     line-height: 30px;
+}
+
+#weixinQR {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#weixinQR.actived {
+    display: block;
+}
+
+#weixinQR .qr-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.6;
+}
+
+#weixinQR .qr-cls {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    line-height: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#weixinQR figure {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+    background-color: #fff;
+}
+
+#weixinQR figure img {
+    width: 147px;
+    height: 147px;
+    margin: 15px 26px 5px;
+}
+
+#weixinQR figure figcaption {
+    width: 147px;
+    height: 23px;
+    margin: 0 26px;
+    line-height: 23px;
+    text-align: center;
 }

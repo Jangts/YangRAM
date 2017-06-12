@@ -1,0 +1,8 @@
+{
+    "name": "Tangram Bookkeeper",
+    "abbr": "Bk",
+    "description": "Tangram Bookkeeper",
+    "keywords": ["Tangram Bookkeeper", "Accounting Management"],
+    "suitspace": "Studio",
+    "namespace": "Bkp"
+}

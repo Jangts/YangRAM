@@ -2,7 +2,7 @@
 
 <head>
     {{@includes/head.niml}}
-    <link type="text/css" rel="stylesheet" href="http://interblocks.nidn.yangram.ni/src/see/Slider/style.css">
+    <link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/Slider/style.css">
     <link type="text/css" rel="stylesheet" href="{{$__SRCDIR}}stylesheets/homepage.css">
 </head>
 
@@ -13,7 +13,7 @@
         <section class="news ic h390 grid-12">
             <div class="ic hfull nm-8">
                 <div class="newslist ic stabs" data-ic-auto="true">
-                    <h3>学院要闻</h3>
+                    <h3> <a href="{{$REQUEST.DIR}}s/news/category/15/">学院要问</a></h3>
                     <json name="$fields"> ["dev_figure", "dev_abstract"] </json>
                     <def name="$newslist" onload="CM.SPC.getList" args="'news', 15, CM.SPCLite.PUBLISHED, CM.SPCLite.PUBTIME_DESC, 0, 9, Model::LIST_AS_OBJ, $fields" />
                     <ul class="news-figures">
@@ -49,7 +49,7 @@
             </div>
             <div class="nm-4 ">
                 <div class="notices">
-                    <h3>通知公告</h3>
+                    <h3><a href="{{$REQUEST.DIR}}s/announcements/">通知公告</a></h3>
                     <def name="$annclist" onload="CM.SPC.getList" args="'announcements', NULL, CM.SPCLite.PUBLISHED, CM.SPCLite.PUBTIME_DESC, 0, 6, Model::LIST_AS_OBJ" />
                     <ul class="notice-cards">
                         <for $item of $annclist>
@@ -63,7 +63,7 @@
                             </li>
                         </for>
                     </ul>
-                    <p class="see-more"><a href="" target="_blank">更多&gt;&gt;</a></p>
+                    <p class="see-more"><a href="{{$REQUEST.DIR}}s/announcements/" target="_blank">更多&gt;&gt;</a></p>
                 </div>
             </div>
         </section>
@@ -75,8 +75,8 @@
             <div class="nm-4">
                 <div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
                     <header class="tabanchors">
-                        <span class="tab-anchor actived" data-tab-index="0" data-src="">校园时讯</span>
-                        <span class="tab-anchor" data-tab-index="1" data-src="">媒体建筑</span>
+                        <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/news/category/16/">校园时讯</span>
+                        <span class="tab-anchor" data-tab-index="1" data-src="{{$REQUEST.DIR}}s/news/category/20/">媒体建筑</span>
                         <i class="see-more"></i>
                     </header>
                     <ul class="xysx tab-section actived">
@@ -90,8 +90,8 @@
             <div class="nm-4">
                 <div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
                     <header class="tabanchors">
-                        <span class="tab-anchor actived" data-tab-index="0" data-src="">创新创业</span>
-                        <span class="tab-anchor" data-tab-index="1" data-src="">转型发展</span>
+                        <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/chuangs/">创新创业</span>
+                        <span class="tab-anchor" data-tab-index="1" data-src="{{$REQUEST.DIR}}s/fazhans/">转型发展</span>
                         <i class="see-more"></i>
                     </header>
                     <ul class="cxcy tab-section actived">
@@ -105,8 +105,8 @@
             <div class="nm-4">
                 <div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
                     <header class="tabanchors">
-                        <span class="tab-anchor actived" data-tab-index="0" data-src="">就业信息</span>
-                        <span class="tab-anchor" data-tab-index="1" data-src="">校友之家</span>
+                        <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/jiuyes/">就业信息</span>
+                        <span class="tab-anchor" data-tab-index="1" data-src="{{$REQUEST.DIR}}s/stunews/">校友之家</span>
                         <i class="see-more"></i>
                     </header>
                     <ul class="jyxx tab-section actived">
@@ -120,7 +120,7 @@
         </section>
         <section class="photos">
             <header class="photos-title">
-                <h3 class="">建筑印象 SCENERY</h3><a href="" class="more-photos">更多&gt;&gt;</a></header>
+                <h3 class="">建筑印象 SCENERY</h3><a href="{{$REQUEST.DIR}}s/photos/" class="more-photos">更多&gt;&gt;</a></header>
             <def name="$photos" onload="CM.SPC.getList" args="'photos', NULL, CM.SPCLite.PUBLISHED, CM.SPCLite.CTIME_DESC, 0, 5, Model::LIST_AS_OBJ" />
             <ul class="newfive">
                 <for $item of $photos>
@@ -139,88 +139,7 @@
         </section>
     </div>
     {{@includes/footer.niml}}
-    <script type="text/javascript">
-        var includes = [
-            '$_/data/',
-            '$_/data/Base64.Cls',
-            '$_/dom/Elements/',
-            '$_/dom/Template.Cls',
-            '$_/see/Slider/',
-            '$_/see/Slider/colx3.opts',
-            '$_/see/Slider/slide-vert.opts'
-        ];
-        iBlock(includes, function(_, global, undefined) {
-            var document = global.document;
-            var location = global.location;
-            var $ = _.dom.select;
-
-            $('#myslide').each(function(index, element) {
-                new _.see.Slider(this, 'colx3', {
-                    kbCtrlAble: true
-                });
-            });
-
-            $('.banners').each(function(index, element) {
-                new _.see.Slider(this, 'slide-vert', {
-                    kbCtrlAble: false
-                });
-            });
-
-            $('.artilisttabs .see-more').click(function() {
-                //alert('You triggered a see-more button');
-                var url = $('.tab-anchor.actived', this.parentNode).data('src');
-                if (url) {
-                    global.open(url, '_blank');
-                }
-            });
-
-
-
-            var newscats = {
-                    xysx: {
-                        set_alias: 'news',
-                        url: '{{$REQUEST.DIR}}o/contents/spc/get_list_by_cat/16/2/0/6/'
-                    },
-                    jzmt: {
-                        set_alias: 'news',
-                        url: '{{$REQUEST.DIR}}o/contents/spc/get_list_by_cat/20/2/0/6/'
-                    },
-                    cxcy: {
-                        set_alias: 'chuangs',
-                        url: '{{$REQUEST.DIR}}o/contents/spc/get_list_by_preset/chuangs/2/0/6/'
-                    },
-                    zxfz: {
-                        set_alias: 'fazhans',
-                        url: '{{$REQUEST.DIR}}o/contents/spc/get_list_by_preset/fazhans/2/0/6/'
-                    },
-                    jyxx: {
-                        set_alias: 'jiuyes',
-                        url: '{{$REQUEST.DIR}}o/contents/spc/get_list_by_preset/jiuyes/2/0/6/'
-                    },
-                    xyzj: {
-                        set_alias: 'stunews',
-                        url: '{{$REQUEST.DIR}}o/contents/spc/get_list_by_preset/stunews/2/0/6/'
-                    }
-                },
-                coder = new _.data.Base64(),
-                template = new _.dom.Template($('#newstp').html());
-
-            _.each(newscats, function(cat, meta) {
-                _.data.json(meta.url, function(data) {
-                    template.clear();
-                    _.each(data, function(i, news) {
-                        template.complie({
-                            url: '{{$REQUEST.DIR}}s/' + news.SET_ALIAS + '/article/' + coder.encode(news.ID),
-                            title: news.TITLE
-                        });
-                    });
-                    template.echo(), $('.artilisttabs .tab-section.' + cat).html(template.echo());
-                }, function() {
-                    console.log(cat + '加载失败');
-                })
-            });
-        }, true);
-    </script>
+    <script type="text/javascript" src="{{$__SRCDIR}}scripts/index.js"></script>
 </body>
 
 </html>
