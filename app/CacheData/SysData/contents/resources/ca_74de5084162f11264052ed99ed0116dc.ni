@@ -1,1 +1,0 @@
-{"ID":"1fe02f464f86baebf232","SRC_ID":"266","FLD_ID":"12","FILE_NAME":"\u6df7\u51dd\u571f\u5b9e\u9a8c\u5ba4_\u526f\u672c.jpg","FILE_TYPE":"image","FILE_SIZE":"45764","SUFFIX":"jpg","KEY_MTIME":"2016-06-02 17:09:37","KEY_IS_RECYCLED":"0","USR_ID":"1"}

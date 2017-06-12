@@ -186,7 +186,6 @@ abstract class BaseR3Model extends BaseModel {
             $lifetime = self::getLifeTime();
             if(is_a($storage, 'System\CACH\Storage')){
                 if($data = $storage->take($identity)){
-                    //var_dump($storage, $data);
                     if($lifetime){
                         $time = $storage->time($identity);
                         if($time&&($time + $lifetime > time())){
@@ -201,11 +200,10 @@ abstract class BaseR3Model extends BaseModel {
                     }
                 }
                 $result = $rdo->requiring()->where($pk, $identity)->select();
-                //var_dump($result);
                 if($result&&$data = $result->getRow()){
-                    $storage->store($identity, $data);
                     $obj = new static();
                     $obj->build($data, true);
+                    $storage->store($identity, $data);
                     return $obj;
                 }
             }else{

@@ -13,7 +13,7 @@
         <section class="news ic h390 grid-12">
             <div class="ic hfull nm-8">
                 <div class="newslist ic stabs" data-ic-auto="true">
-                    <h3> <a href="{{$REQUEST.DIR}}s/news/category/15/">学院要问</a></h3>
+                    <h3> <a href="{{$REQUEST.DIR}}s/news/category/15/">学院要闻</a></h3>
                     <json name="$fields"> ["dev_figure", "dev_abstract"] </json>
                     <def name="$newslist" onload="CM.SPC.getList" args="'news', 15, CM.SPCLite.PUBLISHED, CM.SPCLite.PUBTIME_DESC, 0, 9, Model::LIST_AS_OBJ, $fields" />
                     <ul class="news-figures">

@@ -1,0 +1,1 @@
+{"id":"11","basic_type":"resm","name":"\u9886\u5bfc\u8d44\u6599","alias":"leadership","code":"LEADR","note":"\u9886\u5bfc\u8d44\u6599","item_type":"\u9886\u5bfc\u4fe1\u606f","item_unit":"","top_display_num":"2","theme":"jzx","template":"about\/resume_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1"}

@@ -15,13 +15,15 @@
             <div class="nm-15 main-container">
                 <div class="ic blank-10"></div>
                 <header><span class="dir">
-                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/enrollment/">招生就业</a>
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/">招生就业</a>
                     <i>/</i>
-                    <a href=" {{$REQUEST.REST_HANDLER_DIR}}s/enrollment/category/{{$___CATEGORY_ID}}/">
+                    <a href=" {{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/category/{{$___CATEGORY_ID}}/">
                         <switch name="$___CATEGORY_ID">
                             <case value="1">本科生</case>
                             <case value="2">专科生</case>
                             <case value="3">继续教育</case>
+                            <case value="4">就业信息</case>
+                            <case value="5">3+2专升本</case>
                         </switch>
                     </a></span>
                 </header>
@@ -38,14 +40,14 @@
                 <div class="ic h50 al-center title-50 ft-999 ft-12 grid-12">
                     <div class="nm-6">上一篇：
                         <if $___Earlier_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$___Earlier_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Earlier_InSameCategory.ID***}}/">
                                 <str value="$___Earlier_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
                     </div>
                     <div class="nm-6">下一篇：
                         <if $___Later_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$___Later_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Later_InSameCategory.ID***}}/">
                                 <str value="$___Later_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
@@ -56,10 +58,11 @@
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
-                    <li class="{{$___CATEGORY_ID='1'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/enrollment/category/1/">本科生</a></li>
-                    <li class="{{$___CATEGORY_ID='2'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/enrollment/category/2/">专科生</a></li>
-                    <li class="{{$___CATEGORY_ID='3'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/enrollment/category/3/">继续教育</a></li>
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/jiuyes/">就业信息</a></li>
+                    <li class="{{$___CATEGORY_ID='1'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/category/1/">本科生</a></li>
+                    <li class="{{$___CATEGORY_ID='5'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/category/5/">3+2专升本</a></li>
+                    <li class="{{$___CATEGORY_ID='2'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/category/2/">专科生</a></li>
+                    <li class="{{$___CATEGORY_ID='3'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/category/3/">继续教育</a></li>
+                    <li class="{{$___CATEGORY_ID='4'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/category/4/">就业信息</a></li>
                 </ul>
             </div>
         </div>

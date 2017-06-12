@@ -16,6 +16,10 @@ iBlock('$_/dom/Elements/', function(_, global, undefined) {
         }
     });
 
+    $('.topsearchb').click(function() {
+        $('.topsearch').submit();
+    });
+
     $('#weixinQR .qr-cls').click(function() {
         $('#weixinQR').removeClass('actived');
     });

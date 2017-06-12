@@ -1,0 +1,1 @@
+{"id":"24","basic_type":"news","name":"\u673a\u6784\u8bbe\u7f6e","alias":"departments","code":"DPART","note":"\u673a\u6784\u8bbe\u7f6e","item_type":"\u673a\u6784\u8d44\u8baf","item_unit":null,"top_display_num":"2","theme":"default","template":null,"can_contribute":"0","need_nonaudit":"1","KEY_STATE":"1","default_appid":"1"}

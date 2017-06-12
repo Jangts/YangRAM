@@ -29,10 +29,14 @@ class ListPage extends \System\NIDO\DataObject {
 				}
 				$category = Category::identity($category_id);
 				$preset = Preset::id($category->set_id);
-				$preset_alias = $preset->alias;
-				$title = str_replace('{@cat}', $category->title, $page->title);
-				$keywords = str_replace('{@cak}', $category->keywords, $page->keywords);
-				$description = str_replace('{@cad}', $category->description, $page->description);
+				if($preset_alias === $preset->alias){
+					$title = str_replace('{@cat}', $category->title, $page->title);
+					$keywords = str_replace('{@cak}', $category->keywords, $page->keywords);
+					$description = str_replace('{@cad}', $category->description, $page->description);
+				}else{
+					$this->data = ['state'	=>	false];
+					return;
+				}
 			}elseif(is_string($preset_alias)){
 				if($tag){
 					$contents = SPC::byTag($tag, $preset_alias, $order, $take[1]);

@@ -32,14 +32,14 @@
                 <div class="ic h50 al-center title-50 ft-999 ft-12 grid-12">
                     <div class="nm-6">上一篇：
                         <if $___Earlier_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/leadership/article/{{***$___Earlier_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Earlier_InSameCategory.ID***}}/">
                                 <str value="$___Earlier_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
                     </div>
                     <div class="nm-6">下一篇：
                         <if $___Later_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/leadership/article/{{***$___Later_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Later_InSameCategory.ID***}}/">
                                 <str value="$___Later_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
@@ -53,6 +53,7 @@
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}g/about/article/index.html">学院简介</a></li>
                     <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/leadership/">现任领导</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/teachers/">教师风采</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}g/about/article/majors.html">专业介绍</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/photos/">建筑印象</a></li>
                 </ul>
             </div>

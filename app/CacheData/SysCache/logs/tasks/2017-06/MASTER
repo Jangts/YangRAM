@@ -239,3 +239,20 @@
 20170611 1937	master	[New Master]
 20170611 1937	master	Check Task	On 2017-06-11, Sunday
 20170611 1937	master	Check Task	During 19:00:00 To 19:59:59 On 20170611
+20170612 1539	master	[New Master]
+20170612 1539	master	Check Task	On 2017-06-12, Monday
+20170612 1539	master	Check Task	During 15:00:00 To 15:59:59 On 20170612
+20170612 1548	master	Hiring Workers Failed	Current Number Of Workers Is 0
+20170612 1551	master	Hiring Workers Failed	Current Number Of Workers Is 0
+20170612 1559	master	Check Task	During 15:00:00 To 15:59:59 On 20170612
+20170612 1600	master	Chiming	Now Time Is 16 o'clock, On 2017-06-12
+20170612 1619	master	Hiring Workers Failed	Current Number Of Workers Is 0
+20170612 1622	master	Hired A Worker	Current Number Of Workers Is 1
+20170612 1627	master	Hired A Worker	Current Number Of Workers Is 1
+20170612 1631	master	Hiring Workers Failed	Current Number Of Workers Is 0
+20170612 1824	master	[New Master]
+20170612 1824	master	Check Task	On 2017-06-12, Monday
+20170612 1824	master	Check Task	During 18:00:00 To 18:59:59 On 20170612
+20170612 1827	master	Hired A Worker	Current Number Of Workers Is 1
+20170612 1834	master	Hired A Worker	Current Number Of Workers Is 1
+20170612 1844	master	Hired A Worker	Current Number Of Workers Is 1

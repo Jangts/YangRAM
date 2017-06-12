@@ -15,7 +15,7 @@
             <div class="nm-15 main-container">
                 <div class="ic blank-10"></div>
                 <header><span class="dir">
-                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/stunews/">校友之家</a></span>
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/">校友之家</a></span>
                 </header>
                 <article class="news-content">
                     <header>{{$___TITLE}}</header>
@@ -30,14 +30,14 @@
                 <div class="ic h50 al-center title-50 ft-999 ft-12 grid-12">
                     <div class="nm-6">上一篇：
                         <if $___Earlier_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$___Earlier_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Earlier_InSameCategory.ID***}}/">
                                 <str value="$___Earlier_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
                     </div>
                     <div class="nm-6">下一篇：
                         <if $___Later_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$___Later_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Later_InSameCategory.ID***}}/">
                                 <str value="$___Later_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
@@ -48,7 +48,7 @@
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
-                    <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/stunews/">校友之家</a></li>
+                    <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/">校友之家</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/">创业之星</a></li>
                 </ul>
             </div>

@@ -1,1 +1,0 @@
-{"ID":"2afc8089ffeddfbe2152","SRC_ID":"697","FLD_ID":"12","FILE_NAME":"2.png(2)","FILE_TYPE":"image","FILE_SIZE":"120839","SUFFIX":"png","KEY_MTIME":"2017-04-26 16:58:43","KEY_IS_RECYCLED":"0","USR_ID":"1"}

@@ -15,7 +15,7 @@ echo '<div class="container">';
 $this->label('ad_slider1');
 echo '<section class="news ic h390 grid-12"><div class="ic hfull nm-8"><div class="newslist ic stabs" data-ic-auto="true"><h3><a href="';
 echo $REQUEST->DIR;
-echo 's/news/category/15/">学院要问</a></h3>';
+echo 's/news/category/15/">学院要闻</a></h3>';
 $fields=json_decode('["dev_figure","dev_abstract"]',true);
 $newslist=\CM\SPC::getList('news',15,\CM\SPCLite::PUBLISHED,\CM\SPCLite::PUBTIME_DESC,0,9,\Model::LIST_AS_OBJ,$fields);
 echo '<ul class="news-figures">';

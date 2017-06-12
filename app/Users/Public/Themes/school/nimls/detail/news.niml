@@ -19,9 +19,10 @@
                     <i>/</i>
                     <a href=" {{$REQUEST.REST_HANDLER_DIR}}s/news/category/{{$___CATEGORY_ID}}/">
                         <switch name="$___CATEGORY_ID">
-                            <case value="15">学院要问</case>
+                            <case value="15">学院要闻</case>
                             <case value="16">校园时讯</case>
                             <case value="20">媒体建筑</case>
+                            <case value="21">抬头看路</case>
                         </switch>
                     </a></span>
                 </header>
@@ -38,14 +39,14 @@
                 <div class="ic h50 al-center title-50 ft-999 ft-12 grid-12">
                     <div class="nm-6">上一篇：
                         <if $___Earlier_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$___Earlier_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Earlier_InSameCategory.ID***}}/">
                                 <str value="$___Earlier_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
                     </div>
                     <div class="nm-6">下一篇：
                         <if $___Later_InSameCategory>
-                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/article/{{***$___Later_InSameCategory.ID***}}/">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Later_InSameCategory.ID***}}/">
                                 <str value="$___Later_InSameCategory.TITLE" length="19" />
                             </a>
                             <else /> 没有了 </if>
@@ -56,10 +57,11 @@
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
-                    <li class="{{$___CATEGORY_ID='15'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/15/">学院要问</a></li>
+                    <li class="{{$___CATEGORY_ID='15'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/15/">学院要闻</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/announcements/">通知公告</a></li>
                     <li class="{{$___CATEGORY_ID='16'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/16/">校园时讯</a></li>
                     <li class="{{$___CATEGORY_ID='20'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/20/">媒体建筑</a></li>
+                    <li class="{{$___CATEGORY_ID='21'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/news/category/21/">抬头看路</a></li>
                 </ul>
             </div>
         </div>

@@ -16,9 +16,11 @@
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
-                    <li class="{{$___CATEGORY_ID='12'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/12/">常务工作</a></li>
-                    <li class="{{$___CATEGORY_ID='13'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/13/">政工干部</a></li>
-                    <li class="{{$___CATEGORY_ID='14'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/14/">团务工作</a></li>
+                    <li class="{{$___CATEGORY_ID='12'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/12/">党支部风采</a></li>
+                    <li class="{{$___CATEGORY_ID='13'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/13/">团校</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/30/">典型培育</a></li>
+                    <li class="{{$___CATEGORY_ID='14'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/14/">群团组织</a></li>
+                    <li class="{{$___CATEGORY_ID='11'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/11/">青年之声</a></li>
                 </ul>
             </div>
             <div class="nm-1">&nbsp;</div>
@@ -27,11 +29,12 @@
                 <header><span class="dir">
                     <a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/">党团思政</a>
                     <i>/</i>
-                    <a href=" {{$REQUEST.REST_HANDLER_DIR}}s/party/category/{{$___CATEGORY_ID}}/">
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/{{$___CATEGORY_ID}}/">
                         <switch name="$___CATEGORY_ID">
-                            <case value="12">常务工作</case>
-                            <case value="13">政工干部</case>
-                            <case value="14">团务工作</case>
+                            <case value="11">青年之声</case>
+                            <case value="12">党支部风采</case>
+                            <case value="13">团校</case>
+                            <case value="14">群团组织</case> 
                         </switch>
                     </a></span>
                 </header>
@@ -40,7 +43,7 @@
                     <for $item of $___LIST>
                         <li class="list-item content underline">
                             <figure class="list-figure h117">
-                                <a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/article/{{***$item.ID***}}" target=" _blank">
+                                <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
                                     <if $item.dev_figure>
                                         <img src="{{$item.dev_figure}}" />
                                         <else />
@@ -50,12 +53,12 @@
                             </figure>
                             <div class="list-body" style="width: 664px;">
                                 <h4 class="list-title">
-                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/article/{{***$item.ID***}}" target=" _blank">
+                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
                                         <str value="$item.TITLE" length="23" />
                                     </a><span class="pl-right"><time value="$item.PUBTIME " format="Y-m-d" /></span></h4>
                                 <p class="list-abstract" data-row="3">{{$item.dev_abstract}}...</p>
                                 <p class="list-meta pl-right bottom">
-                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/article/{{***$item.ID***}}" target=" _blank">更多&gt;&gt;</a>
+                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">更多&gt;&gt;</a>
                                 </p>
                             </div>
                         </li>

@@ -13,35 +13,78 @@
     <section class="ic section bg-light">
         <div class="ic blank-30"></div>
         <div class="ic w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD">
-            <div class="ic blank-10"></div>
-            <ul id="mylist" class="ic listview text-list" data-ic-auto="true" data-list-cols="2">
-                <for $item of $___LIST>
-                    <li class="list-item pane">
-                        <a href="{{$REQUEST.REST_HANDLER_DIR}}s/fazhans/article/{{***$item.ID***}}" target=" _blank">
-                            <str value="$item.TITLE" length="23" />
-                        </a><span class="pl-right"><time value="$item.PUBTIME " format="Y-m-d" /></span>
-                    </li>
-                </for>
-            </ul>
-            <ul class="ic listview page-list spills red">
-                <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
-                <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
-                <if $pages[`f`] lt $___Cpage>
-                    <li class="list-item" onclick="window.location.href='?page={{$pages[`p`]}}'">&lt;</li>
-                </if>
-                {{$length =$pages[`length`]}}
-                <for $index in [0, $length)>
-                    <if $pages[$index] eq $___Cpage>
-                        <li class="list-item actived" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
-                        <else />
-                        <li class="list-item" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
+            <div class="nm-5">
+                <div class="side-list-title">栏目导航</div>
+                <ul class="side-list">
+                    <li class="{{$___CATEGORY_ID='6'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/category/6/">科研成果</a></li>
+                    <li class="{{$___CATEGORY_ID='7'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/category/7/">学科竞赛</a></li>
+                    <li class="{{$___CATEGORY_ID='8'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/category/8/">教师培训</a></li>
+                    <li class="{{$___CATEGORY_ID='9'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/category/9/">教学改革</a></li>
+                    <li class="{{$___CATEGORY_ID='10'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/category/10/">校企合作</a></li>
+                </ul>
+            </div>
+            <div class="nm-1">&nbsp;</div>
+            <div class="nm-15 main-container">
+                <div class="ic blank-10"></div>
+                <header><span class="dir">
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/">转型发展</a>
+                    <i>/</i>
+                    <a href=" {{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/category/{{$___CATEGORY_ID}}/">
+                        <switch name="$___CATEGORY_ID">
+                            <case value="6">科研成果</case>
+                            <case value="7">学科竞赛</case>
+                            <case value="8">教师培训</case>
+                            <case value="9">教学改革</case>
+                            <case value="10">校企合作</case>
+                        </switch>
+                    </a></span>
+                </header>
+                <div class="ic blank-10"></div>
+                <ul id="mylist" class="ic listview media-list" data-ic-auto="true">
+                    <for $item of $___LIST>
+                        <li class="list-item content underline">
+                            <figure class="list-figure h117">
+                                <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
+                                    <if $item.dev_figure>
+                                        <img src="{{$item.dev_figure}}" />
+                                        <else />
+                                        <img src="{{$__SRCDIR}}images/nopic.jpg" />
+                                    </if>
+                                </a>
+                            </figure>
+                            <div class="list-body" style="width: 664px;">
+                                <h4 class="list-title">
+                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
+                                        <str value="$item.TITLE" length="23" />
+                                    </a><span class="pl-right"><time value="$item.PUBTIME " format="Y-m-d" /></span></h4>
+                                <p class="list-abstract" data-row="3">{{$item.dev_abstract}}...</p>
+                                <p class="list-meta pl-right bottom">
+                                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">更多&gt;&gt;</a>
+                                </p>
+                            </div>
+                        </li>
+                    </for>
+                </ul>
+                <ul class="ic listview page-list spills red">
+                    <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
+                    <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
+                    <if $pages[`f`] lt $___Cpage>
+                        <li class="list-item" onclick="window.location.href='?page={{$pages[`p`]}}'">&lt;</li>
                     </if>
-                </for>
-                <if $pages[`l`] gt $___Cpage>
-                    <li class="list-item" onclick="window.location.href='?page={{$pages[`n`]}}'">&gt;</li>
-                </if>
-                <li class="list-item" onclick="window.location.href='?page={{$pages[`l`]}}'">&gt;&gt;</li>
-            </ul>
+                    {{$length =$pages[`length`]}}
+                    <for $index in [0, $length)>
+                        <if $pages[$index] eq $___Cpage>
+                            <li class="list-item actived" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
+                            <else />
+                            <li class="list-item" onclick="window.location.href='?page={{$pages[$index]}}'">{{$pages[$index]}}</li>
+                        </if>
+                    </for>
+                    <if $pages[`l`] gt $___Cpage>
+                        <li class="list-item" onclick="window.location.href='?page={{$pages[`n`]}}'">&gt;</li>
+                    </if>
+                    <li class="list-item" onclick="window.location.href='?page={{$pages[`l`]}}'">&gt;&gt;</li>
+                </ul>
+            </div>
         </div>
         <div class="ic blank-50"></div>
     </section>

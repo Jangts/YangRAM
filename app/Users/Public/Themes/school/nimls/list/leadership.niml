@@ -19,6 +19,7 @@
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}g/about/article/index.html">学院简介</a></li>
                     <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/leadership/">现任领导</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/teachers/">教师风采</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}g/about/article/majors.html">专业介绍</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/photos/">建筑印象</a></li>
                 </ul>
             </div>

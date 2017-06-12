@@ -14,8 +14,8 @@
         <nav class="mainnav">
             <ul class="ic navmenu inline" data-ic-auto="true">
                 <li class="menu-item hasson {{$__Column='default'=>actived}}"><a href="{{$REQUEST.DIR}}g/about/article/index.html">学院概况</a>
-                    <ul class="submenu inline" data-width="320">
-                        <li class="menu-item {{$__Columns[1]='_g_about_'=>actived}}">
+                    <ul class="submenu inline" data-width="400">
+                        <li class="menu-item {{$__Columns[2]='index.html'=>actived}}">
                             <a href="{{$REQUEST.DIR}}g/about/article/index.html">学院简介</a>
                         </li>
                         <li class="menu-item {{$__Columns[1]='_s_leadership_'=>actived}}">
@@ -24,18 +24,18 @@
                         <li class="menu-item {{$__Columns[1]='_s_teachers_'=>actived}}">
                             <a href="{{$REQUEST.DIR}}s/teachers/">教师风采</a>
                         </li>
+                        <li class="menu-item {{$__Columns[2]='majors.html'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}g/about/article/majors.html">专业介绍</a>
+                        </li>
                         <li class="menu-item {{$__Columns[1]='_s_photos_'=>actived}}">
                             <a href="{{$REQUEST.DIR}}s/photos/">建筑印象</a>
                         </li>
                     </ul>
                 </li>
                 <li class="menu-item hasson {{$__Columns[1] in ['_s_news_', '_s_announcements_']=>actived}}"><a href="{{$REQUEST.DIR}}s/news/">学院动态</a>
-                    <ul class="submenu under inline al-center" data-width="320">
+                    <ul class="submenu under inline al-center" data-width="400">
                         <li class="menu-item {{$__Columns[2]='category15'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/news/category/15/">学院要问</a>
-                        </li>
-                        <li class="menu-item {{$__Columns[1]='_s_announcements_'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/announcements/">通知公告</a>
+                            <a href="{{$REQUEST.DIR}}s/news/category/15/">学院要闻</a>
                         </li>
                         <li class="menu-item {{$__Columns[2]='category16'=>actived}}">
                             <a href="{{$REQUEST.DIR}}s/news/category/16/">校园时讯</a>
@@ -43,32 +43,40 @@
                         <li class="menu-item {{$__Columns[2]='category20'=>actived}}">
                             <a href="{{$REQUEST.DIR}}s/news/category/20/">媒体建筑</a>
                         </li>
+                        <li class="menu-item {{$__Columns[1]='_s_announcements_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/announcements/">通知公告</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category21'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/news/category/21/">抬头看路</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="menu-item hasson {{$__Columns[1]='_g_departments_'=>actived}}"><a href="{{$REQUEST.DIR}}g/departments/article/tmgcx.html">机构设置</a>
+                <li class="menu-item hasson {{$__Columns[1]='_g_departments_'=>actived}}"><a href="{{$REQUEST.DIR}}s/departments/">机构设置</a>
                     <ul class="submenu under inline al-center" data-width="540">
-                        <li class="menu-item {{$__Columns[2]='tmgcx.html'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}g/departments/article/tmgcx.html">土木工程系</a>
+                        <li class="menu-item {{$___CATEGORY_ID='33'=>actived}}">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/departments/category/33/">土木工程系</a>
                         </li>
-                        <li class="menu-item {{$__Columns[2]='gcglx.html'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}g/departments/article/gcglx.html">工程管理系</a>
+                        <li class="menu-item {{$___CATEGORY_ID='34'=>actived}}">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/departments/category/34/">工程管理系</a>
                         </li>
-                        <li class="menu-item {{$__Columns[2]='jzhjysbgcx.html'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}g/departments/article/jzhjysbgcx.html">建筑环境与设备工程系</a>
+                        <li class="menu-item {{$___CATEGORY_ID='35'=>actived}}">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/departments/category/35/">建筑环境与设备工程系</a>
                         </li>
-                        <li class="menu-item {{$__Columns[2]='dyjys.html'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}g/departments/article/dyjys.html">德育教研室</a>
+                        <li class="menu-item {{$___CATEGORY_ID='36'=>actived}}">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/departments/category/36/">德育教研室</a>
                         </li>
-                        <li class="menu-item {{$__Columns[2]='jzsyzx.html'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}g/departments/article/jzsyzx.html">建筑实验中心</a>
+                        <li class="menu-item {{$___CATEGORY_ID='37'=>actived}}">
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/departments/category/37/">工程实验中心</a>
                         </li>
-
                     </ul>
                 </li>
-                <li class="menu-item hasson {{$__Columns[1] in ['_s_enrollment_', '_s_jiuyes_']=>actived}}"><a href="{{$REQUEST.DIR}}s/enrollment/">招生就业</a>
+                <li class="menu-item hasson {{$__Columns[1]='_s_enrollment_'=>actived}}"><a href="{{$REQUEST.DIR}}s/enrollment/">招生就业</a>
                     <ul class="submenu under inline al-center" data-width="430">
                         <li class="menu-item {{$__Columns[2]='category1'=>actived}}">
                             <a href="{{$REQUEST.DIR}}s/enrollment/category/1/">本科生</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category5'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/enrollment/category/5/">3+2专升本</a>
                         </li>
                         <li class="menu-item {{$__Columns[2]='category2'=>actived}}">
                             <a href="{{$REQUEST.DIR}}s/enrollment/category/2/">专科生</a>
@@ -76,36 +84,87 @@
                         <li class="menu-item {{$__Columns[2]='category3'=>actived}}">
                             <a href="{{$REQUEST.DIR}}s/enrollment/category/3/">继续教育</a>
                         </li>
-                        <li class="menu-item {{$__Columns[1]='_s_jiuyes_'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/jiuyes/">就业信息</a>
+                        <li class="menu-item {{$__Columns[2]='category4'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/enrollment/category/4/">就业信息</a>
                         </li>
                     </ul>
                 </li>
-                <li class="menu-item {{$__Columns[1]='_s_fazhans_'=>actived}}"><a href="{{$REQUEST.DIR}}s/fazhans/">转型发展</a></li>
-                <li class="menu-item hasson {{$__Columns[1]='_s_party_'=>actived}}"><a href="{{$REQUEST.DIR}}s/party/">党团思政</a>
-                    <ul class="submenu under inline al-center" data-width="240">
+                <li class="menu-item hasson {{$__Columns[1]='_s_fazhans_'=>actived}}"><a href="{{$REQUEST.DIR}}s/fazhans/">转型发展</a>
+                    <ul class="submenu under inline al-center" data-width="400">
+                        <li class="menu-item {{$__Columns[2]='category6'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/fazhans/category/6/">科研成果</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category7'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/fazhans/category/7/">学科竞赛</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category8'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/fazhans/category/8/">教师培训</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category9'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/fazhans/category/9/">教学改革</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category10'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/fazhans/category/10/">校企合作</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item hasson <if $__Columns[1]='_s_party_'>actived<else $__Columns[2]='category30'>actived</if>"><a href="{{$REQUEST.DIR}}s/party/">党团思政</a>
+                    <ul class="submenu under inline al-center" data-width="430">
                         <li class="menu-item {{$__Columns[2]='category12'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/party/category/12/">常务工作</a>
+                            <a href="{{$REQUEST.DIR}}s/party/category/12/">党支部风采</a>
                         </li>
                         <li class="menu-item {{$__Columns[2]='category13'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/party/category/13/">政工干部</a>
+                            <a href="{{$REQUEST.DIR}}s/party/category/13/">团校</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category30'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/students/category/30/">典型培育</a>
                         </li>
                         <li class="menu-item {{$__Columns[2]='category14'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/party/category/14/">团务工作</a>
+                            <a href="{{$REQUEST.DIR}}s/party/category/14/">群团组织</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[2]='category11'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/party/category/11/">青年之声</a>
                         </li>
                     </ul>
                 </li>
-                <li class="menu-item hasson {{$__Columns[1] in ['_s_chuangs_', '_s_students_']=>actived}}"><a href="{{$REQUEST.DIR}}s/chuangs/">创新创业</a>
-                    <ul class="submenu under inline al-center" data-width="160">
+                <li class="menu-item hasson <if $__Columns[1]='_s_chuangs_'>actived<else $__Columns[2]='category30'>actived</if>"><a href="{{$REQUEST.DIR}}s/chuangs/">创新创业</a>
+                    <ul class="submenu under inline al-center" data-width="400">
                         <li class="menu-item {{$__Columns[1]='_s_stunews_'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/chuangs/">创新创业</a>
+                            <a href="{{$REQUEST.DIR}}s/chuangs/category//">双创赛事</a>
                         </li>
                         <li class="menu-item {{$__Columns[1]='_s_students_'=>actived}}">
-                            <a href="{{$REQUEST.DIR}}s/students/">创业之星</a>
+                            <a href="{{$REQUEST.DIR}}s/chuangs/category//">双创典型</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[1]='_s_stunews_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/chuangs/category//">项目展示</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[1]='_s_students_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/chuangs/category//">创梦讲话</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[1]='_s_stunews_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/chuangs/category//">品牌活动</a>
                         </li>
                     </ul>
                 </li>
-                <li class="menu-item {{$__Columns[1]='_s_stunews_'=>actived}}"><a href="{{$REQUEST.DIR}}s/stunews/">校友之家</a></li>
+                <li class="menu-item hasson <if $__Columns[1]='_s_stunews_'>actived<else $__Columns[2]='category30'>actived</if>"><a href="{{$REQUEST.DIR}}s/stunews/">校友之家</a>
+                    <ul class="submenu under inline al-right" data-width="400">
+                        <li class="menu-item {{$__Columns[1]='_s_stunews_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/stunews/">双创赛事</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[1]='_s_students_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/stunews/">双创典型</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[1]='_s_stunews_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/stunews/">项目展示</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[1]='_s_students_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/stunews/">创梦讲话</a>
+                        </li>
+                        <li class="menu-item {{$__Columns[1]='_s_stunews_'=>actived}}">
+                            <a href="{{$REQUEST.DIR}}s/stunews/">品牌活动</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </section>

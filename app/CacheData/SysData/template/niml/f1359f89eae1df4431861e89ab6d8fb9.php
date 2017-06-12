@@ -7,8 +7,6 @@ echo '<!DOCTYPE html><html lang="zh-CN"><head>';
 $this->including('includes/head.niml');
 echo '<link type="text/css" rel="stylesheet" href="';
 echo $__AF_SRCDIR;
-echo 'Interblocks/see/Slider/style.css"><link type="text/css" rel="stylesheet" href="';
-echo $__AF_SRCDIR;
 echo 'Interblocks/see/ListView/style.css"><link type="text/css" rel="stylesheet" href="';
 echo $__SRCDIR;
 echo 'stylesheets/list.css"></head><body>';
@@ -19,41 +17,54 @@ if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '12' ){
 }
 echo '"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/party/category/12/">常务工作</a></li><li class="';
+echo 's/party/category/12/">党支部风采</a></li><li class="';
 if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '13' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/party/category/13/">政工干部</a></li><li class="';
+echo 's/party/category/13/">团校</a></li><li class=""><a href="';
+echo $REQUEST->REST_HANDLER_DIR;
+echo 's/students/category/30/">典型培育</a></li><li class="';
 if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '14' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/party/category/14/">团务工作</a></li></ul></div><div class="nm-1">&nbsp;</div><div class="nm-15 main-container"><div class="ic blank-10"></div><header><span class="dir"><a href="';
+echo 's/party/category/14/">群团组织</a></li><li class="';
+if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '11' ){
+	echo 'actived';
+}
+echo '"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/party/">党团思政</a><i>/</i><a href=" ';
+echo 's/party/category/11/">青年之声</a></li></ul></div><div class="nm-1">&nbsp;</div><div class="nm-15 main-container"><div class="ic blank-10"></div><header><span class="dir"><a href="';
+echo $REQUEST->REST_HANDLER_DIR;
+echo 's/party/">党团思政</a><i>/</i><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
 echo 's/party/category/';
 echo $___CATEGORY_ID;
 echo '/">';
 switch($___CATEGORY_ID){
+	case '11':
+	echo '青年之声';
+	break;
 	case '12':
-	echo '常务工作';
+	echo '党支部风采';
 	break;
 	case '13':
-	echo '政工干部';
+	echo '团校';
 	break;
 	case '14':
-	echo '团务工作';
+	echo '群团组织';
 	break;
 }
 echo '</a></span></header><div class="ic blank-10"></div><ul id="mylist" class="ic listview media-list" data-ic-auto="true">';
 foreach($___LIST as $index => $item){
 	echo '<li class="list-item content underline"><figure class="list-figure h117"><a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
-	echo 's/party/article/';
+	echo 's/';
+	echo $___PRESET_ALIAS;
+	echo '/article/';
 	echo base64_encode($item->ID);
 	echo '" target=" _blank">';
 	if( isset($item->dev_figure) && $item->dev_figure != false ){
@@ -68,7 +79,9 @@ foreach($___LIST as $index => $item){
 	}
 	echo '</a></figure><div class="list-body" style="width: 664px;"><h4 class="list-title"><a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
-	echo 's/party/article/';
+	echo 's/';
+	echo $___PRESET_ALIAS;
+	echo '/article/';
 	echo base64_encode($item->ID);
 	echo '" target=" _blank">';
 	echo mb_substr($item->TITLE,0,23);
@@ -78,7 +91,9 @@ foreach($___LIST as $index => $item){
 	echo $item->dev_abstract;
 	echo '...</p><p class="list-meta pl-right bottom"><a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
-	echo 's/party/article/';
+	echo 's/';
+	echo $___PRESET_ALIAS;
+	echo '/article/';
 	echo base64_encode($item->ID);
 	echo '" target=" _blank">更多&gt;&gt;</a></p></div></li>';
 }

@@ -15,7 +15,7 @@ echo 'stylesheets/list.css"></head><body>';
 $this->including('includes/header.niml');
 echo '<section class="ic section bg-light"><div class="ic blank-30"></div><div class="ic w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD"><div class="nm-5"><div class="side-list-title">栏目导航</div><ul class="side-list"><li class=""><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/news/category/15/">学院要问</a></li><li class="actived"><a href="';
+echo 's/news/category/15/">学院要闻</a></li><li class="actived"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
 echo 's/announcements/">通知公告</a></li><li class=""><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
