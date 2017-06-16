@@ -1,0 +1,71 @@
+/*!
+ * Interblocks Framework Source Code
+ *
+ * class data.Component
+ *
+ * Date 2017-04-06
+ */
+;
+iBlock([
+    '$_/util/obj.xtd',
+    '$_/data/hash.xtd'
+], function(pandora, global, undefined) {
+    var _ = pandora,
+        declare = pandora.declareClass,
+        cache = pandora.locker,
+        document = global.document,
+        console = global.console,
+        location = global.location;
+
+    var data = {};
+
+    declare('data.Storage', {
+        _init: function(name) {
+            if (name && (typeof name === 'string')) {
+                this.id = _.data.hash.md5.pseudoIdentity(name);
+            } else {
+                this.id = new _.Identifier(name, 1).toString();
+            }
+            try {
+                data[this.id] = global.JSON.parse(localStorage[this.id]);
+                this.length = _.util.obj.length(data[this.id], true);
+            } catch (e) {
+                data[this.id] = {};
+                localStorage[this.id] = '{}';
+                this.length = 0;
+            }
+            return this;
+        },
+        set: function(key, value) {
+            if (key && typeof key === 'string') {
+                if (value === undefined) {
+                    if (data[this.id].hasOwnProperty(key)) {
+                        delete data[this.id][key];
+                        localStorage[this.id] = global.JSON.stringify(data[this.id]);
+                        this.length = _.util.obj.length(data[this.id], true);
+                    }
+                } else {
+                    data[this.id][key] = value;
+                    localStorage[this.id] = global.JSON.stringify(data[this.id]);
+                    this.length = _.util.obj.length(data[this.id], true);
+                }
+            }
+            return this;
+        },
+        get: function(key) {
+            if (key === undefined) {
+                return data[this.id];
+            }
+            if (key && typeof key === 'string') {
+                if (data[this.id].hasOwnProperty(key)) {
+                    return data[this.id][key];
+                }
+            }
+            return undefined;
+        },
+        clear: function() {
+            data[this.id] = {};
+            localStorage[this.id] = '{}';
+        }
+    });
+});

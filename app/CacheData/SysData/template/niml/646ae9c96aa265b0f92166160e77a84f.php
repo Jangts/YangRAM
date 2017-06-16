@@ -25,7 +25,7 @@ echo 's/chuangs/category/26/">品牌活动</a></li></ul></div><div class="nm-1">
 echo $REQUEST->REST_HANDLER_DIR;
 echo 's/chuangs/">创新创业</a><i>/</i><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/students/category/30/">典型培育</a></span></header><div class="ic blank-10"></div><ul id="mylist" class="ic listview media-list teachers" data-ic-auto="true" data-list-cols="3">';
+echo 's/students/category/31/">双创典型</a></span></header><div class="ic blank-10"></div><ul id="mylist" class="ic listview media-list teachers" data-ic-auto="true" data-list-cols="3">';
 foreach($___LIST as $index => $item){
 	echo '<li class="list-item content pane top-bottom"><figure class="list-image"><a href="';
 	echo $REQUEST->REST_HANDLER_DIR;

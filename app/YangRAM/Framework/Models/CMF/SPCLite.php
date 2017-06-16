@@ -10,7 +10,6 @@ use RDO;
 use CM\SPC\Preset;
 use CM\SPC\Category;
 
-
 /**
  *	Special Use Content Light Model
  *	专用内容轻模型
@@ -89,7 +88,10 @@ final class SPCLite extends BaseModel {
 
 	private static function checkSubmitData($post){
         $post = self::checkStatus($post);
-        $form = array_map('htmlspecialchars', $post);
+		$form = array_map(function($val){
+            $val = SPCLite::replaceroot($val);
+            return htmlspecialchars($val, ENT_COMPAT, 'UTF-8');
+        }, $post);
         $intersect = array_intersect_key($form, self::$defaults);
         $intersect["KEY_MTIME"] = DATETIME;
         $intersect["TAGS"] = trim(strip_tags($intersect["TAGS"]));
@@ -239,7 +241,7 @@ final class SPCLite extends BaseModel {
 		$result = self::sendQS2RDO(self::$rdo, $preset, $category, $status, $orderby, $start, $num)->select();
     	if($result){
 			if($format===Model::LIST_AS_ARR){
-                return $result->toArray();
+                return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
             }
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -414,7 +416,7 @@ final class SPCLite extends BaseModel {
 		$result = self::querySelect(self::$rdo, $require, $orderby, $range);
         if($result){
 			if($format===Model::LIST_AS_ARR){
-                return $result->toArray();
+                return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
             }
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -466,14 +468,14 @@ final class SPCLite extends BaseModel {
 		if(is_numeric($id)){
 			if($id){
 				if($data = self::$storage->setBefore('spcnts/bases/')->take($id)){
-                	$this->data = $data;
+                	$this->data = array_map(array('CM\SPCLite', 'restoreroot'), $data);
 					$this->posted = $this->data;
 					self::$memory[$id] = $this->data;
 					$this->_hash = $this->data['ID'];
             	}else{
 					$result = self::$rdo->requiring()->where('ID', $id)->take(1)->select();
 					if($result&&$data = $result->getRow()){
-						$this->data = $data;
+						$this->data = array_map(array('CM\SPCLite', 'restoreroot'), $data);
 						$this->posted = $this->data;
 						self::$storage->store($id, $data);
 						self::$memory[$id] = $this->data;

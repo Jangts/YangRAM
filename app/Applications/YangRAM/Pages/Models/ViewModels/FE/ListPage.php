@@ -53,7 +53,7 @@ class ListPage extends \System\NIDO\DataObject {
 				str_replace('{@type}', $preset->name, $title),
 				str_replace('{@type}', $preset->name, $keywords),
 				str_replace('{@type}', $preset->name, $description),
-				$preset_alias, $category_id, $preset, $category, $contents,
+				$take, $preset_alias, $category_id, $preset, $category, $contents,
 				'state'	=>	true
 			];
 		}elseif(is_string($preset_alias)){
@@ -97,5 +97,6 @@ class ListPage extends \System\NIDO\DataObject {
 		$renderer->assign('___CATEGORY', $category);
 		$renderer->assign('___LIST', $contents);
 		$renderer->assign('___TOTAL', count($contents));
+		Pager::config('CPAGE', $take[0]);
 	}
 }

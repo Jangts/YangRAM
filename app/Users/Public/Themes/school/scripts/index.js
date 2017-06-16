@@ -53,7 +53,7 @@ iBlock(includes, function(_, global, undefined) {
             },
             jyxx: {
                 set_alias: 'jiuyes',
-                url: '/o/contents/spc/get_list_by_preset/jiuyes/2/0/6/'
+                url: '/o/contents/spc/get_list_by_cat/4/2/0/6/'
             },
             xyzj: {
                 set_alias: 'stunews',

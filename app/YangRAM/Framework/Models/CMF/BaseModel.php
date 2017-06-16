@@ -11,6 +11,14 @@ abstract class BaseModel extends DataObject {
 		return [];
 	}
 
+    public static function replaceroot($str){
+		return str_replace(strtolower(__DIR), '{{@root_url}}', $str);
+	}
+
+	public static function restoreroot($str){
+		return str_replace('{{@root_url}}', strtolower(__DIR), $str);
+	}
+
 	protected static function querySelect($rdo, $require, $orderby, $range){
 		if(is_numeric($require)){
             $range = $require;

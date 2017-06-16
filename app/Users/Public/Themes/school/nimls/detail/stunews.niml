@@ -15,7 +15,15 @@
             <div class="nm-15 main-container">
                 <div class="ic blank-10"></div>
                 <header><span class="dir">
-                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/">校友之家</a></span>
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/stunews/">校友之家</a>
+                    <i>/</i>
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/stunews/category/{{$___CATEGORY_ID}}/">
+                        <switch name="$___CATEGORY_ID">
+                            <case value="27">学院校友会</case>
+                            <case value="28">校友会快讯</case>
+                            <case value="29">校友捐赠</case> 
+                        </switch>
+                    </a></span>
                 </header>
                 <article class="news-content">
                     <header>{{$___TITLE}}</header>
@@ -48,8 +56,21 @@
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
-                    <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/">校友之家</a></li>
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/">创业之星</a></li>
+                    <li class="{{$__Columns[2]='category27'=>actived}}">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/27/">学院校友会</a>
+                    </li>
+                    <li class="{{$__Columns[2]='category28'=>actived}}">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/28/">校友会快讯</a>
+                    </li>
+                    <li class="{{$__Columns[2]='category32'=>actived}}">
+                        <a href="{{$REQUEST.DIR}}s/students/category/32/">优秀校友</a>
+                    </li>
+                    <li class="{{$__Columns[2]='category29'=>actived}}">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/29/">校友捐赠</a>
+                    </li>
+                    <li class="{{$__Columns[1]='contact'=>actived}}">
+                        <a href="{{$REQUEST.DIR}}contact/">联系我们</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -58,4 +79,4 @@
     {{@includes/footer.niml}}
 </body>
 
-</html>
+</html>s

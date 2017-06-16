@@ -131,7 +131,7 @@ final class GEC extends BaseR3Model {
         $result = $rdo->select();
         if($result){
 			if($format===Model::LIST_AS_ARR){
-                return $result->toArray();
+                return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
             }
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){

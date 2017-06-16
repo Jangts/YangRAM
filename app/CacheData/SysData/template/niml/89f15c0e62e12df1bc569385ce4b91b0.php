@@ -54,7 +54,7 @@ foreach($___LIST as $index => $item){
 	echo mb_substr($item->TITLE,0,23);
 	echo ''.PHP_EOL.'</a></h4></div></li>';
 }
-echo '</ul><ul class="ic listview page-list spills red">';
+echo '</ul><ul class="ic listview page-list spills darkred">';
 $pages =\Library\ect\Pager::getPageListDataByCount(9);
 echo '<li class="list-item" onclick="window.location.href=\'?page=';
 echo $pages["f"];

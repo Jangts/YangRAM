@@ -132,7 +132,7 @@ abstract class BaseR3Model extends BaseModel {
         $result = self::querySelect($rdo, $require, $orderby, $range);
         if($result){
             if($format===BaseModel::LIST_AS_ARR){
-                return $result->toArray();
+                return array_map(array('AF\Models\BaseModel', 'restoreroot'), $result->toArray());
             }
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -288,6 +288,7 @@ abstract class BaseR3Model extends BaseModel {
             $this->_hash = $this->data[$this->pk];
         }
         if($posted){
+            $this->data = array_map(array('AF\Models\BaseModel', 'restoreroot'), $this->data);
             $this->posted = $this->data;
         }
         return $this;
@@ -319,6 +320,7 @@ abstract class BaseR3Model extends BaseModel {
             if(count($data)==0){
                 return $this;
             }
+            $data = array_map(array('AF\Models\BaseModel', 'replaceroot'), $data);
             if($rdo->requiring()->where($this->pk, $this->_hash)->update($data)){
                 foreach ($data as $key => $val) {
                     $this->posted[$key] = $val;
@@ -330,6 +332,7 @@ abstract class BaseR3Model extends BaseModel {
             if(static::$aikey) {
                 unset($this->data[static::$aikey]);
             }
+            $data = array_map(array('AF\Models\BaseModel', 'replaceroot'), $this->data);
             if(!$rdo->insert($this->data)){
                 return false;
             }

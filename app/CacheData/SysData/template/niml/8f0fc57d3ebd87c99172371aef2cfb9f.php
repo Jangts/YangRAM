@@ -78,7 +78,7 @@ echo 's/chuangs/">创新创业</span><span class="tab-anchor" data-tab-index="1"
 echo $REQUEST->DIR;
 echo 's/fazhans/">转型发展</span><i class="see-more"></i></header><ul class="cxcy tab-section actived"></ul><ul class="zxfz tab-section"></ul></div></div><div class="nm-4"><div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived"><header class="tabanchors"><span class="tab-anchor actived" data-tab-index="0" data-src="';
 echo $REQUEST->DIR;
-echo 's/jiuyes/">就业信息</span><span class="tab-anchor" data-tab-index="1" data-src="';
+echo 's/enrollment/category/4/">就业信息</span><span class="tab-anchor" data-tab-index="1" data-src="';
 echo $REQUEST->DIR;
 echo 's/stunews/">校友之家</span><i class="see-more"></i></header><ul class="jyxx tab-section actived"></ul><ul class="xyzj tab-section"></ul></div></div></section><section class="photos"><header class="photos-title"><h3 class="">建筑印象 SCENERY</h3><a href="';
 echo $REQUEST->DIR;

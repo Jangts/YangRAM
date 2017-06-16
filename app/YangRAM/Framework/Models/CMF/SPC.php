@@ -45,6 +45,7 @@ final class SPC extends BaseModel {
         $defaults = SPC\Defaults::byType($post['SET_ALIAS'])->values('defaults');
         $extends = SPC\Defaults::byType($post['SET_ALIAS'])->values('extends');
         $form = array_map(function($val){
+            $val = SPCLite::replaceroot($val);
             return htmlspecialchars($val, ENT_COMPAT, 'UTF-8');
         }, $post);
         $intersect_base = array_intersect_key($form, $defaults);
@@ -202,7 +203,7 @@ final class SPC extends BaseModel {
             
             if($result){
 			    if($format===Model::LIST_AS_ARR){
-                    return $result->toArray();
+                    return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
                 }
                 $pdos = $result->getPDOStatement();
                 while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -228,7 +229,7 @@ final class SPC extends BaseModel {
         if($hash){
             if($rows = self::$storage->take($hash)){
                 if($format===Model::LIST_AS_ARR){
-                    return $rows;
+                    return array_map(array('CM\SPCLite', 'restoreroot'), $rows);
                 }else{
                     $objs = [];
                     foreach($rows as $row){
@@ -244,10 +245,11 @@ final class SPC extends BaseModel {
         if($format===Model::LIST_AS_ARR){
             foreach($bases as $base){
                 if($xtnd = self::extended($base['ID'], $base['SET_ALIAS'])){
-                    $objs[] = array_merge($base, $xtnd);
-                }
-                if($hash){
-                    self::$storage->store($hash, $objs);
+                    $data = array_merge($base, $xtnd);
+                    $objs[] = array_map(array('CM\SPCLite', 'restoreroot'), $data);
+                    if($hash){
+                        self::$storage->store($hash, $data);
+                    }
                 }
             }
         }else{
@@ -273,7 +275,7 @@ final class SPC extends BaseModel {
         if($format===Model::LIST_AS_ARR){
             foreach($bases as $base){
                 if($xtnd = self::extended($base['ID'], $base['SET_ALIAS'])){
-                    $objs[] = array_merge($base, $xtnd);
+                    $objs[] = array_map(array('CM\SPCLite', 'restoreroot'), array_merge($base, $xtnd));
                 }
             }
         }else{
@@ -359,7 +361,7 @@ final class SPC extends BaseModel {
     }
     
     protected function build($data, $posted = false){
-        $this->data = $data;
+        $this->data = array_map(array('CM\SPCLite', 'restoreroot'), $data);
         if(isset($this->data['ID'])){
             $this->_hash = $this->data['ID'];
         }

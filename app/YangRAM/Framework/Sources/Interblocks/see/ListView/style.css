@@ -90,6 +90,16 @@
     background-color: transparent;
     border: 1px solid #d23;
     color: #d23; }
+  .ic.listview .list-item > i.darkred,
+  .ic.listview .list-item .list-title > i.darkred,
+  .ic.listview .list-item .list-icon.darkred {
+    background-color: #600; }
+  .ic.listview .list-item > i.hollow.darkred,
+  .ic.listview .list-item .list-title > i.hollow.darkred,
+  .ic.listview .list-item .list-icon.hollow.darkred {
+    background-color: transparent;
+    border: 1px solid #600;
+    color: #600; }
   .ic.listview .list-item > i.orange,
   .ic.listview .list-item .list-title > i.orange,
   .ic.listview .list-item .list-icon.orange {
@@ -120,6 +130,16 @@
     background-color: transparent;
     border: 1px solid #2c4;
     color: #2c4; }
+  .ic.listview .list-item > i.darkgreen,
+  .ic.listview .list-item .list-title > i.darkgreen,
+  .ic.listview .list-item .list-icon.darkgreen {
+    background-color: #363; }
+  .ic.listview .list-item > i.hollow.darkgreen,
+  .ic.listview .list-item .list-title > i.hollow.darkgreen,
+  .ic.listview .list-item .list-icon.hollow.darkgreen {
+    background-color: transparent;
+    border: 1px solid #363;
+    color: #363; }
   .ic.listview .list-item > i.cyan,
   .ic.listview .list-item .list-title > i.cyan,
   .ic.listview .list-item .list-icon.cyan {
@@ -140,6 +160,16 @@
     background-color: transparent;
     border: 1px solid #09f;
     color: #09f; }
+  .ic.listview .list-item > i.darkblue,
+  .ic.listview .list-item .list-title > i.darkblue,
+  .ic.listview .list-item .list-icon.darkblue {
+    background-color: #036; }
+  .ic.listview .list-item > i.hollow.darkblue,
+  .ic.listview .list-item .list-title > i.hollow.darkblue,
+  .ic.listview .list-item .list-icon.hollow.darkblue {
+    background-color: transparent;
+    border: 1px solid #036;
+    color: #036; }
   .ic.listview .list-item > i.purple,
   .ic.listview .list-item .list-title > i.purple,
   .ic.listview .list-item .list-icon.purple {
@@ -160,6 +190,36 @@
     background-color: transparent;
     border: 1px solid #000;
     color: #000; }
+  .ic.listview .list-item > i.lightgray,
+  .ic.listview .list-item .list-title > i.lightgray,
+  .ic.listview .list-item .list-icon.lightgray {
+    background-color: #ddd; }
+  .ic.listview .list-item > i.hollow.lightgray,
+  .ic.listview .list-item .list-title > i.hollow.lightgray,
+  .ic.listview .list-item .list-icon.hollow.lightgray {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #ddd; }
+  .ic.listview .list-item > i.gray,
+  .ic.listview .list-item .list-title > i.gray,
+  .ic.listview .list-item .list-icon.gray {
+    background-color: #999; }
+  .ic.listview .list-item > i.hollow.gray,
+  .ic.listview .list-item .list-title > i.hollow.gray,
+  .ic.listview .list-item .list-icon.hollow.gray {
+    background-color: transparent;
+    border: 1px solid #999;
+    color: #999; }
+  .ic.listview .list-item > i.dark-gray,
+  .ic.listview .list-item .list-title > i.dark-gray,
+  .ic.listview .list-item .list-icon.dark-gray {
+    background-color: #666; }
+  .ic.listview .list-item > i.hollow.dark-gray,
+  .ic.listview .list-item .list-title > i.hollow.dark-gray,
+  .ic.listview .list-item .list-icon.hollow.dark-gray {
+    background-color: transparent;
+    border: 1px solid #666;
+    color: #666; }
   .ic.listview .list-item > i.white,
   .ic.listview .list-item .list-title > i.white,
   .ic.listview .list-item .list-icon.white {
@@ -786,6 +846,16 @@
 .ic.listview.page-list.spills .list-item.red.actived {
   background-color: #d23;
   color: #fff; }
+.ic.listview.page-list.blocks .list-item.darkred,
+.ic.listview.page-list.pills .list-item.darkred,
+.ic.listview.page-list.spills .list-item.darkred {
+  border: 1px solid #600;
+  color: #600; }
+.ic.listview.page-list.blocks .list-item.darkred.actived,
+.ic.listview.page-list.pills .list-item.darkred.actived,
+.ic.listview.page-list.spills .list-item.darkred.actived {
+  background-color: #600;
+  color: #fff; }
 .ic.listview.page-list.blocks .list-item.orange,
 .ic.listview.page-list.pills .list-item.orange,
 .ic.listview.page-list.spills .list-item.orange {
@@ -816,6 +886,16 @@
 .ic.listview.page-list.spills .list-item.green.actived {
   background-color: #2c4;
   color: #fff; }
+.ic.listview.page-list.blocks .list-item.darkgreen,
+.ic.listview.page-list.pills .list-item.darkgreen,
+.ic.listview.page-list.spills .list-item.darkgreen {
+  border: 1px solid #363;
+  color: #363; }
+.ic.listview.page-list.blocks .list-item.darkgreen.actived,
+.ic.listview.page-list.pills .list-item.darkgreen.actived,
+.ic.listview.page-list.spills .list-item.darkgreen.actived {
+  background-color: #363;
+  color: #fff; }
 .ic.listview.page-list.blocks .list-item.cyan,
 .ic.listview.page-list.pills .list-item.cyan,
 .ic.listview.page-list.spills .list-item.cyan {
@@ -836,6 +916,16 @@
 .ic.listview.page-list.spills .list-item.blue.actived {
   background-color: #09f;
   color: #fff; }
+.ic.listview.page-list.blocks .list-item.darkblue,
+.ic.listview.page-list.pills .list-item.darkblue,
+.ic.listview.page-list.spills .list-item.darkblue {
+  border: 1px solid #036;
+  color: #036; }
+.ic.listview.page-list.blocks .list-item.darkblue.actived,
+.ic.listview.page-list.pills .list-item.darkblue.actived,
+.ic.listview.page-list.spills .list-item.darkblue.actived {
+  background-color: #036;
+  color: #fff; }
 .ic.listview.page-list.blocks .list-item.purple,
 .ic.listview.page-list.pills .list-item.purple,
 .ic.listview.page-list.spills .list-item.purple {
@@ -855,6 +945,36 @@
 .ic.listview.page-list.pills .list-item.black.actived,
 .ic.listview.page-list.spills .list-item.black.actived {
   background-color: #000;
+  color: #fff; }
+.ic.listview.page-list.blocks .list-item.lightgray,
+.ic.listview.page-list.pills .list-item.lightgray,
+.ic.listview.page-list.spills .list-item.lightgray {
+  border: 1px solid #ddd;
+  color: #ddd; }
+.ic.listview.page-list.blocks .list-item.lightgray.actived,
+.ic.listview.page-list.pills .list-item.lightgray.actived,
+.ic.listview.page-list.spills .list-item.lightgray.actived {
+  background-color: #ddd;
+  color: #fff; }
+.ic.listview.page-list.blocks .list-item.gray,
+.ic.listview.page-list.pills .list-item.gray,
+.ic.listview.page-list.spills .list-item.gray {
+  border: 1px solid #999;
+  color: #999; }
+.ic.listview.page-list.blocks .list-item.gray.actived,
+.ic.listview.page-list.pills .list-item.gray.actived,
+.ic.listview.page-list.spills .list-item.gray.actived {
+  background-color: #999;
+  color: #fff; }
+.ic.listview.page-list.blocks .list-item.dark-gray,
+.ic.listview.page-list.pills .list-item.dark-gray,
+.ic.listview.page-list.spills .list-item.dark-gray {
+  border: 1px solid #666;
+  color: #666; }
+.ic.listview.page-list.blocks .list-item.dark-gray.actived,
+.ic.listview.page-list.pills .list-item.dark-gray.actived,
+.ic.listview.page-list.spills .list-item.dark-gray.actived {
+  background-color: #666;
   color: #fff; }
 .ic.listview.page-list.blocks .list-item.white,
 .ic.listview.page-list.pills .list-item.white,
@@ -909,6 +1029,16 @@
 .ic.listview.page-list.train .list-item.red.actived {
   background-color: #d23;
   color: #fff; }
+.ic.listview.page-list.train .list-item.darkred {
+  border-top: 1px solid #600;
+  border-right: 1px solid #600;
+  border-bottom: 1px solid #600;
+  color: #600; }
+.ic.listview.page-list.train .list-item.darkred:first-child {
+  border-left: 1px solid #600; }
+.ic.listview.page-list.train .list-item.darkred.actived {
+  background-color: #600;
+  color: #fff; }
 .ic.listview.page-list.train .list-item.orange {
   border-top: 1px solid #f52;
   border-right: 1px solid #f52;
@@ -939,6 +1069,16 @@
 .ic.listview.page-list.train .list-item.green.actived {
   background-color: #2c4;
   color: #fff; }
+.ic.listview.page-list.train .list-item.darkgreen {
+  border-top: 1px solid #363;
+  border-right: 1px solid #363;
+  border-bottom: 1px solid #363;
+  color: #363; }
+.ic.listview.page-list.train .list-item.darkgreen:first-child {
+  border-left: 1px solid #363; }
+.ic.listview.page-list.train .list-item.darkgreen.actived {
+  background-color: #363;
+  color: #fff; }
 .ic.listview.page-list.train .list-item.cyan {
   border-top: 1px solid #09b;
   border-right: 1px solid #09b;
@@ -959,6 +1099,16 @@
 .ic.listview.page-list.train .list-item.blue.actived {
   background-color: #09f;
   color: #fff; }
+.ic.listview.page-list.train .list-item.darkblue {
+  border-top: 1px solid #036;
+  border-right: 1px solid #036;
+  border-bottom: 1px solid #036;
+  color: #036; }
+.ic.listview.page-list.train .list-item.darkblue:first-child {
+  border-left: 1px solid #036; }
+.ic.listview.page-list.train .list-item.darkblue.actived {
+  background-color: #036;
+  color: #fff; }
 .ic.listview.page-list.train .list-item.purple {
   border-top: 1px solid #c2a;
   border-right: 1px solid #c2a;
@@ -978,6 +1128,36 @@
   border-left: 1px solid #000; }
 .ic.listview.page-list.train .list-item.black.actived {
   background-color: #000;
+  color: #fff; }
+.ic.listview.page-list.train .list-item.lightgray {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  color: #ddd; }
+.ic.listview.page-list.train .list-item.lightgray:first-child {
+  border-left: 1px solid #ddd; }
+.ic.listview.page-list.train .list-item.lightgray.actived {
+  background-color: #ddd;
+  color: #fff; }
+.ic.listview.page-list.train .list-item.gray {
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  color: #999; }
+.ic.listview.page-list.train .list-item.gray:first-child {
+  border-left: 1px solid #999; }
+.ic.listview.page-list.train .list-item.gray.actived {
+  background-color: #999;
+  color: #fff; }
+.ic.listview.page-list.train .list-item.dark-gray {
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+  color: #666; }
+.ic.listview.page-list.train .list-item.dark-gray:first-child {
+  border-left: 1px solid #666; }
+.ic.listview.page-list.train .list-item.dark-gray.actived {
+  background-color: #666;
   color: #fff; }
 .ic.listview.page-list.train .list-item.white {
   border-top: 1px solid #fff;
@@ -1010,6 +1190,28 @@
   border-left: 1px solid #d23; }
 .ic.listview.page-list.train.red .list-item.actived {
   background-color: #d23;
+  color: #fff; }
+
+.ic.listview.page-list.blocks.darkred .list-item,
+.ic.listview.page-list.pills.darkred .list-item,
+.ic.listview.page-list.spills.darkred .list-item {
+  border: 1px solid #600;
+  color: #600; }
+.ic.listview.page-list.blocks.darkred .list-item.actived,
+.ic.listview.page-list.pills.darkred .list-item.actived,
+.ic.listview.page-list.spills.darkred .list-item.actived {
+  background-color: #600;
+  color: #fff; }
+
+.ic.listview.page-list.train.darkred .list-item {
+  border-top: 1px solid #600;
+  border-right: 1px solid #600;
+  border-bottom: 1px solid #600;
+  color: #600; }
+.ic.listview.page-list.train.darkred .list-item:first-child {
+  border-left: 1px solid #600; }
+.ic.listview.page-list.train.darkred .list-item.actived {
+  background-color: #600;
   color: #fff; }
 
 .ic.listview.page-list.blocks.orange .list-item,
@@ -1078,6 +1280,28 @@
   background-color: #2c4;
   color: #fff; }
 
+.ic.listview.page-list.blocks.darkgreen .list-item,
+.ic.listview.page-list.pills.darkgreen .list-item,
+.ic.listview.page-list.spills.darkgreen .list-item {
+  border: 1px solid #363;
+  color: #363; }
+.ic.listview.page-list.blocks.darkgreen .list-item.actived,
+.ic.listview.page-list.pills.darkgreen .list-item.actived,
+.ic.listview.page-list.spills.darkgreen .list-item.actived {
+  background-color: #363;
+  color: #fff; }
+
+.ic.listview.page-list.train.darkgreen .list-item {
+  border-top: 1px solid #363;
+  border-right: 1px solid #363;
+  border-bottom: 1px solid #363;
+  color: #363; }
+.ic.listview.page-list.train.darkgreen .list-item:first-child {
+  border-left: 1px solid #363; }
+.ic.listview.page-list.train.darkgreen .list-item.actived {
+  background-color: #363;
+  color: #fff; }
+
 .ic.listview.page-list.blocks.cyan .list-item,
 .ic.listview.page-list.pills.cyan .list-item,
 .ic.listview.page-list.spills.cyan .list-item {
@@ -1122,6 +1346,28 @@
   background-color: #09f;
   color: #fff; }
 
+.ic.listview.page-list.blocks.darkblue .list-item,
+.ic.listview.page-list.pills.darkblue .list-item,
+.ic.listview.page-list.spills.darkblue .list-item {
+  border: 1px solid #036;
+  color: #036; }
+.ic.listview.page-list.blocks.darkblue .list-item.actived,
+.ic.listview.page-list.pills.darkblue .list-item.actived,
+.ic.listview.page-list.spills.darkblue .list-item.actived {
+  background-color: #036;
+  color: #fff; }
+
+.ic.listview.page-list.train.darkblue .list-item {
+  border-top: 1px solid #036;
+  border-right: 1px solid #036;
+  border-bottom: 1px solid #036;
+  color: #036; }
+.ic.listview.page-list.train.darkblue .list-item:first-child {
+  border-left: 1px solid #036; }
+.ic.listview.page-list.train.darkblue .list-item.actived {
+  background-color: #036;
+  color: #fff; }
+
 .ic.listview.page-list.blocks.purple .list-item,
 .ic.listview.page-list.pills.purple .list-item,
 .ic.listview.page-list.spills.purple .list-item {
@@ -1164,6 +1410,72 @@
   border-left: 1px solid #000; }
 .ic.listview.page-list.train.black .list-item.actived {
   background-color: #000;
+  color: #fff; }
+
+.ic.listview.page-list.blocks.lightgray .list-item,
+.ic.listview.page-list.pills.lightgray .list-item,
+.ic.listview.page-list.spills.lightgray .list-item {
+  border: 1px solid #ddd;
+  color: #ddd; }
+.ic.listview.page-list.blocks.lightgray .list-item.actived,
+.ic.listview.page-list.pills.lightgray .list-item.actived,
+.ic.listview.page-list.spills.lightgray .list-item.actived {
+  background-color: #ddd;
+  color: #fff; }
+
+.ic.listview.page-list.train.lightgray .list-item {
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  color: #ddd; }
+.ic.listview.page-list.train.lightgray .list-item:first-child {
+  border-left: 1px solid #ddd; }
+.ic.listview.page-list.train.lightgray .list-item.actived {
+  background-color: #ddd;
+  color: #fff; }
+
+.ic.listview.page-list.blocks.gray .list-item,
+.ic.listview.page-list.pills.gray .list-item,
+.ic.listview.page-list.spills.gray .list-item {
+  border: 1px solid #999;
+  color: #999; }
+.ic.listview.page-list.blocks.gray .list-item.actived,
+.ic.listview.page-list.pills.gray .list-item.actived,
+.ic.listview.page-list.spills.gray .list-item.actived {
+  background-color: #999;
+  color: #fff; }
+
+.ic.listview.page-list.train.gray .list-item {
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+  color: #999; }
+.ic.listview.page-list.train.gray .list-item:first-child {
+  border-left: 1px solid #999; }
+.ic.listview.page-list.train.gray .list-item.actived {
+  background-color: #999;
+  color: #fff; }
+
+.ic.listview.page-list.blocks.dark-gray .list-item,
+.ic.listview.page-list.pills.dark-gray .list-item,
+.ic.listview.page-list.spills.dark-gray .list-item {
+  border: 1px solid #666;
+  color: #666; }
+.ic.listview.page-list.blocks.dark-gray .list-item.actived,
+.ic.listview.page-list.pills.dark-gray .list-item.actived,
+.ic.listview.page-list.spills.dark-gray .list-item.actived {
+  background-color: #666;
+  color: #fff; }
+
+.ic.listview.page-list.train.dark-gray .list-item {
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  border-bottom: 1px solid #666;
+  color: #666; }
+.ic.listview.page-list.train.dark-gray .list-item:first-child {
+  border-left: 1px solid #666; }
+.ic.listview.page-list.train.dark-gray .list-item.actived {
+  background-color: #666;
   color: #fff; }
 
 .ic.listview.page-list.blocks.white .list-item,
@@ -1261,6 +1573,26 @@
   .ic.listview.tags-list.pills .list-item.red.selected > i.list-tips {
     background-color: #fff;
     color: #0cf; }
+.ic.listview.tags-list.blocks .list-item.darkred,
+.ic.listview.tags-list.pills .list-item.darkred {
+  border: 1px solid #600;
+  color: #600; }
+  .ic.listview.tags-list.blocks .list-item.darkred > i,
+  .ic.listview.tags-list.blocks .list-item.darkred > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.darkred > i,
+  .ic.listview.tags-list.pills .list-item.darkred > i.list-tips {
+    background-color: #600;
+    color: #fff; }
+.ic.listview.tags-list.blocks .list-item.darkred.selected,
+.ic.listview.tags-list.pills .list-item.darkred.selected {
+  background-color: #600;
+  color: #fff; }
+  .ic.listview.tags-list.blocks .list-item.darkred.selected > i,
+  .ic.listview.tags-list.blocks .list-item.darkred.selected > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.darkred.selected > i,
+  .ic.listview.tags-list.pills .list-item.darkred.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
 .ic.listview.tags-list.blocks .list-item.orange,
 .ic.listview.tags-list.pills .list-item.orange {
   border: 1px solid #f52;
@@ -1321,6 +1653,26 @@
   .ic.listview.tags-list.pills .list-item.green.selected > i.list-tips {
     background-color: #fff;
     color: #0cf; }
+.ic.listview.tags-list.blocks .list-item.darkgreen,
+.ic.listview.tags-list.pills .list-item.darkgreen {
+  border: 1px solid #363;
+  color: #363; }
+  .ic.listview.tags-list.blocks .list-item.darkgreen > i,
+  .ic.listview.tags-list.blocks .list-item.darkgreen > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.darkgreen > i,
+  .ic.listview.tags-list.pills .list-item.darkgreen > i.list-tips {
+    background-color: #363;
+    color: #fff; }
+.ic.listview.tags-list.blocks .list-item.darkgreen.selected,
+.ic.listview.tags-list.pills .list-item.darkgreen.selected {
+  background-color: #363;
+  color: #fff; }
+  .ic.listview.tags-list.blocks .list-item.darkgreen.selected > i,
+  .ic.listview.tags-list.blocks .list-item.darkgreen.selected > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.darkgreen.selected > i,
+  .ic.listview.tags-list.pills .list-item.darkgreen.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
 .ic.listview.tags-list.blocks .list-item.cyan,
 .ic.listview.tags-list.pills .list-item.cyan {
   border: 1px solid #09b;
@@ -1361,6 +1713,26 @@
   .ic.listview.tags-list.pills .list-item.blue.selected > i.list-tips {
     background-color: #fff;
     color: #0cf; }
+.ic.listview.tags-list.blocks .list-item.darkblue,
+.ic.listview.tags-list.pills .list-item.darkblue {
+  border: 1px solid #036;
+  color: #036; }
+  .ic.listview.tags-list.blocks .list-item.darkblue > i,
+  .ic.listview.tags-list.blocks .list-item.darkblue > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.darkblue > i,
+  .ic.listview.tags-list.pills .list-item.darkblue > i.list-tips {
+    background-color: #036;
+    color: #fff; }
+.ic.listview.tags-list.blocks .list-item.darkblue.selected,
+.ic.listview.tags-list.pills .list-item.darkblue.selected {
+  background-color: #036;
+  color: #fff; }
+  .ic.listview.tags-list.blocks .list-item.darkblue.selected > i,
+  .ic.listview.tags-list.blocks .list-item.darkblue.selected > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.darkblue.selected > i,
+  .ic.listview.tags-list.pills .list-item.darkblue.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
 .ic.listview.tags-list.blocks .list-item.purple,
 .ic.listview.tags-list.pills .list-item.purple {
   border: 1px solid #c2a;
@@ -1399,6 +1771,66 @@
   .ic.listview.tags-list.blocks .list-item.black.selected > i.list-tips,
   .ic.listview.tags-list.pills .list-item.black.selected > i,
   .ic.listview.tags-list.pills .list-item.black.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+.ic.listview.tags-list.blocks .list-item.lightgray,
+.ic.listview.tags-list.pills .list-item.lightgray {
+  border: 1px solid #ddd;
+  color: #ddd; }
+  .ic.listview.tags-list.blocks .list-item.lightgray > i,
+  .ic.listview.tags-list.blocks .list-item.lightgray > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.lightgray > i,
+  .ic.listview.tags-list.pills .list-item.lightgray > i.list-tips {
+    background-color: #ddd;
+    color: #fff; }
+.ic.listview.tags-list.blocks .list-item.lightgray.selected,
+.ic.listview.tags-list.pills .list-item.lightgray.selected {
+  background-color: #ddd;
+  color: #fff; }
+  .ic.listview.tags-list.blocks .list-item.lightgray.selected > i,
+  .ic.listview.tags-list.blocks .list-item.lightgray.selected > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.lightgray.selected > i,
+  .ic.listview.tags-list.pills .list-item.lightgray.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+.ic.listview.tags-list.blocks .list-item.gray,
+.ic.listview.tags-list.pills .list-item.gray {
+  border: 1px solid #999;
+  color: #999; }
+  .ic.listview.tags-list.blocks .list-item.gray > i,
+  .ic.listview.tags-list.blocks .list-item.gray > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.gray > i,
+  .ic.listview.tags-list.pills .list-item.gray > i.list-tips {
+    background-color: #999;
+    color: #fff; }
+.ic.listview.tags-list.blocks .list-item.gray.selected,
+.ic.listview.tags-list.pills .list-item.gray.selected {
+  background-color: #999;
+  color: #fff; }
+  .ic.listview.tags-list.blocks .list-item.gray.selected > i,
+  .ic.listview.tags-list.blocks .list-item.gray.selected > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.gray.selected > i,
+  .ic.listview.tags-list.pills .list-item.gray.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+.ic.listview.tags-list.blocks .list-item.dark-gray,
+.ic.listview.tags-list.pills .list-item.dark-gray {
+  border: 1px solid #666;
+  color: #666; }
+  .ic.listview.tags-list.blocks .list-item.dark-gray > i,
+  .ic.listview.tags-list.blocks .list-item.dark-gray > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.dark-gray > i,
+  .ic.listview.tags-list.pills .list-item.dark-gray > i.list-tips {
+    background-color: #666;
+    color: #fff; }
+.ic.listview.tags-list.blocks .list-item.dark-gray.selected,
+.ic.listview.tags-list.pills .list-item.dark-gray.selected {
+  background-color: #666;
+  color: #fff; }
+  .ic.listview.tags-list.blocks .list-item.dark-gray.selected > i,
+  .ic.listview.tags-list.blocks .list-item.dark-gray.selected > i.list-tips,
+  .ic.listview.tags-list.pills .list-item.dark-gray.selected > i,
+  .ic.listview.tags-list.pills .list-item.dark-gray.selected > i.list-tips {
     background-color: #fff;
     color: #0cf; }
 .ic.listview.tags-list.blocks .list-item.white,
@@ -1446,6 +1878,27 @@
   .ic.listview.tags-list.blocks.red .list-item.selected > i.list-tips,
   .ic.listview.tags-list.pills.red .list-item.selected > i,
   .ic.listview.tags-list.pills.red .list-item.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+
+.ic.listview.tags-list.blocks.darkred .list-item,
+.ic.listview.tags-list.pills.darkred .list-item {
+  border: 1px solid #600;
+  color: #600; }
+  .ic.listview.tags-list.blocks.darkred .list-item > i,
+  .ic.listview.tags-list.blocks.darkred .list-item > i.list-tips,
+  .ic.listview.tags-list.pills.darkred .list-item > i,
+  .ic.listview.tags-list.pills.darkred .list-item > i.list-tips {
+    background-color: #600;
+    color: #fff; }
+.ic.listview.tags-list.blocks.darkred .list-item.selected,
+.ic.listview.tags-list.pills.darkred .list-item.selected {
+  background-color: #600;
+  color: #fff; }
+  .ic.listview.tags-list.blocks.darkred .list-item.selected > i,
+  .ic.listview.tags-list.blocks.darkred .list-item.selected > i.list-tips,
+  .ic.listview.tags-list.pills.darkred .list-item.selected > i,
+  .ic.listview.tags-list.pills.darkred .list-item.selected > i.list-tips {
     background-color: #fff;
     color: #0cf; }
 
@@ -1512,6 +1965,27 @@
     background-color: #fff;
     color: #0cf; }
 
+.ic.listview.tags-list.blocks.darkgreen .list-item,
+.ic.listview.tags-list.pills.darkgreen .list-item {
+  border: 1px solid #363;
+  color: #363; }
+  .ic.listview.tags-list.blocks.darkgreen .list-item > i,
+  .ic.listview.tags-list.blocks.darkgreen .list-item > i.list-tips,
+  .ic.listview.tags-list.pills.darkgreen .list-item > i,
+  .ic.listview.tags-list.pills.darkgreen .list-item > i.list-tips {
+    background-color: #363;
+    color: #fff; }
+.ic.listview.tags-list.blocks.darkgreen .list-item.selected,
+.ic.listview.tags-list.pills.darkgreen .list-item.selected {
+  background-color: #363;
+  color: #fff; }
+  .ic.listview.tags-list.blocks.darkgreen .list-item.selected > i,
+  .ic.listview.tags-list.blocks.darkgreen .list-item.selected > i.list-tips,
+  .ic.listview.tags-list.pills.darkgreen .list-item.selected > i,
+  .ic.listview.tags-list.pills.darkgreen .list-item.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+
 .ic.listview.tags-list.blocks.cyan .list-item,
 .ic.listview.tags-list.pills.cyan .list-item {
   border: 1px solid #09b;
@@ -1554,6 +2028,27 @@
     background-color: #fff;
     color: #0cf; }
 
+.ic.listview.tags-list.blocks.darkblue .list-item,
+.ic.listview.tags-list.pills.darkblue .list-item {
+  border: 1px solid #036;
+  color: #036; }
+  .ic.listview.tags-list.blocks.darkblue .list-item > i,
+  .ic.listview.tags-list.blocks.darkblue .list-item > i.list-tips,
+  .ic.listview.tags-list.pills.darkblue .list-item > i,
+  .ic.listview.tags-list.pills.darkblue .list-item > i.list-tips {
+    background-color: #036;
+    color: #fff; }
+.ic.listview.tags-list.blocks.darkblue .list-item.selected,
+.ic.listview.tags-list.pills.darkblue .list-item.selected {
+  background-color: #036;
+  color: #fff; }
+  .ic.listview.tags-list.blocks.darkblue .list-item.selected > i,
+  .ic.listview.tags-list.blocks.darkblue .list-item.selected > i.list-tips,
+  .ic.listview.tags-list.pills.darkblue .list-item.selected > i,
+  .ic.listview.tags-list.pills.darkblue .list-item.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+
 .ic.listview.tags-list.blocks.purple .list-item,
 .ic.listview.tags-list.pills.purple .list-item {
   border: 1px solid #c2a;
@@ -1593,6 +2088,69 @@
   .ic.listview.tags-list.blocks.black .list-item.selected > i.list-tips,
   .ic.listview.tags-list.pills.black .list-item.selected > i,
   .ic.listview.tags-list.pills.black .list-item.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+
+.ic.listview.tags-list.blocks.lightgray .list-item,
+.ic.listview.tags-list.pills.lightgray .list-item {
+  border: 1px solid #ddd;
+  color: #ddd; }
+  .ic.listview.tags-list.blocks.lightgray .list-item > i,
+  .ic.listview.tags-list.blocks.lightgray .list-item > i.list-tips,
+  .ic.listview.tags-list.pills.lightgray .list-item > i,
+  .ic.listview.tags-list.pills.lightgray .list-item > i.list-tips {
+    background-color: #ddd;
+    color: #fff; }
+.ic.listview.tags-list.blocks.lightgray .list-item.selected,
+.ic.listview.tags-list.pills.lightgray .list-item.selected {
+  background-color: #ddd;
+  color: #fff; }
+  .ic.listview.tags-list.blocks.lightgray .list-item.selected > i,
+  .ic.listview.tags-list.blocks.lightgray .list-item.selected > i.list-tips,
+  .ic.listview.tags-list.pills.lightgray .list-item.selected > i,
+  .ic.listview.tags-list.pills.lightgray .list-item.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+
+.ic.listview.tags-list.blocks.gray .list-item,
+.ic.listview.tags-list.pills.gray .list-item {
+  border: 1px solid #999;
+  color: #999; }
+  .ic.listview.tags-list.blocks.gray .list-item > i,
+  .ic.listview.tags-list.blocks.gray .list-item > i.list-tips,
+  .ic.listview.tags-list.pills.gray .list-item > i,
+  .ic.listview.tags-list.pills.gray .list-item > i.list-tips {
+    background-color: #999;
+    color: #fff; }
+.ic.listview.tags-list.blocks.gray .list-item.selected,
+.ic.listview.tags-list.pills.gray .list-item.selected {
+  background-color: #999;
+  color: #fff; }
+  .ic.listview.tags-list.blocks.gray .list-item.selected > i,
+  .ic.listview.tags-list.blocks.gray .list-item.selected > i.list-tips,
+  .ic.listview.tags-list.pills.gray .list-item.selected > i,
+  .ic.listview.tags-list.pills.gray .list-item.selected > i.list-tips {
+    background-color: #fff;
+    color: #0cf; }
+
+.ic.listview.tags-list.blocks.dark-gray .list-item,
+.ic.listview.tags-list.pills.dark-gray .list-item {
+  border: 1px solid #666;
+  color: #666; }
+  .ic.listview.tags-list.blocks.dark-gray .list-item > i,
+  .ic.listview.tags-list.blocks.dark-gray .list-item > i.list-tips,
+  .ic.listview.tags-list.pills.dark-gray .list-item > i,
+  .ic.listview.tags-list.pills.dark-gray .list-item > i.list-tips {
+    background-color: #666;
+    color: #fff; }
+.ic.listview.tags-list.blocks.dark-gray .list-item.selected,
+.ic.listview.tags-list.pills.dark-gray .list-item.selected {
+  background-color: #666;
+  color: #fff; }
+  .ic.listview.tags-list.blocks.dark-gray .list-item.selected > i,
+  .ic.listview.tags-list.blocks.dark-gray .list-item.selected > i.list-tips,
+  .ic.listview.tags-list.pills.dark-gray .list-item.selected > i,
+  .ic.listview.tags-list.pills.dark-gray .list-item.selected > i.list-tips {
     background-color: #fff;
     color: #0cf; }
 
@@ -1674,6 +2232,60 @@
   background-color: transparent;
   border: 1px solid #d23;
   color: #d23; }
+.ic.listview.text-list .list-item.topline.darkred,
+.ic.listview.mtext-list .list-item.topline.darkred,
+.ic.listview.media-list .list-item.topline.darkred {
+  border-top: 1px solid #600; }
+.ic.listview.text-list .list-item.underline.darkred,
+.ic.listview.mtext-list .list-item.underline.darkred,
+.ic.listview.media-list .list-item.underline.darkred {
+  border-bottom: 1px solid #600; }
+.ic.listview.text-list .list-item.topline.underline.darkred,
+.ic.listview.mtext-list .list-item.topline.underline.darkred,
+.ic.listview.media-list .list-item.topline.underline.darkred {
+  border-top: 1px solid #600;
+  border-bottom: 1px solid #600; }
+.ic.listview.text-list .list-item.stripe.darkred:nth-child(odd),
+.ic.listview.mtext-list .list-item.stripe.darkred:nth-child(odd),
+.ic.listview.media-list .list-item.stripe.darkred:nth-child(odd) {
+  background-color: #600;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.stripe.darkred:nth-child(even),
+.ic.listview.mtext-list .list-item.stripe.darkred:nth-child(even),
+.ic.listview.media-list .list-item.stripe.darkred:nth-child(even) {
+  background-color: #990000;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.card.darkred,
+.ic.listview.mtext-list .list-item.card.darkred,
+.ic.listview.media-list .list-item.card.darkred {
+  background-color: #600;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.pane.darkred,
+.ic.listview.mtext-list .list-item.pane.darkred,
+.ic.listview.media-list .list-item.pane.darkred {
+  border: 1px solid #600; }
+.ic.listview.text-list > i.darkred,
+.ic.listview.text-list .list-title > i.darkred,
+.ic.listview.text-list .list-icon.darkred,
+.ic.listview.mtext-list > i.darkred,
+.ic.listview.mtext-list .list-title > i.darkred,
+.ic.listview.mtext-list .list-icon.darkred,
+.ic.listview.media-list > i.darkred,
+.ic.listview.media-list .list-title > i.darkred,
+.ic.listview.media-list .list-icon.darkred {
+  background-color: #600; }
+.ic.listview.text-list > i.hollow.darkred,
+.ic.listview.text-list .list-title > i.hollow.darkred,
+.ic.listview.text-list .list-icon.hollow.darkred,
+.ic.listview.mtext-list > i.hollow.darkred,
+.ic.listview.mtext-list .list-title > i.hollow.darkred,
+.ic.listview.mtext-list .list-icon.hollow.darkred,
+.ic.listview.media-list > i.hollow.darkred,
+.ic.listview.media-list .list-title > i.hollow.darkred,
+.ic.listview.media-list .list-icon.hollow.darkred {
+  background-color: transparent;
+  border: 1px solid #600;
+  color: #600; }
 .ic.listview.text-list .list-item.topline.orange,
 .ic.listview.mtext-list .list-item.topline.orange,
 .ic.listview.media-list .list-item.topline.orange {
@@ -1836,6 +2448,60 @@
   background-color: transparent;
   border: 1px solid #2c4;
   color: #2c4; }
+.ic.listview.text-list .list-item.topline.darkgreen,
+.ic.listview.mtext-list .list-item.topline.darkgreen,
+.ic.listview.media-list .list-item.topline.darkgreen {
+  border-top: 1px solid #363; }
+.ic.listview.text-list .list-item.underline.darkgreen,
+.ic.listview.mtext-list .list-item.underline.darkgreen,
+.ic.listview.media-list .list-item.underline.darkgreen {
+  border-bottom: 1px solid #363; }
+.ic.listview.text-list .list-item.topline.underline.darkgreen,
+.ic.listview.mtext-list .list-item.topline.underline.darkgreen,
+.ic.listview.media-list .list-item.topline.underline.darkgreen {
+  border-top: 1px solid #363;
+  border-bottom: 1px solid #363; }
+.ic.listview.text-list .list-item.stripe.darkgreen:nth-child(odd),
+.ic.listview.mtext-list .list-item.stripe.darkgreen:nth-child(odd),
+.ic.listview.media-list .list-item.stripe.darkgreen:nth-child(odd) {
+  background-color: #363;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.stripe.darkgreen:nth-child(even),
+.ic.listview.mtext-list .list-item.stripe.darkgreen:nth-child(even),
+.ic.listview.media-list .list-item.stripe.darkgreen:nth-child(even) {
+  background-color: #448844;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.card.darkgreen,
+.ic.listview.mtext-list .list-item.card.darkgreen,
+.ic.listview.media-list .list-item.card.darkgreen {
+  background-color: #363;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.pane.darkgreen,
+.ic.listview.mtext-list .list-item.pane.darkgreen,
+.ic.listview.media-list .list-item.pane.darkgreen {
+  border: 1px solid #363; }
+.ic.listview.text-list > i.darkgreen,
+.ic.listview.text-list .list-title > i.darkgreen,
+.ic.listview.text-list .list-icon.darkgreen,
+.ic.listview.mtext-list > i.darkgreen,
+.ic.listview.mtext-list .list-title > i.darkgreen,
+.ic.listview.mtext-list .list-icon.darkgreen,
+.ic.listview.media-list > i.darkgreen,
+.ic.listview.media-list .list-title > i.darkgreen,
+.ic.listview.media-list .list-icon.darkgreen {
+  background-color: #363; }
+.ic.listview.text-list > i.hollow.darkgreen,
+.ic.listview.text-list .list-title > i.hollow.darkgreen,
+.ic.listview.text-list .list-icon.hollow.darkgreen,
+.ic.listview.mtext-list > i.hollow.darkgreen,
+.ic.listview.mtext-list .list-title > i.hollow.darkgreen,
+.ic.listview.mtext-list .list-icon.hollow.darkgreen,
+.ic.listview.media-list > i.hollow.darkgreen,
+.ic.listview.media-list .list-title > i.hollow.darkgreen,
+.ic.listview.media-list .list-icon.hollow.darkgreen {
+  background-color: transparent;
+  border: 1px solid #363;
+  color: #363; }
 .ic.listview.text-list .list-item.topline.cyan,
 .ic.listview.mtext-list .list-item.topline.cyan,
 .ic.listview.media-list .list-item.topline.cyan {
@@ -1944,6 +2610,60 @@
   background-color: transparent;
   border: 1px solid #09f;
   color: #09f; }
+.ic.listview.text-list .list-item.topline.darkblue,
+.ic.listview.mtext-list .list-item.topline.darkblue,
+.ic.listview.media-list .list-item.topline.darkblue {
+  border-top: 1px solid #036; }
+.ic.listview.text-list .list-item.underline.darkblue,
+.ic.listview.mtext-list .list-item.underline.darkblue,
+.ic.listview.media-list .list-item.underline.darkblue {
+  border-bottom: 1px solid #036; }
+.ic.listview.text-list .list-item.topline.underline.darkblue,
+.ic.listview.mtext-list .list-item.topline.underline.darkblue,
+.ic.listview.media-list .list-item.topline.underline.darkblue {
+  border-top: 1px solid #036;
+  border-bottom: 1px solid #036; }
+.ic.listview.text-list .list-item.stripe.darkblue:nth-child(odd),
+.ic.listview.mtext-list .list-item.stripe.darkblue:nth-child(odd),
+.ic.listview.media-list .list-item.stripe.darkblue:nth-child(odd) {
+  background-color: #036;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.stripe.darkblue:nth-child(even),
+.ic.listview.mtext-list .list-item.stripe.darkblue:nth-child(even),
+.ic.listview.media-list .list-item.stripe.darkblue:nth-child(even) {
+  background-color: #004d99;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.card.darkblue,
+.ic.listview.mtext-list .list-item.card.darkblue,
+.ic.listview.media-list .list-item.card.darkblue {
+  background-color: #036;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.pane.darkblue,
+.ic.listview.mtext-list .list-item.pane.darkblue,
+.ic.listview.media-list .list-item.pane.darkblue {
+  border: 1px solid #036; }
+.ic.listview.text-list > i.darkblue,
+.ic.listview.text-list .list-title > i.darkblue,
+.ic.listview.text-list .list-icon.darkblue,
+.ic.listview.mtext-list > i.darkblue,
+.ic.listview.mtext-list .list-title > i.darkblue,
+.ic.listview.mtext-list .list-icon.darkblue,
+.ic.listview.media-list > i.darkblue,
+.ic.listview.media-list .list-title > i.darkblue,
+.ic.listview.media-list .list-icon.darkblue {
+  background-color: #036; }
+.ic.listview.text-list > i.hollow.darkblue,
+.ic.listview.text-list .list-title > i.hollow.darkblue,
+.ic.listview.text-list .list-icon.hollow.darkblue,
+.ic.listview.mtext-list > i.hollow.darkblue,
+.ic.listview.mtext-list .list-title > i.hollow.darkblue,
+.ic.listview.mtext-list .list-icon.hollow.darkblue,
+.ic.listview.media-list > i.hollow.darkblue,
+.ic.listview.media-list .list-title > i.hollow.darkblue,
+.ic.listview.media-list .list-icon.hollow.darkblue {
+  background-color: transparent;
+  border: 1px solid #036;
+  color: #036; }
 .ic.listview.text-list .list-item.topline.purple,
 .ic.listview.mtext-list .list-item.topline.purple,
 .ic.listview.media-list .list-item.topline.purple {
@@ -2052,6 +2772,168 @@
   background-color: transparent;
   border: 1px solid #000;
   color: #000; }
+.ic.listview.text-list .list-item.topline.lightgray,
+.ic.listview.mtext-list .list-item.topline.lightgray,
+.ic.listview.media-list .list-item.topline.lightgray {
+  border-top: 1px solid #ddd; }
+.ic.listview.text-list .list-item.underline.lightgray,
+.ic.listview.mtext-list .list-item.underline.lightgray,
+.ic.listview.media-list .list-item.underline.lightgray {
+  border-bottom: 1px solid #ddd; }
+.ic.listview.text-list .list-item.topline.underline.lightgray,
+.ic.listview.mtext-list .list-item.topline.underline.lightgray,
+.ic.listview.media-list .list-item.topline.underline.lightgray {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; }
+.ic.listview.text-list .list-item.stripe.lightgray:nth-child(odd),
+.ic.listview.mtext-list .list-item.stripe.lightgray:nth-child(odd),
+.ic.listview.media-list .list-item.stripe.lightgray:nth-child(odd) {
+  background-color: #ddd;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.stripe.lightgray:nth-child(even),
+.ic.listview.mtext-list .list-item.stripe.lightgray:nth-child(even),
+.ic.listview.media-list .list-item.stripe.lightgray:nth-child(even) {
+  background-color: #f7f7f7;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.card.lightgray,
+.ic.listview.mtext-list .list-item.card.lightgray,
+.ic.listview.media-list .list-item.card.lightgray {
+  background-color: #ddd;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.pane.lightgray,
+.ic.listview.mtext-list .list-item.pane.lightgray,
+.ic.listview.media-list .list-item.pane.lightgray {
+  border: 1px solid #ddd; }
+.ic.listview.text-list > i.lightgray,
+.ic.listview.text-list .list-title > i.lightgray,
+.ic.listview.text-list .list-icon.lightgray,
+.ic.listview.mtext-list > i.lightgray,
+.ic.listview.mtext-list .list-title > i.lightgray,
+.ic.listview.mtext-list .list-icon.lightgray,
+.ic.listview.media-list > i.lightgray,
+.ic.listview.media-list .list-title > i.lightgray,
+.ic.listview.media-list .list-icon.lightgray {
+  background-color: #ddd; }
+.ic.listview.text-list > i.hollow.lightgray,
+.ic.listview.text-list .list-title > i.hollow.lightgray,
+.ic.listview.text-list .list-icon.hollow.lightgray,
+.ic.listview.mtext-list > i.hollow.lightgray,
+.ic.listview.mtext-list .list-title > i.hollow.lightgray,
+.ic.listview.mtext-list .list-icon.hollow.lightgray,
+.ic.listview.media-list > i.hollow.lightgray,
+.ic.listview.media-list .list-title > i.hollow.lightgray,
+.ic.listview.media-list .list-icon.hollow.lightgray {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: #ddd; }
+.ic.listview.text-list .list-item.topline.gray,
+.ic.listview.mtext-list .list-item.topline.gray,
+.ic.listview.media-list .list-item.topline.gray {
+  border-top: 1px solid #999; }
+.ic.listview.text-list .list-item.underline.gray,
+.ic.listview.mtext-list .list-item.underline.gray,
+.ic.listview.media-list .list-item.underline.gray {
+  border-bottom: 1px solid #999; }
+.ic.listview.text-list .list-item.topline.underline.gray,
+.ic.listview.mtext-list .list-item.topline.underline.gray,
+.ic.listview.media-list .list-item.topline.underline.gray {
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999; }
+.ic.listview.text-list .list-item.stripe.gray:nth-child(odd),
+.ic.listview.mtext-list .list-item.stripe.gray:nth-child(odd),
+.ic.listview.media-list .list-item.stripe.gray:nth-child(odd) {
+  background-color: #999;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.stripe.gray:nth-child(even),
+.ic.listview.mtext-list .list-item.stripe.gray:nth-child(even),
+.ic.listview.media-list .list-item.stripe.gray:nth-child(even) {
+  background-color: #b3b3b3;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.card.gray,
+.ic.listview.mtext-list .list-item.card.gray,
+.ic.listview.media-list .list-item.card.gray {
+  background-color: #999;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.pane.gray,
+.ic.listview.mtext-list .list-item.pane.gray,
+.ic.listview.media-list .list-item.pane.gray {
+  border: 1px solid #999; }
+.ic.listview.text-list > i.gray,
+.ic.listview.text-list .list-title > i.gray,
+.ic.listview.text-list .list-icon.gray,
+.ic.listview.mtext-list > i.gray,
+.ic.listview.mtext-list .list-title > i.gray,
+.ic.listview.mtext-list .list-icon.gray,
+.ic.listview.media-list > i.gray,
+.ic.listview.media-list .list-title > i.gray,
+.ic.listview.media-list .list-icon.gray {
+  background-color: #999; }
+.ic.listview.text-list > i.hollow.gray,
+.ic.listview.text-list .list-title > i.hollow.gray,
+.ic.listview.text-list .list-icon.hollow.gray,
+.ic.listview.mtext-list > i.hollow.gray,
+.ic.listview.mtext-list .list-title > i.hollow.gray,
+.ic.listview.mtext-list .list-icon.hollow.gray,
+.ic.listview.media-list > i.hollow.gray,
+.ic.listview.media-list .list-title > i.hollow.gray,
+.ic.listview.media-list .list-icon.hollow.gray {
+  background-color: transparent;
+  border: 1px solid #999;
+  color: #999; }
+.ic.listview.text-list .list-item.topline.dark-gray,
+.ic.listview.mtext-list .list-item.topline.dark-gray,
+.ic.listview.media-list .list-item.topline.dark-gray {
+  border-top: 1px solid #666; }
+.ic.listview.text-list .list-item.underline.dark-gray,
+.ic.listview.mtext-list .list-item.underline.dark-gray,
+.ic.listview.media-list .list-item.underline.dark-gray {
+  border-bottom: 1px solid #666; }
+.ic.listview.text-list .list-item.topline.underline.dark-gray,
+.ic.listview.mtext-list .list-item.topline.underline.dark-gray,
+.ic.listview.media-list .list-item.topline.underline.dark-gray {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666; }
+.ic.listview.text-list .list-item.stripe.dark-gray:nth-child(odd),
+.ic.listview.mtext-list .list-item.stripe.dark-gray:nth-child(odd),
+.ic.listview.media-list .list-item.stripe.dark-gray:nth-child(odd) {
+  background-color: #666;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.stripe.dark-gray:nth-child(even),
+.ic.listview.mtext-list .list-item.stripe.dark-gray:nth-child(even),
+.ic.listview.media-list .list-item.stripe.dark-gray:nth-child(even) {
+  background-color: gray;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.card.dark-gray,
+.ic.listview.mtext-list .list-item.card.dark-gray,
+.ic.listview.media-list .list-item.card.dark-gray {
+  background-color: #666;
+  color: #ffffff; }
+.ic.listview.text-list .list-item.pane.dark-gray,
+.ic.listview.mtext-list .list-item.pane.dark-gray,
+.ic.listview.media-list .list-item.pane.dark-gray {
+  border: 1px solid #666; }
+.ic.listview.text-list > i.dark-gray,
+.ic.listview.text-list .list-title > i.dark-gray,
+.ic.listview.text-list .list-icon.dark-gray,
+.ic.listview.mtext-list > i.dark-gray,
+.ic.listview.mtext-list .list-title > i.dark-gray,
+.ic.listview.mtext-list .list-icon.dark-gray,
+.ic.listview.media-list > i.dark-gray,
+.ic.listview.media-list .list-title > i.dark-gray,
+.ic.listview.media-list .list-icon.dark-gray {
+  background-color: #666; }
+.ic.listview.text-list > i.hollow.dark-gray,
+.ic.listview.text-list .list-title > i.hollow.dark-gray,
+.ic.listview.text-list .list-icon.hollow.dark-gray,
+.ic.listview.mtext-list > i.hollow.dark-gray,
+.ic.listview.mtext-list .list-title > i.hollow.dark-gray,
+.ic.listview.mtext-list .list-icon.hollow.dark-gray,
+.ic.listview.media-list > i.hollow.dark-gray,
+.ic.listview.media-list .list-title > i.hollow.dark-gray,
+.ic.listview.media-list .list-icon.hollow.dark-gray {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: #666; }
 .ic.listview.text-list .list-item.topline.white,
 .ic.listview.mtext-list .list-item.topline.white,
 .ic.listview.media-list .list-item.topline.white {

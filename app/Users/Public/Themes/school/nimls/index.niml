@@ -105,7 +105,7 @@
             <div class="nm-4">
                 <div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
                     <header class="tabanchors">
-                        <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/jiuyes/">就业信息</span>
+                        <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/enrollment/category/4/">就业信息</span>
                         <span class="tab-anchor" data-tab-index="1" data-src="{{$REQUEST.DIR}}s/stunews/">校友之家</span>
                         <i class="see-more"></i>
                     </header>

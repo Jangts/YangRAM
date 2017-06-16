@@ -73,7 +73,6 @@ class PageRenderer extends \Controller {
 
 	public function main($pid){
 		$this->page = Page::byId($pid);
-		
 		if($this->page&&$this->page->KEY_STATE){
 			//$this->niml = new Niml();
 			switch ($this->page->type) {

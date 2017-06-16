@@ -429,71 +429,97 @@ iBlock(function(pandora, global, undefined) {
         binbToBase64: binb2b64,
         hash: {
             md5: function(s, r_type, $key) {
-                if ($key) {
+                if (s) {
+                    if ($key) {
+                        switch (r_type) {
+                            case 'S':
+                                return binl2str(core_hmac_md5(key, s));
+
+                            case 'B':
+                                return binl2b64(core_hmac_md5(key, s));
+
+                            case 'H':
+                            default:
+                                return binl2hex(core_hmac_md5(key, s));
+                        }
+                    }
                     switch (r_type) {
                         case 'S':
-                            return binl2str(core_hmac_md5(key, s));
+                            return binl2str(core_md5(str2binl(s), s.length * chrsz));
 
                         case 'B':
-                            return binl2b64(core_hmac_md5(key, s));
+                            return binb2b64(core_sha1(str2binb(s), s.length * chrsz));
 
                         case 'H':
                         default:
-                            return binl2hex(core_hmac_md5(key, s));
+                            return binl2hex(core_md5(str2binl(s), s.length * chrsz));
                     }
-                }
-                switch (r_type) {
-                    case 'S':
-                        return binl2str(core_md5(str2binl(s), s.length * chrsz));
-
-                    case 'B':
-                        return binb2b64(core_sha1(str2binb(s), s.length * chrsz));
-
-                    case 'H':
-                    default:
-                        return binl2hex(core_md5(str2binl(s), s.length * chrsz));
+                } else {
+                    _.error('No agreements be given.');
                 }
             },
             sha1: function(s, r_type, $key) {
-                if ($key) {
+                if (s) {
+                    if ($key) {
+                        switch (r_type) {
+                            case 'S':
+                                return binb2str(core_hmac_sha1(key, s));
+
+                            case 'B':
+                                return binb2b64(core_hmac_sha1(key, s));
+
+                            case 'H':
+                            default:
+                                return binb2hex(core_hmac_sha1(key, s));
+                        }
+                    }
                     switch (r_type) {
                         case 'S':
-                            return binb2str(core_hmac_sha1(key, s));
+                            return binb2str(core_sha1(str2binb(s), s.length * chrsz));
 
                         case 'B':
-                            return binb2b64(core_hmac_sha1(key, s));
+                            return binb2str(core_sha1(str2binb(s), s.length * chrsz));
 
                         case 'H':
                         default:
-                            return binb2hex(core_hmac_sha1(key, s));
+                            return binb2hex(core_sha1(str2binb(s), s.length * chrsz));
                     }
-                }
-                switch (r_type) {
-                    case 'S':
-                        return binb2str(core_sha1(str2binb(s), s.length * chrsz));
-
-                    case 'B':
-                        return binb2str(core_sha1(str2binb(s), s.length * chrsz));
-
-                    case 'H':
-                    default:
-                        return binb2hex(core_sha1(str2binb(s), s.length * chrsz));
+                } else {
+                    _.error('No agreements be given.');
                 }
             },
             sha256: function(s, r_type) {
-                s = Utf8Encode(s);
-                switch (r_type) {
-                    case 'S':
-                        return binb2str(core_sha256(str2binb(s), s.length * chrsz));
+                if (s) {
+                    s = Utf8Encode(s);
+                    switch (r_type) {
+                        case 'S':
+                            return binb2str(core_sha256(str2binb(s), s.length * chrsz));
 
-                    case 'B':
-                        return binb2b64(core_sha256(str2binb(s), s.length * chrsz));
+                        case 'B':
+                            return binb2b64(core_sha256(str2binb(s), s.length * chrsz));
 
-                    case 'H':
-                    default:
-                        return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+                        case 'H':
+                        default:
+                            return binb2hex(core_sha256(str2binb(s), s.length * chrsz));
+                    }
+                } else {
+                    _.error('No agreements be given.');
                 }
             }
         }
     });
+
+    _.data.hash.md5.pseudoIdentity = function(str) {
+        var md5 = _.data.hash.md5(str),
+            arr = [
+                md5.substr(0, 8).toUpperCase(),
+                md5.substr(8, 4).toUpperCase(),
+                md5.substr(12, 4).toUpperCase(),
+                md5.substr(16, 4).toUpperCase(),
+                md5.substr(20, 12).toUpperCase()
+            ];
+        return arr.join('-');
+    }
+
+
 });

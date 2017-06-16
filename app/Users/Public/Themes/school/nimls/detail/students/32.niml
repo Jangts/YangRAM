@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    {{@includes/head.niml}}
+    <link href="{{$__SRCDIR}}stylesheets/detail.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    {{@includes/header.niml}}
+    <!-- main slider carousel -->
+    <section class="ic section bg-light">
+        <div class="ic blank-30"></div>
+        <div class="ic w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD">
+            <div class="nm-15 main-container">
+                <div class="ic blank-10"></div>
+                <header><span class="dir">
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/stunews/">校友之家</a>
+                    <i>/</i><a href="{{$REQUEST.DIR}}s/students/category/32/">优秀校友</a>
+                    </span>
+                </header>
+                <article class="news-content">
+                    <header>{{$___TITLE}}</header>
+                    <div class="news-desc">
+                        <span>姓名：{{$___NAME}}</span>
+                        <span>职称：{{$___ALIAS}}<span>
+                        <span>性别：<if $___SEX>女<else />男</if></span>
+                    </div>
+                    <figure><img src="{{$___PHOTO}}"></figure>
+                    <decode value="$___RESUME" />
+                </article>
+                <div class="ic h50 al-center title-50 ft-999 ft-12 grid-12">
+                    <div class="nm-6">上一篇：
+                        <if $___Earlier_InSameCategory>
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Earlier_InSameCategory.ID***}}/">
+                                <str value="$___Earlier_InSameCategory.TITLE" length="19" />
+                            </a>
+                            <else /> 没有了 </if>
+                    </div>
+                    <div class="nm-6">下一篇：
+                        <if $___Later_InSameCategory>
+                            <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___SET_ALIAS}}/article/{{***$___Later_InSameCategory.ID***}}/">
+                                <str value="$___Later_InSameCategory.TITLE" length="19" />
+                            </a>
+                            <else /> 没有了 </if>
+                    </div>
+                </div>
+            </div>
+            <div class="nm-1">&nbsp;</div>
+            <div class="nm-5">
+                <div class="side-list-title">栏目导航</div>
+                <ul class="side-list">
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/27/">学院校友会</a>
+                    </li>
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/28/">校友会快讯</a>
+                    </li>
+                    <li class="actived">
+                        <a href="{{$REQUEST.DIR}}s/students/category/32/">优秀校友</a>
+                    </li>
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/29/">校友捐赠</a>
+                    </li>
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}contact/">联系我们</a>
+                    </li>
+            </div>
+        </div>
+        <div class="ic blank-50"></div>
+    </section>
+    {{@includes/footer.niml}}
+</body>
+
+</html>

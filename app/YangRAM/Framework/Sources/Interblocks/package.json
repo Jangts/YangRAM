@@ -7,7 +7,7 @@
         "iBlock",
         "Interblocks"
     ],
-    "main": "./iBlock.js",
+    "main": "./iblock.js",
     "repository": {
         "type": "git",
         "url": "git://github.com/YangRAM/Interblocks"

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Yes, Tangram!</title>
 <meta name="viewport" content="width=device-width, maximum-scale=0.75, minimum-scale=0.25, user-scalable=no" />
-<script src="<?=NIAF_PID?>Sources/Interblocks/iBlock.js" type="text/javascript" data-debug-mode></script>
+<script src="<?=NIAF_PID?>Sources/Interblocks/iblock.js" type="text/javascript" data-debug-mode></script>
 <link href="<?=UOI_PID?>Sources/themes/<?=$__Style?>/CommonBasics.css" type="text/css" rel="stylesheet" />
 <link href="<?=UOI_PID?>Sources/themes/<?=$__Style?>/LogInterface.css" type="text/css" rel="stylesheet" />
 </head>

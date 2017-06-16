@@ -16,19 +16,29 @@
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/12/">党支部风采</a></li>
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/13/">团校</a></li>
-                    <li class="actived"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/30/">典型培育</a></li>
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/14/">群团组织</a></li>
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/category/11/">青年之声</a></li>
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/27/">学院校友会</a>
+                    </li>
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/28/">校友会快讯</a>
+                    </li>
+                    <li class="actived">
+                        <a href="{{$REQUEST.DIR}}s/students/category/32/">优秀校友</a>
+                    </li>
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}s/stunews/category/29/">校友捐赠</a>
+                    </li>
+                    <li class="">
+                        <a href="{{$REQUEST.DIR}}contact/">联系我们</a>
+                    </li>
                 </ul>
             </div>
             <div class="nm-1">&nbsp;</div>
             <div class="nm-15 main-container">
                 <div class="ic blank-10"></div>
                 <header><span class="dir">
-                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/party/">党团思政</a>
-                    <i>/</i><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/30/">典型培育</a>
+                    <a href="{{$REQUEST.REST_HANDLER_DIR}}s/stunews/">校友之家</a>
+                    <i>/</i><a href="{{$REQUEST.DIR}}s/students/category/32/">优秀校友</a>
                     </span>
                 </header>
                 <div class="ic blank-10"></div>
@@ -54,7 +64,7 @@
                         </li>
                     </for>
                 </ul>
-                <ul class="ic listview page-list spills red">
+                <ul class="ic listview page-list spills darkred">
                     <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
                     <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
                     <if $pages[`f`] lt $___Cpage>

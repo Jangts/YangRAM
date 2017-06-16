@@ -56,7 +56,7 @@
                                 <h4 class="list-title">
                                     <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
                                         <str value="$item.TITLE" length="23" />
-                                    </a><span class="pl-right"><time value="$item.PUBTIME " format="Y-m-d" /></span></h4>
+                                    </a><span class="pl-right"><time value="$item.PUBTIME" format="Y-m-d" /></span></h4>
                                 <p class="list-abstract" data-row="3">{{$item.dev_abstract}}...</p>
                                 <p class="list-meta pl-right bottom">
                                     <a href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">更多&gt;&gt;</a>
@@ -65,7 +65,7 @@
                         </li>
                     </for>
                 </ul>
-                <ul class="ic listview page-list spills red">
+                <ul class="ic listview page-list spills darkred">
                     <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
                     <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
                     <if $pages[`f`] lt $___Cpage>

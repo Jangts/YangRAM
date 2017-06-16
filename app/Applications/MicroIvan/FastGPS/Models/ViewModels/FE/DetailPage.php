@@ -46,7 +46,7 @@ class DetailPage extends \System\NIDO\DataObject {
 					$cpage = 1;
 				}
 				Pager::config('COUNT', $count);
-				Pager::config('CURR', $cpage);
+				Pager::config('CPAGE', $cpage);
 				Pager::config('PRE', 1);
 			}else{
 				$cpage = 1;

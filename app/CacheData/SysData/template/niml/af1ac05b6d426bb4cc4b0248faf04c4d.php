@@ -15,7 +15,9 @@ echo '<section class="ic section bg-light"><div class="ic blank-30"></div><div c
 foreach($___LIST as $index => $item){
 	echo '<li class="list-item pane"><a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
-	echo 's/fazhans/article/';
+	echo 's/';
+	echo $___PRESET_ALIAS;
+	echo '/article/';
 	echo base64_encode($item->ID);
 	echo '" target=" _blank">';
 	echo mb_substr($item->TITLE,0,23);
@@ -23,7 +25,7 @@ foreach($___LIST as $index => $item){
 	echo date('Y-m-d');
 	echo '</span></li>';
 }
-echo '</ul><ul class="ic listview page-list spills red">';
+echo '</ul><ul class="ic listview page-list spills darkred">';
 $pages =\Library\ect\Pager::getPageListDataByCount(9);
 echo '<li class="list-item" onclick="window.location.href=\'?page=';
 echo $pages["f"];

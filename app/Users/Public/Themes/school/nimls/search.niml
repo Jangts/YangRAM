@@ -38,7 +38,7 @@
                         </li>
                     </for>
                 </ul>
-                <ul class="ic listview page-list spills red">
+                <ul class="ic listview page-list spills darkred">
                     <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
                     <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
                     <if $pages[`f`] lt $___Cpage>

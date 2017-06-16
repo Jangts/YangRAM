@@ -28,6 +28,14 @@ class BaseModel extends DataObject {
 		return self::$instance->toJson();
 	}
 
+	public static function replaceroot($str){
+		return str_replace(strtolower(__DIR), '{{@root_url}}', $str);
+	}
+
+	public static function restoreroot($str){
+		return str_replace('{{@root_url}}', strtolower(__DIR), $str);
+	}
+
 	protected
 	$code,
 	$langs = ['en-us','zh-cn'],

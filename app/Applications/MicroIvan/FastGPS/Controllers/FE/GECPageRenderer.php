@@ -18,8 +18,10 @@ class GECPageRenderer extends \Controller {
                     if($default_theme){
                         $theme = $default_theme->alias;
                         if(is_file(PATH_VIEW.$theme.'/nimls/page/'.$mark.'/'.$article.'.niml')){
+                            $pagename = 'Detail For Page ' . strtoupper($mark.'/'.$article);
                             $template = [$theme, 'page/'.$mark.'/'.$article.'.niml'];
                         }elseif(is_file(PATH_VIEW.$theme.'/nimls/page/'.$mark.'.niml')){
+                            $pagename = 'Detail For Group ' . strtoupper($mark);
                             $template = [$theme, 'page/'.$mark.'.niml'];
                         }elseif(is_file(PATH_VIEW.$theme.'/nimls/page/default.niml')){
                             $template = [$theme, 'page/default.niml'];
@@ -33,7 +35,7 @@ class GECPageRenderer extends \Controller {
                     $page->put([
                         'type'				=>	3,
                         'mark'				=>	$mark,
-                        'name'				=>	'New Page',
+                        'name'				=>	empty($pagename) ? 'New Page' : $pagename,
                         'title'				=>	'{@ct} - Microivan FastGPS',
                         'keywords'			=>	'{@ck} - {@cg}',
                         'description'		=>	'{@cd} - {@cg}',
@@ -41,6 +43,9 @@ class GECPageRenderer extends \Controller {
                         'template'			=>	$template[1],
                         'KEY_STATE'		    =>	1
                     ]);
+                    if(isset($pagename)){
+                        $page->save();
+                    }
                 }
                 return $this->commonPage('GPS\Models\ViewModels\FE\GeneralPage', $page, $article, ['_g_'.$mark.'_', $article]);
             }else{

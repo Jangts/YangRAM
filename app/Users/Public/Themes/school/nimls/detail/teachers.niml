@@ -24,7 +24,7 @@
                     <div class="news-desc">
                         <span>姓名：{{$___NAME}}</span>
                         <span>职称：{{$___ALIAS}}<span>
-                        <span>性别：<if $___SEX>男<else />女</if></span>
+                        <span>性别：<if $___SEX>女<else />男</if></span>
                     </div>
                     <figure><img src="{{$___PHOTO}}"></figure>
                     <decode value="$___RESUME" />

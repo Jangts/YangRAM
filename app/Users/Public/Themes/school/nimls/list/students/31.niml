@@ -19,7 +19,7 @@
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/22/">双创赛事</a></li>
                     <li class="active"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/31/">双创典型</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/24/">项目展示</a></li>
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/25/">创梦讲话坛</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/25/">创梦讲堂</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/26/">品牌活动</a></li>
                 </ul>
             </div>
@@ -28,7 +28,7 @@
                 <div class="ic blank-10"></div>
                 <header><span class="dir">
                     <a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/">创新创业</a>
-                    <i>/</i><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/30/">典型培育</a>
+                    <i>/</i><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/31/">双创典型</a>
                     </span>
                 </header>
                 <div class="ic blank-10"></div>
@@ -54,7 +54,7 @@
                         </li>
                     </for>
                 </ul>
-                <ul class="ic listview page-list spills red">
+                <ul class="ic listview page-list spills darkred">
                     <def name="$pages " onload="Library.ect.Pager.getPageListDataByCount " args="9" />
                     <li class="list-item" onclick="window.location.href='?page={{$pages[`f`]}}'">&lt;&lt;</li>
                     <if $pages[`f`] lt $___Cpage>

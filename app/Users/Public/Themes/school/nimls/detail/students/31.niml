@@ -16,7 +16,7 @@
                 <div class="ic blank-10"></div>
                 <header><span class="dir">
                     <a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/">创新创业</a>
-                    <i>/</i><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/30/">典型培育</a>
+                    <i>/</i><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/31/">双创典型</a>
                     </span>
                 </header>
                 <article class="news-content">
@@ -24,7 +24,7 @@
                     <div class="news-desc">
                         <span>姓名：{{$___NAME}}</span>
                         <span>职称：{{$___ALIAS}}<span>
-                        <span>性别：<if $___SEX>男<else />女</if></span>
+                       <span>性别：<if $___SEX>女<else />男</if></span>
                     </div>
                     <figure><img src="{{$___PHOTO}}"></figure>
                     <decode value="$___RESUME" />
@@ -53,7 +53,7 @@
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/22/">双创赛事</a></li>
                     <li class="active"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/31/">双创典型</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/24/">项目展示</a></li>
-                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/25/">创梦讲话坛</a></li>
+                    <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/25/">创梦讲堂</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/26/">品牌活动</a></li>
             </div>
         </div>

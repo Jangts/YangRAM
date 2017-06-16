@@ -107,5 +107,6 @@ class ListPage extends \System\NIDO\DataObject {
 		$renderer->assign('___CATEGORY', $category);
 		$renderer->assign('___LIST', $contents);
 		$renderer->assign('___TOTAL', count($contents));
+		Pager::config('CPAGE', $take[0]);
 	}
 }

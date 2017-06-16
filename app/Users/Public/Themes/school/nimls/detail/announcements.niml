@@ -23,8 +23,6 @@
                     <header>{{$___TITLE}}</header>
                     <div class="news-desc">
                         <span>{{$___PUBTIME}}</span>
-                        <span>编辑：{{$___AUTHOR}}</span>
-                        <span>来源：<if $___SOURCE>{{$___SOURCE}}<else />本站</if></span>
                         <span>查看：{{$___KEY_COUNT}}<span>
                     </div>
                     <decode value="$___CONTENT" />

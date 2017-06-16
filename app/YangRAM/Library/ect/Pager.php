@@ -60,7 +60,7 @@ Class Pager {
 			}
 			for ($n = 0; $n < $pages["length"]; $n++) {
 				if ($pages[$n] == $this->cpage) {
-					$html .= '<li class="pages-list-item curr" onclick="window.location.href=\'?page='.$pages[$n].'\'">'.$pages[$n].'</li>';
+					$html .= '<li class="pages-list-item actived" onclick="window.location.href=\'?page='.$pages[$n].'\'">'.$pages[$n].'</li>';
 				}else{
 					$html .= '<li class="pages-list-item" onclick="window.location.href=\'?page='.$pages[$n].'\'">'.$pages[$n].'</li>';
 				}
@@ -74,13 +74,46 @@ Class Pager {
 		}
 		return $html;
 	}
+
+	public function renderList($tempate, $options = []){
+		$options = array_merge([
+			'first'		=> 'First',
+			'privious'	=> 'Prev',
+			'cpagetag'	=> ' actived',
+			'next'		=> 'Next',
+			'last'		=> 'Last'
+		], $options);
+		$pages = $this->getData();
+		if($pages["length"] > 0){
+			if($options['first']){
+				echo str_replace('{@page_cur}', '', str_replace('{@page_num}', $pages["f"], str_replace('{@page_tit}', $options['first'], $tempate)));
+			}
+			if($this->cpage>$pages["f"]){
+				echo str_replace('{@page_cur}', '', str_replace('{@page_num}', $pages["p"], str_replace('{@page_tit}', $options['privious'], $tempate)));
+			}
+			for ($n = 0; $n < $pages["length"]; $n++) {
+				if ($pages[$n] == $this->cpage) {
+					echo str_replace('{@page_cur}', $options['cpagetag'], str_replace('{@page_num}',$pages[$n], str_replace('{@page_tit}', $pages[$n], $tempate)));
+				}else{
+					echo str_replace('{@page_cur}', '', str_replace('{@page_num}',$pages[$n], str_replace('{@page_tit}', $pages[$n], $tempate)));
+				}
+			}
+			if($this->cpage<$pages["l"]){
+				echo str_replace('{@page_cur}', '', str_replace('{@page_num}', $pages["n"], str_replace('{@page_tit}', $options['next'], $tempate)));
+			}
+			if($options['last']){
+				echo str_replace('{@page_cur}', '', str_replace('{@page_num}', $pages["l"], str_replace('{@page_tit}', $options['last'], $tempate)));
+			}
+		}
+		return 1;
+	}
 	
 	public function writeList($pre = 'Prev', $nxt = 'Next', $stt = NULL, $end = NULL){
 		echo $this->getList($pre, $nxt, $stt, $end);
 	}
 	
 	private static $config = [
-		'CURR'		=>	1,
+		'CPAGE'		=>	1,
 		'COUNT'		=>	0,
 		'PRE'		=>	10,
 		'DBTABLE'	=>	NULL,
@@ -98,17 +131,33 @@ Class Pager {
 		}
 	}
 	
-	public static function getPageListDataByCount($num=9){
-		$paging = new Pager(self::$config["CURR"], $num);
+	public static function getPageListDataByCount($num=9, $cpage = false){
+		$paging = new Pager(is_numeric($cpage)? $cpage : self::$config["CPAGE"], $num);
 		$paging->setter(self::$config["COUNT"], self::$config["PRE"]);
 		$return = $paging->getData();
 		unset($paging);
 		return $return;
 	}
+
+	public static function renderPageList($options = [], $tempate = '<li class="pages-list-item{@page_cur}"><a href="?page={@page_num}">{@page_tit}</a></li>'){
+		$options = array_merge([
+			'itemnum'	=>	9,
+			'first'		=> 'First',
+			'privious'	=> 'Prev',
+			'cpagetag'	=> ' actived',
+			'cpagenum'		=>	self::$config["CPAGE"],
+			'next'		=> 'Next',
+			'last'		=> 'Last'
+		], $options);
+		$paging = new Pager($options['cpagenum'], $options['itemnum']);
+		$paging->setter(self::$config["COUNT"], self::$config["PRE"]);
+		$paging->renderList($tempate, $options);
+		return 1;
+	}
 	
-	public static function getPageListDataByTable($num=9){
+	public static function getPageListDataByTable($num=9, $cpage = false){
 		if(self::$config["DBTABLE"]){
-			$paging = new Pager(self::$config["CURR"], $num);
+			$paging = new Pager(is_numeric($cpage)? $cpage : self::$config["CPAGE"], $num);
 			$paging->query(self::$config["DBTABLE"], self::$config["WHERE"], self::$config["PRE"]);
 			$return = $paging->getData();
 			unset($paging);

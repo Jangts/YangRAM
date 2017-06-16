@@ -234,82 +234,82 @@ if( isset($__Columns[1]) && $__Columns[1] == '_s_chuangs_' ){
 	echo 'actived';
 }
 elseif(
-isset($__Columns[2]) && $__Columns[2] == 'category30' ){
+isset($__Columns[2]) && $__Columns[2] == 'category31' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
 echo 's/chuangs/">创新创业</a><ul class="submenu under inline al-center" data-width="400"><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_stunews_' ){
+if( isset($__Columns[2]) && $__Columns[2] == 'category22' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/chuangs/category//">双创赛事</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_students_' ){
+echo 's/chuangs/category/22/">双创赛事</a></li><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category31' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/chuangs/category//">双创典型</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_stunews_' ){
+echo 's/students/category/31/">双创典型</a></li><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category24' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/chuangs/category//">项目展示</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_students_' ){
+echo 's/chuangs/category/24/">项目展示</a></li><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category25' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/chuangs/category//">创梦讲话</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_stunews_' ){
+echo 's/chuangs/category/25/">创梦讲堂</a></li><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category26' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/chuangs/category//">品牌活动</a></li></ul></li><li class="menu-item hasson ';
+echo 's/chuangs/category/26/">品牌活动</a></li></ul></li><li class="menu-item hasson ';
 if( isset($__Columns[1]) && $__Columns[1] == '_s_stunews_' ){
 	echo 'actived';
 }
 elseif(
-isset($__Columns[2]) && $__Columns[2] == 'category30' ){
+isset($__Columns[2]) && $__Columns[2] == 'category32' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/stunews/">校友之家</a><ul class="submenu under inline al-right" data-width="400"><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_stunews_' ){
+echo 's/stunews/">校友之家</a><ul class="submenu under inline al-right" data-width="420"><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category27' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/stunews/">双创赛事</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_students_' ){
+echo 's/stunews/category/27/">学院校友会</a></li><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category28' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/stunews/">双创典型</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_stunews_' ){
+echo 's/stunews/category/28/">校友会快讯</a></li><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category32' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/stunews/">项目展示</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_students_' ){
+echo 's/students/category/32/">优秀校友</a></li><li class="menu-item ';
+if( isset($__Columns[2]) && $__Columns[2] == 'category29' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/stunews/">创梦讲话</a></li><li class="menu-item ';
-if( isset($__Columns[1]) && $__Columns[1] == '_s_stunews_' ){
+echo 's/stunews/category/29/">校友捐赠</a></li><li class="menu-item ';
+if( isset($__Columns[1]) && $__Columns[1] == 'contact' ){
 	echo 'actived';
 }
 echo '"><a href="';
 echo $REQUEST->DIR;
-echo 's/stunews/">品牌活动</a></li></ul></li></ul></nav></section></header>';
+echo 'contact/">联系我们</a></li></ul></li></ul></nav></section></header>';
 /*
  * CODE END
  */

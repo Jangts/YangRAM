@@ -60,7 +60,7 @@
                     <li class="{{$___CATEGORY_ID='22'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/22/">双创赛事</a></li>
                     <li class=""><a href="{{$REQUEST.REST_HANDLER_DIR}}s/students/category/31/">双创典型</a></li>
                     <li class="{{$___CATEGORY_ID='24'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/24/">项目展示</a></li>
-                    <li class="{{$___CATEGORY_ID='25'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/25/">创梦讲话坛</a></li>
+                    <li class="{{$___CATEGORY_ID='25'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/25/">创梦讲堂</a></li>
                     <li class="{{$___CATEGORY_ID='26'=>actived}}"><a href="{{$REQUEST.REST_HANDLER_DIR}}s/chuangs/category/26/">品牌活动</a></li>
                 </ul>
             </div>

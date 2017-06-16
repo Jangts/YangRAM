@@ -90,7 +90,7 @@ foreach($___LIST as $index => $item){
 	echo '" target=" _blank">';
 	echo mb_substr($item->TITLE,0,23);
 	echo ''.PHP_EOL.'</a><span class="pl-right">';
-	echo date('Y-m-d');
+	echo date('Y-m-d',strtotime($item->PUBTIME));
 	echo '</span></h4><p class="list-abstract" data-row="3">';
 	echo $item->dev_abstract;
 	echo '...</p><p class="list-meta pl-right bottom"><a href="';
@@ -101,7 +101,7 @@ foreach($___LIST as $index => $item){
 	echo base64_encode($item->ID);
 	echo '" target=" _blank">更多&gt;&gt;</a></p></div></li>';
 }
-echo '</ul><ul class="ic listview page-list spills red">';
+echo '</ul><ul class="ic listview page-list spills darkred">';
 $pages =\Library\ect\Pager::getPageListDataByCount(9);
 echo '<li class="list-item" onclick="window.location.href=\'?page=';
 echo $pages["f"];

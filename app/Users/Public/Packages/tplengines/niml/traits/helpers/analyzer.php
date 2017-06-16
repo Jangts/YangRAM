@@ -126,21 +126,21 @@ trait NIML_traits_helpers_analyzer {
             if($str = $this->string($string)){
 	            return array(
 	                'type'  =>  'String',
-	                'value' =>  $str
+	                'value' =>  $this->unescape($str)
 	            );
 	        }
 
             if(preg_match('/^\'([^\']+)\'$/', $string, $matches)){
 	            return array(
 	                'type'  =>  'String',
-	                'value' =>  $matches[1]
+	                'value' =>  $this->unescape($matches[1])
 	            );
 	        }
 
             if(preg_match('/^"([^"]+)"$/', $string, $matches)){
 	            return array(
 	                'type'  =>  'String',
-	                'value' =>  $matches[1]
+	                'value' =>  $this->unescape($matches[1])
 	            );
 	        }
 

@@ -24,9 +24,13 @@ class SPCPageRenderer extends \Controller {
                     $default_theme = THMI::getDefault(AI_CURR);
                     if($default_theme){
                         $theme = $default_theme->alias;
+                        $type = 7;
                         if(($params->category!==null)&&is_file(PATH_VIEW.$theme.'/nimls/detail/'.$mark.'/'.$params->category.'.niml')){
+                            $pagename = 'Detail For Category ' . $params->category;
+                            $type = 8;
                             $template = [$theme, 'detail/'.$mark.'/'.$params->category.'.niml'];
                         }elseif(is_file(PATH_VIEW.$theme.'/nimls/detail/'.$mark.'.niml')){
+                            $pagename = 'Detail For ' . strtoupper($mark);
                             $template = [$theme, 'detail/'.$mark.'.niml'];
                         }elseif(is_file(PATH_VIEW.$theme.'/nimls/detail/default.niml')){
                             $template = [$theme, 'detail/default.niml'];
@@ -37,9 +41,9 @@ class SPCPageRenderer extends \Controller {
                         $template = ['fast-gps-defaults', 'detail.niml'];
                     }
                     $page->put([
-                        'type'				=>	7,
+                        'type'				=>	$type,
                         'mark'				=>	$mark,
-                        'name'				=>	'New Page',
+                        'name'				=>	empty($pagename) ? 'New Page' : $pagename,
                         'title'				=>	'{@ct} - Microivan FastGPS',
                         'keywords'			=>	'{@ck}',
                         'description'		=>	'{@cd}',
@@ -49,6 +53,9 @@ class SPCPageRenderer extends \Controller {
                         'template'			=>	$template[1],
                         'KEY_STATE'		    =>	1
                     ]);
+                    if(isset($pagename)){
+                        $page->save();
+                    }
                 }
                 return $this->commonPage('GPS\Models\ViewModels\FE\DetailPage', $page, $params->article, $col_tree);
             }else{
@@ -65,11 +72,15 @@ class SPCPageRenderer extends \Controller {
                 if(!$page||!$page->KEY_STATE){
                     $page = new Page;
                     $default_theme = THMI::getDefault(AI_CURR);
+                    $type = 4;
                     if($default_theme){
                         $theme = $default_theme->alias;
                         if(($params->category!==null)&&is_file(PATH_VIEW.$theme.'/nimls/list/'.$mark.'/'.$params->category.'.niml')){
+                            $pagename = 'List For Category ' . $params->category;
+                            $type = 6;
                             $template = [$theme, 'list/'.$mark.'/'.$params->category.'.niml'];
                         }elseif(is_file(PATH_VIEW.$theme.'/nimls/list/'.$mark.'.niml')){
+                            $pagename = 'List For ' . strtoupper($mark);
                             $template = [$theme, 'list/'.$mark.'.niml'];
                         }elseif(is_file(PATH_VIEW.$theme.'/nimls/list/default.niml')){
                             $template = [$theme, 'list/default.niml'];
@@ -80,9 +91,9 @@ class SPCPageRenderer extends \Controller {
                         $template = ['fast-gps-defaults', 'list.niml'];
                     }
                     $page->put([
-                        'type'				=>	4,
+                        'type'				=>	$type,
                         'mark'				=>	$mark,
-                        'name'				=>	'New Page',
+                        'name'				=>	empty($pagename) ? 'New Page' : $pagename,
                         'title'				=>	'{@type} - Microivan FastGPS Listpage',
                         'keywords'			=>	'{@type} - Microivan FastGPS Listpage',
                         'description'		=>	'{@type} - Microivan FastGPS Listpage',
@@ -92,6 +103,9 @@ class SPCPageRenderer extends \Controller {
                         'template'			=>	$template[1],
                         'KEY_STATE'		    =>	1
                     ]);
+                    if(isset($pagename)){
+                        $page->save();
+                    }
                 }
                 return $this->commonPage('GPS\Models\ViewModels\FE\ListPage', $page, $params->category, $col_tree);
             }

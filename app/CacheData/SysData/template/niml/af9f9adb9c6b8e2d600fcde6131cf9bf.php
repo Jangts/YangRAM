@@ -18,13 +18,16 @@ echo $___CATEGORY_ID;
 echo '/">';
 switch($___CATEGORY_ID){
 	case '15':
-	echo '学院要问';
+	echo '学院要闻';
 	break;
 	case '16':
 	echo '校园时讯';
 	break;
 	case '20':
 	echo '媒体建筑';
+	break;
+	case '21':
+	echo '抬头看路';
 	break;
 }
 echo '</a></span></header><article class="news-content"><header>';
@@ -48,7 +51,9 @@ echo '</article><div class="ic h50 al-center title-50 ft-999 ft-12 grid-12"><div
 if( isset($___Earlier_InSameCategory) && $___Earlier_InSameCategory != false ){
 	echo '<a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
-	echo 's/news/article/';
+	echo 's/';
+	echo $___SET_ALIAS;
+	echo '/article/';
 	echo base64_encode($___Earlier_InSameCategory->ID);
 	echo '/">';
 	echo mb_substr($___Earlier_InSameCategory->TITLE,0,19);
@@ -61,7 +66,9 @@ echo '</div><div class="nm-6">下一篇：'.PHP_EOL.'';
 if( isset($___Later_InSameCategory) && $___Later_InSameCategory != false ){
 	echo '<a href="';
 	echo $REQUEST->REST_HANDLER_DIR;
-	echo 's/news/article/';
+	echo 's/';
+	echo $___SET_ALIAS;
+	echo '/article/';
 	echo base64_encode($___Later_InSameCategory->ID);
 	echo '/">';
 	echo mb_substr($___Later_InSameCategory->TITLE,0,19);
@@ -76,7 +83,7 @@ if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '15' ){
 }
 echo '"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/news/category/15/">学院要问</a></li><li class=""><a href="';
+echo 's/news/category/15/">学院要闻</a></li><li class=""><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
 echo 's/announcements/">通知公告</a></li><li class="';
 if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '16' ){
@@ -90,7 +97,13 @@ if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '20' ){
 }
 echo '"><a href="';
 echo $REQUEST->REST_HANDLER_DIR;
-echo 's/news/category/20/">媒体建筑</a></li></ul></div></div><div class="ic blank-50"></div></section>';
+echo 's/news/category/20/">媒体建筑</a></li><li class="';
+if( isset($___CATEGORY_ID) && $___CATEGORY_ID == '21' ){
+	echo 'actived';
+}
+echo '"><a href="';
+echo $REQUEST->REST_HANDLER_DIR;
+echo 's/news/category/21/">抬头看路</a></li></ul></div></div><div class="ic blank-50"></div></section>';
 $this->including('includes/footer.niml');
 echo '</body></html>';
 /*
