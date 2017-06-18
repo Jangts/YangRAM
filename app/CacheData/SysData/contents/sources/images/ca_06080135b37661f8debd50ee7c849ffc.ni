@@ -1,1 +1,0 @@
-{"SID":"796","HASH":"e497f553b51bd1c9e096b92f91de5f7d","LOCATION":"Images\/2017-06-15\/e497f553b51bd1c9e096b92f91de5f7d.JPG","MIME":"image\/jpeg","IMAGE_SIZE":"width=\"6016\" height=\"4000\"","WIDTH":"6016","HEIGHT":"4000","KEY_CTIME":"2017-06-15 18:48:12"}

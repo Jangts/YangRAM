@@ -1,1 +1,0 @@
-{"id":"6","basic_type":"down","name":"\u8d44\u6599\u4e0b\u8f7d","alias":"downloads","code":"DOWN","note":"\u8d44\u6599\u4e0b\u8f7d","item_type":"\u8d44\u6599","item_unit":"","top_display_num":"2","theme":"jzx","template":"","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1"}

@@ -1,1 +1,0 @@
-{"id":"20","basic_type":"news","name":"\u8f6c\u578b\u53d1\u5c55","alias":"fazhans","code":"FZHAN","note":"\u8f6c\u578b\u53d1\u5c55","item_type":"\u6821\u53cb\u8d44\u8baf","item_unit":"","top_display_num":"2","theme":"jzx","template":"party\/graduates_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1002"}

@@ -1,1 +1,0 @@
-{"SID":"793","HASH":"424f73c5bf630fb5a7d12f2c204f420e","LOCATION":"Images\/2017-06-06\/424f73c5bf630fb5a7d12f2c204f420e.jpg","MIME":"image\/jpeg","IMAGE_SIZE":"width=\"640\" height=\"350\"","WIDTH":"640","HEIGHT":"350","KEY_CTIME":"2017-06-06 12:13:19"}

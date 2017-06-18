@@ -47,13 +47,19 @@ $widths: 4096,
         max-width: #{$width}px;
         margin: auto;
     }
+    .ic.wi#{$width} {
+        width: #{$width}px;
+        max-width: #{$width}px !important;
+        min-width: #{$width}px !important;
+        margin: auto;
+    }
 }
 
 
 /** Absolute Center Widths **/
 
 @each $width in $widths {
-    .ic.c#{$width}>.ic.container {
+    .ic.c#{$width} {
         position: absolute;
         left: 50%;
         max-width: #{$width}px;
@@ -113,6 +119,11 @@ $heights: 30,
     .ic.h#{$height} {
         height: #{$height}px;
         max-height: #{$height}px;
+    }
+    .ic.hi#{$height} {
+        height: #{$height}px;
+        max-height: #{$height}px !important;
+        min-height: #{$height}px !important;
     }
 }
 

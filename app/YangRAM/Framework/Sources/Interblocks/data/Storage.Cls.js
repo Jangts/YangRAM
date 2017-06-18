@@ -15,7 +15,8 @@ iBlock([
         cache = pandora.locker,
         document = global.document,
         console = global.console,
-        location = global.location;
+        location = global.location,
+        localStorage = global.localStorage;
 
     var data = {};
 
@@ -34,6 +35,7 @@ iBlock([
                 localStorage[this.id] = '{}';
                 this.length = 0;
             }
+            // console.log(name, data);
             return this;
         },
         set: function(key, value) {
@@ -63,9 +65,15 @@ iBlock([
             }
             return undefined;
         },
-        clear: function() {
-            data[this.id] = {};
-            localStorage[this.id] = '{}';
+        clear: function(del) {
+            if (del) {
+                delete data[this.id];
+                delete localStorage[this.id];
+            } else {
+                data[this.id] = {};
+                localStorage[this.id] = '{}';
+            }
+            return null;
         }
     });
 });

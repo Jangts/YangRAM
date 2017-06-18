@@ -1,1 +1,0 @@
-{"id":"4","basic_type":"annc","name":"\u901a\u77e5\u516c\u544a","alias":"announcements","code":"ANNC","note":"\u901a\u77e5\u516c\u544a","item_type":"\u544a\u793a","item_unit":"","top_display_num":"2","theme":"jzx","template":"news\/news_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1002"}

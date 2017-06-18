@@ -740,6 +740,9 @@
                 /* 私有缓存区操作 */
                 locker: lockerHandlers,
 
+                /* 命名正则 */
+                namingExpr: namingExpr,
+
                 /* 检查具名类 */
                 checkClass: function(list) {
                     list = list || [];
@@ -882,6 +885,13 @@
             return target;
         },
 
+        template = 'if(this instanceof constructor){' +
+        'this._init.apply(this, arguments);' +
+        '}else{' +
+        'var instance=new constructor();' +
+        'instance._init.apply(instance, arguments);' +
+        'return instance;}',
+
         /* 定义类的方法 */
         produceClass = function(classname, superclass, members) {
             var Class = function() {},
@@ -892,7 +902,7 @@
                 name = classname.replace(/\.[A-Za-z]/g, function(s) {
                     return s.replace('.', '').toUpperCase();
                 });
-                eval('constructor = function ' + name + '(){ if (this instanceof constructor) this._init.apply(this, arguments); };');
+                eval('constructor=function ' + name + '(){' + template + '}');
                 constructor.prototype = new Class();
                 storage.classes[classname] = constructor.prototype
                 pandora(classname, constructor);
@@ -900,6 +910,10 @@
                 constructor = function() {
                     if (this instanceof constructor) {
                         return this._init.apply(this, arguments);
+                    } else {
+                        var instance = new constructor();
+                        instance._init.apply(instance, arguments);
+                        return instance;
                     }
                 };
                 constructor.prototype = new Class();

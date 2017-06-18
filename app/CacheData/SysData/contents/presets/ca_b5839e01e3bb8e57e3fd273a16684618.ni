@@ -1,1 +1,0 @@
-{"id":"23","basic_type":"news","name":"\u6821\u53cb\u4e4b\u5bb6","alias":"stunews","code":"XYZJ","note":"\u6821\u53cb\u4e4b\u5bb6","item_type":"\u6821\u53cb\u4e4b\u5bb6","item_unit":"","top_display_num":"2","theme":"jzx","template":"enrol\/news_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","default_appid":"1"}
