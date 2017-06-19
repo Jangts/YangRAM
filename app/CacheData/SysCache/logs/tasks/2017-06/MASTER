@@ -436,3 +436,46 @@
 20170615 1902	master	Hired A Worker	Current Number Of Workers Is 1
 20170615 1906	master	Hired A Worker	Current Number Of Workers Is 1
 20170615 1908	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1157	master	[New Master]
+20170619 1157	master	Check Task	On 2017-06-19, Monday
+20170619 1157	master	Check Task	During 11:00:00 To 11:59:59 On 20170619
+20170619 1157	master	Hired A Worker	Current Number Of Workers Is 2
+20170619 1158	master	Fired A Worker	Id Is [worker_05fd.worker], Current Number Of Workers Is 1
+20170619 1159	master	Check Task	During 11:00:00 To 11:59:59 On 20170619
+20170619 1200	master	Chiming	Now Time Is 12 o'clock, On 2017-06-19
+20170619 1205	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1207	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1208	master	Hiring Workers Failed	Current Number Of Workers Is 1
+20170619 1220	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1228	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1231	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1232	master	Hiring Workers Failed	Current Number Of Workers Is 1
+20170619 1237	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1240	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1257	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1259	master	Check Task	During 12:00:00 To 12:59:59 On 20170619
+20170619 1300	master	Chiming	Now Time Is 13 o'clock, On 2017-06-19
+20170619 1306	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1319	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1321	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1328	master	Hiring Workers Failed	Current Number Of Workers Is 0
+20170619 1337	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1339	master	Be Killed	Received A Request To Die
+20170619 1512	master	[New Master]
+20170619 1512	master	Check Task	On 2017-06-19, Monday
+20170619 1512	master	Check Task	During 15:00:00 To 15:59:59 On 20170619
+20170619 1517	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1521	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1523	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1526	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1543	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1547	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1810	master	[New Master]
+20170619 1810	master	Check Task	On 2017-06-19, Monday
+20170619 1810	master	Check Task	During 18:00:00 To 18:59:59 On 20170619
+20170619 1814	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1824	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1829	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1833	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1838	master	Hired A Worker	Current Number Of Workers Is 1
+20170619 1851	master	Hired A Worker	Current Number Of Workers Is 1

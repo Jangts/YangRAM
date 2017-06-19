@@ -92,6 +92,9 @@ final class NIML_LexicalAnalyzer {
 				case 'include':
 				return $this->display();
 
+				case 'dict':
+				return $this->gettext();
+
 				case 'json':
 				return $this->assign_array_json();
 

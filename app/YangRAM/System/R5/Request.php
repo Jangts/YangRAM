@@ -48,8 +48,17 @@ final class Request {
 		$PATH = preg_replace('/(^\/|\/$)/', '', preg_replace('/\/+/', '/', $_SERVER['PHP_SELF']));
         $path = strtolower($PATH);
         $PATH_ARRAY = explode('/', $PATH);
-        $path_array = $data['uri_path'] = explode('/', $path);
+        $path_array = explode('/', $path);
         $homepages = explode('/', strtolower(_HOME_));
+
+        $i18n = $GLOBALS['RUNTIME']->LANGS;
+
+        if($i18n&&isset($path_array[1])&&in_array($path_array[1], $i18n)){
+            $data['LANG'] = $path_array[1];
+            array_shift($PATH_ARRAY);
+            array_shift($path_array);
+        }
+        $data['uri_path'] = $path_array;
         
         if(count($data['uri_path'])===2&&in_array($data['uri_path'][1], $homepages)){
             $_SERVER['REQUEST_URI'] = '/';
@@ -61,10 +70,10 @@ final class Request {
         $PATH_ARRAY[0] = $data['TRANSLATED_URI'];
         if($_SERVER['QUERY_STRING']){
             $uri_array = explode('?', strtolower($_SERVER['REQUEST_URI']));
-            $data['DIR'] = preg_replace('/\/$/', '',str_replace($data['TRANSLATED_URI'], '', $uri_array[0])).'/';
+            $data['DIR'] = preg_replace('/\/$/', '',str_replace($data['TRANSLATED_URI'], '', $uri_array[0]));
             $data['QS'] = $_SERVER['QUERY_STRING'];
         }else{
-            $data['DIR'] = preg_replace('/\/$/', '',str_replace($data['TRANSLATED_URI'], '', strtolower($_SERVER['REQUEST_URI']))).'/';
+            $data['DIR'] = preg_replace('/\/$/', '',str_replace($data['TRANSLATED_URI'], '', strtolower($_SERVER['REQUEST_URI'])));
             $data['QS'] = '';
         }
         define('HTTP_HOST', (_USE_HTTPS_ ? 'https://' : 'http://').HOST);
@@ -76,7 +85,8 @@ final class Request {
         $data['METHOD'] = $_SERVER['REQUEST_METHOD'];
         $data['LENGTH'] = count($PATH_ARRAY);
         $data['URI_PATH'] = $PATH_ARRAY;
-        $data['URI_HASH'] = md5($data['HOST'].$data['TRANSLATED_URI'].'?'.$data['QS']);
+        $data['URI_HASH'] = md5($data['HOST'].$data['DIR'].$data['TRANSLATED_URI'].'?'.$data['QS']);
+        $data['DIR'] .= '/';
         $this->data = $data;
     }
 
@@ -236,17 +246,23 @@ final class Request {
             $args = $this->data['PARAMS'] = new Parameters($this->data['uri_path'], $item, $matches);
         }
         $vals = $args->toArray();
-        if(isset($args->lang)){
-            $lang = $args->lang;
-        }elseif(isset($args->language)){
-            $lang = $args->language;
-        }
         $post = $this->data['FORM'] = new FormData($this->data['PARAMS'],$readonly);
-        if(isset($post->lang)){
-            $lang = $post->lang;
-        }elseif(isset($post->language)){
-            $lang = $post->language;
+        if(empty($this->data['LANG'])){
+            if(isset($args->lang)){
+                $lang = $args->lang;
+            }elseif(isset($args->language)){
+                $lang = $args->language;
+            }
+        
+            if(isset($post->lang)){
+                $lang = $post->lang;
+            }elseif(isset($post->language)){
+                $lang = $post->language;
+            }
+        }else{
+            $lang = $this->data['LANG'];
         }
+        
         $this->vals = array_merge($_COOKIE, $args->toArray(), $post->toArray());
         define('REQUEST_LANGUAGE', $this->data['LANGUAGE'] = $GLOBALS['RUNTIME']->LANGUAGE = $lang);
         return $this;

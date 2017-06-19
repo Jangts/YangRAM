@@ -81,7 +81,8 @@ final class IDEA {
 	public
 	$AA, //Active App
 	$AP, //Application Permissions
-	$RI; //resource indexer
+	$RI, //resource indexer
+	$LANGS;
 	private $LANGUAGE;
 
 	public function __construct(){
@@ -142,6 +143,9 @@ final class IDEA {
 			define('DB_APP',				_DBPRE_.'_app_');
 			define('DB_AST',				_DBPRE_.'_ast_');			
 			$this->LANGUAGE = _LANG_;
+			if(isset($config['i18n'])&&count($config['i18n'])){
+				$this->LANGS = $config['i18n'];
+			}
 			return $config['rdbconnections'];
 		}else{
 			$status = new STAT\Status(701.1, '', 'Initialization Failure! Cannot Load Configure File.');

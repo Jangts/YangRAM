@@ -107,4 +107,8 @@ abstract class NIML {
 		include $file;
 		exit;
 	}
+
+	private function gettext($text){
+		echo $text;
+	}
 }

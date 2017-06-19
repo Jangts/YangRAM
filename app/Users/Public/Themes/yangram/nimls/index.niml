@@ -24,7 +24,7 @@
     <section class="container promos">
         <ul class="content ic pl-center max-w1440 grid-12">
             <li class="market nm-3">
-                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo1.png" alt="" /></a><a class="title">YangRAM Official Market</a></li>
+                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo1.png" alt="" /></a><a class="title">{{_(YangRAM Official Market)}}</a></li>
             <li class="club nm-3">
                 <a class="figure"><img src="{{$__SRCDIR}}images/index/promo2.png" alt="" /></a><a class="title">快速部署站点的社交中心</a></li>
             <li class="traders nm-3">

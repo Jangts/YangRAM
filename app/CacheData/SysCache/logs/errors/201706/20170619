@@ -1,0 +1,22 @@
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-19 11:57:16
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+
+>>>>>>	UNDEFINED_STATUS_701.1	@	2017-06-19 13:28:00
+	MSG		System Initialization Failure
+	DESC		Initialization Failure! Cannot Load Configure File.
+	URL		www.yangram.ni/o/WORKERS/process/main/?IPCTOKEN=b26db7e2178c4d062d12e79267fb881f
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP in line 147
+	TRACE	#0	System\IDEA::load_constants() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#1	System\IDEA::run_system() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+

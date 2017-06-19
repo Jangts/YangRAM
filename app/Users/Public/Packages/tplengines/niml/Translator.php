@@ -25,7 +25,7 @@ final class NIML_Translator {
 			$input = str_replace('<html:', '<', $input);
 			$input = str_replace('</html:', '</', $input);
 		}
-		return $this->cl($this->ct($this->at($this->i($this->h($this->b($this->d($this->w($this->ss($this->v($this->def($this->f($this->e($this->s($this->c($input)))))))))))))));
+		return $this->cl($this->ct($this->at($this->_($this->i($this->h($this->b($this->d($this->w($this->ss($this->v($this->def($this->f($this->e($this->s($this->c($input))))))))))))))));
 	}
 
 	protected function el($input){
@@ -57,6 +57,7 @@ final class NIML_Translator {
 			'has',
 			'if',
 			'include',
+			'dict',
 			'json',
 			'let',
 			'loop',
