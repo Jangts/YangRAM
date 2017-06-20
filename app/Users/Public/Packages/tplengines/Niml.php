@@ -30,6 +30,19 @@ class Niml extends \NIML {
 	$leftTAG = '{{',
 	$rightTAG = '}}';
 
+	protected function getWords(){
+		$lang = $GLOBALS['RUNTIME']->LANGUAGE;
+		$file = PATH_VIEW.$this->theme."/locales/".$lang.".json";
+		if(is_file($file)){
+			$json = file_get_contents($file);
+			$dict = json_decode($json, true);
+			if($dict){
+				return $dict;
+			}
+		}
+		return [];
+	}
+
 	public function getFilenames($template, $is_include = false){
 		if($is_include==false){
 			$this->assign("__DOMAIN", '//'.HOST);

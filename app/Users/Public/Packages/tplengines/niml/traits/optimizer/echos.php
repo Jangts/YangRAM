@@ -39,6 +39,7 @@ trait NIML_traits_optimizer_echos {
 				}
 			}
 		}else{
+			var_dump($segment['body']);
 			exit('NIML_COMPILATION_ERROR: CANNOT FIND SEGMENT BODY');
 		}
 	}

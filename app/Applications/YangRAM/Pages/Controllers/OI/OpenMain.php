@@ -15,7 +15,7 @@ class OpenMain extends \Controller {
         echo $content->render();
 	}
 
-    private function list($type){
+    private function sets($type){
         $oiml = new OIML;
         $localdict = LocalDict::instance();
         $uriarr = $this->request->URI_PATH;
@@ -30,31 +30,31 @@ class OpenMain extends \Controller {
     }
 
     public function singlepage(){
-        $this->list(1);
+        $this->sets(1);
     }
 
     public function generalpage(){
-        $this->list(2);
+        $this->sets(2);
     }
 
     public function listpage(){
-        $this->list(3);
+        $this->sets(3);
     }
 
     public function detailpage(){
-        $this->list(4);
+        $this->sets(4);
     }
 
     public function userpage(){
-        $this->list(5);
+        $this->sets(5);
     }
 
     public function searchpage(){
-        $this->list(6);
+        $this->sets(6);
     }
 
     public function redirectings(){
-        $this->list(7);
+        $this->sets(7);
     }
 
     public function form(){

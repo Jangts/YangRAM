@@ -73,7 +73,7 @@ final class Request {
             $data['DIR'] = preg_replace('/\/$/', '',str_replace($data['TRANSLATED_URI'], '', $uri_array[0]));
             $data['QS'] = $_SERVER['QUERY_STRING'];
         }else{
-            $data['DIR'] = preg_replace('/\/$/', '',str_replace($data['TRANSLATED_URI'], '', strtolower($_SERVER['REQUEST_URI'])));
+            $data['DIR'] = preg_replace('/\/$/', '', str_replace($data['TRANSLATED_URI'], '',  strtolower(rawurldecode($_SERVER['REQUEST_URI'])))).'/';
             $data['QS'] = '';
         }
         define('HTTP_HOST', (_USE_HTTPS_ ? 'https://' : 'http://').HOST);

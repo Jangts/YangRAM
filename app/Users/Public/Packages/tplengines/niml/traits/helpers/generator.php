@@ -63,6 +63,9 @@ trait NIML_traits_helpers_generator {
 			
 			case 'CallExpression':
 			return self::call_expression_generator($arg);
+
+			case 'MathExpression':
+			return $arg['left'].$arg['opchar'].$arg['right'];
 		}
 	}
 

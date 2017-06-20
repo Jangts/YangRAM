@@ -21,6 +21,7 @@ abstract class NIML {
 	$compileddir = 'compiled/';
 
 	public
+	$dict = [],
 	$leftTAG = '{{',
 	$rightTAG = '}}';
 
@@ -100,15 +101,28 @@ abstract class NIML {
 		}
 	}
 
+	protected function getWords(){
+		return [];
+	}
+
 	private function render($file){
 		extract($GLOBALS);
 		extract($this->labels, EXTR_PREFIX_SAME, 'NIML');
+		$this->dict = $this->getWords();
+		if(isset($dict)){
+			$this->dict = array_merge($this->dict, $dict);
+		}
 		header("Content-Type: ".$this->mime."; charset=UTF-8");
 		include $file;
 		exit;
 	}
 
 	private function gettext($text){
-		echo $text;
+		if(isset($this->dict[$text])){
+			echo $this->dict[$text];
+		}else{
+			echo $text;
+		}
+		
 	}
 }

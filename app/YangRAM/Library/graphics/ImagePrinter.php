@@ -1,8 +1,6 @@
 <?php
 namespace Library\graphics;
 
-ini_set ('memory_limit', '128M');
-
 class ImagePrinter {
 	public static function JPG($imgsrc, $imgWidth=Null, $imgHeight=Null, $orgWidth=Null, $orgHeight=Null) {
 		if($imgWidth==Null){

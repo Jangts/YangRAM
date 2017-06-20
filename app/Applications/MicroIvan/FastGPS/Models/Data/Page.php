@@ -57,6 +57,7 @@ class Page extends BaseR3Model {
 		'type'				=>	0,
 		'mark'				=>	'',
 		'gec_default_alias'	=>	'',
+		'category_id'		=>	0,
 		'name'				=>	'New Page',
 		'title'				=>	'A YangRAM Page',
 		'keywords'			=>	NULL,
@@ -88,8 +89,8 @@ class Page extends BaseR3Model {
 		'8'	=>	['pid','type','mark','name','title','keywords','description','use_base64','use_context','theme','template','remark','KEY_IS_RECYCLED','KEY_COUNT','KEY_CTIME','KEY_MTIME','KEY_STATE'],
 	];
 
-	public static function byFeature($type, $mark){
-		$pages = self::query(array('type'=>$type, 'mark'=>$mark, 'KEY_IS_RECYCLED'=>0), array(array('1', false)), 1);
+	public static function byFeature($type, $mark, $category_id = 0){
+		$pages = self::query(array('type'=>$type, 'mark'=>$mark, 'category_id'=>$category_id, 'KEY_IS_RECYCLED'=>0), array(array('1', false)), 1);
 		if(isset($pages[0])){
 			return $pages[0];
 		}

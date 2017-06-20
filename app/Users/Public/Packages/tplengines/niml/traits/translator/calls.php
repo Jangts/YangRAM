@@ -40,11 +40,11 @@ trait NIML_traits_translator_calls {
 	}
 
 	protected function _($input){
-		if(preg_match_all($this->leftTAG . '\s*_\(([\s\S]+)\)\s*' . $this->rightTAG, $input, $matches)){
+		if(preg_match_all($this->leftTAG . '\s*_\(([\s\S]+?)\)\s*' . $this->rightTAG, $input, $matches)){
 			$tags = array_unique($matches[0]);
-			$includes = array_unique($matches[1]);
+			$words = array_unique($matches[1]);
 			foreach($tags as $n => $tag) {
-				$input = str_replace($tag, '<ni:dict value="' . $includes[$n] . '" />', $input);
+				$input = str_replace($tag, '<ni:dict>' . $words[$n] . '</ni:dict>', $input);
 			}
 		}
 		return $input;

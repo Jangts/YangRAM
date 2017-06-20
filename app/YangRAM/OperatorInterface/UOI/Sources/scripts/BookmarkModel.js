@@ -99,11 +99,11 @@ System.DeclareModel('BookmarkModel', (YangRAM, declare, global, undefined) => {
             switch (this.type) {
                 case 'info':
                     return new _.dom.Template(InfoTemplate, this).echo();
-                    break;
+
                 case 'msgs':
                 case 'embed':
                     return new _.dom.Template(RSRCTemplate, this).echo();
-                    break;
+
                 default:
                     return new _.dom.Template(LinKTemplate, this).echo();
             }

@@ -24,13 +24,14 @@
     <section class="container promos">
         <ul class="content ic pl-center max-w1440 grid-12">
             <li class="market nm-3">
-                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo1.png" alt="" /></a><a class="title">{{_(YangRAM Official Market)}}</a></li>
+                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo1.png" alt="" /></a><a class="title">{{_(YangRAM Official Market)}}</a>
+            </li>
             <li class="club nm-3">
-                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo2.png" alt="" /></a><a class="title">快速部署站点的社交中心</a></li>
+                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo2.png" alt="" /></a><a class="title">{{_(Deploy social hub quickly)}}</a></li>
             <li class="traders nm-3">
-                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo3.png" alt="" /></a><a class="title">专为YangRAM设计的电商解决方案</a></li>
+                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo3.png" alt="" /></a><a class="title">{{_(Electronic commerce solutions for YangRAM)}}</a></li>
             <li class="nidn nm-3">
-                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo4.png" alt="" /></a><a class="title">加入NIDN快速成为技术达人</a></li>
+                <a class="figure"><img src="{{$__SRCDIR}}images/index/promo4.png" alt="" /></a><a class="title">{{_(Join NIDN, become technically literate)}}</a></li>
         </ul>
     </section>
     <section class="section-odd container features">

@@ -229,6 +229,15 @@ trait NIML_traits_helpers_analyzer {
 					'eles' =>  $this->get_array($matches[1])
 				);
 			}
+
+            if(preg_match('/^\s*(\d+|\$\w+)\s*(\+|\-|\*|\/|\%)\s*(\d+|\$\w+)\s*$/', $string, $matches)){
+			    return array(
+				    'type'  =>  'MathExpression',
+	                'left'      =>  $matches[1],
+                    'opchar'    =>  $matches[2],
+                    'right'     =>  $matches[3]
+			    );
+		    }
 		}
 		elseif($string===true){
 			return array(
@@ -248,7 +257,6 @@ trait NIML_traits_helpers_analyzer {
 				'value' =>  NULL
 			);
 		}
-        
         return array(
             'type'  =>  'String',
             'value' =>  'ERROR Expression [' . $string . ']'

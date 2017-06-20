@@ -1,0 +1,1 @@
+{"APPID":"SETTINGS","ID":"SETTINGS","Name":"All Settings","Code":"St","Author":"YangRAM","DIR":"\/YangRAM\/OperatorInterface\/Settings\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

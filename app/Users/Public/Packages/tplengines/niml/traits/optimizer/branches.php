@@ -165,9 +165,13 @@ trait NIML_traits_optimizer_branches {
 			return "isset($var) && $var";
 
             case 'Const':
-			case 'StaticMember':
 			$const  = $this->expression_agreement_generator($item);
             return "defined($const) && $const";
+
+            case 'MathExpression':
+			case 'StaticMember':
+			$value  = $this->expression_agreement_generator($item);
+            return $value;
 
 			case 'ArrayElement':
             case 'StaticArrayElement':

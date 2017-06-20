@@ -49,7 +49,7 @@ trait NIML_traits_optimizer_calls {
 			$this->ast['body'][] = array(
 				'type'	=>	'Expression',
 				'indent'=>	$indent,
-				'value'	=>	'$this->gettext(\'' . $segment['args'][0]['value'] . '\');'
+				'value'	=>	'$this->gettext(\'' . str_replace('\"', '"', addslashes($segment['args'][0]['value'])) . '\');'
 			);
 		}else{
 			exit('NIML_COMPILATION_ERROR: CANNOT FIND DICT ARGUMENTS');

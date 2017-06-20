@@ -11,11 +11,14 @@ trait NIML_traits_analyzer_calls {
 				$this->current++;
 			}
 
-			if(empty($args['src'])){
+			if(empty($args['src'])||$this->string($args['src'])===''){
 				return [
 					'type'  =>  'EchoExpression',
 					'name'  =>  'echo',
-					'body'  =>  ''
+					'body'  =>  [
+						'type'  =>  'String',
+						'value' =>  ''
+					]
 				];
 			}
 			return [
@@ -34,27 +37,28 @@ trait NIML_traits_analyzer_calls {
 
 	private function gettext(){
 		$this->current++;
-		if(isset($this->tokens[$this->current])&&$this->tokens[$this->current]['type']==='parameters'){
-			$args = $this->attribute($this->tokens[$this->current++]['value']);
-			if(isset($this->tokens[$this->current])&&$this->tokens[$this->current]['type']==='operator'&&$this->tokens[$this->current]['value']==='/include'){
-				$this->current++;
-			}
-
-			if(empty($args['value'])){
-				return [
-					'type'  =>  'EchoExpression',
-					'name'  =>  'echo',
-					'body'  =>  ''
-				];
-			}
+		if(isset($this->tokens[$this->current])&&$this->tokens[$this->current]['type']==='strings'){
+			$value = $this->tokens[$this->current++]['value'];
+			// var_dump($value, $this->strings);
+			// die;
 			return [
 				'type'  =>  'CallExpression',
 				'name'  =>  'gettext',
 				'args'  =>  [
 					[
 						'type'  =>  'String',
-						'value' =>  $args['value']
+						'value' =>  $this->unescape($value)
 					]
+				]
+			];
+		}
+		if(isset($this->tokens[$this->current])&&$this->tokens[$this->current]['type']==='operator'&&$this->tokens[$this->current++]['value']==='/dict'){
+			return [
+				'type'  =>  'EchoExpression',
+				'name'  =>  'echo',
+				'body'  =>  [
+					'type'  =>  'String',
+					'value' =>  ''
 				]
 			];
 		}

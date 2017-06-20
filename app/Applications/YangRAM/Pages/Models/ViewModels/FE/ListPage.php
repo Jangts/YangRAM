@@ -18,7 +18,6 @@ class ListPage extends \System\NIDO\DataObject {
 		# 可能需要的参数为Parameters的page
 		$order = $page->orderby();
 		$take = $page->take($params->page);
-
 		if(is_numeric($category_id)){
 			if($category_id){
 				if($tag){

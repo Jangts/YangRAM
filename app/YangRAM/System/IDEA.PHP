@@ -131,6 +131,7 @@ final class IDEA {
 			if(_USE_DEBUG_MODE_){
 				ini_set("display_errors", "On");
 			}
+			ini_set('memory_limit', _MAXML_);
 			define('DB_TMP',				_DBPRE_.'_tmp_');
 			define('DB_SYS',				_DBPRE_.'_sys_');
 			define('DB_REG',				_DBPRE_.'_reg_sys_');
@@ -141,7 +142,7 @@ final class IDEA {
 			define('DB_USR',				_DBPRE_.'_usr_map_');
 			define('DB_MSG',				_DBPRE_.'_msg_');
 			define('DB_APP',				_DBPRE_.'_app_');
-			define('DB_AST',				_DBPRE_.'_ast_');			
+			define('DB_AST',				_DBPRE_.'_ast_');
 			$this->LANGUAGE = _LANG_;
 			if(isset($config['i18n'])&&count($config['i18n'])){
 				$this->LANGS = $config['i18n'];
