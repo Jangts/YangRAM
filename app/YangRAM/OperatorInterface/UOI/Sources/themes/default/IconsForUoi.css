@@ -1,4 +1,3 @@
-@charset "utf-8";
 icon[data]:before {
     font-family: "IconsForUOI";
     content: attr(data-icon);
@@ -12,38 +11,6 @@ icon[data]:before {
 icon[data=""][word]:before {
     font-family: "TheVandorSpot";
     content: attr(word);
-}
-
-icon[data=yangram]:before {
-    content: "\f000";
-}
-
-icon[data=dataroom-developer]:before {
-    content: "\f001";
-}
-
-icon[data=dataroom-publisher]:before {
-    content: "\f002";
-}
-
-icon[data=dataroom-elemsmgr]:before {
-    content: "\f003";
-}
-
-icon[data=dataroom-collector]:before {
-    content: "\f004";
-}
-
-icon[data=dataroom-rapporteur]:before {
-    content: "\f005";
-}
-
-icon[data=dataroom-designer]:before {
-    content: "\f006";
-}
-
-icon[data=dataroom-investigator]:before {
-    content: "\f007";
 }
 
 icon[data=user-female]:before {
@@ -694,5 +661,149 @@ icon[data=users]:before {
     content: "\e001";
 }
 
+icon[data=yangram]:before,
+icon[data=YangRAM]:before,
+icon[data=YANGRAM]:before {
+    content: "\YangRAM";
+}
 
-/* CSS Document */
+icon[data=tangram]:before {
+    content: "\f000";
+}
+
+icon[data=yangram-logo]:before {
+    content: "\f001";
+}
+
+icon[data=yangram-market]:before {
+    content: "\f002";
+}
+
+icon[data=compasses]:before {
+    content: "\f003";
+}
+
+icon[data=interblocks]:before {
+    content: "\f004";
+}
+
+icon[data=tangram-new-idea]:before {
+    content: "\f005";
+}
+
+icon[data=nidn]:before {
+    content: "\f006";
+}
+
+icon[data=yangram-page]:before {
+    content: "\f007";
+}
+
+icon[data=studio-bookkeeper]:before {
+    content: "\f008";
+}
+
+icon[data=studio-collector]:before {
+    content: "\f009";
+}
+
+icon[data=studio-designer]:before {
+    content: "\f00a";
+}
+
+icon[data=studio-developer]:before {
+    content: "\f00b";
+}
+
+icon[data=studio-publisher]:before {
+    content: "\f00c";
+}
+
+icon[data=studio-sticker]:before {
+    content: "\f00d";
+}
+
+icon[data=studio-tasker]:before {
+    content: "\f00e";
+}
+
+icon[data=yangram]:before,
+icon[data=YangRAM]:before,
+icon[data=YANGRAM]:before {
+    content: "\YangRAM";
+}
+
+icon[data=watermelon]:before {
+    content: "\f01b";
+}
+
+icon[data=carambola]:before {
+    content: "\f01c";
+}
+
+icon[data=orange]:before {
+    content: "\f01d";
+}
+
+icon[data=mango]:before {
+    content: "\f01e";
+}
+
+icon[data=banana]:before {
+    content: "\f01f";
+}
+
+icon[data=lemon]:before {
+    content: "\f020";
+}
+
+icon[data=strawberry]:before {
+    content: "\f021";
+}
+
+icon[data=coconut]:before {
+    content: "\f022";
+}
+
+icon[data=apple]:before {
+    content: "\f023";
+}
+
+icon[data=pear]:before {
+    content: "\f024";
+}
+
+icon[data=grape]:before {
+    content: "\f025";
+}
+
+icon[data=pineapple]:before {
+    content: "\f026";
+}
+
+icon[data=tomato]:before {
+    content: "\f027";
+}
+
+icon[data=garlic]:before {
+    content: "\f028";
+}
+
+icon[data=peas]:before {
+    content: "\f029";
+}
+
+icon[data=cauliflower]:before {
+    content: "\f02a";
+}
+
+icon[data=cabbage]:before {
+    content: "\f02b";
+}
+
+icon[data=potato]:before {
+    content: "\f02c";
+}
+
+
+/*# sourceMappingURL=IconsForUoi.css.map */

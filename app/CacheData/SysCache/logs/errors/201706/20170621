@@ -1,0 +1,290 @@
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 13:41:26
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 13:41:26
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:08:52
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:08:52
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:09:03
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:09:03
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:25:25
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:25:25
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:37:47
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:37:47
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:37:58
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:37:58
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:40:14
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:40:14
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:52:21
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:52:21
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:53:37
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:53:45
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:53:45
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:54:14
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:54:14
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:54:22
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:54:22
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-21 18:55:48
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	System\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	System\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	System\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	System\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	System\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+
