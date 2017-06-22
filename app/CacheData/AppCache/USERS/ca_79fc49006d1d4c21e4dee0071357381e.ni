@@ -1,0 +1,1 @@
+{"APPID":"USERS","ID":"USERS","Name":"YangRAM User System","Code":"Us","Author":"YangRAM","DIR":"\/YangRAM\/Services\/UserSystemm\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

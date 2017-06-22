@@ -1,0 +1,1 @@
+{"APPID":"1001","ID":"1001","Name":"Developer","Code":"Dv","Author":"Tangram","DIR":"\/Applications\/Tangram\/Studio\/Developer\/","DBTPrefix":"ni_app_a1001_","CONN":"0"}

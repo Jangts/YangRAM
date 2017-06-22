@@ -1,0 +1,1 @@
+{"APPID":"1004","ID":"1004","Name":"Book Keeper","Code":"Bk","Author":"Tangram","DIR":"\/Applications\/Tangram\/Studio\/Bookkeeper\/","DBTPrefix":"ni_app_a1004_","CONN":"0"}

@@ -38,7 +38,11 @@ final class Preset extends Model  {
 	NAME_DESC = [['name', true, DataObject::SORT_REGULAR]],
 	NAME_ASC = [['name', false, DataObject::SORT_REGULAR]],
 	NAME_DESC_GBK = [['name', true, DataObject::SORT_CONVERT_GBK]],
-	NAME_ASC_GBK = [['name', false, DataObject::SORT_CONVERT_GBK]];
+	NAME_ASC_GBK = [['name', false, DataObject::SORT_CONVERT_GBK]],
+
+    OPEN = 0,
+    ALL = 1,
+    CURR = 2;
 
 	private static $storage, $memory, $rdo;
 
@@ -58,8 +62,8 @@ final class Preset extends Model  {
 		'template'			=>	'default.niml',
         'can_contribute'	=>	0,
         'nonaudit'			=>	1,
-		'KEY_STATE'		=>	1,
-        'default_appid'		=>	1
+		'KEY_STATE'		    =>	1,
+        'appid'		        =>	0
     ];
 
 	protected
@@ -227,14 +231,23 @@ final class Preset extends Model  {
         return $objs;
 	}
 
-    public static function all($inUse = true, array $orderby = Preset::ID_ASC){
+    public static function all($inUse = true, array $orderby = Preset::ID_ASC, $app = Preset::ALL){
         self::init();
         $objs = [];
+        self::$rdo->requiring();
+        switch($app){
+            case Preset::OPEN:
+            self::$rdo->where('appid', 0);
+            break;
+
+            case Preset::CURR:
+            self::$rdo->where('appid', AI_CURR);
+            break;
+        }
 		if($inUse){
-			$result = self::$rdo->requiring()->where('KEY_STATE', 1)->take(0)->orderby($orderby)->select();
-		}else{
-			$result = self::$rdo->requiring()->take(0)->orderby($orderby)->select();
+			self::$rdo->where('KEY_STATE', 1);
 		}
+		$result = self::$rdo->take(0)->orderby($orderby)->select();
         if($result){
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -258,31 +271,65 @@ final class Preset extends Model  {
         return self::query([$key=>$val], [[$ok, false, DataObject::SORT_REGULAR]], 0);
     }
 
-    public static function alias($value){
+    public static function alias($value, $app = Preset::ALL){
 		self::init();
 		$storage = self::$storage;
 		if($data = $storage->take($value)){
-			$obj = new static();
-			return  $obj->build($data, true);
+			if(self::checkApp($data['appid'], $app)){
+                $obj = new static();
+			    return  $obj->build($data, true);
+            }
+            return false;
 		}
-		$result = self::$rdo->requiring()->where('alias', $value)->select();
-		if($result&&$data = $result->getRow()){
-			$storage->store($data['id'], $data);
-			$storage->store($data['alias'], $data);
-			$obj = new static();
-			return  $obj->build($data, true);
-		}
-        return false;
+		self::$rdo->requiring()->where('alias', $value);
+        return self::single($app);
     }
 
-	public static function id($value){
+	public static function id($value, $app = Preset::ALL){
 		self::init();
 		$storage = self::$storage;
 		if($data = $storage->take($value)){
-			$obj = new static();
-			return  $obj->build($data, true);
+            if(self::checkApp($data['appid'], $app)){
+                $obj = new static();
+			    return  $obj->build($data, true);
+            }
+            return false;
 		}
-		$result = self::$rdo->requiring()->where('id', $value)->select();
+        self::$rdo->requiring()->where('id', $value);
+        return self::single($app);
+    }
+
+    private static function checkApp($appid, $app = Preset::ALL){
+        switch($app){
+            case Preset::OPEN:
+            if($appid == 0){
+                return false;
+            }
+            break;
+
+            case Preset::CURR:
+            if( == AI_CURR){
+                return false;
+            }
+            break;
+        }
+        return true;
+    }
+
+    private static function single($app){
+        switch($app){
+            case Preset::OPEN:
+            $result = self::$rdo->where('appid', 0);
+            break;
+
+            case Preset::CURR:
+            $result = self::$rdo->where('appid', AI_CURR)->select();
+            break;
+
+            default:
+            $result = self::$rdo->select();;
+        }
+		
 		if($result&&$data = $result->getRow()){
 			$storage->store($data['id'], $data);
 			$storage->store($data['alias'], $data);

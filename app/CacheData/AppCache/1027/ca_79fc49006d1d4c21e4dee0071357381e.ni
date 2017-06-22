@@ -1,0 +1,1 @@
+{"APPID":"1027","ID":"1027","Name":"YangRAM Weather","Code":"Tq","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/NFA\/Weather\/","DBTPrefix":"ni_app_a1027_","CONN":"0"}

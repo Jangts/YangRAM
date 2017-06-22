@@ -1,0 +1,1 @@
+{"APPID":"1024","ID":"1024","Name":"YangRAM Read","Code":"Yd","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/NFA\/Read\/","DBTPrefix":"ni_app_a1024_","CONN":"0"}

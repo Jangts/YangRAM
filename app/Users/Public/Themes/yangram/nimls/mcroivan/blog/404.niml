@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+
+<head>
+    {{@includes/head.niml}}
+</head>
+
+<body>
+    {{@includes/header.niml}}
+    <section>
+        <h2 style="font-size:48px;">404</h2>
+    </section>
+    {{@includes/footer.niml}}
+    <script type="text/javascript" src="{{$__SRCDIR}}scripts/index.js"></script>
+</body>
+
+</html>
