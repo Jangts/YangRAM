@@ -1,5 +1,5 @@
 <?php
-namespace System\NIDO\traits;
+namespace Tangram\NIDO\traits;
 
 /**
  *	Data Formatting Trait

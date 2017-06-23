@@ -1,6 +1,6 @@
 <?php
 namespace Explorer\Models\ViewModels;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Application;
 use CM\SPC\Preset;
 use CM\SRC\Folder;

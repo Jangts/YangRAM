@@ -1,7 +1,7 @@
 <?php
 namespace GPS\Models\ViewModels\OI;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use AF\ViewRenderers\OIML;
 
 class Startpage extends DataObject {

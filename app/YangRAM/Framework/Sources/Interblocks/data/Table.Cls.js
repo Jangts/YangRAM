@@ -24,6 +24,7 @@ iBlock([
     var infs = {},
         tables = {},
         metable = new Storage('pandora.data.Table'),
+        namingExpr = /^[A-Z_]\w*$/i,
         create = function(tablename, fields, primarykey, constraints) {
             var defaultStorageName = 'pandora.data.Table.' + tablename;
             return {
@@ -70,7 +71,6 @@ iBlock([
                         }
                         if (constraint.pattern) {
                             var patt = new RegExp(constraint.pattern);
-                            console.log(patt, value, patt.test(value));
                             return patt.test(value);
                         }
                         return true;
@@ -123,12 +123,10 @@ iBlock([
 
     declare('data.Table', {
         _init: function(tablename, fields, primarykey, constraints) {
-            if (_.namingExpr.test(tablename)) {
+            if (namingExpr.test(tablename)) {
                 this.tablename = tablename;
-                console.log(tables[tablename]);
                 if (!tables[tablename]) {
                     var mateinfs = metable.get(tablename);
-                    console.log(mateinfs);
                     if (!mateinfs) {
                         if (fields) {
                             mateinfs = create(tablename, fields, primarykey, constraints);
@@ -149,6 +147,7 @@ iBlock([
                     } catch (e) {
                         tables[tablename] = {};
                     }
+                    console.log(mateinfs);
                 }
             } else {
                 _.error('Error Tablename');
@@ -256,54 +255,118 @@ iBlock([
         fields: function() {
             var fields = {},
                 mateinfs = infs[this.tablename];
-            _.each(mateinfs.fields, function(fieldname, value) {
-                fields[fieldname] = {
-                    default: value,
-                    constraint: mateinfs.constraints && mateinfs.constraints[fieldname],
-                    isPKey: fieldname === mateinfs.pk
-                };
-            });
-            return fields;
+            if (mateinfs) {
+                _.each(mateinfs.fields, function(fieldname, value) {
+                    fields[fieldname] = {
+                        default: value,
+                        constraint: mateinfs.constraints && mateinfs.constraints[fieldname],
+                        isPKey: fieldname === mateinfs.pk
+                    };
+                });
+                return fields;
+            }
+            return false;
         },
         createtable: function(width, border) {
-            if (width) {
-                _width = ' width="' + width + '"';
-            } else {
-                _width = '';
-            }
-            if (border) {
-                _border = ' border="' + border + '"';
-            } else {
-                _border = '';
-            }
-            var mateinfs = infs[this.tablename],
-                rows = tables[this.tablename],
-                html = '<table ' + _width + _border + '><tbody><tr><th>' + mateinfs.pk + '</th>';
-            _.each(mateinfs.fields, function(fieldname) {
-                if (fieldname != mateinfs.pk) {
-                    html += '<th>' + fieldname + '</th>';
+            var mateinfs = infs[this.tablename];
+            if (mateinfs) {
+                if (width) {
+                    _width = ' width="' + width + '"';
+                } else {
+                    _width = '';
                 }
-            });
-            _.each(rows, function(id, row) {
-                html += '</tr><tr><th>' + id + '</th>';
-                _.each(row, function(fieldname, value) {
+                if (border) {
+                    _border = ' border="' + border + '"';
+                } else {
+                    _border = '';
+                }
+                var rows = tables[this.tablename],
+                    html = '<table ' + _width + _border + '><tbody><tr><th>' + mateinfs.pk + '</th>';
+                _.each(mateinfs.fields, function(fieldname) {
                     if (fieldname != mateinfs.pk) {
-                        html += '<td>' + value + '</td>';
+                        html += '<th>' + fieldname + '</th>';
                     }
                 });
-            });
-            html += '</tr></tbody></table>';
-            return html;
+                _.each(rows, function(id, row) {
+                    html += '</tr><tr><th>' + id + '</th>';
+                    _.each(row, function(fieldname, value) {
+                        if (fieldname != mateinfs.pk) {
+                            html += '<td>' + value + '</td>';
+                        }
+                    });
+                });
+                html += '</tr></tbody></table>';
+                return html;
+            }
+            return false;
         }
     });
 
     _('data.Table', {
         exec: function(str) {
-            a = jsonsql.query(str, tables);
-            b = str.match(/(select|delete|update|insert)/);
-            console.log(str, a);
+            var matchs = str.match(/^(select|delete|update|insert)([\w\,\*\s]+from\s+|\s+from\s+|\s+into\s+|\s+)([A-Z_]\w*)\s+(.+)/i);
+            if (matchs) {
+                var mateinfs = infs[matchs[3]];
+                if (mateinfs) {
+                    var type = matchs[1],
+                        table = 'json.' + matchs[3];
+                    switch (type) {
+                        case 'select':
+                            var sql = 'select ' + matchs[2] + table + ' ' + matchs[4];
+                            return jsonsql.query(sql, tables);
+
+                        case 'delete':
+                            var sql = 'select * from ' + table + ' ' + matchs[4],
+                                result = jsonsql.query(sql, tables);
+                            if (result.length) {
+                                var table = new _.data.Table(matchs[3]);
+                                _.each(result, function(i, row) {
+                                    table.delete(row[mateinfs.pk]);
+                                });
+                            }
+                            return result.length
+
+                        case 'update':
+                            var mas = matchs[4].match(/^set\s+(\{.+\})\s+(where\s+\(.+\))$/i);
+                            if (mas) {
+                                try {
+                                    eval('var data = ' + mas[1]);
+                                    if (typeof(data)) {
+                                        var sql = 'select * from ' + table + ' ' + mas[2],
+                                            result = jsonsql.query(sql, tables);
+                                        if (result.length) {
+                                            var table = new _.data.Table(matchs[3]);
+                                            _.each(result, function(i, row) {
+                                                table.update(row[mateinfs.pk], data);
+                                            });
+                                        }
+                                        return result.length
+                                    }
+                                } catch (e) {
+                                    console.log(e);
+                                }
+                            }
+                            return 0;
+
+                        case 'insert':
+                            var mas = matchs[4].match(/^values\s+(\{.+\})\s*$/i);
+                            if (mas) {
+                                try {
+                                    eval('var data = [' + mas[1] + ']');
+                                    if (typeof(data)) {
+                                        var table = new _.data.Table(matchs[3]);
+                                        return table.insert.apply(table, data);
+                                    }
+                                } catch (e) {
+                                    console.log(e);
+                                }
+                            }
+                            return 0;
+                    }
+                }
+
+            }
+            return false;
         }
     });
-
-    global.console.log(tables, infs);
 });

@@ -3,7 +3,7 @@ namespace Pages\Controllers;
 
 use Status;
 use Response;
-use System\NIDO\Guest;
+use Tangram\NIDO\Guest;
 
 
 use Packages\tplengines\Niml;

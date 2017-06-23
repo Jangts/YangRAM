@@ -6,7 +6,7 @@ use CM\SPC\Preset;
 use CM\SPC\Category;
 use CM\SPC;
 
-class DetailPage extends \System\NIDO\DataObject {
+class DetailPage extends \Tangram\NIDO\DataObject {
     public function __construct($page, $item_id, $params){
 		$preset_alias = $page->mark;
 		if($page->use_base64){

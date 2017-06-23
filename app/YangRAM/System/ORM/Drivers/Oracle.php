@@ -1,9 +1,9 @@
 <?php
-namespace System\ORM\Drivers;
+namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use System\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BaseClass;
 
 /**
  *	PDO Extended For Oracle

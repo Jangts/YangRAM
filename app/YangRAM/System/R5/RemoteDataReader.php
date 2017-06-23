@@ -1,13 +1,13 @@
 <?php
-namespace System\R5;
+namespace Tangram\R5;
 
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 /**
  *	URL Remote Data Reader
  *	URL远程数据读取器，用来
- *  读取远程服务器上的数据，并自动封装为System\NIDO\Commom对象以供使用
+ *  读取远程服务器上的数据，并自动封装为Tangram\NIDO\Commom对象以供使用
  */
 final class RemoteDataReader {
     const

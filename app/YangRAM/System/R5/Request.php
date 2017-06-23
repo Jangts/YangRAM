@@ -1,10 +1,10 @@
 <?php
-namespace System\R5;
+namespace Tangram\R5;
 
-use System\NIDO\DataObject;
-use System\NIDO\Column;
-use System\NIDO\Parameters;
-use System\NIDO\FormData;
+use Tangram\NIDO\DataObject;
+use Tangram\NIDO\Column;
+use Tangram\NIDO\Parameters;
+use Tangram\NIDO\FormData;
 
 /**
  *	Universal Request Reader
@@ -211,7 +211,7 @@ final class Request {
     }
 
     public function update($item = NULL, $matches = NULL, $readonly = true){
-        if(isset($this->data['PARAMS'])&&is_a($this->data['PARAMS'], '\System\Parameters')){
+        if(isset($this->data['PARAMS'])&&is_a($this->data['PARAMS'], '\Tangram\Parameters')){
             return $this;
         }
         if(!get_magic_quotes_gpc()){
@@ -269,7 +269,7 @@ final class Request {
     }
 
     public function checkColumn($alternate = NULL){
-        if(isset($this->data['COLUMN'])&&is_a($this->data['COLUMN'], '\System\NIDO\Column')){
+        if(isset($this->data['COLUMN'])&&is_a($this->data['COLUMN'], '\Tangram\NIDO\Column')){
             return $this;
         }
         $column = $this->data['PARAMS']->column ? $this->data['PARAMS']->column : $alternate;

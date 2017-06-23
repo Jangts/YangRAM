@@ -1,7 +1,7 @@
 <?php
 namespace AF\Models\Localize;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Application;
 
 class BaseModel extends DataObject {

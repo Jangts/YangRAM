@@ -9,7 +9,7 @@
 // | Author  Jangts <ivanyeung@yangram.com>                                |
 // +-----------------------------------------------------------------------+
 
-namespace System;
+namespace Tangram;
 
 use PDO;
 
@@ -158,14 +158,14 @@ final class IDEA {
 		define('QS_SCAN_GET', 		'get');
 		define('QS_SCAN_POST', 	'post');
 		define('QS_SCAN_COOKIE', 	'cookie');
-		include(PATH_SYS.'CACH/traits/filesys.php');
+		include(PATH_SYS.'CACHE/traits/filesys.php');
 		include(PATH_SYS.'NIDO/traits/conversion.php');
 		include(PATH_SYS.'NIDO/traits/formatting.php');
 		include(PATH_SYS.'ORM/traits/common.php');
 		include(PATH_SYS.'ORM/traits/field.php');
 		include(PATH_SYS.'ORM/traits/transaction.php');
 		
-		include(PATH_SYS.'CACH/Storage.php');
+		include(PATH_SYS.'CACHE/Storage.php');
 		include(PATH_SYS.'NIDO/DataObject.php');
 		include(PATH_SYS.'NIDO/Column.php');
 		include(PATH_SYS.'NIDO/Parameters.php');
@@ -179,11 +179,11 @@ final class IDEA {
 		include(PATH_SYS.'APP/ApplicationProperties.php');
 		include(PATH_SYS.'APP/ApplicationPermissions.php');
 
-		class_alias('System\APP\Application', 'Application');
-		class_alias('System\CACH\Storage', 'Storage');
-		class_alias('System\ORM\RDO', 'RDO');
-		class_alias('System\SESS\Session', 'SESS');
-		class_alias('System\STAT\Status', 'Status');
+		class_alias('Tangram\APP\Application', 'Application');
+		class_alias('Tangram\CACHE\Storage', 'Storage');
+		class_alias('Tangram\ORM\RDO', 'RDO');
+		class_alias('Tangram\SESS\Session', 'SESS');
+		class_alias('Tangram\STAT\Status', 'Status');
 		
 		NIDO\Column::initialize();
 		$AP = APP\ApplicationPermissions::instance();
@@ -198,7 +198,7 @@ final class IDEA {
 					];
 				}else{
 					include_once(PATH_SYS.'ORM/Drivers/'.$conn['driver'].'.php');
-					$class = 'System\ORM\Drivers\\'.$conn['driver'];
+					$class = 'Tangram\ORM\Drivers\\'.$conn['driver'];
 					if($defaultpdox = $class::instance($conn)){
 						$CONNS[] = [
 							'driver'	=>  $conn['driver'],
@@ -235,8 +235,8 @@ final class IDEA {
 		include(PATH_SYS.'R5/Request.php');
 		include(PATH_SYS.'R5/Response.php');
 		include(PATH_SYS.'R5/RemoteDataReader.php');
-		class_alias('System\R5\Request', 'Request');
-		class_alias('System\R5\Response', 'Response');
+		class_alias('Tangram\R5\Request', 'Request');
+		class_alias('Tangram\R5\Response', 'Response');
 		R5\RouteMapper::initialize();
 		$this->RI = R5\ResourceIndexer::instance();
 	}
@@ -341,4 +341,4 @@ final class IDEA {
 include(PATH_SYS.'ClassLoader.php');
 include(PATH_SYS.'SESS/Session.php');
 include(PATH_SYS.'STAT/Status.php');
-class_alias('System\IDEA', 'IDEA');
+class_alias('Tangram\IDEA', 'IDEA');

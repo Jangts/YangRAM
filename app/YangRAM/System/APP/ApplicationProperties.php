@@ -1,7 +1,7 @@
 <?php
-namespace System\APP;
+namespace Tangram\APP;
 
-use System\IDEA;
+use Tangram\IDEA;
 
 include 'NI_ApplicationProperties_BaseModel.php';
 

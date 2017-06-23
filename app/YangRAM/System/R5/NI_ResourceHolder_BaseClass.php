@@ -1,5 +1,5 @@
 <?php
-namespace System\R5;
+namespace Tangram\R5;
 
 /**
  *	Uniform Resource Holder

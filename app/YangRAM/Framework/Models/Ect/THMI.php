@@ -2,7 +2,7 @@
 namespace AF\Models\Ect;
 
 use PDO;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use RDO;
 use Model;
 use AF\Models\BaseR3Model;

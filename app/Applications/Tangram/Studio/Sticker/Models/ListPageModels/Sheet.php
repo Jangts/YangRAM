@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Stk\Models\ListPageModels;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use CM\EMC;
 use AF\ViewRenderers\OIML;

@@ -1,5 +1,5 @@
 <?php
-namespace System\SESS;
+namespace Tangram\SESS;
 
 /**
  *	Custom Session Interface

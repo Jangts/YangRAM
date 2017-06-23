@@ -1,5 +1,5 @@
 <?php
-namespace System\ORM\traits;
+namespace Tangram\ORM\traits;
 
 use PDO;
 

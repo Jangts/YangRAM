@@ -1,8 +1,8 @@
 <?php
-namespace System\R5;
+namespace Tangram\R5;
 
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 /**
  *	Universal Responser
@@ -244,6 +244,14 @@ HTML;
         }else{
             $this->irreplaceable[] = sprintf('%s: %s', $name, $value);
         }
+        return $this;
+    }
+
+    public function setResourceCache($expires = 3153600000,  $cactrl = 'public'){
+        $this->setHeader('Cache-Control', $cactrl)
+            ->setHeader('Cache-Control', 'max-age='.$expires)
+            ->setHeader('Expires', preg_replace('/.{5}$/', 'GMT', gmdate('r', intval(time() + $expires))))
+            ->setHeader('Last-Modified', gmdate("D, d M Y H:i:s", time()).' GMT');
         return $this;
     }
 

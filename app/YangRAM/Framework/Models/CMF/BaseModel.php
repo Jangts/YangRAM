@@ -1,6 +1,6 @@
 <?php
 namespace CM;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 abstract class BaseModel extends DataObject {
 	public static function count(){

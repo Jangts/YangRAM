@@ -1,1 +1,0 @@
-{"APPID":"1007","ID":"1007","Name":"Tasker","Code":"Ta","Author":"Tangram","DIR":"\/Applications\/Tangram\/Studio\/Tasker\/","DBTPrefix":"ni_app_a1007_","CONN":"0"}

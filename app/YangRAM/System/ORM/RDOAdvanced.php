@@ -1,11 +1,11 @@
 <?php
-namespace System\ORM;
+namespace Tangram\ORM;
 
 use PDO;
 
 /**
  *	NI RDBTable Level Data Object
- *	NI关系数据库表级数据对象，是System\ORM\RDO的扩展版，支持
+ *	NI关系数据库表级数据对象，是Tangram\ORM\RDO的扩展版，支持
  *  **  用来对数据库中的行级单元进行增，删，改，查，另外新增了
  *  **  事件功能（需要数据库自身支持）
  *  **  ***  表级处理功能，如

@@ -1,6 +1,6 @@
 <?php
 namespace TC\Models\Data;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use AF\Models\BaseR3Model;
 

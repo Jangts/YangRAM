@@ -1,5 +1,5 @@
 <?php
-namespace System\ORM;
+namespace Tangram\ORM;
 
 use PDO;
 use Status;

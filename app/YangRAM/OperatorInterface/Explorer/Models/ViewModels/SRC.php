@@ -1,6 +1,6 @@
 <?php
 namespace Explorer\Models\ViewModels;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use CM\SRC\Folder;
 use CM\SRCLite;
 

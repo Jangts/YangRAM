@@ -4,7 +4,7 @@ namespace OIC;
 use Status;
 use Response;
 use Storage;
-use System\ORM\Counter;
+use Tangram\ORM\Counter;
 use Library\compilers\OperationScript;
 use Library\compilers\JSMin;
 use Library\compilers\OIStyleSheets;
@@ -33,11 +33,7 @@ abstract class OISourceFilesResponser_BaseClass extends BaseOICtrller {
             $response = Response::instance(304, $type);
         }
 		
-		$response->setHeader('Cache-Control', 'public')
-            ->setHeader('Cache-Control', 'max-age=3153600000')
-            ->setHeader('Expires', preg_replace('/.{5}$/', 'GMT', gmdate('r', intval(time() + 3153600000))))
-            ->setHeader('Last-Modified', gmdate("D, d M Y H:i:s", time()).' GMT')
-            ->send($code);
+		$response->setResourceCache()->send($code);
 	}
 
 	final public function returnSplashScreen(){

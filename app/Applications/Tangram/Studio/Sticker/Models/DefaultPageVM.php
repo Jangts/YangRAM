@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Stk\Models;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use CM\EMC;
 use AF\ViewRenderers\OIML;
 

@@ -1,12 +1,12 @@
 <?php
-namespace System\SESS\Handlers;
+namespace Tangram\SESS\Handlers;
 use Status;
 
 /**
  *	File Session
  *	文档存储SESSION解决方案
  */
-final class FsSession implements \System\SESS\NI_Session_interface {
+final class FsSession implements \Tangram\SESS\NI_Session_interface {
     private static
     $instance = NULL,
     $savePath = PATH_CAC_SES;

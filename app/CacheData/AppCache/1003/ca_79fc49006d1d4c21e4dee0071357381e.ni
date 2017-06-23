@@ -1,1 +1,0 @@
-{"APPID":"1003","ID":"1003","Name":"Collector","Code":"Co","Author":"Tangram","DIR":"\/Applications\/Tangram\/Studio\/Collector\/","DBTPrefix":"ni_app_a1003_","CONN":"0"}

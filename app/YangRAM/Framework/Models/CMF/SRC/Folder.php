@@ -1,7 +1,7 @@
 <?php
 namespace CM\SRC;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use RDO;
 use CM\SRC;
 use CM\SRCLite;

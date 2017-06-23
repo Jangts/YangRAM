@@ -28,10 +28,7 @@ class SmartianLauncher extends Controller {
     
     private function setHeaders($response) {
         $response->MIME = 'application/javascript';
-        $response->setHeader('cache-control', 'public');
-        $response->setHeader('Cache-Control', 'max-age=3153600000');
-        $response->setHeader('Expires:', preg_replace('/.{5}$/', 'GMT', gmdate('r', intval(time() + 3153600000))));
-        $response->setHeader('Last-Modified', gmdate("D, d M Y H:i:s", time()).' GMT');
+        $response->setResourceCache();
     }
     
     public function welcome($lang){

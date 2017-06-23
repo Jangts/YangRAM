@@ -1,7 +1,7 @@
 <?php
 namespace AF\Models;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Storage;
 
 /**
@@ -65,7 +65,7 @@ abstract class BaseModel extends DataObject {
 
     final public static function clean(){
         $storage = self::getStorage();
-        if(is_a($storage, '\System\CACH\Storage')){
+        if(is_a($storage, '\Tangram\CACHE\Storage')){
             $storage->cleanOut();
         }
     }
@@ -118,7 +118,7 @@ abstract class BaseModel extends DataObject {
     }
 
     final public function cac(){
-        if(is_a(static::$storage, '\System\CACH\Storage')){
+        if(is_a(static::$storage, '\Tangram\CACHE\Storage')){
             static::$storage->store($this->name, $this->data);
         }
     }

@@ -3,10 +3,10 @@ namespace CM;
 
 use PDO;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Storage;
 use RDO;
-use System\ORM\RDOAdvanced;
+use Tangram\ORM\RDOAdvanced;
 
 /**
  *	Model Of Attached Resource Infomation

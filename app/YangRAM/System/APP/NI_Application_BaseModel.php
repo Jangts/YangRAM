@@ -1,11 +1,11 @@
 <?php
-namespace System\APP;
+namespace Tangram\APP;
 
 use Status;
-use System\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BaseClass;
 use RDO;
 use Storage;
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Request;
 
 /**

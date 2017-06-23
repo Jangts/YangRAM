@@ -1,5 +1,5 @@
 <?php
-namespace System\ORM;
+namespace Tangram\ORM;
 
 use PDO;
 use Status;
@@ -123,7 +123,7 @@ class RDO {
         if($rdox = self::conn($options)){
             $this->pdox = $rdox;
         }else{
-            $status =  new Status(703.2, 'Database Connect Error', 'Please check your arguments for System\RDO');
+            $status =  new Status(703.2, 'Database Connect Error', 'Please check your arguments for Tangram\RDO');
             return $status->cast(Status::CAST_LOG);
         }
     }

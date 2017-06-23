@@ -1,7 +1,7 @@
 <?php
 namespace Blog\ResHolders;
 
-use System\ClassLoader;
+use Tangram\ClassLoader;
 
 class ResourceBrowser extends \AF\ResourceHolders\ResourceBrowser_BaseClass {
 	protected

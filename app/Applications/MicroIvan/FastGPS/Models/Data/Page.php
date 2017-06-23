@@ -2,9 +2,9 @@
 namespace GPS\Models\Data;
 
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use AF\Models\BaseR3Model;
-use System\ORM\Counter;
+use Tangram\ORM\Counter;
 use CM\SPCLite;
 
 class Page extends BaseR3Model {

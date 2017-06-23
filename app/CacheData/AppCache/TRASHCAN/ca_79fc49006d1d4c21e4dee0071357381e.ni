@@ -1,1 +1,0 @@
-{"APPID":"TRASHCAN","ID":"TRASHCAN","Name":"YangRAM Trash Can","Code":"Xp","Author":"YangRAM","DIR":"\/YangRAM\/OperatorInterface\/TrashCan\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

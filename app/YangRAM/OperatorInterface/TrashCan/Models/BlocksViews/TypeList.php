@@ -1,6 +1,6 @@
 <?php
 namespace TC\Models\BlocksViews;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 class TypeList extends DataObject {
 	private static

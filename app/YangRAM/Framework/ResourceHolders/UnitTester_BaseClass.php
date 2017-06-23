@@ -2,8 +2,8 @@
 namespace AF\ResourceHolders;
 
 use Status;
-use System\ClassLoader;
-use System\NIDO\DataObject;
+use Tangram\ClassLoader;
+use Tangram\NIDO\DataObject;
 use Request;
 use AF\Controllers\UnitTestResultsRenderer;
 use AF\Models\Certificates\Passport;
@@ -14,7 +14,7 @@ use Application;
  *	统一测试员端路由器抽象
  *  子应用测试员端（如果有）路由器的基类
  */
-abstract class UnitTester_BaseClass extends \System\R5\NI_ResourceHolder_BaseClass {
+abstract class UnitTester_BaseClass extends \Tangram\R5\NI_ResourceHolder_BaseClass {
     protected
     $renderer = NULL,
     $testname = 'Unnamed Test',

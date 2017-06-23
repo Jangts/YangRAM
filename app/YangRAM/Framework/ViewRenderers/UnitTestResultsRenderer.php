@@ -1,7 +1,7 @@
 <?php
 namespace AF\ViewRenderers;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 /**
  *	Unit Renderer
@@ -77,8 +77,8 @@ HEAD;
                     }
                     
                 }
-            }elseif(is_a($data, 'System\NIDO\DataObject')){
-                $body .= '<h4>A System\DATUM NIDOECT: </h4>';
+            }elseif(is_a($data, 'Tangram\NIDO\DataObject')){
+                $body .= '<h4>A Tangram\DATUM NIDOECT: </h4>';
                 $body .= '<article><pre><code>&gt;&gt;&gt;PRINT LIKE LIST DATA:'. PHP_EOL . htmlspecialchars(print_r($data->toArray(), true)) . '</code></pre></article>';
             }elseif(is_bool($data)){
                 $body .= '<h4>A RETURN SCALAR DATA: </h4>';

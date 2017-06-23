@@ -2,7 +2,7 @@
 namespace AF\ResourceHolders\traits;
 
 use Status;
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Request;
 use AF\Models\Certificates\Passport;
 use Application;

@@ -3,11 +3,11 @@ namespace CM\SPC;
 
 use PDO;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use Storage;
 use RDO;
-use System\ORM\RDOAdvanced;
+use Tangram\ORM\RDOAdvanced;
 use CM\SPC;
 use CM\SPCLite;
 
@@ -282,7 +282,7 @@ final class Preset extends Model  {
             return false;
 		}
 		self::$rdo->requiring()->where('alias', $value);
-        return self::single($app);
+        return self::single($app, $storage);
     }
 
 	public static function id($value, $app = Preset::ALL){
@@ -296,7 +296,7 @@ final class Preset extends Model  {
             return false;
 		}
         self::$rdo->requiring()->where('id', $value);
-        return self::single($app);
+        return self::single($app, $storage);
     }
 
     private static function checkApp($appid, $app = Preset::ALL){
@@ -308,7 +308,7 @@ final class Preset extends Model  {
             break;
 
             case Preset::CURR:
-            if( == AI_CURR){
+            if($appid == AI_CURR){
                 return false;
             }
             break;
@@ -316,7 +316,7 @@ final class Preset extends Model  {
         return true;
     }
 
-    private static function single($app){
+    private static function single($app, $storage){
         switch($app){
             case Preset::OPEN:
             $result = self::$rdo->where('appid', 0);

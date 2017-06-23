@@ -31,7 +31,7 @@ class Image extends Controller {
 							return self::write();
 						}
 					}
-					//Response::instance()->checkResourceModification(filemtime($this->filename));
+					$this->cacheResource($this->filename, _CACHE_PIC_CLIENT_EXPIRY_);
 					if(!empty($requests[1])){
 						$this->orgWidth = $row["WIDTH"];
 						$this->orgHeight = $row["HEIGHT"];
@@ -40,7 +40,7 @@ class Image extends Controller {
 					}
 					return $this->writePicture();
 				}
-				//SRC::removeDocument(strtolower($this->appid), $id);
+				SRC::removeDocument(strtolower($this->appid), $id);
 			}
 		}
 		new Status(404, true);//Status::notFound();

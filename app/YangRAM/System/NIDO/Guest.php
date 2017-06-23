@@ -1,9 +1,9 @@
 <?php
-namespace System\NIDO;
+namespace Tangram\NIDO;
 
 use RDO;
 use Request;
-use System\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BaseClass;
 use AF\Models\Certificates\Passport;
 
 /**

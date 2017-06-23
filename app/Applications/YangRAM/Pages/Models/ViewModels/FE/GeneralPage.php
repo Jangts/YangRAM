@@ -3,7 +3,7 @@ namespace Pages\Models\ViewModels\FE;
 
 use CM\GEC;
 
-class GeneralPage extends \System\NIDO\DataObject {
+class GeneralPage extends \Tangram\NIDO\DataObject {
     public function __construct($page, $params){
 		if(isset($params->contentgroup)){
 			$group = $params->contentgroup;

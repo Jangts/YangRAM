@@ -1,1 +1,0 @@
-{"APPID":"1025","ID":"1025","Name":"YangRAM Play","Code":"Yx","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/NFA\/Play\/","DBTPrefix":"ni_app_a1025_","CONN":"0"}

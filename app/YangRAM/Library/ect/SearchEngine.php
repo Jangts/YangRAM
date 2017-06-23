@@ -3,7 +3,7 @@ namespace Library\ect;
 
 use PDO;
 use RDO;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Library\formattings\ScalarFormat;
 
 class SearchEngine {

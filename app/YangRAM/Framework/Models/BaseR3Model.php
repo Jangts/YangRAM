@@ -3,10 +3,10 @@ namespace AF\Models;
 
 use PDO;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Storage;
 use RDO;
-use System\ORM\RDOAdvanced;
+use Tangram\ORM\RDOAdvanced;
 
 /**
  *	RDB Record Row Data Model
@@ -184,7 +184,7 @@ abstract class BaseR3Model extends BaseModel {
             $rdo = self::getRDO();
             $storage = self::getStorage();
             $lifetime = self::getLifeTime();
-            if(is_a($storage, 'System\CACH\Storage')){
+            if(is_a($storage, 'Tangram\CACHE\Storage')){
                 if($data = $storage->take($identity)){
                     if($lifetime){
                         $time = $storage->time($identity);

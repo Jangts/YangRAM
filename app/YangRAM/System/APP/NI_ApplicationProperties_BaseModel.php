@@ -1,9 +1,9 @@
 <?php
-namespace System\APP;
+namespace Tangram\APP;
 
-use System\IDEA;
+use Tangram\IDEA;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 /**
  *	Application Configuration Options Model

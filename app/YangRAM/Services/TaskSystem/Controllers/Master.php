@@ -1,7 +1,7 @@
 <?php
 namespace Workers\Controllers;
 use Status;
-use System\AsyncTask;
+use Tangram\AsyncTask;
 
 /**
  *  
@@ -174,6 +174,9 @@ final class Master extends Process {
     }
 
     protected function scan(){
+        
+
+
         /* 以下为测试代码 */
         $int1 = mt_rand(0, 1000);
         $int2 = mt_rand(0, 7);

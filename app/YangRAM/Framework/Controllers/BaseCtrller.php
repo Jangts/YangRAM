@@ -51,4 +51,19 @@ abstract class BaseCtrller {
         }
         return $filename;
 	}
+
+	protected function cacheResource($filename, $expires = 3153600000,  $cactrl = 'public') {
+		if(is_file($filename)){
+            $lastModified = filemtime($filename);
+            if(!$this->checkResourceModification($lastModified)){
+                header("HTTP/1.1 304 Not Modified");
+				exit;
+            }
+        }
+        header('Cache-Control: '.$cactrl);
+        header('Cache-Control: max-age='.$expires);
+        header('Expires: ' . preg_replace('/.{5}$/', 'GMT', gmdate('r', intval(time() + $expires))));
+        header('Last-Modified: ' . gmdate("D, d M Y H:i:s", time()).' GMT');
+        return $this;
+	}
 }

@@ -2,7 +2,7 @@
 namespace Pages\Models\ViewModels\OI;
 
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use AF\ViewRenderers\OIML;
 use Library\ect\Pager;

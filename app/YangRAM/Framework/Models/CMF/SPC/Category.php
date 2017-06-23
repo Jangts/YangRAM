@@ -1,7 +1,7 @@
 <?php
 namespace CM\SPC;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use AF\Models\BaseR3Model;
 use CM\SPC;
 

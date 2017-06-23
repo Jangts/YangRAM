@@ -2,7 +2,7 @@
 namespace AF\ResourceHolders;
 
 use Status;
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Request;
 use Application;
 
@@ -87,6 +87,6 @@ abstract class OISourceTransfer_BaseClass extends ContentProvider_BaseClass {
 	}
 }
 
-include(PATH_SYS.'CACH/UserFiles.php');
+include(PATH_SYS.'CACHE/UserFiles.php');
 include(PATH_SYS.'NIDO/UserAccount.php');
 include(PATH_NIAF.'Models/Certificates/Passport.php');

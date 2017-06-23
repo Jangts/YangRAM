@@ -1,6 +1,6 @@
 <?php
 namespace CM\SCC;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 /**
  *	Collegiate Data Type Model

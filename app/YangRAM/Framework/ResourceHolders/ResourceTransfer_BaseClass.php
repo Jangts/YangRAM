@@ -2,11 +2,11 @@
 namespace AF\ResourceHolders;
 
 use Status;
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Request;
 use Application;
 
-abstract class ResourceTransfer_BaseClass extends \System\R5\NI_ResourceHolder_BaseClass {
+abstract class ResourceTransfer_BaseClass extends \Tangram\R5\NI_ResourceHolder_BaseClass {
     final public function __construct(Application $app, Request $request){	
 		$classname = $this->getClassName($request);
 		if($classname){

@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Dsr\Models;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 useAF\Models\Ect\THMI;
 use AF\ViewRenderers\OIML;
 

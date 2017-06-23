@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Pub\Models;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use CM\GEC;
 use AF\ViewRenderers\OIML;

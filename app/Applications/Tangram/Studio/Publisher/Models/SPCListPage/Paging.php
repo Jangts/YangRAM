@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Pub\Models\SPCListPage;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use AF\ViewRenderers\OIML;
 use Library\ect\Pager;
 

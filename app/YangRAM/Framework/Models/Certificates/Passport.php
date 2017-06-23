@@ -4,8 +4,8 @@ namespace AF\Models\Certificates;
 use SESS;
 use RDO;
 use Request;
-use System\NIDO\UserAccount;
-use System\NIDO\Guest;
+use Tangram\NIDO\UserAccount;
+use Tangram\NIDO\Guest;
 
 /**
  *	General User Passport

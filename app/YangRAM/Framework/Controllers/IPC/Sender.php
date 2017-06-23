@@ -1,8 +1,8 @@
 <?php
 namespace AF\Controllers\IPC;
-use System\IDEA;
+use Tangram\IDEA;
 use Status;
-use System\R5\RemoteDataReader as RemoteReader;
+use Tangram\R5\RemoteDataReader as RemoteReader;
 use Request;
 use Application;
 

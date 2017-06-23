@@ -2,7 +2,7 @@
 namespace CM;
 
 use RDO;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use AF\Models\BaseR3Model;
 
 /**

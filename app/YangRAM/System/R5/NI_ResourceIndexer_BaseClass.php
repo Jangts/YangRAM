@@ -1,18 +1,18 @@
 <?php
-namespace System\R5;
+namespace Tangram\R5;
 
 use Status;
-use System\AsyncTask;
-use System\NIDO\DataObject;
-use System\NIDO\Resource;
-use System\APP\ApplicationPermissions;
-use System\APP\Application;
+use Tangram\AsyncTask;
+use Tangram\NIDO\DataObject;
+use Tangram\NIDO\Resource;
+use Tangram\APP\ApplicationPermissions;
+use Tangram\APP\Application;
 
 /**
  *	Uniform Resource Indexer
  *	统一资源索引器————又名统一路由索引器
  *  单例类，并未限制调用者，只是恰好由运行时（$RUNTIME，主控制器实例）抢先实例化
- *	负责解析请求，获得子应用ID和路由代号，并为进程提供一个请求读取器（System\R5\Request）实例
+ *	负责解析请求，获得子应用ID和路由代号，并为进程提供一个请求读取器（Tangram\R5\Request）实例
  */
 abstract class NI_ResourceIndexer_BaseClass {
     protected static $instance = NULL, $res = NULL;
@@ -95,7 +95,7 @@ abstract class NI_ResourceIndexer_BaseClass {
 
     private function checkStandardInterface($uri, $path, $request, $HOST){
         $uri = strtolower(HOST). $uri . '/';
-        if(\System\IDEA::MODE==='DEVELOP'){
+        if(\Tangram\IDEA::MODE==='DEVELOP'){
             define('_TESTER_', '/unit/');
             if(stripos($uri, HOST._TESTER_)===0){
                 // Unit Tester Interface

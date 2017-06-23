@@ -1,10 +1,10 @@
 <?php
-namespace System\R5;
+namespace Tangram\R5;
 
 use Status;
-use System\ClassLoader;
-use System\APP\ApplicationPermissions;
-use System\APP\Application;
+use Tangram\ClassLoader;
+use Tangram\APP\ApplicationPermissions;
+use Tangram\APP\Application;
 use SESS;
 
 final class ResourceIndexer extends NI_ResourceIndexer_BaseClass {

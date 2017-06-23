@@ -1,5 +1,5 @@
 <?php
-namespace System\APP;
+namespace Tangram\APP;
 
 /**
  *	Sub Application Permissions
@@ -7,8 +7,8 @@ namespace System\APP;
  *	记录着进程在当前时段是否可以使用敏感操作
  *	其状态可分为两段三态四个阶段：
  *  **  初始化时为全权状态，且所有权限可读可写（核心时段全权读写态）
- *  **  激活子应用后，由主控制器（System\IDEA）根据当前子应用权限进行改写，此时权限因子应用而异，所有权限仍可重写（核心时段半权读写态）
- *  **  激活路由后，由资源索引器（System\R5\ResourceIndexer）微调并改写权限表自身的可写权，所有权限不再可写（核心时段半权只读态）
+ *  **  激活子应用后，由主控制器（Tangram\IDEA）根据当前子应用权限进行改写，此时权限因子应用而异，所有权限仍可重写（核心时段半权读写态）
+ *  **  激活路由后，由资源索引器（Tangram\R5\ResourceIndexer）微调并改写权限表自身的可写权，所有权限不再可写（核心时段半权只读态）
  *  **  进入子应用时段，权限以上次微调为准，所有权限只读（应用时段半权只读态）
  */
 final class ApplicationPermissions {

@@ -1,6 +1,6 @@
 <?php
 namespace Files;
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Status;
 use Request;
 

@@ -1,9 +1,9 @@
 <?php
-namespace System\ORM\traits;
+namespace Tangram\ORM\traits;
 
 use RDO;
 use Status;
-use System\APP\ApplicationPermissions;
+use Tangram\APP\ApplicationPermissions;
 
 /**
  *	Basics Trait For Data Objects
@@ -100,12 +100,12 @@ trait common {
                 return self::$conns[$options]['instance'];
             }else{
                 include_once(PATH_SYS.'ORM/Drivers/'.self::$conns[$options]['driver'].'.php');
-			    $class = 'System\ORM\Drivers\\'.self::$conns[$options]['driver'];
+			    $class = 'Tangram\ORM\Drivers\\'.self::$conns[$options]['driver'];
                 return self::$conns[$options]['instance'] = $class::instance(self::$conns[$options]['options']);
             }
         }elseif(is_array($options)&&$options['driver']&&is_file(PATH_SYS.'ORM/Drivers/'.$options['driver'].'.php')){
             include_once(PATH_SYS.'ORM/Drivers/'.$options['driver'].'.php');
-			$class = 'System\ORM\Drivers\\'.$options['driver'];
+			$class = 'Tangram\ORM\Drivers\\'.$options['driver'];
             return $class::instance($options);
         }
         return NULL;

@@ -1,7 +1,7 @@
 <?php
 namespace TC\Models\SheetsViews;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use CM\SPC\Preset;
 use CM\SPC\Category;

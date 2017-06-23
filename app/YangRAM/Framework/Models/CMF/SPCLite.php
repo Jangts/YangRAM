@@ -3,7 +3,7 @@ namespace CM;
 
 use PDO;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use Storage;
 use RDO;

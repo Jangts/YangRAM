@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Pub\Models\SPCListPage;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use CM\SPCLite;
 use AF\ViewRenderers\OIML;
 

@@ -30,10 +30,6 @@ iBlock(['$_/util/COM.Cls', '$_/dom/Elements/'], function(pandora, global, undefi
                 var div = document.createElement('div');
                 div.className = 'ic popup';
                 div.style.position = 'fixed';
-                //div.style.width = '100%';
-                //div.style.height = '100%';
-				//div.style.top = 0;
-                //div.style.left = 0;
                 div.innerHTML = '<div class="ic popup-mask"></div><div class="ic popup-document"></div>';
                 document.body.appendChild(div);
                 return div;
@@ -45,7 +41,7 @@ iBlock(['$_/util/COM.Cls', '$_/dom/Elements/'], function(pandora, global, undefi
             _.dom.setStyle(this.Element, 'display', 'none');
             _.dom.setStyle(this.Element, 'z-index', -100);
             if (this.mask) {
-				_.dom.setStyle(this.mask, 'z-index', 0);
+                _.dom.setStyle(this.mask, 'z-index', 0);
                 _.dom.setStyle(this.mask, 'background-color', this.maskBgColor);
                 _.dom.setStyle(this.mask, 'opacity', this.maskOpacity);
             }

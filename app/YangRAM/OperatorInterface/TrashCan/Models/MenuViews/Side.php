@@ -1,7 +1,7 @@
 <?php
 namespace TC\Models\MenuViews;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use AF\ViewRenderers\OIML;
 
 class Side extends DataObject {

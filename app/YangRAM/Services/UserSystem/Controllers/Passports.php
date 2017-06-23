@@ -3,7 +3,7 @@ namespace CMS\Controllers;
 
 use Status;
 use Response;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use Controller;
 use AF\Models\App as NAM;

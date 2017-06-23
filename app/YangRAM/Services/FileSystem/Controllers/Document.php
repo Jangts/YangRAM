@@ -37,7 +37,7 @@ class Document extends Controller {
 					$this->basename = $row["FILE_NAME"];
 					return $this->write($type);
 				}
-				//Files::removeDocument(strtolower($this->appid), $id);
+				Files::removeDocument(strtolower($this->appid), $id);
 			}
 		}
 		new Status(404, true);//Status::notFound();
@@ -48,6 +48,7 @@ class Document extends Controller {
 			case "txt":
 			case "wav":
 			case "vod":
+			$this->cacheResource($this->filename);
 			$this->writeMediaAndText();
 			break;
 			case "doc":

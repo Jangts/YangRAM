@@ -1,7 +1,7 @@
 <?php
-namespace System\APP;
+namespace Tangram\APP;
 
-use System\IDEA;
+use Tangram\IDEA;
 use PDO;
 use Status;
 use RDO;

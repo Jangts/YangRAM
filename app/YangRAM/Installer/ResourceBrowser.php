@@ -1,7 +1,7 @@
 <?php
 namespace Installer;
 
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Status;
 use AF\Models\App as NAM;
 use Library;

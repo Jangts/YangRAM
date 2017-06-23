@@ -1,8 +1,8 @@
 <?php
-namespace System;
+namespace Tangram;
 
-use System\STAT\Status;
-use System\R5\Response;
+use Tangram\STAT\Status;
+use Tangram\R5\Response;
 
 /**
  *	File ClassLoader Module
@@ -19,7 +19,7 @@ final class ClassLoader {
 		if(self::$instance === NULL){
 			spl_autoload_register([new self, 'includeClassOfNSMap']);
 			self::setNSMap([
-				'System'	=>	PATH_SYS,
+				'Tangram'	=>	PATH_SYS,
 				'Library'	=>	PATH_LIB,
 				'Packages'	=>	PATH_LIBX,
 				'AF'		=>	PATH_NIAF,

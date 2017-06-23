@@ -2,7 +2,7 @@
 namespace TC\Models\SheetsViews;
 
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use CM\GEC;
 use CM\EMC;

@@ -2,10 +2,10 @@
 namespace CM;
 
 use PDO;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use Model;
 use AF\Models\BaseR3Model;
-use System\ORM\Counter;
+use Tangram\ORM\Counter;
 
 /**
  *	Model Of Custom Content In General Use 

@@ -1,7 +1,7 @@
 <?php
 namespace Explorer\Models\ViewModels;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use CM\SPC\Preset;
 use Library\ect\SearchEngine;
 

@@ -1,12 +1,12 @@
 <?php
-namespace System\ORM;
+namespace Tangram\ORM;
 
 use PDO;
 use PDOStatement;
 
 /**
  *	RDO Select Result
- *	System\ORM\RDO与System\ORM\RDOAdvanced执行查询成功后反对的结果对象
+ *	Tangram\ORM\RDO与Tangram\ORM\RDOAdvanced执行查询成功后反对的结果对象
  *	可以更方便的提取到自己想要的格式
  */
 final class RDOSelectResult {

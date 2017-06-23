@@ -3,7 +3,7 @@ namespace GPS\Models\ViewModels\FE;
 
 use CM\GEC;
 
-class GeneralPage extends \System\NIDO\DataObject {
+class GeneralPage extends \Tangram\NIDO\DataObject {
     public function __construct($page, $alias, $params){
 		$group = $page->mark;
 		//var_dump($group, $alias);

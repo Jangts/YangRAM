@@ -1,12 +1,12 @@
 <?php
-namespace System\SESS\Handlers;
-use System\ORM\NI_PDOExtended_BaseClass;
+namespace Tangram\SESS\Handlers;
+use Tangram\ORM\NI_PDOExtended_BaseClass;
 
 /**
  *	Database Session
  *	数据库存储SESSION解决方案
  */
-final class DbSession implements \System\SESS\NI_Session_interface {
+final class DbSession implements \Tangram\SESS\NI_Session_interface {
 	private static $instance = NULL;
 
 	public static function instance(){

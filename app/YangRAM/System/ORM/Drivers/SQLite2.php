@@ -1,5 +1,5 @@
 <?php
-namespace System\ORM\Drivers;
+namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;

@@ -1,6 +1,6 @@
 <?php
 namespace CM;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 /**
  *	Model Of Scalable Specific Use Content

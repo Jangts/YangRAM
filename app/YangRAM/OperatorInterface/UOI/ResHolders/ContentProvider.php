@@ -2,7 +2,7 @@
 namespace UOI\ResHolders;
 
 use Status;
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Request;
 use Application;
 use AF\Models\Certificates\Passport;

@@ -1,0 +1,72 @@
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-23 12:27:00
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	Tangram\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	Tangram\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	Tangram\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	Tangram\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	Tangram\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-23 12:27:00
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	Tangram\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	Tangram\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	Tangram\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	Tangram\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	Tangram\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-23 12:29:44
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	Tangram\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	Tangram\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	Tangram\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	Tangram\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	Tangram\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-23 12:29:44
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/Codes/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	Tangram\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	Tangram\APP\NI_Application_BaseModel::extendsProperties() on E:\Codes\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	Tangram\APP\NI_Application_BaseModel::active() on E:\Codes\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	Tangram\APP\Application::checkPermissions() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	Tangram\IDEA::run_active_application() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.3	@	2017-06-23 15:47:24
+	MSG		File Not Found
+	DESC		File of class Tangram\CACH\traits\filesys not found, files on your yangram may be tampered, or just a spelling mistake. ( E:/Codes/YangRAM/app/YangRAM/System/CACH/traits/filesys.php )<br/>E:\Codes\YangRAM\app\YangRAM\System\CACHE\Storage.php
+	URL		www.yangram.ni/zh-tw/
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\ClassLoader.php in line 97
+	TRACE	#0	Tangram\ClassLoader::includeClassOfNSMap() on E:\Codes\YangRAM\app\YangRAM\System\ClassLoader.php
+		#1	spl_autoload_call() on E:\Codes\YangRAM\app\YangRAM\System\CACHE\Storage.php
+		#2	include_once() on E:\Codes\YangRAM\app\YangRAM\System\ClassLoader.php
+		#3	Tangram\ClassLoader::includeOne() on E:\Codes\YangRAM\app\YangRAM\System\ClassLoader.php
+		#4	Tangram\ClassLoader::includeClassOfNSMap() on E:\Codes\YangRAM\app\YangRAM\System\ClassLoader.php
+		#5	spl_autoload_call() on E:\Codes\YangRAM\app\YangRAM\System\ClassLoader.php
+		#6	class_alias() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#7	Tangram\IDEA::init_data_operations() on E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP
+		#8	Tangram\IDEA::run_system() on E:\Codes\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_403	@	2017-06-23 16:39:30
+	MSG		Forbidden
+	DESC		(none)
+	URL		
+	FILE		E:\Codes\YangRAM\app\YangRAM\System\IDEA.PHP in line 107
+	TRACE	#0	Tangram\IDEA::run_system() on E:\Codes\YangRAM\app\boot.php
+	USER			from 
+

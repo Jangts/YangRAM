@@ -2,7 +2,7 @@
 namespace Installer\Controllers;
 
 use Status;
-use System\R5\RemoteDataReader as RemoteReader ;
+use Tangram\R5\RemoteDataReader as RemoteReader ;
 use RDO;
 
 class Starter extends Common {
@@ -182,7 +182,7 @@ class Starter extends Common {
     private function checkConn($options){
         if(is_array($options)&&$options['driver']&&is_file(PATH_SYS.'ORM/Drivers/'.$options['driver'].'.php')){
             include_once(PATH_SYS.'ORM/Drivers/'.$options['driver'].'.php');
-			$class = 'System\ORM\Drivers\\'.$options['driver'];
+			$class = 'Tangram\ORM\Drivers\\'.$options['driver'];
             return $class::instance($options);
         }
         return false;

@@ -2,7 +2,7 @@
 namespace TC\Models\SheetsViews;
 
 use RDO;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use TC\Models\Data\RecycleRule;
 
 class XTDList extends DataObject {

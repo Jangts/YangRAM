@@ -7,7 +7,7 @@ use CM\SPC\Category;
 use CM\SPCLite;
 use CM\SPC;
 
-class ListPage extends \System\NIDO\DataObject {
+class ListPage extends \Tangram\NIDO\DataObject {
 	public function __construct($page, $params){
 		$preset_alias = $params->preset;
 		$category_id = $params->category;

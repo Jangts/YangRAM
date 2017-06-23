@@ -1,6 +1,6 @@
 <?php
 namespace CM\SPC;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 
 /**
  *	专用内容预设（SPC）字段集模型

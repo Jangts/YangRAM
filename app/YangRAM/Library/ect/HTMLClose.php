@@ -1,9 +1,9 @@
 <?php
 namespace Library\ect;
 
-use System\ClassLoader;
+use Tangram\ClassLoader;
 use Status;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 /**
  *
  */

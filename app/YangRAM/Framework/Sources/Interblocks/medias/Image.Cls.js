@@ -46,13 +46,13 @@ iBlock([
                 var doneCallback = function() {
                         if (isEl(that.context)) {
                             that.context.appendChild(that.image);
-                            isFn(option.onload) && option.onload.call(this)
+                            isFn(option.onload) && option.onload.call(this, that)
                         }
                     },
                     failCallback = function() {
                         if (isEl(that.context)) {
                             that.context.appendChild(that.image);
-                            isFn(option.onerror) && option.onerror.call(this)
+                            isFn(option.onerror) && option.onerror.call(this, that)
                         }
                     };
                 this.onload = doneCallback;

@@ -1,7 +1,7 @@
 <?php
 namespace Pages\Models\ViewModels\FE;
 
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use CM\SPC\Preset;
 use CM\SPC\Category;
 use CM\SPCLite;

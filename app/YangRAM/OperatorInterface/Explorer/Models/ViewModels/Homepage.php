@@ -1,6 +1,6 @@
 <?php
 namespace Explorer\Models\ViewModels;
-use System\NIDO\DataObject;
+use Tangram\NIDO\DataObject;
 use CM\SPC\Preset;
 
 class Homepage extends DataObject {

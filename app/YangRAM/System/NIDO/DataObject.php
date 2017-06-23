@@ -1,5 +1,5 @@
 <?php
-namespace System\NIDO;
+namespace Tangram\NIDO;
 
 /**
  *	General Data Enclosure
