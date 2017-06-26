@@ -5,7 +5,7 @@ namespace AF\Controllers\VISA;
  *	Common Member Authentication Abstract
  *	通用会员验证器抽象
  */
-abstract class VisaByOpenAuthorization_BC extends BaseVISACtrller {
+abstract class VisaByOpenAuthorization_BC extends VISACtrller_BC {
     const       TYPE    =   'AUTHEN';
     protected   $type   =   'AUTHEN';
 

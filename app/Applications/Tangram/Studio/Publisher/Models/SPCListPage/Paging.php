@@ -2,7 +2,7 @@
 namespace Studio\Pub\Models\SPCListPage;
 
 use Tangram\NIDO\DataObject;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Library\ect\Pager;
 
 class Paging extends DataObject {

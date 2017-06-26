@@ -11,7 +11,7 @@ use CM\SRCLite;
  *	专用内容分类模型
  *	用来创建、修改、删除专用内容分类的模型
  */
-final class Folder extends \AF\Models\BaseR3Model {
+final class Folder extends \AF\Models\R3Model_BC {
 	const
 	ID_DESC = [['id', true, DataObject::SORT_REGULAR]],
 	ID_ASC = [['id', false, DataObject::SORT_REGULAR]],

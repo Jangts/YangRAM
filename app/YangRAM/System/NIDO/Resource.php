@@ -2,7 +2,7 @@
 namespace Tangram\NIDO;
 
 use RDO;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 use Tangram\CACHE\UserFiles;
 
 /**

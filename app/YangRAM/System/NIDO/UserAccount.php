@@ -2,7 +2,7 @@
 namespace Tangram\NIDO;
 
 use RDO;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 use Tangram\CACHE\UserFiles;
 
 /**
@@ -38,7 +38,7 @@ final class UserAccount extends DataObject {
 		return false;
 	}
 
-    public function __construct($identification = NULL, $method = Passport::QUERY_USERNAME){
+    public function __construct($identification = NULL, $method = StdPassport::QUERY_USERNAME){
         if($identification){
             $this->conn = new RDO;
             $this->conn->using($this->databaseTable);

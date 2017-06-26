@@ -3,7 +3,7 @@ namespace CM;
 
 use RDO;
 use Tangram\NIDO\DataObject;
-use AF\Models\BaseR3Model;
+use AF\Models\R3Model_BC;
 
 /**
  *	Model Of Embedded Light Content
@@ -12,7 +12,7 @@ use AF\Models\BaseR3Model;
  *  提供针对便利贴元素进行增删改查的接口
  *  Key-Value形式的内容，一般用来作为其他完整内容中的一个标签使用
  */
-final class EMC extends BaseR3Model  {
+final class EMC extends R3Model_BC  {
     const
     ALL = 0,
 	RECYCLED = 1,

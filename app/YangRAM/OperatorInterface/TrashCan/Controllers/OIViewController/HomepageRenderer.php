@@ -1,15 +1,15 @@
 <?php
 namespace TC\Controllers\OIViewController;
 
-use AF\Models\Localize\Common as LocalDict;
+use AF\Models\Localize\SystemDict as LocalDict;
 use CM\SPC\Preset;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 
 use TC\Models\Data\RecycleRule;
 use TC\Models\MenuViews\Side;
 use TC\Models\BlocksViews\TypeList;
 
-class HomepageRenderer extends \OIC\BaseOICtrller {
+class HomepageRenderer extends \OIC\OICtrller_BC {
 
 	public function main(){
 		$this->exec(0);
@@ -28,17 +28,17 @@ class HomepageRenderer extends \OIC\BaseOICtrller {
 	}
 
 	private function exec($select){
-		$localdict = LocalDict::instance();
+		$dict = LocalDict::instance();
 		$oiml = new OIML;
 		$uriarr = $this->request->URI_PATH;
 		$length = $this->request->LENGTH;
 		$presets = Preset::all();
         $extends = RecycleRule::all();
-		$side = new Side($localdict, $length, $uriarr, 'nma', $presets, $extends);
-		$main = new TypeList($localdict, $length, $uriarr, $presets, $extends, $select);
-		$oiml->assign('LOCAL', $localdict);
-        $oiml->assign('PAGETITLE', $localdict->appname);
-		$oiml->assign('LANG', $localdict->code());
+		$side = new Side($dict, $length, $uriarr, 'nma', $presets, $extends);
+		$main = new TypeList($dict, $length, $uriarr, $presets, $extends, $select);
+		$oiml->assign('LOCAL', $dict);
+        $oiml->assign('PAGETITLE', $dict->appname);
+		$oiml->assign('LANG', $dict->code());
 		$oiml->assign('SIDE', $side->render());
 		$oiml->assign('MAIN', $main->render());
 		$oiml->display('default');

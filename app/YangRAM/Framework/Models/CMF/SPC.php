@@ -9,7 +9,7 @@ use RDO;
 use Model;
 use Tangram\ORM\RDOAdvanced;
 use CM\SPC\Preset;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 
 /**
 *  Model Of Formatted Data In Special Use
@@ -17,7 +17,7 @@ use AF\Models\Certificates\Passport;
 *  预设内容，专用内容
 *  提供针对专用内容进行增删改查的接口
 */
-final class SPC extends BaseModel {
+final class SPC extends ContentModel_BC {
     private static
     $memory = [],
     $extends = [],
@@ -55,7 +55,7 @@ final class SPC extends BaseModel {
         $intersect_base = array_merge($defaults, $intersect_base);
         $intersect_xtnd = array_merge($extends, $intersect_xtnd);
         $intersect_base["SET_ALIAS"] = $post['SET_ALIAS'];
-        $intersect_base["USR_ID"] = Passport::instance()->uid;
+        $intersect_base["USR_ID"] = StdPassport::instance()->uid;
         $intersect_xtnd["KEY_CTIME"] = DATETIME;
         return self::checkSEO($intersect_base, $intersect_xtnd);
     }

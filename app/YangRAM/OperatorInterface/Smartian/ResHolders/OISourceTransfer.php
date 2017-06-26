@@ -4,7 +4,7 @@ namespace Smartian\ResHolders;
 use Status;
 use Request;
 
-class OISourceTransfer extends \AF\ResourceHolders\OISourceTransfer_BaseClass {
+class OISourceTransfer extends \AF\ResourceHolders\OISourceTransfer_BC {
 	protected $controllers = [
 		'launch'	=>	array(
 			'classname'	=>	'SmartianLauncher',

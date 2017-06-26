@@ -2,7 +2,7 @@
 namespace TC\Models\MenuViews;
 
 use Tangram\NIDO\DataObject;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 
 class Side extends DataObject {
 	private static

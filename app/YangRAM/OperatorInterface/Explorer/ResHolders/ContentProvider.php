@@ -1,7 +1,7 @@
 <?php
 namespace Explorer\ResHolders;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'fileinfo'	=>	array(
 			'classname'	=>	'FileInfo',

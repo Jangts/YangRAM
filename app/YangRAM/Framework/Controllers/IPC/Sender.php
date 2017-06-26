@@ -11,7 +11,7 @@ use Application;
  *	通用应用数据控制器
  *  控制器的基类，提供了控制器的基本属性和方法
  */
-final class Sender extends CCBase {
+final class Sender extends CommunicationController_BC {
     private static function collectTrashyToken(){
         if(abs(rand(0, _SESIION_DIVISOR_ * 2) - _SESIION_DIVISOR_)<=_SESIION_PROBAB_){
             $messages = glob(PATH_CACA.'[0-Z]*/message/*');

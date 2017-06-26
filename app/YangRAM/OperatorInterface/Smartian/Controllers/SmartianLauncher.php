@@ -3,16 +3,16 @@ namespace Smartian\Controllers;
 
 use Response;
 use Controller;
-use AF\Models\Certificates\Passport;
-use AF\Models\Localize\Common as LocalDict;
-use AF\Models\Ect\GSTI;
+use AF\Models\Certificates\StdPassport;
+use AF\Models\Localize\SystemDict;
+use AF\Models\Util\GSTI;
 use Library\compliers\JSMin;
 
 class SmartianLauncher extends Controller {
     public function init($lang){
         $response = Response::instance('200');
         $this->setHeaders($response);
-        $lang = LocalDict::getLang($lang);
+        $lang = SystemDict::getLang($lang);
         if($filename = $this->checkFileModification(AP_CURR.'Locales/'.$lang.'.js')){
             $content = file_get_contents($filename);
             if(_USE_DEBUG_MODE_){
@@ -32,7 +32,7 @@ class SmartianLauncher extends Controller {
     }
     
     public function welcome($lang){
-		$passport = Passport::instance();
+		$passport = StdPassport::instance();
         $you = $passport->nickname;
 
         //本月访问

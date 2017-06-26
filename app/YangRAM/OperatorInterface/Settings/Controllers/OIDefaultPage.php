@@ -1,7 +1,7 @@
 <?php
 namespace Settings\Controllers\OI;
 
-class DefaultPage extends \OIC\BaseOICtrller {
+class DefaultPage extends \OIC\OICtrller_BC {
 
 	public function main(){
 		exit($this->hello());

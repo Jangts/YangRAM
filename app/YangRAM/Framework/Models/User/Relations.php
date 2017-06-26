@@ -8,6 +8,6 @@ use Model;
  *	建立、解除、读取用户关系的对象
  *  数据细节正在设计之中……
  */
-final class Relations extends \AF\Models\BaseModel {
+final class Relations extends \AF\Models\Model_BC {
     
 }

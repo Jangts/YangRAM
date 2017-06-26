@@ -4,7 +4,7 @@ use Tangram\ClassLoader;
 use Status;
 use Request;
 
-final class Transfer extends \AF\ResourceHolders\ResourceSetter_BaseClass {
+final class Transfer extends \AF\ResourceHolders\ResourceSetter_BC {
 	public function getClassName(Request $request){
         if($request->LENGTH>3){
             switch ($request->uri_path[3]) {

@@ -1,7 +1,7 @@
 <?php
 namespace Pages\Controllers\OI;
 
-use AF\Models\Ect\THMI;
+use AF\Models\Util\THMI;
 use Pages\Models\Data\LocalDict;
 
 class ShowDailog extends \Controller {

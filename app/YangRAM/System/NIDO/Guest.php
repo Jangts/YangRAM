@@ -3,8 +3,8 @@ namespace Tangram\NIDO;
 
 use RDO;
 use Request;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
-use AF\Models\Certificates\Passport;
+use Tangram\ORM\NI_PDOExtended_BC;
+use AF\Models\Certificates\StdPassport;
 
 /**
  *	Guest
@@ -18,7 +18,7 @@ final class Guest extends DataObject {
     $gid = 0;
 	
     public function __construct(){
-        $this->uid = Passport::whose();
+        $this->uid = StdPassport::whose();
 		$this->data = [
 			'IP'		=>	Request::instance()->IP,
 			'referer'	=>	isset($_SERVER['HTTP_REFERER']) ? urlencode($_SERVER['HTTP_REFERER']) : NULL,

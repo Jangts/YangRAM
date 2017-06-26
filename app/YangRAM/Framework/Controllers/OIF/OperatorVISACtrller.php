@@ -2,10 +2,10 @@
 namespace OIC;
 use RDO;
 use Status;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 use AF\Models\User\OIF\Operator;
 
-class OperatorVISACtrller extends \AF\Controllers\VISA\VisaByAuthorizationCode_BC {
+class OperatorVISACtrller extends \AF\Controllers\VISA\VisaWithAuthorizationCode_BC {
 
     protected function init(){
         $this->member = new Operator($this->aid, $this->uid);

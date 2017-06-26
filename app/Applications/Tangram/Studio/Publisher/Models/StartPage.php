@@ -3,7 +3,7 @@ namespace Studio\Pub\Models;
 
 use Tangram\NIDO\DataObject;
 use CM\SPC\Preset;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 
 class StartPage extends DataObject {
     public function __construct($localdict){

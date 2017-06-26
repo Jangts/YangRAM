@@ -170,7 +170,7 @@ final class IDEA {
 		include(PATH_SYS.'NIDO/Column.php');
 		include(PATH_SYS.'NIDO/Parameters.php');
 		include(PATH_SYS.'NIDO/FormData.php');
-		include(PATH_SYS.'ORM/NI_PDOExtended_BaseClass.php');
+		include(PATH_SYS.'ORM/NI_PDOExtended_BC.php');
 		include(PATH_SYS.'ORM/RDO.php');
 		include(PATH_SYS.'ORM/RDOSelectResult.php');
 		include(PATH_SYS.'ORM/Counter.php');
@@ -228,8 +228,8 @@ final class IDEA {
 	}
 
 	private function init_system_components(){
-		include(PATH_SYS.'R5/NI_ResourceIndexer_BaseClass.php');
-		include(PATH_SYS.'R5/NI_ResourceHolder_BaseClass.php');
+		include(PATH_SYS.'R5/NI_ResourceIndexer_BC.php');
+		include(PATH_SYS.'R5/NI_ResourceHolder_BC.php');
 		include(PATH_SYS.'R5/RouteMapper.php');
 		include(PATH_SYS.'R5/ResourceIndexer.php');
 		include(PATH_SYS.'R5/Request.php');
@@ -243,10 +243,10 @@ final class IDEA {
 
 	public function run_active_application(){
 		if($this->AA===NULL){
-			include(PATH_NIAF.'Models/BaseModel.php');
-			include(PATH_NIAF.'Controllers/BaseCtrller.php');
-			class_alias('AF\Models\BaseModel', 'Model');
-			class_alias('AF\Controllers\BaseCtrller', 'Controller');
+			include(PATH_NIAF.'Models/Model_BC.php');
+			include(PATH_NIAF.'Controllers/Controller_BC.php');
+			class_alias('AF\Models\Model_BC', 'Model');
+			class_alias('AF\Controllers\Controller_BC', 'Controller');
 			$this->AA = new App\Application(AC_CURR);
 			$AP = $this->AA->checkPermissions();
 			if($AP->APP_PDOXS_GETABLE||$AP->APP_APDOX_GETABLE){

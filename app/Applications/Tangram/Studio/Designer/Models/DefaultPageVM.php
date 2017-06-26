@@ -2,8 +2,8 @@
 namespace Studio\Dsr\Models;
 
 use Tangram\NIDO\DataObject;
-useAF\Models\Ect\THMI;
-use AF\ViewRenderers\OIML;
+useAF\Models\Util\THMI;
+use AF\Util\OIML;
 
 class DefaultPageVM extends DataObject {
     public function __construct($localdict){

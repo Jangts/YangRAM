@@ -4,7 +4,7 @@ namespace AF\ResourceHolders\traits;
 use Status;
 use Tangram\ClassLoader;
 use Request;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 use Application;
 
 trait methods {

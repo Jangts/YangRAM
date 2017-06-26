@@ -4,7 +4,7 @@ namespace YangRAM;
 use Status;
 use Response;
 
-class UnitTester extends \AF\ResourceHolders\UnitTester_BaseClass {
+class UnitTester extends \AF\ResourceHolders\UnitTester_BC {
 	function myTestPHP($batch = false){
 		if($batch) return true;
 

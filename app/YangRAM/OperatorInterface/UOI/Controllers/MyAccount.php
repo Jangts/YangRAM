@@ -1,11 +1,11 @@
 <?php
 namespace UOI\Controllers;
 
-use AF\ViewRenderers\OIML;
-use AF\Models\Localize\Common as LocalDict;
+use AF\Util\OIML;
+use AF\Models\Localize\SystemDict;
 use Library\formattings\Timer;
 
-class MyAccount extends \OIC\BaseOICtrller {
+class MyAccount extends \OIC\OICtrller_BC {
 	public function info(){
 		$visa = new VISA($this->app, $this->request, $this->passport);
 		$status = (string) $visa->myStatus();
@@ -14,10 +14,10 @@ class MyAccount extends \OIC\BaseOICtrller {
 			case 'Runholder':
 			$timer = new Timer($lang);
 			$oiml = new OIML;
-			$localdict = LocalDict::instance()->toArray();
+			$dict = SystemDict::instance()->toArray();
 			$oiml->assign('username', $visa->OPERATORNAME);
 			$oiml->assign('avatar', 	__DIR.$visa->AVATAR);
-			$oiml->assign('welcome', 	$localdict[$timer->when()]);
+			$oiml->assign('welcome', 	$dict[$timer->when()]);
 			$oiml->display('account');
 
 			break;

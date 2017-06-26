@@ -5,10 +5,10 @@ use Status;
 use Tangram\ClassLoader;
 use Request;
 use Application;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 use UOI\Controllers\VISA;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'apps'	=>	[
 			'classname'	=>	'Applications',
@@ -65,7 +65,7 @@ class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
 					new Status(404, true);
 				}
 				ClassLoader::execute($filename);
-				$class = new $classname($app, $request, Passport::instance());
+				$class = new $classname($app, $request, StdPassport::instance());
 				return $class->$methodname($language);
 			}
 			new Status(404, true);
@@ -79,7 +79,7 @@ class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
 			$methodname = $this->getMethodName($request);
 			$arguments = $this->getParameters($request);
 			ClassLoader::execute($filename);
-			$class = new $classname($app, $request, Passport::instance());
+			$class = new $classname($app, $request, StdPassport::instance());
 			call_user_func_array([$class, $methodname], $arguments);
 		}else{
             new Status(700.7, '', 'Current Status [ '.$status.' ]',true);

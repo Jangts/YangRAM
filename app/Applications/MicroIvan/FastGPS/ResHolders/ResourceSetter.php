@@ -1,7 +1,7 @@
 <?php
 namespace GPS\ResHolders;
 
-class ResourceSetter extends \AF\ResourceHolders\ResourceSetter_BaseClass {
+class ResourceSetter extends \AF\ResourceHolders\ResourceSetter_BC {
 	protected $controllers = [
 		'submit'	=>	[
 			'classname'	=>	'Submitter',

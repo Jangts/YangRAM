@@ -1,7 +1,7 @@
 <?php
 namespace GPS\ResHolders;
 
-class ResourceTransfer extends \AF\ResourceHolders\ResourceTransfer_BaseClass {
+class ResourceTransfer extends \AF\ResourceHolders\ResourceTransfer_BC {
 	protected
 	$classname = NULL,
 	$controllers = [

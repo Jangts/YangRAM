@@ -3,7 +3,7 @@ namespace Blog\ResHolders;
 
 use Tangram\ClassLoader;
 
-class ResourceBrowser extends \AF\ResourceHolders\ResourceBrowser_BaseClass {
+class ResourceBrowser extends \AF\ResourceHolders\ResourceBrowser_BC {
 	protected
 	$classname = NULL,
 	$controllers = [];

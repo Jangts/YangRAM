@@ -3,7 +3,7 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For SQLServer With PDO_SQLSRV

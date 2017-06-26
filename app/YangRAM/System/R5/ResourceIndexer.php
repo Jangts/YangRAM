@@ -7,7 +7,7 @@ use Tangram\APP\ApplicationPermissions;
 use Tangram\APP\Application;
 use SESS;
 
-final class ResourceIndexer extends NI_ResourceIndexer_BaseClass {
+final class ResourceIndexer extends NI_ResourceIndexer_BC {
     protected static function init(){
         define('UOI_DIR',   	I4S_DIR.'OperatorInterface/UOI/');
         define('UOI_PID',   	PID.UOI_DIR);
@@ -63,7 +63,7 @@ final class ResourceIndexer extends NI_ResourceIndexer_BaseClass {
                 
             case 'X/OTW':
                 $this->checkTasker(11, 1, '1');
-                include(PATH_NIAF.'ResourceHolders/OISourceTransfer_BaseClass.php');
+                include(PATH_NIAF.'ResourceHolders/OISourceTransfer_BC.php');
                 return $app->get([], 'OISourceTransfer');
         }
         return new Status(404, '', 'This Application Has No Requested Resource Holder!!', true);

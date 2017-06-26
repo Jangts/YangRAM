@@ -1,10 +1,10 @@
 <?php
 namespace Pages\Controllers\OI;
 
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Pages\Models\Data\LocalDict;
 
-class DefaultPage extends \OIC\BaseOICtrller {
+class DefaultPage extends \OIC\OICtrller_BC {
 
 	public function main(){
 		$localdict = LocalDict::instance();

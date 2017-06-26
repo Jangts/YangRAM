@@ -3,7 +3,7 @@ namespace Studio\Stk\Models;
 
 use Tangram\NIDO\DataObject;
 use CM\EMC;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 
 class DefaultPageVM extends DataObject {
     public function __construct($localdict){

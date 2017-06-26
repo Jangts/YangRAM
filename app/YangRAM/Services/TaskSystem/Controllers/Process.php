@@ -7,7 +7,7 @@ use Storage;
 /**
  *  
  */
-class Process extends \AF\Controllers\IPC\CCBase {
+class Process extends \AF\Controllers\IPC\CommunicationController_BC {
     protected $id, $team, $recordfile, $taskernote, $count = 0, $cache = [];
 
     public function main(){

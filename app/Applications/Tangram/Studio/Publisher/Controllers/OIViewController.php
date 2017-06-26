@@ -1,8 +1,8 @@
 <?php
 namespace Studio\Pub\Controllers;
 
-use AF\Models\Certificates\Passport;
-use AF\ViewRenderers\OIML;
+use AF\Models\Certificates\StdPassport;
+use AF\Util\OIML;
 use CM\GEC;
 use CM\SPC\Preset;
 use Studio\Pub\Models\LocalDict;
@@ -52,7 +52,7 @@ class OIViewController extends \Controller {
                 #Error
             }
             $oiml->assign('ARGS', $this->gecargs($params, $id));
-            $oiml->assign('UID', Passport::instance()->uid);
+            $oiml->assign('UID', StdPassport::instance()->uid);
 	        $oiml->display('gecform');
         }else{
             $data = new GECListPage($localdict, $uriarr, $length);
@@ -105,7 +105,7 @@ class OIViewController extends \Controller {
             $oiml->assign('CUSTOMS', $data->inputs);
             $oiml->assign('CATS', $data->cats);
             $oiml->assign('ARGS', $data->args);
-            $oiml->assign('UID', Passport::instance()->uid);
+            $oiml->assign('UID', StdPassport::instance()->uid);
 		    $oiml->display('spcform');
         }else{
             $presetinfo = Preset::alias($preset);

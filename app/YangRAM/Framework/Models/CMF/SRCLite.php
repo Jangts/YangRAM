@@ -13,7 +13,7 @@ use RDO;
  *	系统文件资源轻数据
  *  是一个忽略五类文件资源数据差异的精简的单一标准模型
  */
-final class SRCLite extends BaseModel {
+final class SRCLite extends ContentModel_BC {
 	const
 	CTIME_DESC = [['SRC_ID', true, DataObject::SORT_REGULAR]],
 	CTIME_ASC = [['SRC_ID', false, DataObject::SORT_REGULAR]],

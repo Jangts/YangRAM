@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For SQLServer With PDO_DBLIB
  */
-class MSSQLServer extends NI_PDOExtended_BaseClass  {
+class MSSQLServer extends NI_PDOExtended_BC  {
     public static function parseDsn(array $options) {
         if(extension_loaded('PDO_DBLIB')){
             $dsn = sprintf('mssql:host=%s;dbname=%s', $options['host'], $options['dbname']);

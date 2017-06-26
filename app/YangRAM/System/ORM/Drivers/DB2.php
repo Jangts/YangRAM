@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For DB2
  */
-class DB2 extends NI_PDOExtended_BaseClass {
+class DB2 extends NI_PDOExtended_BC {
     public static function instance(array $options){
 		if($dsn = self::parseDsn($options)){
             $id = \hash('md4', $dsn);

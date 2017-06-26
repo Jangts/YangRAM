@@ -1,7 +1,7 @@
 <?php
 namespace Blog\ResHolders;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'pages'	=>	[
 			'classname'	=>	'FE/Pages',

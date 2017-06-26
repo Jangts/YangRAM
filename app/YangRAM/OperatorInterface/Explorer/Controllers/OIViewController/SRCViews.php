@@ -1,35 +1,35 @@
 <?php
 namespace Explorer\Controllers\OIViewController;
 
-use AF\Models\Localize\Common as LocalDict;
+use AF\Models\Localize\SystemDict;
 use Explorer\Models\ViewModels\Side;
 use Explorer\Models\ViewModels\Header;
 use Explorer\Models\ViewModels\Homepage;
 use Explorer\Models\ViewModels\SRC;
 
-class SRCViews extends \OIC\BaseOICtrller {
+class SRCViews extends \OIC\OICtrller_BC {
 	use traits;
 
 	public function main(){
-        $localdict = LocalDict::instance();
+        $dict = SystemDict::instance();
         $uriarr = $this->request->URI_PATH;
         $length = $this->request->LENGTH;
         $menus = self::getMeunCurr('src', null);
-        $sidebar = new Side($localdict, $menus, 'src', null);
-        $topvision = new Header($localdict, $uriarr, $length, 'src', null, null);
-        $content = new Homepage($localdict, 'src');;
-        $this->show('default', $localdict, 'src', $sidebar->toArray(), $topvision->render(), $content->render(), $uriarr, $length);
+        $sidebar = new Side($dict, $menus, 'src', null);
+        $topvision = new Header($dict, $uriarr, $length, 'src', null, null);
+        $content = new Homepage($dict, 'src');;
+        $this->show('default', $dict, 'src', $sidebar->toArray(), $topvision->render(), $content->render(), $uriarr, $length);
     }
     
     public function all($folder = null, $filetype = 'all'){
-        $localdict = LocalDict::instance();
+        $dict = SystemDict::instance();
         $uriarr = $this->request->URI_PATH;
         $length = $this->request->LENGTH;
         $menus = self::getMeunCurr('src', $filetype);
-        $sidebar = new Side($localdict, $menus, 'src', $filetype, $folder);
-        $topvision = new Header($localdict, $uriarr, $length, 'src', $filetype, $folder);
-        $content = new SRC($localdict, $filetype, $folder);
-        $this->show('default', $localdict, 'src', $sidebar->toArray(), $topvision->render(), $content->render($localdict), $uriarr, $length);
+        $sidebar = new Side($dict, $menus, 'src', $filetype, $folder);
+        $topvision = new Header($dict, $uriarr, $length, 'src', $filetype, $folder);
+        $content = new SRC($dict, $filetype, $folder);
+        $this->show('default', $dict, 'src', $sidebar->toArray(), $topvision->render(), $content->render($dict), $uriarr, $length);
     }
 
 	public function img($folder = null){

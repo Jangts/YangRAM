@@ -2,7 +2,7 @@
 namespace GPS\Models\ViewModels\OI;
 
 use Tangram\NIDO\DataObject;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 
 class Startpage extends DataObject {
 	static $types = [ "singlepage", "index", "generalpage", "commonlist", "ataglist", "acatlist", "commondetail", "acatdetail"];

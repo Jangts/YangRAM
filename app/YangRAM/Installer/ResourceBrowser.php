@@ -6,7 +6,7 @@ use Status;
 use AF\Models\App as NAM;
 use Library;
 
-class ResourceBrowser extends \AF\ResourceHolders\ResourceBrowser_BaseClass {
+class ResourceBrowser extends \AF\ResourceHolders\ResourceBrowser_BC {
 	private
 	$classname = NULL,
 	$methodoptions = NULL,

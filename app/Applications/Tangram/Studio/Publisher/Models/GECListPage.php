@@ -4,7 +4,7 @@ namespace Studio\Pub\Models;
 use Tangram\NIDO\DataObject;
 use Model;
 use CM\GEC;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Library\ect\Pager;
 
 class GECListPage extends DataObject {

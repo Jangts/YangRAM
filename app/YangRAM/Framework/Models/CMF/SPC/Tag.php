@@ -1,11 +1,11 @@
 <?php
 namespace CM\SPC;
-use AF\Models\BaseR3Model;
+use AF\Models\R3Model_BC;
 
 /**
  *	Special Use Content Custom Tag Model
  */
-final class Tag extends BaseR3Model {
+final class Tag extends R3Model_BC {
 	protected static
 	$ca_path = '',
     $table = DB_CNT.'map_spctags',

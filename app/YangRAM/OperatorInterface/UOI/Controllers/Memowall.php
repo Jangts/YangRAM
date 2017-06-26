@@ -4,7 +4,7 @@ namespace UOI\Controllers;
 use Response;
 use UOI\Models\LinkGroup;
 
-class Memowall extends \OIC\BaseOICtrller {
+class Memowall extends \OIC\OICtrller_BC {
 	public function marks(){
 		$response = Response::instance(200, Response::JSON);
 		$username = $this->passport->username;

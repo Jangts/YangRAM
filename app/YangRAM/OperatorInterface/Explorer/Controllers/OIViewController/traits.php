@@ -1,7 +1,7 @@
 <?php
 namespace Explorer\Controllers\OIViewController;
 
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 
 trait traits {
 	private static function getMeunCurr($datatype, $itemtype){

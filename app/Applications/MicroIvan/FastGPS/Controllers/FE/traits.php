@@ -5,7 +5,7 @@ use Status;
 use Response;
 use Tangram\NIDO\Guest;
 use Packages\tplengines\Niml;
-use AF\Models\Ect\SYSI;
+use AF\Models\Util\SYSI;
 
 trait traits {
 	private $niml = NULL;

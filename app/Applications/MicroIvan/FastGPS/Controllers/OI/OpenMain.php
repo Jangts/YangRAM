@@ -1,7 +1,7 @@
 <?php
 namespace GPS\Controllers\OI;
 
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use GPS\Models\Data\LocalDict;
 use GPS\Models\ViewModels\OI\StartPage;
 use GPS\Models\ViewModels\OI\PageList;

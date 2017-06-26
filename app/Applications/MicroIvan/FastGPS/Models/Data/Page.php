@@ -3,11 +3,11 @@ namespace GPS\Models\Data;
 
 use Status;
 use Tangram\NIDO\DataObject;
-use AF\Models\BaseR3Model;
+use AF\Models\R3Model_BC;
 use Tangram\ORM\Counter;
 use CM\SPCLite;
 
-class Page extends BaseR3Model {
+class Page extends R3Model_BC {
     const
 	ALL = 0,
 	INUSE = 1,

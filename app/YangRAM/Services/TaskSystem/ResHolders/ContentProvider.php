@@ -1,7 +1,7 @@
 <?php
 namespace Workers\ResHolders;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'master'	=>	array(
 			'classname'	=>	'Master',

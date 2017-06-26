@@ -3,7 +3,7 @@ namespace Studio\Pub\Models\SPCListPage;
 
 use Tangram\NIDO\DataObject;
 use CM\SPC\Category;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 
 class Menu extends DataObject {    
     public function __construct($localdict, $presetinfo, $base){

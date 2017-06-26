@@ -2,7 +2,7 @@
 namespace CM\SPC;
 use Status;
 use Tangram\NIDO\DataObject;
-use AF\Models\BaseR3Model;
+use AF\Models\R3Model_BC;
 use CM\SPC;
 
 /**
@@ -10,7 +10,7 @@ use CM\SPC;
  *	专用内容分类模型
  *	用来创建、修改、删除专用内容分类的模型
  */
-final class Category extends BaseR3Model  {
+final class Category extends R3Model_BC  {
 	const
 	ID_DESC = [['id', true, DataObject::SORT_REGULAR]],
 	ID_ASC = [['id', false, DataObject::SORT_REGULAR]],

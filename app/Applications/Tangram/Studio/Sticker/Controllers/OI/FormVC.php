@@ -2,10 +2,10 @@
 namespace Studio\Stk\Controllers\OI;
 
 use CM\EMC;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Studio\Stk\Models\LocalDict;
 
-class FormVC extends \OIC\BaseOICtrller {
+class FormVC extends \OIC\OICtrller_BC {
 
 	public function emc($id){
 		$localdict = LocalDict::instance();

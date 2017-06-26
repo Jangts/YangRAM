@@ -4,7 +4,7 @@ namespace Smartian\ResHolders;
 use Status;
 use Request;
 
-class ContentProvider extends \AF\ResourceHolders\OISourceTransfer_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\OISourceTransfer_BC {
 	protected $controllers = [
 		'assistant'	=>	array(
 			'classname'	=>	'Assistant',

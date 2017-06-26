@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For Oracle
  */
-class Oracle extends NI_PDOExtended_BaseClass {
+class Oracle extends NI_PDOExtended_BC {
     public static function parseDsn(array $options) {
         if(extension_loaded('PDO_OCI')){
             if(empty($options['host'])){

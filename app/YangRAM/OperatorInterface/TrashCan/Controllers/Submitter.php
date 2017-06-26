@@ -6,7 +6,7 @@ use CM\SRC;
 use CM\SRCLite;
 use TC\Models\Data\RecycleRule;
 
-class Submitter extends \OIC\BaseOICtrller {
+class Submitter extends \OIC\OICtrller_BC {
 	const
 	Folder = 'CM\SRC\Folder',
 	GEC = 'CM\GEC',

@@ -1,7 +1,7 @@
 <?php
 namespace NFA\Listen;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'hello'	=>	array(
 			'classname'	=>	'HelloWorld',

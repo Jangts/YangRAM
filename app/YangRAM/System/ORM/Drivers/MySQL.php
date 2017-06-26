@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For MySQL
  */
-class MySQL extends NI_PDOExtended_BaseClass {
+class MySQL extends NI_PDOExtended_BC {
 	public static function parseDsn(array $options) {
 		if(extension_loaded('PDO_MYSQL')){
 			$dsn = sprintf('mysql:host=%s;dbname=%s', $options['host'], $options['dbname']);

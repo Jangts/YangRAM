@@ -5,7 +5,7 @@ use CM\GEC;
 use CM\SPC;
 use CM\SPCLite;
 
-class Submitter extends \OIC\BaseOISubmitter {
+class Submitter extends \OIC\OISubmitter_BC {
 	public function sav(){
 		$post = $this->request->FORM;
 		$this->saveContent(false, $post);

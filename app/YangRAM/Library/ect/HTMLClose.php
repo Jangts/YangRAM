@@ -1,156 +1,203 @@
 <?php
 namespace Library\ect;
 
-use Tangram\ClassLoader;
-use Status;
-use Tangram\NIDO\DataObject;
-/**
- *
- */
 class HTMLClose {
-	/**
- * 水平凡修改添加 添加时间：20110328
- * 自动闭合不完整的HTML标签
- * @param (string) $body
- *  正文
- */
-function HtmlClose($body) {
-    $strlen_var = strlen($body);
-    // 不包含 html 标签
-    if (strpos($body, '<') === false) {
-        return $body;
+    public static function compile($input){
+        $obj = new HTMLClose($input);
+        return $obj->complete();
     }
-    // html 代码标记
-    $html_tag = 0;
-    // 摘要字符串
-    $summary_string = '';
-  
-    /**
-     * 数组用作记录摘要范围内出现的 html 标签
-     * 开始和结束分别保存在 left 和 right 键名下
-     * 如字符串为：<h3><p><b>a</b></h3>，假设 p 未闭合
-     * 数组则为：array('left' => array('h3', 'p', 'b'), 'right' => 'b', 'h3');
-     * 仅补全 html 标签，<? <% 等其它语言标记，会产生不可预知结果
-     */
-    $html_array = array('left' => array(), 'right' => array());
-    for ($i = 0; $i < $strlen_var; ++$i) {
-        $current_var = substr($body, $i, 1);
-  
-        if ($current_var == '<') {
-            // html 代码开始
-            $html_tag = 1;
-            $html_array_str = '';
-        } else if ($html_tag == 1) {
-            // 一段 html 代码结束
-            if ($current_var == '>') {
-                /**
-                 * 去除首尾空格，如 <br /  > < img src="" / > 等可能出现首尾空格
-                 */
-                $html_array_str = trim($html_array_str);
-  
-                /**
-                 * 判断最后一个字符是否为 /，若是，则标签已闭合，不记录
-                 */
-                if (substr($html_array_str, -1) != '/') {
-  
-                    // 判断第一个字符是否 /，若是，则放在 right 单元
-                    $f = substr($html_array_str, 0, 1);
-                    if ($f == '/') {
-                        // 去掉 /
-                        $html_array['right'][] = str_replace('/', '', $html_array_str);
-                    } else if ($f != '?') {
-                        // 判断是否为 ?，若是，则为 PHP 代码，跳过
-  
-                        /**
-                         * 判断是否有半角空格，若有，以空格分割，第一个单元为 html 标签
-                         * 如 <h2 class="a"> <p class="a">
-                         */
-                        if (strpos($html_array_str, ' ') !== false) {
-                            // 分割成2个单元，可能有多个空格，如：<h2 class="" id="">
-                            $html_array['left'][] = strtolower(current(explode(' ', $html_array_str, 2)));
-                        } else {
+
+    public
+    $body = '',
+    $strlen = 0,
+    $midast = [],
+    $ast = [];
+
+    public function __construct($body) {
+        $this->body = $body;
+        if (strpos($body, '<') === false) {
+            $ast = [$body];
+            return;
+        }
+        $this->lexicalanAlysis($body);
+    }
+
+    private function lexicalanAlysis($body) {
+        $midast = [
+            'tags'  => [],
+            // 'left'  => [],
+            // 'right' => [],
+            'text'  => []
+        ];
+        $strlen = strlen($body);
+        $strsum = '';
+        
+        for ($i = 0; $i < $strlen; ++$i) {
+            $current = substr($body, $i, 1);
+            if ($current == '<') {
+                // html 代码开始
+                $tagnum = 1;
+                $htmtxt = '';
+            } else if ($tagnum == 1) {
+                // 一段 html 代码结束
+                if ($current == '>') {
+                    /**
+                     * 去除首尾空格，如 <br /  > < img src="" / > 等可能出现首尾空格
+                     */
+                    $htmtxt = trim($htmtxt);
+                     
+                    /**
+                     * 判断最后一个字符是否为 /，若是，则标签已闭合，不记录
+                     */
+                    if (substr($htmtxt, -1) != '/') {
+                        // 判断第一个字符是否 /，若是，则放在 right 单元
+                        $f = substr($htmtxt, 0, 1);
+                        if ($f == '/') {
+                            // 去掉 /
+                            $midast['tags'][] =  [
+                                'is_open'    =>  false,
+                                'tagname'   =>  str_replace('/', '', $htmtxt)
+                            ];
+                            $midast['text'][] = $strsum;
+                            $strsum = '';
+                        } else if ($f != '?') {
+                            // 判断是否为 ?，若是，则为 PHP 代码，跳过
+                            
                             /**
-                             * * 若没有空格，整个字符串为 html 标签，如：<b> <p> 等
-                             * 统一转换为小写
+                             * 判断是否有半角空格，若有，以空格分割，第一个单元为 html 标签
+                             * 如 <h2 class="a"> <p class="a">
                              */
-                            $html_array['left'][] = strtolower($html_array_str);
+                            if (strpos($htmtxt, ' ') !== false) {
+                                // 分割成2个单元，可能有多个空格，如：<h2 class="" id="">
+                                $tagname = strtolower(current(explode(' ', $htmtxt, 2)));
+                            } else {
+                                // 若没有空格，整个字符串为 html 标签，如：<b> <p> 等
+                                $tagname = strtolower($htmtxt);
+                            }
+                            $midast['tags'][] = [
+                                'is_open'    =>  true,
+                                'tagname'   =>  $tagname,
+                                'tagtext'   =>  $htmtxt
+                            ];$tagname;
+                            $midast['text'][] = $strsum;
+                            $strsum = '';
                         }
                     }
+                    
+                    // 字符串重置
+                    $htmtxt = '';
+                    $tagnum = 0;
+                } else {
+                    /**
+                     * 将< >之间的字符组成一个字符串
+                     * 用于提取 html 标签
+                     */
+                    $htmtxt .= $current;
                 }
-  
-                // 字符串重置
-                $html_array_str = '';
-                $html_tag = 0;
             } else {
-                /**
-                 * 将< >之间的字符组成一个字符串
-                 * 用于提取 html 标签
-                 */
-                $html_array_str .= $current_var;
+                // 非 html 代码才记数
+                --$size;
             }
-        } else {
-            // 非 html 代码才记数
-            --$size;
-        }
-  
-        $ord_var_c = ord($body{$i});
-  
-        switch (true) {
-            case (($ord_var_c & 0xE0) == 0xC0):
-                // 2 字节
-                $summary_string .= substr($body, $i, 2);
-                $i += 1;
-                break;
-            case (($ord_var_c & 0xF0) == 0xE0):
-  
-                // 3 字节
-                $summary_string .= substr($body, $i, 3);
-                $i += 2;
-                break;
-            case (($ord_var_c & 0xF8) == 0xF0):
-                // 4 字节
-                $summary_string .= substr($body, $i, 4);
-                $i += 3;
-                break;
-            case (($ord_var_c & 0xFC) == 0xF8):
-                // 5 字节
-                $summary_string .= substr($body, $i, 5);
-                $i += 4;
-                break;
-            case (($ord_var_c & 0xFE) == 0xFC):
-                // 6 字节
-                $summary_string .= substr($body, $i, 6);
-                $i += 5;
-                break;
-            default:
-                // 1 字节
-                $summary_string .= $current_var;
-        }
-    }
-  
-    if ($html_array['left']) {
-        /**
-         * 比对左右 html 标签，不足则补全
-         */
-        /**
-         * 交换 left 顺序，补充的顺序应与 html 出现的顺序相反
-         * 如待补全的字符串为：<h2>abc<b>abc<p>abc
-         * 补充顺序应为：</p></b></h2>
-         */
-        $html_array['left'] = array_reverse($html_array['left']);
-  
-        foreach ($html_array['left'] as $index => $tag) {
-            // 判断该标签是否出现在 right 中
-            $key = array_search($tag, $html_array['right']);
-            if ($key !== false) {
-                // 出现，从 right 中删除该单元
-                unset($html_array['right'][$key]);
-            } else {
-                // 没有出现，需要补全
-                $summary_string .= '</' . $tag . '>';
+            
+            $ord_var_c = ord($body{$i});
+            
+            switch (true) {
+                case (($ord_var_c & 0xE0) == 0xC0):
+                    // 2 字节
+                    $strsum .= substr($body, $i, 2);
+                    $i += 1;
+                    break;
+
+                case (($ord_var_c & 0xF0) == 0xE0):
+                    // 3 字节
+                    $strsum .= substr($body, $i, 3);
+                    $i += 2;
+                    break;
+
+                case (($ord_var_c & 0xF8) == 0xF0):
+                    // 4 字节
+                    $strsum .= substr($body, $i, 4);
+                    $i += 3;
+                    break;
+
+                case (($ord_var_c & 0xFC) == 0xF8):
+                    // 5 字节
+                    $strsum .= substr($body, $i, 5);
+                    $i += 4;
+                    break;
+
+                case (($ord_var_c & 0xFE) == 0xFC):
+                    // 6 字节
+                    $strsum .= substr($body, $i, 6);
+                    $i += 5;
+                    break;
+                default:
+                    // 1 字节
+                    $strsum .= $current;
             }
         }
+        $midast['text'][] = $strsum;
+        $this->syntacticAnalyzer($this->midast = $midast);
     }
-    return $summary_string;
+
+    public function syntacticAnalyzer($midast) {
+        $tags = $midast['tags'];
+        $text = $midast['text'];
+        $opens = [];
+        foreach ($tags as $index => $tag) {
+            $tagname = $tag['tagname'];
+            if($tag['is_open']){
+                if(!in_array($tagname, ['img', 'input', 'br', 'link', 'meta'])){
+                    $opens[] = $tagname;
+                    $opens = array_merge($opens);
+                }
+            }else{
+                if($len = count($opens)){
+                    $max = $len-1;
+                    if($opens[$max]===$tagname){
+                        unset($opens[$max]);
+                        $opens = array_merge($opens);
+                    }else{
+                        $posi = array_search($tagname, $opens);
+                        if($posi!==false){
+                            for($max; $max > $posi; $max--){
+                                $text[$index] = '></' . $opens[$max]  . $text[$index];
+                                unset($opens[$max]);
+                            }
+                            unset($opens[$posi]);
+                            $opens = array_merge($opens);
+                        }else{
+                            $text[$index] = '><' . $tagname  . $text[$index];
+                        }
+                    }
+                }else{
+                    if($index){
+                        $text[$index] = '><' . $tagname  . $text[$index];
+                    }else{
+                        $text[$index] = '<' . $tagname . '>' . $text[$index];
+                    }
+                }
+            }
+        }
+        if($len = count($opens)){
+            $max = $len-1;
+            for($max; $max >= 0; $max--){
+                $text[] = '</' . $opens[$max] . '>';
+                unset($opens[$max]);
+            }
+        }
+        $this->ast = $text;
+    }
+    
+    public function complete() {
+        return implode('', $this->ast);
+    }
 }
-}
+
+// header("Content-Type: text/plain;");
+
+// $input = 'aaa</p></div><h3 class="a">0000<p>1111<b>2222</b></b>3333</h3><img src="123.jpg" /><br><p>abcd<span>e';
+
+// $obj = new HTMLClose($input);
+
+// var_dump($input, $obj->complete(), $obj);

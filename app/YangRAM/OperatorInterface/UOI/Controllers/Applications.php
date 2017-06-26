@@ -8,7 +8,7 @@ use Application;
 use Library\compliers\JSMin;
 use Library\graphics\ImagePrinter;
 
-class Applications extends \OIC\BaseOICtrller {
+class Applications extends \OIC\OICtrller_BC {
 	public function AppRankingList(){
 		$response = Response::instance('200');
 		$response->MIME = 'application/javascript';

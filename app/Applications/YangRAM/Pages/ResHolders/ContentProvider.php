@@ -1,7 +1,7 @@
 <?php
 namespace Pages\ResHolders;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'open'	=>	[
 			'classname'	=>	'OI\OpenMain',

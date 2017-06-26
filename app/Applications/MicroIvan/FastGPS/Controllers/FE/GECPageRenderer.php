@@ -2,7 +2,7 @@
 namespace GPS\Controllers\FE;
 
 use Status;
-use AF\Models\Ect\THMI;
+use AF\Models\Util\THMI;
 use GPS\Models\Data\Page;
 
 class GECPageRenderer extends \Controller {

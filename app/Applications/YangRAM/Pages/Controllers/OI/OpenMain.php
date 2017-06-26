@@ -1,7 +1,7 @@
 <?php
 namespace Pages\Controllers\OI;
 
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Pages\Models\Data\LocalDict;
 use Pages\Models\ViewModels\OI\StartPage;
 use Pages\Models\ViewModels\OI\PageList;

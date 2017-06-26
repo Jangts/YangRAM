@@ -7,6 +7,6 @@ namespace AF\Models\Certificates;
  *  单例类
  *	用户身份认证处理的全局对象
  */
-final class OAuthPassport {
+final class OAuthPassport extends Passport_BC {
     
 }

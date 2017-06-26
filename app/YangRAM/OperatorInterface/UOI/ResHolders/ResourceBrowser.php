@@ -2,13 +2,13 @@
 namespace UOI\ResHolders;
 
 use Status;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 use UOI\Controllers\System;
 use UOI\Controllers\VISA;
 
-class ResourceBrowser extends \AF\ResourceHolders\ResourceBrowser_BaseClass {
+class ResourceBrowser extends \AF\ResourceHolders\ResourceBrowser_BC {
 	public function __construct($app, $request){
-		$passport = Passport::instance();
+		$passport = StdPassport::instance();
 		$system = new System($app, $request);
 		$visa = new VISA($app, $request, $passport);
 		$status = (string) $visa->myStatus();

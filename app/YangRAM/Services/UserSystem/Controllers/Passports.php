@@ -7,7 +7,7 @@ use Tangram\NIDO\DataObject;
 use Model;
 use Controller;
 use AF\Models\App as NAM;
-use AF\Models\Certificates\Passport;
+use AF\Models\Certificates\StdPassport;
 /**
  *
  */
@@ -18,7 +18,7 @@ class Passports extends Controller {
 
 	public function get_user_avatar($uid = null){
         if($uid===null){
-            $passport = Passport::instance();
+            $passport = StdPassport::instance();
             //$uid = $this->passport->uid;
             //echo($passport->avatar);
             

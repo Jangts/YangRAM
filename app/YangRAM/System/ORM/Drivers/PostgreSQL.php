@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For PostgreSQL
  */
-class PostgreSQL extends NI_PDOExtended_BaseClass {
+class PostgreSQL extends NI_PDOExtended_BC {
     public static function parseDsn(array $options) {
         if(extension_loaded('PDO_PGSQL')){
             $dsn = sprintf('pgsql:host=%s;dbname=%s', $options['host'], $options['dbname']);

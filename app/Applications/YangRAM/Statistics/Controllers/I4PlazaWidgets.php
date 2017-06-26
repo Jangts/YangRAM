@@ -4,10 +4,10 @@ use stdClass;
 use Model;
 use CM\SPC\Preset;
 use CM\SPCLite;
-use AF\Models\Ect\GSTI;
+use AF\Models\Util\GSTI;
 use Library\localtimes\Timer;
 
-class I4PlazaWidgets extends \OIC\I4PlazaWidgets_BaseClass {
+class I4PlazaWidgets extends \OIC\I4PlazaWidgets_BC {
 	public function hours(){
 		$data = $this->get_default_data();
 		$times = $this->get_time_parts();

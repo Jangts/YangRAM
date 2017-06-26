@@ -2,7 +2,7 @@
 namespace TC\ResHolders;
 use Status;
 
-class ResourceSetter extends \AF\ResourceHolders\OISourceTransfer_BaseClass {
+class ResourceSetter extends \AF\ResourceHolders\OISourceTransfer_BC {
 	protected $controllers = [
 		'submit'	=>	array(
 			'classname'	=>	'Submitter',

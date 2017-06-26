@@ -2,7 +2,7 @@
 namespace MSG\ResHolders;
 use Status;
 
-class OISourceTransfer extends \AF\ResourceHolders\OISourceTransfer_BaseClass {
+class OISourceTransfer extends \AF\ResourceHolders\OISourceTransfer_BC {
 	protected $controllers = [
 		'oimessages'	=>	array(
 			'classname'	=>	'OIMessages',

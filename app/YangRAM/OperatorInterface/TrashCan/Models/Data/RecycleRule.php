@@ -2,9 +2,9 @@
 namespace TC\Models\Data;
 use Tangram\NIDO\DataObject;
 use Model;
-use AF\Models\BaseR3Model;
+use AF\Models\R3Model_BC;
 
-class RecycleRule extends BaseR3Model {
+class RecycleRule extends R3Model_BC {
     protected static
     $table = DB_AST.'trashcan_rules',
     $indexes = ['id'],

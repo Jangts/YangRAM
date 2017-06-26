@@ -1,6 +1,6 @@
 <?php
 namespace CM\SPC;
-use AF\Models\BaseR3Model;
+use AF\Models\R3Model_BC;
 
 /**
  *	Special Use Content Custom Field Model
@@ -31,7 +31,7 @@ use AF\Models\BaseR3Model;
  *  **  datetime
  *  其中text是默认字段类型
  */
-final class Field extends BaseR3Model  {
+final class Field extends R3Model_BC  {
 	protected static
 	$ca_path = PATH_DAT_CNT.'presetfields/',
     $table = DB_SPC.'fields',

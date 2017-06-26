@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For Informix
  */
-class Informix extends NI_PDOExtended_BaseClass {
+class Informix extends NI_PDOExtended_BC {
     public static function parseDsn(array $options) {
         if(extension_loaded('PDO_INFORMIX')){
             $dsn = sprintf('informix:host=%s;database=%s', $options['host'], $options['dbname']);

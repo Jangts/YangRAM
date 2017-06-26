@@ -3,13 +3,13 @@ namespace Tangram\APP;
 
 use Tangram\IDEA;
 
-include 'NI_ApplicationProperties_BaseModel.php';
+include 'NI_ApplicationProperties_BC.php';
 
 /**
  *	Application Configuration Options Model
  *	应用配置选项模型
  */
-final class ApplicationProperties extends NI_ApplicationProperties_BaseModel {
+final class ApplicationProperties extends NI_ApplicationProperties_BC {
 	protected function loadResourceHolders(array $rhmanifest){
 		if(isset($rhmanifest['ContentProvider'])){
 			$this->regResHolder('ContentProvider', $rhmanifest['ContentProvider']);

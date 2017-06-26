@@ -4,7 +4,7 @@ namespace GPS\Models\ViewModels\OI;
 use Status;
 use Tangram\NIDO\DataObject;
 use Model;
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Library\ect\Pager;
 use GPS\Models\Data\Page;
 

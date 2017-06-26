@@ -7,7 +7,7 @@ use Tangram\NIDO\Guest;
 
 
 use Packages\tplengines\Niml;
-use AF\Models\Ect\SYSI;
+use AF\Models\Util\SYSI;
 
 use GPS\Models\Data\UserInfo;
 use GPS\Models\Data\Page;

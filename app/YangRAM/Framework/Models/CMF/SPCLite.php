@@ -15,7 +15,7 @@ use CM\SPC\Category;
  *	专用内容轻模型
  *  是一个忽略不同预设字段差异的精简的单一标准模型
  */
-final class SPCLite extends BaseModel {
+final class SPCLite extends ContentModel_BC {
 	const
 	SEARCH_ALL = 0,
 	SEARCH_USE = 1,

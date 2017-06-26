@@ -4,7 +4,7 @@ namespace Studio\Stk\Controllers;
 use CM\EMC;
 
 
-class Submitter extends \OIC\BaseOISubmitter {
+class Submitter extends \OIC\OISubmitter_BC {
 	public function save(){
 		$post = $this->request->FORM;
 		if(isset($post->id)){

@@ -8,5 +8,5 @@ use Model;
  *	新建、读取、删改用户个人信息的对象
  *  数据细节正在设计之中……
  */
-final class Profile extends \AF\Models\BaseModel {
+final class Profile extends \AF\Models\Model_BC {
 }

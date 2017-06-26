@@ -7,7 +7,7 @@ use Status;
 use RDO;
 use Storage;
 
-include 'NI_Application_BaseModel.php';
+include 'NI_Application_BC.php';
 
 /**
  *	Common Application Data Model
@@ -15,7 +15,7 @@ include 'NI_Application_BaseModel.php';
  *  应用数据模型的基类，封包了应用的基本信息
  *  并可以拓展应用的配置选项，并提供应用拓展信息的查询
  */
-final class Application extends NI_Application_BaseModel {
+final class Application extends NI_Application_BC {
 	public static function all(){
 		$objs = [];
         $rdo = new RDO;

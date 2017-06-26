@@ -4,7 +4,7 @@ namespace GPS\Controllers\FE;
 use Status;
 use CM\SPC\Category;
 use CM\SPCLite;
-use AF\Models\Ect\THMI;
+use AF\Models\Util\THMI;
 use GPS\Models\Data\Page;
 
 class SPCPageRenderer extends \Controller {

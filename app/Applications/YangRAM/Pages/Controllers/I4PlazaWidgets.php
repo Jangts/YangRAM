@@ -3,7 +3,7 @@ namespace Pages\Controllers;
 use stdClass;
 use Pages\Models\Data\Page;
 
-class I4PlazaWidgets extends \OIC\I4PlazaWidgets_BaseClass {
+class I4PlazaWidgets extends \OIC\I4PlazaWidgets_BC {
 	public function aweek_pageviews(){
 		$data = $this->get_default_data();
 		$height = 100;

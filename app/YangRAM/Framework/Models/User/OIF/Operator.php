@@ -3,7 +3,7 @@ namespace AF\Models\User\OIF;
 use Storage;
 use RDO;
 
-final class Operator extends \AF\Models\User\BaseMemberModel {
+final class Operator extends \AF\Models\User\Member_BC {
 
     protected
     $data = [

@@ -4,7 +4,7 @@ namespace CM;
 use PDO;
 use Tangram\NIDO\DataObject;
 use Model;
-use AF\Models\BaseR3Model;
+use AF\Models\R3Model_BC;
 use Tangram\ORM\Counter;
 
 /**
@@ -14,7 +14,7 @@ use Tangram\ORM\Counter;
  *  提供针对通用内容进行增删改查的接口
  *  比REC多出几个附加模块，一般用来建立页面/文档等完整内容
  */
-final class GEC extends BaseR3Model {
+final class GEC extends R3Model_BC {
 	const
 	ALL = 0,
 	RECYCLED = 1,

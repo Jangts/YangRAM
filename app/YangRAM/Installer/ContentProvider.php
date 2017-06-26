@@ -1,7 +1,7 @@
-<?php
+s<?php
 namespace Installer;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'message'	=>	array(
 			'classname'	=>	'Message',

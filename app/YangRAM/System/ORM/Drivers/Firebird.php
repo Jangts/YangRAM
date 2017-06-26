@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For Firebird
  */
-class Firebird extends NI_PDOExtended_BaseClass {
+class Firebird extends NI_PDOExtended_BC {
     public static function parseDsn(array $options) {
         if(extension_loaded('PDO_FIREBIRD')){
             if(empty($options['host'])){

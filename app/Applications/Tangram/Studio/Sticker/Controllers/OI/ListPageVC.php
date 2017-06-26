@@ -1,11 +1,11 @@
 <?php
 namespace Studio\Stk\Controllers\OI;
 
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Studio\Stk\Models\LocalDict;
 use Studio\Stk\Models\ListPageModels;
 
-class ListPageVC extends \OIC\BaseOICtrller {
+class ListPageVC extends \OIC\OICtrller_BC {
 
 	public function main(){
 		$oiml = new OIML;

@@ -5,7 +5,7 @@ namespace AF\Controllers\VISA;
  *	Common Identification Abstract
  *	通用身份识别器抽象
  */
-abstract class VisaByCustomCertificate_BC extends BaseVISACtrller {
+abstract class VisaByCustomCertificate_BC extends VISACtrller_BC {
     const       TYPE    =   'IDENTT';
     protected   $type   =   'IDENTT';
 

@@ -1,11 +1,11 @@
 <?php
 namespace Studio\Dsr\Controllers\OI;
 
-use AF\ViewRenderers\OIML;
+use AF\Util\OIML;
 use Studio\Dsr\Models\LocalDict;
 use Studio\Dsr\Models\DefaultPageVM;
 
-class DefaultPage extends \OIC\BaseOICtrller {
+class DefaultPage extends \OIC\OICtrller_BC {
 
 	public function main(){
 		$localdict = LocalDict::instance();

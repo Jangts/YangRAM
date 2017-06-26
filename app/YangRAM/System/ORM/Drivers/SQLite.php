@@ -3,12 +3,12 @@ namespace Tangram\ORM\Drivers;
 
 use PDO;
 use Status;
-use Tangram\ORM\NI_PDOExtended_BaseClass;
+use Tangram\ORM\NI_PDOExtended_BC;
 
 /**
  *	PDO Extended For SQLite
  */
-class SQLite extends NI_PDOExtended_BaseClass {
+class SQLite extends NI_PDOExtended_BC {
     public static function parseDsn(array $options) {
         if(extension_loaded('PDO_SQLITE')&&$path = realpath($options['file'])){
             $dsn = 'sqlite:'.$path;

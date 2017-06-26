@@ -1,7 +1,7 @@
 <?php
 namespace CMS\ResHolders;
 
-class ContentProvider extends \AF\ResourceHolders\ContentProvider_BaseClass {
+class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 	protected $controllers = [
 		'spc'	=>	array(
 			'classname'	=>	'SPContents',

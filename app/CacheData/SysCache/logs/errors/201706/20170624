@@ -1,0 +1,24 @@
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-24 16:42:45
+	MSG		Application YangRAM News Initialization Failure
+	DESC		Cannot Find Options File [E:/CodeRepositories/YangRAM/app/Applications/YangRAM/NFA/News/AppProperties.json]
+	URL		www.yangram.ni/o/1026/wallwidgets/messages/
+	FILE		E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	Tangram\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	Tangram\APP\NI_Application_BaseModel::extendsProperties() on E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	Tangram\APP\NI_Application_BaseModel::active() on E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	Tangram\APP\Application::checkPermissions() on E:\CodeRepositories\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	Tangram\IDEA::run_active_application() on E:\CodeRepositories\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+
+>>>>>>	UNDEFINED_STATUS_708.0	@	2017-06-24 16:42:45
+	MSG		Application YangRAM Stock Initialization Failure
+	DESC		Cannot Find Options File [E:/CodeRepositories/YangRAM/app/Applications/YangRAM/NFA/Stock/AppProperties.json]
+	URL		www.yangram.ni/o/1028/wallwidgets/embed/
+	FILE		E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\NI_ApplicationProperties_BaseModel.php in line 54
+	TRACE	#0	Tangram\APP\NI_ApplicationProperties_BaseModel::__construct() on E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#1	Tangram\APP\NI_Application_BaseModel::extendsProperties() on E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\NI_Application_BaseModel.php
+		#2	Tangram\APP\NI_Application_BaseModel::active() on E:\CodeRepositories\YangRAM\app\YangRAM\System\APP\Application.php
+		#3	Tangram\APP\Application::checkPermissions() on E:\CodeRepositories\YangRAM\app\YangRAM\System\IDEA.PHP
+		#4	Tangram\IDEA::run_active_application() on E:\CodeRepositories\YangRAM\app\boot.php
+	USER			from 127.0.0.1
+

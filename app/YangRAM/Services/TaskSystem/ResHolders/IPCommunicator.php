@@ -2,7 +2,7 @@
 namespace Workers\ResHolders;
 use Status;
 
-class IPCommunicator extends \AF\ResourceHolders\IPCommunicator_BaseClass {
+class IPCommunicator extends \AF\ResourceHolders\IPCommunicator_BC {
 	protected
 	$apis = [
 		"master" => [
