@@ -175,6 +175,7 @@ final class Master extends Process {
 
     protected function scan(){
         
+        
 
 
         /* 以下为测试代码 */

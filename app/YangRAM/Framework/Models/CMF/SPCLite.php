@@ -89,7 +89,7 @@ final class SPCLite extends ContentModel_BC {
 	private static function checkSubmitData($post){
         $post = self::checkStatus($post);
 		$form = array_map(function($val){
-            $val = SPCLite::replaceroot($val);
+            $val = SPCLite::replaceroot(SPCLite::checkContentPager($val));
             return htmlspecialchars($val, ENT_COMPAT, 'UTF-8');
         }, $post);
         $intersect = array_intersect_key($form, self::$defaults);
@@ -101,12 +101,8 @@ final class SPCLite extends ContentModel_BC {
             $intersect["TAGS"] = join(",", $tags);
             SPC\Tag::posttags($tags, $intersect["ID"], $post['SET_ALIAS']);
         }
-		$desc = trim(preg_replace('/\s+/', ' ', preg_replace('/[\n\r\t]+/', '', $intersect["DESCRIPTION"])));
-		if(empty($desc)){
-			unset($intersect["DESCRIPTION"]);
-		}else{
-			$intersect["DESCRIPTION"] = $desc;
-		}
+		$desc = trim(preg_replace('/\s+/', ' ', preg_replace('/[\n\r\t]+/', '', str_replace('{{@page_break}}', '', $intersect["DESCRIPTION"]))));
+		$intersect["DESCRIPTION"] = $desc;
         return $intersect;
 	}
 

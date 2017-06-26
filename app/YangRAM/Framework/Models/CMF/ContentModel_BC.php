@@ -1,6 +1,8 @@
 <?php
 namespace CM;
+
 use Tangram\NIDO\DataObject;
+use Library\compilers\HTMLClose;
 
 abstract class ContentModel_BC extends DataObject {
 	public static function count(){
@@ -17,6 +19,13 @@ abstract class ContentModel_BC extends DataObject {
 
 	public static function restoreroot($str){
 		return str_replace('{{@root_url}}', strtolower(__DIR), $str);
+	}
+
+	public static function checkContentPager($str){
+		if (strpos($str, '{{@page_break}}') === false){
+			return $str;
+		}
+		return implode('{{@page_break}}', array_map(['Library\compilers\HTMLClose', 'compile'], explode('{{@page_break}}', $str)));
 	}
 
 	protected static function querySelect($rdo, $require, $orderby, $range){

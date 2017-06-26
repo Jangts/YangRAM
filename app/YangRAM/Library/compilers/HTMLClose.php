@@ -1,5 +1,5 @@
 <?php
-namespace Library\ect;
+namespace Library\compilers;
 
 class HTMLClose {
     public static function compile($input){
@@ -25,8 +25,6 @@ class HTMLClose {
     private function lexicalanAlysis($body) {
         $midast = [
             'tags'  => [],
-            // 'left'  => [],
-            // 'right' => [],
             'text'  => []
         ];
         $strlen = strlen($body);
@@ -94,9 +92,6 @@ class HTMLClose {
                      */
                     $htmtxt .= $current;
                 }
-            } else {
-                // 非 html 代码才记数
-                --$size;
             }
             
             $ord_var_c = ord($body{$i});
@@ -197,7 +192,8 @@ class HTMLClose {
 // header("Content-Type: text/plain;");
 
 // $input = 'aaa</p></div><h3 class="a">0000<p>1111<b>2222</b></b>3333</h3><img src="123.jpg" /><br><p>abcd<span>e';
+// $input = '<div style="text-align: center;"><img src="http://wwww.jzgcxy.cn//o/files/img/57c51af533d471ab1497602976883059439ba105b80.jpg" _selected="_selected">';
+// $input = '</div><div style="text-align: center;"><img src="http://wwww.jzgcxy.cn//o/files/img/8d418123a883bf391497602976750859439ba39d00b.jpg"></div>';
 
 // $obj = new HTMLClose($input);
-
 // var_dump($input, $obj->complete(), $obj);

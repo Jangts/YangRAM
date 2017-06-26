@@ -45,7 +45,7 @@ final class SPC extends ContentModel_BC {
         $defaults = SPC\Defaults::byType($post['SET_ALIAS'])->values('defaults');
         $extends = SPC\Defaults::byType($post['SET_ALIAS'])->values('extends');
         $form = array_map(function($val){
-            $val = SPCLite::replaceroot($val);
+            $val = SPC::replaceroot(SPC::checkContentPager($val));
             return htmlspecialchars($val, ENT_COMPAT, 'UTF-8');
         }, $post);
         $intersect_base = array_intersect_key($form, $defaults);
@@ -83,7 +83,7 @@ final class SPC extends ContentModel_BC {
         $desc = trim(preg_replace('/\s+/', ' ', preg_replace('/[\n\r\t]+/', '', strip_tags(htmlspecialchars_decode($intersect_base["DESCRIPTION"])))));
         $kw = trim(preg_replace('/\s+/', ' ', preg_replace('/[\n\r\t]+/', '', trim(strip_tags(htmlspecialchars_decode($intersect_xtnd["KEYWORDS"]))))));
 
-        $intersect_base["DESCRIPTION"] = $desc!='' ? $desc : trim(preg_replace('/\s+/', ' ', preg_replace('/[\n\r\t]+/', '', strip_tags(htmlspecialchars_decode($preparation)))));
+        $intersect_base["DESCRIPTION"] = $desc!='' ? $desc : trim(preg_replace('/\s+/', ' ', preg_replace('/[\n\r\t]+/', '', str_replace('{{@page_break}}', '', strip_tags(htmlspecialchars_decode($preparation))))));
         $intersect_base["DESCRIPTION"] = mb_substr($intersect_base["DESCRIPTION"], 0, 128, "utf-8");  
 
         $intersect_xtnd["KEYWORDS"] = $kw!='' ? $kw : trim(preg_replace('/\s+/', ' ', preg_replace('/[\n\r\t]+/', '', $intersect_base["TAGS"])));
@@ -396,6 +396,10 @@ final class SPC extends ContentModel_BC {
     }
 
     public function put($data){
+        $form = array_map(function($val){
+            return SPC::replaceroot(SPC::checkContentPager($val));
+        }, array_intersect_key($data, $this->data));
+        $data = array_merge($this->data,$form);
         return $this->build($data);
     }
 

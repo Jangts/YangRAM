@@ -40,7 +40,7 @@ class Image extends Controller {
 					}
 					return $this->writePicture();
 				}
-				SRC::removeDocument(strtolower($this->appid), $id);
+				SRC::delete("`ID` = '$id'");
 			}
 		}
 		new Status(404, true);//Status::notFound();

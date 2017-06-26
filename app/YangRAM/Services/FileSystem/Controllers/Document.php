@@ -37,7 +37,7 @@ class Document extends Controller {
 					$this->basename = $row["FILE_NAME"];
 					return $this->write($type);
 				}
-				Files::removeDocument(strtolower($this->appid), $id);
+				SRC::delete("`ID` = '$id'");
 			}
 		}
 		new Status(404, true);//Status::notFound();
