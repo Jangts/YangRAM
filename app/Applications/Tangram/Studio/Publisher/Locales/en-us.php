@@ -56,6 +56,7 @@ return [
 		'Thumbnail'		=>	'Thumbnail',
 		'Images'		=>	'Images',
 		'Description'	=>	'Description',
+		'Abstract'		=>	'Abstract',
 		'Picture'		=>	'Picture',
 		'Name'			=>	'Name',
 		'Alias'			=>	'Alias',

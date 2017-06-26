@@ -160,6 +160,10 @@ final class Defaults extends DataObject {
                 'type'  =>  'text',
                 'value' =>  ''
             ],
+            'THUMB'			=>	[
+                'type'  =>  'file',
+                'value' =>  ''
+            ],
 			'CONTENT'		=>	[
                 'type'  =>  'longtext',
                 'value' =>  ''
@@ -180,6 +184,14 @@ final class Defaults extends DataObject {
             ],
 			'SOURCE'		=>	[
                 'type'  =>  'text',
+                'value' =>  ''
+            ],
+            'THUMB'			=>	[
+                'type'  =>  'file',
+                'value' =>  ''
+            ],
+            'SOURCE'		=>	[
+                'type'  =>  'textarea',
                 'value' =>  ''
             ],
 			'CONTENT'		=>	[

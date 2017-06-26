@@ -1,5 +1,5 @@
 <?php
-namespace AF\Controllers;
+namespace AF\Controllers\IPC;
 use Request;
 use Application;
 
@@ -8,8 +8,8 @@ use Application;
  *	通用应用数据控制器
  *  控制器的基类，提供了控制器的基本属性和方法
  */
-abstract class Controller_BC extends Controller_BC {
-
+abstract class SocketController_BC extends Controller_BC {
+    use methods;
     
     public function __construct($host, $port) {
         try {

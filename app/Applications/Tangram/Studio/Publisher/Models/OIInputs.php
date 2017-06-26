@@ -61,6 +61,15 @@ class OIInputs extends DataObject {
 				'default_value'	=>	'',
 				'file_type'		=>	NULL,
 			);
+			$data[] = array(
+				'name'			=>	'THUMB',
+				'alias'			=>	$localdict['Thumbnail'],
+				'input_type'	=>	'uploader',
+				'tips'			=>	'',
+				'row_num'		=>	0,
+				'default_value'	=>	'',
+				'file_type'		=>	'image',
+			);
             $data[] = array(
 				'name'			=>	'TAGS',
 				'alias'			=>	$localdict['Tags'],
@@ -107,6 +116,24 @@ class OIInputs extends DataObject {
 				'row_num'		=>	0,
 				'default_value'	=>	date("Y-m-d H:i:s"),
 				'file_type'		=>	NULL,
+			);
+			$data[] = array(
+				'name'			=>	'THUMB',
+				'alias'			=>	$localdict['Thumbnail'],
+				'input_type'	=>	'uploader',
+				'tips'			=>	'',
+				'row_num'		=>	0,
+				'default_value'	=>	'',
+				'file_type'		=>	'image',
+			);
+			$data[] = array(
+				'name'			=>	'ABSTRACT',
+				'alias'			=>	$localdict['Abstract'],
+				'input_type'	=>	'textarea',
+				'tips'			=>	'',
+				'row_num'		=>	0,
+				'default_value'	=>	'',
+				'file_type'		=>	NULL
 			);
 			break;
 			case 'down':

@@ -12,6 +12,8 @@ use Application;
  *  控制器的基类，提供了控制器的基本属性和方法
  */
 abstract class CommunicationController_BC extends \AF\Controllers\Controller_BC {
+    use methods;
+
     protected static $storage = null;
 
     protected $tokenname = 'IPCTOKEN';
@@ -21,22 +23,6 @@ abstract class CommunicationController_BC extends \AF\Controllers\Controller_BC 
             self::$storage = new Storage(PATH_CACA.$appid.'/message/', Storage::SER, true);
             self::$storage->useHashKey(false)->setAfter();
         }
-    }
-
-    final protected static function checkRequestToken(Request $request, $tokenname){
-        if(_TASKER_ENABLE_){
-            $addr = $request->ADDR;
-            $args = $request->PARAMS;
-            if($addr['FROM']===$addr['TO']){
-                if(isset($args->$tokenname)){
-                    if(self::$storage->setBefore('tokens/')->check($args->$tokenname)){
-                        self::$storage->store($args->$tokenname);
-                        return true;
-                    }
-                }   
-            }
-        }
-        return false;
     }
 
     final private function prepareReturenMessage(array $data, $message = ''){

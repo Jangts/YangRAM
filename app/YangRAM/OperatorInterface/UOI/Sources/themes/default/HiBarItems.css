@@ -118,11 +118,13 @@ hibar account myangram {
     transition: all ease .4s;
     z-index: 550;
     overflow: hidden;
+    opacity: 0;
 }
 
 hibar account:hover myangram {
     height: 120px;
     top: 40px;
+    opacity: 1;
 }
 
 hibar account myangram welcome {

@@ -56,6 +56,7 @@ return [
 		'Thumbnail'		=>	'缩略图',
 		'Images'		=>	'图片序列',
 		'Description'	=>	'描述说明',
+		'Abstract'		=>	'内容摘要',
 		'Picture'		=>	'图片',
 		'Name'			=>	'姓名',
 		'Alias'			=>	'别称',
