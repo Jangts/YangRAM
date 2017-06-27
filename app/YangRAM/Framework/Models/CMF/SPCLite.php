@@ -285,7 +285,29 @@ final class SPCLite extends ContentModel_BC {
 		if(is_numeric($class)){
 			return self::query("`CAT_ID` = $class", $orderby, $range, $format);
 		}elseif(is_string($class)){
+			if(strpos($class, '|')){
+				return self::of(explode('|', $class), $orderby, $range, $format);
+			}
 			return self::query("`SET_ALIAS` = '$class'", $orderby, $range, $format);
+		}elseif(is_array($class)){
+			$require = "`KEY_IS_RECYCLED` = 0 AND `KEY_STATE` = 1";
+			foreach($class as $n=>$preset_alias){
+				if($n){
+					if(is_numeric($preset_alias)){
+						$require .= " OR `CAT_ID` = $preset_alias";
+					}else{
+						$require .= " OR `SET_ALIAS` = '$preset_alias'";
+					}
+				}else{
+					if(is_numeric($preset_alias)){
+						$require .= " AND (`CAT_ID` = $preset_alias";
+					}else{
+						$require .= " AND (`SET_ALIAS` = '$preset_alias'";
+					}
+				}
+			}
+			$require .= ")";
+			return self::query($require, $orderby, $range, $format);
 		}
 		return [];
 	}
