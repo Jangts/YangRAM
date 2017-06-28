@@ -3,7 +3,7 @@ namespace Studio\Pub\Models;
 
 use Tangram\NIDO\DataObject;
 use Model;
-use CM\GEC;
+use CMF\Models\GEC;
 use AF\Util\OIML;
 use Library\ect\Pager;
 

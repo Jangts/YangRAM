@@ -2,9 +2,9 @@
 namespace Pages\Models\ViewModels\FE;
 
 use Tangram\NIDO\DataObject;
-use CM\SPC\Preset;
-use CM\SPC\Category;
-use CM\SPCLite;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPC\Category;
+use CMF\Models\SPCLite;
 use Library\ect\SearchEngine;
 use Library\ect\Pager;
 

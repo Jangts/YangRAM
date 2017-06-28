@@ -2,11 +2,11 @@
 namespace Studio\Pub\Models;
 
 use Tangram\NIDO\DataObject;
-use CM\SPC\Preset;
-use CM\SPC\Field;
-use CM\SPC\Category;
-use CM\SPC;
-use CM\SPC\Defaults;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPC\Field;
+use CMF\Models\SPC\Category;
+use CMF\Models\SPC;
+use CMF\Models\SPC\Defaults;
 use AF\Util\OIML;
 use Library\ect\DataTree;
 
@@ -51,15 +51,20 @@ class SPCEditPage extends DataObject {
     private function content($presetinfo, $id){
 		$content = [];
 		if(is_numeric($id)){
-            $content = SPC::byId($id)->toArray();
-            /*
-             * 此处不需要解码
-			if($content){
-				foreach($content as $key=>$val){
-					$content[$key] = htmlspecialchars_decode($val);
-				}
-			}
-            */
+            $content = SPC::byId($id);
+            if($content){
+                $content->toArray();
+                /*
+                 * 此处不需要解码
+			    if($content){
+				    foreach($content as $key=>$val){
+					    $content[$key] = htmlspecialchars_decode($val);
+				    }
+			    }
+                */
+            }else{
+                $content = Defaults::byType($presetinfo->alias)->values(); 
+            }
 		}elseif($id=='new'){
 			$content = Defaults::byType($presetinfo->alias)->values(); 
 		}

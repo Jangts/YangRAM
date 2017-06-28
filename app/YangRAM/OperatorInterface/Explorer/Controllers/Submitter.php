@@ -1,9 +1,9 @@
 <?php
 namespace Explorer\Controllers;
-use CM\SPC;
-use CM\SRC;
-use CM\SRCLite;
-use CM\SRC\Folder;
+use CMF\Models\SPC;
+use CMF\Models\SRC;
+use CMF\Models\SRCLite;
+use CMF\Models\SRC\Folder;
 
 class Submitter extends \Controller {
 	public function mod_name(){

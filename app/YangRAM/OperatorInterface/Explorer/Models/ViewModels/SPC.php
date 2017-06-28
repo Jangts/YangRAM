@@ -3,8 +3,8 @@ namespace Explorer\Models\ViewModels;
 use Tangram\NIDO\DataObject;
 use Model;
 use RDO;
-use CM\SPC\Preset;
-use CM\SPCLite;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPCLite;
 
 class SPC extends DataObject {
     use traits\spc_writer;

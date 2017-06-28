@@ -23,20 +23,20 @@ define('APP_PID',    	PID.APP_DIR);
 define('TPA_PID',    	PID.TPA_DIR);
 define('USR_PID',   	PID.USR_DIR);
 define('I4S_PID',   	PID.I4S_DIR);
-define('SYS_PID',    	PID.I4S_DIR.'System/');
+define('TNI_PID',    	PID.I4S_DIR.'Tangram/');
 
 define('PATH_APP',    	ROOT.APP_DIR);
 define('PATH_TPA',    	ROOT.TPA_DIR);
 define('PATH_USR', 		ROOT.USR_DIR);
 define('PATH_I4S',    	ROOT.I4S_DIR);
-define('PATH_SYS',    	PATH_I4S.'System/');
+define('PATH_TNI',    	PATH_I4S.'Tangram/');
 define('PATH_LIB',		PATH_I4S.'Library/');
 
 define('PUB_DIR',   	USR_DIR.'Public/');
 define('VIEW_DIR',   	USR_DIR.'Public/Themes/');
 define('LIBX_DIR',   	USR_DIR.'Public/Packages/');
 define('OPEN_DIR',   	USR_DIR.'Public/Shared/');
-define('NIAF_DIR',   	I4S_DIR.'Framework/');
+define('NIAF_DIR',   	I4S_DIR.'ApplicationFramework/');
 define('LANGS_DIR',   	I4S_DIR.'Locales/');
 
 define('PUB_PID',   	PID.PUB_DIR);

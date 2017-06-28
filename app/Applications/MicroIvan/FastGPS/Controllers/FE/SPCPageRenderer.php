@@ -2,8 +2,8 @@
 namespace GPS\Controllers\FE;
 
 use Status;
-use CM\SPC\Category;
-use CM\SPCLite;
+use CMF\Models\SPC\Category;
+use CMF\Models\SPCLite;
 use AF\Models\Util\THMI;
 use GPS\Models\Data\Page;
 

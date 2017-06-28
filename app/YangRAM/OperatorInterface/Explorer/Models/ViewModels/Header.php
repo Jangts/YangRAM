@@ -2,8 +2,8 @@
 namespace Explorer\Models\ViewModels;
 use Tangram\NIDO\DataObject;
 use Application;
-use CM\SPC\Preset;
-use CM\SRC\Folder;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SRC\Folder;
 
 class Header extends DataObject {
     public function __construct($localdict, $uriarr, $length, $datatype, $itemtype, $folder = ''){

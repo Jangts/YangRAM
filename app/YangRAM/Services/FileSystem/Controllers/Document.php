@@ -1,9 +1,10 @@
 <?php
 namespace Files\Controllers;
+
 use Status;
 use Response;
 use Controller;
-use CM\SRC;
+use CMF\Models\SRC;
 
 class Document extends Controller {
 	private $suffix, $filename;

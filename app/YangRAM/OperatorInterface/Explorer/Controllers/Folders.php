@@ -2,7 +2,7 @@
 namespace Explorer\Controllers;
 
 use Controller;
-use CM\SRC\Folder;
+use CMF\Models\SRC\Folder;
 
 class Folders extends Controller {
     private static function render($array, $level = 1){

@@ -1,1 +1,0 @@
-{"id":"3","basic_type":"news","name":"\u5b66\u9662\u52a8\u6001","alias":"news","code":"NEWS","note":"\u5b66\u9662\u52a8\u6001","item_type":"\u65b0\u95fb","item_unit":"","top_display_num":"2","theme":"jzx","template":"news\/news_content.php","can_contribute":"0","need_nonaudit":"0","KEY_STATE":"1","appid":"0"}

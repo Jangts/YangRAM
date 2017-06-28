@@ -2,7 +2,7 @@
 namespace Explorer\Controllers;
 
 use Controller;
-use CM\SRC;
+use CMF\Models\SRC;
 
 class FileInfo extends Controller {
     public function img($ID){

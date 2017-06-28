@@ -1,7 +1,7 @@
 <?php
 namespace Explorer\Models\ViewModels\traits;
 
-use CM\SRC;
+use CMF\Models\SRC;
 use Library\formattings\ScalarFormat;
 
 trait spc_writer {

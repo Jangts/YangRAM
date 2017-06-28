@@ -2,7 +2,7 @@
 namespace Studio\Pub\Models\SPCListPage;
 
 use Tangram\NIDO\DataObject;
-use CM\SPCLite;
+use CMF\Models\SPCLite;
 use AF\Util\OIML;
 
 class Sheet extends DataObject {

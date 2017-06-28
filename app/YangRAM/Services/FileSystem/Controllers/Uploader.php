@@ -2,9 +2,9 @@
 namespace Files\Controllers;
 use Status;
 use Controller;
-use CM\SRC;
-use CM\SRCLite;
-use CM\SRC\Folder;
+use CMF\Models\SRC;
+use CMF\Models\SRCLite;
+use CMF\Models\SRC\Folder;
 
 class Uploader extends Controller {
 	private $file = NULL;

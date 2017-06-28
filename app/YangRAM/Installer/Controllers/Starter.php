@@ -153,7 +153,7 @@ class Starter extends Common {
                 unset($connection['step']);
                 unset($connection['_DBPRE_']);
                 if($this->checkConn($connection)){
-                    $configuration = PATH_SYS.'configuration.ni';
+                    $configuration = PATH_TNI.'configuration.ni';
                     $contents = json_encode(array('constants' => $config->constants, 'connections' => array($connection)));
                     file_put_contents($configuration, $contents);
                     $template = AP_CURR.'Views/ThirdInstallStep.php';
@@ -180,8 +180,8 @@ class Starter extends Common {
     }
 
     private function checkConn($options){
-        if(is_array($options)&&$options['driver']&&is_file(PATH_SYS.'ORM/Drivers/'.$options['driver'].'.php')){
-            include_once(PATH_SYS.'ORM/Drivers/'.$options['driver'].'.php');
+        if(is_array($options)&&$options['driver']&&is_file(PATH_TNI.'ORM/Drivers/'.$options['driver'].'.php')){
+            include_once(PATH_TNI.'ORM/Drivers/'.$options['driver'].'.php');
 			$class = 'Tangram\ORM\Drivers\\'.$options['driver'];
             return $class::instance($options);
         }
@@ -279,7 +279,7 @@ class Starter extends Common {
                 include $template;
             }
         }else{
-            $filename = PATH_SYS.'configuration.ni';
+            $filename = PATH_TNI.'configuration.ni';
             $configuration = json_decode(file_get_contents($filename));
             $configuration->constants->_OWNER_ = $post['_OWNER_'];
             $configuration->constants->_DOMAIN_ = $post['_DOMAIN_'];

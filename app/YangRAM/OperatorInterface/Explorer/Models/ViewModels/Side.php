@@ -2,7 +2,7 @@
 namespace Explorer\Models\ViewModels;
 
 use Tangram\NIDO\DataObject;
-use CM\SPC\Preset;
+use CMF\Models\SPC\Preset;
 
 class Side extends DataObject {
     private static $srctypes = ['all', 'img', 'txt', 'doc', 'wav', 'vod', 'zip', 'ect'];

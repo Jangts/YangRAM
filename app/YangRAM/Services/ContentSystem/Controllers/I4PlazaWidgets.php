@@ -2,8 +2,8 @@
 namespace CMS\Controllers;
 
 use Model;
-use CM\SPC\Preset;
-use CM\SPCLite;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPCLite;
 
 class I4PlazaWidgets extends \OIC\I4PlazaWidgets_BC {
 	public function new_contents(){

@@ -15,7 +15,7 @@
                 <div class="newslist ic stabs" data-ic-auto="true">
                     <h3> <a href="{{$REQUEST.DIR}}s/news/category/15/">学院要闻</a></h3>
                     <json name="$fields"> ["dev_figure", "dev_abstract"] </json>
-                    <def name="$newslist" onload="CM.SPC.getList" args="'news', 15, CM.SPCLite.PUBLISHED, CM.SPCLite.PUBTIME_DESC, 0, 9, Model::LIST_AS_OBJ, $fields" />
+                    <def name="$newslist" onload="CMF.Models.SPC.getList" args="'news', 15, CMF.Models.SPCLite.PUBLISHED, CMF.Models.SPCLite.PUBTIME_DESC, 0, 9, Model::LIST_AS_OBJ, $fields" />
                     <ul class="news-figures">
                         <for $item of $newslist>
                             <li class="nf-item tab-section">
@@ -50,7 +50,7 @@
             <div class="nm-4 ">
                 <div class="notices">
                     <h3><a href="{{$REQUEST.DIR}}s/announcements/">通知公告</a></h3>
-                    <def name="$annclist" onload="CM.SPC.getList" args="'announcements', NULL, CM.SPCLite.PUBLISHED, CM.SPCLite.PUBTIME_DESC, 0, 6, Model::LIST_AS_OBJ" />
+                    <def name="$annclist" onload="CMF.Models.SPC.getList" args="'announcements', NULL, CMF.Models.SPCLite.PUBLISHED, CMF.Models.SPCLite.PUBTIME_DESC, 0, 6, Model::LIST_AS_OBJ" />
                     <ul class="notice-cards">
                         <for $item of $annclist>
                             <li class="notice-card">
@@ -121,7 +121,7 @@
         <section class="photos">
             <header class="photos-title">
                 <h3 class="">建筑印象 SCENERY</h3><a href="{{$REQUEST.DIR}}s/photos/" class="more-photos">更多&gt;&gt;</a></header>
-            <def name="$photos" onload="CM.SPC.getList" args="'photos', NULL, CM.SPCLite.PUBLISHED, CM.SPCLite.CTIME_DESC, 0, 5, Model::LIST_AS_OBJ" />
+            <def name="$photos" onload="CMF.Models.SPC.getList" args="'photos', NULL, CMF.Models.SPCLite.PUBLISHED, CMF.Models.SPCLite.CTIME_DESC, 0, 5, Model::LIST_AS_OBJ" />
             <ul class="newfive">
                 <for $item of $photos>
                     <li>

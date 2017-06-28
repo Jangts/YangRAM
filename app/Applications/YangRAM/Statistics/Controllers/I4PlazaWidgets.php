@@ -2,8 +2,8 @@
 namespace Statistics\Controllers;
 use stdClass;
 use Model;
-use CM\SPC\Preset;
-use CM\SPCLite;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPCLite;
 use AF\Models\Util\GSTI;
 use Library\localtimes\Timer;
 

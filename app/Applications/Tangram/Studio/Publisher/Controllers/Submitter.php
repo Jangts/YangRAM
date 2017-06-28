@@ -1,9 +1,9 @@
 <?php
 namespace Studio\Pub\Controllers;
 
-use CM\GEC;
-use CM\SPC;
-use CM\SPCLite;
+use CMF\Models\GEC;
+use CMF\Models\SPC;
+use CMF\Models\SPCLite;
 
 class Submitter extends \OIC\OISubmitter_BC {
 	public function sav(){

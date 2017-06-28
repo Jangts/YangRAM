@@ -14,7 +14,7 @@
 //  |/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
 //  +------------------------------------------------------------------------+
 /**/ REQUIRE         '.BEFOREBOOT';                                         //
-/**/ REQUIRE         PATH_SYS.'IDEA.PHP';                                  //
+/**/ REQUIRE         PATH_TNI.'IDEA.PHP';                                  //
 /**/$RUNTIME    =    NEW IDEA;                                            //
 /**/$RUNTIME    ->   RUN_SYSTEM();                                       //
 /**/$RUNTIME    ->   RUN_ACTIVE_APPLICATION();                          //

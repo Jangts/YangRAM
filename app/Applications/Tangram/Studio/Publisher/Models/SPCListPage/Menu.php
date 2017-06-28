@@ -2,7 +2,7 @@
 namespace Studio\Pub\Models\SPCListPage;
 
 use Tangram\NIDO\DataObject;
-use CM\SPC\Category;
+use CMF\Models\SPC\Category;
 use AF\Util\OIML;
 
 class Menu extends DataObject {    

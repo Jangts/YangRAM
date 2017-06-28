@@ -3,9 +3,9 @@ namespace TC\Models\SheetsViews;
 
 use Tangram\NIDO\DataObject;
 use Model;
-use CM\SPC\Preset;
-use CM\SPC\Category;
-use CM\SPCLite;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPC\Category;
+use CMF\Models\SPCLite;
 
 class SPCList extends DataObject {
 	use traits;

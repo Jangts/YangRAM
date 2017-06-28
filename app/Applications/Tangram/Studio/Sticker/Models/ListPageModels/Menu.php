@@ -2,7 +2,7 @@
 namespace Studio\Stk\Models\ListPageModels;
 
 use Tangram\NIDO\DataObject;
-use CM\EMC;
+use CMF\Models\EMC;
 use AF\Util\OIML;
 
 class Menu extends DataObject {

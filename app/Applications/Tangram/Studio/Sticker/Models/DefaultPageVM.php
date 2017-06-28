@@ -2,7 +2,7 @@
 namespace Studio\Stk\Models;
 
 use Tangram\NIDO\DataObject;
-use CM\EMC;
+use CMF\Models\EMC;
 use AF\Util\OIML;
 
 class DefaultPageVM extends DataObject {

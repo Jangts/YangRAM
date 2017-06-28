@@ -2,7 +2,7 @@
 namespace Studio\Pub\Models;
 
 use Tangram\NIDO\DataObject;
-use CM\SPC\Preset;
+use CMF\Models\SPC\Preset;
 use AF\Util\OIML;
 
 class StartPage extends DataObject {

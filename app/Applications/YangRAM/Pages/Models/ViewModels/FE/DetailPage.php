@@ -2,9 +2,9 @@
 namespace Pages\Models\ViewModels\FE;
 
 use Library\ect\Pager;
-use CM\SPC\Preset;
-use CM\SPC\Category;
-use CM\SPC;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPC\Category;
+use CMF\Models\SPC;
 
 class DetailPage extends \Tangram\NIDO\DataObject {
     public function __construct($page, $params){
@@ -70,6 +70,7 @@ class DetailPage extends \Tangram\NIDO\DataObject {
 		if($page->use_context){
 			$renderer->assign($content->contexts());
 		}
+		
 		$renderer->assign("___Cpage", $cpage);
         if($preset->basic_type="ablm"){
 			if(!$array = json_decode(htmlspecialchars_decode($content->IMAGES), true)){
@@ -77,5 +78,6 @@ class DetailPage extends \Tangram\NIDO\DataObject {
 			}
 			$renderer->assign('___IMAGES_TO_ARRAY', $array);
 		}
+		$content->view();
 	}
 }

@@ -2,9 +2,9 @@
 namespace GPS\Models\ViewModels\FE;
 
 use Library\ect\Pager;
-use CM\SPC\Preset;
-use CM\SPC\Category;
-use CM\SPC;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPC\Category;
+use CMF\Models\SPC;
 
 class DetailPage extends \Tangram\NIDO\DataObject {
     public function __construct($page, $item_id, $params){
@@ -83,5 +83,6 @@ class DetailPage extends \Tangram\NIDO\DataObject {
 			}
 			$renderer->assign('___IMAGES_TO_ARRAY', $array);
 		}
+		$content->view();
 	}
 }

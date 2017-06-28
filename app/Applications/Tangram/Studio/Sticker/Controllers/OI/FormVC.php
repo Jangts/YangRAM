@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Stk\Controllers\OI;
 
-use CM\EMC;
+use CMF\Models\EMC;
 use AF\Util\OIML;
 use Studio\Stk\Models\LocalDict;
 

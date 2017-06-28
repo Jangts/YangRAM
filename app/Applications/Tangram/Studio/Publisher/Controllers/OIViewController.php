@@ -3,8 +3,8 @@ namespace Studio\Pub\Controllers;
 
 use AF\Models\Certificates\StdPassport;
 use AF\Util\OIML;
-use CM\GEC;
-use CM\SPC\Preset;
+use CMF\Models\GEC;
+use CMF\Models\SPC\Preset;
 use Studio\Pub\Models\LocalDict;
 use Studio\Pub\Models\StartPage;
 use Studio\Pub\Models\GECListPage;

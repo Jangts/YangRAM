@@ -2,7 +2,7 @@
 namespace TC\Controllers\OIViewController;
 
 use AF\Models\Localize\SystemDict as LocalDict;
-use CM\SPC\Preset;
+use CMF\Models\SPC\Preset;
 use AF\Util\OIML;
 
 use TC\Models\Data\RecycleRule;

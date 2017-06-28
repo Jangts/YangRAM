@@ -5,7 +5,7 @@ use Status;
 use Tangram\NIDO\DataObject;
 use AF\Models\R3Model_BC;
 use Tangram\ORM\Counter;
-use CM\SPCLite;
+use CMF\Models\SPCLite;
 
 class Page extends R3Model_BC {
     const

@@ -33,7 +33,7 @@ define('PATH_APP',    	ROOT.APP_DIR);
 define('PATH_I4S',    	ROOT.I4S_DIR);
 define('PATH_UOI',    	ROOT.UOI_DIR);
 
-define('PATH_SYS',    	ROOT.'/YangRAM/NIKernel/');
+define('PATH_TNI',    	ROOT.'/YangRAM/NIKernel/');
 define('PATH_LANGS',    	PATH_LANGS.'');
 define('PATH_LIB',		PATH_I4S.'Library/');
 

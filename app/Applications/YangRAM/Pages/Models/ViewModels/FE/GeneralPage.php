@@ -1,7 +1,7 @@
 <?php
 namespace Pages\Models\ViewModels\FE;
 
-use CM\GEC;
+use CMF\Models\GEC;
 
 class GeneralPage extends \Tangram\NIDO\DataObject {
     public function __construct($page, $params){
@@ -46,5 +46,6 @@ class GeneralPage extends \Tangram\NIDO\DataObject {
 		$renderer->assign("___Content", stripslashes(htmlspecialchars_decode($content->CONTENT)));
 		$renderer->assign("___CUSTOM_I", $content->CUSTOM_I);
 		$renderer->assign("___CUSTOM_II", $content->CUSTOM_II);
+		$content->view();
 	}
 }

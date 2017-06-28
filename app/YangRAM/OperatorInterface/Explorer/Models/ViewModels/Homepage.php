@@ -1,7 +1,7 @@
 <?php
 namespace Explorer\Models\ViewModels;
 use Tangram\NIDO\DataObject;
-use CM\SPC\Preset;
+use CMF\Models\SPC\Preset;
 
 class Homepage extends DataObject {
     private static $srctypes = array('all', 'img', 'txt', 'doc', 'wav', 'vod', 'zip', 'ect');

@@ -3,7 +3,7 @@ namespace Files\Controllers;
 use Status;
 use Response;
 use Controller;
-use CM\SRC;
+use CMF\Models\SRC;
 use Library\graphics\ImagePrinter;
 
 class Image extends Controller {

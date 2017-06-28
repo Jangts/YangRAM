@@ -1,1 +1,0 @@
-{"APPID":"FILES","ID":"FILES","Name":"YangRAM File System","Code":"Fs","Author":"YangRAM","DIR":"\/YangRAM\/Services\/FileSystem\/","Agent":"Common","DBTPrefix":"ni","CONN":0}

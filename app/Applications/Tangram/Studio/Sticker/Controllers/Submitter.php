@@ -1,7 +1,7 @@
 <?php
 namespace Studio\Stk\Controllers;
 
-use CM\EMC;
+use CMF\Models\EMC;
 
 
 class Submitter extends \OIC\OISubmitter_BC {

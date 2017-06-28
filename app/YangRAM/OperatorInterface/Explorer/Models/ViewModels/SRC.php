@@ -1,8 +1,8 @@
 <?php
 namespace Explorer\Models\ViewModels;
 use Tangram\NIDO\DataObject;
-use CM\SRC\Folder;
-use CM\SRCLite;
+use CMF\Models\SRC\Folder;
+use CMF\Models\SRCLite;
 
 class SRC extends DataObject {
 	use traits\src_writer;

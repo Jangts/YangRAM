@@ -2,10 +2,10 @@
 namespace GPS\Models\ViewModels\FE;
 
 use Library\ect\Pager;
-use CM\SPC\Preset;
-use CM\SPC\Category;
-use CM\SPCLite;
-use CM\SPC;
+use CMF\Models\SPC\Preset;
+use CMF\Models\SPC\Category;
+use CMF\Models\SPCLite;
+use CMF\Models\SPC;
 
 class ListPage extends \Tangram\NIDO\DataObject {
 	public function __construct($page, $category_id, $params){

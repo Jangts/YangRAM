@@ -2,7 +2,7 @@
 namespace Explorer\Models\ViewModels;
 
 use Tangram\NIDO\DataObject;
-use CM\SPC\Preset;
+use CMF\Models\SPC\Preset;
 use Library\ect\SearchEngine;
 
 class SearchResult extends DataObject {

@@ -2,8 +2,8 @@
 namespace TC\Controllers;
 
 use RDO;
-use CM\SRC;
-use CM\SRCLite;
+use CMF\Models\SRC;
+use CMF\Models\SRCLite;
 use TC\Models\Data\RecycleRule;
 
 class Submitter extends \OIC\OICtrller_BC {

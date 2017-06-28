@@ -8,15 +8,12 @@ class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 			'methods'	=>	array(
 				'get_list_by_preset'		=>	array(
 					'minArgsLength'	=>	1
-					/*
-					* mixed $preset preset id or alias
-					*/
 				),
 				'get_list_by_cat'		=>	array(
 					'minArgsLength'	=>	1
-					/*
-					* mixed $preset preset id or alias
-					*/
+				),
+				'get_content_view'		=>	array(
+					'minArgsLength'	=>	1
 				)
 			)
 		),
