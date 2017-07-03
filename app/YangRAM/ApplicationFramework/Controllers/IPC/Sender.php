@@ -2,7 +2,7 @@
 namespace AF\Controllers\IPC;
 use Tangram\IDEA;
 use Status;
-use Tangram\R5\RemoteDataReader as RemoteReader;
+use Tangram\NIDO\RemoteData;
 use Request;
 use Application;
 
@@ -49,7 +49,7 @@ final class Sender extends CommunicationController_BC {
         $msg = $this->send($timeout, $token);
         self::$storage->store($token, false);
         if(isset($msg['type'])&&$msg['type']==='IPC_MSG'){
-            return $this->checkMessage($msg, $reader);
+            return $this->checkMessage($msg, $rdata);
         }
         return false;
     }
@@ -59,11 +59,11 @@ final class Sender extends CommunicationController_BC {
         IDEA::VERSION,PHP_OS,$_SERVER['SERVER_SOFTWARE'],
         PHP_VERSION,
         IDEA::VERSION.'.'.IDEA::DEVID);
-		$reader = new RemoteReader($this->url, $this->params, RemoteReader::JSN, []);
-        return $reader->setAgent($ua)->setTimeout($timeout)->read()->toArray();
+		$rdata = new RemoteData($this->url, $this->params, RemoteData::JSN, []);
+        return $rdata->setAgent($ua)->setTimeout($timeout)->read()->toArray();
     }
 
-    private function checkMessage(array $msg, RemoteReader $reader){
+    private function checkMessage(array $msg, RemoteData $rdata){
         if(isset($msg['msg'])){
             if(isset($msg['key'])){
                 if(self::$storage->setBefore('params/')->check($msg['key'])){
@@ -82,7 +82,7 @@ final class Sender extends CommunicationController_BC {
                 self::$storage->store($msg['key'], false);
             }
         }else{
-            $this->result = $reader->toArray();
+            $this->result = $rdata->toArray();
         }
         return true;
     }

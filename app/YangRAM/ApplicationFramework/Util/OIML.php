@@ -1,7 +1,7 @@
 <?php
 namespace AF\Util;
 
-include_once(PATH_LIBX.'tplengines/niml/NIML.php');
+include_once(PATH_LIBX.'niml/lib/NIML.php');
 
 trait layout {
 	public static function blocks($data, $bgcolor = NULL, $lying = false){

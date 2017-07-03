@@ -227,7 +227,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step One */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/Layout.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/Layout.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -237,7 +237,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Two */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/TabViews.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/TabViews.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -247,7 +247,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Three */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/Slider.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/Slider.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -257,7 +257,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* XX I: Load OIML Style Sheets / Step Four */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/SliderPanel.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/SliderPanel.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -267,7 +267,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Five */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/Menu.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/Menu.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -277,7 +277,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Six */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/Blocks.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/Blocks.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -287,7 +287,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Seven */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/List.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/List.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -297,7 +297,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Eight */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/Form.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/Form.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -307,7 +307,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Nine */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/RadioAndCheckBox.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/RadioAndCheckBox.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -317,7 +317,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Ten */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/EditPanel.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/EditPanel.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -327,7 +327,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Eleven */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/ModernTable.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/ModernTable.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -337,7 +337,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Twelve */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/ModernForm.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/ModernForm.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -347,7 +347,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load OIML Style Sheets / Step Thirteen */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + '../../Framework/Sources/OIF/BgColors.css';
+                var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/BgColors.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();

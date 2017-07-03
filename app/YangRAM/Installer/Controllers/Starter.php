@@ -2,7 +2,7 @@
 namespace Installer\Controllers;
 
 use Status;
-use Tangram\R5\RemoteDataReader as RemoteReader ;
+use Tangram\NIDO\RemoteData ;
 use RDO;
 
 class Starter extends Common {
@@ -161,11 +161,11 @@ class Starter extends Common {
                         file_put_contents($this->record, '3');
                         Response::instance()->sendHeaders();
                         include $template;
-                        $reader = new RemoteReader('/', array(
+                        $rdata = new RemoteData('/', array(
                             'segment_type'  =>  'import_data_into_database',
                             'dbdriver'      =>  $connection['driver']
                         ));
-                        $reader->setAgent(RemoteReader::UA_MOZ_WIN)->setTimeout(1)->read();
+                        $rdata->setAgent(RemoteData::UA_MOZ_WIN)->setTimeout(1)->read();
                     }else{
                         # 701
                     }
@@ -180,9 +180,9 @@ class Starter extends Common {
     }
 
     private function checkConn($options){
-        if(is_array($options)&&$options['driver']&&is_file(PATH_TNI.'ORM/Drivers/'.$options['driver'].'.php')){
-            include_once(PATH_TNI.'ORM/Drivers/'.$options['driver'].'.php');
-			$class = 'Tangram\ORM\Drivers\\'.$options['driver'];
+        if(is_array($options)&&$options['driver']&&is_file(PATH_TNI.'DBAL/Drivers/'.$options['driver'].'.php')){
+            include_once(PATH_TNI.'DBAL/Drivers/'.$options['driver'].'.php');
+			$class = 'Tangram\DBAL\Drivers\\'.$options['driver'];
             return $class::instance($options);
         }
         return false;
@@ -296,11 +296,11 @@ class Starter extends Common {
                 $ntvOICode = strtoupper(uniqid());
                 Response::instance()->sendHeaders();
                 include $template;
-                $reader = new RemoteReader('/', array(
+                $rdata = new RemoteData('/', array(
                     'segment_type'  =>  'import_appdata_into_database',
                     'dbdriver'      =>  $configuration->connections[0]->driver
                 ));
-                $reader->setAgent(RemoteReader::UA_MOZ_WIN)->setTimeout(1)->read();
+                $rdata->setAgent(RemoteData::UA_MOZ_WIN)->setTimeout(1)->read();
             }else{
                 # 701
             }

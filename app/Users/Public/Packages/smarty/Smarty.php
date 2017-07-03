@@ -1,7 +1,7 @@
 <?php
-namespace Packages\tplengines;
+namespace Packages\smarty;
 
-require_once('Smarty/Smarty.class.php');
+require_once('lib/Smarty.class.php');
 
 class Smarty extends \Smarty {
     protected

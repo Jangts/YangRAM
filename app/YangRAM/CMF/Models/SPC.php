@@ -7,7 +7,7 @@ use Tangram\NIDO\DataObject;
 use Storage;
 use RDO;
 use Model;
-use Tangram\ORM\RDOAdvanced;
+use Tangram\DBAL\RDOAdvanced;
 use CMF\Models\SPC\Preset;
 use AF\Models\Certificates\StdPassport;
 
@@ -129,7 +129,7 @@ final class SPC extends ContentModel_BC {
             $base && $base->destroy();
             return NULL;
         }else{
-            new Status(703.4, 'Using Module Error', 'CM\SPC::byId Must be given a numeric.', true);
+            new Status(703.4, 'Using Module Error', 'CMF\Models\SPC::byId Must be given a numeric.', true);
         }
     }
     
@@ -203,7 +203,7 @@ final class SPC extends ContentModel_BC {
             
             if($result){
 			    if($format===Model::LIST_AS_ARR){
-                    return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
+                    return array_map(array('CMF\Models\SPCLite', 'restoreroot'), $result->toArray());
                 }
                 $pdos = $result->getPDOStatement();
                 while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -229,7 +229,7 @@ final class SPC extends ContentModel_BC {
         if($hash){
             if($rows = self::$storage->take($hash)){
                 if($format===Model::LIST_AS_ARR){
-                    return array_map(array('CM\SPCLite', 'restoreroot'), $rows);
+                    return array_map(array('CMF\Models\SPCLite', 'restoreroot'), $rows);
                 }else{
                     $objs = [];
                     foreach($rows as $row){
@@ -246,7 +246,7 @@ final class SPC extends ContentModel_BC {
             foreach($bases as $base){
                 if($xtnd = self::extended($base['ID'], $base['SET_ALIAS'])){
                     $data = array_merge($base, $xtnd);
-                    $objs[] = array_map(array('CM\SPCLite', 'restoreroot'), $data);
+                    $objs[] = array_map(array('CMF\Models\SPCLite', 'restoreroot'), $data);
                     if($hash){
                         self::$storage->store($hash, $data);
                     }
@@ -275,7 +275,7 @@ final class SPC extends ContentModel_BC {
         if($format===Model::LIST_AS_ARR){
             foreach($bases as $base){
                 if($xtnd = self::extended($base['ID'], $base['SET_ALIAS'])){
-                    $objs[] = array_map(array('CM\SPCLite', 'restoreroot'), array_merge($base, $xtnd));
+                    $objs[] = array_map(array('CMF\Models\SPCLite', 'restoreroot'), array_merge($base, $xtnd));
                 }
             }
         }else{
@@ -361,7 +361,7 @@ final class SPC extends ContentModel_BC {
     }
     
     protected function build($data, $posted = false){
-        $this->data = array_map(array('CM\SPCLite', 'restoreroot'), $data);
+        $this->data = array_map(array('CMF\Models\SPCLite', 'restoreroot'), $data);
         if(isset($this->data['ID'])){
             $this->_hash = $this->data['ID'];
         }

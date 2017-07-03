@@ -87,6 +87,6 @@ abstract class OISourceTransfer_BC extends ContentProvider_BC {
 	}
 }
 
-include(PATH_TNI.'CACHE/UserFiles.php');
+include(PATH_TNI.'CACH/UserFiles.php');
 include(PATH_TNI.'NIDO/UserAccount.php');
 include(PATH_NIAF.'Models/Certificates/StdPassport.php');

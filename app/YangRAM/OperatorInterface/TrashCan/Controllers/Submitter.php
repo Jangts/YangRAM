@@ -8,10 +8,10 @@ use TC\Models\Data\RecycleRule;
 
 class Submitter extends \OIC\OICtrller_BC {
 	const
-	Folder = 'CM\SRC\Folder',
-	GEC = 'CM\GEC',
-	EMC = 'CM\EMC',
-	SPC = 'CM\SPC';
+	Folder = 'CMF\Models\SRC\Folder',
+	GEC = 'CMF\Models\GEC',
+	EMC = 'CMF\Models\EMC',
+	SPC = 'CMF\Models\SPC';
 	
 	private static function recoverSRC($post){
 		if(empty($post["id"])){

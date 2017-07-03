@@ -14,7 +14,7 @@ use Application;
  *	统一测试员端路由器抽象
  *  子应用测试员端（如果有）路由器的基类
  */
-abstract class UnitTester_BC extends \Tangram\R5\NI_ResourceHolder_BC {
+abstract class UnitTester_BC extends ResourceHolder_BC {
     protected
     $renderer = NULL,
     $testname = 'Unnamed Test',

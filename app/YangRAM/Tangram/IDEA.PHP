@@ -12,6 +12,8 @@
 namespace Tangram;
 
 use PDO;
+use Tangram\STAT\Status;
+use Tangram\CTRL\Response;
 
 /**
  *	Bus Control Unit (Intellective/Digital/Effective/Accurate)
@@ -158,35 +160,36 @@ final class IDEA {
 		define('QS_SCAN_GET', 		'get');
 		define('QS_SCAN_POST', 	'post');
 		define('QS_SCAN_COOKIE', 	'cookie');
-		include(PATH_TNI.'CACHE/traits/filesys.php');
+		include(PATH_TNI.'CACH/traits/filesys.php');
 		include(PATH_TNI.'NIDO/traits/conversion.php');
 		include(PATH_TNI.'NIDO/traits/formatting.php');
-		include(PATH_TNI.'ORM/traits/common.php');
-		include(PATH_TNI.'ORM/traits/field.php');
-		include(PATH_TNI.'ORM/traits/transaction.php');
+		include(PATH_TNI.'DBAL/traits/common.php');
+		include(PATH_TNI.'DBAL/traits/field.php');
+		include(PATH_TNI.'DBAL/traits/transaction.php');
 		
-		include(PATH_TNI.'CACHE/Storage.php');
+		include(PATH_TNI.'CACH/Storage.php');
 		include(PATH_TNI.'NIDO/DataObject.php');
 		include(PATH_TNI.'NIDO/Column.php');
 		include(PATH_TNI.'NIDO/Parameters.php');
 		include(PATH_TNI.'NIDO/FormData.php');
-		include(PATH_TNI.'ORM/NI_PDOExtended_BC.php');
-		include(PATH_TNI.'ORM/RDO.php');
-		include(PATH_TNI.'ORM/RDOSelectResult.php');
-		include(PATH_TNI.'ORM/Counter.php');
+		include(PATH_TNI.'NIDO/RemoteData.php');
+		include(PATH_TNI.'DBAL/NI_PDOExtended_BC.php');
+		include(PATH_TNI.'DBAL/RDO.php');
+		include(PATH_TNI.'DBAL/RDOSelectResult.php');
+		include(PATH_TNI.'DBAL/Counter.php');
 
-		include(PATH_TNI.'APP/Application.php');
-		include(PATH_TNI.'APP/ApplicationProperties.php');
-		include(PATH_TNI.'APP/ApplicationPermissions.php');
+		include(PATH_TNI.'CTRL/Application.php');
+		include(PATH_TNI.'CTRL/ApplicationProperties.php');
+		include(PATH_TNI.'CTRL/ApplicationPermissions.php');
 
-		class_alias('Tangram\APP\Application', 'Application');
-		class_alias('Tangram\CACHE\Storage', 'Storage');
-		class_alias('Tangram\ORM\RDO', 'RDO');
+		class_alias('Tangram\CTRL\Application', 'Application');
+		class_alias('Tangram\CACH\Storage', 'Storage');
+		class_alias('Tangram\DBAL\RDO', 'RDO');
 		class_alias('Tangram\SESS\Session', 'SESS');
 		class_alias('Tangram\STAT\Status', 'Status');
 		
 		NIDO\Column::initialize();
-		$AP = APP\ApplicationPermissions::instance();
+		$AP = CTRL\ApplicationPermissions::instance();
 		$CONNS = [];
 		if(count($connArray)){
 			foreach($connArray as $n => $conn){
@@ -197,8 +200,8 @@ final class IDEA {
 						'instance'	=>	NULL
 					];
 				}else{
-					include_once(PATH_TNI.'ORM/Drivers/'.$conn['driver'].'.php');
-					$class = 'Tangram\ORM\Drivers\\'.$conn['driver'];
+					include_once(PATH_TNI.'DBAL/Drivers/'.$conn['driver'].'.php');
+					$class = 'Tangram\DBAL\Drivers\\'.$conn['driver'];
 					if($defaultpdox = $class::instance($conn)){
 						$CONNS[] = [
 							'driver'	=>  $conn['driver'],
@@ -212,9 +215,9 @@ final class IDEA {
 				}
 			}
 			$AP->DEFAULT_PDOX_USEABLE = true;
-			ORM\RDO::initialize($AP, $CONNS);
-			ORM\RDO::setPDOX(0);
-			ORM\Counter::initialize($AP, $CONNS);
+			DBAL\RDO::initialize($AP, $CONNS);
+			DBAL\RDO::setPDOX(0);
+			DBAL\Counter::initialize($AP, $CONNS);
 			$this->PERMISSIONS = $AP;
 			return ;
 		}elseif(defined('L')){
@@ -228,30 +231,29 @@ final class IDEA {
 	}
 
 	private function init_system_components(){
-		include(PATH_TNI.'R5/NI_ResourceIndexer_BC.php');
-		include(PATH_TNI.'R5/NI_ResourceHolder_BC.php');
-		include(PATH_TNI.'R5/RouteMapper.php');
-		include(PATH_TNI.'R5/ResourceIndexer.php');
-		include(PATH_TNI.'R5/Request.php');
-		include(PATH_TNI.'R5/Response.php');
-		include(PATH_TNI.'R5/RemoteDataReader.php');
-		class_alias('Tangram\R5\Request', 'Request');
-		class_alias('Tangram\R5\Response', 'Response');
-		R5\RouteMapper::initialize();
-		$this->RI = R5\ResourceIndexer::instance();
+		include(PATH_TNI.'CTRL/NI_ResourceIndexer_BC.php');
+		include(PATH_TNI.'CTRL/RouteMapper.php');
+		include(PATH_TNI.'CTRL/ResourceIndexer.php');
+		include(PATH_TNI.'CTRL/Request.php');
+		include(PATH_TNI.'CTRL/Response.php');;
+		class_alias('Tangram\CTRL\Request', 'Request');
+		class_alias('Tangram\CTRL\Response', 'Response');
+		CTRL\RouteMapper::initialize();
+		$this->RI = CTRL\ResourceIndexer::instance();
 	}
 
 	public function run_active_application(){
 		if($this->AA===NULL){
+			include(PATH_NIAF.'ResourceHolders/ResourceHolder_BC.php');
 			include(PATH_NIAF.'Models/Model_BC.php');
 			include(PATH_NIAF.'Controllers/Controller_BC.php');
 			class_alias('AF\Models\Model_BC', 'Model');
 			class_alias('AF\Controllers\Controller_BC', 'Controller');
-			$this->AA = new App\Application(AC_CURR);
+			$this->AA = new CTRL\Application(AC_CURR);
 			$AP = $this->AA->checkPermissions();
 			if($AP->APP_PDOXS_GETABLE||$AP->APP_APDOX_GETABLE){
-				if($PDOX = ORM\RDO::getPDOX(intval($this->AA->app_usedb))){
-					APP\Application::setPDOX($PDOX);
+				if($PDOX = DBAL\RDO::getPDOX(intval($this->AA->app_usedb))){
+					CTRL\Application::setPDOX($PDOX);
 				}
 			}
 			$this->RI->point($this->AA, $AP);
@@ -338,7 +340,118 @@ final class IDEA {
 }
 
 
-include(PATH_TNI.'ClassLoader.php');
+
+
+/**
+ *	File ClassLoader Module
+ *	文件加载模块
+ *	提供安全的批量加载（主动）方法和懒加载（被动）的配置接口
+ */
+final class ClassLoader {
+	private static $instance = NULL;
+
+	private
+	$map = [];
+
+	public static function instance(){
+		if(self::$instance === NULL){
+			spl_autoload_register([new self, 'includeClassOfNSMap']);
+			self::setNSMap([
+				'Tangram'	=>	PATH_TNI,
+				'Library'	=>	PATH_LIB,
+				'Packages'	=>	PATH_LIBX,
+				'AF'		=>	PATH_NIAF,
+				'CMF'		=>	PATH_I4S.'CMF/'			
+			]);
+			return self::$instance;
+		}
+	}
+
+	public static function setNSMap(array $map){
+		foreach ($map as  $ns => $path) {
+			self::$instance->map[] = [str_replace('\\', '\/', $ns), $path];
+		}
+		return true;
+	}
+
+	private function __construct(){
+		self::$instance = $this;
+	}
+
+	private function includeOne($filename){
+		$filename = str_replace('\\', '/', $filename);
+		$realpath = realpath($filename);
+		if($realpath){
+			include_once($realpath);
+		}else{
+			new Status('Could Not Find Required File : '.Response::trimServerFilename($filename), true);
+		}
+	}
+
+	private function includeMultiple($names, $mainPath = '', $extensions = '.php'){
+		if(is_array($names)){
+			foreach ($names as $name) {
+				$this->includeOne((string)$mainPath.$name.$extensions);
+			}
+		}elseif(is_string($names)){
+			$this->includeAPath($mainPath->$mainPath, $extensions);
+		}
+	}
+
+	private function includeAPath($path, $extensions){
+		$dh = opendir($path);
+		$pa = "/\.".$extensions."$/";
+		while ($filename = readdir($dh)) {
+			if ($filename != "." && $filename != "..") {
+				$fullpath = $path."/".$filename;
+				if (!is_dir($fullpath)) {
+					$this->includeAPath($fullpath, $extensions);
+				} else {
+					if(preg_match($pa, $fullpath)){
+						$this->includeOne($fullpath);
+					}
+				}
+			}
+		}
+		closedir($dh);
+	}
+
+	public function includeClassOfNSMap($classname){
+		$_classname = str_replace('\\', '/', $classname);
+		foreach ($this->map as $set) {
+			$ns = $set[0];
+			$path = $set[1];
+			if(@preg_match('/^'.$ns.'\//', $_classname)){
+				$filename = preg_replace('/^'.$ns.'\//', $path, $_classname).'.php';
+				if(is_file($filename)){
+					$this->includeOne($filename);
+					if((class_exists($classname)||trait_exists($classname)||interface_exists($classname)||function_exists($classname))==false){
+						$status = new Status(705, '', 'Class '.$classname.' not found in file '.$filename.', this file must be tampered.');
+						$tracedata = $status->getTrace();
+						$status->write(isset($tracedata[1]['file']) ? $tracedata[1]['file'] : $tracedata[1]['function']);
+						return $status->cast(Status::CAST_LOG);
+					}
+				}else{
+					$status = new Status(708.3, 'File Not Found', 'File of class '.$classname.' not found, files on your yangram may be tampered, or just a spelling mistake. ( ' .$filename. ' )');
+					$tracedata = $status->getTrace();
+					$status->write(isset($tracedata[1]['file']) ? $tracedata[1]['file'] : $tracedata[1]['function']);
+					return $status->cast(Status::CAST_LOG);
+				}
+				return;
+			}
+		}
+	}
+
+	public static function execute($names, $mainPath = '', $extensions = '.php'){
+		if(is_string($names)&&($names!=='*')){
+			self::$instance->includeOne($mainPath.$names.$extensions);
+		}else{
+			self::$instance->includeMultiple($names, $mainPath, $extensions);
+		}
+		return true;
+	}
+}
+
 include(PATH_TNI.'SESS/Session.php');
 include(PATH_TNI.'STAT/Status.php');
 class_alias('Tangram\IDEA', 'IDEA');

@@ -3,7 +3,7 @@ namespace Tangram\NIDO;
 
 use RDO;
 use Request;
-use Tangram\ORM\NI_PDOExtended_BC;
+use Tangram\DBAL\NI_PDOExtended_BC;
 use AF\Models\Certificates\StdPassport;
 
 /**

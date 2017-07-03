@@ -6,7 +6,7 @@ use Tangram\ClassLoader;
 use Request;
 use Application;
 
-abstract class ResourceTransfer_BC extends \Tangram\R5\NI_ResourceHolder_BC {
+abstract class ResourceTransfer_BC extends ResourceHolder_BC {
     final public function __construct(Application $app, Request $request){	
 		$classname = $this->getClassName($request);
 		if($classname){

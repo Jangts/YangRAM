@@ -4,7 +4,7 @@ namespace OIC;
 use Status;
 use Response;
 use Storage;
-use Tangram\ORM\Counter;
+use Tangram\DBAL\Counter;
 use Library\compilers\OperationScript;
 use Library\compilers\JSMin;
 use Library\compilers\OIStyleSheets;

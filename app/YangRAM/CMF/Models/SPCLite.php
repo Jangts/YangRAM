@@ -6,7 +6,7 @@ use Status;
 use Tangram\NIDO\DataObject;
 use Storage;
 use RDO;
-use Tangram\ORM\Counter;
+use Tangram\DBAL\Counter;
 use Model;
 use CMF\Models\SPC\Preset;
 use CMF\Models\SPC\Category;
@@ -250,7 +250,7 @@ final class SPCLite extends ContentModel_BC {
 		$result = self::sendQS2RDO(self::$rdo, $preset, $category, $status, $orderby, $start, $num)->select();
     	if($result){
 			if($format===Model::LIST_AS_ARR){
-                return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
+                return array_map(array('CMF\Models\SPCLite', 'restoreroot'), $result->toArray());
             }
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -447,7 +447,7 @@ final class SPCLite extends ContentModel_BC {
 		$result = self::querySelect(self::$rdo, $require, $orderby, $range);
         if($result){
 			if($format===Model::LIST_AS_ARR){
-                return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
+                return array_map(array('CMF\Models\SPCLite', 'restoreroot'), $result->toArray());
             }
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){
@@ -499,14 +499,14 @@ final class SPCLite extends ContentModel_BC {
 		if(is_numeric($id)){
 			if($id){
 				if($data = self::$storage->setBefore('spcnts/bases/')->take($id)){
-                	$this->data = array_map(array('CM\SPCLite', 'restoreroot'), $data);
+                	$this->data = array_map(array('CMF\Models\SPCLite', 'restoreroot'), $data);
 					$this->posted = $this->data;
 					self::$memory[$id] = $this->data;
 					$this->_hash = $this->data['ID'];
             	}else{
 					$result = self::$rdo->requiring()->where('ID', $id)->take(1)->select();
 					if($result&&$data = $result->getRow()){
-						$this->data = array_map(array('CM\SPCLite', 'restoreroot'), $data);
+						$this->data = array_map(array('CMF\Models\SPCLite', 'restoreroot'), $data);
 						$this->posted = $this->data;
 						self::$storage->store($id, $data);
 						self::$memory[$id] = $this->data;
@@ -519,7 +519,7 @@ final class SPCLite extends ContentModel_BC {
 				$this->data = self::$defaults;
 			}
 		}else{
-			new Status(703.4, 'Using Module Error', 'CM\SPCLite::byId Must be given a numeric.', true);
+			new Status(703.4, 'Using Module Error', 'CMF\Models\SPCLite::byId Must be given a numeric.', true);
 		}
 	}
 

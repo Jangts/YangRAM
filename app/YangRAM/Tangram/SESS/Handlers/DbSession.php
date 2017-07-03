@@ -1,6 +1,6 @@
 <?php
 namespace Tangram\SESS\Handlers;
-use Tangram\ORM\NI_PDOExtended_BC;
+use Tangram\DBAL\NI_PDOExtended_BC;
 
 /**
  *	Database Session

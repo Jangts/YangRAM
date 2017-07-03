@@ -1,8 +1,8 @@
 <?php
 namespace Tangram\STAT;
 use Exception;
-use Tangram\R5\Response;
-use Tangram\R5\Request;
+use Tangram\CTRL\Response;
+use Tangram\CTRL\Request;
 
 /**
  *	Status Code Processor

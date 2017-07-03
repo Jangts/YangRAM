@@ -6,7 +6,7 @@ use Status;
 use Tangram\NIDO\DataObject;
 use Storage;
 use RDO;
-use Tangram\ORM\RDOAdvanced;
+use Tangram\DBAL\RDOAdvanced;
 
 /**
  *	RDB Record Row Data Model
@@ -184,7 +184,7 @@ abstract class R3Model_BC extends Model_BC {
             $rdo = self::getRDO();
             $storage = self::getStorage();
             $lifetime = self::getLifeTime();
-            if(is_a($storage, 'Tangram\CACHE\Storage')){
+            if(is_a($storage, 'Tangram\CACH\Storage')){
                 if($data = $storage->take($identity)){
                     if($lifetime){
                         $time = $storage->time($identity);

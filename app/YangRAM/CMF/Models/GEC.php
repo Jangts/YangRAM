@@ -3,7 +3,7 @@ namespace CMF\Models;
 
 use PDO;
 use Tangram\NIDO\DataObject;
-use Tangram\ORM\Counter;
+use Tangram\DBAL\Counter;
 use Model;
 use AF\Models\R3Model_BC;
 
@@ -143,7 +143,7 @@ final class GEC extends R3Model_BC {
         $result = $rdo->select();
         if($result){
 			if($format===Model::LIST_AS_ARR){
-                return array_map(array('CM\SPCLite', 'restoreroot'), $result->toArray());
+                return array_map(array('CMF\Models\SPCLite', 'restoreroot'), $result->toArray());
             }
             $pdos = $result->getPDOStatement();
             while($pdos&&$data = $pdos->fetch(PDO::FETCH_ASSOC)){

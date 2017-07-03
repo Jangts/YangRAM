@@ -7,7 +7,7 @@ use Tangram\NIDO\DataObject;
 use Model;
 use Storage;
 use RDO;
-use Tangram\ORM\RDOAdvanced;
+use Tangram\DBAL\RDOAdvanced;
 use CMF\Models\SPC;
 use CMF\Models\SPCLite;
 

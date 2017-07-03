@@ -6,7 +6,7 @@ use Status;
 use Tangram\NIDO\DataObject;
 use Storage;
 use RDO;
-use Tangram\ORM\RDOAdvanced;
+use Tangram\DBAL\RDOAdvanced;
 
 /**
  *	Model Of Attached Resource Infomation
@@ -60,7 +60,7 @@ final class SRC extends DataObject {
 	}
 
 	public static function getSource($src_id, $type){
-		$classname = '\CM\SRC\\'.strtoupper($type);
+		$classname = '\CMF\Models\SRC\\'.strtoupper($type);
 		$DOC = new $classname(['SID' => $src_id]);
 		if($DOC->SID==$src_id){
 			return $DOC;
@@ -69,7 +69,7 @@ final class SRC extends DataObject {
 	}
 
 	private static function setSource(array $data, $type){
-		$classname = '\CM\SRC\\'.strtoupper($type);
+		$classname = '\CMF\Models\SRC\\'.strtoupper($type);
 		return new $classname($data);
 	}
 
@@ -212,7 +212,7 @@ final class SRC extends DataObject {
 	}
 
 	public function destroy(){
-		$sourece = $classname = '\CM\SRC\\'.strtoupper($this->data['TYPE']);
+		$sourece = $classname = '\CMF\Models\SRC\\'.strtoupper($this->data['TYPE']);
 		$DOC = new $classname(['SID' => $this->data['SRC_ID']]);
 		$DOC->destroy();
 		if($DOC->error_msg!=='SQL_ERROR'){

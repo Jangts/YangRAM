@@ -65,7 +65,7 @@ abstract class Model_BC extends DataObject {
 
     final public static function clean(){
         $storage = self::getStorage();
-        if(is_a($storage, '\Tangram\CACHE\Storage')){
+        if(is_a($storage, '\Tangram\CACH\Storage')){
             $storage->cleanOut();
         }
     }
@@ -118,7 +118,7 @@ abstract class Model_BC extends DataObject {
     }
 
     final public function cac(){
-        if(is_a(static::$storage, '\Tangram\CACHE\Storage')){
+        if(is_a(static::$storage, '\Tangram\CACH\Storage')){
             static::$storage->store($this->name, $this->data);
         }
     }

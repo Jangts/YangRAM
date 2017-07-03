@@ -1,5 +1,5 @@
 <?php
-namespace Packages\tplengines;
+namespace Packages\niml;
 
 use Storage;
 
@@ -12,7 +12,7 @@ use CMF\Models\SPC\Preset;
 use CMF\Models\SPC\Tag;
 use CMF\Models\SPC;
 
-include_once('niml/NIML.php');
+include_once('lib/NIML.php');
 
 class Niml extends \NIML {
 

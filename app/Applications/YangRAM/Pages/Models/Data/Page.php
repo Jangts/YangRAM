@@ -4,7 +4,7 @@ namespace Pages\Models\Data;
 use Status;
 use Tangram\NIDO\DataObject;
 use AF\Models\R3Model_BC;
-use Tangram\ORM\Counter;
+use Tangram\DBAL\Counter;
 use CMF\Models\SPCLite;
 
 class Page extends R3Model_BC {

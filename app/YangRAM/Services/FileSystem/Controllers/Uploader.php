@@ -62,7 +62,7 @@ class Uploader extends Controller {
 		$this->hash = $post['hash'];
 		$this->mime = $post['type'];
 		$this->getDir();
-		$model = 'CM\\SRC\\'.$this->SOURCETYPE;
+		$model = 'CMF\Models\\SRC\\'.$this->SOURCETYPE;
 		$srcid = $model::checkHash($this->hash);
 		if($srcid){
 			echo json_encode(array(
@@ -104,7 +104,7 @@ class Uploader extends Controller {
 				$this->mime = $xtd->MIME;
 				$this->getDir();
 				if(isset($_SRC_ID)){
-					$model = 'CM\\SRC\\'.$this->SOURCETYPE;
+					$model = 'CMF\Models\\SRC\\'.$this->SOURCETYPE;
 					$model::checkQuote($_SRC_ID);
 				}
 				return $this->r($xtd->toArray(), true);
