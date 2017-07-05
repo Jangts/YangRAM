@@ -327,7 +327,7 @@ final class Status extends Exception {
 	}
 
 	private function render($template){
-		$lang 		= 	$GLOBALS['RUNTIME']->LANGUAGE;
+		$lang 		= 	$GLOBALS['NEWIDEA']->LANGUAGE;
 		$code		=	$this->code;
 		$intc		=	$this->intc;
 		$alias 		= 	$this->alias;

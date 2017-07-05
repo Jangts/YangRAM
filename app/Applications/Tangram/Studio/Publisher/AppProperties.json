@@ -24,9 +24,9 @@
             "classname": "ResHolders\\OISourceTransfer",
             "filename": "ResHolders\/OISourceTransfer"
         },
-        "ResourceSetter": {
-            "classname": "ResHolders\\ResourceSetter",
-            "filename": "ResHolders\/ResourceSetter"
+        "ResourceReceiver": {
+            "classname": "ResHolders\\ResourceReceiver",
+            "filename": "ResHolders\/ResourceReceiver"
         }
     },
     "icons": {

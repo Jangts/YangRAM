@@ -1,1 +1,0 @@
-{"APPID":"3","ID":"3","Name":"YangRAM Pages","Code":"Yp","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/Pages\/","DBTPrefix":"ni_app_a3_","CONN":"0"}

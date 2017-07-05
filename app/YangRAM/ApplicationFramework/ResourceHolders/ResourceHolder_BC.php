@@ -10,7 +10,7 @@ namespace AF\ResourceHolders;
  *  **  ***   ContentProvider	内容提供者	一般控制器	操作\方法
  *  **  ***   ResourceBrowser	浏览器视图渲染器	一般控制器	操作\方法
  *  **  ***   OISourceTransfer	维运界面视图渲染器（YangRAM特有）	OIF控制器	操作\方法
- *  **  ***   ResourceSetter	资源安置者	提交控制器	操作\方法
+ *  **  ***   ResourceReceiver	资源接受者	提交控制器	操作\方法
  *  **  ***   ResourceTransfer	表述性状态传输者，读写皆适用	REST模型	资源\数据
  *  **  ***   UnitTester	    单元测试工具，读写皆适用	模型\控制器\模板等	一切单元
  *  **  ***   IPCommunicator	跨进程通讯发起者，读写皆适用	YangRAM进程	子应用

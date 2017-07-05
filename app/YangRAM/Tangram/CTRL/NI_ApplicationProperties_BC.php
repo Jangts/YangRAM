@@ -125,7 +125,7 @@ abstract class NI_ApplicationProperties_BC extends DataObject {
 		}
 		empty($rhmanifest['ResourceTransfer']) or $this->regResHolder('ResourceTransfer', $rhmanifest['ResourceTransfer']);
 		empty($rhmanifest['ResourceBrowser']) or $this->regResHolder('ResourceBrowser', $rhmanifest['ResourceBrowser']);
-		empty($rhmanifest['ResourceSetter']) or $this->regResHolder('ResourceSetter', $rhmanifest['ResourceSetter']);
+		empty($rhmanifest['ResourceReceiver']) or $this->regResHolder('ResourceReceiver', $rhmanifest['ResourceReceiver']);
 		empty($rhmanifest['IPCommunicator']) or $this->regResHolder('IPCommunicator', $rhmanifest['IPCommunicator']);
 		empty($rhmanifest['UnitTester']) or $this->regResHolder('UnitTester', $rhmanifest['UnitTester']);
 	}

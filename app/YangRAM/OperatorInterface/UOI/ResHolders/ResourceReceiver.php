@@ -1,7 +1,7 @@
 <?php
 namespace UOI\ResHolders;
 
-class ResourceSetter extends \AF\ResourceHolders\ResourceSetter_BC {
+class ResourceReceiver extends \AF\ResourceHolders\ResourceReceiver_BC {
 	protected $controllers = [
 		'visa'	=>	array(
 			'classname'	=>	'VISA',

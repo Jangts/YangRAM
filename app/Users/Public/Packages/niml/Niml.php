@@ -31,7 +31,7 @@ class Niml extends \NIML {
 	$rightTAG = '}}';
 
 	protected function getWords(){
-		$lang = $GLOBALS['RUNTIME']->LANGUAGE;
+		$lang = $GLOBALS['NEWIDEA']->LANGUAGE;
 		$file = PATH_VIEW.$this->theme."/locales/".$lang.".json";
 		if(is_file($file)){
 			$json = file_get_contents($file);

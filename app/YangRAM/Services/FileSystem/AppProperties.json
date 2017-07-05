@@ -6,7 +6,7 @@
             "classname": "Transfer",
             "filename": "Transfer"
         },
-        "ResourceSetter": {
+        "ResourceReceiver": {
             "classname": "Transfer",
             "filename": "Transfer"
         }

@@ -17,9 +17,9 @@ final class Operator extends \AF\Models\User\Member_BC {
 
     protected function __init(){
         if(empty($this->data['LANGUAGE'])&&is_string($this->data['LANGUAGE'])){
-            $GLOBALS['RUNTIME']->LANGUAGE = $this->data['LANGUAGE'] = REQUEST_LANGUAGE;
+            $GLOBALS['NEWIDEA']->LANGUAGE = $this->data['LANGUAGE'] = REQUEST_LANGUAGE;
         }else{
-            $GLOBALS['RUNTIME']->LANGUAGE = $this->data['LANGUAGE'];
+            $GLOBALS['NEWIDEA']->LANGUAGE = $this->data['LANGUAGE'];
         }
     }
 

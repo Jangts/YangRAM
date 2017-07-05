@@ -1,16 +1,15 @@
 <?php
-namespace TC\ResHolders;
-use Status;
+namespace Studio\Stk\ResHolders;
 
-class ResourceSetter extends \AF\ResourceHolders\OISourceTransfer_BC {
+class ResourceReceiver extends \AF\ResourceHolders\ResourceReceiver_BC {
 	protected $controllers = [
 		'submit'	=>	array(
 			'classname'	=>	'Submitter',
 			'methods'	=>	array(
-				'recover'		=>	array(
+				'save'		=>	array(
 					'minArgsLength'	=>	0
 				),
-                'delete'		=>	array(
+				'remove'		=>	array(
 					'minArgsLength'	=>	0
 				)
 			)

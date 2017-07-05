@@ -59,12 +59,12 @@ class OperationScript {
 	}
 
 	final public function complie($osfile, $outfile, $minfile, $lang=false){
-        global $RUNTIME;
+        global $NEWIDEA;
         $this->source = $this->loadSource($osfile);
         $this->tokenizer();
         $this->walk();
         $this->transformer();
-        $this->generator($RUNTIME, $outfile, $minfile, $lang);
+        $this->generator($NEWIDEA, $outfile, $minfile, $lang);
         return $this->code;
 	}
 
@@ -438,7 +438,7 @@ class OperationScript {
         return $value;
     }
 
-    private function generator($RUNTIME, $outfile, $minfile, $lang){
+    private function generator($NEWIDEA, $outfile, $minfile, $lang){
         if(in_array(AI_CURR, ['SETTINGS', 'I4PLAZA', 'EXPLORER', 'TRASHCAN'])){
             $code = "RegApplication('".AI_CURR."', (__thisapp__, System, YangRAM, Using, Global, undefined) => {\n";
             $code .= "'use strict';\n";

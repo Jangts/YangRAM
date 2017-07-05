@@ -1,7 +1,7 @@
 <?php
 namespace AF\ResourceHolders;
 
-abstract class ResourceBrowser_BC extends ResourceGetter_BC {
+abstract class ResourceBrowser_BC extends ResourceHolder_BC {
     public function __construct(Application $app, Request $request){
 		$classalias = $this->getClassName($request);
 		$classname = '\\'.$app->Props['Namespace'].'\\Controllers\\'.$classalias;

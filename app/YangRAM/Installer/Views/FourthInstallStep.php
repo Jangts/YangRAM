@@ -26,7 +26,7 @@
           <span class="remark">請勿添加http://</span> </div>
         <div>
           <label>首選語言</label>
-          <input type="text" name="_LANG_" value="<?=$RUNTIME->LANGUAGE?>" />
+          <input type="text" name="_LANG_" value="<?=$NEWIDEA->LANGUAGE?>" />
         </div>
         <div>
           <label>空間容量</label>

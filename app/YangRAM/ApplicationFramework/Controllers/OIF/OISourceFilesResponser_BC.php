@@ -74,10 +74,10 @@ abstract class OISourceFilesResponser_BC extends OICtrller_BC {
 	}
 
 	final public function returnMainOS(){
-        global $RUNTIME;
+        global $NEWIDEA;
         $osfile = AP_CURR.$this->main_os_file.'.os';
-        $outfile = AP_CURR.$this->os_outdir.$RUNTIME->LANGUAGE.'.js';
-        $minfile = AP_CURR.$this->os_outdir.$RUNTIME->LANGUAGE.'.min.js';
+        $outfile = AP_CURR.$this->os_outdir.$NEWIDEA->LANGUAGE.'.js';
+        $minfile = AP_CURR.$this->os_outdir.$NEWIDEA->LANGUAGE.'.min.js';
         if(is_file($minfile)){
             if($this->checkFileModification($minfile)){
                 if(_USE_DEBUG_MODE_){
@@ -90,14 +90,14 @@ abstract class OISourceFilesResponser_BC extends OICtrller_BC {
             }
         }elseif(is_file($osfile)){
 			$complier = new OperationScript(AP_CURR);
-			$code = $complier->complie($osfile, $outfile, $minfile, $this->checklang($RUNTIME->LANGUAGE));
+			$code = $complier->complie($osfile, $outfile, $minfile, $this->checklang($NEWIDEA->LANGUAGE));
             return $this->send($code, Response::JS);
         }
         new Status(404, true);
 	}
 
 	protected function checklang($lang){
-		$lang_check_result = $GLOBALS['RUNTIME']->check_lang($this->app->Path.'Locales/{{lang}}.json', false, $lang);
+		$lang_check_result = $GLOBALS['NEWIDEA']->check_lang($this->app->Path.'Locales/{{lang}}.json', false, $lang);
 		if($lang_check_result){
 			return file_get_contents($lang_check_result[1]);
 		}

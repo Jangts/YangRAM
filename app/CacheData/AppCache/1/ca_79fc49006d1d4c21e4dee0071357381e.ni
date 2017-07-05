@@ -1,1 +1,0 @@
-{"APPID":"1","ID":"1","Name":"YangRAM Market","Code":"As","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/Market\/","DBTPrefix":"ni_app_a1_","CONN":"0"}

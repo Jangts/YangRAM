@@ -28,7 +28,7 @@ class SYSI extends Model {
 	];
 
 	public function __construct(){
-		$la_info = RDO::one(DB_REG.'languages', "LANG = '".$GLOBALS['RUNTIME']->LANGUAGE."'");
+		$la_info = RDO::one(DB_REG.'languages', "LANG = '".$GLOBALS['NEWIDEA']->LANGUAGE."'");
 		if(empty($la_info)){
 			$la_info = RDO::one(DB_REG.'languages', "lang = '"._LANG_."'");
 		}

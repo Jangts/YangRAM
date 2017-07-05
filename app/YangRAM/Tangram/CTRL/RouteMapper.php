@@ -6,7 +6,7 @@ use RDO;
 /**
  *	Uniform Routemap Builder
  *	统一自定义路由表生成器，根据路由表ID，
- *  生成并缓存该路由表对应的正则模式，以供统一资源索引器（$RUNTIME->RESOURCE）进行分析
+ *  生成并缓存该路由表对应的正则模式，以供统一资源索引器（$NEWIDEA->RESOURCE）进行分析
  */
 final class RouteMapper {
     protected static

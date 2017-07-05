@@ -4,14 +4,14 @@ namespace Tangram\CTRL;
 use Status;
 use Tangram\AsyncTask;
 use Tangram\NIDO\DataObject;
-use Tangram\NIDO\Resource;
+use Tangram\CACH\Resource;
 use Tangram\CTRL\ApplicationPermissions;
 use Tangram\CTRL\Application;
 
 /**
  *	Uniform Resource Indexer
  *	统一资源索引器————又名统一路由索引器
- *  单例类，并未限制调用者，只是恰好由运行时（$RUNTIME，主控制器实例）抢先实例化
+ *  单例类，并未限制调用者，只是恰好由运行时（$NEWIDEA，主控制器实例）抢先实例化
  *	负责解析请求，获得子应用ID和路由代号，并为进程提供一个请求读取器（Tangram\CTRL\Request）实例
  */
 abstract class NI_ResourceIndexer_BC {
@@ -204,7 +204,7 @@ abstract class NI_ResourceIndexer_BC {
             case 'S':
                 $this->checkTasker( 17, 1, '1');
                 
-                if($resHolders['ResourceSetter']) return $app->set([], 'ResourceSetter');
+                if($resHolders['ResourceReceiver']) return $app->set([], 'ResourceReceiver');
                 
                 return new Status(404, '', 'This Application Has No Resource Setter!!', true);
 

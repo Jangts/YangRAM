@@ -1,8 +1,8 @@
-app/CacheData/AppCache/
-app/CacheData/SysCache/
-app/CacheData/SysData/columns/
-app/CacheData/SysData/contents/
-app/CacheData/SysData/routemaps/
-app/CacheData/SysData/template/
+/app/CacheData/AppCache/
+/app/CacheData/SysCache/
+/app/CacheData/SysData/columns/
+/app/CacheData/SysData/contents/
+/app/CacheData/SysData/routemaps/
+/app/CacheData/SysData/template/
 *.tmp/
 *.tmp

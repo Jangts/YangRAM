@@ -35,7 +35,7 @@ class System extends \Controller {
 	}
 
 	private function checkLanguage(){
-		$lang_check_result = $GLOBALS['RUNTIME']->check_lang(PATH_LANGS.'{{lang}}', true);
+		$lang_check_result = $GLOBALS['NEWIDEA']->check_lang(PATH_LANGS.'{{lang}}', true);
 		if($lang_check_result){
 			return $lang_check_result[0];
 		}

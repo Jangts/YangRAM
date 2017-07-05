@@ -145,7 +145,7 @@ HEAD;
 
         $use = sprintf('Use Time: %.2f ms (B) + %.2f ms (C) + %.2f ms (A)</span><span class="use-mmry">Peak Use Memory: %.2f Mb', $btt, $kmt, $sat, $mgpu);
 
-        $GLOBALS['RUNTIME']->log('tests', date('H:i:s', $_SERVER['REQUEST_TIME'])."\t".str_replace('</span><span class="use-mmry">', "\t", str_replace('+', "\t", str_replace(':', ":\t", $use))).PHP_EOL);
+        $GLOBALS['NEWIDEA']->log('tests', date('H:i:s', $_SERVER['REQUEST_TIME'])."\t".str_replace('</span><span class="use-mmry">', "\t", str_replace('+', "\t", str_replace(':', ":\t", $use))).PHP_EOL);
 
         echo self::getTestHead($testname);
         echo '<body><header>YangRAM Unit Test: ' . $testname.'</header>';

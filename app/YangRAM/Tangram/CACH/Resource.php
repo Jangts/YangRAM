@@ -1,9 +1,7 @@
 <?php
-namespace Tangram\NIDO;
+namespace Tangram\CACH;
 
-use RDO;
-use AF\Models\Certificates\StdPassport;
-use Tangram\CACH\UserFiles;
+use Tangram\NIDO\DataObject;
 
 /**
  *	Resource

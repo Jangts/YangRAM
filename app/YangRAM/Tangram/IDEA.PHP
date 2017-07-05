@@ -18,7 +18,7 @@ use Tangram\CTRL\Response;
 /**
  *	Bus Control Unit (Intellective/Digital/Effective/Accurate)
  *	主控制器————智能的、数据化的、高效的、精准的
- *	由启动器调用的单例类，其唯一实例及YangRAM的全局变量$RUNTIME(运行时)
+ *	由启动器调用的单例类，其唯一实例及YangRAM的全局变量$NEWIDEA(运行时)
  *  PHP版本需求：>= PHP 5.4
  */
 final class IDEA {
@@ -96,14 +96,15 @@ final class IDEA {
 		header('Content-Type: text/plain;charset=utf-8');
 	}
 
-	public function run_system(){
+	public function run_core_modules(){
 		define('NIKTIME', microtime(TRUE));
 		$LOADER = ClassLoader::instance();
 		$CONN = $this->load_constants();
-		$this->init_data_operations($CONN);
-		$this->init_system_components();
+		$this->load_modules();
+		$this->prepare_db_connections($CONN);
 		if(strcasecmp(strtr($_SERVER['DOCUMENT_ROOT'], '\\', '/'), ROOT)==0){
 			IDEA::$isBoot = true;
+			$this->RI = CTRL\ResourceIndexer::instance();
 			return true;
 		}
 		$status = new STAT\Status(403);
@@ -145,6 +146,11 @@ final class IDEA {
 			define('DB_MSG',				_DBPRE_.'_msg_');
 			define('DB_APP',				_DBPRE_.'_app_');
 			define('DB_AST',				_DBPRE_.'_ast_');
+
+			define('QS_SCAN_GET', 			'get');
+			define('QS_SCAN_POST', 			'post');
+			define('QS_SCAN_COOKIE', 		'cookie');
+
 			$this->LANGUAGE = _LANG_;
 			if(isset($config['i18n'])&&count($config['i18n'])){
 				$this->LANGS = $config['i18n'];
@@ -156,39 +162,49 @@ final class IDEA {
 		}
 	}
 
-	private function init_data_operations($connArray){
-		define('QS_SCAN_GET', 		'get');
-		define('QS_SCAN_POST', 	'post');
-		define('QS_SCAN_COOKIE', 	'cookie');
+	private function load_modules(){
 		include(PATH_TNI.'CACH/traits/filesys.php');
+		include(PATH_TNI.'CACH/Storage.php');
+
 		include(PATH_TNI.'NIDO/traits/conversion.php');
 		include(PATH_TNI.'NIDO/traits/formatting.php');
-		include(PATH_TNI.'DBAL/traits/common.php');
-		include(PATH_TNI.'DBAL/traits/field.php');
-		include(PATH_TNI.'DBAL/traits/transaction.php');
-		
-		include(PATH_TNI.'CACH/Storage.php');
 		include(PATH_TNI.'NIDO/DataObject.php');
 		include(PATH_TNI.'NIDO/Column.php');
 		include(PATH_TNI.'NIDO/Parameters.php');
 		include(PATH_TNI.'NIDO/FormData.php');
 		include(PATH_TNI.'NIDO/RemoteData.php');
+
+		include(PATH_TNI.'DBAL/traits/common.php');
+		include(PATH_TNI.'DBAL/traits/field.php');
+		include(PATH_TNI.'DBAL/traits/transaction.php');
 		include(PATH_TNI.'DBAL/NI_PDOExtended_BC.php');
 		include(PATH_TNI.'DBAL/RDO.php');
 		include(PATH_TNI.'DBAL/RDOSelectResult.php');
 		include(PATH_TNI.'DBAL/Counter.php');
 
+		include(PATH_TNI.'CTRL/NI_ResourceIndexer_BC.php');
+		include(PATH_TNI.'CTRL/RouteMapper.php');
+		include(PATH_TNI.'CTRL/ResourceIndexer.php');
+		include(PATH_TNI.'CTRL/Request.php');
+		include(PATH_TNI.'CTRL/Response.php');;
 		include(PATH_TNI.'CTRL/Application.php');
 		include(PATH_TNI.'CTRL/ApplicationProperties.php');
 		include(PATH_TNI.'CTRL/ApplicationPermissions.php');
 
-		class_alias('Tangram\CTRL\Application', 'Application');
 		class_alias('Tangram\CACH\Storage', 'Storage');
 		class_alias('Tangram\DBAL\RDO', 'RDO');
 		class_alias('Tangram\SESS\Session', 'SESS');
 		class_alias('Tangram\STAT\Status', 'Status');
-		
+		class_alias('Tangram\CTRL\Application', 'Application');
+		class_alias('Tangram\CTRL\Request', 'Request');
+		class_alias('Tangram\CTRL\Response', 'Response');
+
 		NIDO\Column::initialize();
+		CTRL\RouteMapper::initialize();
+	}
+
+
+	private function prepare_db_connections($connArray){
 		$AP = CTRL\ApplicationPermissions::instance();
 		$CONNS = [];
 		if(count($connArray)){
@@ -218,28 +234,16 @@ final class IDEA {
 			DBAL\RDO::initialize($AP, $CONNS);
 			DBAL\RDO::setPDOX(0);
 			DBAL\Counter::initialize($AP, $CONNS);
-			$this->PERMISSIONS = $AP;
+			$this->AP = $AP;
 			return ;
 		}elseif(defined('L')){
 			$AP->APP_APDOX_GETABLE = false;
 			$AP->APP_PDOXS_GETABLE = false;
-			$this->PERMISSIONS = $AP;
+			$this->AP = $AP;
 		}else{
 			$status = new STAT\Status(703.1, 'Default Database Not Found', 'Must set a default database connection configuration.');
 			return $status->cast(STAT\Status::CAST_TLOG);
 		}
-	}
-
-	private function init_system_components(){
-		include(PATH_TNI.'CTRL/NI_ResourceIndexer_BC.php');
-		include(PATH_TNI.'CTRL/RouteMapper.php');
-		include(PATH_TNI.'CTRL/ResourceIndexer.php');
-		include(PATH_TNI.'CTRL/Request.php');
-		include(PATH_TNI.'CTRL/Response.php');;
-		class_alias('Tangram\CTRL\Request', 'Request');
-		class_alias('Tangram\CTRL\Response', 'Response');
-		CTRL\RouteMapper::initialize();
-		$this->RI = CTRL\ResourceIndexer::instance();
 	}
 
 	public function run_active_application(){

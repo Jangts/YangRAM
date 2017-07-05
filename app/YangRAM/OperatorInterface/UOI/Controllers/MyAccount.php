@@ -9,7 +9,7 @@ class MyAccount extends \OIC\OICtrller_BC {
 	public function info(){
 		$visa = new VISA($this->app, $this->request, $this->passport);
 		$status = (string) $visa->myStatus();
-		$lang = $GLOBALS['RUNTIME']->LANGUAGE;
+		$lang = $GLOBALS['NEWIDEA']->LANGUAGE;
 		switch($status){
 			case 'Runholder':
 			$timer = new Timer($lang);

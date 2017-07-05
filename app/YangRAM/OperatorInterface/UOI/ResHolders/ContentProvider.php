@@ -57,7 +57,7 @@ class ContentProvider extends \AF\ResourceHolders\ContentProvider_BC {
 			if(isset($request->uri_path[4])){
 				if($request->uri_path[4]==='system.js'){
 					$methodname = 'sys';
-					$language = $GLOBALS['RUNTIME']->LANGUAGE;
+					$language = $GLOBALS['NEWIDEA']->LANGUAGE;
 				}elseif(isset($request->uri_path[6])&&$request->uri_path[6]==='runtime.js'){
 					$methodname = $request->uri_path[4] === 'evn' ? 'evn' : 'log';
 					$language = $request->uri_path[5];

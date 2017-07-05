@@ -26,7 +26,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 Logger.pincode.attr('readonly', 'readonly').addClass('connecting');
                 Logger.pincode.attr('placeholder', 'CONNECT');
                 var m, s;
-                setInterval(function() {
+                ctimer = setInterval(function() {
                     ctimes++;
                     m = ctimes % 6;
                     s = m < 3 ? m : 6 - m;
@@ -37,14 +37,13 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
 
     var pincode = '',
         checkpincodeOnKeyUp = (e) => {
-            Logger.pincode.attr('readonly', 'readonly');
             if (e.which === 8 && pincode.length > 0) {
+                Logger.pincode.attr('readonly', 'readonly');
                 pincode = pincode.slice(0, pincode.length - 1);
-                Logger.pincode.val(pincode.replace(/\d/, '*'));
+                Logger.pincode.val(pincode.replace(/\w/g, '+'));
             }
         },
         checkpincodeOnChange = (e) => {
-            //console.log(Logger, Logger.pincode);
             Logger.pincode.attr('readonly', 'readonly');
             Logger.pincode.val(pincode);
         },
@@ -62,7 +61,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                             pincode = '';
                         }
                     } else {
-                        Logger.pincode.val(pincode.replace(/\d/g, '*'));
+                        Logger.pincode.val(pincode.replace(/\w/g, '+'));
                     }
                     Logger.pincode.removeAttr('readonly');
                 }, 1);
@@ -105,7 +104,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             connecting();
         },
         oncontact = (data) => {
-            //console.log(data);
+            // console.log(data);
             connecting(true);
             var preg = /^\[\{"username":/;
             if (data.match(preg)) {

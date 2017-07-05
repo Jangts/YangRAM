@@ -15,7 +15,7 @@
 //  +------------------------------------------------------------------------+
 /**/ REQUIRE         '.BEFOREBOOT';                                         //
 /**/ REQUIRE         PATH_TNI.'IDEA.PHP';                                  //
-/**/$RUNTIME    =    NEW IDEA;                                            //
-/**/$RUNTIME    ->   RUN_SYSTEM();                                       //
-/**/$RUNTIME    ->   RUN_ACTIVE_APPLICATION();                          //
+/**/$NEWIDEA    =    NEW IDEA;                                            //
+/**/$NEWIDEA    ->   RUN_CORE_MODULES();                                 //
+/**/$NEWIDEA    ->   RUN_ACTIVE_APPLICATION();                          //
 //  +-------------------------------------------------------------------+

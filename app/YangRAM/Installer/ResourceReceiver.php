@@ -1,7 +1,7 @@
 <?php
 namespace Installer;
 
-class ResourceSetter extends \AF\ResourceHolders\ResourceSetter_BC {
+class ResourceReceiver extends \AF\ResourceHolders\ResourceReceiver_BC {
 	protected $controllers = [
 		'sta'	=>	array(
 			'classname'	=>	'Starter',

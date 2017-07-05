@@ -1,1 +1,0 @@
-{"APPID":"4","ID":"4","Name":"Statistics","Code":"St","Author":"YangRAM","DIR":"\/Applications\/YangRAM\/Statistics\/","DBTPrefix":"ni_app_a4_","CONN":"0"}

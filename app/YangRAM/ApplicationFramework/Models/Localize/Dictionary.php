@@ -42,16 +42,16 @@ class Dictionary extends DataObject {
 	$dir = 'Locales';
 
 	public function __construct(){
-		$sysla = $GLOBALS['RUNTIME']->LANGUAGE;
+		$sysla = $GLOBALS['NEWIDEA']->LANGUAGE;
 		$filename = $this->checklang(AP_CURR, $sysla);
 		$this->data = include $filename;
 	}
 	
 	protected function checklang($path, $lang){
 		if(!empty($this->langs[0])&&is_string($this->langs[0])){
-			$GLOBALS['RUNTIME']->LANGUAGE = $this->langs[0];
+			$GLOBALS['NEWIDEA']->LANGUAGE = $this->langs[0];
 		}
-		$lang_check_result = $GLOBALS['RUNTIME']->check_lang($path.$this->dir.'/{{lang}}.php', false, $lang);
+		$lang_check_result = $GLOBALS['NEWIDEA']->check_lang($path.$this->dir.'/{{lang}}.php', false, $lang);
 		if($lang_check_result){
 			$this->code = $lang_check_result[0];
 			return $lang_check_result[1];

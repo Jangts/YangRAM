@@ -89,10 +89,10 @@ class Starter extends Common {
     }
 
     private function step1(){
-        global $RUNTIME;
+        global $NEWIDEA;
         $template = AP_CURR.'Views/FirstInstallStep.php';
         if(is_file($template)){
-            $clause = file_get_contents(AP_CURR.'Views/'.$RUNTIME->LANGUAGE.'/CLAUSE.htm');
+            $clause = file_get_contents(AP_CURR.'Views/'.$NEWIDEA->LANGUAGE.'/CLAUSE.htm');
             file_put_contents($this->record, '1');
             Response::instance()->sendHeaders();
             include $template;
@@ -102,7 +102,7 @@ class Starter extends Common {
     }
 
     private function thanks(){
-        global $RUNTIME;
+        global $NEWIDEA;
         $template = AP_CURR.'Views/StopInstallation.php';
         if(is_file($template)){
             unlink($this->record);
@@ -114,7 +114,7 @@ class Starter extends Common {
     }
 
     private function step2(){
-        global $RUNTIME;
+        global $NEWIDEA;
         $template = AP_CURR.'Views/SecondInstallStep.php';
         if(is_file($template)){
             file_put_contents($this->record, '2');
@@ -126,7 +126,7 @@ class Starter extends Common {
     }
 
     private function inputs(){
-        global $RUNTIME;
+        global $NEWIDEA;
         $filename = AP_CURR.'Views/inputs/'.$_GET['segment_type'].'.php';
         if(is_file($filename)){
             echo file_get_contents($filename);
@@ -136,7 +136,7 @@ class Starter extends Common {
     }
 
     private function step3($refresh=false){
-        global $RUNTIME;
+        global $NEWIDEA;
         if($refresh){
             $template = AP_CURR.'Views/ThirdInstallStep.php';
             if(is_file($template)){
@@ -257,7 +257,7 @@ class Starter extends Common {
     }
 
     private function step4(){
-        global $RUNTIME;
+        global $NEWIDEA;
         $template = AP_CURR.'Views/FourthInstallStep.php';
         if(is_file($template)){
             file_put_contents($this->record, '4');
@@ -270,7 +270,7 @@ class Starter extends Common {
     }
 
     private function step5($refresh=false){
-        global $RUNTIME;
+        global $NEWIDEA;
         if($refresh){
             $template = AP_CURR.'Views/FifthInstallStep.php';
             if(is_file($template)){

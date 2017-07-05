@@ -9,7 +9,7 @@ use Tangram\NIDO\FormData;
 /**
  *	Universal Request Reader
  *	通用请求分析对象，单例类，其
- *  实例为一个封装的数据包，并未不限制调用者，只是恰好由统一资源索引器（$RUNTIME->RESOURCE）抢先实例化
+ *  实例为一个封装的数据包，并未不限制调用者，只是恰好由统一资源索引器（$NEWIDEA->RESOURCE）抢先实例化
  *	负责解读请求参数，懒读取模式节省消耗，只有当应用调用某数据时，读取器才为其解读
  */
 final class Request {
@@ -51,7 +51,7 @@ final class Request {
         $path_array = explode('/', $path);
         $homepages = explode('/', strtolower(_HOME_));
 
-        $i18n = $GLOBALS['RUNTIME']->LANGS;
+        $i18n = $GLOBALS['NEWIDEA']->LANGS;
 
         if($i18n&&isset($path_array[1])&&in_array($path_array[1], $i18n)){
             $data['LANG'] = $path_array[1];
@@ -264,7 +264,7 @@ final class Request {
         }
         
         $this->vals = array_merge($_COOKIE, $args->toArray(), $post->toArray());
-        define('REQUEST_LANGUAGE', $this->data['LANGUAGE'] = $GLOBALS['RUNTIME']->LANGUAGE = $lang);
+        define('REQUEST_LANGUAGE', $this->data['LANGUAGE'] = $GLOBALS['NEWIDEA']->LANGUAGE = $lang);
         return $this;
     }
 

@@ -54,7 +54,7 @@
             "filename": ""
         },
         // 资源设置者：统一信息提交响应入口，可选
-        "ResourceSetter": {
+        "ResourceReceiver": {
             "classname": "",
             "filename": ""
         },
