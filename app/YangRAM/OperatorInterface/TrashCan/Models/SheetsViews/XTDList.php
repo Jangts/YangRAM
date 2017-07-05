@@ -40,7 +40,7 @@ class XTDList extends DataObject {
 		}
 
 		$rdo = new RDO;
-		$rdos = $rdo->using(DB_APP.'a'.$rule["handle_appid"].'_'.$rule["database_table"])
+		$rdos = $rdo->using(DB_APP.$rule["handle_appid"].'_'.$rule["database_table"])
 		->where($rule["recycled_state_field"], 1)
 		->orderby($sort_type[0], $sort_type[1])
 		->select();

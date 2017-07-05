@@ -31,7 +31,7 @@ final class Application extends NI_Application_BC {
 					'Version'	=>	$app['app_version'],
 					'Author'	=>	$app['app_authorname'],
 					'DIR'		=>	($code>1000) ? APP_DIR.$app['app_authorname'].'/'.$app['app_installpath'].'/' : I4S_DIR.$app['app_installpath'].'/',
-					'DBTPrefix'	=>	DB_APP.'a'.$code.'_',
+					'DBTPrefix'	=>	DB_APP.$code.'_',
 					'CONN'		=>	$app['app_usedb'],
 				];
                 $cache = new Storage(PATH_CACA.$app['app_id'].'/', Storage::JSN, true);

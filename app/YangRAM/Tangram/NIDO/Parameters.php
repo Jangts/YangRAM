@@ -11,9 +11,9 @@ use RDO;
 final class Parameters extends DataObject {
     public function __construct(array $paths, $item, $matches, $REST_PARAMS = []){
         $this->data['column'] = NULL;
-        if($item&&isset($item['DIR_ALIASES'])&&isset($item['DEFAULTS'])&&isset($item['DOMAINS'])&&isset($item['PRM_NAMES'])){
+        if($item&&isset($item['DIR_ALIASES'])&&isset($item['DEFAULTS'])&&isset($item['DOMAIN'])&&isset($item['PRM_NAMES'])){
             $this->getDefaults($item['DEFAULTS']);
-            $this->getHostInfo($item['DOMAINS'], $paths);
+            $this->getHostInfo($item['DOMAIN'], $paths);
             $this->getDataByDir($item['DIR_ALIASES'], $paths);
             $this->getParams($item['PRM_NAMES'], $matches);
         }

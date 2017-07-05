@@ -68,11 +68,11 @@ class Submitter extends \OIC\OICtrller_BC {
 	private static function getItemByRules($rule, $post){
 		$rdo = new RDO;
 		if(empty($post["id"])){
-			return $rdo->using(DB_APP.'a'.$rule["handle_appid"].'_'.$rule["database_table"])
+			return $rdo->using(DB_APP.$rule["handle_appid"].'_'.$rule["database_table"])
 			->where($rule["recycled_state_field"], 1)
 			->where($rule["index_field"], "('".preg_replace('/\s*,\s*/',"','",$post["ids"])."')", 'IN');
 		}else{
-			return $rdo->using(DB_APP.'a'.$rule["handle_appid"].'_'.$rule["database_table"])
+			return $rdo->using(DB_APP.$rule["handle_appid"].'_'.$rule["database_table"])
 			->where($rule["recycled_state_field"], 1)
 			->where($rule["index_field"], $post["id"]);
 		}

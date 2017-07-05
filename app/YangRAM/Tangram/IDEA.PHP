@@ -119,9 +119,6 @@ final class IDEA {
 			if(defined('_USE_DEBUG_MODE_')){
 				unset($config['constants']['_USE_DEBUG_MODE_']);
 			}
-			if(defined('_DOMAIN_')){
-				unset($config['constants']['_DOMAIN_']);
-			}
 			if(defined('_SETTER_')){
 				unset($config['constants']['_SETTER_']);
 			}

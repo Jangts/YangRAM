@@ -23,11 +23,11 @@ final class Request {
 	}
 
     public static function hostname(){
-		if(_DOMAIN_SAFTY_){
+		if(_DEFAULT_DOMAIN_){
             if(stripos(HOST, 'www.')===0){
-                return 'www.'._DOMAIN_;
+                return 'www.'._DEFAULT_DOMAIN_;
             }else{
-                return _DOMAIN_;
+                return _DEFAULT_DOMAIN_;
             }
         }else{
             return HOST;

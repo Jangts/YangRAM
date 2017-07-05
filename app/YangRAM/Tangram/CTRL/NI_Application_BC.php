@@ -44,7 +44,7 @@ abstract class NI_Application_BC {
 				'Code'		=>	$app['app_code'],
 				'Author'	=>	$app['app_authorname'],
 				'DIR'		=>	preg_replace('/\/+/', '/', APP_DIR.$app['app_authorname'].'/'.$app['app_installpath'].'/'),
-				'DBTPrefix'	=>	DB_APP.'a'.$code.'_',
+				'DBTPrefix'	=>	DB_APP.$code.'_',
 				'CONN'		=>	$app['app_usedb']
 			];
 		}else{

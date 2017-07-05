@@ -10,6 +10,7 @@ use RDO;
  */
 final class RouteMapper {
     protected static
+	$domains = null,
     $storage = NULL,
     $rdo = NULL;
 
@@ -27,6 +28,7 @@ final class RouteMapper {
         if($data = self::$storage->take('map_'.$mapid)){
             return $data;
         }else{
+			self::$domains = self::$domains ?  self::$domains : (_NON_GLOBAL_DOMAIN_ ? explode(',', _NON_GLOBAL_DOMAIN_) : []);
             return self::updatePatterns($mapid);
         }
     }
@@ -39,17 +41,24 @@ final class RouteMapper {
 
     private static function queryPatterns($mapid){
         self::$rdo != NULL or self::setConn();
-        $result = self::$rdo->where('MAP_ID', $mapid)->where('KEY_STATE', 1)->select();
-        $data = [];
+		$data = [];
+		$result = self::$rdo->where('MAP_ID', $mapid)->select();
         if($result){
-            $list = self::resortPatterns($result->getPDOStatement());
-            foreach($list as $item){
-                $item['PATTERN'] = self::replacePattern($item['PATTERN']);
-                $item['DIR_ALIASES'] = strlen($item['DIR_ALIASES'])>0 ? explode(',', $item['DIR_ALIASES']) : [];
-                $item['PRM_NAMES'] = strlen($item['PRM_NAMES'])>0 ? explode(',', $item['PRM_NAMES']) : [];
-                $item['DOMAINS'] = strlen($item['DOMAINS'])>0 ? explode(',', $item['DOMAINS']) : [];
-                $item['DEFAULTS'] = self::assignDefaults($item);
-                $data[] = $item;
+			if(in_array(HOST, self::$domains)){
+				$result = self::$rdo->where('MAP_ID', $mapid)->where('KEY_STATE', 1)->where('DOMAIN', HOST)->select();
+			}else{
+				$result = self::$rdo->where('MAP_ID', $mapid)->where('KEY_STATE', 1)->where('DOMAIN', ['<ANY>', HOST])->select();
+			}
+			if($result){
+            	$list = self::resortPatterns($result->getPDOStatement());
+				foreach($list as $item){
+	                $item['PATTERN'] = self::replacePattern($item['PATTERN']);
+    	            $item['DIR_ALIASES'] = strlen($item['DIR_ALIASES'])>0 ? explode(',', $item['DIR_ALIASES']) : [];
+        	        $item['PRM_NAMES'] = strlen($item['PRM_NAMES'])>0 ? explode(',', $item['PRM_NAMES']) : [];
+            	    $item['DOMAIN'] = strlen($item['DOMAIN'])>0 ? explode(',', $item['DOMAIN']) : [];
+                	$item['DEFAULTS'] = self::assignDefaults($item);
+            	    $data[] = $item;
+				}
             }
         }
         return $data;
