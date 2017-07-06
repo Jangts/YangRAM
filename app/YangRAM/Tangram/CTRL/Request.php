@@ -88,6 +88,8 @@ final class Request {
         $data['URI_HASH'] = md5($data['HOST'].$data['DIR'].$data['TRANSLATED_URI'].'?'.$data['QS']);
         $data['DIR'] .= '/';
         $this->data = $data;
+        var_dump($_SERVER['PHP_SELF'], $PATH, $data, $_GET);
+        exit;
     }
 
     public function __get($property){
