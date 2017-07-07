@@ -103,8 +103,8 @@ class FormVC extends \OIC\OICtrller_BC {
 		$html = '<edit-panel bgcolor="magenta">';
 		$html .= '<click href="trigger://ToList" args="'.$args.'" class="left-panel-button">Return To List</click>';
 		$html .= '<click href="trigger://ToTop" class="right-totop-button">';
-		$html .= '<vision class="arrow"></vision>';
-		$html .= '<vision class="stick"></vision>';
+		$html .= '<v class="arrow"></v>';
+		$html .= '<v class="stick"></v>';
 		$html .= '</click>';
 		$html .= '<click href="trigger://SaveCode" args="'.$args.'" class="right-panel-button odd">Save Label</click>';
 		//$html .= '<click href="trigger://PasteCode" class="paste right-btn">Paste Code</click>';

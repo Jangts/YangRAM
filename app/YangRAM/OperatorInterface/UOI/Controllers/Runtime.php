@@ -81,7 +81,6 @@ class Runtime extends Controller {
 			PATH_UOI.'Sources/scripts/Memowall.js',
 			PATH_UOI.'Sources/scripts/BookmarkModel.js',
 			PATH_UOI.'Sources/scripts/BookmarkGroup.js',
-			PATH_UOI.'Sources/scripts/BookmarkModifier.js',
 			PATH_UOI.'Sources/scripts/Notifier.js',
 			PATH_UOI.'Sources/scripts/Message.js',
 			PATH_UOI.'Sources/scripts/Runtime.js'

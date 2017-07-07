@@ -1,6 +1,6 @@
 <view title="{{$PAGETITLE}}" lang="{{$LANG}}">
     <top-vision bgcolor="magenta">
-        <vision>
+        <v>
             <ico class="stk-icon"></ico>
             <tools class="stk-ctrl">
                 <list class="stk-ctrl-group odd">
@@ -15,9 +15,9 @@
                     <item x-usefor="label-list" class="stk-ctrl-item preset-list {{$TOP[`new_mod`]}}" title="Return To Item List"></item>
                 </list>
             </tools>
-        </vision>
+        </v>
     </top-vision>
-    <vision bgcolor="silvery">
+    <v bgcolor="silvery">
         <left bgcolor="light">
             <scroll-vision scroll-y="true">
                 {{$SIDE}}
@@ -26,5 +26,5 @@
         <main posi="right">
             {{$MAIN}}
         </main>
-    </vision>
+    </v>
 </view>

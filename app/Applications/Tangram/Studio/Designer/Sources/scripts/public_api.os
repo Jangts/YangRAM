@@ -65,11 +65,11 @@ public {
 			contentHeightMin = contentHeightMin < 350 ? 350 : contentHeightMin;
 			if(this.viewstatus==1){
 				contentHeightMin = YangRAM.API.APP.fsHeight() - 51 > contentHeightMin ? YangRAM.API.APP.fsHeight() - 51 : contentHeightMin;
-				this.$('view>vision').css('min-height', contentHeightMin);
+				this.$('view>v').css('min-height', contentHeightMin);
 				this.$('left').css('min-height', contentHeightMin);
 				this.$('main').css('min-height', contentHeightMin);
 			}else{
-				this.$('view>vision').css('min-height', contentHeightMin);
+				this.$('view>v').css('min-height', contentHeightMin);
 				this.$('left').css('min-height', contentHeightMin);
 				this.$('main').css('min-height', contentHeightMin);
 			}

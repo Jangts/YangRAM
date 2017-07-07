@@ -34,7 +34,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         },
         create(appid, setttings, styles) {
             var title = setttings.title || 'System Dialog';
-            this.document = YangRAM.create('vision', this.Element, {
+            this.document = YangRAM.create('v', this.Element, {
                 className: 'dialog-main-box',
                 style: {
                     width: styles.width,
@@ -42,7 +42,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     top: styles.top,
                     left: styles.left
                 },
-                html: '<vision class="dialog-header"><el class="dialog-name">' + title + '</el><el class="dialog-swch">×</el></vision>'
+                html: '<v class="dialog-header"><el class="dialog-name">' + title + '</el><el class="dialog-swch">×</el></v>'
             });
             if (setttings.control) {
                 var mainHeight = styles.height - 120;
@@ -75,7 +75,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 html += setttings.control[i].name;
                 html += '</click>';
             }
-            this.controlarea = YangRAM.create('vision', this.document, {
+            this.controlarea = YangRAM.create('v', this.document, {
                 className: 'dialog-control',
                 html: html
             });
@@ -151,12 +151,12 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     }
                 });
             return this
-                .bindListener('vision.dialog-header', 'mousedown', (event) => {
+                .bindListener('v.dialog-header', 'mousedown', (event) => {
                     dragstatus = true;
                     dragstartX = event.x;
                     dragstartY = event.y;
                 })
-                .bindListener('vision.dialog-header .dialog-swch', 'click', () => {
+                .bindListener('v.dialog-header .dialog-swch', 'click', () => {
                     Dialog.hide();
                 });
         }

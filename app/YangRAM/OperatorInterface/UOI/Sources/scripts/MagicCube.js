@@ -10,7 +10,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         name: Runtime.locales.MAGICCUBE.APPNAME,
         build() {
             this.Element.innerHTML = '<mask></mask>';
-            this.vision = YangRAM.create('vision', this.Element, {
+            this.vision = YangRAM.create('v', this.Element, {
                 className: 'data-submitting-spinner',
             });
             for (var i = 1; i < 10; i++) {

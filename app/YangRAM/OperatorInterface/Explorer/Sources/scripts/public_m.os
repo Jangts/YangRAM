@@ -2,8 +2,8 @@ public {
     setCenteredView: YangRAM.donothing,
     onload() {
         this.leftSide = YangRAM.$('left', this.document)[0];
-        this.mainTop = YangRAM.$('vision.main-topbar', this.document)[0];
-        this.mainContent = YangRAM.$('vision.main-content', this.document)[0];
+        this.mainTop = YangRAM.$('v.main-topbar', this.document)[0];
+        this.mainContent = YangRAM.$('v.main-content', this.document)[0];
         this.leftScrollBAR = __thisapp__.OIMLElement.bind('scrollbar', this.leftSide);
         this.mainScrollBAR = __thisapp__.OIMLElement.bind('scrollbar', this.mainContent);
         this.foldersList = '';
@@ -124,7 +124,7 @@ public {
     onafterresize() {
         var appContentHeight = System.Height - 91;
         this.$('left').css('height', appContentHeight).css('max-height', appContentHeight).css('min-height', appContentHeight);
-        this.$('vision.main-content').css('height', appContentHeight - 90).css('max-height', appContentHeight - 90).css('min-height', appContentHeight - 90);
+        this.$('v.main-content').css('height', appContentHeight - 90).css('max-height', appContentHeight - 90).css('min-height', appContentHeight - 90);
         setTimeout(function() {
                 __thisapp__.leftScrollBAR && __thisapp__.leftScrollBAR.resize();
                 __thisapp__.mainScrollBAR && __thisapp__.mainScrollBAR.resize();

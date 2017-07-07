@@ -24,7 +24,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 ctimer = null;
                 Locker.pincode.removeClass('connecting').attr('placeholder', ' P I N ');
             } else {
-                Locker.pincode.attr('readonly', 'readonly').addClass('connecting');
+                Locker.pincode.addClass('connecting');
                 Locker.pincode.attr('placeholder', 'CONNECT');
                 var m, s;
                 setInterval(function() {
@@ -38,15 +38,12 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
 
     var pincode = '',
         checkpincodeOnKeyUp = (e) => {
-            Locker.pincode.attr('readonly', 'readonly');
             if (e.which === 8 && pincode.length > 0) {
                 pincode = pincode.slice(0, pincode.length - 1);
                 Locker.pincode.val(pincode.replace(/\d/, '*'));
             }
         },
         checkpincodeOnChange = (e) => {
-            //console.log(Locker, Locker.pincode);
-            Locker.pincode.attr('readonly', 'readonly');
             Locker.pincode.val(pincode);
         },
         checkpincodeOnKeyPress = (e) => {
@@ -62,13 +59,11 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     } else {
                         Locker.pincode.val(pincode.replace(/\d/g, '*'));
                     }
-                    Locker.pincode.removeAttr('readonly');
                 }, 1);
             } else {
                 Locker.tipsarea.html('Err').show();
                 setTimeout(() => {
                     Locker.pincode.val(pincode);
-                    Locker.pincode.removeAttr('readonly');
                 }, 1);
             }
             setTimeout(() => {
@@ -98,7 +93,6 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 }
             }
             if (data === '[{"error":"PIN_ERROR"}]') {
-                Locker.pincode.removeAttr('readonly');
                 showTips(Locker.pincode, ' P I N ', 'PIN_ERR');
             }
             return;
@@ -115,7 +109,6 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             setTimeout(() => {
                 YangRAM.tools.playBgMusic('Unlock');
                 Locker.off();
-                Locker.pincode.removeAttr('readonly');
             }, 3000);
             setTimeout(() => {
                 var time = (new Date().getTime() - lockTime) / 60000;
@@ -128,7 +121,6 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         oncontactfailed = (data) => {
             //console.log(data);
             connecting(true);
-            Locker.pincode.removeAttr('readonly');
             showTips(Locker.pincode, ' P I N ', 'FAILED');
         };
 
@@ -170,14 +162,14 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         mask: YangRAM.$('masker', Locker.document),
         avatar: YangRAM.$('avatar', Locker.document),
         form: YangRAM.$('form', Locker.document),
-        pincode: YangRAM.$('[name=pin]', this.document),
+        pincode: YangRAM.$('[name=pin]', this.document).attr('readonly', 'readonly'),
         tipsarea: YangRAM.$('pinshow', this.document),
         activeForm() {
             YangRAM.tools.playBgMusic('Unlock');
             this.mask.attr('status', 'actived');
             this.avatar.attr('status', 'actived');
             this.form.attr('status', 'actived');
-            this.pincode.attr('placeholder', ' P I N ');
+            this.pincode.attr('placeholder', ' P I N ').focus();
             YangRAM.removeListener('locker avatar', 'click');
             Locker.timer && clearTimeout(Locker.timer);
             Locker.timer = setTimeout(() => {

@@ -27,7 +27,7 @@ windows application view top-vision {
     border-bottom: #000 solid 1px;
 }
 
-windows application view>vision {
+windows application view>v {
     float: left;
     width: 100%;
     min-height: 350px;
@@ -47,7 +47,7 @@ windows application view bottom-vision {
 
 /* Top Vision */
 
-top-vision>vision {
+top-vision>v {
     height: 50px;
 }
 

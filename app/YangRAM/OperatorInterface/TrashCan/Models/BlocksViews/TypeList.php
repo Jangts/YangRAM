@@ -33,7 +33,7 @@ class TypeList extends DataObject {
 		$html = '<itit href="default/lib/" class="category">'.$localdict["lib"].'</itit>';
 		$types = ['emc', 'gec', 'fld', 'img', 'txt', 'wav', 'vod', 'doc'];
 		foreach($types as $type){
-			$html .= '<item type="'.$type.'" href="list/lib/'.$type.'/"><vision class="icon"></vision><vision class="name">'.$localdict[$type].'</vision></item>';
+			$html .= '<item type="'.$type.'" href="list/lib/'.$type.'/"><v class="icon"></v><v class="name">'.$localdict[$type].'</v></item>';
 		}
 		$this->data[] = $html;
 	}
@@ -41,7 +41,7 @@ class TypeList extends DataObject {
 	private function getContents($localdict, $presets){
 		$html = '<itit href="default/spc/" class="category">'.$localdict["spc"].'</itit>';
 		foreach($presets as $row){
-			$html .='<item type="spc" href="list/spc/'.$row->id.'/?sort=nma"><vision class="icon"></vision><vision class="name">'.$row->item_type.'</vision></item>';
+			$html .='<item type="spc" href="list/spc/'.$row->id.'/?sort=nma"><v class="icon"></v><v class="name">'.$row->item_type.'</v></item>';
 		}
 		$this->data[] = $html;
 	}
@@ -49,7 +49,7 @@ class TypeList extends DataObject {
 	private function getExtends($localdict, $extends){
 		$html = '<itit href="default/xtd/">'.$localdict["xtd"].'</itit>';
 		foreach($extends as $row){
-			$html .='<item type="xtd" href="list/xtd/'.$row->id.'/?sort=nma"><vision class="icon"></vision><vision class="name">'.$row->typename.'</vision></item>';
+			$html .='<item type="xtd" href="list/xtd/'.$row->id.'/?sort=nma"><v class="icon"></v><v class="name">'.$row->typename.'</v></item>';
 		}
 		$this->data[] = $html;
 	}

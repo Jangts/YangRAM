@@ -206,7 +206,7 @@ class GECListPage extends DataObject {
 			if(isset($this->data['list'])){
 				return OIML::sheet($this->data['list'], 'lightdatered');
 			}
-			return '<list type="sheet" class="lightdatered"><vision class="tips">This Category Is Empty</vision></list>';
+			return '<list type="sheet" class="lightdatered"><v class="tips">This Category Is Empty</v></list>';
 		}
 		if($posi=='page'){
 			return OIML::paging($this->data['page'], 'lightdatered');

@@ -15,14 +15,14 @@ view {
 
 /*** APPS TOP ***/
 
-top-vision>vision {
+top-vision>v {
     width: 100%;
     height: 50px;
     max-width: 1000px;
     margin: auto;
 }
 
-top-vision vision ico {
+top-vision v ico {
     display: block;
     position: absolute;
     width: 50px;
@@ -32,12 +32,12 @@ top-vision vision ico {
     background-repeat: no-repeat;
 }
 
-top-vision vision tools.page-ctrl {
+top-vision v tools.page-ctrl {
     display: block;
     margin-left: 50px;
 }
 
-top-vision vision tools.page-ctrl list {
+top-vision v tools.page-ctrl list {
     width: auto;
     height: 30px;
     padding: 10px;
@@ -45,7 +45,7 @@ top-vision vision tools.page-ctrl list {
     float: right;
 }
 
-top-vision vision tools.page-ctrl list.odd {
+top-vision v tools.page-ctrl list.odd {
     display: block;
     background-color: rgba(0, 0, 0, .1);
 }
@@ -53,7 +53,7 @@ top-vision vision tools.page-ctrl list.odd {
 
 /* ------------------------- */
 
-top-vision vision tools list item.page-ctrl-item {
+top-vision v tools list item.page-ctrl-item {
     float: left;
     width: 40px;
     height: 30px;
@@ -62,117 +62,117 @@ top-vision vision tools list item.page-ctrl-item {
     cursor: pointer;
 }
 
-top-vision vision tools list item.unavailable {
+top-vision v tools list item.unavailable {
     cursor: default;
 }
 
-top-vision vision tools list item.page-ctrl-item {
+top-vision v tools list item.page-ctrl-item {
     transition: background-position ease .5s;
     -webkit-transition: background-position ease .5s;
 }
 
-top-vision vision tools list .page-list {
+top-vision v tools list .page-list {
     background-position: 0px 0px;
 }
 
-top-vision vision tools list .page-new {
+top-vision v tools list .page-new {
     background-position: -40px 0px;
 }
 
-top-vision vision tools list .page-save {
+top-vision v tools list .page-save {
     background-position: -80px 0px;
 }
 
-top-vision vision tools list .page-del {
+top-vision v tools list .page-del {
     background-position: -120px 0px;
 }
 
-top-vision vision tools list .page-fix {
+top-vision v tools list .page-fix {
     background-position: -160px 0px;
 }
 
-top-vision vision tools list .page-setting {
+top-vision v tools list .page-setting {
     background-position: -200px 0px;
 }
 
 
 /* --------------- */
 
-top-vision vision tools list .page-list:hover {
+top-vision v tools list .page-list:hover {
     background-position: 0px -30px;
 }
 
-top-vision vision tools list .page-new:hover {
+top-vision v tools list .page-new:hover {
     background-position: -40px -30px;
 }
 
-top-vision vision tools list .page-save:hover {
+top-vision v tools list .page-save:hover {
     background-position: -80px -30px;
 }
 
-top-vision vision tools list .page-del:hover {
+top-vision v tools list .page-del:hover {
     background-position: -120px -30px;
 }
 
-top-vision vision tools list .page-fix:hover {
+top-vision v tools list .page-fix:hover {
     background-position: -160px -30px;
 }
 
-top-vision vision tools list .page-setting:hover {
+top-vision v tools list .page-setting:hover {
     background-position: -200px -30px;
 }
 
 
 /* --------------- */
 
-top-vision vision tools list .unavailable.page-list {
+top-vision v tools list .unavailable.page-list {
     background-position: 0px -60px;
 }
 
-top-vision vision tools list .unavailable.page-new {
+top-vision v tools list .unavailable.page-new {
     background-position: -40px -60px;
 }
 
-top-vision vision tools list .unavailable.page-save {
+top-vision v tools list .unavailable.page-save {
     background-position: -80px -60px;
 }
 
-top-vision vision tools list .unavailable.page-del {
+top-vision v tools list .unavailable.page-del {
     background-position: -120px -60px;
 }
 
-top-vision vision tools list .unavailable.page-fix {
+top-vision v tools list .unavailable.page-fix {
     background-position: -160px -60px;
 }
 
-top-vision vision tools list .unavailable.page-setting {
+top-vision v tools list .unavailable.page-setting {
     background-position: -200px -60px;
 }
 
 
 /* --------------- */
 
-top-vision vision tools list .unavailable.page-list:hover {
+top-vision v tools list .unavailable.page-list:hover {
     background-position: 0px -60px;
 }
 
-top-vision vision tools list .unavailable.page-new:hover {
+top-vision v tools list .unavailable.page-new:hover {
     background-position: -40px -60px;
 }
 
-top-vision vision tools list .unavailable.page-save:hover {
+top-vision v tools list .unavailable.page-save:hover {
     background-position: -80px -60px;
 }
 
-top-vision vision tools list .unavailable.page-del:hover {
+top-vision v tools list .unavailable.page-del:hover {
     background-position: -120px -60px;
 }
 
-top-vision vision tools list .unavailable.page-fix:hover {
+top-vision v tools list .unavailable.page-fix:hover {
     background-position: -160px -60px;
 }
 
-top-vision vision tools list .unavailable.page-setting:hover {
+top-vision v tools list .unavailable.page-setting:hover {
     background-position: -200px -60px;
 }
 

@@ -1,6 +1,6 @@
 <view title="{{$PAGETITLE}}" lang="{{$LANG}}">
     <top-vision bgcolor="datered">
-        <vision>
+        <v>
             <ico class="pub-icon"></ico>
             <tools class="pub-ctrl">
                 <list class="pub-ctrl-group odd">
@@ -25,7 +25,7 @@
                     <item x-usefor="preset-list" class="pub-ctrl-item content-tool preset-list unavailable" title="Return To Item List"></item>
                 </list>
             </tools>
-        </vision>
+        </v>
     </top-vision>
     <tab-vision bgcolor="silvery">
         <tab-options bgcolor="datered">

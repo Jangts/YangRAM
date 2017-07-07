@@ -60,10 +60,10 @@ iBlock((pandora, global, undefined) => {
                 var $curr, curr_elem;
 
                 /* 与当前运行应用相关的_.dom.Elements对象 */
-                $curr = YangRAM.$('application[running]');
+                $curr = YangRAM.$('application[running], bgpic');
 
                 /* 与当前运行应用主视图的HTML对象 */
-                curr_elem = $curr[0];
+                curr_elem = YangRAM.$('application[running]')[0];
 
                 /* 如果存在运行的应用 */
                 if (curr_elem) {

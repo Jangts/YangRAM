@@ -93,19 +93,21 @@ yangram widgets locker form {
     top: 50%;
     margin-left: -40px;
     margin-top: -40px;
+    opacity: 0;
     overflow: hidden;
+    transition: all ease .4s;
 }
 
-yangram widgets locker form vision {
-    position: absolute;
+yangram widgets locker form v {
     display: block;
+    position: static;
     width: 168px;
     height: 28px;
-    margin: 15px 5px;
+    margin: -30px -50px;
     padding: 5px;
 }
 
-yangram widgets locker form vision {
+yangram widgets locker form v {
     overflow: hidden;
     border: rgba(0, 204, 255, .1) solid 1px;
     border-radius: 5px;
@@ -113,19 +115,13 @@ yangram widgets locker form vision {
     text-align: center;
 }
 
-yangram widgets locker form vision[name=username] {
-    top: 0px;
-    left: 60px;
+yangram widgets locker form v[name=username] {
+    margin-top: 15px;
     color: #FFF;
     line-height: 28px;
 }
 
-yangram widgets locker form vision[name=pincode] {
-    top: 40px;
-    left: 60px;
-}
-
-yangram widgets locker form vision input {
+yangram widgets locker form v input {
     width: 168px;
     height: 28px;
     background: none;
@@ -133,18 +129,18 @@ yangram widgets locker form vision input {
     color: #0CF;
 }
 
-yangram widgets locker form vision input {
+yangram widgets locker form v input {
     transition: all ease .4s;
     text-align: center;
     outline: none;
     font: normal 13px "Microsoft YaHei", "Hiragino Sans";
 }
 
-yangram widgets locker form vision input::-webkit-input-placeholder {
+yangram widgets locker form v input::-webkit-input-placeholder {
     color: #FFF;
 }
 
-yangram widgets locker form vision input.connecting::-webkit-input-placeholder {
+yangram widgets locker form v input.connecting::-webkit-input-placeholder {
     color: #0CF;
 }
 
@@ -183,24 +179,24 @@ yangram widgets locker form[status=actived] {
     height: 210px;
     margin-left: -150px;
     margin-top: -30px;
-    transition: all ease .4s;
+    opacity: 1;
 }
 
-yangram widgets locker form[status=actived] vision[name=username] {
-    top: 0px;
+yangram widgets locker form[status=actived] v {
+    margin: 15px 60px;
 }
 
-yangram widgets locker form[status=actived] vision[name=pincode] {
-    top: 70px;
+yangram widgets locker form v input:focus {
+    background-color: #012;
 }
 
-yangram widgets locker form[status=actived] vision[name=pincode] pinshow {
+yangram widgets locker form[status=actived] v[name=pincode] pinshow {
     display: none;
     position: absolute;
     width: 30px;
     height: 30px;
-    top: 5px;
-    left: 5px;
+    top: 75px;
+    left: 205px;
     background-color: rgba(0, 0, 0, .3);
     line-height: 30px;
     color: #FFC;
@@ -211,11 +207,11 @@ yangram widgets locker form[status=actived] vision[name=pincode] pinshow {
 /*********************************************************************************
 /*** Actived:Hover ***/
 
-yangram widgets locker form vision[name=pincode]:hover {
+yangram widgets locker form v[name=pincode]:hover {
     background: rgba(255, 255, 255, .8);
 }
 
-yangram widgets locker form vision[name=pincode]:hover input {
+yangram widgets locker form v[name=pincode]:hover input {
     color: #333;
 }
 
@@ -229,19 +225,14 @@ yangram widgets locker avatar[status=checked] {
 
 yangram widgets locker form[status=checked] {
     width: 300px;
-    height: 210px;
     margin-left: -150px;
-    margin-top: -60px;
     opacity: 0;
     transition: all ease .6s;
 }
 
-yangram widgets locker form[status=checked] vision[name=username] {
+yangram widgets locker form[status=checked] v {
     top: 0px;
-}
-
-yangram widgets locker form[status=checked] vision[name=pincode] {
-    top: 40px;
+    margin: -30px 60px;
 }
 
 

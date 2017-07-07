@@ -104,7 +104,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
 
     var Kalendars = ['private', 'public', 'captain', 'festival'];
 
-    var eSwitchvision = (i, sections) => YangRAM.create('vision', sections, {
+    var eSwitchvision = (i, sections) => YangRAM.create('v', sections, {
         owner: i,
         state: eSwitchItems[i][1]
     });
@@ -190,7 +190,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         },
         LoadEvents(events) {
             var that = this;
-            YangRAM.$('kalendar content vision').each(function(i, e) {
+            YangRAM.$('kalendar content v').each(function(i, e) {
                 var owner = YangRAM.$(this).attr('owner');
                 if (events[owner]) {
                     YangRAM.$(this).html(events[owner]);

@@ -16,9 +16,9 @@ class Folders extends Controller {
 				$hasChildren = '';
 			}
 			$list .= '<item level="'.$level.'" fldid="'.$row["id"].'" class="'.$hasChildren.'">';
-			$list .= '<vision class="folder-item" style="padding-left:'.$left.'px"><em class="folder-operate-icon"></em>';
+			$list .= '<v class="folder-item" style="padding-left:'.$left.'px"><em class="folder-operate-icon"></em>';
 			$list .= '<el class="folder-item-icon"></el>';
-			$list .= '<el class="folder-item-name">'.$row["name"].'</el></vision>';
+			$list .= '<el class="folder-item-name">'.$row["name"].'</el></v>';
 			$list .= '<list class="folder-tree hidden"></list></item>';
 		}
 		return $list;
@@ -40,9 +40,9 @@ class Folders extends Controller {
 		}
 		echo '<list class="folder-tree">';
 		echo '<item level="0" fldid="5" class="'.$hasChildren.' expand" selected>';
-		echo '<vision class="folder-item" style="padding-left:0px"><em class="folder-operate-icon"></em>';
+		echo '<v class="folder-item" style="padding-left:0px"><em class="folder-operate-icon"></em>';
 		echo '<el class="folder-item-icon"></el>';
-		echo '<el class="folder-item-name">Operators</el></vision>';
+		echo '<el class="folder-item-name">Operators</el></v>';
 		echo '<list class="folder-tree">';
 		echo self::render($array, 1);
 		echo '</list></item></list>';

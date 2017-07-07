@@ -1,6 +1,6 @@
 <view title="{{$PAGETITLE}}" lang="{{$LANG}}">
     <top-vision bgcolor="dark">
-        <vision>
+        <v>
             <ico class="page-icon"></ico>
             <tools class="page-ctrl">
                 <list class="page-ctrl-group odd">
@@ -16,7 +16,7 @@
                     <item x-usefor="page-list" class="page-ctrl-item page-list unavailable" title="{{$LOCAL.titles[`rl`]}}"></item>
                 </list>
             </tools>
-        </vision>
+        </v>
     </top-vision>
     <tab-vision bgcolor="silvery">
         <tab-options bgcolor="dark">

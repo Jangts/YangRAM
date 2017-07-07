@@ -147,7 +147,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                         }
                         this.launcherState = null;
                     }, 700);
-                    Workspace.attr('viewstatus', 'beforework').$('wallpaper').css({
+                    Workspace.attr('viewstatus', 'beforework').$('wallpapers').css({
                         'max-height': '100%',
                     });
                     recoverAppStyle(query);
@@ -173,7 +173,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     Workspace.timer = setTimeout(() => {
                         Workspace.attr('viewstatus', 'listmode').resortApplications(false).resize();
                     }, 400);
-                    Workspace.attr('viewstatus', 'beforelist').$('wallpaper').css({
+                    Workspace.attr('viewstatus', 'beforelist').$('wallpapers').css({
                         'max-height': System.Height - 40,
                     });
                 }, 0);

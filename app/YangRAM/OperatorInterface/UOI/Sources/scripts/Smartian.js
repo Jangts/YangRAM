@@ -68,7 +68,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 type: 'button',
                 name: 'call-me',
             });
-            var ani = YangRAM.create('vision', form, {
+            var ani = YangRAM.create('v', form, {
                 type: 'connecting-animation',
                 innerHTML: '<el class="data-connecting-spinner"><el class="dcs-rect1"></el><el class="dcs-rect2"></el><el class="dcs-rect3"></el><el class="dcs-rect4"></el><el class="dcs-rect5"></el></el>',
             });

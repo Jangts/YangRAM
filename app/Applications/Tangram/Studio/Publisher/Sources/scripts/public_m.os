@@ -32,6 +32,7 @@ public {
 		return this.open(href);
 	},
 	main (){
+        YangRAM.API.BGP(__thisapp__.appid, '/YangRAM/OperatorInterface/UOI/Sources/themes/default/I4s.jpg')
 		__thisapp__.listenEvents(self.events).regHeadBar(self.menuOnHigabar).loadStyle(function() {
             __thisapp__.loadURI('default/startpage/');
         });

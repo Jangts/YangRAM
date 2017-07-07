@@ -19,16 +19,16 @@
         <status-vision></status-vision>
       </avatar>
       <form name="oui-login-form" autocomplete="off">
-        <vision name="username">
+        <v name="username">
           <input name="opn" type="text" value="<?php echo $username ?>" placeholder="" />
-        </vision>
-        <vision name="password">
+        </v>
+        <v name="password">
           <input name="opp" type="password" placeholder="" value="" />
-        </vision>
-        <vision name="pincode">
+        </v>
+        <v name="pincode">
           <input name="pin" type="text" autocomplete="off" placeholder="" max-length="7" value="" />
           <pinshow></pinshow>
-        </vision>
+        </v>
       </form>
     </logger>
   </widgets>

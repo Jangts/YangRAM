@@ -7,16 +7,16 @@ use Library\formattings\ScalarFormat;
 trait src_writer {
     private function writeFolders($localdict, $row, $href, $readonly = ''){
 		$block = '<block name="'.$row["name"].'" title="'.$row["name"].'" x-type="folder" menu="ctx-fld" class="item folder" x-href="'.$href.'" x-id="'.$row["id"].'" '.$readonly.'>';
-	    $block .= '<vision class="sele"></vision>';
-		$block .= '<vision class="rplc"></vision>';
+	    $block .= '<v class="sele"></v>';
+		$block .= '<v class="rplc"></v>';
 		if($row["id"]<=6){
-			$block .= '<vision class="icon"></vision><vision class="name"  x-column="'.$localdict["attrs"]["name"].'">'.$localdict["folders"][$row["id"]].'</vision>';
+			$block .= '<v class="icon"></v><v class="name"  x-column="'.$localdict["attrs"]["name"].'">'.$localdict["folders"][$row["id"]].'</v>';
 		}else{
-			$block .= '<vision class="icon"></vision><vision class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["name"].'</vision>';
+			$block .= '<v class="icon"></v><v class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["name"].'</v>';
 		}
-		$block .= '<vision class="none" x-column="-">-</vision>';
-	    $block .= '<vision class="size" x-column="'.$localdict["attrs"]["size"].'">-</vision>';
-	    $block .= '<vision class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</vision></block>';
+		$block .= '<v class="none" x-column="-">-</v>';
+	    $block .= '<v class="size" x-column="'.$localdict["attrs"]["size"].'">-</v>';
+	    $block .= '<v class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</v></block>';
 		$this->data[] = $block;
 	}
 
@@ -33,13 +33,13 @@ trait src_writer {
 				$src = __GET_DIR.'files/img/'.$row["ID"].'.'.$row["SUFFIX"].'_'.$width.'x90.'.$row["SUFFIX"].'?mt='.$mt;
 			}
 			$block = '<block name="'.$row["FILE_NAME"].'" title="'.$row["FILE_NAME"].'" x-type="img" menu="ctx-img" class="item img" x-id="'.$row["ID"].'" x-suffix="'.$row["SUFFIX"].'" '.$readonly.'>';
-			$block .= '<vision class="sele"></vision>';
-			$block .= '<vision class="rplc"></vision>';
-			$block .= '<vision class="icon" style="background-image: url('.$src.');"></vision>';
-			$block .= '<vision class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["FILE_NAME"].'</vision>';
-			$block .= '<vision class="dime" x-column="'.$localdict["attrs"]["dime"].'">'.$row["WIDTH"].'x'.$row["HEIGHT"].'</vision>';
-			$block .= '<vision class="size" x-column="'.$localdict["attrs"]["size"].'">'.ScalarFormat::fmtSizeUnit($row["FILE_SIZE"]).'</vision>';
-			$block .= '<vision class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</vision></block>';
+			$block .= '<v class="sele"></v>';
+			$block .= '<v class="rplc"></v>';
+			$block .= '<v class="icon" style="background-image: url('.$src.');"></v>';
+			$block .= '<v class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["FILE_NAME"].'</v>';
+			$block .= '<v class="dime" x-column="'.$localdict["attrs"]["dime"].'">'.$row["WIDTH"].'x'.$row["HEIGHT"].'</v>';
+			$block .= '<v class="size" x-column="'.$localdict["attrs"]["size"].'">'.ScalarFormat::fmtSizeUnit($row["FILE_SIZE"]).'</v>';
+			$block .= '<v class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</v></block>';
 			$this->data[] = $block;
 		}
 	}
@@ -50,30 +50,30 @@ trait src_writer {
 		if($extend){
 			$row = array_merge($row, $extend->toArray());
 			$block = '<block name="'.$row["FILE_NAME"].'" title="'.$row["FILE_NAME"].'" x-type="'.$type.'" menu="ctx-'.$type.'" class="item '.$type.'" x-id="'.$row["ID"].'" x-suffix="'.$row["SUFFIX"].'" '.$readonly.'>';
-			$block .= '<vision class="sele"></vision>';
-			$block .= '<vision class="rplc"></vision>';
-			$block .= '<vision class="icon"></vision>';
-			$block .= '<vision class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["FILE_NAME"].'</vision>';
+			$block .= '<v class="sele"></v>';
+			$block .= '<v class="rplc"></v>';
+			$block .= '<v class="icon"></v>';
+			$block .= '<v class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["FILE_NAME"].'</v>';
 			if(isset($row["DURATION"])){
-				$block .= '<vision class="dura" x-column="'.$localdict["attrs"]["dura"].'">'.ScalarFormat::fmtTimeDuration($row["DURATION"]).'</vision>';
+				$block .= '<v class="dura" x-column="'.$localdict["attrs"]["dura"].'">'.ScalarFormat::fmtTimeDuration($row["DURATION"]).'</v>';
 			}else{
-				$block .= '<vision class="none" x-column="-">-</vision>';
+				$block .= '<v class="none" x-column="-">-</v>';
 			}
-			$block .= '<vision class="size" x-column="'.$localdict["attrs"]["size"].'">'.ScalarFormat::fmtSizeUnit($row["FILE_SIZE"]).'</vision>';
-			$block .= '<vision class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</vision></block>';
+			$block .= '<v class="size" x-column="'.$localdict["attrs"]["size"].'">'.ScalarFormat::fmtSizeUnit($row["FILE_SIZE"]).'</v>';
+			$block .= '<v class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</v></block>';
 			$this->data[] = $block;
 		}
 	}
 
 	private function writeDocuments($localdict, $row, $readonly = ''){
 		$block = '<block name="'.$row["FILE_NAME"].'" x-type="doc" menu="ctx-doc" class="item '.$row["SUFFIX"].'" x-id="'.$row["ID"].'" x-suffix="'.$row["SUFFIX"].'" '.$readonly.'>';
-		$block .= '<vision class="sele"></vision>';
-		$block .= '<vision class="rplc"></vision>';
-		$block .= '<vision class="icon"></vision>';
-		$block .= '<vision class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["FILE_NAME"].'</vision>';
-		$block .= '<vision class="none" x-column="-">-</vision>';
-		$block .= '<vision class="size" x-column="'.$localdict["attrs"]["size"].'">'.ScalarFormat::fmtSizeUnit($row["FILE_SIZE"]).'</vision>';
-		$block .= '<vision class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</vision></block>';
+		$block .= '<v class="sele"></v>';
+		$block .= '<v class="rplc"></v>';
+		$block .= '<v class="icon"></v>';
+		$block .= '<v class="name" x-column="'.$localdict["attrs"]["name"].'">'.$row["FILE_NAME"].'</v>';
+		$block .= '<v class="none" x-column="-">-</v>';
+		$block .= '<v class="size" x-column="'.$localdict["attrs"]["size"].'">'.ScalarFormat::fmtSizeUnit($row["FILE_SIZE"]).'</v>';
+		$block .= '<v class="time" x-column="'.$localdict["attrs"]["time"].'">'.$row["KEY_MTIME"].'</v></block>';
 		$this->data[] = $block;
 	}
 }

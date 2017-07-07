@@ -73,7 +73,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 url: this.__dirs.main + 'oimessages/notice/',
                 done: (txt) => {
                     //console.log(txt);
-                    YangRAM.$('myangram vision list[name=msg-trn]', YangRAM.Account).css('top', '-70px');
+                    YangRAM.$('myangram v list[name=msg-trn]', YangRAM.Account).css('top', '-70px');
                     Notifier.scanEvents();
                     _.util.bool.isFn(callback) && callback();
                 },

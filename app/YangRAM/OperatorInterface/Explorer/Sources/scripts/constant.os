@@ -93,24 +93,24 @@ UPLOADER(files) {
 
 UPLOADS_LISTER(files) {
         var lister = __thisapp__.$('.uploader-lister')[0] || YangRAM.create('panel', __thisapp__.view, { className: 'uploader-lister' });
-        var html = '<vision class="uploader-header">' + __('WORDS')('File_Count')(files.length) + '</vision>';
+        var html = '<v class="uploader-header">' + __('WORDS')('File_Count')(files.length) + '</v>';
         html += '<list class="uploader-titles"><item>';
-        html += '<vision class="data-info">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("Name") + '</vision>';
-        html += '<vision class="data-status" style="">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("Status") + '</vision>';
-        html += '<vision class="data-size">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("FileSize") + '</vision>';
-        html += '<vision class="x-action">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("Operate") + '</vision></item></list>';
-        html += '<vision class="uploader-content">';
+        html += '<v class="data-info">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("Name") + '</v>';
+        html += '<v class="data-status" style="">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("Status") + '</v>';
+        html += '<v class="data-size">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("FileSize") + '</v>';
+        html += '<v class="x-action">' + YangRAM.API.TXT.local('COMMON')('ATTRS')("Operate") + '</v></item></list>';
+        html += '<v class="uploader-content">';
         html += '<scrollbar type="vert"><rail></rail><scrolldragger></scrolldragger></scrollbar>';
         html += '<content><list>';
         for (var i = 0; i < files.length; i++) {
-            html += '<item><vision class="data-info">' + files[i].name + '</vision>';
-            html += '<vision class="data-status" style="">' + __('WORDS')("Waiting") + '</vision>';
-            html += '<vision class="data-size">' + GET_FILE_SIZE(files[i].size) + '</vision>';
-            html += '<vision x-index="' + i + '" class="x-action">Remove</vision>';
+            html += '<item><v class="data-info">' + files[i].name + '</v>';
+            html += '<v class="data-status" style="">' + __('WORDS')("Waiting") + '</v>';
+            html += '<v class="data-size">' + GET_FILE_SIZE(files[i].size) + '</v>';
+            html += '<v x-index="' + i + '" class="x-action">Remove</v>';
             html += '</item>';
         }
-        html += '</list></content></vision>';
-        html += '<vision class="uploader-control"><click class="uploader-startbtn">' + __('WORDS')("Upload") + '</click><click class="uploader-cancelbtn">' + YangRAM.API.TXT.local('COMMON')('WORDS')("Cancel") + '</click></vision>';
+        html += '</list></content></v>';
+        html += '<v class="uploader-control"><click class="uploader-startbtn">' + __('WORDS')("Upload") + '</click><click class="uploader-cancelbtn">' + YangRAM.API.TXT.local('COMMON')('WORDS')("Cancel") + '</click></v>';
         lister.innerHTML = html;
         privates.uploaderScrollBAR = __thisapp__.OIMLElement.bind('scrollbar', __thisapp__.$('.uploader-content')[0]).resize();
 },

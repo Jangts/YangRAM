@@ -46,12 +46,12 @@ static {
         alias: 'post',
         api: ''
     }, ],
-    loading: '<vision class="data-loading-spinner"><vision class="dls-container1"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></vision><vision class="dls-container2"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></vision><vision class="dls-container3"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></vision></vision>',
+    loading: '<v class="data-loading-spinner"><v class="dls-container1"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></v><v class="dls-container2"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></v><v class="dls-container3"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></v></v>',
 
     events: {
-        'wsbtns > vision.widget-switch-button': {
+        'wsbtns > v.widget-switch-button': {
             'click' () {
-                __thisapp__.$('wsbtns > vision.widget-switch-button').removeAttr('current');;
+                __thisapp__.$('wsbtns > v.widget-switch-button').removeAttr('current');;
                 var index = YangRAM.attr(this, 'current', 'current').attr(this, 'data-switch-to');
                 YangRAM.attr(__thisapp__.widgets, 'data-posi', index);
                 YangRAM.attr(__thisapp__.NonWork, 'data-posi', ++index);

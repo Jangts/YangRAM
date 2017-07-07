@@ -7,17 +7,17 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         _ = System.Pandora;
 
     var bindListeners = {
-        'vision.explorer-header .explorer-swch': {
+        'v.explorer-header .explorer-swch': {
             'click' () {
                 Explorer.hide();
             }
         },
-        'vision.explorer-content content .item.folder': {
+        'v.explorer-content content .item.folder': {
             'click' (event) {
                 Explorer.open(YangRAM.attr(this, 'href'), true);
             }
         },
-        'vision.explorer-content content list item': {
+        'v.explorer-content content list item': {
             'click' (event) {
                 Explorer.open(YangRAM.attr(this, 'href'), true);
             }
@@ -138,7 +138,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             left = left <= System.Width - 30 ? left : System.Width - 30;
             top = top >= 0 ? top : 0;
             top = top <= System.Height - 30 ? top : System.Height - 30;
-            this.document.innerHTML = '<vision class="explorer-header"><el class="explorer-name">' + this.name + '</el><el class="explorer-swch">×</el></vision>'
+            this.document.innerHTML = '<v class="explorer-header"><el class="explorer-name">' + this.name + '</el><el class="explorer-swch">×</el></v>'
             _.dom.setStyle(this.document, {
                 width: width,
                 height: height,
@@ -150,11 +150,11 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 className: 'explorer-nav',
                 html: '<el class="explorer-prev">←</el><click class="turn-to-set">' + Runtime.locales.EXPLORER.MINI.CLASSES["Preset Content"] + '</click><click class="turn-to-lib selected">' + Runtime.locales.EXPLORER.MINI.CLASSES["Resources Library"] + '</click><click class="turn-to-cst">' + Runtime.locales.EXPLORER.MINI.CLASSES["Custom Content"] + '</click>'
             });
-            this.controlarea = YangRAM.create('vision', this.document, {
+            this.controlarea = YangRAM.create('v', this.document, {
                 className: 'explorer-control',
                 html: '<click class="sele-all">' + Runtime.locales.EXPLORER.MINI.OPERATIONS["Select All"] + '</click><click class="sele-none">' + Runtime.locales.EXPLORER.MINI.OPERATIONS["Unselect"] + '</click><click class="ins-files">' + Runtime.locales.EXPLORER.MINI.OPERATIONS["Insert Files"] + '</click><click class="ins-contents">' + Runtime.locales.EXPLORER.MINI.OPERATIONS["Insert Contents"] + '</click>'
             });
-            var main = YangRAM.create('vision', this.document, {
+            var main = YangRAM.create('v', this.document, {
                 className: 'explorer-content',
                 style: {
                     width: width - 20,
@@ -220,14 +220,14 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     }
                 });
             return this
-                .bindListener('vision.explorer-header', 'mousedown', (event) => {
+                .bindListener('v.explorer-header', 'mousedown', (event) => {
                     dragstatus = true;
                     dragstartX = event.x;
                     dragstartY = event.y;
                 })
-                .bindListener('vision.explorer-header .explorer-swch', 'click', bindListeners['vision.explorer-header .explorer-swch']['click'])
-                .bindListener('vision.explorer-content content .item.folder', 'click', bindListeners['vision.explorer-content content .item.folder']['click'])
-                .bindListener('vision.explorer-content content list item', 'click', bindListeners['vision.explorer-content content list item']['click'])
+                .bindListener('v.explorer-header .explorer-swch', 'click', bindListeners['v.explorer-header .explorer-swch']['click'])
+                .bindListener('v.explorer-content content .item.folder', 'click', bindListeners['v.explorer-content content .item.folder']['click'])
+                .bindListener('v.explorer-content content list item', 'click', bindListeners['v.explorer-content content list item']['click'])
                 .bindListener('nav.explorer-nav .explorer-prev', 'click', bindListeners['nav.explorer-nav .explorer-prev']['click'])
                 .bindListener('nav.explorer-nav .turn-to-set', 'click', bindListeners['nav.explorer-nav .turn-to-set']['click'])
                 .bindListener('nav.explorer-nav .turn-to-lib', 'click', bindListeners['nav.explorer-nav .turn-to-lib']['click'])

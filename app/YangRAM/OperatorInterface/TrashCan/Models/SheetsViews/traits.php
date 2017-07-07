@@ -7,11 +7,11 @@ use Library\ect\Pager;
 trait traits {
 	private function getHead($names){
 		$head = '<item class="head">';
-		$head .= '<vision class="sele"><el></el></vision>';
-		$head .= '<vision class="name">'.$names["name"].'</vision>';
-		$head .= '<vision class="time">'.$names["time"].'</vision>';
-		$head .= '<vision class="back">'.$names["back"].'</vision>';
-		$head .= '<vision class="dele">'.$names["dele"].'</vision></item>';
+		$head .= '<v class="sele"><el></el></v>';
+		$head .= '<v class="name">'.$names["name"].'</v>';
+		$head .= '<v class="time">'.$names["time"].'</v>';
+		$head .= '<v class="back">'.$names["back"].'</v>';
+		$head .= '<v class="dele">'.$names["dele"].'</v></item>';
 		return $head;
 	}
 

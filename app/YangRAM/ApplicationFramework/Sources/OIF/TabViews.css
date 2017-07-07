@@ -84,14 +84,14 @@ tab-vision tab-options list item.curr {
     margin-top: 1px;
 }
 
-tab-vision tab-options list item vision {
+tab-vision tab-options list item v {
     padding: 0px 32px 0px 8px;
     text-align: center;
     font-size: 12px;
     line-height: 22px;
 }
 
-tab-vision tab-options list item[starttab] vision {
+tab-vision tab-options list item[starttab] v {
     padding: 0px 8px;
 }
 

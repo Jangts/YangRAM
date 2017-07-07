@@ -88,12 +88,12 @@ yangram widgets logger form {
     overflow: hidden;
 }
 
-yangram widgets logger form vision {
-    position: absolute;
+yangram widgets logger form v {
+    position: static;
     display: block;
     width: 168px;
     height: 28px;
-    margin: 15px 5px;
+    margin: -30px -50px;
     padding: 5px;
     overflow: hidden;
     border: rgba(0, 204, 255, .1) solid 1px;
@@ -101,22 +101,22 @@ yangram widgets logger form vision {
     transition: all ease .4s;
 }
 
-yangram widgets logger form vision[name=username] {
+yangram widgets logger form v[name=username] {
     top: 0px;
     left: 60px;
 }
 
-yangram widgets logger form vision[name=password] {
+yangram widgets logger form v[name=password] {
     top: 40px;
     left: 60px;
 }
 
-yangram widgets logger form vision[name=pincode] {
+yangram widgets logger form v[name=pincode] {
     top: 80px;
     left: 60px;
 }
 
-yangram widgets logger form vision input {
+yangram widgets logger form v input {
     width: 168px;
     height: 28px;
     background: #181818;
@@ -124,24 +124,28 @@ yangram widgets logger form vision input {
     color: #FFF;
 }
 
-yangram widgets logger form vision input {
+yangram widgets logger form v input {
     transition: all ease .4s;
     text-align: center;
     outline: none;
     font: normal 13px "Microsoft YaHei", "Hiragino Sans";
 }
 
-yangram widgets logger form vision input:-webkit-autofill {
+yangram widgets logger form v input:focus {
+    background-color: #012;
+}
+
+yangram widgets logger form v input:-webkit-autofill {
     box-shadow: 0 0 0 1000px #181818 inset !important;
     -webkit-box-shadow: 0 0 0 1000px #181818 inset !important;
     -webkit-text-fill-color: #FFF !important;
 }
 
-yangram widgets logger form vision input::-webkit-input-placeholder {
+yangram widgets logger form v input::-webkit-input-placeholder {
     color: #CCC;
 }
 
-yangram widgets logger form vision input.connecting::-webkit-input-placeholder {
+yangram widgets logger form v input.connecting::-webkit-input-placeholder {
     color: #0CF;
 }
 
@@ -175,7 +179,7 @@ yangram widgets logger form[status=loaded] {
 /*** Actived ***/
 
 yangram widgets logger avatar[status=actived] {
-    margin-top: -240px;
+    margin-top: -180px;
     transition: margin-top ease .4s;
 }
 
@@ -183,31 +187,21 @@ yangram widgets logger form[status=actived] {
     width: 300px;
     height: 210px;
     margin-left: -150px;
-    margin-top: -60px;
+    margin-top: 0;
     transition: all ease .4s;
 }
 
-yangram widgets logger form[status=actived] vision[name=username] {
-    top: 0px;
-    left: 0px;
+yangram widgets logger form[status=actived] v {
+    margin: 10px 60px;
 }
 
-yangram widgets logger form[status=actived] vision[name=password] {
-    top: 70px;
-    left: 110px;
-}
-
-yangram widgets logger form[status=actived] vision[name=pincode] {
-    top: 140px;
-}
-
-yangram widgets logger form[status=actived] vision[name=pincode] pinshow {
+yangram widgets logger form[status=actived] v[name=pincode] pinshow {
     display: none;
     position: absolute;
     width: 30px;
     height: 30px;
-    top: 5px;
-    left: 5px;
+    top: 115px;
+    left: 205px;
     background-color: rgba(255, 255, 255, .3);
     line-height: 30px;
     color: #0CF;
@@ -218,15 +212,15 @@ yangram widgets logger form[status=actived] vision[name=pincode] pinshow {
 /*********************************************************************************
 /*** Actived:Hover ***/
 
-yangram widgets logger form[status=actived] vision:hover {
+yangram widgets logger form[status=actived] v:hover {
     background: rgba(255, 255, 255, .8);
 }
 
-yangram widgets logger form[status=actived] vision:hover input {
+yangram widgets logger form[status=actived] v:hover input {
     color: #0CF;
 }
 
-yangram widgets logger form[status=actived] vision input:focus {
+yangram widgets logger form[status=actived] v input:focus {
     color: #0CF;
 }
 
@@ -240,21 +234,14 @@ yangram widgets logger avatar[status=checked] {
 
 yangram widgets logger form[status=checked] {
     width: 300px;
-    height: 210px;
+    height: 80px;
     margin-left: -150px;
-    margin-top: -60px;
     opacity: 0;
     transition: all ease .6s;
 }
 
-yangram widgets logger form[status=checked] vision[name=username] {
-    top: 0px;
-    left: 60px;
-}
-
-yangram widgets logger form[status=checked] vision[name=password] {
-    top: 40px;
-    left: 60px;
+yangram widgets logger form[status=checked] v {
+    margin: -30px 60px;
 }
 
 

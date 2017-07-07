@@ -21,14 +21,14 @@ class Memowall extends \OIC\OICtrller_BC {
 	private function buildJson($data){
 		$groups = [];
 		$group = new LinkGroup(['name' => 'Default']);
-		self::createItem($group, '1', 'DE', 'Launch YangRAM Explorer');
-		self::createItem($group, '2', 'Trash Can', 'Launch Trash Can');
-		self::createItem($group, '3', 'Setting', 'Launch Settings');
+		$this->createItem($group, '1', 'DE', 'Launch YangRAM Explorer');
+		$this->createItem($group, '2', 'Trash Can', 'Launch Trash Can');
+		$this->createItem($group, '3', 'Setting', 'Launch Settings');
 		$groups[] = $group->toJson();
 		return '[' . join(',', $groups) . ']';
 	}	
 
-	private static function createItem($group, $appid, $name, $desc){
+	private function createItem($group, $appid, $name, $desc){
 		$group->addLink([
 			'appid' 		=>	$appid,
 			'icon' 			=>	__GET_DIR.'uoi/apps/icons/'.$appid.'/80/',

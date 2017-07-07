@@ -1,6 +1,5 @@
 [{
     "name": "Default",
-    "menu": "bookmark-group",
     "links": [{
         "appid": "EXPLORER",
         "type": "shortcut",
@@ -52,7 +51,6 @@
     }]
 }, {
     "name": "Non Functional Apps",
-    "menu": "bookmark-group",
     "links": [{
         "appid": "1022",
         "type": "shortcut",
@@ -112,7 +110,6 @@
     }]
 }, {
     "name": "Dataroom",
-    "menu": "bookmark-group",
     "links": [{
         "appid": "1001",
         "type": "shortcut",

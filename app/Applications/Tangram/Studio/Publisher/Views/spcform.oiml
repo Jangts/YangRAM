@@ -7,8 +7,8 @@
 <edit-panel bgcolor="datered">
     <click href="trigger://{{AI_CURR}}::ToList" args="{{$ARGS}}" class="left-panel-button">{{$LOCAL.panel[`return`]}}</click>
     <click href="trigger://{{AI_CURR}}::ToTop" class="right-totop-button">
-        <vision class="arrow"></vision>
-        <vision class="stick"></vision>
+        <v class="arrow"></v>
+        <v class="stick"></v>
     </click>
     <click href="trigger://{{AI_CURR}}::PubItem" args="{{$ARGS}}" class="right-panel-button even">{{$LOCAL.panel[`pub`]}}</click>
     <click href="trigger://{{AI_CURR}}::SaveItem" args="{{$ARGS}}" class="right-panel-button">{{$LOCAL.panel[`save`]}}</click>

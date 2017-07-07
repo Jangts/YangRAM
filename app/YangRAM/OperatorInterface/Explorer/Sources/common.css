@@ -135,58 +135,58 @@ left list item.category {
 
 /*** APPS MAIN TOP ***/
 
-vision.main-topbar {
+v.main-topbar {
     width: 100%;
     height: 90px;
     font-size: 13px;
 }
 
-vision.main-topbar .tools {
+v.main-topbar .tools {
     width: 100%;
     height: 60px;
     background-color: #E8E8E8;
 }
 
-vision.main-topbar .tools div {
+v.main-topbar .tools div {
     width: auto;
     height: 60px;
 }
 
-vision.main-topbar .tools .tools-left {
+v.main-topbar .tools .tools-left {
     float: left;
     border-right: #F3F3F3 1px solid;
 }
 
-vision.main-topbar .tools .tools-right {
+v.main-topbar .tools .tools-right {
     float: right;
     border-left: #F3F3F3 1px solid;
 }
 
-vision.main-topbar .tools click {
+v.main-topbar .tools click {
     float: left;
     cursor: pointer;
 }
 
-vision.main-topbar .tools click {
+v.main-topbar .tools click {
     overflow: hidden;
     border-radius: 1px;
 }
 
-vision.main-topbar .tools click:hover {
+v.main-topbar .tools click:hover {
     background-color: #E3E3E3;
     box-shadow: 0px 0px 2px #b9b9b9;
 }
 
-vision.main-topbar .tools click[readonly] {
+v.main-topbar .tools click[readonly] {
     cursor: default;
 }
 
-vision.main-topbar .tools click[readonly]:hover {
+v.main-topbar .tools click[readonly]:hover {
     background-color: transparent;
     box-shadow: none;
 }
 
-vision.main-topbar .tools click ico {
+v.main-topbar .tools click ico {
     display: block;
     width: 30px;
     height: 30px;
@@ -197,24 +197,24 @@ vision.main-topbar .tools click ico {
 
 /* ------------------------- */
 
-vision.main-topbar .tools .new-folder {
+v.main-topbar .tools .new-folder {
     width: 110px;
     height: 50px;
     overflow: hidden;
     padding: 5px;
 }
 
-vision.main-topbar .tools .new-folder click {
+v.main-topbar .tools .new-folder click {
     width: 110px;
     height: 50px;
 }
 
-vision.main-topbar .tools .new-folder click ico.new-folder-icon {
+v.main-topbar .tools .new-folder click ico.new-folder-icon {
     margin: 0px 40px;
     background-position: 0px 0px;
 }
 
-vision.main-topbar .tools .new-folder click el.new-folder-title {
+v.main-topbar .tools .new-folder click el.new-folder-title {
     display: block;
     width: 110px;
     height: 20px;
@@ -227,58 +227,58 @@ vision.main-topbar .tools .new-folder click el.new-folder-title {
 
 /* --------------- */
 
-vision.main-topbar .tools .selects {
+v.main-topbar .tools .selects {
     width: 238px;
     height: 50px;
     overflow: hidden;
     padding: 5px;
 }
 
-vision.main-topbar .tools .selects click {
+v.main-topbar .tools .selects click {
     width: 30px;
     height: 30px;
     margin: 10px 2px;
 }
 
-vision.main-topbar .tools .selects click ico.move-selects {
+v.main-topbar .tools .selects click ico.move-selects {
     background-position: -120px 0px;
 }
 
-vision.main-topbar .tools .selects click ico.dele-selects {
+v.main-topbar .tools .selects click ico.dele-selects {
     background-position: -150px 0px;
 }
 
-vision.main-topbar .tools .selects click ico.html-codes {
+v.main-topbar .tools .selects click ico.html-codes {
     background-position: -180px 0px;
 }
 
-vision.main-topbar .tools .selects click ico.json-codes {
+v.main-topbar .tools .selects click ico.json-codes {
     background-position: -180px -60px;
 }
 
-vision.main-topbar .tools .selects click ico.select-all {
+v.main-topbar .tools .selects click ico.select-all {
     background-position: -30px 0px;
 }
 
-vision.main-topbar .tools .selects click ico.un-select-all {
+v.main-topbar .tools .selects click ico.un-select-all {
     background-position: -60px 0px;
 }
 
-vision.main-topbar .tools .selects click ico.in-selects {
+v.main-topbar .tools .selects click ico.in-selects {
     background-position: -90px 0px;
 }
 
 
 /* --------------- */
 
-vision.main-topbar .tools .upload-btn {
+v.main-topbar .tools .upload-btn {
     width: 170px;
     height: 50px;
     overflow: hidden;
     padding: 5px;
 }
 
-vision.main-topbar .tools .upload-btn click {
+v.main-topbar .tools .upload-btn click {
     width: 150px;
     height: 40px;
     margin: 5px 10px;
@@ -286,17 +286,17 @@ vision.main-topbar .tools .upload-btn click {
     border-radius: 3px;
 }
 
-vision.main-topbar .tools .upload-btn click:hover {
+v.main-topbar .tools .upload-btn click:hover {
     background-color: #09C;
 }
 
-vision.main-topbar .tools .upload-btn click ico.upload-btn-icon {
+v.main-topbar .tools .upload-btn click ico.upload-btn-icon {
     float: left;
     margin: 5px 5px;
     background-position: -240px 0px;
 }
 
-vision.main-topbar .tools .upload-btn click el.upload-btn-title {
+v.main-topbar .tools .upload-btn click el.upload-btn-title {
     float: left;
     width: 99px;
     height: 40px;
@@ -310,24 +310,24 @@ vision.main-topbar .tools .upload-btn click el.upload-btn-title {
 
 /* --------------- */
 
-vision.main-topbar .tools .view-mode {
+v.main-topbar .tools .view-mode {
     width: 90px;
     height: 50px;
     overflow: hidden;
     padding: 5px;
 }
 
-vision.main-topbar .tools .view-mode click {
+v.main-topbar .tools .view-mode click {
     width: 90px;
     height: 50px;
 }
 
-vision.main-topbar .tools .view-mode click ico.view-mode-icon {
+v.main-topbar .tools .view-mode click ico.view-mode-icon {
     margin: 0px 30px;
     background-position: -210px 0px;
 }
 
-vision.main-topbar .tools .view-mode click el.view-mode-title {
+v.main-topbar .tools .view-mode click el.view-mode-title {
     display: block;
     width: 90px;
     height: 20px;
@@ -340,162 +340,162 @@ vision.main-topbar .tools .view-mode click el.view-mode-title {
 
 /* --------------- */
 
-vision.main-topbar .tools .order-by {
+v.main-topbar .tools .order-by {
     width: 180px;
     height: 50px;
     overflow: hidden;
     padding: 5px;
 }
 
-vision.main-topbar .tools .order-by click {
+v.main-topbar .tools .order-by click {
     width: 30px;
     height: 30px;
     margin: 10px 0px;
 }
 
-vision.main-topbar .tools .order-by click ico.name-asc {
+v.main-topbar .tools .order-by click ico.name-asc {
     background-position: -270px 0px;
 }
 
-vision.main-topbar .tools .order-by click ico.name-desc {
+v.main-topbar .tools .order-by click ico.name-desc {
     background-position: -300px 0px;
 }
 
-vision.main-topbar .tools .order-by click ico.size-asc {
+v.main-topbar .tools .order-by click ico.size-asc {
     background-position: -330px 0px;
 }
 
-vision.main-topbar .tools .order-by click ico.size-desc {
+v.main-topbar .tools .order-by click ico.size-desc {
     background-position: -360px 0px;
 }
 
-vision.main-topbar .tools .order-by click ico.time-asc {
+v.main-topbar .tools .order-by click ico.time-asc {
     background-position: -390px 0px;
 }
 
-vision.main-topbar .tools .order-by click ico.time-desc {
+v.main-topbar .tools .order-by click ico.time-desc {
     background-position: -420px 0px;
 }
 
-vision.main-topbar .tools .order-by click[selected] ico.name-asc {
+v.main-topbar .tools .order-by click[selected] ico.name-asc {
     background-position: -270px -60px;
 }
 
-vision.main-topbar .tools .order-by click[selected] ico.name-desc {
+v.main-topbar .tools .order-by click[selected] ico.name-desc {
     background-position: -300px -60px;
 }
 
-vision.main-topbar .tools .order-by click[selected] ico.size-asc {
+v.main-topbar .tools .order-by click[selected] ico.size-asc {
     background-position: -330px -60px;
 }
 
-vision.main-topbar .tools .order-by click[selected] ico.size-desc {
+v.main-topbar .tools .order-by click[selected] ico.size-desc {
     background-position: -360px -60px;
 }
 
-vision.main-topbar .tools .order-by click[selected] ico.time-asc {
+v.main-topbar .tools .order-by click[selected] ico.time-asc {
     background-position: -390px -60px;
 }
 
-vision.main-topbar .tools .order-by click[selected] ico.time-desc {
+v.main-topbar .tools .order-by click[selected] ico.time-desc {
     background-position: -420px -60px;
 }
 
 
 /* ------------------------- */
 
-vision.main-topbar .tools .new-folder click[readonly] ico.new-folder-icon {
+v.main-topbar .tools .new-folder click[readonly] ico.new-folder-icon {
     background-position: 0px -30px;
 }
 
-vision.main-topbar .tools .new-folder click[readonly] el.new-folder-title {
+v.main-topbar .tools .new-folder click[readonly] el.new-folder-title {
     color: #BBB;
 }
 
 
 /* --------------- */
 
-vision.main-topbar .tools .selects click[readonly] ico.move-selects {
+v.main-topbar .tools .selects click[readonly] ico.move-selects {
     background-position: -120px -30px;
 }
 
-vision.main-topbar .tools .selects click[readonly] ico.dele-selects {
+v.main-topbar .tools .selects click[readonly] ico.dele-selects {
     background-position: -150px -30px;
 }
 
-vision.main-topbar .tools .selects click[readonly] ico.html-codes {
+v.main-topbar .tools .selects click[readonly] ico.html-codes {
     background-position: -180px -30px;
 }
 
-vision.main-topbar .tools .selects click[readonly] ico.json-codes {
+v.main-topbar .tools .selects click[readonly] ico.json-codes {
     background-position: -180px -90px;
 }
 
-vision.main-topbar .tools .selects click[readonly] ico.select-all {
+v.main-topbar .tools .selects click[readonly] ico.select-all {
     background-position: -30px -30px;
 }
 
-vision.main-topbar .tools .selects click[readonly] ico.un-select-all {
+v.main-topbar .tools .selects click[readonly] ico.un-select-all {
     background-position: -60px -30px;
 }
 
-vision.main-topbar .tools .selects click[readonly] ico.in-selects {
+v.main-topbar .tools .selects click[readonly] ico.in-selects {
     background-position: -90px -30px;
 }
 
 
 /* --------------- */
 
-vision.main-topbar .tools .upload-btn click[readonly] {
+v.main-topbar .tools .upload-btn click[readonly] {
     background-color: #BBB;
 }
 
-vision.main-topbar .tools .upload-btn click[readonly]:hover {
+v.main-topbar .tools .upload-btn click[readonly]:hover {
     background-color: #BBB;
 }
 
 
 /* --------------- */
 
-vision.main-topbar .tools .view-mode click[readonly] ico.view-mode-icon {
+v.main-topbar .tools .view-mode click[readonly] ico.view-mode-icon {
     background-position: -210px -30px;
 }
 
-vision.main-topbar .tools .view-mode click[readonly] el.view-mode-title {
+v.main-topbar .tools .view-mode click[readonly] el.view-mode-title {
     color: #BBB;
 }
 
 
 /* --------------- */
 
-vision.main-topbar .tools .order-by click[readonly] ico.name-asc {
+v.main-topbar .tools .order-by click[readonly] ico.name-asc {
     background-position: -270px -30px;
 }
 
-vision.main-topbar .tools .order-by click[readonly] ico.name-desc {
+v.main-topbar .tools .order-by click[readonly] ico.name-desc {
     background-position: -300px -30px;
 }
 
-vision.main-topbar .tools .order-by click[readonly] ico.size-asc {
+v.main-topbar .tools .order-by click[readonly] ico.size-asc {
     background-position: -330px -30px;
 }
 
-vision.main-topbar .tools .order-by click[readonly] ico.size-desc {
+v.main-topbar .tools .order-by click[readonly] ico.size-desc {
     background-position: -360px -30px;
 }
 
-vision.main-topbar .tools .order-by click[readonly] ico.time-asc {
+v.main-topbar .tools .order-by click[readonly] ico.time-asc {
     background-position: -390px -30px;
 }
 
-vision.main-topbar .tools .order-by click[readonly] ico.time-desc {
+v.main-topbar .tools .order-by click[readonly] ico.time-desc {
     background-position: -420px -30px;
 }
 
 
 /* ------------------------- */
 
-vision.main-topbar .dir {
+v.main-topbar .dir {
     display: block;
     margin: 0px 20px;
     height: 29px;
@@ -503,7 +503,7 @@ vision.main-topbar .dir {
     font-size: 13px;
 }
 
-vision.main-topbar .dir click {
+v.main-topbar .dir click {
     display: inline-block;
     width: auto;
     height: 23px;
@@ -512,19 +512,19 @@ vision.main-topbar .dir click {
     cursor: pointer;
 }
 
-vision.main-topbar .dir click:hover {
+v.main-topbar .dir click:hover {
     background-color: #F6F6F6;
 }
 
 
 /*** APPS MAIN CON ***/
 
-vision.main-content {
+v.main-content {
     width: 100%;
     background: #FFF;
 }
 
-vision.main-content[x-type=list] content>el {
+v.main-content[x-type=list] content>el {
     display: block;
     height: 50px;
     line-height: 50px;
@@ -533,7 +533,7 @@ vision.main-content[x-type=list] content>el {
     color: #999;
 }
 
-vision.main-content[x-type=tile] content>el {
+v.main-content[x-type=tile] content>el {
     display: block;
     height: 50px;
     line-height: 50px;
@@ -542,13 +542,13 @@ vision.main-content[x-type=tile] content>el {
     color: #999;
 }
 
-vision.main-content list {
+v.main-content list {
     display: block;
     margin: 10px 20px;
     text-align: left;
 }
 
-vision.main-content list item.category {
+v.main-content list item.category {
     width: 100%;
     height: 24px;
     margin: 15px 0px 5px;
@@ -558,7 +558,7 @@ vision.main-content list item.category {
     color: #181818;
 }
 
-vision.main-content list item[x-type] {
+v.main-content list item[x-type] {
     display: inline-block;
     cursor: pointer;
     width: 130px;
@@ -567,13 +567,13 @@ vision.main-content list item[x-type] {
     padding-top: 100px;
 }
 
-vision.main-content list item[x-type] {
+v.main-content list item[x-type] {
     background-repeat: no-repeat;
     background-position: center top;
     overflow: hidden;
 }
 
-vision.main-content list item[x-type] el {
+v.main-content list item[x-type] el {
     display: block;
     width: 120px;
     height: 30px;
@@ -589,14 +589,14 @@ vision.main-content list item[x-type] el {
 
 /* ------------------------- */
 
-vision.main-content list item[x-type=set]:hover {
+v.main-content list item[x-type=set]:hover {
     margin: 15px;
     background-color: rgba(204, 255, 221, .5);
     border: rgba(0, 204, 102, .5) 1px solid;
     box-shadow: 0px 0px 2px #CCC;
 }
 
-vision.main-content list item[x-type=set]:hover el {
+v.main-content list item[x-type=set]:hover el {
     background-color: rgba(0, 204, 102, .5);
     color: #FFF;
 }
@@ -604,14 +604,14 @@ vision.main-content list item[x-type=set]:hover el {
 
 /* --------------- */
 
-vision.main-content list item[type^=src]:hover {
+v.main-content list item[type^=src]:hover {
     margin: 15px;
     background-color: rgba(255, 238, 221, .5);
     border: rgba(255, 153, 102, .5) 1px solid;
     box-shadow: 0px 0px 2px #CCC;
 }
 
-vision.main-content list item[type^=src]:hover el {
+v.main-content list item[type^=src]:hover el {
     background-color: rgba(255, 153, 102, .5);
     color: #FFF;
 }
@@ -619,7 +619,7 @@ vision.main-content list item[type^=src]:hover el {
 
 /* ------------------------- */
 
-vision.main-content list item[x-type=spc][x-base] {
+v.main-content list item[x-type=spc][x-base] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/spc_base.png);
 }
 
@@ -662,55 +662,55 @@ vision.main-content list item[x-type=spc][x-base] {
 
 /* --------------- */
 
-vision.main-content list [x-type=srcall] {
+v.main-content list [x-type=srcall] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_all.png) !important;
 }
 
-vision.main-content list [x-type=srcimg] {
+v.main-content list [x-type=srcimg] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_pic.png) !important;
 }
 
-vision.main-content list [x-type=srctxt] {
+v.main-content list [x-type=srctxt] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_txt.png) !important;
 }
 
-vision.main-content list [x-type=srcdoc] {
+v.main-content list [x-type=srcdoc] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_doc.png) !important;
 }
 
-vision.main-content list [x-type=srcwav] {
+v.main-content list [x-type=srcwav] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_wav.png) !important;
 }
 
-vision.main-content list [x-type=srcvod] {
+v.main-content list [x-type=srcvod] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_vod.png) !important;
 }
 
-vision.main-content list [x-type=srczip] {
+v.main-content list [x-type=srczip] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_zip.png) !important;
 }
 
-vision.main-content list [x-type=srcect] {
+v.main-content list [x-type=srcect] {
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_ect.png) !important;
 }
 
 
 /* --------------- */
 
-vision.main-content list item[x-type=srcrcc] {
+v.main-content list item[x-type=srcrcc] {
     width: 130px;
     height: 130px !important;
     padding-top: 0px !important;
 }
 
-vision.main-content list item[x-type=srcrcc] click {
+v.main-content list item[x-type=srcrcc] click {
     display: block;
     width: 130px;
     height: 30px;
     padding-top: 100px;
 }
 
-vision.main-content list item[x-type=srcrcc] click {
+v.main-content list item[x-type=srcrcc] click {
     background-position: center top;
     background-repeat: no-repeat;
     background-image: url(<__ADIR__>Sources/icons/class_icons/src_rcc.png) !important;
@@ -719,13 +719,13 @@ vision.main-content list item[x-type=srcrcc] click {
 
 /* ------------------------- */
 
-vision.main-content[x-type=tile] content {
+v.main-content[x-type=tile] content {
     width: auto;
     margin: 15px;
     margin-right: 5px;
 }
 
-vision.main-content[x-type=tile] content .item {
+v.main-content[x-type=tile] content .item {
     display: inline-block;
     cursor: pointer;
     width: 130px;
@@ -735,7 +735,7 @@ vision.main-content[x-type=tile] content .item {
     background-color: #F6F6F6;
 }
 
-vision.main-content[x-type=tile] content .item .sele {
+v.main-content[x-type=tile] content .item .sele {
     display: block;
     position: absolute;
     width: 20px;
@@ -746,7 +746,7 @@ vision.main-content[x-type=tile] content .item .sele {
     z-index: 100;
 }
 
-vision.main-content[x-type=tile] content .item.selected .sele:before {
+v.main-content[x-type=tile] content .item.selected .sele:before {
     display: block;
     width: 20px;
     height: 20px;
@@ -758,7 +758,7 @@ vision.main-content[x-type=tile] content .item.selected .sele:before {
     content: "\e031";
 }
 
-vision.main-content[x-type=tile] content .item .rplc {
+v.main-content[x-type=tile] content .item .rplc {
     display: none;
     position: absolute;
     width: 16px;
@@ -771,12 +771,12 @@ vision.main-content[x-type=tile] content .item .rplc {
     background-color: #bbb;
 }
 
-vision.main-content content .item[x-type=folder] .rplc,
-vision.main-content content .item[x-type=spc] .rplc {
+v.main-content content .item[x-type=folder] .rplc,
+v.main-content content .item[x-type=spc] .rplc {
     display: none !important;
 }
 
-vision.main-content[x-type=tile] content .item .rplc:before {
+v.main-content[x-type=tile] content .item .rplc:before {
     display: block;
     width: 16px;
     height: 16px;
@@ -788,14 +788,14 @@ vision.main-content[x-type=tile] content .item .rplc:before {
     content: "\f021";
 }
 
-vision.main-content[x-type=tile] content .item .icon {
+v.main-content[x-type=tile] content .item .icon {
     width: 130px;
     height: 100px;
     background-image: url(<__ADIR__>Sources/icons/item_icons.png);
     background-repeat: no-repeat;
 }
 
-vision.main-content[x-type=tile] content .item .name {
+v.main-content[x-type=tile] content .item .name {
     width: 120px;
     height: 24px;
     padding: 3px 5px;
@@ -804,7 +804,7 @@ vision.main-content[x-type=tile] content .item .name {
     color: #333;
 }
 
-vision.main-content[x-type=tile] content .item .name {
+v.main-content[x-type=tile] content .item .name {
     text-overflow: ellipsis;
     text-align: center;
     font-size: 13px;
@@ -812,63 +812,63 @@ vision.main-content[x-type=tile] content .item .name {
     white-space: nowrap;
 }
 
-vision.main-content[x-type=tile] content .item .dime {
+v.main-content[x-type=tile] content .item .dime {
     display: none;
 }
 
-vision.main-content[x-type=tile] content .item .size {
+v.main-content[x-type=tile] content .item .size {
     display: none;
 }
 
-vision.main-content[x-type=tile] content .item .dura {
+v.main-content[x-type=tile] content .item .dura {
     display: none;
 }
 
-vision.main-content[x-type=tile] content .item .time {
+v.main-content[x-type=tile] content .item .time {
     display: none;
 }
 
-vision.main-content[x-type=tile] content .item .none {
+v.main-content[x-type=tile] content .item .none {
     display: none;
 }
 
-vision.main-content[x-type=tile] content .item:hover {
+v.main-content[x-type=tile] content .item:hover {
     margin: 7px;
     background-color: #FFF;
     border: #BBB 2px solid;
 }
 
-vision.main-content[x-type=tile] content .item:hover .name {
+v.main-content[x-type=tile] content .item:hover .name {
     background-color: #BBB;
     color: #FFF;
 }
 
-vision.main-content[x-type=tile] content .item:hover .sele {
+v.main-content[x-type=tile] content .item:hover .sele {
     border: #0C3 2px solid;
     background-color: #FFF;
 }
 
-vision.main-content[x-type=tile] content .item:hover .rplc {
+v.main-content[x-type=tile] content .item:hover .rplc {
     display: block;
 }
 
-vision.main-content[x-type=tile] content .item.selected {
+v.main-content[x-type=tile] content .item.selected {
     margin: 7px;
     background-color: #FFF;
     border: #0C3 2px solid;
 }
 
-vision.main-content[x-type=tile] content .item.selected .name {
+v.main-content[x-type=tile] content .item.selected .name {
     background-color: #0C3;
     color: #FFF;
 }
 
-vision.main-content[x-type=tile] content .item.selected .sele {
+v.main-content[x-type=tile] content .item.selected .sele {
     border: #0C3 2px solid;
     background-color: #FFF;
 }
 
-vision.main-content[x-type=tile] content .item .name[contenteditable] {
+v.main-content[x-type=tile] content .item .name[contenteditable] {
     padding: 2px 4px;
     border: #09F 1px solid;
     background-color: #FFF;
@@ -878,80 +878,80 @@ vision.main-content[x-type=tile] content .item .name[contenteditable] {
 
 /* ------------------------- */
 
-vision.main-content[x-type=tile] content .item .icon {
+v.main-content[x-type=tile] content .item .icon {
     background-position: 0px -1000px;
 }
 
-vision.main-content[x-type=tile] content .item.folder .icon {
+v.main-content[x-type=tile] content .item.folder .icon {
     background-image: url(<__ADIR__>Sources/icons/folder_icon.png);
     background-position: 0px 0px;
 }
 
-vision.main-content[x-type=tile] content .item.img .icon {
+v.main-content[x-type=tile] content .item.img .icon {
     background-position: center;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=tile] content .item.rar .icon {
+v.main-content[x-type=tile] content .item.rar .icon {
     background-position: 0px 0px;
 }
 
-vision.main-content[x-type=tile] content .item.zip .icon {
+v.main-content[x-type=tile] content .item.zip .icon {
     background-position: 0px -100px;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=tile] content .item.xls .icon {
+v.main-content[x-type=tile] content .item.xls .icon {
     background-position: 0px -200px;
 }
 
-vision.main-content[x-type=tile] content .item.xlsx .icon {
+v.main-content[x-type=tile] content .item.xlsx .icon {
     background-position: 0px -200px;
 }
 
-vision.main-content[x-type=tile] content .item.doc .icon {
+v.main-content[x-type=tile] content .item.doc .icon {
     background-position: 0px -300px;
 }
 
-vision.main-content[x-type=tile] content .item.docx .icon {
+v.main-content[x-type=tile] content .item.docx .icon {
     background-position: 0px -300px;
 }
 
-vision.main-content[x-type=tile] content .item.ppt .icon {
+v.main-content[x-type=tile] content .item.ppt .icon {
     background-position: 0px -400px;
 }
 
-vision.main-content[x-type=tile] content .item.pptx .icon {
+v.main-content[x-type=tile] content .item.pptx .icon {
     background-position: 0px -400px;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=tile] content .item.pdf .icon {
+v.main-content[x-type=tile] content .item.pdf .icon {
     background-position: 0px -500px;
 }
 
-vision.main-content[x-type=tile] content .item.txt .icon {
+v.main-content[x-type=tile] content .item.txt .icon {
     background-position: 0px -600px;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=tile] content .item.wav .icon {
+v.main-content[x-type=tile] content .item.wav .icon {
     background-position: 0px -700px;
 }
 
-vision.main-content[x-type=tile] content .item.set .icon {
+v.main-content[x-type=tile] content .item.set .icon {
     background-position: 0px -800px;
 }
 
-vision.main-content[x-type=tile] content .item.vod .icon {
+v.main-content[x-type=tile] content .item.vod .icon {
     background-position: 0px -900px;
 }
 
@@ -989,7 +989,7 @@ vision.main-content[x-type=tile] content .item.vod .icon {
 
 /* ------------------------- */
 
-vision.main-content[x-type=list] content .item {
+v.main-content[x-type=list] content .item {
     display: block;
     cursor: pointer;
     height: 40px;
@@ -1001,7 +1001,7 @@ vision.main-content[x-type=list] content .item {
     line-height: 20px;
 }
 
-vision.main-content[x-type=list] content .item .name {
+v.main-content[x-type=list] content .item .name {
     width: auto;
     height: 20px;
     margin: 10px 500px 10px 60px;
@@ -1009,7 +1009,7 @@ vision.main-content[x-type=list] content .item .name {
     overflow: hidden;
 }
 
-vision.main-content[x-type=list] content .item .sele {
+v.main-content[x-type=list] content .item .sele {
     position: absolute;
     width: 14px;
     height: 14px;
@@ -1022,7 +1022,7 @@ vision.main-content[x-type=list] content .item .sele {
     background-color: #FFF;
 }
 
-vision.main-content[x-type=list] content .item.selected .sele:before {
+v.main-content[x-type=list] content .item.selected .sele:before {
     display: block;
     position: absolute;
     width: 20px;
@@ -1037,11 +1037,11 @@ vision.main-content[x-type=list] content .item.selected .sele:before {
     left: -1px;
 }
 
-vision.main-content[x-type=list] content .item .rplc {
+v.main-content[x-type=list] content .item .rplc {
     display: none;
 }
 
-vision.main-content[x-type=list] content .item .icon {
+v.main-content[x-type=list] content .item .icon {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -1050,7 +1050,7 @@ vision.main-content[x-type=list] content .item .icon {
     left: 30px;
 }
 
-vision.main-content[x-type=list] content .item .time {
+v.main-content[x-type=list] content .item .time {
     position: absolute;
     width: 199px;
     height: 20px;
@@ -1061,7 +1061,7 @@ vision.main-content[x-type=list] content .item .time {
     border-left: #E6E6E6 1px solid;
 }
 
-vision.main-content[x-type=list] content .item .size {
+v.main-content[x-type=list] content .item .size {
     position: absolute;
     width: 149px;
     height: 20px;
@@ -1072,7 +1072,7 @@ vision.main-content[x-type=list] content .item .size {
     border-left: #E6E6E6 1px solid;
 }
 
-vision.main-content[x-type=list] content .item .dime {
+v.main-content[x-type=list] content .item .dime {
     position: absolute;
     width: 149px;
     height: 20px;
@@ -1083,7 +1083,7 @@ vision.main-content[x-type=list] content .item .dime {
     border-left: #E6E6E6 1px solid;
 }
 
-vision.main-content[x-type=list] content .item .dura {
+v.main-content[x-type=list] content .item .dura {
     position: absolute;
     width: 149px;
     height: 20px;
@@ -1094,7 +1094,7 @@ vision.main-content[x-type=list] content .item .dura {
     border-left: #E6E6E6 1px solid;
 }
 
-vision.main-content[x-type=list] content .item .none {
+v.main-content[x-type=list] content .item .none {
     position: absolute;
     width: 149px;
     height: 20px;
@@ -1105,31 +1105,31 @@ vision.main-content[x-type=list] content .item .none {
     border-left: #E6E6E6 1px solid;
 }
 
-vision.main-content[x-type=list] content .item:hover {
+v.main-content[x-type=list] content .item:hover {
     background-color: #EEE;
 }
 
-vision.main-content[x-type=list] content .item.selected {
+v.main-content[x-type=list] content .item.selected {
     background-color: #EEE;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=list] content .item:first-child {
+v.main-content[x-type=list] content .item:first-child {
     border-top: #DDD solid 1px;
     margin-top: 30px;
 }
 
-vision.main-content[x-type=list] content .item:first-child {
+v.main-content[x-type=list] content .item:first-child {
     overflow: visible;
 }
 
-vision.main-content[x-type=list] content .item:first-child * {
+v.main-content[x-type=list] content .item:first-child * {
     overflow: visible;
 }
 
-vision.main-content[x-type=list] content .item:first-child>*:before {
+v.main-content[x-type=list] content .item:first-child>*:before {
     display: block;
     position: absolute;
     width: 100%;
@@ -1140,51 +1140,51 @@ vision.main-content[x-type=list] content .item:first-child>*:before {
     color: #999;
 }
 
-vision.main-content[x-type=list] content .item:first-child .sele:before {
+v.main-content[x-type=list] content .item:first-child .sele:before {
     top: -5px;
     left: -1px;
     color: #0C3;
 }
 
-vision.main-content[x-type=list] content .item:first-child .name:before {
+v.main-content[x-type=list] content .item:first-child .name:before {
     content: attr(x-column);
 }
 
-vision.main-content[x-type=list] content .item:first-child .time:before {
+v.main-content[x-type=list] content .item:first-child .time:before {
     content: attr(x-column);
 }
 
-vision.main-content[x-type=list] content .item:first-child .size:before {
+v.main-content[x-type=list] content .item:first-child .size:before {
     content: attr(x-column);
 }
 
-vision.main-content[x-type=list] content .item:first-child .dime:before {
+v.main-content[x-type=list] content .item:first-child .dime:before {
     content: attr(x-column);
 }
 
-vision.main-content[x-type=list] content .item:first-child .dura:before {
+v.main-content[x-type=list] content .item:first-child .dura:before {
     content: attr(x-column);
 }
 
-vision.main-content[x-type=list] content .item:first-child .none:before {
+v.main-content[x-type=list] content .item:first-child .none:before {
     content: attr(x-column);
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=list] content .item .icon {
+v.main-content[x-type=list] content .item .icon {
     background-position: -300px 0px;
     background-image: url(<__ADIR__>Sources/icons/item_icons_smaller.png);
     background-repeat: no-repeat;
 }
 
-vision.main-content[x-type=list] content .item.folder .icon {
+v.main-content[x-type=list] content .item.folder .icon {
     background-image: url(<__ADIR__>Sources/icons/folder_icons_smaller.png);
     background-position: 0px 0px;
 }
 
-vision.main-content[x-type=list] content .item.img .icon {
+v.main-content[x-type=list] content .item.img .icon {
     background-image: url(<__ADIR__>Sources/icons/item_icons_smaller.png) !important;
     background-position: 0px 0px;
 }
@@ -1192,64 +1192,64 @@ vision.main-content[x-type=list] content .item.img .icon {
 
 /* ------------------------- */
 
-vision.main-content[x-type=list] content .item.rar .icon {
+v.main-content[x-type=list] content .item.rar .icon {
     background-position: -240px 0px;
 }
 
-vision.main-content[x-type=list] content .item.zip .icon {
+v.main-content[x-type=list] content .item.zip .icon {
     background-position: -240px 0px;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=list] content .item.xls .icon {
+v.main-content[x-type=list] content .item.xls .icon {
     background-position: -90px 0px;
 }
 
-vision.main-content[x-type=list] content .item.xlsx .icon {
+v.main-content[x-type=list] content .item.xlsx .icon {
     background-position: -90px 0px;
 }
 
-vision.main-content[x-type=list] content .item.doc .icon {
+v.main-content[x-type=list] content .item.doc .icon {
     background-position: -60px 0px;
 }
 
-vision.main-content[x-type=list] content .item.docx .icon {
+v.main-content[x-type=list] content .item.docx .icon {
     background-position: -60px 0px;
 }
 
-vision.main-content[x-type=list] content .item.ppt .icon {
+v.main-content[x-type=list] content .item.ppt .icon {
     background-position: -150px 0px;
 }
 
-vision.main-content[x-type=list] content .item.pptx .icon {
+v.main-content[x-type=list] content .item.pptx .icon {
     background-position: -150px 0px;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=list] content .item.pdf .icon {
+v.main-content[x-type=list] content .item.pdf .icon {
     background-position: -30px 0px;
 }
 
-vision.main-content[x-type=list] content .item.txt .icon {
+v.main-content[x-type=list] content .item.txt .icon {
     background-position: -120px 0px;
 }
 
 
 /* ------------------------- */
 
-vision.main-content[x-type=list] content .item.wav .icon {
+v.main-content[x-type=list] content .item.wav .icon {
     background-position: -180px 0px;
 }
 
-vision.main-content[x-type=list] content .item.set .icon {
+v.main-content[x-type=list] content .item.set .icon {
     background-position: -270px 0px;
 }
 
-vision.main-content[x-type=list] content .item.vod .icon {
+v.main-content[x-type=list] content .item.vod .icon {
     background-position: -210px 0px;
 }
 
@@ -1412,7 +1412,7 @@ vision.main-content[x-type=list] content .item.vod .icon {
 /*********************************************************************************
 /*** BROWSE POPUP ***/
 
-vision.browse-popup {
+v.browse-popup {
     display: block;
     position: absolute;
     width: 100%;

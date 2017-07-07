@@ -57,15 +57,15 @@ class XTDList extends DataObject {
 				}else{
 					$list .= '<item class="list even" datatype="xtd" itemtype="'.$rule["id"].'" itemid="'.$row[$rule["index_field"]].'">';
 				}
-				$list .= '<vision class="sele"><el></el></vision>';
-				$list .= '<vision class="name set"><el class="icon"></el><el class="titl">'.$row[$rule["title_field"]].'</el></vision>';
-				$list .= '<vision class="time">'.date('Y-m-d H:i', strtotime($row[$rule["recycled_time_field"]])).'</vision>';
-				$list .= '<vision class="back"><click href="trigger://RecoverItems" args="xtd, '.$rule["id"].', '.$row[$rule["index_field"]].'">'.$words["back"].'</click></vision>';
-				$list .= '<vision class="dele"><click href="trigger://DeleteItems" args="xtd, '.$rule["id"].', '.$row[$rule["index_field"]].'">'.$words["dele"].'</click></vision>';
+				$list .= '<v class="sele"><el></el></v>';
+				$list .= '<v class="name set"><el class="icon"></el><el class="titl">'.$row[$rule["title_field"]].'</el></v>';
+				$list .= '<v class="time">'.date('Y-m-d H:i', strtotime($row[$rule["recycled_time_field"]])).'</v>';
+				$list .= '<v class="back"><click href="trigger://RecoverItems" args="xtd, '.$rule["id"].', '.$row[$rule["index_field"]].'">'.$words["back"].'</click></v>';
+				$list .= '<v class="dele"><click href="trigger://DeleteItems" args="xtd, '.$rule["id"].', '.$row[$rule["index_field"]].'">'.$words["dele"].'</click></v>';
 				$list .= '</item>';
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;

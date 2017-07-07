@@ -186,6 +186,15 @@ Launcher[state=on][viewstatus=dockmode] rankinglist noramlapps application {
 
 Launcher[state=on][viewstatus=dockmode] rankinglist application[visible] {
     display: block;
+    transition: height ease .2s;
+}
+
+Launcher[viewstatus=dockmode] rankinglist noramlapps[viewstatus=openedonly] application[visible] {
+    height: 0;
+}
+
+Launcher[viewstatus=dockmode] rankinglist noramlapps[viewstatus=openedonly] application[visible][state=on] {
+    height: 50px;
 }
 
 Launcher[state=on][viewstatus=dockmode] rankinglist systemapps:hover,

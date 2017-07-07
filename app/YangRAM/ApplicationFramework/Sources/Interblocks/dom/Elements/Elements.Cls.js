@@ -506,6 +506,24 @@ iBlock([
             }
             return this.trigger('click');
         },
+        'focus': function(data, handler) {
+            if (_.util.bool.isFn(handler)) {
+                return this.bind('focus', data, handler);
+            }
+            if (_.util.bool.isFn(data)) {
+                return this.bind('focus', data);
+            }
+            return this.trigger('focus');
+        },
+        'blur': function(data, handler) {
+            if (_.util.bool.isFn(handler)) {
+                return this.bind('blur', data, handler);
+            }
+            if (_.util.bool.isFn(data)) {
+                return this.bind('blur', data);
+            }
+            return this.trigger('blur');
+        },
         'submit': function(data, handler) {
             if (_.util.bool.isFn(handler)) {
                 return this.bind('submit', data, handler);

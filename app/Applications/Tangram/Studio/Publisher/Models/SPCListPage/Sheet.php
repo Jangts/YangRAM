@@ -95,6 +95,6 @@ class Sheet extends DataObject {
         if(count($this->data)){
             return OIML::sheet($this->data, 'lightdatered');
         }
-        return '<list type="sheet" class="lightdatered"><vision class="tips">This Category Is Empty</vision></list>';
+        return '<list type="sheet" class="lightdatered"><v class="tips">This Category Is Empty</v></list>';
     }
 }

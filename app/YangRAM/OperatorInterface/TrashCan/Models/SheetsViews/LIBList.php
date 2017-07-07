@@ -96,19 +96,19 @@ class LIBList extends DataObject {
 						$src = __GET_DIR.'files/img/'.$row->ID.'.'.$row->SUFFIX.'_'.$width.'x60.'.$row->SUFFIX;
 					}
 					$list .= '<item class="img-item" datatype="lib" itemtype="img" itemid="'.$row->ID.'">';
-					$list .= '<vision class="sele"><el></el></vision>';
-					$list .= '<vision class="img-left"><img src="'.$src.'"></vision>';
-					$list .= '<vision class="img-right"><p>'.$row->FILE_NAME.'</p>';
+					$list .= '<v class="sele"><el></el></v>';
+					$list .= '<v class="img-left"><img src="'.$src.'"></v>';
+					$list .= '<v class="img-right"><p>'.$row->FILE_NAME.'</p>';
 					$list .= '<p>'.$row->WIDTH.'px×'.$row->WIDTH.'px</p>';
-					$list .= '<p>'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</p></vision>';
-					$list .= '<vision class="img-btns">';
+					$list .= '<p>'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</p></v>';
+					$list .= '<v class="img-btns">';
 					$list .= '<click href="trigger://RecoverItems" args="lib, img, '.$row->ID.'">'.$words["back"].'</click>';
 					$list .= '<click href="trigger://DeleteItems" args="lib, img, '.$row->ID.'">'.$words["dele"].'</click>';
-					$list .= '</vision></item>';
+					$list .= '</v></item>';
 				}
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;
@@ -127,15 +127,15 @@ class LIBList extends DataObject {
 				}else{
 					$list .= '<item class="list even" datatype="lib" itemtype="'.$type.'" itemid="'.$row->ID.'">';
 				}
-				$list .= '<vision class="sele"><el></el></vision>';
-				$list .= '<vision class="name '.$type.'"><el class="icon"></el><el class="titl">'.$row->FILE_NAME.'</el></vision>';
-				$list .= '<vision class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</vision>';
-				$list .= '<vision class="back"><click href="trigger://RecoverItems" args="lib, '.$type.', '.$row->ID.'">'.$words["back"].'</click></vision>';
-				$list .= '<vision class="dele"><click href="trigger://DeleteItems" args="lib, '.$type.', '.$row->ID.'">'.$words["dele"].'</click></vision>';
+				$list .= '<v class="sele"><el></el></v>';
+				$list .= '<v class="name '.$type.'"><el class="icon"></el><el class="titl">'.$row->FILE_NAME.'</el></v>';
+				$list .= '<v class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</v>';
+				$list .= '<v class="back"><click href="trigger://RecoverItems" args="lib, '.$type.', '.$row->ID.'">'.$words["back"].'</click></v>';
+				$list .= '<v class="dele"><click href="trigger://DeleteItems" args="lib, '.$type.', '.$row->ID.'">'.$words["dele"].'</click></v>';
 				$list .= '</item>';
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;
@@ -154,21 +154,21 @@ class LIBList extends DataObject {
 				}else{
 					$list .= '<item class="list even" datatype="lib" itemtype="doc" itemid="'.$row->ID.'">';
 				}
-				$list .= '<vision class="sele"><el></el></vision>';
-				$list .= '<vision class="name '.$row->SUFFIX.'">';
+				$list .= '<v class="sele"><el></el></v>';
+				$list .= '<v class="name '.$row->SUFFIX.'">';
 				if(preg_match('/(rar|zip|xls|doc|ppt|xlsx|docx|pptx|pdf|txt)/', $row->SUFFIX, $matchs)){
 					$list .= '<el class="icon"></el>';
 				}else{
 					$list .= '<el class="sfix">['.strtoupper($row->SUFFIX).']</el>';
 				}
-				$list .= '<el class="titl">'.$row->FILE_NAME.'</el></vision>';
-				$list .= '<vision class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</vision>';
-				$list .= '<vision class="back"><click href="trigger://RecoverItems" args="lib, doc, '.$row->ID.'">'.$words["back"].'</click></vision>';
-				$list .= '<vision class="dele"><click href="trigger://DeleteItems" args="lib, doc, '.$row->ID.'">'.$words["dele"].'</click></vision>';
+				$list .= '<el class="titl">'.$row->FILE_NAME.'</el></v>';
+				$list .= '<v class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</v>';
+				$list .= '<v class="back"><click href="trigger://RecoverItems" args="lib, doc, '.$row->ID.'">'.$words["back"].'</click></v>';
+				$list .= '<v class="dele"><click href="trigger://DeleteItems" args="lib, doc, '.$row->ID.'">'.$words["dele"].'</click></v>';
 				$list .= '</item>';
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;
@@ -203,15 +203,15 @@ class LIBList extends DataObject {
 				}else{
 					$list .= '<item class="list even" datatype="lib" itemtype="gec" itemid="'.$row->ID.'">';
 				}
-				$list .= '<vision class="sele"><el></el></vision>';
-				$list .= '<vision class="name gec"><el class="icon"></el><el class="titl">'.$row->TITLE.'</el></vision>';
-				$list .= '<vision class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</vision>';
-				$list .= '<vision class="back"><click href="trigger://RecoverItems" args="lib, gec, '.$row->ID.'">'.$words["back"].'</click></vision>';
-				$list .= '<vision class="dele"><click href="trigger://DeleteItems" args="lib, gec, '.$row->ID.'">'.$words["dele"].'</click></vision>';
+				$list .= '<v class="sele"><el></el></v>';
+				$list .= '<v class="name gec"><el class="icon"></el><el class="titl">'.$row->TITLE.'</el></v>';
+				$list .= '<v class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</v>';
+				$list .= '<v class="back"><click href="trigger://RecoverItems" args="lib, gec, '.$row->ID.'">'.$words["back"].'</click></v>';
+				$list .= '<v class="dele"><click href="trigger://DeleteItems" args="lib, gec, '.$row->ID.'">'.$words["dele"].'</click></v>';
 				$list .= '</item>';
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;
@@ -247,15 +247,15 @@ class LIBList extends DataObject {
 				}else{
 					$list .= '<item class="list even" datatype="lib" itemtype="emc" itemid="'.$row->id.'">';
 				}
-				$list .= '<vision class="sele"><el></el></vision>';
-				$list .= '<vision class="name eac"><el class="icon"></el><el class="titl">'.$row->name.'</el></vision>';
-				$list .= '<vision class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</vision>';
-				$list .= '<vision class="back"><click href="trigger://RecoverItems" args="lib, emc, '.$row->id.'">'.$words["back"].'</click></vision>';
-				$list .= '<vision class="dele"><click href="trigger://DeleteItems" args="lib, emc, '.$row->id.'">'.$words["dele"].'</click></vision>';
+				$list .= '<v class="sele"><el></el></v>';
+				$list .= '<v class="name eac"><el class="icon"></el><el class="titl">'.$row->name.'</el></v>';
+				$list .= '<v class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</v>';
+				$list .= '<v class="back"><click href="trigger://RecoverItems" args="lib, emc, '.$row->id.'">'.$words["back"].'</click></v>';
+				$list .= '<v class="dele"><click href="trigger://DeleteItems" args="lib, emc, '.$row->id.'">'.$words["dele"].'</click></v>';
 				$list .= '</item>';
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;
@@ -290,15 +290,15 @@ class LIBList extends DataObject {
 				}else{
 					$list .= '<item class="list even" datatype="lib" itemtype="fld" itemid="'.$row->id.'">';
 				}
-				$list .= '<vision class="sele"><el></el></vision>';
-				$list .= '<vision class="name fld"><el class="icon"></el><el class="titl">'.$row->name.'</el></vision>';
-				$list .= '<vision class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</vision>';
-				$list .= '<vision class="back"><click href="trigger://RecoverItems" args="lib, fld, '.$row->id.'">'.$words["back"].'</click></vision>';
-				$list .= '<vision class="dele"><click href="trigger://DeleteItems" args="lib, fld, '.$row->id.'">'.$words["dele"].'</click></vision>';
+				$list .= '<v class="sele"><el></el></v>';
+				$list .= '<v class="name fld"><el class="icon"></el><el class="titl">'.$row->name.'</el></v>';
+				$list .= '<v class="time">'.date('Y-m-d H:i', strtotime($row->KEY_MTIME)).'</v>';
+				$list .= '<v class="back"><click href="trigger://RecoverItems" args="lib, fld, '.$row->id.'">'.$words["back"].'</click></v>';
+				$list .= '<v class="dele"><click href="trigger://DeleteItems" args="lib, fld, '.$row->id.'">'.$words["dele"].'</click></v>';
 				$list .= '</item>';
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;

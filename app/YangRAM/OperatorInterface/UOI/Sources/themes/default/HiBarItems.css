@@ -137,29 +137,33 @@ hibar account myangram welcome {
     color: #fff;
 }
 
-hibar account myangram vision {
+hibar account myangram v {
     width: 250px;
-    height: 50px;
+    height: 80px;
     margin-top: 1px;
-    padding: 15px;
+    padding: 0 15px;
     background: rgba(51, 51, 51, .8);
+    overflow: hidden !important;
 }
 
-hibar account myangram vision list {
-    position: relative;
+hibar account myangram v list {
+    width: 50px;
+    height: 80px;
+    float: left;
+}
+
+hibar account myangram v list icon {
+    position: static;
     width: 50px;
     height: 130px;
-    margin: 0;
-    top: 0px;
-    padding: 0;
+    margin-top: 15px;
     background-image: url(account.png);
     background-repeat: no-repeat;
-    float: left;
     transition: all .4s ease-in-out;
 }
 
-hibar account myangram vision list:hover {
-    top: -70px;
+hibar account myangram v list:hover icon {
+    margin-top: -55px;
 }
 
 

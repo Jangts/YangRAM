@@ -145,7 +145,7 @@ yangram widgets processbus content table tr[state=off] * {
 
 /*** Explorer ***/
 
-yangram widgets explorer vision.explorer-header {
+yangram widgets explorer v.explorer-header {
     display: block;
     position: relative;
     width: 100%;
@@ -161,7 +161,7 @@ yangram widgets explorer vision.explorer-header {
     user-select: none;
 }
 
-yangram widgets explorer vision.explorer-header .explorer-name {
+yangram widgets explorer v.explorer-header .explorer-name {
     display: block;
     position: relative;
     width: auto;
@@ -170,7 +170,7 @@ yangram widgets explorer vision.explorer-header .explorer-name {
     line-height: 30px;
 }
 
-yangram widgets explorer vision.explorer-header .explorer-swch {
+yangram widgets explorer v.explorer-header .explorer-swch {
     display: block;
     position: absolute;
     width: 30px;
@@ -180,7 +180,7 @@ yangram widgets explorer vision.explorer-header .explorer-swch {
     right: 0px;
 }
 
-yangram widgets explorer vision.explorer-header .explorer-swch {
+yangram widgets explorer v.explorer-header .explorer-swch {
     cursor: pointer;
     font-size: 30px;
     line-height: 26px;
@@ -188,7 +188,7 @@ yangram widgets explorer vision.explorer-header .explorer-swch {
     color: #EEE;
 }
 
-yangram widgets explorer vision.explorer-control {
+yangram widgets explorer v.explorer-control {
     display: block;
     position: absolute;
     width: 100%;
@@ -199,7 +199,7 @@ yangram widgets explorer vision.explorer-control {
     cursor: default;
 }
 
-yangram widgets explorer vision.explorer-control click {
+yangram widgets explorer v.explorer-control click {
     display: inline-block;
     width: 130px;
     min-width: 60px;
@@ -213,15 +213,15 @@ yangram widgets explorer vision.explorer-control click {
     cursor: pointer;
 }
 
-yangram widgets explorer vision.explorer-control click:first-child {
+yangram widgets explorer v.explorer-control click:first-child {
     border-radius: 3px 0px 0px 3px;
 }
 
-yangram widgets explorer vision.explorer-control click:last-child {
+yangram widgets explorer v.explorer-control click:last-child {
     border-radius: 0px 3px 3px 0px;
 }
 
-yangram widgets explorer vision.explorer-control click:hover {
+yangram widgets explorer v.explorer-control click:hover {
     background-color: #666;
     color: #FFF;
 }
@@ -272,7 +272,7 @@ yangram widgets explorer nav.explorer-nav click.selected {
     color: #666;
 }
 
-yangram widgets explorer vision.explorer-content {
+yangram widgets explorer v.explorer-content {
     display: block;
     position: relative;
     width: 621px;
@@ -282,22 +282,22 @@ yangram widgets explorer vision.explorer-content {
     border-top: none;
 }
 
-yangram widgets explorer vision.explorer-content:hover scrollbar {
+yangram widgets explorer v.explorer-content:hover scrollbar {
     opacity: .2;
 }
 
-yangram widgets explorer vision.explorer-content scrollbar scrolldragger {
+yangram widgets explorer v.explorer-content scrollbar scrolldragger {
     background-color: #000;
 }
 
-yangram widgets explorer vision.explorer-content content {
+yangram widgets explorer v.explorer-content content {
     display: block;
     padding: 10px;
     position: relative;
     transition: top ease .1s;
 }
 
-yangram widgets explorer vision.explorer-content content>el {
+yangram widgets explorer v.explorer-content content>el {
     display: block;
     height: 80px;
     line-height: 80px;
@@ -309,7 +309,7 @@ yangram widgets explorer vision.explorer-content content>el {
 
 /* ---------- */
 
-yangram widgets explorer vision.explorer-content content list item {
+yangram widgets explorer v.explorer-content content list item {
     float: left;
     width: 180px;
     height: 50px;
@@ -321,14 +321,14 @@ yangram widgets explorer vision.explorer-content content list item {
     cursor: pointer;
 }
 
-yangram widgets explorer vision.explorer-content content list item:hover {
+yangram widgets explorer v.explorer-content content list item:hover {
     background-color: #666;
 }
 
 
 /* ---------- */
 
-yangram widgets explorer vision.explorer-content content .item {
+yangram widgets explorer v.explorer-content content .item {
     display: block;
     cursor: pointer;
     height: 30px;
@@ -340,7 +340,7 @@ yangram widgets explorer vision.explorer-content content .item {
     line-height: 20px;
 }
 
-yangram widgets explorer vision.explorer-content content .item .name {
+yangram widgets explorer v.explorer-content content .item .name {
     width: auto;
     height: 20px;
     margin: 5px 160px 5px 60px;
@@ -348,7 +348,7 @@ yangram widgets explorer vision.explorer-content content .item .name {
     overflow: hidden;
 }
 
-yangram widgets explorer vision.explorer-content content .item .sele {
+yangram widgets explorer v.explorer-content content .item .sele {
     position: absolute;
     width: 14px;
     height: 14px;
@@ -361,12 +361,12 @@ yangram widgets explorer vision.explorer-content content .item .sele {
     background-color: #FFF;
 }
 
-yangram widgets explorer vision.explorer-content content .item.folder .sele {
+yangram widgets explorer v.explorer-content content .item.folder .sele {
     border: #EEE 1px solid;
     background-color: #EEE;
 }
 
-yangram widgets explorer vision.explorer-content content .item.selected:not(.folder) .sele:before {
+yangram widgets explorer v.explorer-content content .item.selected:not(.folder) .sele:before {
     display: block;
     position: absolute;
     width: 20px;
@@ -381,7 +381,7 @@ yangram widgets explorer vision.explorer-content content .item.selected:not(.fol
     left: -1px;
 }
 
-yangram widgets explorer vision.explorer-content content .item .icon {
+yangram widgets explorer v.explorer-content content .item .icon {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -390,7 +390,7 @@ yangram widgets explorer vision.explorer-content content .item .icon {
     left: 30px;
 }
 
-yangram widgets explorer vision.explorer-content content .item .time {
+yangram widgets explorer v.explorer-content content .item .time {
     position: absolute;
     width: 159px;
     height: 20px;
@@ -401,45 +401,45 @@ yangram widgets explorer vision.explorer-content content .item .time {
     border-left: #E6E6E6 1px solid;
 }
 
-yangram widgets explorer vision.explorer-content content .item .size {
+yangram widgets explorer v.explorer-content content .item .size {
     display: none;
 }
 
-yangram widgets explorer vision.explorer-content content .item .dime {
+yangram widgets explorer v.explorer-content content .item .dime {
     display: none;
 }
 
-yangram widgets explorer vision.explorer-content content .item .dura {
+yangram widgets explorer v.explorer-content content .item .dura {
     display: none;
 }
 
-yangram widgets explorer vision.explorer-content content .item .none {
+yangram widgets explorer v.explorer-content content .item .none {
     display: none;
 }
 
-yangram widgets explorer vision.explorer-content content .item:hover {
+yangram widgets explorer v.explorer-content content .item:hover {
     background-color: #EEE;
 }
 
-yangram widgets explorer vision.explorer-content content .item.selected:not(.folder) {
+yangram widgets explorer v.explorer-content content .item.selected:not(.folder) {
     background-color: #EEE;
 }
 
 
 /* ---------- */
 
-yangram widgets explorer vision.explorer-content content .item .icon {
+yangram widgets explorer v.explorer-content content .item .icon {
     background-position: -300px 0px;
     background-image: url(icons/item_icons_smaller.png);
     background-repeat: no-repeat;
 }
 
-yangram widgets explorer vision.explorer-content content .item.folder .icon {
+yangram widgets explorer v.explorer-content content .item.folder .icon {
     background-image: url(icons/folder_icons_smaller.png);
     background-position: 0px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.img .icon {
+yangram widgets explorer v.explorer-content content .item.img .icon {
     background-image: url(icons/item_icons_smaller.png) !important;
     background-position: 0px 0px;
 }
@@ -447,71 +447,71 @@ yangram widgets explorer vision.explorer-content content .item.img .icon {
 
 /* ---------- */
 
-yangram widgets explorer vision.explorer-content content .item.rar .icon {
+yangram widgets explorer v.explorer-content content .item.rar .icon {
     background-position: -240px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.zip .icon {
+yangram widgets explorer v.explorer-content content .item.zip .icon {
     background-position: -240px 0px;
 }
 
 
 /* ---------- */
 
-yangram widgets explorer vision.explorer-content content .item.xls .icon {
+yangram widgets explorer v.explorer-content content .item.xls .icon {
     background-position: -90px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.xlsx .icon {
+yangram widgets explorer v.explorer-content content .item.xlsx .icon {
     background-position: -90px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.doc .icon {
+yangram widgets explorer v.explorer-content content .item.doc .icon {
     background-position: -60px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.docx .icon {
+yangram widgets explorer v.explorer-content content .item.docx .icon {
     background-position: -60px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.ppt .icon {
+yangram widgets explorer v.explorer-content content .item.ppt .icon {
     background-position: -150px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.pptx .icon {
+yangram widgets explorer v.explorer-content content .item.pptx .icon {
     background-position: -150px 0px;
 }
 
 
 /* ---------- */
 
-yangram widgets explorer vision.explorer-content content .item.pdf .icon {
+yangram widgets explorer v.explorer-content content .item.pdf .icon {
     background-position: -30px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.txt .icon {
+yangram widgets explorer v.explorer-content content .item.txt .icon {
     background-position: -120px 0px;
 }
 
 
 /* ---------- */
 
-yangram widgets explorer vision.explorer-content content .item.wav .icon {
+yangram widgets explorer v.explorer-content content .item.wav .icon {
     background-position: -180px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.set .icon {
+yangram widgets explorer v.explorer-content content .item.set .icon {
     background-position: -270px 0px;
 }
 
-yangram widgets explorer vision.explorer-content content .item.vod .icon {
+yangram widgets explorer v.explorer-content content .item.vod .icon {
     background-position: -210px 0px;
 }
 
 
 /*** Dialog ***/
 
-yangram widgets dialogs vision.dialog-main-box {
+yangram widgets dialogs v.dialog-main-box {
     display: block;
     position: fixed;
     width: 540px;
@@ -520,13 +520,13 @@ yangram widgets dialogs vision.dialog-main-box {
     left: 40%;
 }
 
-yangram widgets dialogs vision.dialog-main-box {
+yangram widgets dialogs v.dialog-main-box {
     background-color: #FFF;
     border: rgba(0, 0, 0, .3) 2px solid;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-header {
+yangram widgets dialogs v.dialog-main-box v.dialog-header {
     display: block;
     position: relative;
     width: 100%;
@@ -535,7 +535,7 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-header {
     cursor: move;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-header {
+yangram widgets dialogs v.dialog-main-box v.dialog-header {
     -webkit-user-select: none;
     -moz-user-select: none;
     -o-user-select: none;
@@ -544,7 +544,7 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-header {
     user-select: none;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-name {
+yangram widgets dialogs v.dialog-main-box v.dialog-header el.dialog-name {
     display: block;
     position: relative;
     width: auto;
@@ -553,7 +553,7 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-na
     line-height: 30px;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-swch {
+yangram widgets dialogs v.dialog-main-box v.dialog-header el.dialog-swch {
     display: block;
     position: absolute;
     width: 30px;
@@ -563,7 +563,7 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-sw
     right: 0px;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-swch {
+yangram widgets dialogs v.dialog-main-box v.dialog-header el.dialog-swch {
     cursor: pointer;
     font-size: 30px;
     line-height: 26px;
@@ -571,7 +571,7 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-header el.dialog-sw
     color: #999;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-control {
+yangram widgets dialogs v.dialog-main-box v.dialog-control {
     display: block;
     position: absolute;
     width: 100%;
@@ -581,7 +581,7 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-control {
     cursor: default;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-control click {
+yangram widgets dialogs v.dialog-main-box v.dialog-control click {
     float: right;
     width: auto;
     min-width: 60px;
@@ -590,7 +590,7 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-control click {
     padding: 0px 10px;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-control click {
+yangram widgets dialogs v.dialog-main-box v.dialog-control click {
     border: #CCC solid 1px;
     line-height: 28px;
     text-align: center;
@@ -598,13 +598,13 @@ yangram widgets dialogs vision.dialog-main-box vision.dialog-control click {
     cursor: pointer;
 }
 
-yangram widgets dialogs vision.dialog-main-box vision.dialog-control click:hover {
+yangram widgets dialogs v.dialog-main-box v.dialog-control click:hover {
     background-color: #09F;
     border: #0CC solid 1px;
     color: #FFF;
 }
 
-yangram widgets dialogs vision.dialog-main-box application {
+yangram widgets dialogs v.dialog-main-box application {
     display: block;
     position: relative;
     width: 520px;
@@ -613,15 +613,15 @@ yangram widgets dialogs vision.dialog-main-box application {
     border: #CCC 1px solid;
 }
 
-yangram widgets dialogs vision.dialog-main-box application:hover scrollbar {
+yangram widgets dialogs v.dialog-main-box application:hover scrollbar {
     opacity: .2;
 }
 
-yangram widgets dialogs vision.dialog-main-box application scrollbar scrolldragger {
+yangram widgets dialogs v.dialog-main-box application scrollbar scrolldragger {
     background-color: #000;
 }
 
-yangram widgets dialogs vision.dialog-main-box application content {
+yangram widgets dialogs v.dialog-main-box application content {
     display: block;
     position: relative;
     transition: top ease .1s;
@@ -630,7 +630,7 @@ yangram widgets dialogs vision.dialog-main-box application content {
 
 /*** Loading Animiation ***********************/
 
-yangram widgets cubes vision {
+yangram widgets cubes v {
     display: block;
     position: absolute;
     top: 50%;
@@ -639,17 +639,17 @@ yangram widgets cubes vision {
     opacity: 0.8;
 }
 
-yangram widgets cubes vision[type=two-dime] {
+yangram widgets cubes v[type=two-dime] {
     margin-top: -75px;
     margin-left: -75px;
 }
 
-yangram widgets cubes vision[type=two-dime] {
+yangram widgets cubes v[type=two-dime] {
     width: 90px;
     height: 90px;
 }
 
-yangram widgets cubes vision[type=three-dime] {
+yangram widgets cubes v[type=three-dime] {
     width: 90px;
     height: 90px;
     margin: -75px;

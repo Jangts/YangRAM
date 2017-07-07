@@ -23,7 +23,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 ctimer = null;
                 Logger.pincode.removeClass('connecting').attr('placeholder', ' P I N ');
             } else {
-                Logger.pincode.attr('readonly', 'readonly').addClass('connecting');
+                Logger.pincode.addClass('connecting');
                 Logger.pincode.attr('placeholder', 'CONNECT');
                 var m, s;
                 ctimer = setInterval(function() {
@@ -38,13 +38,11 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
     var pincode = '',
         checkpincodeOnKeyUp = (e) => {
             if (e.which === 8 && pincode.length > 0) {
-                Logger.pincode.attr('readonly', 'readonly');
                 pincode = pincode.slice(0, pincode.length - 1);
-                Logger.pincode.val(pincode.replace(/\w/g, '+'));
+                Logger.pincode.val(pincode.replace(/\w/g, '*'));
             }
         },
         checkpincodeOnChange = (e) => {
-            Logger.pincode.attr('readonly', 'readonly');
             Logger.pincode.val(pincode);
         },
         checkpincodeOnKeyPress = (e) => {
@@ -61,16 +59,14 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                             pincode = '';
                         }
                     } else {
-                        Logger.pincode.val(pincode.replace(/\w/g, '+'));
+                        Logger.pincode.val(pincode.replace(/\w/g, '*'));
                     }
-                    Logger.pincode.removeAttr('readonly');
-                }, 1);
+                }, 0);
             } else {
                 Logger.tipsarea.html('Err').show();
                 setTimeout(() => {
                     Logger.pincode.val(pincode);
-                    Logger.pincode.removeAttr('readonly');
-                }, 1);
+                }, 0);
             }
             setTimeout(() => {
                 Logger.tipsarea.hide();
@@ -104,39 +100,34 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             connecting();
         },
         oncontact = (data) => {
-            // console.log(data);
             connecting(true);
             var preg = /^\[\{"username":/;
             if (data.match(preg)) {
                 var admin = JSON.parse(data)[0];
                 if (admin.username === Logger.username.val()) {
-                    showTips(Logger.pincode, ' P I N ', 'CHECKED');
+                    showTips(Logger.pincode.blur(), ' P I N ', 'CHECKED');
                     return Logger.onlogon(admin);
                 }
             }
-            Logger.pincode.removeAttr('readonly');
             if (data === '[{"error":"PIN_ERROR"}]') {
-                showTips(Logger.pincode, ' P I N ', 'PIN_ERR');
-                showTips(Logger.username, Runtime.locales.LOGGER.USERNAME, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
-                showTips(Logger.password, Runtime.locales.LOGGER.PASSWORD, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
+                showTips(Logger.pincode.focus(), ' P I N ', 'PIN_ERR');
                 return;
             }
             if (data === '[{"error":"INPUTS_ERROR"}]') {
-                showTips(Logger.pincode, ' P I N ', 'ILLEGAL');
-                showTips(Logger.username, Runtime.locales.LOGGER.USERNAME, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
+                showTips(Logger.pincode.blur(), ' P I N ', 'ILLEGAL');
+                showTips(Logger.username.focus(), Runtime.locales.LOGGER.USERNAME, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
                 showTips(Logger.password, Runtime.locales.LOGGER.PASSWORD, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
                 return;
             }
             showTips(Logger.pincode, ' P I N ', 'PAS_ERR');
-            showTips(Logger.username, Runtime.locales.LOGGER.USERNAME, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
+            showTips(Logger.username.focus(), Runtime.locales.LOGGER.USERNAME, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
             showTips(Logger.password, Runtime.locales.LOGGER.PASSWORD, Runtime.locales.LOGGER.USERNAME_OR_PASSWORD_NOT_MATCH);
             return;
         },
         oncontactfailed = (data) => {
-            //console.log(data);
             connecting(true);
-            Logger.pincode.removeAttr('readonly');
             showTips(Logger.pincode, ' P I N ', 'FAILED');
+            Logger.username.focus();
         };
 
     var checkLogout = () => {
@@ -187,7 +178,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             this.form = YangRAM.$('form', this.document);
             this.username = YangRAM.$('[name=opn]', this.document);
             this.password = YangRAM.$('[name=opp]', this.document);
-            this.pincode = YangRAM.$('[name=pin]', this.document);
+            this.pincode = YangRAM.$('[name=pin]', this.document).attr('readonly', 'readonly');
             this.tipsarea = YangRAM.$('pinshow', this.document);
             this.Loadvision = YangRAM.$('percent-vision', this.avatar[0]);
             this.loadedpercent = YangRAM.$('el', this.avatar[0]);

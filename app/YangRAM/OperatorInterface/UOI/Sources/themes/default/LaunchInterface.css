@@ -49,7 +49,7 @@ Launcher memowall:hover scrollbar {
 /*********************************************************************************
 /*** Manager ***/
 
-Launcher momodifier vision {
+Launcher momodifier v {
     display: none;
     width: 468px;
     height: 358px;
@@ -62,13 +62,13 @@ Launcher momodifier vision {
     box-shadow: rgba(0, 0, 0, .3) 0px 0px 5px;
 }
 
-Launcher momodifier vision {
+Launcher momodifier v {
     background-color: #FFF;
     border: solid rgba(0, 204, 255, .2) 1px;
     transition: all ease .4s;
 }
 
-Launcher momodifier vision click {
+Launcher momodifier v click {
     height: 28px;
     border: #0CF solid 1px;
     line-height: 28px;
@@ -80,7 +80,7 @@ Launcher momodifier vision click {
     cursor: pointer;
 }
 
-Launcher momodifier vision click:hover {
+Launcher momodifier v click:hover {
     background-color: #0CF;
     color: #FFF;
 }
@@ -88,7 +88,7 @@ Launcher momodifier vision click:hover {
 
 /**********************************************/
 
-Launcher momodifier vision el.choose {
+Launcher momodifier v el.choose {
     float: left;
     width: 170px;
     line-height: 30px;
@@ -96,7 +96,7 @@ Launcher momodifier vision el.choose {
     font-size: 16px;
 }
 
-Launcher momodifier vision select {
+Launcher momodifier v select {
     float: left;
     width: 90px;
     height: 30px;
@@ -109,7 +109,7 @@ Launcher momodifier vision select {
     cursor: pointer;
 }
 
-Launcher momodifier vision click.complete {
+Launcher momodifier v click.complete {
     float: left;
     width: 90px;
     margin-left: 8px;
@@ -119,7 +119,7 @@ Launcher momodifier vision click.complete {
 
 /**********************************************/
 
-Launcher momodifier vision form {
+Launcher momodifier v form {
     float: left;
     width: 468px;
     border-top: #0CF 8px double;
@@ -127,7 +127,7 @@ Launcher momodifier vision form {
     margin-top: 10px;
 }
 
-Launcher momodifier vision form el.icon {
+Launcher momodifier v form el.icon {
     float: left;
     width: 80px;
     height: 80px;
@@ -136,7 +136,7 @@ Launcher momodifier vision form el.icon {
     border-radius: 50%;
 }
 
-Launcher momodifier vision form el.label {
+Launcher momodifier v form el.label {
     float: left;
     width: 80px;
     height: 30px;
@@ -146,7 +146,7 @@ Launcher momodifier vision form el.label {
     text-align: left;
 }
 
-Launcher momodifier vision form el.appname {
+Launcher momodifier v form el.appname {
     float: left;
     width: 368px;
     margin: 5px 0px;
@@ -154,7 +154,7 @@ Launcher momodifier vision form el.appname {
     font-size: 18px;
 }
 
-Launcher momodifier vision form input {
+Launcher momodifier v form input {
     float: left;
     width: 358px;
     margin: 5px 0px;
@@ -166,12 +166,12 @@ Launcher momodifier vision form input {
     border-radius: 2px;
 }
 
-Launcher momodifier vision form input[name=title] {
+Launcher momodifier v form input[name=title] {
     margin: 40px 0px;
     font-size: 18px;
 }
 
-Launcher momodifier vision form select {
+Launcher momodifier v form select {
     float: left;
     width: 368px;
     margin: 5px 0px;
@@ -183,14 +183,14 @@ Launcher momodifier vision form select {
     color: #999;
 }
 
-Launcher momodifier vision form line {
+Launcher momodifier v form line {
     display: block;
     width: 100%;
     height: 0px;
     border-top: #999 solid 1px;
 }
 
-Launcher momodifier vision form click.change {
+Launcher momodifier v form click.change {
     float: left;
     width: 266px;
     margin: 5px 100px 10px;
@@ -198,7 +198,7 @@ Launcher momodifier vision form click.change {
     border: #999 solid 1px;
 }
 
-Launcher momodifier vision form click:hover {
+Launcher momodifier v form click:hover {
     background-color: #0CF;
     border: #0CF solid 1px;
     color: #FFF;

@@ -4,7 +4,6 @@ namespace UOI\Models;
 class LinkGroup extends \Model {
 	protected static $defaults = [
 		'name'		=>	'New Group',
-		'menu' 		=>	'bookmark-group',
 		'links'		=>	[]
 	];
 

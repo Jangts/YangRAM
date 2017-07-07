@@ -58,81 +58,12 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
 
     var MainMenu = [
             [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["New Group"],
-                    state: 'on',
-                    handler() {
-                        Launcher.NewGroup();
-                    }
-                },
-                {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Refresh"],
-                    state: 'on',
-                    handler() {
-                        Launcher.refresh();
-                    }
+                title: Runtime.locales.LAUNCHER.MMW.MENUS["Refresh"],
+                state: 'on',
+                handler() {
+                    Launcher.refresh();
                 }
-            ],
-            [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Edit Group"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                },
-                {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Delete Group"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                }
-            ],
-            [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Editor Link"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                },
-                {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Delete Link"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                }
-            ]
-        ],
-        GroupMenu = [
-            [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["New Group"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                },
-                {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Refresh"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                }
-            ],
-            [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Edit Group"],
-                    state: 'on',
-                    handler() {
-                        Launcher.EditGroup(YangRAM.Contexts.Target);
-                    }
-                },
-                {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Delete Group"],
-                    state: 'on',
-                    handler() {
-                        Launcher.DeleGroup(YangRAM.Contexts.Target);
-                    }
-                }
-            ],
-            [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Editor Link"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                },
-                {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Delete Link"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                }
-            ]
+            }]
         ],
         LinkMenu = [
             [{
@@ -141,34 +72,10 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     handler: YangRAM.donothing
                 },
                 {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Refresh"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                }
-            ],
-            [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Edit Group"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                },
-                {
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Delete Group"],
-                    state: 'off',
-                    handler: YangRAM.donothing
-                }
-            ],
-            [{
-                    title: Runtime.locales.LAUNCHER.MMW.MENUS["Editor Link"],
-                    state: 'on',
-                    handler() {
-                        Launcher.EditItem(YangRAM.Contexts.Target);
-                    }
-                },
-                {
                     title: Runtime.locales.LAUNCHER.MMW.MENUS["Delete Link"],
                     state: 'on',
                     handler() {
-                        Launcher.DeleItem(YangRAM.Contexts.Target);
+                        Launcher.deleteItem(YangRAM.Contexts.Target);
                     }
                 }
             ]
@@ -182,11 +89,9 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             this.document.innerHTML = '<scrollbar type="vert"><rail></rail><scrolldragger></scrolldragger></scrollbar>';
             this.MarkArea = YangRAM.create('content', this.document);
             this.scrollBAR = System.Workspace.OIMLElement.renderScrollBAR(this.document);
-            Modifier.build(Bookmarks);
             this.attr('appid', 'MEMOWALL')
                 .attr('menu', 'memowall-interface')
                 .regContextMenus('memowall-interface', MainMenu)
-                .regContextMenus('bookmark-group', GroupMenu)
                 .regContextMenus('bookmark', LinkMenu)
                 .regHeadBar(HeadBar);
             return this;
@@ -201,6 +106,9 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 }
             });
             return this;
+        },
+        deleteItem() {
+            this.refresh();
         },
         launch() {
             if (Runtime.currentRunningAppID !== 'MEMOWALL') {

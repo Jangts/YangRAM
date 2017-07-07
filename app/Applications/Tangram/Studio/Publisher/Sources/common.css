@@ -15,27 +15,27 @@ view {
 
 /*** APPS TOP ***/
 
-top-vision>vision {
+top-vision>v {
     width: 100%;
     height: 50px;
     max-width: 1000px;
     margin: auto;
 }
 
-top-vision vision ico {
+top-vision v ico {
     background-image: url(<__ADIR__>Sources/logo_wht.png);
     background-position: center;
     background-repeat: no-repeat;
 }
 
-top-vision vision tools.pub-ctrl {
+top-vision v tools.pub-ctrl {
     display: block;
     padding-left: 50px;
     background-image: url(<__SDIR__>Common/Sources/common_top_background.png);
     background-repeat: no-repeat;
 }
 
-top-vision vision tools.pub-ctrl list {
+top-vision v tools.pub-ctrl list {
     width: auto;
     height: 30px;
     padding: 10px;
@@ -43,7 +43,7 @@ top-vision vision tools.pub-ctrl list {
     float: right;
 }
 
-top-vision vision tools.pub-ctrl list.oitem {
+top-vision v tools.pub-ctrl list.oitem {
     display: block;
     background-color: rgba(0, 0, 0, .1);
 }
@@ -51,7 +51,7 @@ top-vision vision tools.pub-ctrl list.oitem {
 
 /* ------------------------- */
 
-top-vision vision tools list item.pub-ctrl-item {
+top-vision v tools list item.pub-ctrl-item {
     float: left;
     width: 40px;
     height: 30px;
@@ -60,197 +60,197 @@ top-vision vision tools list item.pub-ctrl-item {
     cursor: pointer;
 }
 
-top-vision vision tools list item.unavailable {
+top-vision v tools list item.unavailable {
     cursor: default;
 }
 
-top-vision vision tools list item.pub-ctrl-item {
+top-vision v tools list item.pub-ctrl-item {
     transition: background-position ease .4s;
     -webkit-transition: background-position ease .4s;
 }
 
-top-vision vision tools list .preset-list {
+top-vision v tools list .preset-list {
     background-position: 0px 0px;
 }
 
-top-vision vision tools list .content-new {
+top-vision v tools list .content-new {
     background-position: -40px 0px;
 }
 
-top-vision vision tools list .content-save {
+top-vision v tools list .content-save {
     background-position: -80px 0px;
 }
 
-top-vision vision tools list .content-del {
+top-vision v tools list .content-del {
     background-position: -120px 0px;
 }
 
-top-vision vision tools list .content-view {
+top-vision v tools list .content-view {
     background-position: -160px 0px;
 }
 
-top-vision vision tools list .content-base {
+top-vision v tools list .content-base {
     background-position: -200px 0px;
 }
 
-top-vision vision tools list .content-prop {
+top-vision v tools list .content-prop {
     background-position: -240px 0px;
 }
 
-top-vision vision tools list .content-rele {
+top-vision v tools list .content-rele {
     background-position: -280px 0px;
 }
 
-top-vision vision tools list .item-fix {
+top-vision v tools list .item-fix {
     background-position: -320px 0px;
 }
 
-top-vision vision tools list .mini-explorer {
+top-vision v tools list .mini-explorer {
     background-position: -360px 0px;
 }
 
-top-vision vision tools list .pub-setting {
+top-vision v tools list .pub-setting {
     background-position: -400px 0px;
 }
 
 
 /* --------------- */
 
-top-vision vision tools list .preset-list:hover {
+top-vision v tools list .preset-list:hover {
     background-position: 0px -30px;
 }
 
-top-vision vision tools list .content-new:hover {
+top-vision v tools list .content-new:hover {
     background-position: -40px -30px;
 }
 
-top-vision vision tools list .content-save:hover {
+top-vision v tools list .content-save:hover {
     background-position: -80px -30px;
 }
 
-top-vision vision tools list .content-del:hover {
+top-vision v tools list .content-del:hover {
     background-position: -120px -30px;
 }
 
-top-vision vision tools list .content-view:hover {
+top-vision v tools list .content-view:hover {
     background-position: -160px -30px;
 }
 
-top-vision vision tools list .content-base:hover {
+top-vision v tools list .content-base:hover {
     background-position: -200px -30px;
 }
 
-top-vision vision tools list .content-prop:hover {
+top-vision v tools list .content-prop:hover {
     background-position: -240px -30px;
 }
 
-top-vision vision tools list .content-rele:hover {
+top-vision v tools list .content-rele:hover {
     background-position: -280px -30px;
 }
 
-top-vision vision tools list .item-fix:hover {
+top-vision v tools list .item-fix:hover {
     background-position: -320px -30px;
 }
 
-top-vision vision tools list .mini-explorer:hover {
+top-vision v tools list .mini-explorer:hover {
     background-position: -360px -30px;
 }
 
-top-vision vision tools list .pub-setting:hover {
+top-vision v tools list .pub-setting:hover {
     background-position: -400px -30px;
 }
 
 
 /* --------------- */
 
-top-vision vision tools list .unavailable.preset-list {
+top-vision v tools list .unavailable.preset-list {
     background-position: 0px -60px;
 }
 
-top-vision vision tools list .unavailable.content-new {
+top-vision v tools list .unavailable.content-new {
     background-position: -40px -60px;
 }
 
-top-vision vision tools list .unavailable.content-save {
+top-vision v tools list .unavailable.content-save {
     background-position: -80px -60px;
 }
 
-top-vision vision tools list .unavailable.content-del {
+top-vision v tools list .unavailable.content-del {
     background-position: -120px -60px;
 }
 
-top-vision vision tools list .unavailable.content-view {
+top-vision v tools list .unavailable.content-view {
     background-position: -160px -60px;
 }
 
-top-vision vision tools list .unavailable.content-base {
+top-vision v tools list .unavailable.content-base {
     background-position: -200px -60px;
 }
 
-top-vision vision tools list .unavailable.content-prop {
+top-vision v tools list .unavailable.content-prop {
     background-position: -240px -60px;
 }
 
-top-vision vision tools list .unavailable.content-rele {
+top-vision v tools list .unavailable.content-rele {
     background-position: -280px -60px;
 }
 
-top-vision vision tools list .unavailable.item-fix {
+top-vision v tools list .unavailable.item-fix {
     background-position: -320px -60px;
 }
 
-top-vision vision tools list .unavailable.mini-explorer {
+top-vision v tools list .unavailable.mini-explorer {
     background-position: -360px -60px;
 }
 
-top-vision vision tools list .unavailable.pub-setting {
+top-vision v tools list .unavailable.pub-setting {
     background-position: -400px -60px;
 }
 
 
 /* --------------- */
 
-top-vision vision tools list .unavailable.preset-list:hover {
+top-vision v tools list .unavailable.preset-list:hover {
     background-position: 0px -60px;
 }
 
-top-vision vision tools list .unavailable.content-new:hover {
+top-vision v tools list .unavailable.content-new:hover {
     background-position: -40px -60px;
 }
 
-top-vision vision tools list .unavailable.content-save:hover {
+top-vision v tools list .unavailable.content-save:hover {
     background-position: -80px -60px;
 }
 
-top-vision vision tools list .unavailable.content-del:hover {
+top-vision v tools list .unavailable.content-del:hover {
     background-position: -120px -60px;
 }
 
-top-vision vision tools list .unavailable.content-view:hover {
+top-vision v tools list .unavailable.content-view:hover {
     background-position: -160px -60px;
 }
 
-top-vision vision tools list .unavailable.content-base:hover {
+top-vision v tools list .unavailable.content-base:hover {
     background-position: -200px -60px;
 }
 
-top-vision vision tools list .unavailable.content-prop:hover {
+top-vision v tools list .unavailable.content-prop:hover {
     background-position: -240px -60px;
 }
 
-top-vision vision tools list .unavailable.content-rele:hover {
+top-vision v tools list .unavailable.content-rele:hover {
     background-position: -280px -60px;
 }
 
-top-vision vision tools list .unavailable.item-fix:hover {
+top-vision v tools list .unavailable.item-fix:hover {
     background-position: -320px -60px;
 }
 
-top-vision vision tools list .unavailable.mini-explorer:hover {
+top-vision v tools list .unavailable.mini-explorer:hover {
     background-position: -360px -60px;
 }
 
-top-vision vision tools list .unavailable.pub-setting:hover {
+top-vision v tools list .unavailable.pub-setting:hover {
     background-position: -400px -60px;
 }
 
@@ -354,7 +354,7 @@ main list[type=sheet] .dele {
 
 /*** APPS FORM ***/
 
-vision form-vision {
+v form-vision {
     width: 950px;
     height: auto;
     background-color: #FFF;
@@ -363,7 +363,7 @@ vision form-vision {
     z-index: 100;
 }
 
-vision form-vision .content-info-section {
+v form-vision .content-info-section {
     width: 900px;
     height: auto;
     border: #DDD 1px solid;
@@ -373,21 +373,21 @@ vision form-vision .content-info-section {
 
 /* ------------------------- */
 
-vision form-vision .content-info-section inputs label.hits {
+v form-vision .content-info-section inputs label.hits {
     width: 100px;
 }
 
-vision form-vision .content-info-section inputs input[name=GROUPCODE] {
+v form-vision .content-info-section inputs input[name=GROUPCODE] {
     width: 120px;
     margin-right: 80px;
 }
 
-vision form-vision .content-info-section inputs input[name=ALIAS] {
+v form-vision .content-info-section inputs input[name=ALIAS] {
     width: 120px;
     margin-right: 80px;
 }
 
-vision form-vision .content-info-section inputs input[name=KEY_COUNT] {
+v form-vision .content-info-section inputs input[name=KEY_COUNT] {
     width: 100px;
 }
 

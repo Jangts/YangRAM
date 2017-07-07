@@ -14,7 +14,7 @@ static widgetRenderers = {
             ], function(echarts, theme) {
                 widget.innerHTML = '';
                 YangRAM.API.util.arr.each(list, function(i, data) {
-                    var el = YangRAM.create('vision', widget, {
+                    var el = YangRAM.create('v', widget, {
                         className: className,
                         height: height
                     });
@@ -33,9 +33,9 @@ static widgetRenderers = {
             var widget = self.widgets[alias].widget,
                 title = self.widgets[alias].title,
                 nums = [' odd', ' even'];
-            widget.innerHTML = '<vision class="widget-title">' + title + '<vision>';
+            widget.innerHTML = '<v class="widget-title">' + title + '<v>';
             YangRAM.API.util.arr.each(list, function(i, data) {
-                var el = YangRAM.create('vision', widget, {
+                var el = YangRAM.create('v', widget, {
                     className: className + nums[i % 2],
                     height: height,
                     html: '<el class="for-type">[' + data.MARK + ']</el>' + data.TITLE + '<el class="for-time">[' + data.TIME + ']</el>'

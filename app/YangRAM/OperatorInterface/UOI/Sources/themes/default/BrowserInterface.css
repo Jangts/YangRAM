@@ -3,7 +3,7 @@
 /*** BROWSER MAIN ***/
 
 browser {
-    transition: width ease .4s, left ease .4s, transform ease .4s;
+    transition: width ease .2s, left ease .2s, transform ease .2s;
 }
 
 browser {

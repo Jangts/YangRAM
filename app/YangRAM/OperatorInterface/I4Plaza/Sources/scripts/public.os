@@ -34,9 +34,19 @@ public {
     },
     rebuild() {
         this.document.innerHTML = '';
-        this.WallPaper = YangRAM.create('wallpaper', this.document.parentNode, {
-            display: 'none'
-        });
+        this.WallPaper = {
+            document : YangRAM.create('wallpaper', this.document.parentNode, { display: 'none' })
+        };
+        var bgpics = {};
+        YangRAM.API.BGP = (appid, src) => {
+            if(!bgpics[appid]){
+                bgpics[appid] = YangRAM.create('bgpic', this.WallPaper.document, {
+                    appid:appid
+                });
+            }
+            YangRAM.attr(bgpics[appid], 'style', 'background-image:url(' + src + ')').$('[appid="' + System.Runtime.currentRunningAppID + '"]').attr('running', '');;
+            return bgpics[appid];
+        }
         this.widgets = YangRAM.create('widgets', this.document, {
             'data-posi': 0
         });
@@ -67,16 +77,16 @@ public {
         });
 
         var buttons = YangRAM.create('wsbtns', this.document.parentNode);
-        YangRAM.create('vision', buttons, {
+        YangRAM.create('v', buttons, {
             className: 'widget-switch-button',
             current: 'current',
             dataSwitchTo: '0'
         });
-        YangRAM.create('vision', buttons, {
+        YangRAM.create('v', buttons, {
             className: 'widget-switch-button',
             dataSwitchTo: '-1'
         });
-        YangRAM.create('vision', buttons, {
+        YangRAM.create('v', buttons, {
             className: 'widget-switch-button',
             dataSwitchTo: '-2'
         });
@@ -85,7 +95,7 @@ public {
     loadWallPaper() {
         var that = this;
         setTimeout(function() {
-            YangRAM.$(that.WallPaper).hide().fadeIn(2000);
+            YangRAM.$(that.WallPaper.document).hide().fadeIn(2000);
         }, 500);
         return this;
     },

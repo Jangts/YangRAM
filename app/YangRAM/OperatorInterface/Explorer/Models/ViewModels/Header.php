@@ -353,20 +353,20 @@ class Header extends DataObject {
 	}
 
     public function render(){
-        $body = '<vision class="tools">';
+        $body = '<v class="tools">';
         $tools = $this->renderTools();
         $body .= join('', $tools);
-        $body .= '</vision><vision class="dir">';
+        $body .= '</v><v class="dir">';
         $dir = $this->renderDir();
         $body .= join('<click>/</click>', $dir);
-        $body .= '</vision>';
+        $body .= '</v>';
         return $body;
     }
 
     public function renderTools(){
         $array = [];
         foreach($this->data[0] as $group){
-            $body = '<vision class="'.$group['classname'].'">';
+            $body = '<v class="'.$group['classname'].'">';
             foreach($group['clicks'] as $click){
                 $body .= '<click href="'.$click['href'].'"';
                 if($click['readonly']){
@@ -382,7 +382,7 @@ class Header extends DataObject {
                 }
                 $body .= '</click>';
             }
-            $body .= '</vision>';
+            $body .= '</v>';
             $array[] = $body;
         }
         return $array;

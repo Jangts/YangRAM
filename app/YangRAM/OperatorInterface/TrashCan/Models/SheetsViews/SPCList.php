@@ -54,15 +54,15 @@ class SPCList extends DataObject {
 				}else{
 					$list .= '<item class="list even" datatype="spc" itemtype="'.$uriarr[4].'" itemid="'.$row["ID"].'">';
 				}
-				$list .= '<vision class="sele"><el></el></vision>';
-				$list .= '<vision class="name set"><el class="icon"></el><el class="titl">'.$row["TITLE"].'</el></vision>';
-				$list .= '<vision class="time">'.date('Y-m-d H:i', strtotime($row["KEY_MTIME"])).'</vision>';
-				$list .= '<vision class="back"><click href="trigger://RecoverItems" args="spc, '.$uriarr[4].', '.$row["ID"].'">'.$words["back"].'</click></vision>';
-				$list .= '<vision class="dele"><click href="trigger://DeleteItems" args="spc, '.$uriarr[4].', '.$row["ID"].'">'.$words["dele"].'</click></vision>';
+				$list .= '<v class="sele"><el></el></v>';
+				$list .= '<v class="name set"><el class="icon"></el><el class="titl">'.$row["TITLE"].'</el></v>';
+				$list .= '<v class="time">'.date('Y-m-d H:i', strtotime($row["KEY_MTIME"])).'</v>';
+				$list .= '<v class="back"><click href="trigger://RecoverItems" args="spc, '.$uriarr[4].', '.$row["ID"].'">'.$words["back"].'</click></v>';
+				$list .= '<v class="dele"><click href="trigger://DeleteItems" args="spc, '.$uriarr[4].', '.$row["ID"].'">'.$words["dele"].'</click></v>';
 				$list .= '</item>';
 			}
 		}else{
-			$list .= '<vision class="tips">'.$empty.'</vision>';
+			$list .= '<v class="tips">'.$empty.'</v>';
 		}
         $list .= '</section>';
 		$this->data[] = $list;

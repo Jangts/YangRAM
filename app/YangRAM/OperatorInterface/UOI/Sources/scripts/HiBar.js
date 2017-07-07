@@ -127,9 +127,14 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             'start': {
                 'click' (event) {
                     System.Workspace.isWorking && (System.Workspace.Launcher.state ? System.Workspace.Launcher.sleep() : System.Workspace.Launcher.launch());
+                },
+                'dblclick' (event) {
+                    if (System.Workspace.Launcher.viewstatus === 'dockmode') {
+                        System.Workspace.Launcher.ARL.showTop();
+                    }
                 }
             },
-            'myangram list': {
+            'myangram list icon': {
                 'click' (event) {
                     System.Workspace.isWorking && HiBar.handlers.Account[YangRAM.attr(this, 'name')] && HiBar.handlers.Account[YangRAM.attr(this, 'name')]();
                 }

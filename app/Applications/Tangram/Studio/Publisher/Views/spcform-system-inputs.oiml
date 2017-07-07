@@ -1,4 +1,4 @@
-<vision class="content-info-section content-prop" style="display:none;">
+<v class="content-info-section content-prop" style="display:none;">
     <inputs type="title">
         <input class="Title_Follow" type="text" value="{{$VALUES[`TITLE`]}}" placeholder="标题" readonly>
     </inputs>
@@ -86,8 +86,8 @@
         <el type="afterinput">次后再次收费</el>
         <font>（仅对非免费内容有效，0为不限时间或次数，两项皆不为0时，满足其一即需重复付费)</font>
     </inputs>
-</vision>
-<vision class="content-info-section content-rele" style="display:none;">
+</v>
+<v class="content-info-section content-rele" style="display:none;">
     <inputs type="title">
         <input class="Title_Follow" type="text" value="{{$VALUES[`TITLE`]}}" placeholder="标题" readonly>
     </inputs>
@@ -96,4 +96,4 @@
         <font>格式为{&quot;预设代号&quot;：ID}，多个内容用", "隔开，可以使用下面的选择工具辅助操作</font>
         <textarea name="RELATES" class="desc" placeholder="{&quot;预设代号&quot;：ID}">{{$VALUES[`RELATES`]}}</textarea>
     </inputs>
-</vision>
+</v>

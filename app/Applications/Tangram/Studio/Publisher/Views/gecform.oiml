@@ -1,6 +1,6 @@
 <form-vision type="origin" x-cid="{{$CID}}" x-sort="{{$SORT}}" x-page="{{$PAGE}}" x-status="{{$STTS}}" x-cls="{{$CLS}}" x-theme="" x-template="">
     <form>
-        <vision class="content-info-section content-base">
+        <v class="content-info-section content-base">
             <inputs type="title">
                 <input class="Title" name="TITLE" type="text" value="{{$VALUES[`TITLE`]}}" placeholder="在这里输入标题 ">
             </inputs>
@@ -19,7 +19,7 @@
                 <label>{{$LOCAL.edit[`Banner`]}}</label>
                 <input type="text" name="BANNER" value="{{$VALUES[`BANNER`]}}">
                 <image-vision name="BANNER"></image-vision>
-                <click type="pick" name="BANNER" filetype="image ">{{$LOCAL.edit[`Upload`]}}</vision>
+                <click type="pick" name="BANNER" filetype="image ">{{$LOCAL.edit[`Upload`]}}</v>
         </inputs>
         <inputs type="textarea">
             <label>{{$LOCAL.edit[`Description`]}}</label>
@@ -39,15 +39,15 @@
         </inputs>
         <inputs type="tags" class="seo">
             <input name="KEYWORDS" type="text" placeholder="输入SEO关键词，多个关键词请用 ','隔开。 " value="{{$VALUES[`KEYWORDS`]}}">
-            </vision>
-            </vision>
+            </v>
+            </v>
     </form>
 </form-vision>
 <edit-panel bgcolor="datered">
     <click href="trigger://{{AI_CURR}}::ToList" args="{{$ARGS}}" class="left-panel-button">{{$LOCAL.panel[`return`]}}</click>
     <click href="trigger://{{AI_CURR}}::ToTop " class="right-totop-button">
-        <vision class="arrow"></vision>
-        <vision class="stick"></vision>
+        <v class="arrow"></v>
+        <v class="stick"></v>
     </click>
     <click href="trigger://{{AI_CURR}}::PubItem" args="{{$ARGS}}" class="right-panel-button even">{{$LOCAL.panel[`pub`]}}</click>
 </edit-panel>

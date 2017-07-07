@@ -143,6 +143,15 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         },
         showHot() {
             return this.off();
+        },
+        showTop() {
+            var viewstatus = YangRAM.attr(this.middleApps, 'viewstatus');
+            if (viewstatus != 'openedonly') {
+                YangRAM.attr(this.middleApps, 'viewstatus', 'openedonly');
+            } else {
+                YangRAM.attr(this.middleApps, 'viewstatus', 'allspps');
+            }
+            return this;
         }
     });
 });

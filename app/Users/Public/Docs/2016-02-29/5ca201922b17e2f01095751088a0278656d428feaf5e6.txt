@@ -1309,7 +1309,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined) {
 			this.PassWord = System.Query('[name=pw]', this.Document);
 			this.Button = System.Query('click', this.Document);
 			this.LoadStatus = System.Query('loadstatus', this.Document);
-			this.LoadVision = System.Query('vision', this.Avatar[0]);
+			this.LoadVision = System.Query('v', this.Avatar[0]);
 			this.LoadPercent = System.Query('spcl', this.Avatar[0]);
 		},
 		FormActive : function(){
@@ -1493,7 +1493,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined) {
 			this.PassWord = System.Query('[name=pw]', this.Document);
 			this.Button = System.Query('click', this.Document);
 			this.LoadStatus = System.Query('loadstatus', this.Document);
-			this.LoadVision = System.Query('vision', this.Avatar[0]);
+			this.LoadVision = System.Query('v', this.Avatar[0]);
 			this.LoadPercent = System.Query('spcl', this.Avatar[0]);
 		},
 		FormActive : function(){
@@ -2550,7 +2550,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 	System.Progress.Extend({
 		Name : 'Loading Animation',
 		Build : function() {
-			this.Vision = System.Create('vision', this.Document);
+			this.Vision = System.Create('v', this.Document);
 			for (var i = 1; i < 10; i++) {
 				System.Create('spcl', this.Vision, {
 					name : 'cube' + i
@@ -2602,7 +2602,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 			top = top <= System.Height - 30 ? top : System.Height - 30;
 			this.Document.innerHTML = '';
 			this.Curaid = appid;
-			this.Widget = System.Create('vision', this.Document, {
+			this.Widget = System.Create('v', this.Document, {
 				className : 'dialog-main-box',
 				styles : {
 					width : width,
@@ -2610,7 +2610,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 					top : top,
 					left : left
 				},
-				html : '<vision class="dialog-header"><spcl class="dialog-name">' +title+ '</spcl><spcl class="dialog-swch">×</spcl></vision>'
+				html : '<v class="dialog-header"><spcl class="dialog-name">' +title+ '</spcl><spcl class="dialog-swch">×</spcl></v>'
 			});
 			if(setttings.control){
 				var mainHeight = height - 120;
@@ -2622,7 +2622,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 					html += setttings.control[i].Name
 					html += '</click>';
 				}
-				this.Control = System.Create('vision', this.Widget, {
+				this.Control = System.Create('v', this.Widget, {
 					className : 'dialog-control',
 					html : html
 				});
@@ -3039,7 +3039,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 			top = top <= System.Height - 30 ? top : System.Height - 30;
 			this.Document.innerHTML = '';
 			this.Curaid = appid;
-			this.Widget = System.Create('vision', this.Document, {
+			this.Widget = System.Create('v', this.Document, {
 				className : 'dialog-main-box',
 				styles : {
 					width : width,
@@ -3047,7 +3047,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 					top : top,
 					left : left
 				},
-				html : '<vision class="dialog-header"><spcl class="dialog-name">' +title+ '</spcl><spcl class="dialog-swch">×</spcl></vision>'
+				html : '<v class="dialog-header"><spcl class="dialog-name">' +title+ '</spcl><spcl class="dialog-swch">×</spcl></v>'
 			});
 			if(setttings.control){
 				var mainHeight = height - 120;
@@ -3059,7 +3059,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 					html += setttings.control[i].Name
 					html += '</click>';
 				}
-				this.Control = System.Create('vision', this.Widget, {
+				this.Control = System.Create('v', this.Widget, {
 					className : 'dialog-control',
 					html : html
 				});
@@ -3311,7 +3311,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 	var Kalendars = ['private', 'public', 'captain', 'festival'];
 	
 	var eSwitchVision = function(i, sections){
-		return System.Lib.Element.create('vision', sections, {
+		return System.Lib.Element.create('v', sections, {
 			owner : i,
 			status : eSwitchItems[i][1]
 		});
@@ -4609,7 +4609,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 	
 	System.TabletSetting.Extend({
 		Name : 'Tablet Settings',
-		Main : System.Lib.Element.create('vision', false, {
+		Main : System.Lib.Element.create('v', false, {
 			innerHTML : '<spcl class="choose">Choose a Link Item</spcl>'
 		}),
 		Build : function(){
@@ -4783,7 +4783,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 		},
 		Remain : function(list){
 			list = list || System.MsgCenter.AppNotice
-			var html = '<icon><img src="' +System.Path+this.AppId + '/icons/80/"></icon><vision><msgtit>' +this.Title+ '</msgtit><msgcon>' +this.Content+ '</msgcon><vision>';
+			var html = '<icon><img src="' +System.Path+this.AppId + '/icons/80/"></icon><v><msgtit>' +this.Title+ '</msgtit><msgcon>' +this.Content+ '</msgcon><v>';
 			var notice = System.Create('message',  list, {
 				aid : this.AppId,
 				href : this.href,
@@ -4811,7 +4811,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
 			return this;
 		},
 		Popup: function(remain) {	
-			var html = '<icon><img src="' +System.Path+this.AppId + '/icons/80/"></icon><vision><msgtit>' +this.Title+ '</msgtit><msgcon>' +this.Content+ '</msgcon></vision>'
+			var html = '<icon><img src="' +System.Path+this.AppId + '/icons/80/"></icon><v><msgtit>' +this.Title+ '</msgtit><msgcon>' +this.Content+ '</msgcon></v>'
 			var popups = System.Query('popup[status=off], popup[status=on]', System.MsgCenter.Document);
 			var position;
 			if (popups.length > 0) {

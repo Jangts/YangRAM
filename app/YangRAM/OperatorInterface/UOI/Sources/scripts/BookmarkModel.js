@@ -15,17 +15,17 @@ System.DeclareModel('BookmarkModel', (YangRAM, declare, global, undefined) => {
         LinKTemplate = '<item>' +
         '<bookmark appid="{@appid}" href="{@href}" menu="bookmark" type="{@type}" style="background-color: {@bgColor};">' +
         '<icon style="background-image: url({@source});"></icon>' +
-        '<title>{@name}</title><vision title="{@desc}"></vision>' +
+        '<title>{@name}</title><v title="{@desc}"></v>' +
         '</bookmark></item>',
         InfoTemplate = '<item>' +
         '<bookmark appid="{@appid}" href="{@href}" menu="bookmark" type="{@type}" style="background-color: {@bgColor};">' +
         '<icon style="background-image: url({@source});"></icon>' +
-        '<title>{@name}</title><desc>{@desc}</desc><vision></vision>' +
+        '<title>{@name}</title><desc>{@desc}</desc><v></v>' +
         '</bookmark></item>',
         RSRCTemplate = '<item>' +
         '<bookmark appid="{@appid}" href="{@href}" menu="bookmark" type="{@type}" style="background-color: {@bgColor};">' +
         '<iframe src="{@source}" scrolling="no"></iframe>' +
-        '<vision title="{@desc}"></vision>' +
+        '<v title="{@desc}"></v>' +
         '</bookmark></item>',
         ColorIndex = -1,
         linkColors = [
@@ -48,8 +48,7 @@ System.DeclareModel('BookmarkModel', (YangRAM, declare, global, undefined) => {
         appid: 0,
         source: '',
         name: 'New Link',
-        _init(uid, data) {
-            this.uid = uid;
+        _init(data) {
             this.group = data.group;
             this.appid = data.appid;
             this.type = data.type;

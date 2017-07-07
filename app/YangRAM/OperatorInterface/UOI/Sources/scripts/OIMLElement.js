@@ -35,12 +35,12 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     this.vertical = _.dom.query('scrollbar[type=vert]', this.Element)[0];
                     this.horizontal = _.dom.query('scrollbar[type=hori]', this.Element)[0];
                     if (this.vertical) {
-                        this.verticalRail = _.dom.query.byTag('rail', this.Vertical)[0];
-                        this.verticalDragger = _.dom.query.byTag('scrolldragger', this.Vertical)[0];
+                        this.verticalRail = _.dom.query.byTag('rail', this.vertical)[0];
+                        this.verticalDragger = _.dom.query.byTag('scrolldragger', this.vertical)[0];
                     }
                     if (this.horizontal) {
-                        this.horizontalRail = _.dom.query.byTag('rail', this.Horizontal)[0];
-                        this.horizontalDragger = _.dom.query.byTag('scrolldragger', this.Horizontal)[0];
+                        this.horizontalRail = _.dom.query.byTag('rail', this.horizontal)[0];
+                        this.horizontalDragger = _.dom.query.byTag('scrolldragger', this.horizontal)[0];
                     }
                     YangRAM.setStyle(this.document, {
                         display: 'block'
@@ -64,10 +64,10 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     option: tabName === this.startTabName ? YangRAM.create('item', this.options, {
                         dataTabName: tabName,
                         starttab: '',
-                        html: '<vision>' + (tabAlias || tabName) + '</vision>'
+                        html: '<v>' + (tabAlias || tabName) + '</v>'
                     }) : YangRAM.create('item', this.options, {
                         dataTabName: tabName,
-                        html: '<vision>' + (tabAlias || tabName) + '</vision><el>×</el>'
+                        html: '<v>' + (tabAlias || tabName) + '</v><el>×</el>'
                     }),
                     section: YangRAM.create('section', this.sections, {
                         dataTabName: tabName

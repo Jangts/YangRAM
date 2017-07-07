@@ -270,12 +270,12 @@ kalendar content sections {
     margin: 10px auto 50px;
 }
 
-kalendar content sections vision {
+kalendar content sections v {
     display: none;
     width: 100%;
 }
 
-kalendar content sections vision el {
+kalendar content sections v el {
     width: 100%;
     height: 30px;
     line-height: 30px;
@@ -285,24 +285,24 @@ kalendar content sections vision el {
     text-align: center;
 }
 
-kalendar content sections vision el.noevent {
+kalendar content sections v el.noevent {
     height: 80px;
     line-height: 80px;
 }
 
-kalendar content sections vision[state=off] {
+kalendar content sections v[state=off] {
     display: none;
     font-size: 12px;
     line-height: 20px;
 }
 
-kalendar content sections vision[state=on] {
+kalendar content sections v[state=on] {
     display: block;
     font-size: 14px;
     line-height: 20px;
 }
 
-kalendar content sections vision event {
+kalendar content sections v event {
     display: block;
     width: 98%;
     margin: 10px 1%;
@@ -310,11 +310,11 @@ kalendar content sections vision event {
     text-align: center;
 }
 
-kalendar content sections vision event:last-child {
+kalendar content sections v event:last-child {
     border-bottom: none;
 }
 
-kalendar content sections vision event>* {
+kalendar content sections v event>* {
     display: block;
     width: 98%;
     padding: 3px 1% 2px;
@@ -324,35 +324,35 @@ kalendar content sections vision event>* {
     margin-bottom: 5px;
 }
 
-kalendar content sections vision event>begin {
+kalendar content sections v event>begin {
     float: left;
     width: 47%;
 }
 
-kalendar content sections vision event>end {
+kalendar content sections v event>end {
     float: right;
     width: 47%;
 }
 
-kalendar content sections vision event>remark {
+kalendar content sections v event>remark {
     height: auto;
     min-height: 50px;
     border-bottom: none;
 }
 
-kalendar content sections vision event>*:before {
+kalendar content sections v event>*:before {
     display: inline-block;
     width: 100px;
     color: #666;
 }
 
-kalendar content sections vision event>*[contentEditable=true] {
+kalendar content sections v event>*[contentEditable=true] {
     border-bottom: solid #CCC 1px;
     outline: none;
     background-color: #E9E9E9;
 }
 
-kalendar content sections vision event>*[contentEditable=true]:before {
+kalendar content sections v event>*[contentEditable=true]:before {
     position: absolute;
     opacity: .1;
 }

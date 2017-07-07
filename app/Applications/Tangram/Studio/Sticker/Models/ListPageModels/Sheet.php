@@ -102,7 +102,7 @@ class Sheet extends DataObject {
 
 	public function render(){
 		if(empty($this->data['sheet'])){
-            return '<list type="sheet" class="lightdatered"><vision class="tips">This Category Is Empty</vision></list>';
+            return '<list type="sheet" class="lightdatered"><v class="tips">This Category Is Empty</v></list>';
         }
 		return OIML::sheet($this->data['sheet'], 'lightmagenta') . OIML::paging($this->data['pages'], 'lightmagenta');
 	}

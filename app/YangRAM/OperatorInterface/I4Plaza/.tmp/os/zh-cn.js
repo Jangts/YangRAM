@@ -53,11 +53,11 @@ const self = {
         alias:'post',
         api:''
     }, ],
-	loading : '<vision class="data-loading-spinner"><vision class="dls-container1"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></vision><vision class="dls-container2"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></vision><vision class="dls-container3"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></vision></vision>',
+	loading : '<v class="data-loading-spinner"><v class="dls-container1"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></v><v class="dls-container2"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></v><v class="dls-container3"><el class="dls-circle1"></el><el class="dls-circle2"></el><el class="dls-circle3"></el><el class="dls-circle4"></el></v></v>',
 	events : {
-        'wsbtns > vision.widget-switch-button':{
+        'wsbtns > v.widget-switch-button':{
             'click' () {
-                __thisapp__.$('wsbtns > vision.widget-switch-button').removeAttr('current');;
+                __thisapp__.$('wsbtns > v.widget-switch-button').removeAttr('current');;
                 var index=YangRAM.attr(this, 'current', 'current').attr(this, 'data-switch-to');
                 YangRAM.attr(__thisapp__.widgets, 'data-posi', index);
                 YangRAM.attr(__thisapp__.NonWork, 'data-posi', ++index);
@@ -124,7 +124,7 @@ const self = {
             ], function(echarts, theme) {
                 widget.innerHTML='';
                 YangRAM.API.util.arr.each(list, function(i, data) {
-                    var el=YangRAM.create('vision', widget, {
+                    var el=YangRAM.create('v', widget, {
                         className:className,
                         height:height
                     });
@@ -143,9 +143,9 @@ const self = {
             var widget=self.widgets[alias].widget,
                 title=self.widgets[alias].title,
                 nums=[' odd', ' even'];
-            widget.innerHTML='<vision class="widget-title">' + title + '<vision>';
+            widget.innerHTML='<v class="widget-title">' + title + '<v>';
             YangRAM.API.util.arr.each(list, function(i, data) {
-                var el=YangRAM.create('vision', widget, {
+                var el=YangRAM.create('v', widget, {
                     className:className + nums[i % 2],
                     height:height,
                     html:'<el class="for-type">[' + data.MARK + ']</el>' + data.TITLE + '<el class="for-time">[' + data.TIME + ']</el>'
@@ -158,9 +158,9 @@ const self = {
             });
         }
 }};
-const pm_5912b53940996 = {
+const pm_595f6403cb1d5 = {
 	};
-const pm_5912b5394099a = {
+const pm_595f6403cb1db = {
 	name : __LANG__.APPNAME,
 	off : YangRAM.donothing,
 	render : YangRAM.donothing,
@@ -196,9 +196,19 @@ const pm_5912b5394099a = {
     },
 	rebuild(){
         this.document.innerHTML='';
-        this.WallPaper=YangRAM.create('wallpaper', this.document.parentNode, {
-            display:'none'
-        });
+        this.WallPaper={
+            document:YangRAM.create('wallpaper', this.document.parentNode, { display:'none' })
+        };
+        var bgpics={};
+        YangRAM.API.BGP=(appid, src)=> {
+            if(!bgpics[appid]){
+                bgpics[appid]=YangRAM.create('bgpic', this.WallPaper.document, {
+                    appid:appid
+                });
+            }
+            YangRAM.attr(bgpics[appid], 'style', 'background-image:url(' + src + ')').$('[appid="' + System.Runtime.currentRunningAppID + '"]').attr('running', '');;
+            return bgpics[appid];
+        }
         this.widgets=YangRAM.create('widgets', this.document, {
             'data-posi':0
         });
@@ -229,16 +239,16 @@ const pm_5912b5394099a = {
         });
 
         var buttons=YangRAM.create('wsbtns', this.document.parentNode);
-        YangRAM.create('vision', buttons, {
+        YangRAM.create('v', buttons, {
             className:'widget-switch-button',
             current:'current',
             dataSwitchTo:'0'
         });
-        YangRAM.create('vision', buttons, {
+        YangRAM.create('v', buttons, {
             className:'widget-switch-button',
             dataSwitchTo:'-1'
         });
-        YangRAM.create('vision', buttons, {
+        YangRAM.create('v', buttons, {
             className:'widget-switch-button',
             dataSwitchTo:'-2'
         });
@@ -247,7 +257,7 @@ const pm_5912b5394099a = {
 	loadWallPaper(){
         var that=this;
         setTimeout(function() {
-            YangRAM.$(that.WallPaper).hide().fadeIn(2000);
+            YangRAM.$(that.WallPaper.document).hide().fadeIn(2000);
         }, 500);
         return this;
     },
@@ -316,6 +326,6 @@ const pm_5912b5394099a = {
     }};
 const privates = {
 	};
-YangRAM.extends(__thisapp__, true, pm_5912b5394099a);
+YangRAM.extends(__thisapp__, true, pm_595f6403cb1db);
 
 });

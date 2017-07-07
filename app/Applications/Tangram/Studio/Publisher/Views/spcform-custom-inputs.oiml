@@ -1,4 +1,4 @@
-<vision class="content-info-section content-base">
+<v class="content-info-section content-base">
     {{$PRIMER}}
     <inputs type="title">
         <input class="Title" name="TITLE" type="text" value="{{$VALUES[`TITLE`]}}" placeholder="{{$TITLEDESC}}">
@@ -7,4 +7,4 @@
     <inputs type="tags" class="seo">
         <input name="TAGS" type="text" placeholder="输入tag标签，多个标签请用','隔开。" value="{{$VALUES[`TAGS`]}} ">
     </inputs>
-</vision>
+</v>

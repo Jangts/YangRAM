@@ -34,7 +34,7 @@ trait layout {
 			}
 			$html .= '<click href="'.$block["href"].'"'.$attrs.'>';
 			foreach($block["elem"] as $key=>$val){
-				$html .= '<vision class="'.$key.'">'.$val.'</vision>';
+				$html .= '<v class="'.$key.'">'.$val.'</v>';
 			}
 			$html .= '</click>';
 			if(isset($block["after"])){

@@ -17,7 +17,7 @@
 
 <body>
 <yangram>
-  <workspace>
+  <workspace viewstatus="workmode">
     <windows></windows>
     <browser></browser>
     <launcher>
@@ -67,13 +67,13 @@
         <circle-vision></circle-vision>
       </avatar>
       <form name="oui-unlock-form">
-        <vision name="username">
+        <v name="username">
           <?=$username?>
-        </vision>
-        <vision name="pincode">
+        </v>
+        <v name="pincode">
           <input name="pin" type="text" autocomplete="off" placeholder="" max-length="7" value="" />
           <pinshow></pinshow>
-        </vision>
+        </v>
       </form>
     </locker>
     <logger>
@@ -193,7 +193,7 @@ iBlock([
                     return;
                 }
                 return false;
-            } else if (elem.tagName == 'TEXTAREA') {
+            } else if (elem.tagName == 'TEXTcontainer') {
                 if (elem.readOnly == true || elem.disabled == true) {
                     return false;
                 }

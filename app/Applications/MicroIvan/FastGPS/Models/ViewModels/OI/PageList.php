@@ -192,7 +192,7 @@ class PageList extends DataObject {
 			if(isset($this->data['list'])){
 				return OIML::sheet($this->data['list'], 'dark');
 			}
-			return '<list type="sheet" class="dark"><vision class="tips">This Category Is Empty</vision></list>';
+			return '<list type="sheet" class="dark"><v class="tips">This Category Is Empty</v></list>';
 		}
 		if($posi=='page'){
 			return OIML::paging($this->data['page'], 'dark');
