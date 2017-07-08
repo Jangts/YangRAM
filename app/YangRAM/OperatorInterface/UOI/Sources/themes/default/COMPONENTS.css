@@ -1,0 +1,257 @@
+@charset "utf-8";
+
+/*** HIBAR ***/
+
+hibar start:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+hibar start logo {
+    background: url(start.png) top no-repeat;
+}
+
+hibar start logo:hover {
+    background: url(start.png) bottom no-repeat;
+}
+
+hibar start[type=setting] logo {
+    background: url(settings.png) top no-repeat;
+}
+
+hibar start[type=setting] logo:hover {
+    background: url(settings.png) bottom no-repeat;
+}
+
+hibar account:hover,
+hibar account myangram welcome,
+hibar account myangram v,
+hibar appstore:hover,
+hibar msger:hover,
+hibar wsmswitcher:hover,
+hibar timer:hover,
+hibar searcher:hover,
+hibar msger[type=reading],
+hibar wsmswitcher[type=wsmswitcher],
+hibar timer[type=kalendar],
+hibar searcher[type=searcher] {
+    background: rgba(0, 0, 0, .8);
+}
+
+hibar account myangram v list icon {
+    background-image: url(account.png);
+}
+
+hibar subbars application menu {
+    color: #DDD;
+    border-left: rgba(255, 255, 255, .1) dotted 1px;
+}
+
+hibar subbars application menu items item {
+    background: #444;
+}
+
+hibar subbars application menu items item[state=off] {
+    color: #999;
+}
+
+hibar subbars[actived=actived] application menu:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+hibar subbars[actived=actived] application menu items item:hover {
+    background-color: #555;
+}
+
+hibar menus menu {
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, .2) 1px 3px 5px;
+    border: #333 solid 1px;
+}
+
+hibar menus menu {
+    background: #181818;
+}
+
+hibar menus menu group {
+    border-top: #333 solid 1px;
+}
+
+hibar menus menu group item[state=off] {
+    color: #888;
+}
+
+hibar menus menu group item:hover {
+    background-color: #333;
+}
+
+hibar menus menu group item[state=off]:hover {
+    background-color: #222;
+}
+
+
+/*** WIDGETS ***/
+
+yangram widgets processbus::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, .3);
+}
+
+yangram widgets processbus content table {
+    color: #FFF;
+}
+
+yangram widgets processbus content table tr[menu] {
+    background-color: #333;
+}
+
+yangram widgets processbus content table tr[row] {
+    color: #CCC;
+}
+
+yangram widgets processbus content table tr[row=odd] {
+    background-color: #181818;
+}
+
+yangram widgets processbus content table tr[row=even] {
+    background-color: #222222;
+}
+
+yangram widgets processbus content table tr[row] td {
+    border-left: #000 1px solid;
+}
+
+yangram widgets explorer v.explorer-header {
+    background-color: #808080;
+    color: #FFF;
+}
+
+yangram widgets explorer v.explorer-header .explorer-swch {
+    color: #EEE;
+}
+
+yangram widgets explorer v.explorer-control click {
+    background-color: #808080;
+    color: #FFF;
+}
+
+yangram widgets explorer v.explorer-control click:hover {
+    background-color: #666;
+    color: #FFF;
+}
+
+yangram widgets explorer nav.explorer-nav {
+    background-color: #808080;
+    color: #FFF;
+    border: #808080 1px solid;
+}
+
+yangram widgets explorer nav.explorer-nav el {
+    background-color: #666;
+    color: #FFF;
+}
+
+yangram widgets explorer nav.explorer-nav click {
+    background-color: #666;
+    color: #FFF;
+}
+
+yangram widgets explorer nav.explorer-nav click.selected {
+    background-color: #FFF;
+    color: #666;
+}
+
+yangram widgets explorer v.explorer-content {
+    border: #999 1px solid;
+}
+
+yangram widgets explorer v.explorer-content scrollbar scrolldragger {
+    background-color: #000;
+}
+
+yangram widgets explorer v.explorer-content content>el {
+    color: #999;
+}
+
+yangram widgets explorer v.explorer-content content list item {
+    background-color: #808080;
+    color: #FFF;
+}
+
+yangram widgets explorer v.explorer-content content list item:hover {
+    background-color: #666;
+}
+
+yangram widgets explorer v.explorer-content content .item {
+    border-bottom: #DDD solid 1px;
+    color: #333;
+}
+
+yangram widgets explorer v.explorer-content content .item .sele {
+    border: #CCC 1px solid;
+    background-color: #FFF;
+}
+
+yangram widgets explorer v.explorer-content content .item.folder .sele {
+    border: #EEE 1px solid;
+    background-color: #EEE;
+}
+
+yangram widgets explorer v.explorer-content content .item.selected:not(.folder) .sele:before {
+    color: #0C3;
+}
+
+yangram widgets explorer v.explorer-content content .item .time {
+    border-left: #E6E6E6 1px solid;
+}
+
+yangram widgets explorer v.explorer-content content .item:hover {
+    background-color: #EEE;
+}
+
+yangram widgets explorer v.explorer-content content .item.selected:not(.folder) {
+    background-color: #EEE;
+}
+
+yangram widgets explorer v.explorer-content content .item .icon {
+    background-image: url(icons/item_icons_smaller.png);
+}
+
+yangram widgets explorer v.explorer-content content .item.folder .icon {
+    background-image: url(icons/folder_icons_smaller.png);
+}
+
+yangram widgets explorer v.explorer-content content .item.img .icon {
+    background-image: url(icons/item_icons_smaller.png) !important;
+}
+
+yangram widgets dialogs v.dialog-main-box {
+    background-color: #FFF;
+    border: rgba(0, 0, 0, .3) 2px solid;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+}
+
+yangram widgets dialogs v.dialog-main-box v.dialog-header {
+    border-bottom: #CCC 1px solid;
+}
+
+yangram widgets dialogs v.dialog-main-box v.dialog-header el.dialog-swch {
+    color: #999;
+}
+
+yangram widgets dialogs v.dialog-main-box v.dialog-control click {
+    border: #CCC solid 1px;
+    color: #666;
+}
+
+yangram widgets dialogs v.dialog-main-box v.dialog-control click:hover {
+    background-color: #09F;
+    border: #0CC solid 1px;
+    color: #FFF;
+}
+
+yangram widgets dialogs v.dialog-main-box application {
+    border: #CCC 1px solid;
+}
+
+yangram widgets dialogs v.dialog-main-box application scrollbar scrolldragger {
+    background-color: #000;
+}

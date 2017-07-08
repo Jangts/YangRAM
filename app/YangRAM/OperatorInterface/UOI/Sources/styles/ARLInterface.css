@@ -69,22 +69,6 @@ rankinglist application {
     cursor: pointer;
 }
 
-rankinglist systemapps[type=top] application {
-    border-bottom: rgba(128, 128, 128, .4) 1px solid;
-}
-
-rankinglist systemapps[type=bottom] application {
-    border-top: rgba(128, 128, 128, .4) 1px solid;
-}
-
-rankinglist application:hover {
-    background-color: rgba(204, 204, 204, 0.1);
-}
-
-rankinglist application[running] {
-    background-color: rgba(204, 204, 204, 0.1);
-}
-
 
 /**********************************************/
 
@@ -93,24 +77,12 @@ rankinglist application icon {
     width: 48px;
     height: 50px;
     line-height: 50px;
-    margin: 0px 3px;
+    transition: border-left ease .2s;
 }
 
 rankinglist application icon {
     font-size: 16px;
     text-align: center;
-    color: #FFF;
-}
-
-rankinglist application:hover icon {
-    margin-left: 0px;
-    border-left: #C30 3px solid;
-}
-
-rankinglist application[state=on] icon {
-    margin-left: 0px;
-    border-left: #C30 3px solid;
-    color: #C30;
 }
 
 
@@ -131,8 +103,8 @@ rankinglist application appname {
     width: auto;
     height: 30px;
     left: 60px;
-    padding: 5px 10px;
-    border: #333 5px solid;
+    margin: 8px 0px 8px 6px;
+    padding: 0px 10px;
     font-size: 12px;
     line-height: 30px;
     letter-spacing: .5px;
@@ -143,10 +115,8 @@ rankinglist application appname {
 }
 
 rankinglist application appname {
-    color: #111;
     text-align: center;
     opacity: 0;
-    background: rgba(255, 255, 255, .4);
 }
 
 rankinglist application appname[longtext] {
@@ -167,12 +137,11 @@ rankinglist application appname[longtext] {
 
 Launcher[state=on][viewstatus=dockmode] rankinglist {
     overflow: visible;
-    box-shadow: 0 0px 2px #111;
 }
 
 Launcher[state=on][viewstatus=dockmode] rankinglist,
 Launcher[state=on][viewstatus=dockmode] rankinglist mask {
-    transition: width ease .14s;
+    transition: width ease .14s, background-color ease .2s;
 }
 
 Launcher[state=on][viewstatus=dockmode] rankinglist noramlapps scrollbar {
@@ -229,22 +198,17 @@ Launcher[viewstatus=wallmode] rankinglist application {
 Launcher[viewstatus=wallmode] rankinglist application appname {
     max-width: 120px;
     width: 120px;
-    height: 50px;
+    height: 34px;
     left: 70px;
-    background: rgba(255, 255, 255, 0);
     margin-right: 10px;
-    line-height: 50px;
-    color: #999;
+    background-color: transparent;
+    line-height: 34px;
     text-align: left;
     font-size: 12px;
     letter-spacing: 0;
     opacity: 1;
     border: none;
     padding: 0;
-}
-
-Launcher[viewstatus=wallmode] rankinglist application:hover appname {
-    color: #FFF;
 }
 
 
@@ -259,7 +223,6 @@ rankinglist noramlapps application[isnew="1"]:before {
     left: 6px;
     top: 26px;
     border-radius: 3px;
-    background-color: #FFF;
     opacity: .6;
     content: "";
 }
@@ -275,7 +238,6 @@ rankinglist noramlapps application[tips]:after {
     left: 36px;
     top: 15px;
     border-radius: 3px;
-    background-color: #C30;
     content: "";
 }
 

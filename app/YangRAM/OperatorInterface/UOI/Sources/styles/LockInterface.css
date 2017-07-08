@@ -13,7 +13,6 @@ yangram widgets locker masker {
 }
 
 yangram widgets locker masker {
-    background-image: url(LockPaper.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 1;
@@ -186,8 +185,14 @@ yangram widgets locker form[status=actived] v {
     margin: 15px 60px;
 }
 
+yangram widgets locker form v input {
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: -56px;
+}
+
 yangram widgets locker form v input:focus {
-    background-color: #012;
+    background-image: url(inputs.png);
 }
 
 yangram widgets locker form[status=actived] v[name=pincode] pinshow {
@@ -233,51 +238,4 @@ yangram widgets locker form[status=checked] {
 yangram widgets locker form[status=checked] v {
     top: 0px;
     margin: -30px 60px;
-}
-
-
-/**********************************************************************************/
-
-
-/*** Loading ***/
-
-yangram widgets logger avatar circle-vision[status=loading] {
-    cursor: default;
-    animation: loading_circle 1s infinite;
-}
-
-
-/**********************************************************************************/
-
-
-/*** Animation ***/
-
-@keyframes loading_circle {
-    0% {
-        width: 154px;
-        height: 154px;
-        margin-left: 0px;
-        margin-top: 0px;
-        border: #0CF solid 3px;
-        opacity: 1;
-        box-shadow: 0 0 5px #000;
-    }
-    25% {
-        width: 134px;
-        height: 134px;
-        margin-left: -17px;
-        margin-top: -17px;
-        border: #0FC solid 30px;
-        opacity: .5;
-        box-shadow: 0 0 15px #000;
-    }
-    100% {
-        width: 154px;
-        height: 154px;
-        margin-left: 0px;
-        margin-top: 0px;
-        border: #0CF solid 3px;
-        opacity: 1;
-        box-shadow: 0 0 5px #000;
-    }
 }

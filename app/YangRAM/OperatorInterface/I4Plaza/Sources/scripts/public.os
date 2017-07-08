@@ -35,18 +35,25 @@ public {
     rebuild() {
         this.document.innerHTML = '';
         this.WallPaper = {
-            document : YangRAM.create('wallpaper', this.document.parentNode, { display: 'none' })
+            document : YangRAM.create('wallpaper', this.document.parentNode.parentNode.parentNode, { display: 'none' })
         };
         var bgpics = {};
-        YangRAM.API.BGP = (appid, src) => {
-            if(!bgpics[appid]){
-                bgpics[appid] = YangRAM.create('bgpic', this.WallPaper.document, {
-                    appid:appid
+        System.Runtime.regApi2Apps('regBackgroundLayer', function(src, is_color){
+            if(!bgpics[this.appid]){
+                bgpics[this.appid] = YangRAM.create('bgpic', __thisapp__.WallPaper.document, {
+                    appid: this.appid
                 });
             }
-            YangRAM.attr(bgpics[appid], 'style', 'background-image:url(' + src + ')').$('[appid="' + System.Runtime.currentRunningAppID + '"]').attr('running', '');;
-            return bgpics[appid];
-        }
+            if(is_color){
+                YangRAM.attr(bgpics[this.appid], 'style', 'background-color:' + src);
+            }else{
+                YangRAM.attr(bgpics[this.appid], 'style', 'background-image:url(' + src + ')');
+            }
+            setTimeout(()=>{
+                YangRAM.$('[appid="' + System.Runtime.currentRunningAppID + '"]').attr('running', '').attr('runstatus', 'working');
+            }, 0);
+            return bgpics[this.appid];
+        });
         this.widgets = YangRAM.create('widgets', this.document, {
             'data-posi': 0
         });

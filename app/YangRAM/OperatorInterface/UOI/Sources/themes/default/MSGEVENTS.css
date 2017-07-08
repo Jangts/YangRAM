@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+/*** MESSAGE ***/
+
+msgcenter content msgroup {
+    border-bottom: #EEE solid 1px;
+}
+
+msgcenter content msgroup:before {
+    background: rgba(255, 255, 255, .4);
+    color: #222;
+}
+
+msgcenter content msgroup message {
+    background: rgba(0, 0, 0, .8);
+    color: #FFF;
+}
+
+msgcenter content msgroup message icon {
+    background: rgba(153, 153, 153, .1);
+}
+
+msgcenter content msgroup message v {
+    background: rgba(204, 204, 204, .1);
+}
+
+msgcenter content msgroup message v msgtit {
+    color: #FFD;
+}
+
+msgcenter alert msgbox {
+    background: #EEE;
+    box-shadow: rgba(0, 0, 0, .3) 0 0 8px;
+}
+
+msgcenter alert msgbox msgtit {
+    border-bottom: #CCC 1px solid;
+    background: #EEE;
+}
+
+msgcenter alert msgbox msgtit {
+    color: #333;
+}
+
+msgcenter alert msgbox msgcon {
+    color: #444;
+}
+
+msgcenter alert msgbox msgbtn click {
+    border-top: #CCC 1px solid;
+    background: #EEE;
+    color: #333;
+}
+
+msgcenter alert msgbox msgbtn click:hover {
+    background: #d4dfE3;
+    color: #234;
+}
+
+msgcenter alert msgbox msgbtn click[data-exec=reject] {
+    border-left: #CCC 1px solid;
+    border-right: #CCC 1px solid;
+}
+
+msgcenter alert msgbox msgbtn click[data-exec=confirm] {
+    border-right: #999 1px solid;
+}
+
+msgcenter notice {
+    background: rgba(0, 0, 0, .8);
+    color: #FFF;
+}
+
+msgcenter notice icon {
+    background: rgba(153, 153, 153, .1);
+}
+
+msgcenter notice v {
+    background: rgba(204, 204, 204, .1);
+}
+
+msgcenter notice v msgtit {
+    color: #FFD;
+}
+
+
+/*** EVENTS ***/
+
+kalendar dates {
+    background: rgba(0, 0, 0, .9);
+}
+
+kalendar dates {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+kalendar dates {
+    box-shadow: -2px 2px 6px rgba(0, 0, 0, .4);
+    border-left: solid rgba(255, 255, 255, .1) 1px;
+    border-bottom: solid rgba(255, 255, 255, .1) 1px;
+}
+
+kalendar dates [name=month] {
+    width: 360px;
+    background: #222;
+}
+
+kalendar dates [name=month] el {
+    color: #999;
+}
+
+kalendar dates [name=month] el:hover {
+    background: #181818;
+}
+
+kalendar dates [name=week] {
+    background: #222;
+}
+
+kalendar dates [name=week] list {
+    color: #999;
+}
+
+kalendar dates [name=week] list:hover {
+    background: #191919;
+}
+
+kalendar dates [name=week] list[today] {
+    background: #191919;
+}
+
+kalendar dates [name=days] {
+    background: #222;
+}
+
+kalendar dates [name=days] list {
+    color: #999;
+    background: #181818;
+}
+
+kalendar dates [name=days] list[events] {
+    background: #522;
+}
+
+kalendar dates [name=days] list[today] {
+    background: #663300;
+}
+
+kalendar dates [name=days] list[actived],
+kalendar dates [name=days] list:hover {
+    border: #ab3f45 1px solid;
+}
+
+kalendar dates [name=days] list[disabled] {
+    color: #666;
+    background: #282828;
+}
+
+kalendar dates [name=days] list[disabled]:hover {
+    border: #282828 1px solid;
+}
+
+kalendar dates [name=setting] {
+    background: #161616;
+    color: #666;
+}
+
+kalendar content {
+    background-color: #FFF;
+    border: solid rgba(0, 204, 255, .2) 1px;
+}
+
+kalendar content switch item {
+    border: #0CF solid 1px;
+    color: #0CF;
+}
+
+kalendar content switch item:first-child {
+    border-left: #0CF solid 1px;
+}
+
+kalendar content switch item[state=on] {
+    background-color: #0CF;
+    color: #FFF;
+}
+
+kalendar content sections {
+    border: #0CF solid 1px;
+}
+
+kalendar content sections v el {
+    color: #999;
+}
+
+kalendar content sections v event {
+    border-bottom: solid #00CCFF 1px;
+}
+
+kalendar content sections v event>* {
+    color: #09F;
+    border-bottom: dashed #00CCFF 1px;
+}
+
+kalendar content sections v event>*:before {
+    color: #666;
+}
+
+kalendar content sections v event>*[contentEditable=true] {
+    border-bottom: solid #CCC 1px;
+    background-color: #E9E9E9;
+}

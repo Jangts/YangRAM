@@ -5,43 +5,19 @@
 hibar start {
     display: block;
     width: 50px;
-    height: 50px;
+    height: 40px;
     margin: 0;
 }
 
 hibar start {
-    background: #111;
-    box-shadow: #000 0 0 2px;
     float: left;
     cursor: default;
-    border-radius: 0 0 10px 0;
-}
-
-hibar start:hover,
-hibar start[started=true] {
-    background: #222;
-    box-shadow: #000 0 0 5px;
 }
 
 hibar start logo {
     display: block;
     width: 50px;
-    height: 50px;
-    background: url(start.png) top no-repeat;
-}
-
-hibar start logo:hover {
-    background: url(start.png) bottom no-repeat;
-}
-
-hibar start[type=setting] logo {
-    width: 50px;
-    height: 50px;
-    background: url(settings.png) top no-repeat;
-}
-
-hibar start[type=setting] logo:hover {
-    background: url(settings.png) bottom no-repeat;
+    height: 40px;
 }
 
 
@@ -66,12 +42,7 @@ hibar account {
     width: 120px;
     font-size: 12px;
     letter-spacing: .8px;
-    background: rgba(51, 51, 51, .3);
     overflow: visible;
-}
-
-hibar account:hover {
-    background: rgba(51, 51, 51, .8);
 }
 
 hibar account admin {
@@ -100,7 +71,6 @@ hibar account admin myname {
     height: 24px;
     margin: 8px;
     margin-left: 0;
-    color: #FFF;
     line-height: 24px;
     text-align: left;
     float: left;
@@ -131,10 +101,8 @@ hibar account myangram welcome {
     width: 280px;
     height: 38px;
     text-align: center;
-    background: rgba(51, 51, 51, .8);
     margin-top: 1px;
     line-height: 38px;
-    color: #fff;
 }
 
 hibar account myangram v {
@@ -142,7 +110,6 @@ hibar account myangram v {
     height: 80px;
     margin-top: 1px;
     padding: 0 15px;
-    background: rgba(51, 51, 51, .8);
     overflow: hidden !important;
 }
 
@@ -157,7 +124,6 @@ hibar account myangram v list icon {
     width: 50px;
     height: 130px;
     margin-top: 15px;
-    background-image: url(account.png);
     background-repeat: no-repeat;
     transition: all .4s ease-in-out;
 }
@@ -173,15 +139,10 @@ hibar msger {
     float: right;
     width: 40px;
     height: 40px;
-    color: #FFF;
     font-size: 16px;
     line-height: 45px;
     cursor: pointer;
     transition: all ease .3s;
-}
-
-hibar msger[type=reading] {
-    background: rgba(0, 0, 0, .8);
 }
 
 
@@ -191,16 +152,10 @@ hibar appstore {
     float: right;
     width: 40px;
     height: 40px;
-    background: rgba(51, 51, 51, .8);
-    color: #FFF;
     font-size: 16px;
     line-height: 45px;
     cursor: pointer;
     transition: all ease .3s;
-}
-
-hibar appstore:hover {
-    background: #333;
 }
 
 
@@ -210,19 +165,10 @@ hibar wsmswitcher {
     float: right;
     width: 40px;
     height: 40px;
-    color: #FFF;
     font-size: 16px;
     line-height: 45px;
     cursor: pointer;
     transition: all ease .3s;
-}
-
-hibar wsmswitcher:hover {
-    background: #333;
-}
-
-hibar wsmswitcher[type=wsmswitcher] {
-    background: rgba(0, 0, 0, .8);
 }
 
 
@@ -232,21 +178,11 @@ hibar timer {
     float: right;
     width: 120px;
     height: 40px;
-    background: rgba(51, 51, 51, .3);
-    color: #FFF;
     font-size: 12px;
     line-height: 40px;
     text-align: center;
     cursor: pointer;
     transition: all ease .3s;
-}
-
-hibar timer:hover {
-    background: #333;
-}
-
-hibar timer[type=kalendar] {
-    background: rgba(0, 0, 0, .8);
 }
 
 
@@ -256,19 +192,10 @@ hibar searcher {
     float: right;
     width: 40px;
     height: 40px;
-    color: #FFF;
     font-size: 16px;
     line-height: 45px;
     cursor: pointer;
     transition: all ease .3s;
-}
-
-hibar searcher:hover {
-    background: #333;
-}
-
-hibar searcher[type=searcher] {
-    background: rgba(0, 0, 0, .8);
 }
 
 hibar searcher[type=searcher] icon:before {

@@ -120,7 +120,6 @@ yangram widgets logger form v input {
     width: 168px;
     height: 28px;
     background: #181818;
-    line-height: normal;
     color: #FFF;
 }
 
@@ -132,7 +131,21 @@ yangram widgets logger form v input {
 }
 
 yangram widgets logger form v input:focus {
-    background-color: #012;
+    background-image: url(inputs.png);
+    background-repeat: no-repeat;
+    background-position-x: 0;
+}
+
+yangram widgets logger form v[name=username] input {
+    background-position-y: 0;
+}
+
+yangram widgets logger form v[name=password] input {
+    background-position-y: -28px;
+}
+
+yangram widgets logger form v[name=pincode] input {
+    background-position-y: -56px;
 }
 
 yangram widgets logger form v input:-webkit-autofill {

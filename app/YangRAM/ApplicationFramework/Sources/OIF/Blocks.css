@@ -103,10 +103,11 @@ list[type=blocks] item click:hover .mask {
 
 list[type=blocks] item click {
     background: #222222;
+    box-shadow: 0px 0px 2px #111111;
 }
 
 list[type=blocks] item click:hover {
-    box-shadow: 0px 0px 2px #111111;
+    box-shadow: 0px 0px 10px #111111;
 }
 
 list[type=blocks] item click .titl {
@@ -129,10 +130,11 @@ list[type=blocks] item click .mask {
 
 list[type=blocks].darkpurple item click {
     background: #6D196D;
+    box-shadow: 0px 0px 2px #660066;
 }
 
 list[type=blocks].darkpurple item click:hover {
-    box-shadow: 0px 0px 2px #660066;
+    box-shadow: 0px 0px 10px #660066;
 }
 
 
@@ -140,10 +142,11 @@ list[type=blocks].darkpurple item click:hover {
 
 list[type=blocks].datered item click {
     background: #b2212f;
+    box-shadow: 0px 0px 2px #660000;
 }
 
 list[type=blocks].datered item click:hover {
-    box-shadow: 0px 0px 2px #660000;
+    box-shadow: 0px 0px 10px #660000;
 }
 
 
@@ -151,10 +154,11 @@ list[type=blocks].datered item click:hover {
 
 list[type=blocks].magenta item click {
     background: #df226e;
+    box-shadow: 0px 0px 2px #660022;
 }
 
 list[type=blocks].magenta item click:hover {
-    box-shadow: 0px 0px 2px #660022;
+    box-shadow: 0px 0px 10px #660022;
 }
 
 
@@ -162,8 +166,9 @@ list[type=blocks].magenta item click:hover {
 
 list[type=blocks].azure item click {
     background: #1ba6ea;
+    box-shadow: 0px 0px 2px #002266;
 }
 
 list[type=blocks].azure item click:hover {
-    box-shadow: 0px 0px 2px #002266;
+    box-shadow: 0px 0px 10px #002266;
 }

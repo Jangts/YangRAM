@@ -80,6 +80,7 @@ windows application[scroll] {
 
 windows application::-webkit-scrollbar {
     display: none;
+    position: absolute;
     width: 2px;
     height: 2px;
     margin: 0px;
@@ -100,7 +101,6 @@ windows application::-webkit-resizer {
 
 windows application::-webkit-scrollbar-thumb {
     width: 2px;
-    background-color: rgba(128, 128, 128, .3);
     border-radius: 1px;
 }
 
@@ -124,18 +124,10 @@ windows application view {
 windows application view {
     background-color: transparent;
     overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
-}
-
-windows application view[loading] {
-    color: #333;
-    background-color: #FFF;
-    border-color: #CCC;
 }
 
 windows application[running][size=cover] view {
     display: block;
-    background-color: #FFF;
     max-width: 100%;
     margin-top: 40px;
     margin-bottom: 0;
@@ -146,9 +138,6 @@ windows application[running][size=cover] view {
 windows application view[error],
 windows application[size=cover] view[error] {
     padding: 20px;
-    color: #FFF;
-    background: #33A5DD;
-    background: rgba(51, 165, 221, 1);
 }
 
 
@@ -158,7 +147,6 @@ windows application view weclome {
     display: block;
     width: 360px;
     height: 360px;
-    background-color: #FFF;
     text-align: center;
 }
 
@@ -185,8 +173,6 @@ windows application view weclome appname {
     margin-bottom: 10px;
     line-height: 40px;
     font-size: 30px;
-    color: #222;
-    text-shadow: 1px 1px 1px #EEE;
 }
 
 windows application view weclome appvrsn {
@@ -195,14 +181,12 @@ windows application view weclome appvrsn {
     height: 20px;
     line-height: 20px;
     font-size: 18px;
-    color: #666;
 }
 
 windows application view weclome spinner {
     display: block;
     width: 60px;
     height: 60px;
-    background-color: #282828;
     margin: 100px auto;
 }
 

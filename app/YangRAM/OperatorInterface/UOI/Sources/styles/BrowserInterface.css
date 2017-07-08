@@ -25,7 +25,6 @@ browser>application {
     left: 0;
     top: 0;
     padding-top: 40px !important;
-    background-color: #fff;
     overflow: hidden;
 }
 
@@ -58,12 +57,10 @@ browser>application::-webkit-resizer {
 
 browser>application::-webkit-scrollbar-track {
     width: 2px;
-    background-color: rgba(128, 128, 128, .2);
 }
 
 browser>application::-webkit-scrollbar-thumb {
     width: 2px;
-    background-color: rgba(0, 0, 0, .5);
     border-radius: 1px;
 }
 
@@ -78,7 +75,6 @@ hibar subbars browsertools {
     padding: 0;
     top: 0;
     left: 0;
-    background: rgba(51, 51, 51, .3)
 }
 
 hibar subbars[viewstatus=browsing] browsertools {
@@ -98,19 +94,8 @@ hibar subbars browsertools browsenext {
     line-height: 18px;
     text-align: center;
     cursor: pointer;
-    color: #dddddd;
     font-size: 18px;
     font-family: 'IconsForUoi';
-}
-
-hibar subbars browsertools closebrowser:hover {
-    color: rgb(255, 102, 51);
-}
-
-hibar subbars browsertools browseprev:hover,
-hibar subbars browsertools refresh:hover,
-hibar subbars browsertools browsenext:hover {
-    color: rgb(153, 204, 255);
 }
 
 hibar subbars browsertools closebrowser:before {

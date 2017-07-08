@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/*** LAUNCHER ***/
+
+memowall content group {
+    display: block;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, .6);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+rankinglist systemapps[type=top] application {
+    border-bottom: rgba(53, 53, 53, .5) 1px solid;
+}
+
+rankinglist systemapps[type=bottom] application {
+    border-top: rgba(53, 53, 53, .5) 1px solid;
+}
+
+rankinglist application:hover {
+    background-color: rgba(204, 204, 204, 0.1);
+}
+
+rankinglist application[running] {
+    background-color: rgba(204, 204, 204, 0.1);
+}
+
+rankinglist application:hover icon {
+    border-left: #09F 3px solid;
+}
+
+rankinglist application[state=on] icon {
+    border-left: #09F 3px solid;
+}
+
+rankinglist application appname {
+    border: #09F 2px solid;
+}
+
+rankinglist application appname {
+    color: #111;
+    background: rgba(255, 255, 255, .4);
+}
+
+rankinglist noramlapps application[isnew="1"]:before {
+    background-color: #FFF;
+}
+
+rankinglist noramlapps application[tips]:after {
+    background-color: #09F;
+}
+
+memowall content item bookmark[tips]:after {
+    background: rgba(255, 255, 255, .3);
+}
+
+
+/*** I4PLAZA ***/
+
+#APP-I4PLAZA oiml {
+    color: #FFF;
+}
+
+#APP-I4PLAZA scrollbar scrolldragger {
+    background-color: #000;
+}
+
+wallpaper {
+    background-image: url(WallPaper.jpg);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title {
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title wgt {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn.player,
+#APP-I4PLAZA oiml widgets section.top-title sbtn.weather {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn.reader,
+#APP-I4PLAZA oiml widgets section.top-title sbtn.stock {
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+#APP-I4PLAZA oiml widgets section.top-title sbtn:hover {
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget {
+    background-color: rgba(255, 255, 255, 0.50);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.20);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget {
+    color: #999;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget atip {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget atip {
+    color: #CCC;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget>click.widget-link {
+    background-color: rgba(0, 128, 153, 0.50);
+    color: #333;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .widget-title {
+    background-color: rgba(0, 0, 0, 0.30);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .widget-title {
+    color: #000;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe {
+    color: #CCC;
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe.odd {
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe.even {
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe el.for-time {
+    color: #999;
+}
+
+#APP-I4PLAZA oiml widgets section.board {
+    background-color: rgba(0, 0, 0, 0.10);
+}
+
+#APP-I4PLAZA>wsbtns {
+    background-color: rgba(255, 255, 255, .10);
+}
+
+#APP-I4PLAZA>wsbtns>v.widget-switch-button {
+    background-color: rgba(255, 255, 255, .20);
+}
+
+#APP-I4PLAZA>wsbtns>v.widget-switch-button:hover {
+    background-color: rgba(255, 255, 255, .40);
+}
+
+#APP-I4PLAZA>wsbtns>v.widget-switch-button[current],
+#APP-I4PLAZA>wsbtns>v.widget-switch-button[current]:hover {
+    background-color: rgba(255, 255, 255, .70);
+}

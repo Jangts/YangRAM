@@ -92,7 +92,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             },
             onoptionclick(option, target) {
                 var tabName = YangRAM.attr(option, 'data-tab-name').toUpperCase();
-                if (target.tagName == 'VISION') {
+                if (target.tagName == 'V') {
                     this.cutTo(tabName);
                 }
                 if (target.tagName == 'EL') {
@@ -233,7 +233,6 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 switch (type) {
                     case 'scrollbar':
                         return new ScrollBAR(target);
-                        break;
                 }
             }
             return null;

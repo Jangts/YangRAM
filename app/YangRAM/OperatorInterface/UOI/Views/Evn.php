@@ -8,11 +8,11 @@
 <!--link href="<?=NIAF_PID?>Sources/Interblocks/view/highlight/themes/default.css" type="text/css" rel="stylesheet" /-->
 <link href="<?=NIAF_PID?>Sources/Fonts/Fonts.css" type="text/css" rel="stylesheet" />
 <link href="<?=NIAF_PID?>Sources/Interblocks/see/see.css" type="text/css" rel="stylesheet" />
-<link href="<?=UOI_PID?>Sources/themes/<?=$__Style?>/IconsForUoi.css" type="text/css" rel="stylesheet" />
-<link href="<?=UOI_PID?>Sources/themes/<?=$__Style?>/CommonBasics.css" type="text/css" rel="stylesheet" />
-<link href="<?=UOI_PID?>Sources/themes/<?=$__Style?>/Widgets.css" type="text/css" rel="stylesheet" />
-<link href="<?=UOI_PID?>Sources/themes/<?=$__Style?>/LogInterface.css" type="text/css" rel="stylesheet" />
-<link href="<?=UOI_PID?>Sources/themes/<?=$__Style?>/LockInterface.css" type="text/css" rel="stylesheet" />
+<link href="<?=UOI_PID?>Sources/styles/IconsForUoi.css" type="text/css" rel="stylesheet" />
+<link href="<?=UOI_PID?>Sources/styles/CommonBasics.css" type="text/css" rel="stylesheet" />
+<link href="<?=UOI_PID?>Sources/styles/Widgets.css" type="text/css" rel="stylesheet" />
+<link href="<?=UOI_PID?>Sources/styles/LogInterface.css" type="text/css" rel="stylesheet" />
+<link href="<?=UOI_PID?>Sources/styles/LockInterface.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
@@ -23,7 +23,6 @@
     <launcher>
       <rankinglist></rankinglist>
       <memowall></memowall>
-      <momodifier></momodifier>
     </launcher>
   </workspace>
   <hibar>
@@ -147,10 +146,10 @@ iBlock([
     var System = global.System;    
 
     System.DebugMode = '<?=_USE_DEBUG_MODE_?>';
-    System.Theme = '<?=$__Style?>';
+    System.Theme = 'common';
     System.User = '<?=$username?>';
     System.UserAvatar = '<?=$avatar?>';
-    System.LoadingItemsCount = 38;
+    System.LoadingItemsCount = 39;
     System.OnLoadStart = () => {
         System.Logger.loadingstatus.attr('status', 'loading');
         System.Logger.loadedpercent.html(System.LoadedRate);

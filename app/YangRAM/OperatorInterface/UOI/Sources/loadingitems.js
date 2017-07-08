@@ -5,7 +5,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load HiBar Style Sheets */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/HiBarItems.css';
+                var href = YangRAM.PhysicalURI + 'Sources/styles/HiBarItems.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
@@ -15,9 +15,178 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load Title Bar And Context Menu Style Sheets */
             (resolve) => {
                 this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/MenuInterface.css';
+                var href = YangRAM.PhysicalURI + 'Sources/styles/MenuInterface.css';
                 YangRAM.loadStyle(href, () => {
-                    this.HiBar.build();
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Kalendar Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/KalendarEvents.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Smartian Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/SmartianStyle.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Launcher Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/LaunchInterface.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load App Ranking List Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/ARLInterface.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load App Bookmarks Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/BookmarkTypes.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Messager Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/MessageCenter.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Appliction Style Sheets / Step One */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/WinInterface.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Appliction Style Sheets / Step Two */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/WLMInterface.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Browser Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/BrowserInterface.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load I4Plaza Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/I4Plaza.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Settings Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/Settings.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Animations Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/styles/Animations.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Time Picker Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/LAYOUT.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Color Picker Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/COMPONENTS.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Option Selector Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/HOMEPAGE.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Percentager Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/MSGEVENTS.css';
+                YangRAM.loadStyle(href, () => {
+                    this.LoadedRateChange();
+                    resolve();
+                });
+            },
+
+            /* Load Percentager Style Sheets */
+            (resolve) => {
+                this.UpdateLoadingStatus();
+                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/SMARTIAN.css';
+                YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
                 });
@@ -28,7 +197,7 @@ System.Loader(function(YangRAM, global, undefined) {
                 this.UpdateLoadingStatus().GET({
                     url: YangRAM.RequestDIR + 'uoi/account/info/' + Runtime.locales.CODE,
                     done: (txt) => {
-                        //console.log(txt);
+                        this.HiBar.build();
                         this.HiBar.Account.innerHTML = txt;
                         this.LoadedRateChange();
                         resolve();
@@ -36,16 +205,6 @@ System.Loader(function(YangRAM, global, undefined) {
                     fail: (txt) => {
                         console.log(txt);
                     }
-                });
-            },
-
-            /* Load Kalendar Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/KalendarEvents.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
                 });
             },
 
@@ -58,50 +217,10 @@ System.Loader(function(YangRAM, global, undefined) {
                 });
             },
 
-            /* Load Smartian Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/SmartianStyle.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
             /* Load Smartian Configurations */
             (resolve) => {
                 this.UpdateLoadingStatus();
                 this.Smartian.build(() => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Launcher Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/LaunchInterface.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load App Ranking List Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/ARLInterface.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load App Bookmarks Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/BookmarkTypes.css';
-                YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
                 });
@@ -125,100 +244,10 @@ System.Loader(function(YangRAM, global, undefined) {
                 });
             },
 
-            /* Load Messager Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/MessageCenter.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
             /* Load Unread Messages */
             (resolve) => {
                 this.UpdateLoadingStatus();
                 this.Notifier.build(() => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Browser Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/BrowserInterface.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Time Picker Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/TimePicker.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Color Picker Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/ColorPicker.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Option Selector Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/OptionSelector.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Percentager Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/Percentager.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Appliction Style Sheets / Step One */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/WinInterface.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Appliction Style Sheets / Step Two */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/WLMInterface.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Animations Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/Animations.css';
-                YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();
                 });
@@ -348,26 +377,6 @@ System.Loader(function(YangRAM, global, undefined) {
             (resolve) => {
                 this.UpdateLoadingStatus();
                 var href = YangRAM.PhysicalURI + '../../ApplicationFramework/Sources/OIF/BgColors.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load I4Plaza Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/I4Plaza.css';
-                YangRAM.loadStyle(href, () => {
-                    this.LoadedRateChange();
-                    resolve();
-                });
-            },
-
-            /* Load Settings Style Sheets */
-            (resolve) => {
-                this.UpdateLoadingStatus();
-                var href = YangRAM.PhysicalURI + 'Sources/themes/' + this.Theme + '/Settings.css';
                 YangRAM.loadStyle(href, () => {
                     this.LoadedRateChange();
                     resolve();

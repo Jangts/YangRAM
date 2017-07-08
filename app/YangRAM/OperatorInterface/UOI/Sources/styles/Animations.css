@@ -19,7 +19,6 @@
 .data-loading-spinner>.dls-container3>el {
     width: 8px;
     height: 8px;
-    background-color: rgba(255, 255, 255, 0.70);
     border-radius: 100%;
     position: absolute;
     animation: cls-bouncedelay 1.2s infinite ease-in-out;
@@ -180,7 +179,6 @@
     height: 100%;
     top: 0px;
     left: 0px;
-    background-color: #000;
     opacity: .8;
     z-index: -9999;
 }
@@ -204,7 +202,6 @@
 }
 
 .data-connecting-spinner>el {
-    background-color: #67CF22;
     height: 100%;
     width: 4px;
     display: inline-block;
@@ -246,7 +243,6 @@
     width: 31.33%;
     height: 31.33%;
     margin: 1%;
-    background-color: #FFF;
     float: left;
 }
 
@@ -334,23 +330,19 @@
 /* Top */
 
 .data-submitting-spinner[type=three-dime] .dss-cube {
-    background-color: #fdfdfd;
     position: relative;
     transform: translateZ(33.33%);
     transform-style: preserve-3d;
     transition: .25s;
-    box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1);
     animation: dss-cube-anim 1s infinite;
 }
 
 .data-submitting-spinner[type=three-dime] .dss-cube:after {
-    background-color: #d7d7d7;
     transform: rotateX(-90deg) translateY(100%);
     transform-origin: 100% 100%;
 }
 
 .data-submitting-spinner[type=three-dime] .dss-cube:before {
-    background-color: #c3c3c3;
     transform: rotateY(90deg) translateX(100%);
     transform-origin: 100% 0;
 }

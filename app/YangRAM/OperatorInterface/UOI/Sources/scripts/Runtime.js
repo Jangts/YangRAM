@@ -252,6 +252,11 @@ iBlock((pandora, global, undefined) => {
                     System.Workspace.Launcher.sleepWall();
                 }
                 return this;
+            },
+            regApi2Apps(methodname, method) {
+                if (_.util.bool.isFn(method) && !Application.prototype[methodname]) {
+                    Application.prototype[methodname] = method;
+                }
             }
         });
 

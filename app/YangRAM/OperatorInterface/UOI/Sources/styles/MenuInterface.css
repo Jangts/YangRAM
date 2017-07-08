@@ -46,7 +46,6 @@ hibar subbars application appname {
     width: auto;
     line-height: 40px;
     cursor: default;
-    color: #FFF;
     font-size: 13px;
     margin-right: 20px;
     margin-left: 10px;
@@ -65,10 +64,8 @@ hibar subbars application menu {
     text-align: center;
     cursor: pointer;
     overflow: hidden;
-    color: #DDD;
     font-size: 13px;
     outline: none;
-    border-left: rgba(255, 255, 255, .1) dotted 1px;
 }
 
 hibar subbars application menu:before {
@@ -78,10 +75,6 @@ hibar subbars application menu:before {
     line-height: 20px;
     content: attr(name);
     overflow: hidden;
-}
-
-hibar subbars application menu {
-    color: #FFF;
 }
 
 hibar subbars application menu items {
@@ -106,13 +99,11 @@ hibar subbars application menu items item {
 hibar subbars application menu items item {
     line-height: 20px;
     font-size: 12px;
-    background: #444;
     text-align: left;
     overflow: hidden;
 }
 
 hibar subbars application menu items item[state=off] {
-    color: #999;
     cursor: default;
 }
 
@@ -184,7 +175,6 @@ hibar subbars application menu items item[href=Help]:before {
 
 hibar subbars[actived=actived] application menu:hover {
     overflow: visible;
-    background-color: rgba(0, 0, 0, .1);
 }
 
 hibar subbars[actived=actived] application menu:hover items {
@@ -194,7 +184,6 @@ hibar subbars[actived=actived] application menu:hover items {
 }
 
 hibar subbars[actived=actived] application menu items item:hover {
-    background-color: #555;
     width: 180px;
     margin-left: 0px;
 }
@@ -218,15 +207,11 @@ hibar menus menu {
     position: absolute;
     width: 158px;
     height: auto;
-    background: #fff;
-    box-shadow: rgba(0, 0, 0, .2) 1px 3px 5px;
-    border: #333 solid 1px;
 }
 
 hibar menus menu {
     opacity: 0;
     transition: opacity linear .2s;
-    background: #181818;
     z-index: 0;
 }
 
@@ -242,7 +227,6 @@ hibar menus menu group {
     height: auto;
     margin: 0px 4px 4px;
     padding-top: 4px;
-    border-top: #333 solid 1px;
 }
 
 hibar menus menu group:first-child {
@@ -257,18 +241,5 @@ hibar menus menu group item {
     line-height: 24px;
     text-align: left;
     font-size: 12px;
-    color: #FFF;
     cursor: default;
-}
-
-hibar menus menu group item[state=off] {
-    color: #888;
-}
-
-hibar menus menu group item:hover {
-    background-color: #333;
-}
-
-hibar menus menu group item[state=off]:hover {
-    background-color: #222;
 }

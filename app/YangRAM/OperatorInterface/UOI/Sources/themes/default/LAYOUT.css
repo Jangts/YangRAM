@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+/*** BASIC ***/
+
+scrollbar scrolldragger {
+    background-color: #FFF;
+}
+
+yangram workspace {
+    background-color: #000;
+}
+
+yangram workspace windows {
+    color: #000;
+}
+
+yangram workspace Launcher {
+    color: #111;
+}
+
+Launcher memowall {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+yangram workspace Launcher rankinglist {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+yangram workspace Launcher rankinglist mask {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+yangram workspace Launcher rankinglist:hover mask,
+yangram workspace Launcher[viewstatus=wallmode] rankinglist mask {
+    background-color: rgba(255, 255, 255, .6);
+}
+
+yangram widgets smartian {
+    color: #000;
+}
+
+yangram widgets processbus {
+    background-color: rgba(0, 0, 0, .75);
+    box-shadow: 0 0px 2px #111;
+}
+
+yangram widgets msgcenter {
+    background-color: rgba(255, 255, 255, .2)
+}
+
+yangram widgets explorer {
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .3);
+}
+
+yangram widgets timepicker[state=on] {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+yangram widgets cubes {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+yangram widgets cubes mask {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+yangram widgets locker {
+    background: #222 url(texture.svg) repeat;
+}
+
+yangram widgets locker masker {
+    background-image: url(LockPaper.jpg);
+}
+
+yangram widgets logger {
+    background: #222 url(texture.svg) repeat;
+}
+
+yangram hibar {
+    background-color: rgba(0, 0, 0, .75);
+    color: #FFF;
+    box-shadow: 0 0px 2px #111;
+}
+
+hibar>mask {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+
+/*** APP ***/
+
+windows application::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, .3);
+}
+
+windows application view {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+}
+
+windows application view[loading] {
+    color: #333;
+    background-color: #FFF;
+    border-color: #CCC;
+}
+
+windows application[running][size=cover] view {
+    background-color: #FFF;
+}
+
+windows application view[error],
+windows application[size=cover] view[error] {
+    color: #FFF;
+    background: #33A5DD;
+    background-color: rgba(51, 165, 221, 1);
+}
+
+windows application view weclome {
+    background-color: #FFF;
+}
+
+windows application view weclome appname {
+    color: #222;
+    text-shadow: 1px 1px 1px #EEE;
+}
+
+windows application view weclome appvrsn {
+    color: #666;
+}
+
+windows application view weclome spinner {
+    background-color: #282828;
+}
+
+
+/*** BROWSER ***/
+
+browser>application {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 40px !important;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+browser>application::-webkit-scrollbar-track {
+    background-color: rgba(128, 128, 128, .2);
+}
+
+browser>application::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+hibar subbars browsertools {
+    background-color: rgba(51, 51, 51, .3)
+}
+
+hibar subbars browsertools closebrowser,
+hibar subbars browsertools browseprev,
+hibar subbars browsertools refresh,
+hibar subbars browsertools browsenext {
+    color: #dddddd;
+}
+
+hibar subbars browsertools closebrowser:hover {
+    color: rgb(255, 102, 51);
+}
+
+hibar subbars browsertools browseprev:hover,
+hibar subbars browsertools refresh:hover,
+hibar subbars browsertools browsenext:hover {
+    color: rgb(153, 204, 255);
+}
+
+
+/*** SPINNER  ***/
+
+.data-loading-spinner>.dls-container1>el,
+.data-loading-spinner>.dls-container2>el,
+.data-loading-spinner>.dls-container3>el {
+    background-color: rgba(255, 255, 255, 0.70);
+}
+
+.connecting-animation {
+    background-color: #000;
+}
+
+.data-connecting-spinner>el {
+    background-color: #67CF22;
+}
+
+.data-submitting-spinner[type=two-dime] .dss-cube {
+    background-color: #FFF;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube {
+    background-color: #fdfdfd;
+    box-shadow: 13em 13em 1.5em rgba(0, 0, 0, 0.1);
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:after {
+    background-color: #d7d7d7;
+}
+
+.data-submitting-spinner[type=three-dime] .dss-cube:before {
+    background-color: #c3c3c3;
+}

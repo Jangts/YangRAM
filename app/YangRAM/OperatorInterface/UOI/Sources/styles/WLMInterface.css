@@ -42,13 +42,6 @@ workspace windows application oiml view {
 
 /*** LIST MODE ***/
 
-workspace[viewstatus=beforelist] windows,
-workspace[viewstatus=listmode] windows,
-workspace[viewstatus=afterlist] windows,
-workspace[viewstatus=beforework] windows {
-    background: #222 url(texture.svg) repeat !important;
-}
-
 workspace[viewstatus=beforelist] windows application oiml,
 workspace[viewstatus=listmode] windows application oiml,
 workspace[viewstatus=afterlist] windows application oiml,
@@ -81,7 +74,7 @@ workspace[viewstatus=afterlist] windows application {
 workspace[viewstatus=beforelist] windows application#APP-I4PLAZA,
 workspace[viewstatus=listmode] windows application#APP-I4PLAZA,
 workspace[viewstatus=afterlist] windows application#APP-I4PLAZA {
-    background: none !important;
+    background: rgba(0, 0, 0, .5) url(ip.png) center center no-repeat !important;
 }
 
 
@@ -106,17 +99,6 @@ workspace[viewstatus=listmode] windows application#APP-I4PLAZA oiml widgets[data
 workspace[viewstatus=afterlist] windows application#APP-I4PLAZA oiml widgets[data-posi] {
     display: block;
     opacity: 0;
-}
-
-workspace[viewstatus=beforelist] windows application#APP-I4PLAZA wallpaper,
-workspace[viewstatus=listmode] windows application#APP-I4PLAZA wallpaper,
-workspace[viewstatus=afterlist] windows application#APP-I4PLAZA wallpaper {
-    width: 1000px;
-    min-width: 1000px;
-    min-height: 0;
-    margin: 0 30px;
-    border: 20px rgba(255, 255, 255, 0.00) solid;
-    border-radius: 20px;
 }
 
 workspace[viewstatus=beforelist] windows application oiml view,
@@ -171,14 +153,8 @@ workspace[viewstatus=listmode] windows application {
     opacity: .6;
 }
 
-workspace[viewstatus=listmode] windows application[runstatus=sleeping] {
-    opacity: .8;
-}
-
-workspace[viewstatus=listmode] windows application[runstatus=working] {
-    opacity: .9;
-}
-
+workspace[viewstatus=listmode] windows application[runstatus=sleeping],
+workspace[viewstatus=listmode] windows application[runstatus=working],
 workspace[viewstatus=listmode] windows application[list-posi="0"],
 workspace[viewstatus=listmode] windows application:hover {
     opacity: 1;
@@ -192,16 +168,30 @@ workspace[viewstatus=listmode] windows application {
 }
 
 workspace[viewstatus=listmode] windows application:hover oiml {
-    border: 20px rgba(255, 255, 255, 0.06) solid;
+    border: 20px rgba(255, 255, 255, 0.20) solid;
 }
 
 workspace[viewstatus=listmode] windows application[list-posi="0"] oiml,
 workspace[viewstatus=listmode] windows application[list-posi="0"]:hover oiml {
-    border: 20px rgba(255, 255, 255, 0.10) solid;
+    border: 20px rgba(255, 255, 255, 0.20) solid;
+}
+
+workspace[viewstatus=listmode] windows application[list-posi="0"]:hover oiml {
+    border: 20px rgba(255, 255, 255, 0.30) solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2) !important;
+}
+
+workspace[viewstatus=listmode] windows #APP-I4PLAZA:hover oiml {
+    border: none;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
 }
 
 workspace[viewstatus=listmode] windows application view {
-    box-shadow: 0 0 5px rgba(0, 0, 0, .2) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2) !important;
+}
+
+workspace[viewstatus=listmode] windows application:hover view {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
 }
 
 
@@ -224,7 +214,6 @@ workspace[viewstatus=listmode] windows application info {
     width: 1000px;
     height: 50px;
     background-color: rgba(0, 0, 0, .9);
-    opacity: .6;
 }
 
 workspace[viewstatus=listmode] windows application info {
@@ -233,11 +222,10 @@ workspace[viewstatus=listmode] windows application info {
     margin-left: -500px;
     overflow: hidden;
     z-index: 999999;
-    transition: opacity ease .4s, bottom ease .4s;
+    transition: bottom ease .4s;
 }
 
 workspace[viewstatus=listmode] windows application:hover info {
-    opacity: 1;
     bottom: -10px;
 }
 

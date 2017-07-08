@@ -9,7 +9,6 @@
 #APP-I4PLAZA {
     top: 0 !important;
     opacity: 1 !important;
-    background-color: #000;
     height: 100%;
 }
 
@@ -19,7 +18,6 @@
 #APP-I4PLAZA scrollbar scrolldragger {
     cursor: default;
     transition: none;
-    background-color: #000;
 }
 
 
@@ -42,7 +40,7 @@
 
 /*** WALLPAPER ***/
 
-#APP-I4PLAZA>wallpaper {
+wallpaper {
     display: block;
     position: fixed;
     width: 100%;
@@ -52,14 +50,13 @@
     z-index: 0 !important;
 }
 
-#APP-I4PLAZA>wallpaper {
-    background-image: url(WallPaper.jpg);
+wallpaper {
     background-position: center;
     background-repeat: repeat;
     background-size: cover;
 }
 
-#APP-I4PLAZA>wallpaper bgpic {
+wallpaper bgpic {
     display: block;
     position: absolute;
     width: 100%;
@@ -73,7 +70,7 @@
     transition: opacity ease 1s;
 }
 
-workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
+workspace[viewstatus=workmode] wallpaper bgpic[running][runstatus=working] {
     opacity: 1;
 }
 
@@ -150,7 +147,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
     width: 1000px;
     height: 60px;
     line-height: 60px;
-    background-color: rgba(255, 255, 255, 0.40);
     border-radius: 3px;
     cursor: default;
 }
@@ -160,7 +156,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
     width: 520px;
     height: 60px;
     line-height: 60px;
-    background-color: rgba(0, 0, 0, 0.60);
     margin: auto;
 }
 
@@ -172,7 +167,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
     font-size: 24px;
     font-weight: lighter;
     text-align: center;
-    color: #FFF;
 }
 
 #APP-I4PLAZA oiml widgets section.top-title sbtn {
@@ -181,33 +175,24 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
     width: 120px;
     height: 60px;
     top: 0px;
-    color: #FFF;
     text-align: center;
     cursor: pointer;
 }
 
 #APP-I4PLAZA oiml widgets section.top-title sbtn.player {
     left: 0px;
-    background-color: rgba(0, 0, 0, 0.60);
 }
 
 #APP-I4PLAZA oiml widgets section.top-title sbtn.reader {
     left: 120px;
-    background-color: rgba(0, 0, 0, 0.65);
 }
 
 #APP-I4PLAZA oiml widgets section.top-title sbtn.stock {
     left: 760px;
-    background-color: rgba(0, 0, 0, 0.65);
 }
 
 #APP-I4PLAZA oiml widgets section.top-title sbtn.weather {
     left: 880px;
-    background-color: rgba(0, 0, 0, 0.60);
-}
-
-#APP-I4PLAZA oiml widgets section.top-title sbtn:hover {
-    background-color: rgba(0, 0, 0, 0.50);
 }
 
 
@@ -215,8 +200,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 
 #APP-I4PLAZA oiml widgets section.left-widgets widget {
     display: block;
-    background-color: rgba(255, 255, 255, 0.50);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.20);
     margin-bottom: 20px;
 }
 
@@ -225,7 +208,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 }
 
 #APP-I4PLAZA oiml widgets section.left-widgets widget {
-    color: #999;
     font-size: 12px;
     border-radius: 3px;
     cursor: default;
@@ -234,13 +216,11 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 #APP-I4PLAZA oiml widgets section.left-widgets widget atip {
     display: block;
     height: 150px;
-    background-color: rgba(0, 0, 0, 0.60);
     overflow: hidden;
     line-height: 150px;
 }
 
 #APP-I4PLAZA oiml widgets section.left-widgets widget atip {
-    color: #CCC;
     font-size: 14px;
     text-align: center;
 }
@@ -258,9 +238,7 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 }
 
 #APP-I4PLAZA oiml widgets section.left-widgets widget>click.widget-link {
-    background-color: rgba(0, 128, 153, 0.50);
     line-height: 20px;
-    color: #FFF;
     font-size: 12px;
     text-align: center;
 }
@@ -282,13 +260,10 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 #APP-I4PLAZA oiml widgets section.left-widgets widget .widget-title {
     width: 100%;
     height: 28px;
-    background-color: rgba(0, 0, 0, 0.30);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
 }
 
 #APP-I4PLAZA oiml widgets section.left-widgets widget .widget-title {
     font-size: 14px;
-    color: #000;
     line-height: 28px;
     text-align: center;
 }
@@ -296,24 +271,13 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 
 /* ------------------------- */
 
-#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-chart {}
-
 
 /* ------------------------- */
 
 #APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe {
     width: 100%;
     font-size: 12px;
-    color: #CCC;
     line-height: 30px;
-}
-
-#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe.odd {
-    background-color: rgba(0, 0, 0, 0.70);
-}
-
-#APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe.even {
-    background-color: rgba(0, 0, 0, 0.60);
 }
 
 #APP-I4PLAZA oiml widgets section.left-widgets widget .full-column-stripe el.for-type {
@@ -324,7 +288,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
     position: absolute;
     top: 0;
     right: 10px;
-    color: #999;
 }
 
 
@@ -333,7 +296,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 #APP-I4PLAZA oiml widgets section.board {
     display: none;
     width: 1000px;
-    background-color: rgba(0, 0, 0, 0.10);
     border-radius: 3px;
 }
 
@@ -373,7 +335,6 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
 }
 
 #APP-I4PLAZA>wsbtns {
-    background-color: rgba(255, 255, 255, .10);
     border-radius: 15px;
     opacity: 0.50;
     cursor: pointer;
@@ -396,14 +357,4 @@ workspace[viewstatus=workmode] #APP-I4PLAZA>wallpaper bgpic[running] {
     height: 14px;
     border-radius: 7px;
     margin: 3px;
-    background-color: rgba(255, 255, 255, .20);
-}
-
-#APP-I4PLAZA>wsbtns>v.widget-switch-button:hover {
-    background-color: rgba(255, 255, 255, .40);
-}
-
-#APP-I4PLAZA>wsbtns>v.widget-switch-button[current],
-#APP-I4PLAZA>wsbtns>v.widget-switch-button[current]:hover {
-    background-color: rgba(255, 255, 255, .70);
 }

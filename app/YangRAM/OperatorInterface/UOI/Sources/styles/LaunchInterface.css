@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+/*** Launcher memowall ***/
+
+Launcher memowall content {
+    display: block;
+    margin: 0px auto 20px;
+    text-align: justify;
+}
+
+Launcher memowall content group {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+Launcher memowall content group linkgroupname {
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    content: attr(name);
+    text-align: center;
+    line-height: 30px;
+    opacity: .15;
+    transition: opacity ease .5s;
+    cursor: default;
+}
+
+Launcher memowall content group:hover linkgroupname {
+    opacity: 1;
+}
+
+Launcher memowall content item {
+    float: left;
+    min-width: 120px;
+    min-height: 120px;
+    margin: 10px;
+    overflow: visible;
+}
+
+
+/**********************************************/
+
+Launcher memowall:hover scrollbar {
+    opacity: .2;
+}

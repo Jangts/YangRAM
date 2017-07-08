@@ -27,7 +27,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 Locker.pincode.addClass('connecting');
                 Locker.pincode.attr('placeholder', 'CONNECT');
                 var m, s;
-                setInterval(function() {
+                ctimer = setInterval(function() {
                     ctimes++;
                     m = ctimes % 6;
                     s = m < 3 ? m : 6 - m;

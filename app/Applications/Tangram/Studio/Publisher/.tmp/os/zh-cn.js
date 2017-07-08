@@ -516,9 +516,9 @@ const self = {
         }
         return data;
 	}};
-const pm_595f66274c553 = {
+const pm_59605d1182b4a = {
 	};
-const pm_595f66274c559 = {
+const pm_59605d1182b50 = {
 	onload(){
         if (this.tabviews==undefined) {
             var elem=this.$('tab-vision')[0];
@@ -797,13 +797,12 @@ const pm_595f66274c559 = {
 		return this.open(href);
 	},
 	main(){
-        YangRAM.API.BGP(__thisapp__.appid, '/YangRAM/OperatorInterface/UOI/Sources/themes/default/I4s.jpg')
 		__thisapp__.listenEvents(self.events).regHeadBar(self.menuOnHigabar).loadStyle(function() {
-            __thisapp__.loadURI('default/startpage/');
+            __thisapp__.loadURI('default/startpage/').regBackgroundLayer('rgba(255,255,255,0.9)', true);
         });
 	}};
 const privates = {
 	};
-YangRAM.extends(__thisapp__, true, pm_595f66274c559);
+YangRAM.extends(__thisapp__, true, pm_59605d1182b50);
 
 });

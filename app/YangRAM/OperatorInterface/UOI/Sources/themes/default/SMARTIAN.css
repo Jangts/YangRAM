@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+/*** Smartian Inputer ***/
+
+smartian form {
+    background: #FFF;
+}
+
+smartian form input[type=button] {
+    background: url(smartian.png) 5px 5px no-repeat;
+}
+
+smartian[viewstatus=nrmlmode] {
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, .4);
+    background: rgba(0, 0, 0, .7);
+}
+
+smartian[viewstatus=nrmlmode] form input[type=button]:hover {
+    background: #999 url(smartian.png) -25px 5px no-repeat;
+}
+
+smartian[viewstatus=nrmlmode] resulter {
+    color: #CCC;
+}
+
+smartian[viewstatus=nrmlmode] resulter content list[type=welcome] {
+    color: #F90;
+}
+
+smartian[viewstatus=nrmlmode] resulter content list[type=welcomed] {
+    color: #F90;
+    border-bottom: solid 1px #111;
+}
+
+smartian[viewstatus=nrmlmode] resulter content embedarea {
+    background-color: rgba(255, 255, 255, .8);
+    border-bottom: solid 1px #111;
+}
+
+smartian[viewstatus=nrmlmode] resulter content ask {
+    color: #0CF;
+    border-bottom: dashed 1px #111;
+}
+
+smartian[viewstatus=nrmlmode] resulter content answer {
+    color: #0FC;
+    border-bottom: solid 1px #111;
+}
+
+smartian[viewstatus=nrmlmode] resulter content aclass {
+    color: #FCC;
+}
+
+smartian[viewstatus=nrmlmode] resulter content list[type=result] {
+    background: rgba(255, 214, 214, .2);
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+}
+
+smartian[viewstatus=nrmlmode] resulter content list[type=result] item {
+    color: #000;
+    color: #FCF;
+    border-top: dotted 1px #666666;
+}
+
+smartian[viewstatus=nrmlmode] resulter content list[type=result] item desc {
+    color: #CCC;
+}
+
+smartian[viewstatus=nrmlmode] resulter content tips {
+    color: #666;
+    border-bottom: solid 1px #111;
+}
+
+smartian[viewstatus=nrmlmode] resulter content tips kw,
+smartian[viewstatus=nrmlmode] resulter content list kw {
+    color: #F90;
+}
+
+smartian[viewstatus=widemode] {
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    background: rgba(255, 255, 255, .9);
+}
+
+smartian[viewstatus=widemode] form {
+    border: solid 2px #0099FF;
+}
+
+smartian[viewstatus=widemode] form input[type=button]:hover {
+    background: #0099FF url(smartian.png) -25px 5px no-repeat;
+}
+
+smartian[viewstatus=widemode] resulter content>* {
+    color: #333;
+}
+
+smartian[viewstatus=widemode] resulter scrollbar scrolldragger {
+    background-color: #000;
+}
+
+smartian[viewstatus=widemode] resulter content list[type=welcomed] {
+    color: #F90;
+    border-bottom: dotted 1px #DDD;
+}
+
+smartian[viewstatus=widemode] resulter content ask {
+    color: #06C;
+    border-bottom: dashed 1px #DDD;
+}
+
+smartian[viewstatus=widemode] resulter content answer {
+    color: #090;
+    border-bottom: dotted 1px #DDD;
+}
+
+smartian[viewstatus=widemode] resulter content aclass {
+    color: #66C;
+}
+
+smartian[viewstatus=widemode] resulter content list[type=result] {
+    background: #FFF;
+    box-shadow: 0 0 1px #CCCCCC;
+}
+
+smartian[viewstatus=widemode] resulter content list[type=result] item {
+    color: #000;
+    color: #343;
+    border-top: dotted 1px #CCCCCC;
+}
+
+smartian[viewstatus=widemode] resulter content list[type=result] item desc {
+    color: #888;
+}
+
+smartian[viewstatus=widemode] resulter content tips {
+    color: #999;
+    border-bottom: dotted 1px #DDD;
+}
+
+smartian[viewstatus=widemode] resulter content tips kw,
+smartian[viewstatus=widemode] resulter content list kw {
+    color: #F00;
+}
