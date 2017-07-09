@@ -199,7 +199,16 @@ iBlock([
         },
 
         hasClass = function(elem, className) {
-            return elem.className.match(new RegExp('(^|\\s+)' + className + '(\\s+|$)'));
+            if (elem.className) {
+                if (elem.className.baseVal) {
+                    return elem.className.animVal.match(new RegExp('(^|\\s+)' + className + '(\\s+|$)'));
+                }
+                if (elem.className.baseVal) {
+                    return elem.className.baseVal.match(new RegExp('(^|\\s+)' + className + '(\\s+|$)'));
+                }
+                return elem.className.match(new RegExp('(^|\\s+)' + className + '(\\s+|$)'));
+            }
+            return false;
         },
 
         toggleClass = function(elem, className, switchType) {

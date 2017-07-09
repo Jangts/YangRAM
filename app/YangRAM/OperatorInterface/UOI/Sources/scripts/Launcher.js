@@ -102,8 +102,8 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     paddingLeft: leftGap
                 });
                 var MemowallWidthMax = System.Width - leftGap,
-                    PreRowBookmarkCountMax = parseInt((MemowallWidthMax - 20) / 240) * 2,
-                    MemowallWidth = PreRowBookmarkCountMax * 120;
+                    PreRowBookmarkCountMax = parseInt((MemowallWidthMax - 40) / 280) * 2,
+                    MemowallWidth = PreRowBookmarkCountMax * 140 + 20;
                 YangRAM.$('Launcher memowall content').css({
                     width: MemowallWidth,
                 });

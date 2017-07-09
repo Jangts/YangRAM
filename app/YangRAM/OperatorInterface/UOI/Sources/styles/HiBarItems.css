@@ -52,10 +52,10 @@ hibar account admin {
 }
 
 hibar account admin avatar {
-    width: 24px;
-    height: 24px;
-    margin: 8px;
-    border-radius: 10%;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 10px;
 }
 
 hibar account admin avatar {

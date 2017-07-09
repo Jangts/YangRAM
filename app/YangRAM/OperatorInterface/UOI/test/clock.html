@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <title>ColorPicker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://interblocks.nidn.yangram.ni/src/iblock.js"></script>
+    <style>
+        #myclock {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border-radius: 30px;
+            background-color: #000;
+        }
+        
+        #myclock .clock-dial {
+            background-color: #fff;
+        }
+        
+        .ic.clock .clock-dial {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .ic.clock .clock-dial .clock-hand,
+        .ic.clock .clock-dial .clock-fixer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        
+        .ic.clock.smooth .clock-dial .clock-hand {
+            transition: transform linear 1s;
+        }
+        
+        .ic.clock .clock-dial .clock-hand.hour {
+            width: 6%;
+            height: 60%;
+            margin-top: -30%;
+            margin-left: -3%;
+        }
+        
+        .ic.clock .clock-dial .clock-hand.minute {
+            width: 4%;
+            height: 80%;
+            margin-top: -40%;
+            margin-left: -2%;
+        }
+        
+        .ic.clock .clock-dial .clock-hand.second {
+            width: 2%;
+            height: 90%;
+            margin-top: -45%;
+            margin-left: -1%;
+        }
+        
+        .ic.clock .clock-dial .clock-fixer {
+            width: 10%;
+            height: 10%;
+            margin-top: -5%;
+            margin-left: -5%;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        
+        .ic.clock .clock-dial i {
+            display: block;
+        }
+        
+        .ic.clock .clock-dial .clock-hand i {
+            width: 100%;
+            height: 65%;
+        }
+        
+        .ic.clock .clock-dial .clock-hand.hour i {
+            background-color: #000;
+        }
+        
+        .ic.clock .clock-dial .clock-hand.minute i {
+            background-color: #C00;
+        }
+        
+        .ic.clock .clock-dial .clock-hand.second i {
+            background-color: #F90;
+        }
+        
+        .ic.clock .clock-dial .clock-fixer i {
+            width: 40%;
+            height: 40%;
+            margin-top: 30%;
+            margin-left: 30%;
+            background-color: #F90;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myclock" class="ic clock">
+        <div class="clock-dial">
+            <div class="clock-hand hour"><i></i></div>
+            <div class="clock-hand minute"><i></i></div>
+            <div class="clock-hand second"><i></i></div>
+            <div class="clock-fixer"><i></i></div>
+        </div>
+    </div>
+
+    <script>
+        iBlock(['$_/dom/Elements/', '$_/util/Color.Cls'], (_) => {
+            var $ = _.dom.select;
+
+            var fns = {
+                second(s) {
+                    s = parseInt(s) % 60;
+                    var angle = s * 6;
+                    $('.clock-hand.second').css('transform', 'rotate(' + angle + 'deg)');
+
+
+                },
+                minute(m) {
+                    m = parseInt(m) % 60;
+                    var angle = m * 6;
+                    $('.clock-hand.minute').css('transform', 'rotate(' + angle + 'deg)');
+
+                },
+                hour(h, m) {
+                    h = parseInt(h) % 12;
+                    m = parseInt(m) % 60;
+                    var angle = h * 30 + m * 0.5;
+                    $('.clock-hand.hour').css('transform', 'rotate(' + angle + 'deg)');
+                }
+            }
+
+            var s = 1800,
+                m = 30,
+                h = 0.5;
+            setInterval(() => {
+                fns.second(++s);
+            }, 1000);
+            setInterval(() => {
+                m = s / 60;
+                fns.minute(m);
+            }, 60000);
+            setInterval(() => {
+                h = s / 3600;
+                fns.hour(h, m);
+            }, 120000);
+            fns.second(s);
+            fns.minute(m);
+            fns.hour(h, m);
+        }, true);
+    </script>
+</body>
+
+</html>

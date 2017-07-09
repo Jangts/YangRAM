@@ -54,37 +54,8 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 Kalendar.SelectEvents();
             }
         },
-        'kalendar content switch item': {
-            'click' (event) {
-                YangRAM.$('kalendar content sections>*, kalendar content switch item').attr('state', 'off');
-                YangRAM.attr(this, 'state', 'on');
-                var owner = YangRAM.$(this).attr('owner');
-                if (Kalendars.indexOf(owner) >= 0) {
-                    var Kalendarname = owner.replace(/^\w/, (s) => s.toUpperCase());
-                    YangRAM.attr(Kalendar[Kalendarname], 'state', 'on');
-                }
-                Kalendar.scrollBAR.resize();
-            }
-        }
     };
 
-    var evisionStyle = () => {
-        var css = '';
-        var styles = {
-            title: 'Title : ',
-            begin: 'Begin Time : ',
-            end: 'End Time : ',
-            invitee: 'Invitee : ',
-            notification: 'Notification : ',
-            url: 'URL : ',
-            remark: 'Remark : '
-        }
-        for (var i in styles) {
-            css += '\n\rkalendar content sections event ' + i;
-            css += ':before { content: "' + styles[i] + '";}';
-        }
-        return css;
-    };
 
     var eSwitchItems = {
         private: ['Mine', 'on'],
@@ -116,9 +87,6 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         Editing: undefined,
         DdlClick: 0,
         build() {
-            YangRAM.create('style', this.document, {
-                innerHTML: evisionStyle()
-            });
             YangRAM.create('scrollbar', this.document, {
                 type: 'vert',
                 innerHTML: '<rail></rail><scrolldragger></scrolldragger>'
@@ -305,7 +273,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             return this;
         },
         onafterresize() {
-            var height = this.Editing ? System.Height - 40 : 501;
+            var height = this.Editing ? System.Height - 40 : 500;
             YangRAM.setStyle(this.document, {
                 height: height
             });
@@ -316,8 +284,6 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             _.dom.events.remove(this.Public, 'click');
             _.dom.events.add(this.Private, 'click', 'title, url, remark', null, handlers.Editable);
             _.dom.events.add(this.Public, 'click', 'title, url, remark', null, handlers.Editable);
-            _.dom.events.add(this.Private, 'click', 'begin, end', null, handlers.TimePicker);
-            _.dom.events.add(this.Public, 'click', 'begin, end', null, handlers.TimePicker);
             _.dom.events.add(this.Private, 'click', 'el.newevent', null, handlers.NewPrivate);
             _.dom.events.add(this.Public, 'click', 'el.newevent', null, handlers.NewPublic);
             */

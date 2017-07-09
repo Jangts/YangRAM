@@ -2,10 +2,27 @@
 
 /*** LAUNCHER ***/
 
+Launcher memowall {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+Launcher rankinglist {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+Launcher rankinglist mask {
+    background-color: rgba(255, 255, 255, .25);
+}
+
+Launcher rankinglist:hover mask,
+Launcher[viewstatus=wallmode] rankinglist mask {
+    background-color: rgba(255, 255, 255, .7);
+}
+
 memowall content group {
     display: block;
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .7);
     padding: 10px;
     border-radius: 2px;
 }
@@ -44,11 +61,18 @@ rankinglist application appname {
 }
 
 rankinglist noramlapps application[isnew="1"]:before {
-    background-color: #FFF;
+    background-color: #FC0;
+    opacity: 0.4;
 }
 
 rankinglist noramlapps application[tips]:after {
     background-color: #09F;
+    opacity: 0.4;
+}
+
+rankinglist:hover noramlapps application[isnew="1"]:before,
+rankinglist:hover noramlapps application[tips]:after {
+    opacity: 1;
 }
 
 memowall content item bookmark[tips]:after {
@@ -60,6 +84,10 @@ memowall content item bookmark[tips]:after {
 
 #APP-I4PLAZA oiml {
     color: #FFF;
+}
+
+workspace[viewstatus=listmode] #APP-I4PLAZA mask {
+    background-color: rgba(255, 255, 255, .2);
 }
 
 #APP-I4PLAZA scrollbar scrolldragger {

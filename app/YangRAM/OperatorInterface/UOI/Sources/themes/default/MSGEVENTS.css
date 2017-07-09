@@ -87,17 +87,8 @@ msgcenter notice v msgtit {
 /*** EVENTS ***/
 
 kalendar dates {
-    background: rgba(0, 0, 0, .9);
-}
-
-kalendar dates {
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-
-kalendar dates {
+    background: rgba(0, 0, 0, .75);
     box-shadow: -2px 2px 6px rgba(0, 0, 0, .4);
-    border-left: solid rgba(255, 255, 255, .1) 1px;
-    border-bottom: solid rgba(255, 255, 255, .1) 1px;
 }
 
 kalendar dates [name=month] {

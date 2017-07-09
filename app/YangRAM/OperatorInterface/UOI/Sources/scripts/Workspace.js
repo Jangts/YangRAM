@@ -265,7 +265,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 if (appid) {
                     let elem = app.Element,
                         index = newLayerIndex,
-                        selects = YangRAM.$('application[appid="' + appid + '"][running]');
+                        selects = YangRAM.$('application[appid="' + appid + '"][running], bgpic[appid="' + appid + '"][running]');
                     //console.log(selects);
                     if (selects[0]) {
                         var selectel = selects[0];

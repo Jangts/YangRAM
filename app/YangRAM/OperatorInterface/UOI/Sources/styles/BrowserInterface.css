@@ -89,8 +89,7 @@ hibar subbars browsertools browsenext {
     float: left;
     width: 18px;
     height: 18px;
-    margin: 12px 6px 10px;
-    border-radius: 11px;
+    margin: 11px 6px;
     line-height: 18px;
     text-align: center;
     cursor: pointer;

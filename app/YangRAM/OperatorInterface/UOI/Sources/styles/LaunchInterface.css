@@ -23,7 +23,7 @@ Launcher memowall content group linkgroupname {
     content: attr(name);
     text-align: center;
     line-height: 30px;
-    opacity: .15;
+    opacity: .5;
     transition: opacity ease .5s;
     cursor: default;
 }

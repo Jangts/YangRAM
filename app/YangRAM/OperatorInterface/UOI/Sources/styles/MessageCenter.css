@@ -20,9 +20,10 @@ msgcenter:hover scrollbar {
 msgcenter content msgroup {
     display: block;
     position: relative;
-    width: 390px;
+    width: 380px;
     height: auto;
-    margin: 5px;
+    margin: 10px;
+    padding-bottom: 5px;
 }
 
 msgcenter content msgroup:before {
@@ -33,6 +34,7 @@ msgcenter content msgroup:before {
     font-size: 14px;
     text-align: center;
     line-height: 24px;
+    margin-bottom: 5px;
 }
 
 msgcenter content msgroup message {

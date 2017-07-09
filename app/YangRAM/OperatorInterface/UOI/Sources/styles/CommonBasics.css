@@ -315,6 +315,7 @@ yangram widgets smartian {
     position: absolute;
     top: 40px;
     right: -500px;
+    margin: 10px;
     overflow: hidden;
     transition: all ease .4s;
 }
@@ -334,9 +335,11 @@ yangram widgets smartian[state=on] {
 yangram widgets kalendar {
     display: block;
     position: absolute;
-    width: 401px;
+    width: 380px;
     top: -600px;
     right: 0;
+    margin: 10px;
+    border-radius: 2px;
     overflow: hidden;
     opacity: 0;
     padding-top: 40px;

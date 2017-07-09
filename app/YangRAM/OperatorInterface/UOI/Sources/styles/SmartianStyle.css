@@ -80,17 +80,17 @@ smartian resulter content>* {
 /*** Smartian Normal ***/
 
 smartian[viewstatus=nrmlmode] {
-    width: 400px;
+    width: 380px;
 }
 
 smartian[viewstatus=nrmlmode] form {
-    width: 400px;
+    width: 380px;
     bottom: 0;
     left: 0;
 }
 
 smartian[viewstatus=nrmlmode] form input[type=text] {
-    width: 350px;
+    width: 330px;
 }
 
 smartian[viewstatus=nrmlmode] form input[type=button]:hover {
@@ -125,12 +125,12 @@ smartian[viewstatus=nrmlmode] resulter content list[type=welcome] {
 }
 
 smartian[viewstatus=nrmlmode] resulter content list[type=welcomed] {
-    width: 92%;
+    width: 96%;
     height: 60px;
 }
 
 smartian[viewstatus=nrmlmode] resulter content embedarea {
-    width: 92%;
+    width: 96%;
     height: 320px;
     border-radius: 3px;
     padding: 10px 0px;
@@ -142,25 +142,24 @@ smartian[viewstatus=nrmlmode] resulter content embedarea embed {
 }
 
 smartian[viewstatus=nrmlmode] resulter content ask {
-    width: 92%;
+    width: 96%;
     text-align: right;
     margin-top: 5px;
 }
 
 smartian[viewstatus=nrmlmode] resulter content answer {
-    width: 92%;
+    width: 96%;
 }
 
 smartian[viewstatus=nrmlmode] resulter content aclass {
-    width: 92%;
+    width: 96%;
     text-align: left;
     font-size: 12px;
     margin-top: 5px;
 }
 
 smartian[viewstatus=nrmlmode] resulter content list[type=result] {
-    width: 92%;
-    border-radius: 3px;
+    width: 96%;
 }
 
 smartian[viewstatus=nrmlmode] resulter content list[type=result] item {
@@ -178,7 +177,7 @@ smartian[viewstatus=nrmlmode] resulter content list[type=result] item desc {
 }
 
 smartian[viewstatus=nrmlmode] resulter content tips {
-    width: 92%;
+    width: 96%;
     font-size: 12px;
     margin-top: 5px;
 }
@@ -196,12 +195,13 @@ smartian[viewstatus=nrmlmode] resulter content list kw {
 
 smartian[viewstatus=widemode] {
     width: 100%;
+    margin: 0;
 }
 
 smartian[viewstatus=widemode] form {
     width: 500px;
     top: 20px;
-    left: 70px;
+    left: 60px;
 }
 
 smartian[viewstatus=widemode] form input[type=text] {
@@ -220,9 +220,8 @@ smartian[viewstatus=widemode] resulter {
 }
 
 smartian[viewstatus=widemode] resulter content>* {
-    width: 90%;
     max-width: 884px;
-    margin-left: 70px;
+    margin-left: 60px;
 }
 
 smartian[viewstatus=widemode] resulter content list:first-child {
