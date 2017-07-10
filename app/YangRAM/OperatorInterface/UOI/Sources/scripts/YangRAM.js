@@ -137,7 +137,7 @@ System.ModuleSeeds.main = (Application, pandora, declare, global, undefined) => 
             Account: document.getElementsByTagName('account').item(0),
             TitleAndMenu: new Application('subbars'),
             Contexts: new Application('menus'),
-            Timer: new _.util.Time()._x({
+            Timer: new _.Time()._x({
                 appid: 'TIMER',
                 Status: true,
                 name: 'Timer',

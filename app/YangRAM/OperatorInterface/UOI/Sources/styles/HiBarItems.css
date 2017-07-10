@@ -140,7 +140,7 @@ hibar msger {
     width: 40px;
     height: 40px;
     font-size: 16px;
-    line-height: 45px;
+    line-height: 40px;
     cursor: pointer;
     transition: all ease .3s;
 }
@@ -153,7 +153,7 @@ hibar appstore {
     width: 40px;
     height: 40px;
     font-size: 16px;
-    line-height: 45px;
+    line-height: 40px;
     cursor: pointer;
     transition: all ease .3s;
 }
@@ -166,7 +166,7 @@ hibar wsmswitcher {
     width: 40px;
     height: 40px;
     font-size: 16px;
-    line-height: 45px;
+    line-height: 40px;
     cursor: pointer;
     transition: all ease .3s;
 }
@@ -193,7 +193,7 @@ hibar searcher {
     width: 40px;
     height: 40px;
     font-size: 16px;
-    line-height: 45px;
+    line-height: 40px;
     cursor: pointer;
     transition: all ease .3s;
 }

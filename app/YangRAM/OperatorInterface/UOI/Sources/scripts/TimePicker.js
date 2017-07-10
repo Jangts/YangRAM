@@ -37,7 +37,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                             switch (CurrentInputType) {
                                 case 'datetime':
                                 case 'fulldate':
-                                    var month = new _.data.Month(parseInt(CurrentValuesList[1]) + 1, parseInt(CurrentValuesList[0]));
+                                    var month = new _.Time.Month(parseInt(CurrentValuesList[1]) + 1, parseInt(CurrentValuesList[0]));
                                     var firstDay = month.firstDay,
                                         count = month.length,
                                         selectedDate = value,
@@ -339,7 +339,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     CurrentValuesList[0] = CurrentValuesList[0] * -1;
                 } else {
                     if (/^\d+\s*\-\s*\d{1,2}\s*\-\s*\d{1,2}\s+\d{1,2}\s*:\s*\d{1,2}\s*:\s*\d{1,2}$/.test(CurrentInputValue) == false) {
-                        CurrentInputValue = new _.util.Time().format('yyyy-MM-dd hh:mm:ss');
+                        CurrentInputValue = new _.Time().format('yyyy-MM-dd hh:mm:ss');
                     }
                     CurrentValuesList = CurrentInputValue.split(/[\-\s\:]+/);
                 }
@@ -355,7 +355,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                     CurrentValuesList[0] = CurrentValuesList[0] * -1;
                 } else {
                     if (/^\d+\s*\-\s*\d{1,2}\s*\-\s*\d{1,2}$/.test(CurrentInputValue) == false) {
-                        CurrentInputValue = new _.util.Time().format('yyyy-MM-dd');
+                        CurrentInputValue = new _.Time().format('yyyy-MM-dd');
                     }
                     CurrentValuesList = CurrentInputValue.split(/[\-\s]+/);
                 }
@@ -370,7 +370,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             dayofyear() {
                 CurrentInputValue = CurrentInputValue.trim();
                 if (/^\d{1,2}\s*\-\s*\d{1,2}$/.test(CurrentInputValue) == false) {
-                    CurrentInputValue = new _.util.Time().format('yyyy-MM');
+                    CurrentInputValue = new _.Time().format('yyyy-MM');
                 }
                 CurrentValuesList = CurrentInputValue.split(/[\-\s]+/);
                 CurrentValuesList[1] = parseInt(CurrentValuesList[1]) - 1;
@@ -378,14 +378,14 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             timeofday() {
                 CurrentInputValue = CurrentInputValue.trim();
                 if (/^\d{1,2}\s*:\s*\d{1,2}\s*:\s*\d{1,2}$/.test(CurrentInputValue) == false) {
-                    CurrentInputValue = new _.util.Time().format('hh:mm:ss');
+                    CurrentInputValue = new _.Time().format('hh:mm:ss');
                 }
                 CurrentValuesList = CurrentInputValue.split(/[\:\s]+/);
             },
             hourminute() {
                 CurrentInputValue = CurrentInputValue.trim();
                 if (/^\d{1,2}\s*:\s*\d{1,2}$/.test(CurrentInputValue) == false) {
-                    CurrentInputValue = new _.util.Time().format('hh:mm');
+                    CurrentInputValue = new _.Time().format('hh:mm');
                 }
                 CurrentValuesList = CurrentInputValue.split(/[\:\s]+/);
             },

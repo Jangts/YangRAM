@@ -1,14 +1,14 @@
 /*!
  * Interblocks Framework Source Code
  *
- * class data.Month extends Iterator
+ * class Time.Month extends Iterator
  *
  * Date 2017-04-06
  */
 ;
 iBlock([
     '$_/util/arr.xtd',
-    '$_/util/Time.Cls'
+    '$_/Time/'
 ], function(pandora, global, undefined) {
     var _ = pandora,
         declare = pandora.declareClass,
@@ -94,6 +94,7 @@ iBlock([
         },
         getDays = function(month, year, days) {
             var day, lastdate;
+            days.length = 0;
             days.firstDay = new Date(year, month, 1).getDay();
             month++;
             lastdate = new Date(year, month, 0);
@@ -117,7 +118,7 @@ iBlock([
      * @param   {number, string}    year           年份
      *  
      */
-    declare('data.Month', _.Iterator, {
+    declare('Time.Month', _.Iterator, {
         year: 1970,
         month: 0,
         days: [],
@@ -134,28 +135,28 @@ iBlock([
                 this._init(this.month - 1, this.year);
                 return this;
             }
-            return _.data.Month(this.month - 1, this.year);
+            return _.Time.Month(this.month - 1, this.year);
         },
         nextMonth: function(month, year) {
             if (createNewInstance === false) {
                 this._init(this.month + 1, this.year);
                 return this;
             }
-            return _.data.Month(this.month + 1, this.year);
+            return _.Time.Month(this.month + 1, this.year);
         },
         prevYear: function(month, year) {
             if (createNewInstance === false) {
                 this._init(this.month, this.year - 1);
                 return this;
             }
-            return _.data.Month(this.month, this.year - 1);
+            return _.Time.Month(this.month, this.year - 1);
         },
         nextYear: function(month, year) {
             if (createNewInstance === false) {
                 this._init(this.month, this.year + 1);
                 return this;
             }
-            return _.data.Month(this.month, this.year + 1);
+            return _.Time.Month(this.month, this.year + 1);
         }
     });
 });

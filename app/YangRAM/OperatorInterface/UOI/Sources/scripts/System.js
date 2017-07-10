@@ -148,7 +148,7 @@ iBlock((pandora, global, undefined) => {
         OnLoaded: null,
         OnLoadCompletely: null,
         OnClose() {
-            return true;
+            //return true;
             var result = Runtime.checkActivities();
             if (result) {
                 new System.Notifier.Message({

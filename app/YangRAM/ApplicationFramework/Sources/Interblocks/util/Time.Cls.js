@@ -1,7 +1,7 @@
 /*!
  * Interblocks Framework Source Code
  *
- * class util.Time
+ * class Time
  *
  * Date 2017-04-06
  */
@@ -149,7 +149,7 @@ iBlock(function(pandora, global, undefined) {
 
     var dates = [];
 
-    declare('util.Time', {
+    declare('Time', {
         _init: function(time) {
             var t, date;
             switch (arguments.length) {
@@ -407,7 +407,7 @@ iBlock(function(pandora, global, undefined) {
         },
         loop: function(callback, duration, update) {
             var that = this;
-            _.util.Time.loop(function() {
+            _.Time.loop(function() {
                 update && that.update();
                 callback.call(that);
             }, duration);
@@ -429,7 +429,7 @@ iBlock(function(pandora, global, undefined) {
         }
     });
 
-    _.extend(_.util.Time, {
+    _.extend(_.Time, {
         stamp: function() {
             var timestamp = Date.parse(new Date());
             return timestamp / 1000;

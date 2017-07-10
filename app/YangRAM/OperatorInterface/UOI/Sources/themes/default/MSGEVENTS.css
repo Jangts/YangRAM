@@ -86,117 +86,72 @@ msgcenter notice v msgtit {
 
 /*** EVENTS ***/
 
-kalendar dates {
+kalendar {
     background: rgba(0, 0, 0, .75);
     box-shadow: -2px 2px 6px rgba(0, 0, 0, .4);
 }
 
-kalendar dates [name=month] {
+kalendar [name=month] {
     width: 360px;
     background: #222;
 }
 
-kalendar dates [name=month] el {
+kalendar [name=month] el {
     color: #999;
 }
 
-kalendar dates [name=month] el:hover {
+kalendar [name=month] el:hover {
     background: #181818;
 }
 
-kalendar dates [name=week] {
+kalendar [name=week] {
     background: #222;
 }
 
-kalendar dates [name=week] list {
+kalendar [name=week] list {
     color: #999;
 }
 
-kalendar dates [name=week] list:hover {
+kalendar [name=week] list:hover {
     background: #191919;
 }
 
-kalendar dates [name=week] list[today] {
+kalendar [name=week] list[today] {
     background: #191919;
 }
 
-kalendar dates [name=days] {
+kalendar [name=days] {
     background: #222;
 }
 
-kalendar dates [name=days] list {
+kalendar [name=days] list {
     color: #999;
     background: #181818;
 }
 
-kalendar dates [name=days] list[events] {
+kalendar [name=days] list[events] {
     background: #522;
 }
 
-kalendar dates [name=days] list[today] {
+kalendar [name=days] list[today] {
     background: #663300;
 }
 
-kalendar dates [name=days] list[actived],
-kalendar dates [name=days] list:hover {
+kalendar [name=days] list[actived],
+kalendar [name=days] list:hover {
     border: #ab3f45 1px solid;
 }
 
-kalendar dates [name=days] list[disabled] {
+kalendar [name=days] list[disabled] {
     color: #666;
     background: #282828;
 }
 
-kalendar dates [name=days] list[disabled]:hover {
+kalendar [name=days] list[disabled]:hover {
     border: #282828 1px solid;
 }
 
-kalendar dates [name=setting] {
+kalendar [name=setting] {
     background: #161616;
     color: #666;
-}
-
-kalendar content {
-    background-color: #FFF;
-    border: solid rgba(0, 204, 255, .2) 1px;
-}
-
-kalendar content switch item {
-    border: #0CF solid 1px;
-    color: #0CF;
-}
-
-kalendar content switch item:first-child {
-    border-left: #0CF solid 1px;
-}
-
-kalendar content switch item[state=on] {
-    background-color: #0CF;
-    color: #FFF;
-}
-
-kalendar content sections {
-    border: #0CF solid 1px;
-}
-
-kalendar content sections v el {
-    color: #999;
-}
-
-kalendar content sections v event {
-    border-bottom: solid #00CCFF 1px;
-}
-
-kalendar content sections v event>* {
-    color: #09F;
-    border-bottom: dashed #00CCFF 1px;
-}
-
-kalendar content sections v event>*:before {
-    color: #666;
-}
-
-kalendar content sections v event>*[contentEditable=true] {
-    border-bottom: solid #CCC 1px;
-    background-color: #E9E9E9;
 }

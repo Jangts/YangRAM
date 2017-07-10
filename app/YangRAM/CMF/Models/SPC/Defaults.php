@@ -194,6 +194,10 @@ final class Defaults extends DataObject {
                 'type'  =>  'textarea',
                 'value' =>  ''
             ],
+			'ABSTRACT'		=>	[
+                'type'  =>  'textarea',
+                'value' =>  ''
+            ],
 			'CONTENT'		=>	[
                 'type'  =>  'longtext',
                 'value' =>  ''

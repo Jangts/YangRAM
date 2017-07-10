@@ -35,7 +35,7 @@
 </yangram>
 <script>
 iBlock([
-    '$_/util/Time.Cls',
+    '$_/Time/',
     '$_/data/',
     '$_/data/Clipboard.Cls',
     '$_/dom/Elements/form.clsx',

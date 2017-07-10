@@ -1,8 +1,8 @@
 @charset "utf-8";
 
-/*** kalendar dates ***/
+/*** kalendar ***/
 
-kalendar dates {
+kalendar {
     position: absolute;
     width: 400px;
     height: 500px;
@@ -12,25 +12,25 @@ kalendar dates {
     overflow: hidden;
 }
 
-kalendar dates {
+kalendar {
     overflow: hidden;
     z-index: 100;
 }
 
-kalendar dates {
+kalendar {
     opacity: .95;
 }
 
 
 /**********************************************/
 
-kalendar dates [name=month] {
+kalendar [name=month] {
     width: 360px;
     height: 80px;
     margin: 20px 20px 0;
 }
 
-kalendar dates [name=month] el {
+kalendar [name=month] el {
     height: 80px;
     text-align: center;
     font-size: 24px;
@@ -39,33 +39,33 @@ kalendar dates [name=month] el {
     transition: all ease .4s;
 }
 
-kalendar dates [name=month] [name=prev-month] {
+kalendar [name=month] [name=prev-month] {
     width: 55px;
     float: left;
     font-family: Consola;
     font-size: 32px;
 }
 
-kalendar dates [name=month] [name=curr-month] {
+kalendar [name=month] [name=curr-month] {
     width: 250px;
     float: left;
 }
 
-kalendar dates [name=month] [name=next-month] {
+kalendar [name=month] [name=next-month] {
     width: 55px;
     float: right;
     font-family: Consola;
     font-size: 32px;
 }
 
-kalendar dates [name=week] {
+kalendar [name=week] {
     width: 350px;
     height: 28px;
     margin: 1px 20px;
     padding: 5px;
 }
 
-kalendar dates [name=week] list {
+kalendar [name=week] list {
     width: 46px;
     height: 24px;
     margin: 2px;
@@ -77,14 +77,14 @@ kalendar dates [name=week] list {
     border-radius: 2px;
 }
 
-kalendar dates [name=days] {
+kalendar [name=days] {
     width: 350px;
     height: 300px;
     margin: 0 20px;
     padding: 5px;
 }
 
-kalendar dates [name=days] list {
+kalendar [name=days] list {
     width: 48px;
     height: 48px;
     margin: 1px;
@@ -95,23 +95,15 @@ kalendar dates [name=days] list {
     cursor: pointer;
 }
 
-kalendar dates [name=days] list[actived] {
+kalendar [name=days] list[actived] {
     margin: 0;
 }
 
-kalendar dates [name=days] list:hover {
+kalendar [name=days] list:hover {
     margin: 0;
 }
 
-kalendar dates events[owner] {
-    display: none;
-}
-
-kalendar dates events * {
-    display: none;
-}
-
-kalendar dates [name=setting] {
+kalendar [name=setting] {
     width: 360px;
     height: 29px;
     margin-top: 1px;
@@ -119,177 +111,4 @@ kalendar dates [name=setting] {
     text-align: center;
     line-height: 29px;
     cursor: pointer;
-}
-
-
-/**********************************************/
-
-
-/*** kalendar Events ***/
-
-kalendar content {
-    display: block;
-    width: 800px;
-    height: auto;
-    top: -1000px;
-    left: 50%;
-    margin-top: 160px;
-    margin-bottom: 60px;
-    margin-left: -400px;
-    border-radius: 2px;
-}
-
-kalendar content {
-    z-index: 0;
-    opacity: 0;
-}
-
-kalendar content {
-    transform: scale( .8, .8);
-}
-
-kalendar content[selected] {
-    z-index: 200;
-}
-
-kalendar content * {
-    display: block;
-}
-
-kalendar[type=edit] content {
-    opacity: 1;
-}
-
-kalendar[type=edit] content {
-    transform: scale( 1, 1);
-}
-
-kalendar[type=edit] content {
-    transition: transform ease .4s, opacity ease .4s;
-}
-
-kalendar content:hover scrollbar {
-    opacity: .2;
-}
-
-
-/**********************************************/
-
-kalendar content switch {
-    width: 100%;
-    height: 30px;
-    margin: 50px 0px 10px;
-    text-align: center;
-}
-
-kalendar content switch item {
-    display: inline-block;
-    width: 22%;
-    height: 28px;
-    text-align: center;
-    line-height: 28px;
-    border-left: none;
-    cursor: pointer;
-}
-
-kalendar content switch item[state] {
-    display: inline-block;
-}
-
-kalendar content switch item:first-child {
-    border-radius: 2px 0px 0px 2px;
-}
-
-kalendar content switch item:last-child {
-    border-radius: 0px 2px 2px 0px;
-}
-
-
-/**********************************************/
-
-kalendar content sections {
-    width: 88%;
-    border-radius: 2px;
-    padding: 2px 2px 1px 1px;
-    margin: 10px auto 50px;
-}
-
-kalendar content sections v {
-    display: none;
-    width: 100%;
-}
-
-kalendar content sections v el {
-    width: 100%;
-    height: 30px;
-    line-height: 30px;
-    font-size: 18px;
-    cursor: pointer;
-    text-align: center;
-}
-
-kalendar content sections v el.noevent {
-    height: 80px;
-    line-height: 80px;
-}
-
-kalendar content sections v[state=off] {
-    display: none;
-    font-size: 12px;
-    line-height: 20px;
-}
-
-kalendar content sections v[state=on] {
-    display: block;
-    font-size: 14px;
-    line-height: 20px;
-}
-
-kalendar content sections v event {
-    display: block;
-    width: 98%;
-    margin: 10px 1%;
-    text-align: center;
-}
-
-kalendar content sections v event:last-child {
-    border-bottom: none;
-}
-
-kalendar content sections v event>* {
-    display: block;
-    width: 98%;
-    padding: 3px 1% 2px;
-    text-align: left;
-    margin-bottom: 5px;
-}
-
-kalendar content sections v event>begin {
-    float: left;
-    width: 47%;
-}
-
-kalendar content sections v event>end {
-    float: right;
-    width: 47%;
-}
-
-kalendar content sections v event>remark {
-    height: auto;
-    min-height: 50px;
-    border-bottom: none;
-}
-
-kalendar content sections v event>*:before {
-    display: inline-block;
-    width: 100px;
-}
-
-kalendar content sections v event>*[contentEditable=true] {
-    outline: none;
-}
-
-kalendar content sections v event>*[contentEditable=true]:before {
-    position: absolute;
-    opacity: .1;
 }
