@@ -93,7 +93,7 @@ iBlock([
     '$_/util/arr.xtd',
     '$_/util/obj.xtd',
     '$_/util/str.xtd',
-    '$_/util/locales/en',
+    '$_/Time/locales/en',
     '$_/Time/',
     '$_/util/Promise.Cls',
     '$_/data/hash.xtd',
@@ -206,7 +206,7 @@ iBlock([
     document.onkeydown = System.KeyEvents;
     
     new _.data.XHR({
-        url:'<?=NIAF_PID?>Sources/Interblocks/util/locales/<?=substr(strtolower($__Lang), 0, 2)?>.js',
+        url:'<?=NIAF_PID?>Sources/Interblocks/Time/locales/<?=substr(strtolower($__Lang), 0, 2)?>.js',
     }).done((script)=>{
         try {
             eval(script);

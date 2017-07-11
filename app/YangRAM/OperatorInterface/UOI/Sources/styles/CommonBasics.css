@@ -341,8 +341,6 @@ yangram widgets kalendar {
     margin: 10px;
     border-radius: 2px;
     overflow: hidden;
-    opacity: 0;
-    padding-top: 40px;
 }
 
 yangram widgets kalendar {
@@ -350,8 +348,7 @@ yangram widgets kalendar {
 }
 
 yangram widgets kalendar[state=on] {
-    top: 0px;
-    opacity: 1;
+    top: 40px;
 }
 
 

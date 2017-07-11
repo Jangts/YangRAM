@@ -107,7 +107,7 @@ list[type=blocks] item click {
 }
 
 list[type=blocks] item click:hover {
-    box-shadow: 0px 0px 10px #111111;
+    box-shadow: 0px 0px 20px #666666;
 }
 
 list[type=blocks] item click .titl {
@@ -133,20 +133,12 @@ list[type=blocks].darkpurple item click {
     box-shadow: 0px 0px 2px #660066;
 }
 
-list[type=blocks].darkpurple item click:hover {
-    box-shadow: 0px 0px 10px #660066;
-}
-
 
 /* datered ************************************/
 
 list[type=blocks].datered item click {
     background: #b2212f;
     box-shadow: 0px 0px 2px #660000;
-}
-
-list[type=blocks].datered item click:hover {
-    box-shadow: 0px 0px 10px #660000;
 }
 
 
@@ -157,18 +149,10 @@ list[type=blocks].magenta item click {
     box-shadow: 0px 0px 2px #660022;
 }
 
-list[type=blocks].magenta item click:hover {
-    box-shadow: 0px 0px 10px #660022;
-}
-
 
 /* azure **************************************/
 
 list[type=blocks].azure item click {
     background: #1ba6ea;
     box-shadow: 0px 0px 2px #002266;
-}
-
-list[type=blocks].azure item click:hover {
-    box-shadow: 0px 0px 10px #002266;
 }

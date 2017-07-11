@@ -17,10 +17,18 @@ iBlock([
         document = global.document,
         console = global.console;
 
-    _.form.Editor.regCommand('insertfile', function(val, name) {
+    var parameters = cache.read(new _.Identifier('IBK_EDITOR_PARAMS').toString());
+
+    _.form.Editor.regCommand('insertfile', function(file) {
+        var name = file[0],
+            val = file[1];
         if (_.util.bool.isStr(val)) {
-            name = name || val;
-            var html = 'Attachment : <a href="' + val + '" target="_blank" title="click to download" class="ic editor-attachment">' + name + '</a><br />';
+            name = name || this.options.aaa;
+            if (_.util.bool.isStr(name)) {
+                var html = '<a href="' + val + '" target="_blank" title="click to download" class="ic editor-attachment">' + name + '</a><br />';
+            } else {
+                var html = 'Attachment : <a href="' + val + '" target="_blank" title="click to download" class="ic editor-attachment">' + val + '</a><br />';
+            }
             this.execCommand('insert', html);
             this.range.collapse();
             return this;
@@ -31,8 +39,11 @@ iBlock([
     _.form.Editor.regCreater('insertfile', function() {
         var html = '<dialog class="ic editor-dialog">';
         html += '<span class="ic editor-title">Insert Files</span>';
+        html += '<div class="ic editor-aaa">';
+        html += '<label>Anchor Alias</label><input type="text" class="ic editor-input" placeholder="Enter Attachment Anchor Alias" />';
+        html += '</div>';
         html += '<div class="ic editor-url">';
-        html += '<label>Enter URL</label><input type="text" class="ic editor-input" placeholder="File URL" />';
+        html += '<label>File URL</label><input type="text" class="ic editor-input" placeholder="Enter URL" />';
         html += '</div>';
         html += '<input type="file" class="ic editor-files" value="" hidden="" />';
         html += '<div class="ic editor-btns">';
@@ -45,9 +56,10 @@ iBlock([
 
     _.form.Editor.regDialog('insertfile', function(btn) {
         var dialog = _.dom.closest(btn, 'dialog');
-        var input = _.query('.ic.editor-url .ic.editor-input', dialog)[0];
-        if (input && input.value) {
-            return input.value;
+        var n_input = _.query('.ic.editor-aaa .ic.editor-input', dialog)[0],
+            v_input = _.query('.ic.editor-url .ic.editor-input', dialog)[0];
+        if (v_input && v_input.value) {
+            return [n_input && n_input.value, v_input.value];
         }
         return null;
     });
@@ -74,7 +86,13 @@ iBlock([
                     if (failed) {
                         alert('attachment upload failed');
                     } else {
-                        that.insertFile(val[0], file.name);
+                        var n_input = _.query('.ic.editor-aaa .ic.editor-input', dialog)[0];
+                        if (n_input && n_input.value) {
+                            that.insertFile(val[0], n_input.value);
+                        } else {
+                            that.insertFile(val[0], file.name);
+                        }
+
                     }
                     _.dom.toggleClass(that.loadmask, 'on', false);
                 });
@@ -88,7 +106,7 @@ iBlock([
 
     _.form.Editor.extends({
         insertFile: function(val, name) {
-            return this.execCommand('insertfile', val);
+            return this.execCommand('insertfile', [name, val]);
         }
     });
 });

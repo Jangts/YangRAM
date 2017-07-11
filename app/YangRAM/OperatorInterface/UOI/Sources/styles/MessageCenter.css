@@ -276,7 +276,8 @@ msgcenter notice[state=sleep] {
 }
 
 msgcenter[state=on]>notice {
-    display: none;
+    display: block;
+    margin: 0 10px;
 }
 
 msgcenter[state=on] msgroup notice {

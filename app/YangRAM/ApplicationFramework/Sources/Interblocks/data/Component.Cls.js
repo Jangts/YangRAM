@@ -24,7 +24,7 @@ iBlock([
     declare('data.Component', _.util.COM, {
         _init: function(elem) {
             this.id = new _.Identifier().toString();
-            this.Element = _.util.type.isElement(elem) == '' ? elem : document.getElementById(elem) || document;
+            this.Element = _.util.type.isElement(elem) ? elem : document.getElementById(elem) || document;
             this.Element.setAttribute('id', this.id);
             return this;
         },
@@ -35,7 +35,8 @@ iBlock([
             return this;
         },
         _listen: function(attr, writeCallback, readCallback) {
-            this.observer.listen(attr, writeCallback, readCallback);
+            this._observer.listen(attr, writeCallback, readCallback);
+            return this;
         },
         attr: function(attr, val) {
             if (val === undefined) {

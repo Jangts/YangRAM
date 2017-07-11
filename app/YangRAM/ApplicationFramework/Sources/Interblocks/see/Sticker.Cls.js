@@ -26,7 +26,7 @@ iBlock([
     declare('see.Sticker', {
         animationDuration: 0,
         _init: function(elem, settings) {
-            this.Element = _.util.type.isElement(elem) == '' ? elem : document.getElementById(elem);
+            this.Element = _.util.type.isElement(elem) ? elem : document.getElementById(elem);
             this.uid = new _.Identifier().toString();
             handlers[this.uid] = {};
             settings = settings || {};

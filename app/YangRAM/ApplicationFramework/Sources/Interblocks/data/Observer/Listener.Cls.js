@@ -36,7 +36,7 @@ iBlock([
                 this.observer.listener = null;
             },
             onread: function() {
-                _.util.bool.isFn(this.readCallback) && this.readCallback.call(this.data, this.property);
+                _.util.bool.isFn(this.readCallback) && this.readCallback.call(this.data, this.property, this.data[this.property]);
             },
             onwrite: function(silently) {
                 this.observer.silently = true;
@@ -44,7 +44,7 @@ iBlock([
                 this.observer.silently = silently;
                 if (value !== this.value) {
                     this.value = value;
-                    silently || (isFn(this.writeCallback) && this.writeCallback.call(this.data, this.property));
+                    silently || (isFn(this.writeCallback) && this.writeCallback.call(this.data, this.property, this.data[this.property]));
                 }
             }
         });

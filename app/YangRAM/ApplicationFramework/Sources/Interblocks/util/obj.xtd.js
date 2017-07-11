@@ -78,10 +78,10 @@ iBlock(function(pandora, global, undefined) {
                 return typeof object;
             }
         },
-        length: function(object, ownProperty) {
+        length: function(object, ownpropsonly) {
             var num = 0;
             for (var k in object) {
-                if (ownProperty) {
+                if (ownpropsonly) {
                     if (object.hasOwnProperty(k)) {
                         num++;
                     }

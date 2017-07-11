@@ -7,6 +7,7 @@
  */
 ;
 iBlock([
+    '$_/form/Editor/style.css',
     '$_/util/bool.xtd',
     '$_/dom/',
     '$_/dom/Events.Cls',
@@ -121,7 +122,7 @@ iBlock([
                 var width = settings.width || textarea.offsetWidth - 2;
                 var height = settings.height || textarea.offsetHeight - 2;
                 this.commonNode = _.dom.create('div', textarea.parentNode, {
-                    className: 'ic editor ic editor-' + (settings.themeType || 'default'),
+                    className: 'ic editor editor-' + (settings.themeType || 'default'),
                     style: {
                         'width': width,
                         'min-height': height,
@@ -209,14 +210,6 @@ iBlock([
                     }
                 })
             });
-        },
-        setStyle: function(callback) {
-            if (!this.options.styleSheet) {
-                var themeType = this.options.themeType || parameters.themeType;
-                this.options.styleSheet = parameters.themesPath + themeType + '/' + themeType + '.css';
-            }
-            _.data.loadCSS(this.options.styleSheet, callback);
-            return this;
         },
         render: function(toolbar) {
             if (_.util.bool.isObj(toolbar)) {
@@ -326,9 +319,7 @@ iBlock([
     _.extend(_.form, true, {
         careatEditor: function(elem, settings) {
             var editor = new _.form.Editor(elem, settings);
-            editor.setStyle(function() {
-                editor.render().listen();
-            });
+            editor.render().listen();
             return editor;
         },
         careatEditors: function(selector, settings) {

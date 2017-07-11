@@ -31,25 +31,30 @@ iBlock([
         },
         commands = {
             'fontname': function(val) {
-                this.getRange().execCommand('fontname', val);
-                _.each(_.query('font[face=' + val + ']'), function() {
+                var id = new _.Identifier();
+                this.getRange().execCommand('fontname', id);
+                console.log(this.getRange());
+                _.each(_.query('font[face=' + id + ']', this.editarea), function() {
+                    console.log(this);
                     _.dom.removeAttr(this, 'face');
                     _.dom.setStyle(this, 'font-family', val);
                 });
                 this.setRange();
             },
             'fontsize': function(val) {
-                this.getRange().execCommand('fontsize', 4);
-                _.each(_.query('font[size="4"]'), function() {
-                    _.dom.removeAttr(this, 'size');
+                var id = new _.Identifier();
+                this.getRange().execCommand('fontname', id);
+                _.each(_.query('font[face=' + id + ']', this.editarea), function() {
+                    _.dom.removeAttr(this, 'face');
                     _.dom.setStyle(this, 'font-size', val);
                 });
                 this.setRange();
             },
             'forecolor': function(val) {
-                this.getRange().execCommand('forecolor', val);
-                _.each(_.query('font[color=' + val + ']'), function() {
-                    _.dom.removeAttr(this, 'color');
+                var id = new _.Identifier();
+                this.getRange().execCommand('fontname', id);
+                _.each(_.query('font[face=' + id + ']', this.editarea), function() {
+                    _.dom.removeAttr(this, 'face');
                     _.dom.setStyle(this, 'color', val);
                 });
                 this.setRange();

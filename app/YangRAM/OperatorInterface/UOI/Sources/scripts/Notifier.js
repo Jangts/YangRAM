@@ -20,6 +20,9 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         },
         sleep() {
             YangRAM.attr(System.HiBar.Messager, 'type', 'start');
+            YangRAM.$('msgcenter>notice').each(function(i, elem) {
+                elem.parentNode.removeChild(elem);
+            });
             return this.off();
         },
         build(callback) {

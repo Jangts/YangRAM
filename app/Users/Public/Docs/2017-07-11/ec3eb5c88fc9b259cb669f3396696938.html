@@ -1,0 +1,24 @@
+﻿<html>
+<meta charset="utf-8">
+<title>刷刷刷</title>
+
+<body>
+    <div>已刷新：<span id="count">0</span>次</div>
+    <script>
+        var win1, win2, count = 0,
+            div = document.getElementById("count");
+        setInterval(() => {
+            div.innerHTML = ++count;
+            // if (count % 2) {
+            //     win2 && win2.close();
+            //     win2 = window.open("https://i.fuwu.taobao.com/trade/new_order_list.htm", "_blank");
+            // } else {
+            win1.close();
+            win1 = window.open("https://fuwu.taobao.com/index.html", "_blank");
+            // }
+        }, 1000 * 60 * 2);
+        win1 = window.open("https://fuwu.taobao.com/index.html", "_blank");
+    </script>
+</body>
+
+</html>

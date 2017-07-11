@@ -23,7 +23,7 @@ iBlock(['$_/util/type.xtd'], function(pandora, global, undefined) {
         Element: null,
         _init: function(elem) {
             this.id = new _.Identifier().toString();
-            this.Element = _.util.type.isElement(elem) == '' ? elem : document.getElementById(elem) || document;
+            this.Element = _.util.type.isElement(elem) ? elem : document.getElementById(elem) || document;
             this.Element.setAttribute('id', this.id);
             return this;
         },

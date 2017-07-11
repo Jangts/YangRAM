@@ -41,7 +41,7 @@ iBlock([
                         return;
                     }
                     val = value;
-                    observe(value);
+                    _.util.bool.isObj(value) && observe(value);
                     if (observer.silently === false) {
                         subscriber.notify(true, false);
                     } else {
@@ -66,7 +66,9 @@ iBlock([
             },
             walk: function(data) {
                 _.each(data, function(key, val) {
-                    activeListen(this, key, val);
+                    if (data.hasOwnProperty(key)) {
+                        activeListen(this, key, val, true);
+                    }
                 }, this);
                 data._observer = this;
             },

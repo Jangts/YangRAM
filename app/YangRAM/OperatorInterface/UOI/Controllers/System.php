@@ -23,7 +23,7 @@ class System extends \Controller {
 			$avatar = $_COOKIE['opavatar'];
 		}else{
 			$username = '';
-			$avatar = UOI_PID.'Sources/themes/'.$__Style.'/icon.svg';
+			$avatar = UOI_PID.'Sources/styles/icon.svg';
 		}
 		$response = Response::instance('200');
 		$response->sendHeaders();

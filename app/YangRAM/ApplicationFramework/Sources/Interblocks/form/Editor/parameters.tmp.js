@@ -39,7 +39,6 @@ iBlock([
         emoticonsCodeFormat: '[CODE]'
     };
 
-    parameters.themesPath = parameters.basePath + 'themes/';
     parameters.langPath = parameters.basePath + 'Lang/';
     parameters.pluginsPath = parameters.basePath + 'Plugins/';
 
