@@ -88,8 +88,8 @@ final class Request {
         $data['URI_HASH'] = md5($data['HOST'].$data['DIR'].$data['TRANSLATED_URI'].'?'.$data['QS']);
         $data['DIR'] .= '/';
         $this->data = $data;
-        var_dump($_SERVER['PHP_SELF'], $PATH, $data, $_GET, $_POST);
-        exit;
+        // var_dump($_SERVER['PHP_SELF'], $PATH, $data, $_GET, $_POST);
+        // exit;
     }
 
     public function __get($property){
@@ -248,7 +248,7 @@ final class Request {
             $args = $this->data['PARAMS'] = new Parameters($this->data['uri_path'], $item, $matches);
         }
         $vals = $args->toArray();
-        $post = $this->data['FORM'] = new FormData($this->data['PARAMS'],$readonly);
+        $post = $this->data['FORM'] = new FormData($this->data['PARAMS'], $readonly);
         if(empty($this->data['LANG'])){
             if(isset($args->lang)){
                 $lang = $args->lang;

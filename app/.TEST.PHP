@@ -1,7 +1,9 @@
 <?php
-$____SAPINAME = php_sapi_name();
-if(preg_match("/cli/i", $____SAPINAME)){
-    if($_SERVER['argc']>1){
+define('_TESTER_', '/.TEST.PHP/');
+define('_SAPI_NAME_', php_sapi_name());
+if(preg_match("/cli/i", _SAPI_NAME_)){
+    define('_TEST_MODE_', 2);
+    if($_SERVER['argc']>2){
         function parseQueryString($string){
             $minarr = explode('&', str_replace('+', ' ', $_SERVER['QUERY_STRING']));
             $gets = [];
@@ -14,7 +16,8 @@ if(preg_match("/cli/i", $____SAPINAME)){
             }
             return $gets;
         }
-        $_SERVER['SERVER_SOFTWARE'] = $____SAPINAME;
+        $_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
+        $_SERVER['SERVER_SOFTWARE'] = _SAPI_NAME_;
         $_SERVER['HTTP_HOST'] = $_SERVER['REMOTE_HOST'] = $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
         $_SERVER['SERVER_PROTOCOL'] = 'HTTP/1.1';
         $_SERVER['SERVER_PORT'] = '80';
@@ -41,10 +44,7 @@ if(preg_match("/cli/i", $____SAPINAME)){
         }
         include 'boot.php';
     }
-    
 }else{
-    // header('Content-Type:text/plain;charset=UTF-8');
-    // var_dump($_SERVER);
-    // exit;
+    define('_TEST_MODE_', 1);
     include 'boot.php';
 }

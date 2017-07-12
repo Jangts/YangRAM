@@ -61,7 +61,7 @@ final class AsyncTask {
     public static function addTask($events = [], $type = self::ONCE){
         switch($type){
             case self::ONCE:
-            array_map(['Tangram\AsyncTask', 'addOnetimeEvent'], $events);
+            array_map(['Tangram\CTRL\AsyncTask', 'addOnetimeEvent'], $events);
             return true;
 
             case self::DAILY:

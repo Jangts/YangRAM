@@ -2,7 +2,8 @@
 namespace Tangram\CTRL;
 
 use Status;
-use Tangram\AsyncTask;
+use SESS;
+use Tangram\CTRL\AsyncTask;
 use Tangram\NIDO\DataObject;
 use Tangram\CACH\Resource;
 use Tangram\CTRL\ApplicationPermissions;
@@ -95,20 +96,39 @@ abstract class NI_ResourceIndexer_BC {
 
     private function checkStandardInterface($uri, $path, $request, $HOST){
         $uri = strtolower(HOST). $uri . '/';
-        if(\Tangram\IDEA::MODE==='DEVELOP'){
-            define('_TESTER_', '/unit/');
-            if(stripos($uri, HOST._TESTER_)===0){
-                // Unit Tester Interface
-                define('_TEST_MODE_', true);
-                
+        if(defined('_TESTER_')){
+            if(_TEST_MODE_===2){
+                SESS::init('_test_session_id_');
+                echo "Unit Test In Cli Mode\r\n";
+                fwrite(STDOUT,"Please input username:\r\n");
+                if($username=trim(fgets(STDIN))){
+                    $_SESSION['username'] = $username;
+                }
+                fwrite(STDOUT,"Please input request language:\r\n");
+                if($language=trim(fgets(STDIN))){
+                    $_COOKIE['language'] = $language;
+                }
+                // var_dump($_GET, $_POST, $_COOKIE, $_SESSION);
+                // exit;
                 $request->update(NULL, NULL, false);
                 return [
                     'map'       =>  -5,
                     'app'       =>  (isset($path[2])&&$path[2]!=='') ? $path[2] : 'yangram'
                 ];
-    		}
+            }else{
+                SESS::init();
+                if(\Tangram\IDEA::MODE==='DEVELOP'){
+                    $request->update(NULL, NULL, false);
+                    return [
+                        'map'       =>  -5,
+                        'app'       =>  (isset($path[2])&&$path[2]!=='') ? $path[2] : 'yangram'
+                    ];
+                }else{
+                    # 需要打开调试模式才能进行远程测试
+                }
+            }
         }
-        define('_TEST_MODE_', false);
+        define('_TEST_MODE_', 0);
 		if(stripos($uri, $HOST._GETTER_)===0){
             // Uniform Request Interface
             $request->update();

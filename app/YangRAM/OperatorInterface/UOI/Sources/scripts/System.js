@@ -44,9 +44,9 @@ iBlock((pandora, global, undefined) => {
     /* Public Variables of System */
 
     var winSize = _.dom.getSize(global),
-        Width = winSize['width'] > 1024 ? winSize['width'] : 1024,
+        Width = winSize['width'] > 1050 ? winSize['width'] : 1050,
         Height = winSize['height'] > 544 ? winSize['height'] : 544,
-        UploadMaxSize = 1024 * 1024 * 200;
+        UploadMaxSize = 1050 * 1050 * 200;
 
     /* extends Variables Methods For YangRAM */
     _.extend(System, true, {
@@ -67,7 +67,7 @@ iBlock((pandora, global, undefined) => {
         },
         Resize() {
             var winSize = _.dom.getSize(window);
-            this.Width = winSize['width'] > 1024 ? winSize['width'] : 1024;
+            this.Width = winSize['width'] > 1050 ? winSize['width'] : 1050;
             this.Height = winSize['height'] > 544 ? winSize['height'] : 544;
             System.YangRAM.setStyle(System.YangRAM.document, {
                 width: this.Width,

@@ -16,7 +16,7 @@ class HTMLClose {
     public function __construct($body) {
         $this->body = $body;
         if (strpos($body, '<') === false) {
-            $ast = [$body];
+            $this->ast = [$body];
             return;
         }
         $this->lexicalanAlysis($body);
@@ -76,7 +76,7 @@ class HTMLClose {
                                 'is_open'    =>  true,
                                 'tagname'   =>  $tagname,
                                 'tagtext'   =>  $htmtxt
-                            ];$tagname;
+                            ];
                             $midast['text'][] = $strsum;
                             $strsum = '';
                         }
@@ -178,7 +178,6 @@ class HTMLClose {
             $max = $len-1;
             for($max; $max >= 0; $max--){
                 $text[] = '</' . $opens[$max] . '>';
-                unset($opens[$max]);
             }
         }
         $this->ast = $text;
@@ -191,8 +190,8 @@ class HTMLClose {
 
 // header("Content-Type: text/plain;");
 
-// $input = 'aaa</p></div><h3 class="a">0000<p>1111<b>2222</b></b>3333</h3><img src="123.jpg" /><br><p>abcd<span>e';
-// $input = '<div style="text-align: center;"><img src="http://wwww.jzgcxy.cn//o/files/img/57c51af533d471ab1497602976883059439ba105b80.jpg" _selected="_selected">';
+// // $input = 'aaa</p></div><h3 class="a">0000<p>1111<b>2222</b></b>3333</h3><img src="123.jpg" /><br><p>abcd<span>e';
+// // $input = '<div style="text-align: center;"><img src="http://wwww.jzgcxy.cn//o/files/img/57c51af533d471ab1497602976883059439ba105b80.jpg" _selected="_selected">';
 // $input = '</div><div style="text-align: center;"><img src="http://wwww.jzgcxy.cn//o/files/img/8d418123a883bf391497602976750859439ba39d00b.jpg"></div>';
 
 // $obj = new HTMLClose($input);

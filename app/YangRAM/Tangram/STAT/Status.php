@@ -70,7 +70,7 @@ final class Status extends Exception {
 		if(is_numeric($code)){
 			$this->code = (string)$code;
 			$this->intc = intval($code);
-			$this->alias = 'UNDEFINED_STATUS_'.$code;
+			$this->alias = 'TANGRAMNI_STATUS_'.$code;
 			if(is_string($message)){
 				if(empty($message)){
 					$this->message = isset(self::$sattuscodes[$this->intc])

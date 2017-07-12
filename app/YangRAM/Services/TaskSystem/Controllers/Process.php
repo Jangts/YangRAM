@@ -1,7 +1,7 @@
 <?php
 namespace Workers\Controllers;
 use Status;
-use Tangram\AsyncTask;
+use Tangram\CTRL\AsyncTask;
 use Storage;
 
 /**
