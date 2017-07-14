@@ -105,6 +105,16 @@ iBlock([
         isSupportCanvas: function() {
             return typeof CanvasRenderingContext2D != "undefined";
         },
+        // 是否 webkit
+        isWebkit: function() {
+            const reg = /webkit/i
+            return reg.test(this._ua)
+        },
+
+        // 是否 IE
+        isIE: function() {
+            return 'ActiveXObject' in window
+        },
         isAndroid: function() {
             var android = false;
             var sAgent = navigator.userAgent;

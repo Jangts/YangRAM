@@ -119,7 +119,7 @@ msgcenter alert msgbox {
     height: auto;
     min-height: 160px;
     left: 50%;
-    top: 50%;
+    bottom: 50%;
     margin-left: -270px;
 }
 

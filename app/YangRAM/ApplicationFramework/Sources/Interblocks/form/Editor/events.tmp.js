@@ -21,24 +21,28 @@ iBlock([
             var editor = event.data;
             if (event.eventType === 'click') {
                 editor.hideExtTools();
-                _.each(_.dom.query('img[_selected=_selected]', editor.editarea), function(i, elem) {
+                _.each(_.dom.query('img[_selected=_selected]', editor.richarea), function(i, elem) {
                     _.dom.removeAttr(elem, '_selected');
                 });
                 if (event.target.tagName === 'IMG') {
                     editor.selectedImage = event.target;
-                    editor.setRange();
+                    editor.selection.saveRange();
+                    editor.onchange();
                 } else {
                     editor.selectedImage = undefined;
                 }
             }
-            editor.setRange();
+            editor.selection.saveRange();
+            console.log(editor.selection.range);
+            editor.onchange();
         },
         outhandler = function(event) {
             //console.log(event);
             var editor = event.data;
             editor.outmoment = false;
-            if (event.target === editor.editarea) {
-                editor.setRange();
+            if (event.target === editor.richarea) {
+                editor.selection.saveRange();
+                editor.onchange();
                 editor.outmoment = true;
                 setTimeout(function() {
                     editor.outmoment = false;
@@ -48,8 +52,8 @@ iBlock([
         inhandler = function(event) {
             //console.log(event);
             var editor = event.data;
-            if ((editor.outmoment === false) && (event.target === editor.editarea)) {
-                editor._range && editor.setRange(editor._range);
+            if ((editor.outmoment === false) && (event.target === editor.richarea)) {
+                editor._range && editor.selection.restoreSelection();
             }
         },
         xhandlers = {
@@ -58,17 +62,15 @@ iBlock([
         inputs = {
             'fontsize': function(editor, input) {
                 editor.execCommand('fontsize', input.value);
-                editor.setRange();
             },
             'fontcolor': function(editor, input) {
                 editor.execCommand('forecolor', input.value);
-                editor.setRange();
             },
             'tablewidth': function(editor, input) {
                 var table = editor.selectedTable;
                 table.style.width = parseInt(input.value) + 'px';
                 table.width = parseInt(input.value);
-                editor.setRange();
+                editor.selection.saveRange();
             },
             'tableborder': function(editor, input) {
                 var table = editor.selectedTable;
@@ -78,19 +80,16 @@ iBlock([
                 table.style.borderLeftWidth = parseInt(input.value) + 'px';
                 table.style.borderStyle = table.style.borderStyle || 'solid';
                 table.border = parseInt(input.value);
-                editor.setRange();
             },
             'imgwidth': function(editor, input) {
                 var img = editor.selectedImage;
                 img.style.width = parseInt(input.value) + 'px';
                 img.width = parseInt(input.value);
-                editor.setRange();
             },
             'imgheight': function(editor, input) {
                 var img = editor.selectedImage;
                 img.style.height = parseInt(input.value) + 'px';
                 img.height = parseInt(input.value);
-                editor.setRange();
             },
             'imgborder': function(editor, input) {
                 var img = editor.selectedImage;
@@ -99,11 +98,10 @@ iBlock([
                 img.style.borderBottomWidth = parseInt(input.value) + 'px';
                 img.style.borderLeftWidth = parseInt(input.value) + 'px';
                 img.border = parseInt(input.value);
-                editor.setRange();
             }
         }
     events = {
-        'toolbar': {
+        'toolarea': {
             'mouseup': {
                 '[data-ib-dialog]': function(event) {
                     if (event.target.tagName == 'I') {
@@ -114,14 +112,14 @@ iBlock([
                         });
                         _.query('.ic.editor-tool[data-ib-dialog] .ic.editor-show', editor.toolbar)[0].innerHTML = '<span>click to upload</span>';
                         editor.showDialog(dialog, this);
-                        editor.setRange();
+                        editor.selection.restoreSelection();
                     };
                 },
                 '[data-ib-cmds]': function(event) {
                     var editor = event.data,
                         cmds = _.dom.getAttr(this, 'data-ib-cmds');
                     editor.showPick(cmds, this);
-                    editor.setRange();
+                    editor.selection.restoreSelection();
                 },
                 '[data-ib-cmd]': function(event) {
                     var editor = event.data;
@@ -194,13 +192,13 @@ iBlock([
                 }
             }
         },
-        'statusbar': {
+        'statebar': {
             'mouseup': {
                 '.ic.editor-imgfloat': function(e) {
                     var float = _.dom.getAttr(this, 'data-float') || 'none',
                         img = event.data.selectedImage;
                     img.style.float = float;
-                    event.data.setRange();
+                    event.dataselection.saveRange();
                 },
                 '.ic.editor-table-addrow': function(e) {
                     var editor = e.data,

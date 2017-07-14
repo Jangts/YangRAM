@@ -106,6 +106,9 @@ iBlock(['$_/util/type.xtd'], function(pandora, global, undefined) {
                 return -1;
             }
         },
+        search: function(elem, array) {
+            return _.util.arr.index(array, elem);
+        },
         where: function(array, filter) {
             var filtered = [];
             _.each(array, function(index, elem) {

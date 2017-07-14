@@ -14,25 +14,25 @@ iBlock([
 
     var commands = {
         header: function(val) {
-            this.getRange().execCommand('formatblock', '<' + val + '>');
+            this.selection.getRange().execCommand('formatblock', '<' + val + '>');
         },
         h1: function(val) {
-            this.getRange().execCommand('formatblock', '<h1>');
+            this.selection.getRange().execCommand('formatblock', '<h1>');
         },
         h2: function(val) {
-            this.getRange().execCommand('formatblock', '<h2>');
+            this.selection.getRange().execCommand('formatblock', '<h2>');
         },
         h3: function(val) {
-            this.getRange().execCommand('formatblock', '<h3>');
+            this.selection.getRange().execCommand('formatblock', '<h3>');
         },
         h4: function(val) {
-            this.getRange().execCommand('formatblock', '<h4>');
+            this.selection.getRange().execCommand('formatblock', '<h4>');
         },
         h5: function(val) {
-            this.getRange().execCommand('formatblock', '<h5>');
+            this.selection.getRange().execCommand('formatblock', '<h5>');
         },
         h6: function(val) {
-            this.getRange().execCommand('formatblock', '<h6>');
+            this.selection.getRange().execCommand('formatblock', '<h6>');
         }
     };
 

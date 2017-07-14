@@ -31,7 +31,7 @@ iBlock([
                     var html = '<img src="' + src + '" class="ic editor-emoticon" />';
                     this.execCommand('insert', html);
                 }
-                this.range.collapse();
+                this.collapse();
             }
         }
         return this;

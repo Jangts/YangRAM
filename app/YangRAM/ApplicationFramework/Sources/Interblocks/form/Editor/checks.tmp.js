@@ -107,10 +107,10 @@ iBlock([
                     node = _.dom.closest(this.range.commonElem, 'table'),
                     row = _.dom.closest(this.range.commonElem, 'tr'),
                     cell = _.dom.closest(this.range.commonElem, 'td', true);
-                _.query('.ic.editor-fontstatus .ic.editor-fsize-input', this.statusbar)[0].value = style.fontSize;
-                _.query('.ic.editor-fontstatus .ic.editor-color-input', this.statusbar)[0].value = _.util.Color.rgbFormat(style.color, 'hex6');
+                _.query('.ic.editor-fontstatus .ic.editor-fsize-input', this.statebar)[0].value = style.fontSize;
+                _.query('.ic.editor-fontstatus .ic.editor-color-input', this.statebar)[0].value = _.util.Color.rgbFormat(style.color, 'hex6');
                 if (node && row) {
-                    _.query('.ic.editor-tablestatus', this.statusbar)[0].style.display = 'block';
+                    _.query('.ic.editor-tablestatus', this.statebar)[0].style.display = 'block';
 
                     var rowslen = node.rows.length,
                         colslen = row.cells.length;
@@ -118,19 +118,19 @@ iBlock([
                     this.selectedTableRow = row;
                     this.selectedTableCell = cell;
                     //console.log([node]);
-                    _.query('.ic.editor-tablestatus .ic.editor-tablewidth-input', this.statusbar)[0].value = node.offsetWidth;
-                    _.query('.ic.editor-tablestatus .ic.editor-rowslen', this.statusbar)[0].value = rowslen;
-                    _.query('.ic.editor-tablestatus .ic.editor-colslen', this.statusbar)[0].value = colslen;
-                    _.query('.ic.editor-tablestatus .ic.editor-border-input', this.statusbar)[0].value = node.border || 0;
+                    _.query('.ic.editor-tablestatus .ic.editor-tablewidth-input', this.statebar)[0].value = node.offsetWidth;
+                    _.query('.ic.editor-tablestatus .ic.editor-rowslen', this.statebar)[0].value = rowslen;
+                    _.query('.ic.editor-tablestatus .ic.editor-colslen', this.statebar)[0].value = colslen;
+                    _.query('.ic.editor-tablestatus .ic.editor-border-input', this.statebar)[0].value = node.border || 0;
                 } else {
-                    _.query('.ic.editor-tablestatus', this.statusbar)[0].style.display = 'none';
+                    _.query('.ic.editor-tablestatus', this.statebar)[0].style.display = 'none';
                 }
                 if (this.selectedImage) {
-                    _.query('.ic.editor-imagestatus', this.statusbar)[0].style.display = 'block';
-                    _.query('.ic.editor-imagestatus .ic.editor-imgwidth-input', this.statusbar)[0].value = this.selectedImage.offsetWidth;
-                    _.query('.ic.editor-imagestatus .ic.editor-imgheight-input', this.statusbar)[0].value = this.selectedImage.offsetHeight;
-                    _.query('.ic.editor-imagestatus .ic.editor-border-input', this.statusbar)[0].value = this.selectedImage.border || 0;
-                    var nodes = _.query('.ic.editor-imagestatus .ic.editor-imgfloat', this.statusbar),
+                    _.query('.ic.editor-imagestatus', this.statebar)[0].style.display = 'block';
+                    _.query('.ic.editor-imagestatus .ic.editor-imgwidth-input', this.statebar)[0].value = this.selectedImage.offsetWidth;
+                    _.query('.ic.editor-imagestatus .ic.editor-imgheight-input', this.statebar)[0].value = this.selectedImage.offsetHeight;
+                    _.query('.ic.editor-imagestatus .ic.editor-border-input', this.statebar)[0].value = this.selectedImage.border || 0;
+                    var nodes = _.query('.ic.editor-imagestatus .ic.editor-imgfloat', this.statebar),
                         select = this.selectedImage.style.float ? this.selectedImage.style.float : 'none';
                     _.each(nodes, function(i, node) {
                         _.dom.toggleClass(node, 'active', false);
@@ -139,12 +139,12 @@ iBlock([
                     if (_.util.arr.has(['left', 'right', 'none'], select) === false) {
                         select = 'none';
                     }
-                    _.dom.toggleClass(_.query('.ic.editor-imagestatus .ic.editor-imgfloat[data-float=' + select + ']', this.statusbar)[0], 'active', true);
+                    _.dom.toggleClass(_.query('.ic.editor-imagestatus .ic.editor-imgfloat[data-float=' + select + ']', this.statebar)[0], 'active', true);
                     if (!this.selectedImage.border) {
                         _.dom.setAttr(this.selectedImage, '_selected', '_selected');
                     }
                 } else {
-                    _.query('.ic.editor-imagestatus', this.statusbar)[0].style.display = 'none';
+                    _.query('.ic.editor-imagestatus', this.statebar)[0].style.display = 'none';
                 }
             }
         };

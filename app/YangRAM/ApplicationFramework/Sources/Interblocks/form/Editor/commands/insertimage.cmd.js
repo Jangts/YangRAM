@@ -22,7 +22,7 @@ iBlock([
         if (_.util.bool.isStr(val)) {
             var html = '<img src="' + val + '" />';
             this.execCommand('insert', html);
-            this.range.collapse();
+            this.collapse();
             return this;
         }
         if (_.util.bool.isArr(val)) {
@@ -31,7 +31,7 @@ iBlock([
                 html += '<img src="' + val[i] + '" />';
             }
             this.execCommand('insert', html);
-            this.range.collapse();
+            this.collapse();
         }
         return this;
     });

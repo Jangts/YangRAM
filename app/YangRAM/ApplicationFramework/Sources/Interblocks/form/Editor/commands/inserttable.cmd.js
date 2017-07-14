@@ -34,8 +34,9 @@ iBlock([
             var table = _.query('table[data-ib-temp]')[0];
             _.dom.removeAttr(table, 'data-ib-temp');
             window.getSelection().selectAllChildren(_.query('td', table)[0]);
-            this.setRange();
-            this.range.collapse(true);
+            this.selection.saveRange();
+            this.selection.collapse(true);
+            this.onchange();
         }
         return this;
     });

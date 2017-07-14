@@ -30,7 +30,7 @@ iBlock([
                 var html = 'Attachment : <a href="' + val + '" target="_blank" title="click to download" class="ic editor-attachment">' + val + '</a><br />';
             }
             this.execCommand('insert', html);
-            this.range.collapse();
+            this.collapse();
             return this;
         }
         return this;
@@ -40,7 +40,7 @@ iBlock([
         var html = '<dialog class="ic editor-dialog">';
         html += '<span class="ic editor-title">Insert Files</span>';
         html += '<div class="ic editor-aaa">';
-        html += '<label>Anchor Alias</label><input type="text" class="ic editor-input" placeholder="Enter Attachment Anchor Alias" />';
+        html += '<label>Alias</label><input type="text" class="ic editor-input" placeholder="Enter Attachment Anchor Alias" />';
         html += '</div>';
         html += '<div class="ic editor-url">';
         html += '<label>File URL</label><input type="text" class="ic editor-input" placeholder="Enter URL" />';

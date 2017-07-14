@@ -65,13 +65,13 @@ iBlock([
         if (val) {
             if (val.code && val.code != '') {
                 this.execCommand('insert', val.code);
-                this.range.collapse();
+                this.collapse();
                 return this;
             }
             if (val.url) {
                 var html = videoHTML[val.type || 'swf'](val.url, val.width, val.height);
                 this.execCommand('insert', html);
-                this.range.collapse();
+                this.collapse();
             }
         }
         return this;

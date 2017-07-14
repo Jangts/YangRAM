@@ -31,53 +31,59 @@ iBlock([
         },
         commands = {
             'fontname': function(val) {
-                var id = new _.Identifier();
-                this.getRange().execCommand('fontname', id);
-                console.log(this.getRange());
-                _.each(_.query('font[face=' + id + ']', this.editarea), function() {
-                    console.log(this);
+                var id = new _.Identifier(),
+                    selection = this.selection;
+                selection.getRange().execCommand('fontname', id);
+                _.each(_.query('font[face=' + id + ']', this.richarea), function() {
                     _.dom.removeAttr(this, 'face');
                     _.dom.setStyle(this, 'font-family', val);
+                    selection.createRangeByElem(this);
                 });
-                this.setRange();
+                this.onchange();
             },
             'fontsize': function(val) {
-                var id = new _.Identifier();
-                this.getRange().execCommand('fontname', id);
-                _.each(_.query('font[face=' + id + ']', this.editarea), function() {
+                var id = new _.Identifier(),
+                    selection = this.selection;
+                selection.getRange().execCommand('fontname', id);
+                _.each(_.query('font[face=' + id + ']', this.richarea), function() {
                     _.dom.removeAttr(this, 'face');
                     _.dom.setStyle(this, 'font-size', val);
+                    selection.createRangeByElem(this);
                 });
-                this.setRange();
+                this.onchange();
             },
             'forecolor': function(val) {
-                var id = new _.Identifier();
-                this.getRange().execCommand('fontname', id);
-                _.each(_.query('font[face=' + id + ']', this.editarea), function() {
+                var id = new _.Identifier(),
+                    selection = this.selection;
+                selection.getRange().execCommand('fontname', id);
+                _.each(_.query('font[face=' + id + ']', this.richarea), function() {
                     _.dom.removeAttr(this, 'face');
                     _.dom.setStyle(this, 'color', val);
+                    selection.createRangeByElem(this);
                 });
-                this.setRange();
+                this.onchange();
             },
             'backcolor': function(val) {
-                this.getRange().execCommand('backcolor', val);
-                this.setRange();
+                this.selection.getRange().execCommand('backcolor', val);
+                this.selection.saveRange();
+                this.onchange();
             },
             'lineheight': function(val) {
 
-                this.setRange();
+                this.selection.saveRange();
+                this.onchange();
             },
-            'touppercase': function(val) {
-
-                this.setRange();
+            'touppercase': function() {
+                this.selection.getRange().changeCase(false);
+                this.onchange();
             },
-            'tolowercase': function(val) {
-
-                this.setRange();
+            'tolowercase': function() {
+                this.selection.getRange().changeCase(true);
+                this.onchange();
             }
         },
 
-        creaters = {
+        creators = {
             'fontname': function() {
                 var html = '<ul class="ic editor-pick">';
                 var fontNameTable = this.options.fontNameTable || defaults.fontNameTable;
@@ -134,7 +140,7 @@ iBlock([
         _.form.Editor.regCommand(cmd, handler);
     });
 
-    _.each(creaters, function(cmd, handler) {
+    _.each(creators, function(cmd, handler) {
         _.form.Editor.regCreater(cmd, handler, true);
     });
 });

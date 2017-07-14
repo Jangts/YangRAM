@@ -19,10 +19,10 @@ iBlock([
             var url = 'temp.';
             url += (Date.parse(new Date()) * 1000 + Math.floor(Math.random() * 1000000000000000));
             url += '.com';
-            if (this.getRange().type === 'Caret') {
+            if (this.selection.getRange().type === 'Caret') {
                 this.execCommand('insert', val.url);
             }
-            this.getRange().execCommand('createlink', url);
+            this.selection.getRange().execCommand('createlink', url);
             var a = _.query('a[href="' + url + '"]')[0];
             if (a) {
                 a.href = val.url;

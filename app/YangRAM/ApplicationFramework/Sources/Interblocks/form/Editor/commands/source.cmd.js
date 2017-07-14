@@ -17,7 +17,7 @@ iBlock([
         this.getValue();
         if (this.isRich) {
             this.range = null;
-            _.dom.setStyle(this.editarea, {
+            _.dom.setStyle(this.richarea, {
                 display: 'none'
             });
             _.dom.setStyle(this.codearea, {
@@ -27,15 +27,12 @@ iBlock([
             _.dom.setStyle(this.codearea, {
                 display: 'none'
             });
-            _.dom.setStyle(this.editarea, {
+            _.dom.setStyle(this.richarea, {
                 display: 'block'
             });
-            if (this._range) {
-                this.setRange(this._range);
-            } else {
-                this.setRange();
-                this.range.collapse();
-            }
+            this.selection.getRange();
+            this.onchange();
+
         }
         this.isRich = Math.abs(this.isRich - 1);
         _.each(_.query('.ic.editor-tool', this.toolbar), function(i, el) {

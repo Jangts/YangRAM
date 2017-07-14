@@ -16,26 +16,20 @@ iBlock([
 
     var commands = {
         'insert': function(val) {
-            this.getRange();
-            if (isGetSelection) {
-                var fragment = this.range.originRange.createContextualFragment(val);
-                this.range.originRange.deleteContents();
-                this.range.originRange.insertNode(fragment);
-            } else {
-                document.selection.pasteHTML(val);
-            }
-            this.setRange(this._range);
+            this.selection.getRange().insert(val);
+            this.selection.saveRange();
+            this.onchange();
             return this;
         },
         'p': function(val) {
-            this.getRange().execCommand('formatblock', '<p>');
+            this.selection.getRange().execCommand('formatblock', '<p>');
         },
         'blockquote': function(val) {
-            this.getRange().execCommand('formatblock', '<blockquote>');
+            this.selection.getRange().execCommand('formatblock', '<blockquote>');
         },
         'hr': function(val) {
             this.execCommand('insert', '<hr />');
-            this.range.collapse();
+            this.collapse();
             this.execCommand('insert', '<p></p>');
         },
         'pagebreak': function(val) {

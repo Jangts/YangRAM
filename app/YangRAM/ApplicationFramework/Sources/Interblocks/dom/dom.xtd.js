@@ -198,6 +198,19 @@ iBlock([
             }
         },
 
+        matches = Element.prototype.matches ||
+        Element.prototype.matchesSelector ||
+        Element.prototype.mozMatchesSelector ||
+        Element.prototype.msMatchesSelector ||
+        Element.prototype.oMatchesSelector ||
+        Element.prototype.webkitMatchesSelector ||
+        function(s) {
+            var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                i = matches.length;
+            while (--i >= 0 && matches.item(i) !== this) {}
+            return i > -1;
+        },
+
         hasClass = function(elem, className) {
             if (elem.className) {
                 if (elem.className.baseVal) {
@@ -374,6 +387,9 @@ iBlock([
     });
 
     _.extend(_.dom, {
+        matches: function(elem, selectorString) {
+            matches.call(elem, selectorString);
+        },
         hasClass: hasClass,
         toggleClass: toggleClass,
         addClass: function(elem, className) {

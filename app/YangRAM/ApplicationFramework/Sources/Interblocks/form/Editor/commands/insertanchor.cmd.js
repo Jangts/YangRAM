@@ -18,7 +18,7 @@ iBlock([
         if (_.util.bool.isStr(val) && val != '') {
             var html = '<a name="' + val + '"></a>';
             this.execCommand('insert', html);
-            this.range.collapse();
+            this.collapse();
         }
         return this;
     });

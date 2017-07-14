@@ -905,7 +905,9 @@
                 eval('constructor=function ' + name + '(){' + template + '}');
                 constructor.prototype = new Class();
                 storage.classes[classname] = constructor.prototype
+                var old = pandora(classname, {});
                 pandora(classname, constructor);
+                pandora(classname, old);
             } else {
                 constructor = function() {
                     if (this instanceof constructor) {

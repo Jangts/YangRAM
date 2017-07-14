@@ -26,14 +26,15 @@ iBlock([
         customs = {
             'paste': function(val) {
                 if (global.clipboardData) {
-                    this.getRange().execCommand('paste', null);
+                    this.selection.getRange().execCommand('paste', null);
+                    this.selection.saveRange();
                 } else {
                     alert('Browser does not support paste, please use Ctrl+V');
                 };
             },
             'pasteastext': function(val) {
                 if (global.clipboardData) {
-                    this.getRange().execCommand('paste', global.clipboardData.getData("text"));
+                    this.selection.getRange().execCommand('paste', global.clipboardData.getData("text"));
                 } else {
                     alert('Browser does not support paste');
                 };
@@ -43,14 +44,16 @@ iBlock([
             },
             'print': function(val) {
                 var val = val || this.getValue();
-                this.getRange().execCommand('print', val);
+                this.selection.getRange().execCommand('print', val);
+                this.selection.saveRange();
             }
         };
 
     _.each(presets, function(index, cmd) {
         _.form.Editor.regCommand(cmd, function(val) {
-            this.getRange().execCommand(cmd, val);
-            this.setRange();
+            this.selection.getRange().execCommand(cmd, val);
+            this.selection.saveRange();
+            this.onchange();
         });
     });
 
