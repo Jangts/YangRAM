@@ -29,47 +29,98 @@ iBlock([
             fontSizeTable: ['9px', '10px', '12px', '14px', '16px', '18px', '21px', '24px', '30px', '36px', '48px', '72px'],
             fontNameTable: ["'Microsoft YaHei', 'Hiragino Sans'", "Arial, Helvetica", "Courier, 'Courier New'", 'Georgia', "'Times New Roman', Times", "'Trebuchet MS'", "Verdana, Geneva"],
         },
+        currentElem = function(range) {
+            if (range.commonElem === range.commonNode) {
+                if (range.startNode === range.commonNode) {
+                    if (_.dom.contain(this.richarea, range.commonElem)) {
+                        return range.commonElem;
+                    }
+                }
+            }
+            console.log(range.commonElem, range.commonNode, range.startNode);
+        },
         commands = {
             'fontname': function(val) {
-                var id = new _.Identifier(),
-                    selection = this.selection;
-                selection.getRange().execCommand('fontname', id);
-                _.each(_.query('font[face=' + id + ']', this.richarea), function() {
-                    _.dom.removeAttr(this, 'face');
-                    _.dom.setStyle(this, 'font-family', val);
-                    selection.createRangeByElem(this);
-                });
+                // var id = new _.Identifier(),
+                //     selection = this.selection,
+                //     range = selection.getRange(),
+                //     elem = currentElem(range);
+
+                // console.log(elem);
+                // selection.getRange().execCommand('fontname', id);
+                // _.each(_.query('font[face=' + id + ']', this.richarea), function() {
+                //     _.dom.removeAttr(this, 'face');
+                //     _.dom.setStyle(this, 'font-family', val);
+                //     //selection.saveRange(range);
+                //     selection.createRangeByElem(elem || this);
+                // });
+                // this.onchange();
+
+                this.selection.getRange().execCommand('fontname', val);
+                this.selection.saveRange();
                 this.onchange();
             },
             'fontsize': function(val) {
-                var id = new _.Identifier(),
-                    selection = this.selection;
-                selection.getRange().execCommand('fontname', id);
-                _.each(_.query('font[face=' + id + ']', this.richarea), function() {
-                    _.dom.removeAttr(this, 'face');
-                    _.dom.setStyle(this, 'font-size', val);
-                    selection.createRangeByElem(this);
-                });
+                // var id = new _.Identifier(),
+                //     selection = this.selection,
+                //     range = selection.getRange(),
+                //     elem = currentElem(range),
+                //     fontname = _.dom.getStyle(selection.getRange().commonElem, 'font-family');
+                // selection.getRange().execCommand('fontname', id);
+                // _.each(_.query('font[face=' + id + ']', this.richarea), function() {
+                //     _.dom.removeAttr(this, 'face');
+                //     _.dom.setStyle(this, 'font-family', fontname);
+                //     _.dom.setStyle(this, 'font-size', val);
+                //     //selection.saveRange(range);
+                //     selection.createRangeByElem(elem || this);
+                // });
+                // this.onchange();
+                this.selection.getRange().execCommand('fontsize', val);
+                this.selection.saveRange();
                 this.onchange();
             },
             'forecolor': function(val) {
-                var id = new _.Identifier(),
-                    selection = this.selection;
-                selection.getRange().execCommand('fontname', id);
-                _.each(_.query('font[face=' + id + ']', this.richarea), function() {
-                    _.dom.removeAttr(this, 'face');
-                    _.dom.setStyle(this, 'color', val);
-                    selection.createRangeByElem(this);
-                });
+                // var id = new _.Identifier(),
+                //     selection = this.selection,
+                //     range = selection.getRange(),
+                //     elem = currentElem(range),
+                //     fontname = _.dom.getStyle(selection.getRange().commonElem, 'font-family');
+                // selection.getRange().execCommand('fontname', id);
+                // _.each(_.query('font[face=' + id + ']', this.richarea), function() {
+                //     _.dom.removeAttr(this, 'face');
+                //     _.dom.setStyle(this, 'font-family', fontname);
+                //     _.dom.setStyle(this, 'color', val);
+                //     //selection.saveRange(range);
+                //     selection.createRangeByElem(elem || this);
+                // });
+                // this.onchange();
+
+                this.selection.getRange().execCommand('forecolor', val);
+                this.selection.saveRange();
                 this.onchange();
             },
             'backcolor': function(val) {
+                // var id = new _.Identifier(),
+                //     selection = this.selection,
+                //     range = selection.getRange(),
+                //     elem = currentElem(range),
+                //     fontname = _.dom.getStyle(selection.getRange().commonElem, 'font-family');
+                // selection.getRange().execCommand('fontname', id);
+                // _.each(_.query('font[face=' + id + ']', this.richarea), function() {
+                //     _.dom.removeAttr(this, 'face');
+                //     _.dom.setStyle(this, 'font-family', fontname);
+                //     _.dom.setStyle(this, 'background-color', val);
+                //     //selection.saveRange(range);
+                //     selection.createRangeByElem(elem || this);
+                // });
+                // this.onchange();
+
                 this.selection.getRange().execCommand('backcolor', val);
                 this.selection.saveRange();
                 this.onchange();
             },
             'lineheight': function(val) {
-
+                _.dom.setStyle(selection.getRange().commonElem, 'line-height', val);
                 this.selection.saveRange();
                 this.onchange();
             },

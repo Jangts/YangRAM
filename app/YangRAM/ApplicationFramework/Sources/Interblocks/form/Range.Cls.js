@@ -105,7 +105,7 @@ iBlock('$_/util/bool.xtd', function(pandora, global, undefined) {
         isBelongTo: function(textElem) {
             if (this.commonNode) {
                 var elem = this.commonNode.nodeType === 1 ? this.commonNode : this.commonNode.parentNode;
-                return textElem && elem && _.dom.contain(textElem, elem)
+                return textElem && elem && (textElem === elem || _.dom.contain(textElem, elem))
             }
             return false;
         },
@@ -126,30 +126,27 @@ iBlock('$_/util/bool.xtd', function(pandora, global, undefined) {
             if (this.originRange.selectNode) {
                 getSelectionRange.call(this, window.getSelection());
                 if (isContent) {
-                    this.originRange.selectNodeContents(elem)
+                    this.originRange.selectNodeContents(elem);
                 } else {
-                    this.originRange.selectNode(elem)
-                }
-                if (typeof toStart === 'boolean') {
-                    this.collapse(toStart)
+                    this.originRange.selectNode(elem);
                 }
             } else if (this.originRange.insertNode) {
                 this.insertElem(this.originRange.createContextualFragment(elem.outerHTML))
             } else if (range.pasteHTML) {
-                this.originRange.pasteHTML(elem.outerHTML)
+                this.originRange.pasteHTML(elem.outerHTML);
+            }
+            if (typeof toStart === 'boolean') {
+                this.collapse(toStart);
             }
             return this;
         },
-        selectInput: function(input, toStart, isContent) {
+        selectInput: function(input, toStart) {
             if (input && typeof input.focus == 'function') {
                 input.focus();
-                if (window.getSelection) {
-                    getSelectionRange.call(this, window.getSelection())
-                } else if (document.selection) {
-                    docSelectionRange.call(this);
-                }
-                this.commonElem = this.commonNode;
-                return this;
+                this._init();
+            }
+            if (typeof toStart === 'boolean') {
+                this.collapse(toStart);
             }
             return null;
         },

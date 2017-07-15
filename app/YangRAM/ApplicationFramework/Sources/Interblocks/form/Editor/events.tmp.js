@@ -33,7 +33,6 @@ iBlock([
                 }
             }
             editor.selection.saveRange();
-            console.log(editor.selection.range);
             editor.onchange();
         },
         outhandler = function(event) {
@@ -53,7 +52,7 @@ iBlock([
             //console.log(event);
             var editor = event.data;
             if ((editor.outmoment === false) && (event.target === editor.richarea)) {
-                editor._range && editor.selection.restoreSelection();
+                editor.selection.restoreSelection();
             }
         },
         xhandlers = {
@@ -107,10 +106,23 @@ iBlock([
                     if (event.target.tagName == 'I') {
                         var editor = event.data,
                             dialog = _.dom.getAttr(this, 'data-ib-dialog');
-                        _.each(_.query('.ic.editor-tool[data-ib-dialog] input[type=text], .ic.editor-tool[data-ib-dialog] textarea, .ic.editor-tool[data-ib-dialog] input.ic.editor-files', editor.toolbar), function(i, el) {
-                            this.value = '';
+                        _.each(_.query('.ic.editor-tool[data-ib-dialog] input[type=text], .ic.editor-tool[data-ib-dialog] textarea, .ic.editor-tool[data-ib-dialog] input.ic.editor-files', editor.toolarea), function(i, el) {
+                            if (_.dom.hasClass(this, 'createlink')) {
+                                var elem = editor.selection.getRange().commonElem;
+                                if (!elem.tagName === 'A') {
+                                    elem = _.dom.closest(elem, 'a');
+                                }
+                                if (elem) {
+                                    this.value = _.dom.getAttr(elem, 'href');
+                                } else {
+                                    this.value = '';
+                                }
+                            } else {
+                                this.value = '';
+                            }
                         });
-                        _.query('.ic.editor-tool[data-ib-dialog] .ic.editor-show', editor.toolbar)[0].innerHTML = '<span>click to upload</span>';
+
+                        _.query('.ic.editor-tool[data-ib-dialog] .ic.editor-show', editor.toolarea)[0].innerHTML = '<span>click to upload</span>';
                         editor.showDialog(dialog, this);
                         editor.selection.restoreSelection();
                     };

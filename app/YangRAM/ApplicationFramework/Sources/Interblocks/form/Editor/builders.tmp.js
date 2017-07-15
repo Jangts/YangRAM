@@ -126,13 +126,13 @@ iBlock([
                     });
                 }
                 if (!toolarea.innerHTML) {
-                    if (!options.toolbartems) {
-                        options.toolbartems = toolbarTypes[options.toolbarType] || toolbarTypes['default'];
+                    if (!options.toolbaritems) {
+                        options.toolbaritems = toolbarTypes[options.toolbarType] || toolbarTypes['default'];
                     }
                     var html = '';
-                    for (var i = 0; i < options.toolbartems.length; i++) {
-                        //console.log(this.options.toolbartems[i]);
-                        html += builders.tools[toolTypes[options.toolbartems[i]]].call(editor, options.toolbartems[i]);
+                    for (var i = 0; i < options.toolbaritems.length; i++) {
+                        //console.log(this.options.toolbaritems[i]);
+                        html += builders.tools[toolTypes[options.toolbaritems[i]]].call(editor, options.toolbaritems[i]);
                     }
                     html += '<div class="ic editor-clear"></div>';
                     toolarea.innerHTML = html;

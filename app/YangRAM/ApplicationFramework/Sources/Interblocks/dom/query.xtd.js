@@ -143,8 +143,9 @@ iBlock(['$_/util/str.xtd', '$_/util/arr.xtd', '$_/util/obj.xtd'], function(pando
     };
 
     var hasChildNode = function(elem, node) {
+        node = node.parentNode;
         while (node != undefined && node != null) {
-            if (node == elem) {
+            if (node === elem) {
                 return true;
             }
             node = node.parentNode;

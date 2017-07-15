@@ -34,25 +34,27 @@ iBlock([
             return false;
         },
         checkFontFormat = function(style) {
-            if (this.range && this.range.commonElem) {
-                _.each(_.query('.ic.editor-pick li', this.toolbar), function(i, el) {
+            var range = this.selection.getRange();
+            if (range && range.commonElem) {
+                _.each(_.query('.ic.editor-pick li', this.toolarea), function(i, el) {
                     _.dom.toggleClass(this, 'selected', false);
                 });
                 selector = ".fontname .ic.editor-font[data-ib-val=\"" + style.fontFamily + "\"]";
                 selector += ", .fontsize .ic.editor-font[data-ib-val=\"" + style.fontSize + "\"]";
                 selector += ", .forecolor .ic.editor-color[data-ib-val=\"" + rbgaToHexadecimal(style.color) + "\"]";
                 selector += ", .backcolor .ic.editor-color[data-ib-val=\"" + rbgaToHexadecimal(style.backgroundColor) + "\"]";
-                _.each(_.query(selector, this.toolbar), function(i, el) {
+                _.each(_.query(selector, this.toolarea), function(i, el) {
                     _.dom.toggleClass(this, 'selected', true);
                 });
             }
         },
         checkFormat = function() {
-            if (this.range && this.range.commonElem) {
-                _.each(_.query('.bold, .italic, .underline, .strikethrough, .justifyleft, .justifycenter, .justifyright, .justifyfull, .insertunorderedlist, .insertorderedlist', this.toolbar), function(i, el) {
+            var range = this.selection.getRange();
+            if (range && range.commonElem) {
+                _.each(_.query('.bold, .italic, .underline, .strikethrough, .justifyleft, .justifycenter, .justifyright, .justifyfull, .insertunorderedlist, .insertorderedlist', this.toolarea), function(i, el) {
                     _.dom.toggleClass(this, 'active', false);
                 });
-                var style = _.dom.getStyle(this.range.commonElem);
+                var style = _.dom.getStyle(range.commonElem);
                 var selector = [];
                 if (style.fontWeight == 'bold') {
                     selector.push('.bold');
@@ -60,11 +62,11 @@ iBlock([
                 if (style.fontStyle == 'italic') {
                     selector.push('.italic');
                 }
-                //console.log(style.textDecoration, style.textDecorationLine, inheritDecoration(this.range.commonElem, 'underline'), inheritDecoration(this.range.commonElem, 'line-through'));
-                if (inheritDecoration(this.range.commonElem, 'line-through')) {
+                //console.log(style.textDecoration, style.textDecorationLine, inheritDecoration(range.commonElem, 'underline'), inheritDecoration(range.commonElem, 'line-through'));
+                if (inheritDecoration(range.commonElem, 'line-through')) {
                     selector.push('.strikethrough');
                 }
-                if (inheritDecoration(this.range.commonElem, 'underline')) {
+                if (inheritDecoration(range.commonElem, 'underline')) {
                     selector.push('.underline');
 
                 }
@@ -84,17 +86,17 @@ iBlock([
                         selector.push('.justifyfull');
                         break;
                 }
-                if (_.dom.closest(this.range.commonElem, 'ul')) {
+                if (_.dom.closest(range.commonElem, 'ul')) {
                     selector.push('.insertunorderedlist');
                 }
-                if (_.dom.closest(this.range.commonElem, 'ol')) {
+                if (_.dom.closest(range.commonElem, 'ol')) {
                     selector.push('.insertorderedlist');
                 }
-                // if ((this.range.commonElem.tagName === 'A') || _.dom.closest(this.range.commonElem, 'a')) {
+                // if ((range.commonElem.tagName === 'A') || _.dom.closest(range.commonElem, 'a')) {
                 //     selector.push('.createlink');
                 // }
                 if (selector.length > 0) {
-                    _.each(_.query(selector.join(', '), this.toolbar), function(i, el) {
+                    _.each(_.query(selector.join(', '), this.toolarea), function(i, el) {
                         _.dom.toggleClass(this, 'active', true);
                     });
                 }
@@ -102,11 +104,12 @@ iBlock([
             }
         },
         checkStatus = function() {
-            if (this.range && this.range.commonElem) {
-                var style = _.dom.getStyle(this.range.commonElem),
-                    node = _.dom.closest(this.range.commonElem, 'table'),
-                    row = _.dom.closest(this.range.commonElem, 'tr'),
-                    cell = _.dom.closest(this.range.commonElem, 'td', true);
+            var range = this.selection.getRange();
+            if (range && range.commonElem) {
+                var style = _.dom.getStyle(range.commonElem),
+                    node = _.dom.closest(range.commonElem, 'table'),
+                    row = _.dom.closest(range.commonElem, 'tr'),
+                    cell = _.dom.closest(range.commonElem, 'td', true);
                 _.query('.ic.editor-fontstatus .ic.editor-fsize-input', this.statebar)[0].value = style.fontSize;
                 _.query('.ic.editor-fontstatus .ic.editor-color-input', this.statebar)[0].value = _.util.Color.rgbFormat(style.color, 'hex6');
                 if (node && row) {

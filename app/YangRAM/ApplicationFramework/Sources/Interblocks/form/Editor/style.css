@@ -701,6 +701,9 @@
   padding: 0px 0px 0px 40px;
   overflow: visible; }
 
+.ic.editor .ic.editor-richarea ul {
+  list-style: disc; }
+
 .ic.editor .ic.editor-richarea li {
   margin: auto;
   padding: 0px;

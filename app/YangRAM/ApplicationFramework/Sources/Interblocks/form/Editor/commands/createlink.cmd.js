@@ -16,8 +16,8 @@ iBlock([
 
     _.form.Editor.regCommand('createlink', function(val) {
         if (val && _.util.bool.isUrl(val.url)) {
-            var url = 'temp.';
-            url += (Date.parse(new Date()) * 1000 + Math.floor(Math.random() * 1000000000000000));
+            var url = 'http://temp.';
+            url += new _.Identifier();
             url += '.com';
             if (this.selection.getRange().type === 'Caret') {
                 this.execCommand('insert', val.url);
@@ -31,7 +31,8 @@ iBlock([
                     a.target = '_blank';
                 }
             }
-
+            this.selection.saveRange();
+            this.onchange();
         }
         return this;
     });
@@ -40,7 +41,7 @@ iBlock([
         var html = '<dialog class="ic editor-dialog">';
         html += '<span class="ic editor-title">Insert link</span>';
         html += '<div class="ic editor-url">';
-        html += '<label>Enter URL</label><input type="text" class="ic editor-input" placeholder="http://www.yangram.com/interblocks/" />';
+        html += '<label>Enter URL</label><input type="text" class="ic editor-input createlink" placeholder="http://www.yangram.com/interblocks/" />';
         html += '</div>';
         html += '<div class="ic editor-check">';
         html += '<input type="checkbox" class="ic editor-checkbox" checked="checked"> <label>Open in new tab</label>';

@@ -22,6 +22,11 @@ iBlock('$_/util/bool.xtd', function(pandora, global, undefined) {
             this.editor = editor;
         },
 
+        // 恢复选区
+        restoreSelection: function() {
+            this.range = new _.form.Range(this.range);
+        },
+
         // 获取 range 对象
         getRange: function() {
             if (this.range) {
@@ -47,12 +52,13 @@ iBlock('$_/util/bool.xtd', function(pandora, global, undefined) {
                     this.range = range;
                 }
             }
+            return range;
         },
 
         // 折叠选区
         collapseRange: function(toStart) {
             if (this.range) {
-                this.selection.collapse(toStart);
+                this.range.collapse(toStart);
             }
         },
 
@@ -95,20 +101,18 @@ iBlock('$_/util/bool.xtd', function(pandora, global, undefined) {
             return false
         },
 
-        // 恢复选区
-        restoreSelection: function() {
-            new _.form.Range(this.range)
-        },
-
         // 创建一个空白（即 &#8203 字符）选区
         createEmptyRange: function() {
             var editor = this.editor,
-                range = _.form.Range(),
+                range = new _.form.Range(),
                 elem;
+
+            range.selectInput(this.editor.richarea, false);
+            this.saveRange(range);
 
             if (!this.isSelectionEmpty()) {
                 // 当前选区必须没有内容才可以
-                return
+                return;
             }
 
             try {
@@ -119,11 +123,11 @@ iBlock('$_/util/bool.xtd', function(pandora, global, undefined) {
                     // 修改 offset 位置
                     range.setEnd(range.endNode, range.endOffset + 1);
                     // 存储
-                    this.saveRange(range)
+                    range.collapse(false);
                 } else {
                     var elem = _.dom.createByString('<strong>&#8203;</strong>');
                     range.insertElem(elem);
-                    this.createRangeByElem(elem, true);
+                    this.range.selectElem(elem, false);
                 }
             } catch (ex) {
                 // 部分情况下会报错，兼容一下
