@@ -250,6 +250,6 @@ iBlock([
         }
     };
 
-    cache.save(dialogs, 'IBK_EDITOR_DIALOGS');
-    cache.save(events, 'IBK_EDITOR_EVENTS');
+    cache.save(dialogs, 'EDITOR_DIALOGS');
+    cache.save(events, 'EDITOR_EVENTS');
 });

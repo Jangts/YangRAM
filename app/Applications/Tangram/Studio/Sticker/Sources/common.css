@@ -215,32 +215,32 @@ v .custom-groups-list click:hover {
 
 /*** APPS MAIN CONTENTS ***/
 
-vision main list[type=sheet] .group {
+v main list[type=sheet] .group {
     width: 50px;
     left: 0;
     text-align: center;
 }
 
-vision main list[type=sheet] .title {
+v main list[type=sheet] .title {
     position: relative;
     text-align: left;
     margin: 0px 360px 0px 50px;
     padding: 0px 10px;
 }
 
-vision main list[type=sheet] .label {
+v main list[type=sheet] .label {
     width: 150px;
     right: 210px;
     text-align: center;
 }
 
-vision main list[type=sheet] .mtime {
+v main list[type=sheet] .mtime {
     width: 140px;
     right: 70px;
     text-align: center;
 }
 
-vision main list[type=sheet] .rmove {
+v main list[type=sheet] .rmove {
     right: 0px;
 }
 

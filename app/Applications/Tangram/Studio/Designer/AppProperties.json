@@ -1,0 +1,62 @@
+{
+    "name": "Microivan FastGPS",
+    "suitspace": "Studio",
+    "namespace": "Pub",
+    "metadata": {
+        "version": "",
+        "keywords": ["Tangram  Publisher", "Contents Publisher", "News Publisher", "Article Publisher", "Products Publisher"],
+        "description": "Tangram  Publisher",
+        "homepage": null,
+        "issues": null
+    },
+    "author": {
+        "author_id": 0,
+        "author_name": "",
+        "homepage": null,
+        "developers": []
+    },
+    "manifest": {
+        "ContentProvider": {
+            "classname": "ResHolders\\ContentProvider",
+            "filename": "ResHolders/ContentProvider"
+        },
+        "OISourceTransfer": {
+            "classname": "ResHolders\\OISourceTransfer",
+            "filename": "ResHolders\/OISourceTransfer"
+        },
+        "ResourceReceiver": {
+            "classname": "ResHolders\\ResourceReceiver",
+            "filename": "ResHolders\/ResourceReceiver"
+        }
+    },
+    "icons": {
+        "logo": {
+            "80": "icon.png"
+        }
+    },
+    "requires": {},
+    "dependents": {},
+    "permissions": {
+        "DEFAULT_PDOX_USEABLE": "",
+        "ACTIVITY_PDOX_USEABLE": "",
+
+        "ALL_RDBTABLE_READABLE": "",
+        "MAPREG_RDBTABLE_WRITEABLE": "",
+        "CMFCNT_RDBTABLE_READABLE": "",
+        "CMFCNT_RDBTABLE_WRITEABLE": "",
+        "SRCINF_RDBTABLE_READABLE": "",
+        "USRMAP_RDBTABLE_READABLE": "",
+        "USRMAP_RDBTABLE_WRITEABLE": "",
+        "USRMSG_RDBTABLE_READABLE": "",
+        "USRMSG_RDBTABLE_WRITEABLE": "",
+
+        "ALL_STORAGESG_READABLE": "",
+        "SYSDATA_READABLE": "",
+        "USRDATA_READABLE": "",
+        "USRDATA_WRITEABLE": "",
+        "MEMORYCACHE_USEABLE": "",
+
+        "ALL_REMOTEURL_GETABLE": "",
+        "ALL_REMOTEURL_SETABLE": ""
+    }
+}

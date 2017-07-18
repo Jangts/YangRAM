@@ -195,9 +195,9 @@ iBlock([
             }
         };
 
-    cache.save(toolbarTypes, 'IBK_EDITOR_BTYPES');
-    cache.save(toolTypes, 'IBK_EDITOR_TTYPES');
-    cache.save(creators, 'IBK_EDITOR_CREATS');
-    cache.save(builders, 'IBK_EDITOR_BUILDS');
+    cache.save(toolbarTypes, 'EDITOR_BTYPES');
+    cache.save(toolTypes, 'EDITOR_TTYPES');
+    cache.save(creators, 'EDITOR_CREATS');
+    cache.save(builders, 'EDITOR_BUILDS');
 
 });

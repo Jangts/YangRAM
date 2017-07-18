@@ -42,6 +42,6 @@ iBlock([
     parameters.langPath = parameters.basePath + 'Lang/';
     parameters.pluginsPath = parameters.basePath + 'Plugins/';
 
-    cache.save(parameters, 'IBK_EDITOR_PARAMS');
+    cache.save(parameters, 'EDITOR_PARAMS');
 
 });

@@ -154,5 +154,5 @@ iBlock([
     cache.save({
         format: checkFormat,
         status: checkStatus
-    }, 'IBK_EDITOR_CHECKS');
+    }, 'EDITOR_CHECKS');
 });

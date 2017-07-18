@@ -27,14 +27,14 @@ iBlock([
     var Editors = {},
         conmands = {},
 
-        parameters = cache.read(new _.Identifier('IBK_EDITOR_PARAMS').toString()),
-        toolbarTypes = cache.read(new _.Identifier('IBK_EDITOR_BTYPES').toString()),
-        toolTypes = cache.read(new _.Identifier('IBK_EDITOR_TTYPES').toString()),
-        creators = cache.read(new _.Identifier('IBK_EDITOR_CREATS').toString()),
-        builders = cache.read(new _.Identifier('IBK_EDITOR_BUILDS').toString()),
-        dialogs = cache.read(new _.Identifier('IBK_EDITOR_DIALOGS').toString()),
-        checks = cache.read(new _.Identifier('IBK_EDITOR_CHECKS').toString()),
-        events = cache.read(new _.Identifier('IBK_EDITOR_EVENTS').toString());
+        parameters = cache.read(new _.Identifier('EDITOR_PARAMS').toString()),
+        toolbarTypes = cache.read(new _.Identifier('EDITOR_BTYPES').toString()),
+        toolTypes = cache.read(new _.Identifier('EDITOR_TTYPES').toString()),
+        creators = cache.read(new _.Identifier('EDITOR_CREATS').toString()),
+        builders = cache.read(new _.Identifier('EDITOR_BUILDS').toString()),
+        dialogs = cache.read(new _.Identifier('EDITOR_DIALOGS').toString()),
+        checks = cache.read(new _.Identifier('EDITOR_CHECKS').toString()),
+        events = cache.read(new _.Identifier('EDITOR_EVENTS').toString());
 
 
     //Define NameSpace 'form'

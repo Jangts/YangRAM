@@ -195,6 +195,13 @@ iBlock([
                 return _.dom.index(list, this);
             }
             return _.dom.index(this[0], list);
+        },
+        parent: function() {
+            var nodes = [];
+            this.each(function() {
+                nodes.push(this.parentNode);
+            });
+            return new _.dom.Elements(_.util.arr.unique(nodes));
         }
     });
 

@@ -206,31 +206,31 @@ vision list[type=blocks].azure item click[x-theme-type="2"] .titl {
 
 /*** APPS MAIN CONTENTS ***/
 
-vision main list[type=table] .fname {
+v main list[type=table] .fname {
     position: relative;
     text-align: left;
     margin: 0px 280px 0px 00px;
     padding: 0px 10px;
 }
 
-vision main list[type=table] .mtime {
+v main list[type=table] .mtime {
     width: 140px;
     right: 140px;
     text-align: center;
 }
 
-vision main list[type=table] .copy {
+v main list[type=table] .copy {
     right: 70px;
 }
 
-vision main list[type=table] .rmove {
+v main list[type=table] .rmove {
     right: 0px;
 }
 
 
 /*--------------*/
 
-vision main list[type=table] .tips {
+v main list[type=table] .tips {
     display: block;
     height: 100px;
     line-height: 100px;

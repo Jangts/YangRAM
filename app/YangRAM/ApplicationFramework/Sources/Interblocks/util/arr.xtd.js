@@ -120,7 +120,7 @@ iBlock(['$_/util/type.xtd'], function(pandora, global, undefined) {
         },
         unique: function(array) {
             var result = [];
-            _.each(array, function(elem) {
+            _.each(array, function(i, elem) {
                 if (_.util.arr.has(result, elem) === false) {
                     result.push(elem);
                 };

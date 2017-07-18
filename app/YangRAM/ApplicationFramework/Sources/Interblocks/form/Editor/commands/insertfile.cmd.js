@@ -17,7 +17,7 @@ iBlock([
         document = global.document,
         console = global.console;
 
-    var parameters = cache.read(new _.Identifier('IBK_EDITOR_PARAMS').toString());
+    var parameters = cache.read(new _.Identifier('EDITOR_PARAMS').toString());
 
     _.form.Editor.regCommand('insertfile', function(file) {
         var name = file[0],

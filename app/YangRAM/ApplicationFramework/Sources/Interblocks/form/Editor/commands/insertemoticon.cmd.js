@@ -15,7 +15,7 @@ iBlock([
         cache = pandora.locker,
         console = global.console;
 
-    var parameters = cache.read(new _.Identifier('IBK_EDITOR_PARAMS').toString()),
+    var parameters = cache.read(new _.Identifier('EDITOR_PARAMS').toString()),
         emoticons = {};
 
     _.form.Editor.regCommand('insertemoticon', function(val) {

@@ -39,6 +39,7 @@ iBlock([
                                 Elements = arguments[0];
                                 break;
                             case 'Array':
+                                console.log(arguments[0]);
                                 for (var i = 0; i < arguments[0].length; i++) {
                                     _.util.type(arguments[0][i]) == 'Element' && Elements.push(arguments[0][i]);
                                 }
@@ -96,15 +97,15 @@ iBlock([
             var Elements = [];
             switch (typeof part) {
                 case 'number':
-                    Elements.push(this.get(part));
+                    this.get(part) && Elements.push(this.get(part));
                     break;
                 case 'string':
                     switch (part) {
                         case 'first':
-                            Elements.push(this[0]);
+                            this[0] && Elements.push(this[0]);
                             break;
                         case 'last':
-                            Elements.push(this[this.length - 1]);
+                            this[this.length - 1] && Elements.push(this[this.length - 1]);
                             break;
                         case 'odd':
                             for (var i = 0; i < part.length; i += 2) {
