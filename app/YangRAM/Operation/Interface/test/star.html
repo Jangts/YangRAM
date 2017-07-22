@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>ColorPicker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="http://interblocks.nidn.yangram.ni/src/block.js"></script>
+    <style>
+        .bc.star5 {
+            margin: 50px 0;
+            position: relative;
+            display: block;
+            color: red;
+            width: 0px;
+            height: 0px;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid red;
+            border-left: 100px solid transparent;
+            transform: rotate(35deg);
+        }
+        
+        .bc.star5:before {
+            border-bottom: 80px solid red;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: -45px;
+            left: -65px;
+            display: block;
+            content: '';
+            transform: rotate(-35deg);
+        }
+        
+        .bc.star5:after {
+            position: absolute;
+            display: block;
+            color: red;
+            top: 3px;
+            left: -105px;
+            width: 0px;
+            height: 0px;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid red;
+            border-left: 100px solid transparent;
+            transform: rotate(-70deg);
+            content: '';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bc star5"></div>
+</body>
+
+</html>

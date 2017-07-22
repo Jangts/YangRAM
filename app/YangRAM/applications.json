@@ -48,46 +48,46 @@
         "installpath": "Services/FileSystem/",
         "agent": "Common"
     },
-    "UOI": {
-        "id": "UOI",
-        "name": "YangRAM Uniform Operator Interface Web Edition",
+    "I": {
+        "id": "INTERFACE",
+        "name": "YangRAM Uniform Operator Interface",
         "code": "Oi",
-        "installpath": "OperatorInterface/UOI/",
+        "installpath": "Operation/Interface/",
         "agent": "Bowrser"
     },
     "I4PLAZA": {
         "id": "I4PLAZA",
         "name": "YangRAM I4s Plaza",
         "code": "St",
-        "installpath": "OperatorInterface/I4Plaza/",
+        "installpath": "Operation/I4Plaza/",
         "agent": "Common"
     },
     "SETTINGS": {
         "id": "SETTINGS",
         "name": "All Settings",
         "code": "St",
-        "installpath": "OperatorInterface/Settings/",
+        "installpath": "Operation/Settings/",
         "agent": "Common"
     },
     "EXPLORER": {
         "id": "EXPLORER",
         "name": "YangRAM Explorer",
         "code": "Xp",
-        "installpath": "OperatorInterface/Explorer/",
+        "installpath": "Operation/Explorer/",
         "agent": "Common"
     },
     "TRASHCAN": {
         "id": "TRASHCAN",
         "name": "YangRAM Trash Can",
         "code": "Xp",
-        "installpath": "OperatorInterface/TrashCan/",
+        "installpath": "Operation/TrashCan/",
         "agent": "Common"
     },
     "SMARTIAN": {
         "id": "SMARTIAN",
         "name": "YangRAM Smartian",
         "code": "St",
-        "installpath": "OperatorInterface/Smartian/",
+        "installpath": "Operation/Smartian/",
         "agent": "Common"
     },
     "SERVICE": {

@@ -5,7 +5,7 @@ use Model;
 use CMF\Models\SPC\Preset;
 use CMF\Models\SPCLite;
 
-class I4PlazaWidgets extends \OIC\I4PlazaWidgets_BC {
+class I4PlazaWidgets extends \OIF\controllers\I4PlazaWidgets_BC {
 	public function new_contents(){
         $contents = SPCLite::getList(NULL, NULL, SPCLite::PUBLISHED, SPCLite::PUBTIME_DESC, 0, 5, Model::LIST_AS_ARR);
 		//$result = Contents::getNoDifferenceContents(1, $CTT_SortType = 3, $start = 0, $num = 5);

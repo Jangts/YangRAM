@@ -5,7 +5,7 @@ use CMF\Models\EMC;
 use AF\Util\OIML;
 use Studio\Stk\Models\LocalDict;
 
-class FormVC extends \OIC\OICtrller_BC {
+class FormVC extends \OIF\controllers\OICtrller_BC {
 
 	public function emc($id){
 		$localdict = LocalDict::instance();

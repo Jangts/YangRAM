@@ -5,7 +5,7 @@ use AF\Util\OIML;
 use Studio\Stk\Models\LocalDict;
 use Studio\Stk\Models\ListPageModels;
 
-class ListPageVC extends \OIC\OICtrller_BC {
+class ListPageVC extends \OIF\controllers\OICtrller_BC {
 
 	public function main(){
 		$oiml = new OIML;

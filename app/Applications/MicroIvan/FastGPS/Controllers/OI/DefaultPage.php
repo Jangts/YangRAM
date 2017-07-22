@@ -4,7 +4,7 @@ namespace GPS\Controllers\OI;
 use AF\Util\OIML;
 use GPS\Models\Data\LocalDict;
 
-class DefaultPage extends \OIC\OICtrller_BC {
+class DefaultPage extends \OIF\controllers\OICtrller_BC {
 
 	public function main(){
 		$localdict = LocalDict::instance();

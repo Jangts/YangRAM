@@ -5,7 +5,7 @@ use CMF\Models\GEC;
 use CMF\Models\SPC;
 use CMF\Models\SPCLite;
 
-class Submitter extends \OIC\OISubmitter_BC {
+class Submitter extends \OIF\controllers\OISubmitter_BC {
 	public function sav(){
 		$post = $this->request->FORM;
 		$this->saveContent(false, $post);

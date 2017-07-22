@@ -36,21 +36,23 @@ define('PUB_DIR',   	USR_DIR.'Public/');
 define('VIEW_DIR',   	USR_DIR.'Public/Themes/');
 define('LIBX_DIR',   	USR_DIR.'Public/Packages/');
 define('OPEN_DIR',   	USR_DIR.'Public/Shared/');
-define('NIAF_DIR',   	I4S_DIR.'ApplicationFramework/');
+define('SSRC_DIR',   	USR_DIR.'Public/Sources/');
+define('FMWK_DIR',   	I4S_DIR.'Frameworks/');
 define('LANGS_DIR',   	I4S_DIR.'Locales/');
 
 define('PUB_PID',   	PID.PUB_DIR);
 define('VIEW_PID',   	PID.VIEW_DIR);
 define('LIBX_PID',   	PID.LIBX_DIR);
 define('OPEN_PID',   	PID.OPEN_DIR);
-define('NIAF_PID',   	PID.NIAF_DIR);
+define('SSRC_PID',   	PID.SSRC_DIR);
+define('FMWK_PID',   	PID.FMWK_DIR);
 define('LANGS_PID',   	PID.LANGS_DIR);
 
 define('PATH_PUB', 		ROOT.PUB_DIR);
 define('PATH_VIEW',     ROOT.VIEW_DIR);
 define('PATH_LIBX',     ROOT.LIBX_DIR);
 define('PATH_OPEN',     ROOT.OPEN_DIR);
-define('PATH_NIAF',    	ROOT.NIAF_DIR);
+define('PATH_FMWK',    	ROOT.FMWK_DIR);
 define('PATH_LANGS',    ROOT.LANGS_DIR);
 
 define('PATH_CAC', 		ROOT.'/CacheData/');

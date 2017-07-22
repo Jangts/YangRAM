@@ -2,7 +2,7 @@
 
 <head>
     {{@includes/head.niml}}
-    <link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/Slider/style.css">
+    <link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/Slider/style.css">
     <link type="text/css" rel="stylesheet" href="{{$__SRCDIR}}stylesheets/homepage.css">
 </head>
 
@@ -10,9 +10,9 @@
     {{@includes/header.niml}}
     <div class="container">
         {{.label('ad_slider1')}}
-        <section class="news ic h390 grid-12">
-            <div class="ic hfull nm-8">
-                <div class="newslist ic stabs" data-ic-auto="true">
+        <section class="news bc h390 grid-12">
+            <div class="bc hfull nm-8">
+                <div class="newslist bc stabs" data-ic-auto="true">
                     <h3> <a href="{{$REQUEST.DIR}}s/news/category/15/">学院要闻</a></h3>
                     <json name="$fields"> ["dev_figure", "dev_abstract"] </json>
                     <def name="$newslist" onload="CMF.Models.SPC.getList" args="'news', 15, CMF.Models.SPCLite.PUBLISHED, CMF.Models.SPCLite.PUBTIME_DESC, 0, 9, Model::LIST_AS_OBJ, $fields" />
@@ -68,12 +68,12 @@
             </div>
         </section>
         {{.label(2)}}
-        <section class="articles ic h310 grid-12">
+        <section class="articles bc h310 grid-12">
             <script id="newstp" type="text/template">
                 <li><a href="{@url}" target="_blank">{@title}</a></li>
             </script>
             <div class="nm-4">
-                <div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
+                <div class="artilisttabs bc w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
                     <header class="tabanchors">
                         <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/news/category/16/">校园时讯</span>
                         <span class="tab-anchor" data-tab-index="1" data-src="{{$REQUEST.DIR}}s/news/category/20/">媒体建筑</span>
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <div class="nm-4">
-                <div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
+                <div class="artilisttabs bc w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
                     <header class="tabanchors">
                         <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/chuangs/">创新创业</span>
                         <span class="tab-anchor" data-tab-index="1" data-src="{{$REQUEST.DIR}}s/fazhans/">转型发展</span>
@@ -103,7 +103,7 @@
                 </div>
             </div>
             <div class="nm-4">
-                <div class="artilisttabs ic w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
+                <div class="artilisttabs bc w380 h260 ma-25 tabs" data-ic-auto="true" data-tabs-trigger="mouseover" data-tabs-keyclass="actived">
                     <header class="tabanchors">
                         <span class="tab-anchor actived" data-tab-index="0" data-src="{{$REQUEST.DIR}}s/enrollment/category/4/">就业信息</span>
                         <span class="tab-anchor" data-tab-index="1" data-src="{{$REQUEST.DIR}}s/stunews/">校友之家</span>

@@ -12,7 +12,7 @@
  */
 
 Yangram(function(_, declare, create, using, cache, global, undefined) {
-	_.check('Elements.Cls', ['Elements', 'Elements.create'], 'Widgets.Lib', false);
+	_.check('Elements.cls', ['Elements', 'Elements.create'], 'Widgets.Lib', false);
 	var document = global.document;
 	var location = global.location;
 
@@ -3849,7 +3849,7 @@ Yangram(function(_, declare, create, using, cache, global, undefined){
  */
  
 Yangram(function(_, declare, create, using, cache, global, undefined){
-	_.check('Elements.Cls', ['Elements', 'Elements.create'], 'Widgets.Lib', false);
+	_.check('Elements.cls', ['Elements', 'Elements.create'], 'Widgets.Lib', false);
 	var document = global.document;
 	var location = global.location;
 	var System = global.System;

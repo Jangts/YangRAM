@@ -1,13 +1,13 @@
 var includes = [
     '$_/data/',
-    '$_/data/Base64.Cls',
+    '$_/data/Base64.cls',
     '$_/dom/Elements/',
-    '$_/dom/Template.Cls',
+    '$_/dom/Template.cls',
     '$_/see/Slider/',
     '$_/see/Slider/colx3.opts',
     '$_/see/Slider/slide-vert.opts'
 ];
-iBlock(includes, function(_, global, undefined) {
+block(includes, function(_, global, undefined) {
     var document = global.document;
     var location = global.location;
     var $ = _.dom.select;

@@ -14,7 +14,7 @@
 //  |/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\|
 //  +------------------------------------------------------------------------+
 /**/ REQUIRE         '.BEFOREBOOT';                                         //
-/**/ REQUIRE         PATH_TNI.'IDEA.PHP';                                  //
+/**/ REQUIRE         PATH_TNI.'MAIN.PHP';                                  //
 /**/$NEWIDEA    =    NEW IDEA;                                            //
 /**/$NEWIDEA    ->   RUN_CORE_MODULES();                                 //
 /**/$NEWIDEA    ->   RUN_ACTIVE_APPLICATION();                          //

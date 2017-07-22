@@ -5,7 +5,7 @@ use AF\Util\OIML;
 use Studio\Stk\Models\LocalDict;
 use Studio\Stk\Models\DefaultPageVM;
 
-class DefaultPageVC extends \OIC\OICtrller_BC {
+class DefaultPageVC extends \OIF\controllers\OICtrller_BC {
 
 	public function main(){
 		$localdict = LocalDict::instance();

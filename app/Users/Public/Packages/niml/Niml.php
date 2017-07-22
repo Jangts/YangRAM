@@ -47,7 +47,6 @@ class Niml extends \NIML {
 		if($is_include==false){
 			$this->assign("__DOMAIN", '//'.HOST);
 			$this->assign("__SRCDIR", VIEW_PID.$this->theme."/");
-			$this->assign("__AF_SRCDIR", NIAF_PID."Sources/");
 		}
 		return [PATH_VIEW.$this->theme."/nimls/".$template, PATH_DAT_TPL.'niml/'.hash('md4', $this->theme.$template).".php"];
 	}

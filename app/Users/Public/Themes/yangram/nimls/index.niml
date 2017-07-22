@@ -3,16 +3,16 @@
 
 <head>
     {{@includes/head.niml}}
-    <link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/Slider/style.css">
+    <link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/Slider/style.css">
     <link type="text/css" rel="stylesheet" href="{{$__SRCDIR}}stylesheets/index.css">
 </head>
 
 <body>
     {{@includes/header.niml}}
-    <section class="section-odd ic container h630 slider">
-        <div id="slider" class="ic c1920 h600 ov-visi ">
-            <div class="stage ic w1920 ov-visi ">
-                <div class="troupe ic h600">
+    <section class="section-odd bc container h630 slider">
+        <div id="slider" class="bc c1920 h600 ov-visi ">
+            <div class="stage bc w1920 ov-visi ">
+                <div class="troupe bc h600">
                     <div class="actor"><img src="{{$__SRCDIR}}images/index/poster01.jpg" alt=""></div>
                     <div class="actor"><img src="{{$__SRCDIR}}images/index/poster02.jpg" alt=""></div>
                     <div class="actor"><img src="{{$__SRCDIR}}images/index/poster03.jpg" alt=""></div>
@@ -22,7 +22,7 @@
         </div>
     </section>
     <section class="container promos">
-        <ul class="content ic pl-center max-w1440 grid-12">
+        <ul class="content bc pl-center max-w1440 grid-12">
             <li class="market nm-3">
                 <a class="figure"><img src="{{$__SRCDIR}}images/index/promo1.png" alt="" /></a><a class="title">{{_(YangRAM Official Market)}}</a>
             </li>
@@ -35,13 +35,13 @@
         </ul>
     </section>
     <section class="section-odd container features">
-        <div class="ic blk-20">&nbsp;</div>
+        <div class="bc blk-20">&nbsp;</div>
         <div class="content">
-            <p class="ic lh-60 al-center ft-24 ft-333">你也许需要如下服务</p>
-            <p class="ic lh-21 al-center ft-12 ft-666">为站长及准站长们精心打造全方位服务市场，并领衔入驻其中</p>
-            <p class="ic lh-21 al-center ft-12 ft-666"> 集中精力做你自己擅长，其他的交给更专业的人 </p>
+            <p class="bc lh-60 al-center ft-24 ft-333">你也许需要如下服务</p>
+            <p class="bc lh-21 al-center ft-12 ft-666">为站长及准站长们精心打造全方位服务市场，并领衔入驻其中</p>
+            <p class="bc lh-21 al-center ft-12 ft-666"> 集中精力做你自己擅长，其他的交给更专业的人 </p>
         </div>
-        <ul class="content ic pl-center max-w1440 grid-12">
+        <ul class="content bc pl-center max-w1440 grid-12">
             <li class="nm-3">
                 <div class="feature-item feature-server">
                     <figure><span class="feature-rail"><i class="feature-star"></i></span><span class="feature-icon"></span></figure>
@@ -93,7 +93,7 @@
         </ul>
     </section>
     <section class="container statistics">
-        <ul class="content ic pl-center max-w1440 grid-12">
+        <ul class="content bc pl-center max-w1440 grid-12">
             <li class="sites nm-4">
                 <div class="chart"> <span class="chart-value"><i>0</i></span> <span class="chart-square"></span> <span class="chart-icon"></span> </div>
                 <p class="sectence">个站点选用YangRAM</p>
@@ -109,15 +109,15 @@
         </ul>
     </section>
     <section class="section-odd container news">
-        <div class="ic blk-20">&nbsp;</div>
+        <div class="bc blk-20">&nbsp;</div>
         <div class="content">
-            <p class="ic lh-60 al-center ft-24 ft-333">资讯中心</p>
-            <p class="ic lh-21 al-center ft-12 ft-666">订阅或关注我们，实时了解YangRAM动态。</p>
+            <p class="bc lh-60 al-center ft-24 ft-333">资讯中心</p>
+            <p class="bc lh-21 al-center ft-12 ft-666">订阅或关注我们，实时了解YangRAM动态。</p>
         </div>
-        <div class="content ic pl-center max-w1440 grid-12">
+        <div class="content bc pl-center max-w1440 grid-12">
             <div class="company nm-8">
                 <div class="news-group"><span class="group-name">资讯</span><span class="news-more"><a href="">更多&gt;&gt;</a></span></div>
-                <ul class="news-items ic grid-12">
+                <ul class="news-items bc grid-12">
                     <li class="nm-6">
                         <figure class="news-item"><img src="{{$__SRCDIR}}images/index/news01.jpg" alt=""><span class="news-title">新闻标题新闻标题新闻标题新闻标题</span></figure>
                     </li>

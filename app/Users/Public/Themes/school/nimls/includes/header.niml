@@ -12,7 +12,7 @@
             <a href="{{$REQUEST.DIR}}"><img src="{{$__SRCDIR}}images/college-logo.png"></a>
         </figure>
         <nav class="mainnav">
-            <ul class="ic navmenu inline" data-ic-auto="true">
+            <ul class="bc navmenu inline" data-ic-auto="true">
                 <li class="menu-item hasson {{$__Column='default'=>actived}}"><a href="{{$REQUEST.DIR}}g/about/article/index.html">学院概况</a>
                     <ul class="submenu inline" data-width="400">
                         <li class="menu-item {{$__Columns[2]='index.html'=>actived}}">

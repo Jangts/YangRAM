@@ -383,7 +383,7 @@ class OIInputs extends DataObject {
 		$values = $this->values;
 		foreach($this->data as $dev_fields){
 			foreach($dev_fields as $field){
-				$form .= OIML::inputs($field, $values);
+				$form .= OIML::inputs($field, $values[$field["name"]]);
 			}
 		}
         return $form;

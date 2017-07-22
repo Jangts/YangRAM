@@ -2,9 +2,9 @@
 <title>{{$__Title}}</title>
 <meta content="{{$__Desc}}" name="description" />
 <meta content="{{$__KeyWords}}" name="keywords" />
-<script type="text/javascript" src="{{$__AF_SRCDIR}}Interblocks/iblock.js" data-use-debugmode></script>
-<link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/see.css">
-<link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/fa.css">
-<link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/NavMenu/style.css">
-<link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/Scrollbar/style.css">
+<script type="text/javascript" src="{{SSRC_PID}}Block.JS/block.js" data-use-debugmode></script>
+<link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/see.css">
+<link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/fa.css">
+<link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/NavMenu/style.css">
+<link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/Scrollbar/style.css">
 <link type="text/css" rel="stylesheet" href="{{$__SRCDIR}}stylesheets/common.css">

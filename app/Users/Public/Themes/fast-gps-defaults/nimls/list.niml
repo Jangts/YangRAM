@@ -13,15 +13,15 @@
 <body>
     <ul class=" " id="news-list">
         <for $item of $___LIST>
-            <li class="ic ma-b20">
+            <li class="bc ma-b20">
                 <p>
-                    <a class="title ic grid-21 " href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
+                    <a class="title bc grid-21 " href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">
                         <str value="$item.TITLE" length="23" />
                     </a>
                 </p>
                 <p><span><time value="$item.PUBTIME" format="Y-m-d" /></span></p>
                 <p>{{$item.dev_abstract}}.....</p>
-                <p><a class="title ic grid-21 " href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">See More&gt;&gt;</a>
+                <p><a class="title bc grid-21 " href="{{$REQUEST.REST_HANDLER_DIR}}s/{{$___PRESET_ALIAS}}/article/{{***$item.ID***}}" target=" _blank">See More&gt;&gt;</a>
                     <p>
             </li>
         </for>

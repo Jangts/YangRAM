@@ -5,7 +5,7 @@ use AF\Util\OIML;
 use Studio\Dsr\Models\LocalDict;
 use Studio\Dsr\Models\DefaultPageVM;
 
-class DefaultPage extends \OIC\OICtrller_BC {
+class DefaultPage extends \OIF\controllers\OICtrller_BC {
 
 	public function main(){
 		$localdict = LocalDict::instance();

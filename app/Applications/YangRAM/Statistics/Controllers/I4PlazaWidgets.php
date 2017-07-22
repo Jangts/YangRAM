@@ -7,7 +7,7 @@ use CMF\Models\SPCLite;
 use AF\Models\Util\GSTI;
 use Library\localtimes\Timer;
 
-class I4PlazaWidgets extends \OIC\I4PlazaWidgets_BC {
+class I4PlazaWidgets extends \OIF\controllers\I4PlazaWidgets_BC {
 	public function hours(){
 		$data = $this->get_default_data();
 		$times = $this->get_time_parts();

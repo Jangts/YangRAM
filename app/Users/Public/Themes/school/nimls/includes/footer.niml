@@ -8,7 +8,7 @@
             <p>鄂ICP备09018573号</p>
         </li>
         <li class="links">
-            <div id="mybottomlinks" class="ic scrollbar" data-ic-auto="true" , data-scbar-theme="">
+            <div id="mybottomlinks" class="bc scrollbar" data-ic-auto="true" , data-scbar-theme="">
                 <h4>快速链接</h4>
                 <p><a href="http://www.whsw.edu.cn/" target="_blank">武汉生物工程学院</a></p>
                 <p><a href="http://rsc.whsw.edu.cn/" target="_blank">人才招聘</a></p>
@@ -54,5 +54,5 @@
         <figcaption>扫描二维码 关注公众号</figcaption>
     </figure>
 </div>
-<script type="text/javascript" src="{{$__AF_SRCDIR}}Interblocks/see/render.auto.js"></script>
+<script type="text/javascript" src="{{SSRC_PID}}Block.JS/see/render.auto.js"></script>
 <script type="text/javascript" src="{{$__SRCDIR}}scripts/common.js"></script>

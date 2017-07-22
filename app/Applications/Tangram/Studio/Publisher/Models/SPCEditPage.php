@@ -29,7 +29,7 @@ class SPCEditPage extends DataObject {
                     'row_num'		=>	0,
                     'default_value'	=>	'',
                     'file_type'		=>	NULL,
-                ), $content);
+                ), $content['PRIMER']);
             }else{
                 $primer = '';
             }

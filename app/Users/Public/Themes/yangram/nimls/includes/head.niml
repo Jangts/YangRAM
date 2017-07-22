@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <title>YangRAM — 官方网站</title>
-<script type="text/javascript" src="{{$__AF_SRCDIR}}Interblocks/iblock.js" data-use-debugmode></script>
+<script type="text/javascript" src="{{SSRC_PID}}Block.JS/block.js" data-use-debugmode></script>
 <link rel="stylesheet" type="text/css" href="{{$__SRCDIR}}stylesheets/common.css">
-<link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/see.css">
-<link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/fa.css">
+<link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/see.css">
+<link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/fa.css">

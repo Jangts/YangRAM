@@ -262,7 +262,7 @@ class Starter extends Common {
         if(is_file($template)){
             file_put_contents($this->record, '4');
             Response::instance()->sendHeaders();
-            $ntvOICode = strtoupper(uniqid());
+            $ntvOIF\controllersode = strtoupper(uniqid());
             include $template;
         }else{
             # 701
@@ -275,7 +275,7 @@ class Starter extends Common {
             $template = AP_CURR.'Views/FifthInstallStep.php';
             if(is_file($template)){
                 Response::instance()->sendHeaders();
-                $ntvOICode = strtoupper(uniqid());
+                $ntvOIF\controllersode = strtoupper(uniqid());
                 include $template;
             }
         }else{
@@ -293,7 +293,7 @@ class Starter extends Common {
             $template = AP_CURR.'Views/FifthInstallStep.php';
             if(is_file($template)){
                 file_put_contents($this->record, '5');
-                $ntvOICode = strtoupper(uniqid());
+                $ntvOIF\controllersode = strtoupper(uniqid());
                 Response::instance()->sendHeaders();
                 include $template;
                 $rdata = new RemoteData('/', array(

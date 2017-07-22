@@ -245,7 +245,7 @@ abstract class NI_Application_BC {
 	}
 
 	public function set(array $options = [], $type = 'IPCommunicator'){
-		include(PATH_NIAF.'Controllers/Submitter_BC.php');
+		include(PATH_FMWK.'AF/Controllers/Submitter_BC.php');
         class_alias('AF\Controllers\Submitter_BC', 'Submitter');
 
 		$props = $this->Props;

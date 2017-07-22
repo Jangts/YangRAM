@@ -1,6 +1,6 @@
 <footer class="footer">
-    <div class="content ic pl-center max-w1440">
-        <ul class="foot-menu ic grid-12">
+    <div class="content bc pl-center max-w1440">
+        <ul class="foot-menu bc grid-12">
             <li class="nm-3">
                 <dl>
                     <dt>产品/服务</dt>
@@ -92,7 +92,7 @@
                     <dd><a href="#">社交登陆接口</a></dd>
                     <dd><a href="#">常用预设</a></dd>
                     <dd><a href="#">热门主题</a></dd>
-                    <dd><a href="#">Interblocks</a></dd>
+                    <dd><a href="#">Block.JS</a></dd>
                 </dl>
                 <dl>
                     <dt>价值观</dt>
@@ -102,9 +102,9 @@
                 </dl>
             </li>
         </ul>
-        <div id="language" class="lang ic pl-left"> <i class="fa fa-language"></i> <span>简体中文 (新加坡)</span> </div>
-        <div class="links ic pl-right">
-            <ul class="bottom-links ic pl-left">
+        <div id="language" class="lang bc pl-left"> <i class="fa fa-language"></i> <span>简体中文 (新加坡)</span> </div>
+        <div class="links bc pl-right">
+            <ul class="bottom-links bc pl-left">
                 <li><a href="#">联系我们</a></li>
                 <li><a href="#">隐私政策</a></li>
                 <li><a href="#">使用条款</a></li>
@@ -112,7 +112,7 @@
                 <li><a href="#">法律信息</a></li>
                 <li><a href="#">网站地图</a></li>
             </ul>
-            <div class="copyright ic pl-left">
+            <div class="copyright bc pl-left">
                 <a href="http://tt.yangram.com"><img src="{{$__SRCDIR}}images/com-logo.png" alt="" /></a>
             </div>
         </div>

@@ -38,7 +38,7 @@
           <span class="remark">多個文件名請用“/”隔開</span> </div>
         <div>
           <label>NtvOI認證碼</label>
-          <input type="text" name="_DOI_TOKEN_" value="<?=$ntvOICode?>" />
+          <input type="text" name="_DOI_TOKEN_" value="<?=$ntvOIF\controllersode?>" />
           <span class="remark">配置NtvOI時要用到</span> </div>
         <div>
           <label>開啓WebOI</label>

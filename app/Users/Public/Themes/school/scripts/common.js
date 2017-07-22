@@ -1,4 +1,4 @@
-iBlock('$_/dom/Elements/', function(_, global, undefined) {
+block('$_/dom/Elements/', function(_, global, undefined) {
     var document = global.document;
     var location = global.location;
     var $ = _.dom.select;

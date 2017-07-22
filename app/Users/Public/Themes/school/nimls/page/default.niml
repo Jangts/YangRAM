@@ -3,17 +3,17 @@
 
 <head>
     {{@includes/head.niml}}
-    <link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/Slider/style.css">
-    <link type="text/css" rel="stylesheet" href="{{$__AF_SRCDIR}}Interblocks/see/ListView/style.css">
+    <link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/Slider/style.css">
+    <link type="text/css" rel="stylesheet" href="{{SSRC_PID}}Block.JS/see/ListView/style.css">
     <link type="text/css" rel="stylesheet" href="{{$__SRCDIR}}stylesheets/list.css">
 </head>
 
 <body>
     {{@includes/header.niml}}
     <!-- main slider carousel -->
-    <section class="ic section bg-light">
-        <div class="ic blank-30"></div>
-        <div class="ic w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD">
+    <section class="bc section bg-light">
+        <div class="bc blank-30"></div>
+        <div class="bc w1200 pa-20 bg-white grid-21" style=" box-shadow: 0px 0px 2px #DDD">
             <div class="nm-5">
                 <div class="side-list-title">栏目导航</div>
                 <ul class="side-list">
@@ -26,20 +26,20 @@
             </div>
             <div class="nm-1">&nbsp;</div>
             <div class="nm-15 main-container">
-                <div class="ic blank-10"></div>
+                <div class="bc blank-10"></div>
                 <header><span class="dir">
                     <a href="{{$REQUEST.REST_HANDLER_DIR}}g/about/article/index.html">学院概况</a>
                     <i>/</i>
                     {{$___TITLE}}
                     </span>
                 </header>
-                <div class="ic blank-10"></div>
+                <div class="bc blank-10"></div>
                 <article class="news-content">
                     <decode value="$___CONTENT" />
                 </article>
             </div>
         </div>
-        <div class="ic blank-50"></div>
+        <div class="bc blank-50"></div>
     </section>
     {{@includes/footer.niml}}
     <script>
