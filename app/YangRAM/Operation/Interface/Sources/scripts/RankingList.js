@@ -114,7 +114,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
                 .getInstalledApps(callback);
         },
         getInstalledApps(callback) {
-            YangRAM.json(YangRAM.RequestDIR + 'uoi/apps/arl/', (allApps) => {
+            YangRAM.json(YangRAM.RequestDIR + 'i/sources/apps/', (allApps) => {
                 var Lister = this.middleApps.getElementsByTagName('content').item(0);
                 var longtextTag;
                 for (var i in allApps) {

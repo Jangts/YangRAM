@@ -117,8 +117,8 @@ block([
     '$_/see/Tabs/TabViews.cls',
     '$_/data/Component.cls',
     '$_/see/widgets/Alerter.cls',
-    '<?=__GET_DIR?>uoi/scripts/system',
-    '<?=__GET_DIR?>uoi/scripts/evn/<?=$__Lang?>/runtime'
+    '<?=__GET_DIR?>i/sources/scripts//system',
+    '<?=__GET_DIR?>i/sources/scripts//evn/<?=$__Lang?>/runtime'
 ], function(pandora, global, undefined) {
     var _ = pandora,
         declare = pandora.declareClass,

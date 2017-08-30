@@ -31,7 +31,7 @@ class Memowall extends \OIF\controllers\OICtrller_BC {
 	private function createItem($group, $appid, $name, $desc){
 		$group->addLink([
 			'appid' 		=>	$appid,
-			'icon' 			=>	__GET_DIR.'uoi/apps/icons/'.$appid.'/80/',
+			'icon' 			=>	__GET_DIR.'i/sources/icons/'.$appid.'/80/',
 			'name'			=>	$name,
 			'description' 	=>	$desc,
 			'href'			=>	'default',

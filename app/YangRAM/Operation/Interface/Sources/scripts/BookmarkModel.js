@@ -76,9 +76,9 @@ System.DeclareModel('BookmarkModel', (YangRAM, declare, global, undefined) => {
                 default:
                     //console.log(this.appid, this.sourceToken);
                     if (this.sourceToken) {
-                        this.source = YangRAM.RequestDIR + 'uoi/apps/icons/' + this.appid + '/links/' + this.sourceToken + '';
+                        this.source = YangRAM.RequestDIR + 'i/sources/icons/' + this.appid + '/links/' + this.sourceToken + '';
                     } else {
-                        this.source = YangRAM.RequestDIR + 'uoi/apps/icons/' + this.appid + '/80/';
+                        this.source = YangRAM.RequestDIR + 'i/sources/icons/' + this.appid + '/80/';
                     }
                     break;
             }

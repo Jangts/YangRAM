@@ -111,7 +111,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
         load(callback) {
             var date = this.Year + '/' + this.Month;
             YangRAM.get({
-                url: YangRAM.RequestDIR + 'uoi/account/events/' + date + '/?lang=' + Runtime.locales.CODE,
+                url: YangRAM.RequestDIR + 'i/account/events/' + date + '/?lang=' + Runtime.locales.CODE,
                 done: (txt) => {
                     //console.log(txt);
                     this.Dates.innerHTML = System.TrimHTML(txt);
@@ -267,7 +267,7 @@ System.ExtendsMethods((YangRAM, declare, global, undefined) => {
             var data = new FormData();
             data.append(owner, (YangRAM.$('kalendar dates events[owner=' + owner + ']').html() || '').replace(/>\*<\//, '> </').replace(/(&nbsp;)+/, ' '));
             YangRAM.set({
-                url: YangRAM.RequestDIR + 'uoi/account/events/' + date + '/?lang=' + Runtime.locales.CODE,
+                url: YangRAM.RequestDIR + 'i/account/events/' + date + '/?lang=' + Runtime.locales.CODE,
                 data: data
             });
             return this;

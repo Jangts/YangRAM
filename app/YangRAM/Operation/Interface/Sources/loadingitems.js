@@ -195,7 +195,7 @@ System.Loader(function(YangRAM, global, undefined) {
             /* Load Account Informations */
             (resolve) => {
                 this.UpdateLoadingStatus().GET({
-                    url: YangRAM.RequestDIR + 'uoi/account/info/' + Runtime.locales.CODE,
+                    url: YangRAM.RequestDIR + 'i/account/info/' + Runtime.locales.CODE,
                     done: (txt) => {
                         this.HiBar.build();
                         this.HiBar.Account.innerHTML = txt;

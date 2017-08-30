@@ -31,7 +31,7 @@ System.DeclareModel('MessageModel', (YangRAM, declare, global, undefined) => {
         },
         remain(list) {
             list = list || Notifier.AppNotice
-            var html = '<icon><img src="' + YangRAM.RequestDIR + 'uoi/apps/icons/' + this.appid + '/60/"></icon><v><msgtit>' + this.title + '</msgtit><msgcon>' + this.content + '</msgcon><v>';
+            var html = '<icon><img src="' + YangRAM.RequestDIR + 'i/sources/icons/' + this.appid + '/60/"></icon><v><msgtit>' + this.title + '</msgtit><msgcon>' + this.content + '</msgcon><v>';
             var notice = YangRAM.create('message', list, {
                 aid: this.appid,
                 href: this.href,
@@ -64,7 +64,7 @@ System.DeclareModel('MessageModel', (YangRAM, declare, global, undefined) => {
             return this;
         },
         notice(remain) {
-            var html = '<icon><img src="' + YangRAM.RequestDIR + 'uoi/apps/icons/' + this.appid + '/60/"></icon><v><msgtit>' + this.title + '</msgtit><msgcon>' + this.content + '</msgcon></v>'
+            var html = '<icon><img src="' + YangRAM.RequestDIR + 'i/sources/icons/' + this.appid + '/60/"></icon><v><msgtit>' + this.title + '</msgtit><msgcon>' + this.content + '</msgcon></v>'
             var notices = YangRAM.$('notice[state=off], notice[state=on]', Notifier.document);
             var position;
             if (notices.length > 0) {

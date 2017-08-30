@@ -44,8 +44,8 @@ block([
     '$_/see/BasicScrollBAR.cls',
     '$_/data/Component.cls',
     '$_/see/widgets/Alerter.cls',
-    '<?=__GET_DIR?>uoi/scripts/system',
-    '<?=__GET_DIR?>uoi/scripts/log/<?=$__Lang?>/runtime'
+    '<?=__GET_DIR?>i/sources/scripts//system',
+    '<?=__GET_DIR?>i/sources/scripts//log/<?=$__Lang?>/runtime'
 ], function(pandora, global, undefined) {
     System.UserAvatar = '<?=$avatar?>';
     YangRAM.initialize('<?=UOI_PID?>', '<?=__UOI_DIR?>', '<?=__GET_DIR?>', '<?=__SET_DIR?>', function() {
